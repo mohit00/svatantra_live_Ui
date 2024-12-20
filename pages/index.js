@@ -16,6 +16,7 @@ import StoriesSuccess from "../src/sections/StoriesSuccess";
 
 // STYLES //
 import styles from "@/styles/pages/Home.module.scss";
+import HomeBanner from "@/sections/HomeBanner";
 
 // IMAGES //
 
@@ -32,8 +33,9 @@ export default function HomePage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.HomePage} bg_primary`}>
+			<main className={`${styles.HomePage}`}>
 				{/* <h2>This is ting base next.js template</h2> */}
+				<HomeBanner />
 				<ScaleBusiness />
 				<DigitallySvatantra />
 				<StoriesSuccess />
