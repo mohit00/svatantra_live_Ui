@@ -1,0 +1,19 @@
+@import "../helpers/helpers.scss";
+
+.ScaleBusiness {
+	padding: 100px 0;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		220deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(127, 202, 102, 1) 37%,
+		rgba(0, 114, 205, 1) 100%
+	);
+	.BusinessFlex {
+		display: flex;
+		.AccordianBx {
+		}
+		.MapImgBx {
+		}
+	}
+}
