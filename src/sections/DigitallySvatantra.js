@@ -1,6 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
+import Button from "../../src/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -13,6 +14,7 @@ import styles from "@/styles/sections/DigitallySvatantra.module.scss";
 
 // IMAGES //
 import DigitalImg from "../../public/img/home/DigitalImg.png";
+import BtnArrow from "../../public/img/home/BtnArrow.svg";
 
 // DATA //
 
@@ -33,6 +35,12 @@ export default function DigitallySvatantra() {
 						cashless disbursement and roll out a customer facing app, bringing success
 						to your fingertips.
 					</p>
+					<div className={`${styles.BtnBx}`}>
+						<Button color="secondary" variant="filled" shape="rounded">
+							Read More
+							<img src={BtnArrow.src} alt="" />
+						</Button>
+					</div>
 				</div>
 				<div className={`${styles.ImgBx}`}>
 					<img src={DigitalImg.src} alt="" />
