@@ -30,6 +30,7 @@ export default function Accordian({
 	isPlusColor,
 	titleClass,
 	borderClass,
+	accNo,
 }) {
 	return (
 		<div
@@ -44,6 +45,7 @@ export default function Accordian({
 				onClick={() => toggleItem(index)}
 			>
 				<div className={`${styles.text} ${titleClass} `} data-scroll>
+					<div className={`${styles.Number}`}>{accNo}</div>
 					{accTitle}
 				</div>
 				{isPlus ? (

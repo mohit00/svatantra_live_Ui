@@ -32,7 +32,7 @@ export default function HomePage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.HomePage} bg_primary`}>
+			<main className={`${styles.HomePage} `}>
 				{/* <h2>This is ting base next.js template</h2> */}
 				<ScaleBusiness />
 				<DigitallySvatantra />

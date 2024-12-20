@@ -1,11 +1,16 @@
 @import "../helpers/helpers.scss";
 
 .accordian {
-	border-bottom: 1px solid rgba($color: #000, $alpha: 0.3);
+	border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
 	padding: 10px 0 30px;
 	margin: 0 0 15px;
 	@media only screen and (max-width: 991px) {
-		padding: 20px 0;
+		padding: 20px 0 !important;
+		margin: 0 !important;
+	}
+	&:first-of-type {
+		padding: 25px 0 30px;
+		border-top: 1px solid rgba($color: #fff, $alpha: 0.2);
 	}
 
 	&.active {
@@ -21,17 +26,25 @@
 
 		.text {
 			width: 70%;
+			display: flex;
+			align-items: center;
+			gap: 15px;
 			// color: rgba($color: #001f4e, $alpha: 0.8);
+			.Number {
+				font-size: 10px;
+			}
 		}
 
 		.icon {
 			background-color: transparent;
-			width: 48px;
-			height: 48px;
+			width: 33px;
+			height: 33px;
+			background-color: #2859a9;
 			border-radius: 100%;
 			display: grid;
 			place-items: center;
 			position: relative;
+			border-radius: 2px;
 
 			.line {
 				background-color: var(--color_white);
@@ -92,7 +105,7 @@
 		}
 	}
 	.answer {
-		padding-top: 0px;
+		padding: 0px 25px 0;
 		max-height: 0;
 		overflow-y: hidden;
 		transition: all 0.4s ease-in-out;
@@ -103,7 +116,7 @@
 
 		&.active {
 			max-height: 200vh;
-			padding-top: 20px;
+			padding: 20px 25px 0;
 		}
 	}
 }

@@ -30,19 +30,19 @@ export default function ScaleBusiness() {
 	const accordianData = [
 		{
 			maintitle: "Microfinance loans",
-			title: "Where hues meet imagination.",
+			AccNo: "01",
 			description:
 				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
 		},
 		{
 			maintitle: "Individual loan",
-			title: "Where skills shape dreams.",
+			AccNo: "02",
 			description:
 				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
 		},
 		{
 			maintitle: "Insurance",
-			title: "Where future legends are born.",
+			AccNo: "03",
 			description:
 				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
 		},
@@ -52,40 +52,33 @@ export default function ScaleBusiness() {
 			<div className="container">
 				<div className={`${styles.BusinessFlex}`}>
 					<div className={`${styles.AccordianBx}`}>
-						<h2>Scale your business with our financial services</h2>
-						{/* Accordian Items using json */}
-						{accordianData.map((data, index) => (
-							// <AccordionItem key={index}>
-							// 	<AccordionTitle isPlus={true}>
-							// 		<p className="text_xxl">{data.maintitle}</p>
-							// 	</AccordionTitle>
-							// 	<AccordionContent>
-							// 		<div className={`${styles.ImgBx} pb_40`}>
-							// 			<img src={data.image} alt="mobileImage" />
-							// 		</div>
-							// 		<p className="text_lg pb_10">{parse(data.title)}</p>
-							// 		<p className="text_reg">{parse(data.description)}</p>
-							// 	</AccordionContent>
-							// </AccordionItem>
-							<Accordian
-								isPlus
-								index={index}
-								// key={id}
-								accID={`acc${index}`}
-								isActive={activeFAQ === index}
-								toggleItem={toggleItem}
-								accTitle={data.maintitle}
-								titleClass="text_xxl font_primary"
-								borderClass="white"
-								key={index}
-							>
-								<div className={`${styles.AccContentBx}`}>
-									<div className={`${styles.ContentBx} `}>
-										<p className="text_reg opac_80">{parse(data.description)}</p>
+						<h2 className="text_xxxl color_white">
+							Scale your business with our financial services
+						</h2>
+						<div className={`${styles.AccMain}`}>
+							{/* Accordian Items using json */}
+							{accordianData.map((data, index) => (
+								<Accordian
+									isPlus
+									index={index}
+									// key={id}
+									accID={`acc${index}`}
+									isActive={activeFAQ === index}
+									toggleItem={toggleItem}
+									accTitle={data.maintitle}
+									accNo={data.AccNo}
+									titleClass="text_lg font_primary color_white"
+									borderClass="white"
+									key={index}
+								>
+									<div className={`${styles.AccContentBx}`}>
+										<div className={`${styles.ContentBx} color_white`}>
+											<p className="text_sm text_500">{parse(data.description)}</p>
+										</div>
 									</div>
-								</div>
-							</Accordian>
-						))}
+								</Accordian>
+							))}
+						</div>
 					</div>
 					<div className={`${styles.MapImgBx}`}>
 						<img src={Map.src} alt="" />

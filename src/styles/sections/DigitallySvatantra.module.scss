@@ -1,19 +1,44 @@
 @import "../helpers/helpers.scss";
 
 .DigitallySvatantra {
+	padding: 60px 0;
 	.DigitalFlex {
 		// padding-left: calc(var(--container_left_space) + 15);
 		display: flex;
-		justify-content: flex-end;
-		// width: calc(var(--container_left_space) + var(--container_width));
+		align-items: center;
+		justify-content: space-between;
+		width: calc(var(--container_left_space) + var(--container_width) - 15px);
+		margin-left: auto;
+		@media screen and (max-width: 992px) {
+			flex-direction: column;
+		}
+		@media screen and (max-width: 767px) {
+			gap: 30px;
+		}
 		.ContentBx {
-			width: 40%;
+			width: 45%;
+			@media screen and (max-width: 1199px) {
+				width: 50%;
+			}
+			@media screen and (max-width: 992px) {
+				width: 100%;
+			}
 		}
 		.ImgBx {
-			width: 60%;
+			width: 53%;
+			@media screen and (max-width: 1199px) {
+				width: 48%;
+			}
+			@media screen and (max-width: 992px) {
+				width: 100%;
+			}
 			// width: calc(60% + var(--container_left_space) + 15);
 			img {
 				width: 100%;
+				@media screen and (max-width: 992px) {
+					width: 80%;
+					margin-left: auto;
+				}
 			}
 		}
 	}

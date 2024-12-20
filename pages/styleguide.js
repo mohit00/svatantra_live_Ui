@@ -44,16 +44,16 @@ const StyleGuide = () => {
 
 			{/* ============ Accordian ================ */}
 			<h2 className="text_xxxxl font_primary">Accordian</h2>
-			<section>
+			{/* <section>
 				<Accordion>
-					{/* Accordian Items using json */}
+					Accordian Items using json
 					{accordianData.map((data, index) => (
 						<AccordionItem key={index}>
 							<AccordionTitle>{data.title}</AccordionTitle>
 							<AccordionContent>{data.description}</AccordionContent>
 						</AccordionItem>
 					))}
-					{/* Accordian Items using Static content */}
+					Accordian Items using Static content
 					<AccordionItem>
 						<AccordionTitle>Test Accordian title</AccordionTitle>
 						<AccordionContent>
@@ -66,7 +66,7 @@ const StyleGuide = () => {
 						</AccordionContent>
 					</AccordionItem>
 				</Accordion>
-			</section>
+			</section> */}
 
 			{/* ============ Fonts ================ */}
 			<h2 className="text_xxxxl font_primary">Fonts</h2>
