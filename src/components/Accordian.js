@@ -1,8 +1,8 @@
+"use client";
 // MODULES //
-import React, { useState } from "react";
+import Image from "next/image";
 
 // COMPONENTS //
-import Image from "next/image";
 
 // SECTIONS //
 
@@ -13,53 +13,62 @@ import styles from "@/styles/components/Accordian.module.scss";
 
 // IMAGES //
 import ArrowIcon from "@/../public/img/icons/acc_arrow.svg";
+import PlusIcon from "../../public/img/home/add.svg";
+import MinusIcon from "../../public/img/home/minus.svg";
 
-/** Accordian  */
-const Accordion = ({ children }) => {
-	return <div className="accordion">{children}</div>;
-};
+// DATA //
 
-/** Accordion Item  */
-const AccordionItem = ({ children }) => {
-	const [isOpen, setIsOpen] = useState(false);
-	/** Toggle Accordion  */
-	const toggleAccordion = () => {
-		setIsOpen(!isOpen);
-	};
-
+/** Accordian Component */
+export default function Accordian({
+	index,
+	isActive,
+	toggleItem,
+	accTitle,
+	children,
+	accID,
+	isPlus,
+	isPlusColor,
+	titleClass,
+	borderClass,
+}) {
 	return (
 		<div
-			className={`accordian_wrap ${styles.accordian_wrap} ${
-				isOpen && styles.active
-			}`}
+			className={`${styles.accordian} ${
+				isActive ? styles.active : ""
+			} ${borderClass} toTop`}
+			data-scroll
 		>
-			{React.Children.map(children, (child) => {
-				if (child.type === AccordionTitle) {
-					return React.cloneElement(child, { isOpen, toggleAccordion });
-				}
-				if (child.type === AccordionContent && isOpen) {
-					return child;
-				}
-				return null;
-			})}
-		</div>
-	);
-};
-
-/** Accordion Title  */
-const AccordionTitle = ({ children, isOpen, toggleAccordion }) => {
-	return (
-		<div className={`${styles.accordian_title_wrap}`} onClick={toggleAccordion}>
-			{children}
-			<div className={styles.arrow_icon}>
-				<Image src={ArrowIcon} width={30} height={27} alt="Accordian Arrow" />
+			<div
+				id={accID}
+				className={`${styles.question}`}
+				onClick={() => toggleItem(index)}
+			>
+				<div className={`${styles.text} ${titleClass} `} data-scroll>
+					{accTitle}
+				</div>
+				{isPlus ? (
+					<div className={`${styles.icon} ${isActive && styles.active}`}>
+						<div className={`${styles.line}`}></div>
+						<div className={`${styles.line}`}></div>
+					</div>
+				) : isPlusColor ? (
+					<div className={`${styles.icon} ${isActive && styles.active}`}>
+						<div className={`${styles.line_color}`}></div>
+						<div className={`${styles.line_color}`}></div>
+					</div>
+				) : (
+					<Image
+						className={`${styles.ArrowIcon} ${isActive && styles.active}`}
+						src={ArrowIcon}
+						width={30}
+						height={27}
+						alt="Accordion Arrow"
+					/>
+				)}
+			</div>
+			<div className={`${styles.answer} ${isActive && styles.active} f_w_m`}>
+				{children}
 			</div>
 		</div>
 	);
-};
-/** Accordion Content  */
-const AccordionContent = ({ children }) => {
-	return <div className={`${styles.accordian_content_wrap}`}>{children}</div>;
-};
-
-export { Accordion, AccordionItem, AccordionTitle, AccordionContent };
+}
