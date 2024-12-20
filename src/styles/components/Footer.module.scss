@@ -1,5 +1,153 @@
 @import "../helpers/helpers.scss";
 
 .main_footer {
-  // height: 100px;
+	background: radial-gradient(
+			92.81% 126.3% at 35.73% 21.3%,
+			#2859a9 0%,
+			#001934 100%
+		)
+		/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	li {
+		font-size: 16px;
+		font-weight: 400;
+		font-family: var(--font_secondary);
+		line-height: 26px;
+		color: var(--color_secondary_contrast);
+	}
+
+	h2 {
+		font-size: 20px;
+		font-weight: 600;
+		color: var(--color_secondary_contrast);
+		font-family: var(--font_primary);
+		padding-bottom: 10px;
+	}
+
+	.mainBox {
+		padding-top: 50px;
+
+		.topRow {
+			display: flex;
+			gap: 80px;
+			padding-bottom: 40px;
+			.left {
+				width: 60%;
+				display: flex;
+				gap: 40px;
+			}
+
+			.right {
+				width: 40%;
+
+				.email {
+					position: relative;
+					.inputField {
+						width: 100%;
+						padding: 20px;
+						border-radius: 100px;
+						border: none;
+					}
+
+					.inputField::placeholder {
+						font-size: 16px;
+						font-weight: 400;
+						padding-left: 15px;
+					}
+
+					.arrowBox {
+						width: 45px;
+						height: 45px;
+						background-color: rgba(40, 89, 169, 1);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-radius: 50%;
+						position: absolute;
+						top: 6px;
+						right: 10px;
+						.arrow {
+						}
+					}
+				}
+			}
+		}
+
+		.secondRow {
+			padding-left: 35px;
+			padding-bottom: 40px;
+			display: flex;
+			align-items: center;
+			.left {
+				width: 60%;
+				.icons {
+					display: flex;
+					gap: 15px;
+					padding-bottom: 40px;
+					.iconBox {
+						width: 45px;
+						height: 45px;
+						border-radius: 50%;
+						background-color: rgba(99, 178, 46, 1);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+
+				.underline {
+					display: flex;
+					gap: 60px;
+					p {
+						font-size: 18px;
+						font-weight: 800;
+						font-family: var(--font_secondary);
+						color: var(--color_secondary_contrast);
+						text-decoration: underline;
+						text-underline-offset: 8px;
+					}
+				}
+			}
+
+			.right {
+				width: 40%;
+				display: flex;
+
+				justify-content: end;
+			}
+		}
+	}
+
+	.copyrightSection {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		padding-left: 35px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.midBox {
+			display: flex;
+			align-items: center;
+			gap: 50px;
+		}
+
+		p {
+			font-size: 14px;
+			font-weight: 400;
+			color: var(--color_secondary_contrast);
+			opacity: 0.7;
+		}
+	}
+
+	.breakLine {
+		opacity: 0.2;
+	}
 }
