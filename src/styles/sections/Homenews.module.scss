@@ -5,13 +5,6 @@
 	padding-bottom: 100px;
 	background-color: var(--color_seashell);
 
-	h1 {
-		font-size: 55px;
-		font-weight: 600;
-		color: var(--color_primary);
-		padding-bottom: 15px;
-	}
-
 	.mainBox {
 		.category {
 			display: flex;
@@ -21,33 +14,89 @@
 				align-items: center;
 				background-color: #eaeaea;
 				border-radius: 100px;
+
 				.media {
 					padding: 8px 40px 8px 40px;
-					// background-color: #00783c;
 					border-radius: 100px;
-
-					p {
-						font-size: 22px;
-						font-weight: 500;
-						color: white;
-					}
 				}
 
 				.award {
 					padding: 8px 40px 8px 40px;
-
 					border-radius: 100px;
-
-					p {
-						font-size: 22px;
-						font-weight: 500;
-						color: white;
-					}
 				}
 
 				.active {
 					background-color: #00783c;
 					color: white;
+				}
+			}
+		}
+
+		.categoryBox {
+			display: flex;
+			gap: 10px;
+			padding-top: 15px;
+			.news {
+				display: flex;
+				align-items: center;
+				padding: 4px 18px 4px 18px;
+				border-radius: 100px;
+				background-color: var(--color_secondary);
+				p {
+					font-size: 10px;
+					color: white;
+				}
+			}
+
+			.date {
+				display: flex;
+				align-items: center;
+				padding: 4px 18px 4px 18px;
+				border-radius: 100px;
+				background-color: var(--color_white);
+
+				p {
+					font-size: 10px;
+					color: black;
+				}
+			}
+		}
+
+		.mainImg {
+			border-radius: 8px;
+			height: 365px;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		.slider {
+			display: flex;
+			justify-content: space-between;
+			gap: 40px;
+			.box1 {
+				width: 60%;
+				.imgBox {
+					position: relative;
+
+					.logo {
+						position: absolute;
+						bottom: 10px;
+						right: 10px;
+					}
+				}
+			}
+
+			.box2 {
+				width: 37%;
+
+				.imgBox {
+					position: relative;
+
+					.logo {
+						position: absolute;
+						bottom: 10px;
+						right: 25px;
+					}
 				}
 			}
 		}

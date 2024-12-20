@@ -30,34 +30,36 @@ export default function Footer() {
 					<div className={`${styles.topRow}`}>
 						<div className={`${styles.left}`}>
 							<ul>
-								<li>
+								<li className="text_xs color_white pb_10">
 									<a>We are svatantra</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>Our impact</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>Connect with us</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>Our finance</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>For investors</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>Pay now</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>Digitally svatantra</a>
 								</li>
-								<li>
-									<a>We are svatantra</a>
+								<li className="text_xs color_white pb_10">
+									<a>Media</a>
 								</li>
 							</ul>
 						</div>
 						<div className={`${styles.right}`}>
-							<h2>Signup for our newsletter</h2>
+							<h2 className="text_reg f_w_s_b color_white pb_10">
+								Signup for our newsletter
+							</h2>
 
 							<div className={`${styles.email}`}>
 								<input
@@ -85,9 +87,9 @@ export default function Footer() {
 								</div>
 							</div>
 							<div className={`${styles.underline}`}>
-								<p>Smart ODR</p>
-								<p>Chaitanaya India</p>
-								<p>Svatantra Microhousing</p>
+								<p className="text_sm f_w_b color_white">Smart ODR</p>
+								<p className="text_sm f_w_b color_white">Chaitanaya India</p>
+								<p className="text_sm f_w_b color_white">Svatantra Microhousing</p>
 							</div>
 						</div>
 						<div className={`${styles.right}`}>
@@ -99,10 +101,12 @@ export default function Footer() {
 			<hr className={`${styles.breakLine}`} />
 			<div className="container">
 				<div className={`${styles.copyrightSection}`}>
-					<p>Copyright ©2024 Svatantra. All rights reserved.</p>
+					<p className="text_xs opacity_8 color_white">
+						Copyright ©2024 Svatantra. All rights reserved.
+					</p>
 					<div className={`${styles.midBox}`}>
-						<p>Privacy Policy</p>
-						<p>Terms & Conditions</p>
+						<p className="text_xs opacity_8 color_white">Privacy Policy</p>
+						<p className="text_xs opacity_8 color_white">Terms & Conditions</p>
 					</div>
 					<img src={ting.src} alt="ting" />
 				</div>

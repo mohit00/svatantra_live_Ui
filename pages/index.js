@@ -36,9 +36,7 @@ export default function HomePage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main>
-				{/* <Homenews /> */}
-				<Homecontact />
+
 			<main className={`${styles.HomePage}`}>
 				{/* <h2>This is ting base next.js template</h2> */}
 				<HomeBanner />
@@ -46,6 +44,8 @@ export default function HomePage() {
 				<ScaleBusiness />
 				<DigitallySvatantra />
 				<StoriesSuccess />
+				<Homenews />
+				<Homecontact />
 			</main>
 			{/* Page Content ends here */}
 
