@@ -10,117 +10,212 @@
 
 	.mainBox {
 		padding-top: 50px;
+		padding-bottom: 50px;
 
-		.topRow {
+		.row1 {
 			display: flex;
-			gap: 80px;
-			padding-bottom: 40px;
-			.left {
-				width: 60%;
-				display: flex;
-				gap: 40px;
+			align-items: center;
+			justify-content: space-between;
+			gap: 65px;
 
-				ul {
-					list-style: none;
-					display: grid;
-					grid-template-columns: 1fr 1fr 1fr;
-					padding-left: 0px;
-					column-gap: 80px;
-					row-gap: 10px;
+			@media (max-width: 991px) {
+				grid-template-columns: 1fr 1fr;
+				gap: 0px;
+			}
+
+			@media (max-width: 767px) {
+				flex-direction: column;
+				align-items: unset;
+			}
+
+			.firstLogo {
+				display: none;
+
+				@media (max-width: 767px) {
+					display: block;
 				}
 			}
 
-			.right {
-				width: 40%;
+			.firstBreakLine {
+				display: none;
 
-				.email {
-					position: relative;
-					.inputField {
-						width: 100%;
-						padding: 20px;
-						border-radius: 100px;
-						border: none;
+				@media (max-width: 767px) {
+					display: block;
+					margin-top: 30px;
+					opacity: 0.2;
+				}
+			}
+
+			.secondBreakLine {
+				display: none;
+
+				@media (max-width: 767px) {
+					display: flex;
+					margin-top: 20px;
+					margin-bottom: 20px;
+					opacity: 0.2;
+				}
+			}
+
+			ul {
+				width: 60%;
+				list-style: none;
+				padding-left: 0px;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				column-gap: 80px;
+				row-gap: 10px;
+
+				@media (max-width: 1200px) {
+					column-gap: 40px;
+				}
+
+				@media (max-width: 991px) {
+					grid-template-columns: 1fr 1fr;
+				}
+
+				@media (max-width: 767px) {
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					// padding-left: 35px;
+					padding-top: 20px;
+				}
+			}
+
+			.emailBox {
+				// width: 40%;
+				position: relative;
+				.inputField {
+					padding: 15px 30px 15px 30px;
+					width: 100%;
+					border-radius: 100px;
+					border: none;
+				}
+
+				.inputField::placeholder {
+					font-size: 12px;
+				}
+
+				.arrowBox {
+					width: 40px;
+					height: 40px;
+					background-color: #2859a9;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 50%;
+					position: absolute;
+					top: 3px;
+					right: 5px;
+					.arrow {
 					}
+				}
+			}
+		}
 
-					.inputField::placeholder {
-						font-size: 16px;
-						font-weight: 400;
-						padding-left: 15px;
-					}
-
-					.arrowBox {
-						width: 45px;
-						height: 45px;
-						background-color: rgba(40, 89, 169, 1);
+		.row2 {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.left {
+				.socialIcons {
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					.box1 {
+						width: 50px;
+						height: 50px;
+						background-color: #00783c;
 						display: flex;
 						align-items: center;
 						justify-content: center;
 						border-radius: 50%;
-						position: absolute;
-						top: 6px;
-						right: 10px;
-						.arrow {
+					}
+				}
+
+				.thirdLine {
+					display: none;
+
+					@media (max-width: 767px) {
+						display: block;
+						margin-bottom: 30px;
+					}
+				}
+
+				.cats {
+					display: flex;
+					align-items: center;
+					gap: 60px;
+
+					@media (max-width: 1024px) {
+						gap: 30px;
+					}
+
+					p {
+						text-decoration: underline;
+						text-underline-offset: 8px;
+
+						@media (max-width: 991px) {
+							font-size: 12px;
+						}
+
+						@media (max-width: 767px) {
+							font-size: 11px;
 						}
 					}
 				}
 			}
-		}
-
-		.secondRow {
-			padding-bottom: 40px;
-			display: flex;
-			align-items: center;
-			.left {
-				width: 60%;
-				.icons {
-					display: flex;
-					gap: 15px;
-					padding-bottom: 40px;
-					.iconBox {
-						width: 45px;
-						height: 45px;
-						border-radius: 50%;
-						background-color: rgba(99, 178, 46, 1);
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					}
-				}
-
-				.underline {
-					display: flex;
-					gap: 60px;
-					p {
-						text-decoration: underline;
-						text-underline-offset: 8px;
-					}
-				}
-			}
 
 			.right {
-				width: 40%;
 				display: flex;
-
+				align-items: end;
 				justify-content: end;
+
+				.secondLogo {
+					margin: 0 auto;
+
+					@media (max-width: 767px) {
+						display: none;
+					}
+				}
 			}
 		}
 	}
 
-	.copyrightSection {
-		padding-top: 40px;
+	.fourthLine {
+		margin-bottom: 30px;
+		opacity: 0.1;
+
+		@media (max-width: 767px) {
+		}
+	}
+
+	.copyright {
 		padding-bottom: 40px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 
-		.midBox {
-			display: flex;
-			align-items: center;
-			gap: 50px;
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+		}
+
+		p {
+			@media (max-width: 991px) {
+				font-size: 12px;
+			}
+
+			@media (max-width: 767px) {
+				font-size: 13px;
+				padding-bottom: 10px;
+			}
 		}
 	}
 
-	.breakLine {
-		opacity: 0.2;
+	.box2 {
+		display: flex;
+		align-items: center;
+		gap: 50px;
 	}
 }

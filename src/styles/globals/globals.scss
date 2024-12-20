@@ -130,14 +130,14 @@ section {
 	}
 }
 
-.section_title{
+.section_title {
 	@extend .text_xxxl;
 	color: var(--color_primary);
-	span{
+	span {
 		color: var(--color_secondary_tint);
 	}
 }
-.header_container{
+.header_container {
 	width: 100%;
 	margin: auto;
 	max-width: 1300px;

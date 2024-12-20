@@ -27,41 +27,44 @@ export default function Footer() {
 			{/* <p>© {new Date().getFullYear()} Copyright</p> */}
 			<div className="container">
 				<div className={`${styles.mainBox}`}>
-					<div className={`${styles.topRow}`}>
-						<div className={`${styles.left}`}>
-							<ul>
-								<li className="text_xs color_white pb_10">
-									<a>We are svatantra</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>Our impact</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>Connect with us</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>Our finance</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>For investors</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>Pay now</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>Digitally svatantra</a>
-								</li>
-								<li className="text_xs color_white pb_10">
-									<a>Media</a>
-								</li>
-							</ul>
-						</div>
-						<div className={`${styles.right}`}>
-							<h2 className="text_reg f_w_s_b color_white pb_10">
-								Signup for our newsletter
-							</h2>
+					<div className={`${styles.row1} pb_30`}>
+						<img src={logo.src} alt="logo" className={`${styles.firstLogo} `} />
+						<hr className={`${styles.firstBreakLine} `} />
 
-							<div className={`${styles.email}`}>
+						<ul>
+							<li className="text_xs color_white pb_10">
+								<a>We are svatantra</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>Our impact</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>Connect with us</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>Our finance</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>For investors</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>Pay now</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>Digitally svatantra</a>
+							</li>
+							<li className="text_xs color_white pb_10">
+								<a>Media</a>
+							</li>
+						</ul>
+
+						<hr className={`${styles.secondBreakLine}`} />
+
+						<div>
+							<h1 className="text_reg f_w_s_b color_white pb_10">
+								Signup for our newsletter
+							</h1>
+							<div className={`${styles.emailBox}`}>
 								<input
 									type="email"
 									placeholder="Enter your email here..."
@@ -73,42 +76,48 @@ export default function Footer() {
 							</div>
 						</div>
 					</div>
-					<div className={`${styles.secondRow}`}>
+					{/* row2 */}
+					<div className={`${styles.row2}`}>
 						<div className={`${styles.left}`}>
-							<div className={`${styles.icons}`}>
-								<div className={`${styles.iconBox}`}>
-									<img src={twitter.src} alt="twitter" className={`${styles.logo}`} />
+							<div className={`${styles.socialIcons} pb_40`}>
+								<div className={`${styles.box1}`}>
+									<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
 								</div>
-								<div className={`${styles.iconBox}`}>
-									<img src={linkdin.src} alt="twitter" className={`${styles.logo}`} />
+								<div className={`${styles.box1}`}>
+									<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
 								</div>
-								<div className={`${styles.iconBox}`}>
-									<img src={facebook.src} alt="twitter" className={`${styles.logo}`} />
+								<div className={`${styles.box1}`}>
+									<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
 								</div>
 							</div>
-							<div className={`${styles.underline}`}>
+
+							<hr className={`${styles.thirdLine}`} />
+
+							<div className={`${styles.cats}`}>
 								<p className="text_sm f_w_b color_white">Smart ODR</p>
 								<p className="text_sm f_w_b color_white">Chaitanaya India</p>
 								<p className="text_sm f_w_b color_white">Svatantra Microhousing</p>
 							</div>
 						</div>
 						<div className={`${styles.right}`}>
-							<img src={logo.src} alt="logo" className={`${styles.logo}`} />
+							<img src={logo.src} alt="logo" className={`${styles.secondLogo} `} />
 						</div>
 					</div>
 				</div>
 			</div>
-			<hr className={`${styles.breakLine}`} />
+			<hr className={`${styles.fourthLine}`} />
 			<div className="container">
-				<div className={`${styles.copyrightSection}`}>
-					<p className="text_xs opacity_8 color_white">
-						Copyright ©2024 Svatantra. All rights reserved.
+				<div className={`${styles.copyright}`}>
+					<p className="text_xs f_w_r color_white opacity_8">
+						Copyright ©2024 Svatantra. All rights reserved.
 					</p>
-					<div className={`${styles.midBox}`}>
-						<p className="text_xs opacity_8 color_white">Privacy Policy</p>
-						<p className="text_xs opacity_8 color_white">Terms & Conditions</p>
+
+					<div className={`${styles.box2}`}>
+						<p className="text_xs f_w_r color_white opacity_8">Privacy Policy</p>
+						<p className="text_xs f_w_r color_white opacity_8">Terms & Conditions</p>
 					</div>
-					<img src={ting.src} alt="ting" />
+
+					<img src={ting.src} alt="tinglogo" />
 				</div>
 			</div>
 		</footer>

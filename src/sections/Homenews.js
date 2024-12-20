@@ -24,6 +24,10 @@ import box1 from "../../public/img/news/box1.jpg";
 import box11 from "../../public/img/news/box11.jpg";
 import box2 from "../../public/img/news/box2.jpg";
 import box22 from "../../public/img/news/box22.jpg";
+import NextArrow from "../../public/img/home/NextArrow.svg";
+import PrevArrow from "../../public/img/home/PrevArrow.svg";
+import rightArrow from "../../public/img/news/rightarrow.svg";
+import prevImg from "../../public/img/news/prevImg.svg";
 // DATA //
 
 /** Homenews Section */
@@ -61,80 +65,172 @@ export default function Homenews() {
 						</div>
 					</div>
 
-					<div className={`${styles.slider}`}>
+					<div>
 						<Swiper
 							modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 							spaceBetween={60}
 							slidesPerView={1.6}
 							loop={true}
-							autoplay={{
-								delay: 5000,
-								disableOnInteraction: false,
-							}}
+							// autoplay={{
+							// 	delay: 5000,
+							// 	disableOnInteraction: false,
+							// }}
 							pagination={{
 								clickable: true,
 								type: "progressbar",
+								el: ".swiper-pagination",
 							}}
 							observer={true}
 							observeParents={true}
-							navigation={true}
+							navigation={{
+								prevEl: "#customPrev",
+								nextEl: "#customNext",
+							}}
 							breakpoints={{
-								640: {
-									slidesPerView: 1.5,
-									spaceBetween: 20,
-								},
-								768: {
-									slidesPerView: 1.5, // Adjusted to show more content for tablets
+								767: {
+									slidesPerView: 1,
 									spaceBetween: 10,
 								},
-								1024: {
-									slidesPerView: 1, // Adjusted for larger screens to show full slides
-									spaceBetween: 40,
+								992: {
+									slidesPerView: 1,
 								},
 							}}
 						>
 							<SwiperSlide>
-								<div className={`${styles.box1}`}>
-									<div className={`${styles.imgBox}`}>
-										<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
-										<img src={box11.src} alt="logo" className={`${styles.logo}`} />
-									</div>
-
-									<div className={`${styles.categoryBox}`}>
-										<div className={`${styles.news}`}>
-											<p>News</p>
+								<div className={`${styles.slider}`}>
+									<div className={`${styles.box1}`}>
+										<div className={`${styles.imgBox}`}>
+											<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
+											<img src={box11.src} alt="logo" className={`${styles.logo}`} />
 										</div>
-										<div className={`${styles.date}`}>
-											<p>5 November 2024</p>
-										</div>
-									</div>
 
-									<p className="text_reg f_w_m pt_10">
-										Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s Svatantra
-										Microfin
-									</p>
+										<div className={`${styles.categoryBox}`}>
+											<div className={`${styles.news}`}>
+												<p>News</p>
+											</div>
+											<div className={`${styles.date}`}>
+												<p>5 November 2024</p>
+											</div>
+										</div>
+
+										<p className="text_reg f_w_m pt_10">
+											Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s Svatantra
+											Microfin
+										</p>
+									</div>
+									<div className={`${styles.box2}`}>
+										<div className={`${styles.imgBox}`}>
+											<img src={box2.src} alt="box1" className={`${styles.mainImg}`} />
+											<img src={box22.src} alt="logo" className={`${styles.logo}`} />
+										</div>
+										<div className={`${styles.categoryBox}`}>
+											<div className={`${styles.news}`}>
+												<p>News</p>
+											</div>
+											<div className={`${styles.date}`}>
+												<p>5 November 2024</p>
+											</div>
+										</div>
+										<p className="text_reg f_w_m pt_10">
+											PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
+										</p>
+									</div>
 								</div>
 							</SwiperSlide>
 							<SwiperSlide>
-								<div className={`${styles.box1}`}>
-									<div className={`${styles.imgBox}`}>
-										<img src={box2.src} alt="box1" className={`${styles.mainImg}`} />
-										<img src={box22.src} alt="logo" className={`${styles.logo}`} />
-									</div>
-									<div className={`${styles.categoryBox}`}>
-										<div className={`${styles.news}`}>
-											<p>News</p>
+								<div className={`${styles.slider}`}>
+									<div className={`${styles.box1}`}>
+										<div className={`${styles.imgBox}`}>
+											<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
+											<img src={box11.src} alt="logo" className={`${styles.logo}`} />
 										</div>
-										<div className={`${styles.date}`}>
-											<p>5 November 2024</p>
+
+										<div className={`${styles.categoryBox}`}>
+											<div className={`${styles.news}`}>
+												<p>News</p>
+											</div>
+											<div className={`${styles.date}`}>
+												<p>5 November 2024</p>
+											</div>
 										</div>
+
+										<p className="text_reg f_w_m pt_10">
+											Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s Svatantra
+											Microfin
+										</p>
 									</div>
-									<p className="text_reg f_w_m pt_10">
-										PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
-									</p>
+									<div className={`${styles.box2}`}>
+										<div className={`${styles.imgBox}`}>
+											<img src={box2.src} alt="box1" className={`${styles.mainImg}`} />
+											<img src={box22.src} alt="logo" className={`${styles.logo}`} />
+										</div>
+										<div className={`${styles.categoryBox}`}>
+											<div className={`${styles.news}`}>
+												<p>News</p>
+											</div>
+											<div className={`${styles.date}`}>
+												<p>5 November 2024</p>
+											</div>
+										</div>
+										<p className="text_reg f_w_m pt_10">
+											PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
+										</p>
+									</div>
+								</div>
+							</SwiperSlide>
+							<SwiperSlide>
+								<div className={`${styles.slider}`}>
+									<div className={`${styles.box1}`}>
+										<div className={`${styles.imgBox}`}>
+											<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
+											<img src={box11.src} alt="logo" className={`${styles.logo}`} />
+										</div>
+
+										<div className={`${styles.categoryBox}`}>
+											<div className={`${styles.news}`}>
+												<p>News</p>
+											</div>
+											<div className={`${styles.date}`}>
+												<p>5 November 2024</p>
+											</div>
+										</div>
+
+										<p className="text_reg f_w_m pt_10">
+											Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s Svatantra
+											Microfin
+										</p>
+									</div>
+									<div className={`${styles.box2}`}>
+										<div className={`${styles.imgBox}`}>
+											<img src={box2.src} alt="box1" className={`${styles.mainImg}`} />
+											<img src={box22.src} alt="logo" className={`${styles.logo}`} />
+										</div>
+										<div className={`${styles.categoryBox}`}>
+											<div className={`${styles.news}`}>
+												<p>News</p>
+											</div>
+											<div className={`${styles.date}`}>
+												<p>5 November 2024</p>
+											</div>
+										</div>
+										<p className="text_reg f_w_m pt_10">
+											PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
+										</p>
+									</div>
 								</div>
 							</SwiperSlide>
 						</Swiper>
+						<div className={`${styles.items}`}>
+							<div className={`${styles.progressBar} m_t_30 swiper-pagination`}></div>
+							<div className={`${styles.arrowSection} f_w_a_j_center`}>
+								<button className={`${styles.customPrev}`} id="customPrev">
+									<img src={prevImg.src} alt="" />
+								</button>
+								<button className={styles.customNext} id="customNext">
+									<img src={rightArrow.src} alt="" />
+								</button>
+							</div>
+						</div>
 
 						{/*  */}
 					</div>

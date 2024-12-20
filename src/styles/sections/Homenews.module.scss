@@ -4,7 +4,7 @@
 	padding-top: 100px;
 	padding-bottom: 100px;
 	background-color: var(--color_seashell);
-
+	position: relative;
 	.mainBox {
 		.category {
 			display: flex;
@@ -73,8 +73,18 @@
 			display: flex;
 			justify-content: space-between;
 			gap: 40px;
+
+			@media (max-width: 991px) {
+				flex-direction: column;
+			}
+
 			.box1 {
 				width: 60%;
+
+				@media (max-width: 911px) {
+					width: 100%;
+				}
+
 				.imgBox {
 					position: relative;
 
@@ -82,12 +92,21 @@
 						position: absolute;
 						bottom: 10px;
 						right: 10px;
+
+						@media (max-width: 991px) {
+							bottom: 15px;
+							right: 55px;
+						}
 					}
 				}
 			}
 
 			.box2 {
 				width: 37%;
+
+				@media (max-width: 911px) {
+					width: 57%;
+				}
 
 				.imgBox {
 					position: relative;
@@ -98,6 +117,65 @@
 						right: 25px;
 					}
 				}
+			}
+		}
+
+		.items {
+			display: flex;
+			// flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+		}
+
+		:global(.swiper-pagination-progressbar) {
+			top: unset;
+			width: 87%;
+			height: 2px;
+
+			@media (max-width: 991px) {
+				width: 82%;
+			}
+
+			@media (max-width: 767px) {
+				width: 70%;
+				left: 12px;
+			}
+		}
+
+		:global(.swiper-pagination-progressbar-fill) {
+			background-color: #000000;
+		}
+
+		:global(#customNext) {
+			padding: 10px;
+			border-radius: 50%;
+			border: none;
+			position: absolute;
+			right: 42px;
+			background-color: transparent;
+			border: 2px solid #dddddd;
+			bottom: -35px;
+
+			@media (max-width: 1024px) {
+				right: 20px;
+				background-color: transparent;
+				border: 2px solid #dddddd;
+				bottom: -34px;
+			}
+		}
+
+		:global(#customPrev) {
+			padding: 10px;
+			border-radius: 50%;
+			border: none;
+			position: absolute;
+			right: 85px;
+			background-color: transparent;
+			border: 2px solid #dddddd;
+			bottom: -34px;
+
+			@media (max-width: 1024px) {
+				right: 70px;
 			}
 		}
 	}
