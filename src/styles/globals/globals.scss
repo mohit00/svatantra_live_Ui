@@ -8,6 +8,7 @@
 body {
 	margin: 0;
 	@extend .text_reg;
+	color: var(--color_light_black);
 	font-family: var(--font_secondary);
 }
 
@@ -127,4 +128,17 @@ section {
 	img {
 		object-fit: cover !important;
 	}
+}
+
+.section_title{
+	@extend .text_xxxl;
+	color: var(--color_primary);
+	span{
+		color: var(--color_secondary_tint);
+	}
+}
+.header_container{
+	width: 100%;
+	margin: auto;
+	max-width: 1300px;
 }

@@ -1,0 +1,40 @@
+@import "../helpers/helpers.scss";
+.home_banner{
+   height: 100vh;
+   position: relative;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-image: url('/img/home/banner_bg.jpg');
+   .banner{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .image{
+            width: 48%;
+            position: relative;
+            .image_wrapper{
+
+            }
+            .rupees_img{
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .info{
+            width: 48%;
+        }
+    }
+   .line_1{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        img{
+            width: 100%;
+        }
+   }
+}

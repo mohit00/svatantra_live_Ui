@@ -16,6 +16,7 @@ import styles from "@/styles/components/Header.module.scss";
 
 // IMAGES //
 import Arrow from "@/../public/img/icons/arrow.svg";
+import HeaderLogo from "../../public/img/home/header_logo.svg";
 
 // DATA //
 
@@ -42,77 +43,50 @@ export default function Header() {
 				openSidebar ? styles.sidebar_opened : ""
 			}`}
 		>
-			<div className="container">
+			<div className={`${styles.header_section} header_container`}>
 				<div className={`${styles.header_inside}`}>
 					{/* Logo wrap */}
 					<Link href="/">
 						<div className={styles.image_wrap}>
-							{/* <Image src={Logo} alt="Logo" /> */}
-							LOGO
+							<Image src={HeaderLogo} alt="Logo" />
 						</div>
 					</Link>
 
 					{/* Links Wrap */}
 					<div className={`${styles.links_wrap}`}>
-						{/* Add "has_dropdown" class if your link has dropdown */}
-						<div
-							className={`${styles.links} ${styles.has_dropdown} ${
-								openDropdown === "aboutUs" ? styles.dropdown_opened : ""
-							} dropdown`}
-							onClick={() => toggleDropdown("aboutUs")}
-						>
-							<div className={styles.link_title}>
-								<p>About Us</p>
-								<span className={styles.arrow_img}>
-									<Image src={Arrow} alt="Arrow" />
-								</span>
-							</div>
-							{/* Dropdown is opened when link is clicked */}
-							<div className={`${styles.dropdown_wrap}`}>
-								<Link href="">
-									<p className={styles.dropdown_links}>About 1</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>About 2</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>About 3</p>
-								</Link>
-							</div>
-						</div>
-						<div
-							className={`${styles.links} ${styles.has_dropdown} ${
-								openDropdown === "blogs" ? styles.dropdown_opened : ""
-							} dropdown`}
-							onClick={() => toggleDropdown("blogs")}
-						>
-							<div className={styles.link_title}>
-								<p>Blogs</p>
-								<span className={styles.arrow_img}>
-									<Image src={Arrow} alt="Arrow" />
-								</span>
-							</div>
-							{/* Dropdown is opened when link is clicked */}
-							<div className={`${styles.dropdown_wrap}`}>
-								<Link href="">
-									<p className={styles.dropdown_links}>Blog 1</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>Blog 2</p>
-								</Link>
-								<Link href="">
-									<p className={styles.dropdown_links}>Blog 3</p>
-								</Link>
-							</div>
-						</div>
 						<div className={styles.links}>
-							<Link href="">
-								<div className={styles.link_title}>Career</div>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>About</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
-							<Link href="">
-								<div className={styles.link_title}>Contact</div>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>Our Finance</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>Digitally Svatantra</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>Our Impact</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>For Investors</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>Careers</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="javascript:void(0)">
+								<div className={styles.link_title}>Media</div>
 							</Link>
 						</div>
 					</div>

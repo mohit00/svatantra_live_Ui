@@ -31,7 +31,6 @@
 	font-size: 28px;
 	line-height: 1.2;
 	font-weight: 400;
-
 	@media (max-width: 767px) {
 		font-size: 22px;
 	}
@@ -61,6 +60,14 @@
 	font-weight: 400;
 	@media (max-width: 767px) {
 		font-size: 16px;
+	}
+}
+.text_xs {
+	font-size: 16px;
+	line-height: 1.4;
+	font-weight: 400;
+	@media (max-width: 767px) {
+		font-size: 14px;
 	}
 }
 

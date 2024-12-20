@@ -1,0 +1,20 @@
+@import "../helpers/helpers.scss";
+
+.DigitallySvatantra {
+	.DigitalFlex {
+		// padding-left: calc(var(--container_left_space) + 15);
+		display: flex;
+		justify-content: flex-end;
+		// width: calc(var(--container_left_space) + var(--container_width));
+		.ContentBx {
+			width: 40%;
+		}
+		.ImgBx {
+			width: 60%;
+			// width: calc(60% + var(--container_left_space) + 15);
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
