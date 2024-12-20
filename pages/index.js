@@ -37,7 +37,7 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 
-			<main className={`${styles.HomePage}`}>
+			<main className={`${styles.HomePage} `}>
 				{/* <h2>This is ting base next.js template</h2> */}
 				<HomeBanner />
 				<Svatantra />

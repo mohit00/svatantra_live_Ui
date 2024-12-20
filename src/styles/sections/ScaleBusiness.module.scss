@@ -9,11 +9,45 @@
 		rgba(127, 202, 102, 1) 37%,
 		rgba(0, 114, 205, 1) 100%
 	);
+	@media screen and (max-width: 992px) {
+		background: rgb(255, 255, 255);
+		background: linear-gradient(
+			330deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(127, 202, 102, 1) 42%,
+			rgba(0, 114, 205, 1) 100%
+		);
+	}
 	.BusinessFlex {
 		display: flex;
+		align-items: center;
+		@media screen and (max-width: 992px) {
+			flex-direction: column;
+			gap: 30px;
+		}
 		.AccordianBx {
+			width: 60%;
+			@media screen and (max-width: 992px) {
+				width: 100%;
+			}
+			.AccMain {
+				width: 80%;
+				padding-top: 50px;
+				@media screen and (max-width: 767px) {
+					width: 100%;
+				}
+			}
 		}
 		.MapImgBx {
+			width: 40%;
+			@media screen and (max-width: 992px) {
+				width: 100%;
+			}
+			img {
+				@media screen and (max-width: 992px) {
+					width: 100%;
+				}
+			}
 		}
 	}
 }
