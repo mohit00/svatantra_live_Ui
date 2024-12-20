@@ -29,26 +29,32 @@ export default function Footer() {
 				<div className={`${styles.mainBox}`}>
 					<div className={`${styles.topRow}`}>
 						<div className={`${styles.left}`}>
-							<div className={`${styles.row1}`}>
-								<ul>
-									<li>We are svatantra</li>
-									<li>Our finance</li>
-									<li>Digitally svatantra</li>
-								</ul>
-							</div>
-							<div className={`${styles.row2}`}>
-								<ul>
-									<li>Our impact</li>
-									<li>For investors</li>
-									<li>Media</li>
-								</ul>
-							</div>
-							<div className={`${styles.row3}`}>
-								<ul>
-									<li>Connect with us</li>
-									<li>Pay now</li>
-								</ul>
-							</div>
+							<ul>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+								<li>
+									<a>We are svatantra</a>
+								</li>
+							</ul>
 						</div>
 						<div className={`${styles.right}`}>
 							<h2>Signup for our newsletter</h2>

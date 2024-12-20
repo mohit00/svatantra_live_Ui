@@ -1,0 +1,55 @@
+@import "../helpers/helpers.scss";
+
+.Homenews {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: var(--color_seashell);
+
+	h1 {
+		font-size: 55px;
+		font-weight: 600;
+		color: var(--color_primary);
+		padding-bottom: 15px;
+	}
+
+	.mainBox {
+		.category {
+			display: flex;
+			justify-content: space-between;
+			.switchBox {
+				display: flex;
+				align-items: center;
+				background-color: #eaeaea;
+				border-radius: 100px;
+				.media {
+					padding: 8px 40px 8px 40px;
+					// background-color: #00783c;
+					border-radius: 100px;
+
+					p {
+						font-size: 22px;
+						font-weight: 500;
+						color: white;
+					}
+				}
+
+				.award {
+					padding: 8px 40px 8px 40px;
+
+					border-radius: 100px;
+
+					p {
+						font-size: 22px;
+						font-weight: 500;
+						color: white;
+					}
+				}
+
+				.active {
+					background-color: #00783c;
+					color: white;
+				}
+			}
+		}
+	}
+}

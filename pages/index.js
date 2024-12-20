@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Homecontact from "@/sections/Homecontact";
+import Homenews from "@/sections/Homenews";
 
 // SECTIONS //
 
@@ -31,6 +32,7 @@ export default function HomePage() {
 
 			{/* Page Content starts here */}
 			<main>
+				{/* <Homenews /> */}
 				<Homecontact />
 			</main>
 			{/* Page Content ends here */}
