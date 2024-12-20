@@ -42,7 +42,7 @@ export default function Header() {
 				openSidebar ? styles.sidebar_opened : ""
 			}`}
 		>
-			<div className="container">
+			<div className={`${styles.header_container}`}>
 				<div className={`${styles.header_inside}`}>
 					{/* Logo wrap */}
 					<Link href="/">
