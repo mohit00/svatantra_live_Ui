@@ -112,6 +112,8 @@ export default function Footer() {
 						Copyright ©2024 Svatantra. All rights reserved.
 					</p>
 
+					{/* <hr className={`${styles.lastLine}`} /> */}
+
 					<div className={`${styles.box2}`}>
 						<p className="text_xs f_w_r color_white opacity_8">Privacy Policy</p>
 						<p className="text_xs f_w_r color_white opacity_8">Terms & Conditions</p>
