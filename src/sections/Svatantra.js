@@ -1,7 +1,6 @@
 // MODULES //
 
 // COMPONENTS //
-import ContentFromCms from "@/components/ContentFromCms";
 
 // SECTIONS //
 
@@ -24,7 +23,7 @@ export default function Svatantra() {
 				<div className={styles.svatantra_wrapper}>
 					<div className={styles.left_box}>
 						<h2 className="section_title">We are Svatantra</h2>
-						<p className="text_lg pt_10">
+						<p className={`${styles.para_width} text_lg pt_10 opacity_80`}>
 							Svatantra is for the millions of foundational entrepreneurs who are the
 							backbone of <span>India&lsquo;s growth story.</span>
 						</p>
@@ -48,10 +47,10 @@ export default function Svatantra() {
 						</div>
 						<div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
 							<div className={styles.title}>
-								<h5>Second</h5>
+								<h5>Largest PE</h5>
 							</div>
 							<div className={styles.desc}>
-								<h6>largest MFI in the country</h6>
+								<h6>investment in the sector</h6>
 							</div>
 						</div>
 					</div>

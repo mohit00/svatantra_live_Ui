@@ -10,6 +10,7 @@ body {
 	@extend .text_reg;
 	color: var(--color_light_black);
 	font-family: var(--font_secondary);
+	background-color: var(--color_seashell);
 }
 
 * {
@@ -141,4 +142,8 @@ section {
 	width: 100%;
 	margin: auto;
 	max-width: 1300px;
+}
+
+.opacity_80{
+	opacity: 0.8;
 }

@@ -40,7 +40,7 @@ export default function HomeBanner() {
 						<h1 className="section_title">
 							Building the <span>Entrepreneurs</span> that build India’s economy
 						</h1>
-						<p className="text_md pt_20">
+						<p className="text_md pt_20 opacity_80">
 							We turn aspirations into breakthroughs, powering the journey of every
 							Indian toward economic independence, prosperity, and success.
 						</p>

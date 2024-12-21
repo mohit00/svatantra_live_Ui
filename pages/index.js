@@ -18,6 +18,7 @@ import StoriesSuccess from "../src/sections/StoriesSuccess";
 import styles from "@/styles/pages/Home.module.scss";
 import HomeBanner from "@/sections/HomeBanner";
 import Svatantra from "@/sections/Svatantra";
+import Economic from "@/sections/Economic";
 
 // IMAGES //
 
@@ -38,6 +39,7 @@ export default function HomePage() {
 				{/* <h2>This is ting base next.js template</h2> */}
 				<HomeBanner />
 				<Svatantra />
+				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra />
 				<StoriesSuccess />

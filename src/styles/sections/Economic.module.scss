@@ -1,0 +1,44 @@
+@import "../helpers/helpers.scss";
+
+.economic{
+    .economic_wrapper{
+        .economic_info{
+            .desc{
+                h6{
+                    opacity: 0.8;
+                }
+            }
+            .title{
+                h5{
+                   span{
+                        color: #D60029;
+                   }
+                }
+            }
+        }
+        .counter{
+            padding: 15px;
+            border-radius: 12px;
+            grid-gap: 15px;
+            background-color: #EFE4DC;
+            .box{
+                width: 32.4%;
+                min-height: 140px;
+                border-radius: 12px;
+                padding: 0 20px;
+                background-color: var(--color_secondary);
+                .count{
+                    h4{
+                        color: var(--color_white);
+                        span{
+                            color: var(--color_primary_tint);
+                        }
+                    }
+                    h5{
+                        color: var(--color_white);
+                    }
+                }
+            }
+        }
+    }
+}
