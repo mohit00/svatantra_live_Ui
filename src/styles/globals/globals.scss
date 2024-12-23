@@ -164,7 +164,9 @@ section {
 }
 .swiper-pagination-bullet {
 	background: rgba($color: #1e1e1e, $alpha: 0.5) !important;
+	opacity: 1 !important;
 }
 .swiper-pagination-bullet-active {
 	background: #1e1e1e !important;
+	opacity: 1 !important;
 }
