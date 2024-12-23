@@ -6,17 +6,13 @@
 	width: 100%;
 	z-index: 20;
 	top: 12px;
+	
 	.header_section{
 		max-width: 1300px;
 		width: 100%;
 		border-radius: 100px;
-		background: rgb(251,248,246);
-		background: linear-gradient(90deg, rgba(251,248,246,1) 0%, rgba(200,236,240,1) 100%);
-		box-shadow: 0px 7px 42.1px 0px rgba(0, 0, 0, 0.06);
-		backdrop-filter: blur(8.449999809265137px);
-		@include sm-down {
-			margin: 0 5px;
-		}
+		
+		
 		.header_inside {
 			height: 70px;
 			padding: 12px 12px 12px 30px;
@@ -24,7 +20,13 @@
 			border: 1px solid #12B14B;
 			@extend %f_r_a_center;
 			justify-content: space-between;
-			
+			background: rgb(251,248,246);
+		background: linear-gradient(90deg, rgba(251,248,246,1) 0%, rgba(200,236,240,1) 100%);
+		box-shadow: 0px 7px 42.1px 0px rgba(0, 0, 0, 0.06);
+		backdrop-filter: blur(8.449999809265137px);
+			@media (max-width: 1300px) {
+				padding: 0 15px;
+			}
 			.image_wrap {
 				@extend %f_r_a_center;
 			}
@@ -33,11 +35,11 @@
 				align-self: stretch;
 				padding-inline-start: 0;
 				// The menu is transformed as per sidebar on click of hamburger icon
-				@include sm-down {
+				@media (max-width: 1200px) {
 					padding-top: 5%;
 					background-color: var(--color_white);
 					transition: ease all 300ms;
-					transform: translateX(-102%);
+					transform: translateX(-100%);
 					flex-direction: column;
 					width: 100vw;
 					position: absolute;
@@ -86,7 +88,7 @@
 						top: 100%;
 						transform: translateY(-10px);
 						visibility: hidden;
-						@include sm-down {
+						@media (max-width: 1200px) {
 							padding-top: 15px;
 							position: relative;
 							display: none;
@@ -149,7 +151,7 @@
 					background-color: black;
 					transition: ease all 300ms;
 				}
-				@include sm-down {
+				@media (max-width: 1200px) {
 					display: flex;
 				}
 			}
@@ -195,6 +197,6 @@
 		}
 	}
 	.links_wrap {
-		transform: translateX(-2%) !important;
+		transform: translateX(0%) !important;
 	}
 }
