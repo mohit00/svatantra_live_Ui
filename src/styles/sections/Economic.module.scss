@@ -1,44 +1,83 @@
 @import "../helpers/helpers.scss";
 
-.economic{
-    .economic_wrapper{
-        .economic_info{
-            .desc{
-                h6{
-                    opacity: 0.8;
-                }
-            }
-            .title{
-                h5{
-                   span{
-                        color: #D60029;
-                   }
-                }
-            }
-        }
-        .counter{
-            padding: 15px;
-            border-radius: 12px;
-            grid-gap: 15px;
-            background-color: #EFE4DC;
-            .box{
-                width: 32.4%;
-                min-height: 140px;
-                border-radius: 12px;
-                padding: 0 20px;
-                background-color: var(--color_secondary);
-                .count{
-                    h4{
-                        color: var(--color_white);
-                        span{
-                            color: var(--color_primary_tint);
-                        }
-                    }
-                    h5{
-                        color: var(--color_white);
-                    }
-                }
-            }
-        }
-    }
+.economic {
+	.economic_wrapper {
+		@media (max-width: 767px) {
+			// h2 {
+			// 	font-size: 30px;
+			// }
+		}
+		.economic_info {
+			@media (max-width: 991px) {
+				flex-direction: column;
+				align-items: start;
+				gap: 15px;
+			}
+			.desc {
+				h6 {
+					opacity: 0.8;
+				}
+			}
+			.title {
+				h5 {
+					span {
+						color: #d60029;
+					}
+				}
+			}
+		}
+		.counter {
+			padding: 15px;
+			border-radius: 12px;
+			grid-gap: 15px;
+			background-color: #efe4dc;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+
+			@media (max-width: 767px) {
+				grid-template-columns: 1fr 1fr;
+				padding: 0px;
+				background-color: unset;
+			}
+
+			.box {
+				width: 100%;
+				min-height: 140px;
+				border-radius: 12px;
+				padding: 0 20px;
+				background-color: var(--color_secondary);
+
+				@media (max-width: 767px) {
+					padding: 0 10px;
+				}
+				.count {
+					.counterInfo {
+						display: flex;
+						align-items: center;
+						gap: 5px;
+
+						@media (max-width: 991px) {
+							span {
+								font-size: 28px;
+							}
+						}
+					}
+					h4 {
+						color: var(--color_white);
+
+						@media (max-width: 991px) {
+							font-size: 28px;
+						}
+
+						span {
+							color: var(--color_primary_tint);
+						}
+					}
+					h5 {
+						color: var(--color_white);
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,5 +1,5 @@
 // MODULES //
-
+import CountUp from "react-countup";
 // COMPONENTS //
 
 // SECTIONS //
@@ -37,49 +37,195 @@ export default function Economic() {
 						</div>
 					</div>
 
-					<div className={`${styles.counter} f_w`}>
+					<div className={`${styles.counter} `}>
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
-								<h4 className="text_xxl">
-									4.18 <span>M+</span>
-								</h4>
-								<h5 className="text_xs">Active customer</h5>
+								<CountUp
+									start={0}
+									end={4.18}
+									duration={5}
+									separator=" "
+									decimals={2}
+									decimal="."
+									// prefix="EUR "
+									// suffix=""
+									onEnd={() => console.log("Ended! 👏")}
+									onStart={() => console.log("Started! 💨")}
+								>
+									{({ countUpRef, start }) => (
+										<>
+											<div className={`${styles.counterInfo}`}>
+												<h4 className="text_xxl" ref={countUpRef}>
+													4.18
+												</h4>
+												<span className="color_primary text_xxl">M+</span>
+											</div>
+
+											<h5 className="text_xs">Active customer</h5>
+										</>
+									)}
+								</CountUp>
 							</div>
 						</div>
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
-								<h4 className="text_xxl">
+								<CountUp
+									start={0}
+									end={48636}
+									duration={5}
+									separator=","
+									decimals={0}
+									decimal=""
+									// prefix="EUR "
+									// suffix=""
+									onEnd={() => console.log("Ended! 👏")}
+									onStart={() => console.log("Started! 💨")}
+								>
+									{({ countUpRef, start }) => (
+										<>
+											<div className={`${styles.counterInfo}`}>
+												<h4 className="text_xxl" ref={countUpRef}>
+													4.18
+												</h4>
+												<span className="color_primary text_xxl">CR</span>
+											</div>
+
+											<h5 className="text_xs">Loans disbursed</h5>
+										</>
+									)}
+								</CountUp>
+								{/* <h4 className="text_xxl">
 									48,636 <span>CR</span>
 								</h4>
-								<h5 className="text_xs">Loans disbursed</h5>
+								<h5 className="text_xs">Loans disbursed</h5> */}
 							</div>
 						</div>
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
-								<h4 className="text_xxl">
+								<CountUp
+									start={0}
+									end={14149}
+									duration={5}
+									separator=","
+									decimals={0}
+									decimal=""
+									// prefix="EUR "
+									// suffix=""
+									onEnd={() => console.log("Ended! 👏")}
+									onStart={() => console.log("Started! 💨")}
+								>
+									{({ countUpRef, start }) => (
+										<>
+											<div className={`${styles.counterInfo}`}>
+												<h4 className="text_xxl" ref={countUpRef}>
+													4.18
+												</h4>
+												<span className="color_primary text_xxl">CR</span>
+											</div>
+
+											<h5 className="text_xs">AM</h5>
+										</>
+									)}
+								</CountUp>
+								{/* <h4 className="text_xxl">
 									14,149 <span>CR</span>
 								</h4>
-								<h5 className="text_xs">AUM</h5>
+								<h5 className="text_xs">AUM</h5> */}
 							</div>
 						</div>
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
-								<h4 className="text_xxl">
+								<CountUp
+									start={0}
+									end={21500}
+									duration={5}
+									separator=","
+									decimals={0}
+									decimal=""
+									// prefix="EUR "
+									// suffix=""
+									onEnd={() => console.log("Ended! 👏")}
+									onStart={() => console.log("Started! 💨")}
+								>
+									{({ countUpRef, start }) => (
+										<>
+											<div className={`${styles.counterInfo}`}>
+												<h4 className="text_xxl" ref={countUpRef}>
+													4.18
+												</h4>
+												<span className="color_primary text_xxl">+</span>
+											</div>
+
+											<h5 className="text_xs">Total employees</h5>
+										</>
+									)}
+								</CountUp>
+								{/* <h4 className="text_xxl">
 									21,500 <span>+</span>
 								</h4>
-								<h5 className="text_xs">Total employees</h5>
+								<h5 className="text_xs">Total employees</h5> */}
 							</div>
 						</div>
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
-								<h4 className="text_xxl">2000</h4>
-								<h5 className="text_xs">Total branches</h5>
+								<CountUp
+									start={0}
+									end={2000}
+									duration={5}
+									separator=","
+									decimals={0}
+									decimal=""
+									// prefix="EUR "
+									// suffix=""
+									onEnd={() => console.log("Ended! 👏")}
+									onStart={() => console.log("Started! 💨")}
+								>
+									{({ countUpRef, start }) => (
+										<>
+											<div className={`${styles.counterInfo}`}>
+												<h4 className="text_xxl" ref={countUpRef}>
+													4.18
+												</h4>
+												<span className="color_primary text_xxl">+</span>
+											</div>
+
+											<h5 className="text_xs">Total branches</h5>
+										</>
+									)}
+								</CountUp>
+								{/* <h4 className="text_xxl">2000</h4>
+								<h5 className="text_xs">Total branches</h5> */}
 							</div>
 						</div>
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
-								<h4 className="text_xxl">19</h4>
-								<h5 className="text_xs">States</h5>
+								<CountUp
+									start={0}
+									end={19}
+									duration={5}
+									separator=","
+									decimals={0}
+									decimal=""
+									// prefix="EUR "
+									// suffix=""
+									onEnd={() => console.log("Ended! 👏")}
+									onStart={() => console.log("Started! 💨")}
+								>
+									{({ countUpRef, start }) => (
+										<>
+											<div className={`${styles.counterInfo}`}>
+												<h4 className="text_xxl" ref={countUpRef}>
+													19
+												</h4>
+												{/* <span className="color_primary text_xxl">+</span> */}
+											</div>
+
+											<h5 className="text_xs">States</h5>
+										</>
+									)}
+								</CountUp>
+								{/* <h4 className="text_xxl">19</h4>
+								<h5 className="text_xs">States</h5> */}
 							</div>
 						</div>
 					</div>
