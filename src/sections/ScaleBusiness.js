@@ -48,7 +48,7 @@ export default function ScaleBusiness() {
 		},
 	];
 	return (
-		<section className={styles.ScaleBusiness}>
+		<section className={styles.ScaleBusiness} name="OurFinance">
 			<div className="container">
 				<div className={`${styles.BusinessFlex}`}>
 					<div className={`${styles.AccordianBx}`}>

@@ -19,7 +19,7 @@ import styles from "@/styles/sections/Homecontact.module.scss";
 /** Homecontact Section */
 export default function Homecontact() {
 	return (
-		<section className={styles.Homecontact}>
+		<section className={styles.Homecontact} name="ContactUs">
 			<div className="container">
 				<div className={`${styles.mainbox}`}>
 					<div className={`${styles.left}`}>

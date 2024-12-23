@@ -9,6 +9,16 @@ import Button from "../../src/components/Buttons/Button";
 // SECTIONS //
 
 // PLUGINS //
+import * as Scroll from "react-scroll";
+import {
+	Link as ScrollSection,
+	// Button,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from "react-scroll";
 
 // UTILS //
 
@@ -26,6 +36,7 @@ export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [openDropdown, setOpenDropdown] = useState(null);
 
+	let scroll = Scroll.animateScroll;
 	/** Open sidebar on click of hamburger */
 	const toggleSidebar = () => {
 		setOpenSidebar(!openSidebar);
@@ -56,28 +67,76 @@ export default function Header() {
 					{/* Links Wrap */}
 					<div className={`${styles.links_wrap}`}>
 						<div className={styles.links}>
-							<Link href="javascript:void(0)">
+							<ScrollSection
+								onClick={toggleSidebar}
+								activeClass="active"
+								to="About"
+								spy={true}
+								smooth={true}
+								offset={-50}
+								duration={500}
+								className={`${styles.link_title} text_xs`}
+							>
+								About
+							</ScrollSection>
+							{/* <Link href="javascript:void(0)">
 								<div className={`${styles.link_title} text_xs`}>About</div>
-							</Link>
+							</Link> */}
 						</div>
 						<div className={styles.links}>
-							<Link href="javascript:void(0)">
+							<ScrollSection
+								onClick={toggleSidebar}
+								activeClass="active"
+								to="OurImpact"
+								spy={true}
+								smooth={true}
+								offset={-100}
+								duration={500}
+								className={`${styles.link_title} text_xs`}
+							>
+								Our Impact
+							</ScrollSection>
+							{/* <Link href="javascript:void(0)">
+								<div className={`${styles.link_title} text_xs`}>Our Impact</div>
+							</Link> */}
+						</div>
+						<div className={styles.links}>
+							<ScrollSection
+								onClick={toggleSidebar}
+								activeClass="active"
+								to="OurFinance"
+								spy={true}
+								smooth={true}
+								offset={-50}
+								duration={500}
+								className={`${styles.link_title} text_xs`}
+							>
+								Our Finance
+							</ScrollSection>
+							{/* <Link href="javascript:void(0)">
 								<div className={`${styles.link_title} text_xs`}>Our Finance</div>
-							</Link>
+							</Link> */}
 						</div>
 						<div className={styles.links}>
-							<Link href="javascript:void(0)">
+							<ScrollSection
+								onClick={toggleSidebar}
+								activeClass="active"
+								to="DigitallySvatantra"
+								spy={true}
+								smooth={true}
+								offset={-50}
+								duration={500}
+								className={`${styles.link_title} text_xs`}
+							>
+								Digitally Svatantra
+							</ScrollSection>
+							{/* <Link href="javascript:void(0)">
 								<div className={`${styles.link_title} text_xs`}>
 									Digitally Svatantra
 								</div>
-							</Link>
+							</Link> */}
 						</div>
-						<div className={styles.links}>
-							<Link href="javascript:void(0)">
-								<div className={`${styles.link_title} text_xs`}>Our Impact</div>
-							</Link>
-						</div>
-						<div className={styles.links}>
+						{/* <div className={styles.links}>
 							<Link href="javascript:void(0)">
 								<div className={`${styles.link_title} text_xs`}>For Investors</div>
 							</Link>
@@ -86,21 +145,50 @@ export default function Header() {
 							<Link href="javascript:void(0)">
 								<div className={`${styles.link_title} text_xs`}>Careers</div>
 							</Link>
-						</div>
+						</div> */}
 						<div className={styles.links}>
-							<Link href="javascript:void(0)">
+							<ScrollSection
+								onClick={toggleSidebar}
+								activeClass="active"
+								to="Media"
+								spy={true}
+								smooth={true}
+								offset={-100}
+								duration={500}
+								className={`${styles.link_title} text_xs`}
+							>
+								Media
+							</ScrollSection>
+							{/* <Link href="javascript:void(0)">
 								<div className={`${styles.link_title} text_xs`}>Media</div>
-							</Link>
+							</Link> */}
 						</div>
 						<div className={styles.links}>
-							<Link href="javascript:void(0)">
+							<ScrollSection
+								onClick={toggleSidebar}
+								activeClass="active"
+								to="ContactUs"
+								spy={true}
+								smooth={true}
+								offset={-50}
+								duration={500}
+								className={`${styles.link_title} text_xs`}
+							>
 								<Button
 									buttonType="secondary"
 									condition={"white"}
 									link={"#"}
 									title={"Contact Us"}
 								/>
-							</Link>
+							</ScrollSection>
+							{/* <Link href="javascript:void(0)">
+								<Button
+									buttonType="secondary"
+									condition={"white"}
+									link={"#"}
+									title={"Contact Us"}
+								/>
+							</Link> */}
 						</div>
 					</div>
 
