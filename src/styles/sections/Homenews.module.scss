@@ -1,0 +1,279 @@
+@import "../helpers/helpers.scss";
+
+.Homenews {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: var(--color_seashell);
+	position: relative;
+	.mainBox {
+		.category {
+			display: flex;
+			justify-content: space-between;
+			.switchBox {
+				display: flex;
+				align-items: center;
+				background-color: #eaeaea;
+				border-radius: 100px;
+
+				.media {
+					padding: 8px 40px 8px 40px;
+					border-radius: 100px;
+				}
+
+				.award {
+					padding: 8px 40px 8px 40px;
+					border-radius: 100px;
+				}
+
+				.active {
+					background-color: #00783c;
+					color: white;
+				}
+			}
+		}
+
+		.categoryBox {
+			display: flex;
+			gap: 10px;
+			padding-top: 15px;
+			.news {
+				display: flex;
+				align-items: center;
+				padding: 4px 18px 4px 18px;
+				border-radius: 100px;
+				background-color: var(--color_secondary);
+				p {
+					font-size: 10px;
+					color: white;
+				}
+			}
+
+			.date {
+				display: flex;
+				align-items: center;
+				padding: 4px 18px 4px 18px;
+				border-radius: 100px;
+				background-color: var(--color_white);
+
+				p {
+					font-size: 10px;
+					color: black;
+				}
+			}
+		}
+
+		.mainImg {
+			border-radius: 8px;
+			height: 365px;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		.slider {
+			display: flex;
+			justify-content: space-between;
+			gap: 40px;
+
+			@media (max-width: 991px) {
+				flex-direction: column;
+			}
+
+			.box1 {
+				width: 60%;
+
+				@media (max-width: 911px) {
+					width: 96%;
+				}
+
+				.imgBox {
+					position: relative;
+
+					.mainImg {
+						@media (max-width: 991px) {
+							width: 100%;
+						}
+						@media (max-width: 767px) {
+							width: 95%;
+						}
+					}
+
+					.logo {
+						position: absolute;
+						bottom: 10px;
+						right: 10px;
+
+						@media (max-width: 991px) {
+							bottom: 15px;
+							right: 55px;
+						}
+
+						@media (max-width: 767px) {
+							right: 30px;
+						}
+					}
+				}
+			}
+
+			.box2 {
+				width: 37%;
+
+				@media (max-width: 911px) {
+					width: 96%;
+				}
+
+				.imgBox {
+					position: relative;
+
+					.mainImg {
+						@media (max-width: 991px) {
+							width: 100%;
+						}
+
+						@media (max-width: 767px) {
+							width: 95%;
+						}
+					}
+
+					.logo {
+						position: absolute;
+						bottom: 10px;
+						right: 25px;
+
+						@media (max-width: 991px) {
+							right: 45px;
+						}
+
+						@media (max-width: 767px) {
+							right: 30px;
+						}
+					}
+				}
+			}
+		}
+
+		.items {
+			display: flex;
+			// flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+		}
+
+		.awardBox {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			column-gap: 30px;
+
+			@media (max-width: 767px) {
+				grid-template-columns: 1fr;
+				row-gap: 30px;
+			}
+
+			.box1 {
+				width: 370px;
+				// height: 350px;
+
+				@media (max-width: 1024px) {
+					width: 300px;
+				}
+
+				@media (max-width: 991px) {
+					width: 220px;
+				}
+
+				@media (max-width: 767px) {
+					width: 100%;
+				}
+
+				.logoBox {
+					padding: 70px 30px;
+					background-color: white;
+					border-radius: 10px;
+					margin-bottom: 30px;
+
+					@media (max-width: 991px) {
+						padding: 30px 30px;
+					}
+				}
+
+				.dateBox {
+					width: 150px;
+					background-color: #f1f1f1;
+					padding: 5px 10px;
+					border-radius: 100px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-bottom: 15px;
+					p {
+						font-size: 10px;
+						font-weight: 400;
+					}
+				}
+
+				p {
+					@media (max-width: 991px) {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		:global(.swiper-slide-active) {
+			@media (max-width: 767px) {
+				width: 400px !important;
+			}
+		}
+
+		:global(.swiper-pagination-progressbar) {
+			top: unset;
+			width: 87%;
+			height: 2px;
+
+			@media (max-width: 991px) {
+				width: 82%;
+			}
+
+			@media (max-width: 767px) {
+				width: 70%;
+				left: 12px;
+			}
+		}
+
+		:global(.swiper-pagination-progressbar-fill) {
+			background-color: #000000;
+		}
+
+		:global(#customNext) {
+			padding: 10px;
+			border-radius: 50%;
+			border: none;
+			position: absolute;
+			right: 42px;
+			background-color: transparent;
+			border: 2px solid #dddddd;
+			bottom: -35px;
+
+			@media (max-width: 1024px) {
+				right: 20px;
+				background-color: transparent;
+				border: 2px solid #dddddd;
+				bottom: -34px;
+			}
+		}
+
+		:global(#customPrev) {
+			padding: 10px;
+			border-radius: 50%;
+			border: none;
+			position: absolute;
+			right: 85px;
+			background-color: transparent;
+			border: 2px solid #dddddd;
+			bottom: -34px;
+
+			@media (max-width: 1024px) {
+				right: 70px;
+			}
+		}
+	}
+}

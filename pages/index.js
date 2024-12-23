@@ -4,6 +4,8 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
+import Homecontact from "@/sections/Homecontact";
+import Homenews from "@/sections/Homenews";
 
 // SECTIONS //
 import ScaleBusiness from "../src/sections/ScaleBusiness";
@@ -35,14 +37,17 @@ export default function HomePage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.HomePage}`}>
+
+			<main className={`${styles.HomePage} `}>
 				{/* <h2>This is ting base next.js template</h2> */}
-				<HomeBanner />
+				{/* <HomeBanner />
 				<Svatantra />
 				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra />
-				<StoriesSuccess />
+				<StoriesSuccess /> */}
+				<Homenews />
+				<Homecontact />
 			</main>
 			{/* Page Content ends here */}
 

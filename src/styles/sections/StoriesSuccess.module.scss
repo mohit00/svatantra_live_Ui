@@ -1,3 +1,93 @@
 @import "../helpers/helpers.scss";
-			
-.StoriesSuccess{}
+
+.StoriesSuccess {
+	padding: 60px 0;
+	.StoriesFlex {
+		display: flex;
+		justify-content: space-between;
+		@media screen and (max-width: 992px) {
+			flex-direction: column;
+			gap: 50px;
+		}
+		.StoriesBx {
+			width: 68%;
+			@media screen and (max-width: 1199px) {
+				width: 60%;
+			}
+			@media screen and (max-width: 992px) {
+				width: 100%;
+			}
+			.StoriesSlider {
+				padding: 60px 50px;
+				border-radius: 10px;
+				background-color: #2859a9;
+				background-image: url(../../../public/img/home/SliderBgImg.png);
+				background-position: right;
+				background-repeat: no-repeat;
+				@media screen and (max-width: 767px) {
+					// padding: 25px 25px 50px;
+					padding: 25px;
+					background-size: 60%;
+					background-position: bottom right;
+				}
+				.SliderItem {
+					.quote {
+						padding: 20px 0 50px;
+						@media screen and (max-width: 767px) {
+							padding: 17px 0 14px;
+						}
+					}
+					.Name {
+						font-size: 20px;
+						line-height: 1.2;
+					}
+				}
+			}
+			.arrowSection {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: flex-end;
+				button {
+					border: 0;
+					background-color: transparent;
+				}
+			}
+		}
+		.FollowBx {
+			width: 28%;
+			@media screen and (max-width: 1199px) {
+				width: 37%;
+			}
+			@media screen and (max-width: 992px) {
+				width: 100%;
+			}
+			.SwiperSlide {
+				padding-bottom: 40px;
+				.SliderItem {
+					padding: 20px;
+					border-radius: 10px;
+					background-color: #ffffff;
+					.SliderImgBx {
+						img {
+							width: 100%;
+							border-radius: 8px;
+						}
+					}
+					.SliderContent {
+						.SliderTopFlex {
+							display: flex;
+							align-items: center;
+							gap: 10px;
+							padding: 12px 0 15px;
+						}
+						.desc {
+							font-size: 14px;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+		}
+	}
+}

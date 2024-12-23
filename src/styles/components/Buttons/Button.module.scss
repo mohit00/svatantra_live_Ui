@@ -33,11 +33,13 @@
 
 	// Filled Secondary Button
 	&.btn_secondary {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 		background-color: var(--color_secondary);
 		color: var(--color_white);
 
 		&:hover {
-			background-color: var(--color_secondary_light);
 		}
 	}
 
