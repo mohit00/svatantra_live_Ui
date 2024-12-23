@@ -55,12 +55,32 @@
                     width: 90%;
                     margin-top: -15px;
                     background-color: var(--color_primary_tint);
+                    .title{
+                        h5{
+                            color: #014C26;
+                        }
+                    }
+                    .desc{
+                        h6{
+                            color: #014C26; 
+                        }
+                    }
                 }
                 &.box_3{
                     width: 80%;
                     margin-top: -15px;
                     padding-bottom: 0;
                     background-color: var(--color_primary);
+                    .title{
+                        h5{
+                            color: #80CD66;
+                        } 
+                    }
+                    .desc{
+                        h6{
+                            color: #80CD66; 
+                        }
+                    }
                 }
             }
         }

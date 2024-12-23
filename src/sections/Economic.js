@@ -31,7 +31,7 @@ export default function Economic() {
 							</h6>
 						</div>
 						<div className={styles.title}>
-							<h5 className="text_reg">
+							<h5 className="text_reg opacity_80">
 								<span>*Crisil</span> A - Stable Rating
 							</h5>
 						</div>
