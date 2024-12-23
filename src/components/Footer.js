@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 // MODULES //
 
 // COMPONENTS //
@@ -117,7 +118,9 @@ export default function Footer() {
 						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
 					</div>
 
-					<img src={ting.src} alt="tinglogo" />
+					<a href="https://www.ting.in/" target="_blank">
+						<img src={ting.src} alt="tinglogo" />
+					</a>
 				</div>
 			</div>
 		</footer>
