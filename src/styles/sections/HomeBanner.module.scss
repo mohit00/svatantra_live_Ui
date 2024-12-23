@@ -6,16 +6,19 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-image: url("/img/home/banner_bg.jpg");
+	// padding-top: 100px;
 	.banner {
 		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 30px;
+		position: relative;
 
 		@media (max-width: 767px) {
 			flex-direction: column;
 			justify-content: unset;
-			padding-top: 100px;
+			padding-top: 50px;
 		}
 
 		.image {
@@ -67,7 +70,12 @@
 				}
 			}
 		}
+
+		.scroll {
+			color: #00000080;
+		}
 	}
+
 	.line_1 {
 		bottom: 0;
 		left: 0;

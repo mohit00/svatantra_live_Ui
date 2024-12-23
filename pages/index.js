@@ -45,7 +45,6 @@ export default function HomePage() {
 				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra />
-				<Homenews />
 				<StoriesSuccess />
 				<Homenews />
 				<Homecontact />
