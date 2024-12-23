@@ -45,7 +45,8 @@
 				min-height: 140px;
 				border-radius: 12px;
 				padding: 0 20px;
-				background-color: #4376BA;;
+				background: rgb(82,134,195);
+				background: linear-gradient(120deg, rgba(82,134,195,1) 0%, rgba(40,89,169,1) 43%);
 				// background-color: var(--color_secondary);
 
 				@media (max-width: 767px) {

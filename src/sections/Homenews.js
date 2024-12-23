@@ -70,6 +70,14 @@ export default function Homenews() {
 								<p className="text_reg f_w_m">Awards</p>
 							</div>
 						</div>
+						<div className={`${styles.BtnBx}`}>
+							<Button
+								buttonType="secondary"
+								condition={"white"}
+								link={"#"}
+								title={"View More"}
+							/>
+						</div>
 					</div>
 
 					<div>

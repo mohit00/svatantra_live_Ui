@@ -61,9 +61,7 @@ export default function Footer() {
 						<hr className={`${styles.secondBreakLine}`} />
 
 						<div>
-							<h1 className="text_reg f_w_s_b color_white pb_10">
-								Signup for our newsletter
-							</h1>
+							<h1 className="text_reg color_white pb_10">Signup for our newsletter</h1>
 							<div className={`${styles.emailBox}`}>
 								<input
 									type="email"
