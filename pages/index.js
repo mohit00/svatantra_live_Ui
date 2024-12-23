@@ -34,19 +34,19 @@ export default function HomePage() {
 			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
 
 			{/* Header */}
-			{/* <Header /> */}
+			<Header />
 
 			{/* Page Content starts here */}
 
 			<main className={`${styles.HomePage} `}>
 				{/* <h2>This is ting base next.js template</h2> */}
-				{/* <HomeBanner /> */}
+				<HomeBanner />
 				<Svatantra />
 				<Economic />
-				{/* <ScaleBusiness /> */}
-				{/* <DigitallySvatantra /> */}
+				<ScaleBusiness />
+				<DigitallySvatantra />
 				{/* <StoriesSuccess /> */}
-				{/* <Homenews /> */}
+				<Homenews />
 				{/* <Homecontact /> */}
 			</main>
 			{/* Page Content ends here */}
