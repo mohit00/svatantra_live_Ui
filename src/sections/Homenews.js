@@ -70,14 +70,6 @@ export default function Homenews() {
 								<p className="text_reg f_w_m">Awards</p>
 							</div>
 						</div>
-						<div className={`${styles.BtnBx} ${styles.hiddenButton}`}>
-							<Button
-								buttonType="secondary"
-								condition={"white"}
-								link={"#"}
-								title={"View More"}
-							/>
-						</div>
 					</div>
 
 					<div>
@@ -85,7 +77,6 @@ export default function Homenews() {
 							modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 							spaceBetween={60}
 							slidesPerView={1.6}
-							autoWidth={true}
 							loop={true}
 							// autoplay={{
 							// 	delay: 5000,
@@ -115,13 +106,13 @@ export default function Homenews() {
 									slidesPerView: 1,
 								},
 								1024: {
-									slidesPerView: "auto",
+									slidesPerView: 1,
 								},
 							}}
 						>
 							{activeTab == "media" ? (
 								<>
-									{/* <SwiperSlide>
+									<SwiperSlide>
 										<div className={`${styles.slider}`}>
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.imgBox}`}>
@@ -257,160 +248,6 @@ export default function Homenews() {
 													PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
 												</p>
 											</div>
-										</div>
-									</SwiperSlide> */}
-									<SwiperSlide>
-										<div className={`${styles.box1}`}>
-											<div className={`${styles.imgBox}`}>
-												<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
-												<img src={box11.src} alt="logo" className={`${styles.logo}`} />
-											</div>
-
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>News</p>
-												</div>
-												<div className={`${styles.date}`}>
-													<p>5 November 2024</p>
-												</div>
-											</div>
-
-											<p className="text_reg f_w_m pt_10">
-												Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s Svatantra
-												Microfin
-											</p>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.box2}`}>
-											<div className={`${styles.imgBox}`}>
-												<picture>
-													<source
-														srcSet={box222.src}
-														media="(max-width:911px)"
-														alt="Founder mobileImage"
-													/>
-													<img
-														// ref={img2}
-														src={box2.src}
-														className={`${styles.mainImg}`}
-														alt="banner2"
-														// className="img-responsive"
-													/>
-												</picture>
-
-												<img src={box22.src} alt="logo" className={`${styles.logo}`} />
-											</div>
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>News</p>
-												</div>
-												<div className={`${styles.date}`}>
-													<p>5 November 2024</p>
-												</div>
-											</div>
-											<p className="text_reg f_w_m pt_10">
-												PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
-											</p>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.box2}`}>
-											<div className={`${styles.imgBox}`}>
-												<picture>
-													<source
-														srcSet={box222.src}
-														media="(max-width:911px)"
-														alt="Founder mobileImage"
-													/>
-													<img
-														// ref={img2}
-														src={box2.src}
-														className={`${styles.mainImg}`}
-														alt="banner2"
-														// className="img-responsive"
-													/>
-												</picture>
-
-												<img src={box22.src} alt="logo" className={`${styles.logo}`} />
-											</div>
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>News</p>
-												</div>
-												<div className={`${styles.date}`}>
-													<p>5 November 2024</p>
-												</div>
-											</div>
-											<p className="text_reg f_w_m pt_10">
-												PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
-											</p>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.box2}`}>
-											<div className={`${styles.imgBox}`}>
-												<picture>
-													<source
-														srcSet={box222.src}
-														media="(max-width:911px)"
-														alt="Founder mobileImage"
-													/>
-													<img
-														// ref={img2}
-														src={box2.src}
-														className={`${styles.mainImg}`}
-														alt="banner2"
-														// className="img-responsive"
-													/>
-												</picture>
-
-												<img src={box22.src} alt="logo" className={`${styles.logo}`} />
-											</div>
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>News</p>
-												</div>
-												<div className={`${styles.date}`}>
-													<p>5 November 2024</p>
-												</div>
-											</div>
-											<p className="text_reg f_w_m pt_10">
-												PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
-											</p>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.box2}`}>
-											<div className={`${styles.imgBox}`}>
-												<picture>
-													<source
-														srcSet={box222.src}
-														media="(max-width:911px)"
-														alt="Founder mobileImage"
-													/>
-													<img
-														// ref={img2}
-														src={box2.src}
-														className={`${styles.mainImg}`}
-														alt="banner2"
-														// className="img-responsive"
-													/>
-												</picture>
-
-												<img src={box22.src} alt="logo" className={`${styles.logo}`} />
-											</div>
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>News</p>
-												</div>
-												<div className={`${styles.date}`}>
-													<p>5 November 2024</p>
-												</div>
-											</div>
-											<p className="text_reg f_w_m pt_10">
-												PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
-											</p>
 										</div>
 									</SwiperSlide>
 								</>
