@@ -42,7 +42,7 @@ export default function Economic() {
 						<div className={`${styles.box} f_r_a_center`}>
 							<div className={`${styles.count}`}>
 								<CountUp
-									start={0}
+									start={4.1}
 									end={4.18}
 									duration={5}
 									separator=" "
