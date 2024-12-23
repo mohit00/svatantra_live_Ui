@@ -144,9 +144,17 @@ section {
 	max-width: 1300px;
 }
 
-.opacity_80{
+.opacity_80 {
 	opacity: 0.8;
 }
-.opacity_70{
+.opacity_70 {
 	opacity: 0.7;
+}
+.swiper-slide {
+	&:first-child {
+		width: 60% !important;
+	}
+	&:nth-child(1) {
+		width: 45% !important;
+	}
 }
