@@ -40,6 +40,8 @@ import advent from "../../public/img/advent.png";
 import PEOS from "../../public/img/PEOS.png";
 import business from "../../public/img/Business.png";
 import newBharat from "../../public/img/newbharat.jpg";
+import bestwork from "../../public/img/bestworkplace.jpg";
+import finance from "../../public/img/finance.png";
 // DATA //
 
 /** Homenews Section */
@@ -260,7 +262,7 @@ export default function Homenews() {
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.logoBox}`}>
 													<img
-														src={nbfc.src}
+														src={newBharat.src}
 														alt="awardLogo"
 														className={`${styles.awardLogo}`}
 													/>
@@ -280,7 +282,7 @@ export default function Homenews() {
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.logoBox}`}>
 													<img
-														src={workplace.src}
+														src={bestwork.src}
 														alt="awardLogo"
 														className={`${styles.awardLogo}`}
 													/>
@@ -297,7 +299,7 @@ export default function Homenews() {
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.logoBox}`}>
 													<img
-														src={awardds.src}
+														src={finance.src}
 														alt="awardLogo"
 														className={`${styles.awardLogo}`}
 													/>
