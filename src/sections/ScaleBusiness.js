@@ -54,6 +54,7 @@ export default function ScaleBusiness() {
 		"gujarat",
 		"madhyapradesh",
 		"rajasthan",
+		"jharkhand",
 		"haryana",
 		"punjab",
 		"uttarakhand",
@@ -62,6 +63,12 @@ export default function ScaleBusiness() {
 		"assam",
 		"arunachalpradesh",
 		"kerala",
+		"chhattisgarh",
+		"odisha",
+		"tripura",
+		"karnataka",
+		"tamilnadu",
+		"westbengal",
 	];
 	let index = useRef(0);
 	const intervalRef = useRef(null);
@@ -1080,7 +1087,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter3_b_35_11)">
+							<g
+								filter="url(#filter3_b_35_11)"
+								id="gujarat"
+								className={`location ${activeLocation === "gujarat" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter4_b_35_11)">
 									<path
 										d="M62 219.453C62 218.098 63.0984 217 64.4534 217H161.677V240.103C161.677 241.458 160.578 242.556 159.223 242.556H62V219.453Z"
@@ -1099,7 +1110,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter6_b_35_11)">
+							<g
+								filter="url(#filter6_b_35_11)"
+								id="rajasthan"
+								className={`location ${
+									activeLocation === "rajasthan" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter7_b_35_11)">
 									<path
 										d="M98 162.453C98 161.098 99.0984 160 100.453 160H197.677V183.103C197.677 184.458 196.578 185.556 195.223 185.556H98V162.453Z"
@@ -1118,7 +1135,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter9_b_35_11)">
+							<g
+								filter="url(#filter9_b_35_11)"
+								id="jharkhand"
+								className={`location ${
+									activeLocation === "jharkhand" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter10_b_35_11)">
 									<path
 										d="M270 210.453C270 209.098 271.098 208 272.453 208H369.677V231.103C369.677 232.458 368.578 233.556 367.223 233.556H270V210.453Z"
@@ -1137,7 +1160,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter12_b_35_11)">
+							<g
+								filter="url(#filter12_b_35_11)"
+								id="madhyapradesh"
+								className={`location ${
+									activeLocation === "madhyapradesh" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter13_b_35_11)">
 									<path
 										d="M169 219.453C169 218.098 170.098 217 171.453 217H287V240.547C287 241.902 285.902 243 284.547 243H169V219.453Z"
@@ -1156,7 +1185,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter15_b_35_11)">
+							<g
+								filter="url(#filter15_b_35_11)"
+								id="chhattisgarh"
+								className={`location ${
+									activeLocation === "chhattisgarh" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter16_b_35_11)">
 									<path
 										d="M237 247.453C237 246.098 238.098 245 239.453 245H336.677V268.103C336.677 269.458 335.578 270.556 334.223 270.556H237V247.453Z"
@@ -1175,7 +1210,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter18_b_35_11)">
+							<g
+								filter="url(#filter18_b_35_11)"
+								id="bihar"
+								className={`location ${activeLocation === "bihar" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter19_b_35_11)">
 									<path
 										d="M294 178.453C294 177.098 295.098 176 296.453 176H393.677V199.103C393.677 200.458 392.578 201.556 391.223 201.556H294V178.453Z"
@@ -1194,7 +1233,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter21_b_35_11)">
+							<g
+								filter="url(#filter21_b_35_11)"
+								id="odisha"
+								className={`location ${activeLocation === "odisha" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter22_b_35_11)">
 									<path
 										d="M274 279.453C274 278.098 275.098 277 276.453 277H373.677V300.103C373.677 301.458 372.578 302.556 371.223 302.556H274V279.453Z"
@@ -1213,7 +1256,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter24_b_35_11)">
+							<g
+								filter="url(#filter24_b_35_11)"
+								id="assam"
+								className={`location ${activeLocation === "assam" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter25_b_35_11)">
 									<path
 										d="M394 149.453C394 148.098 395.098 147 396.453 147H493.677V170.103C493.677 171.458 492.578 172.556 491.223 172.556H394V149.453Z"
@@ -1232,7 +1279,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter27_b_35_11)">
+							<g
+								filter="url(#filter27_b_35_11)"
+								id="tripura"
+								className={`location ${activeLocation === "tripura" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter28_b_35_11)">
 									<path
 										d="M383 197.453C383 196.098 384.098 195 385.453 195H482.677V218.103C482.677 219.458 481.578 220.556 480.223 220.556H383V197.453Z"
@@ -1251,7 +1302,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter30_b_35_11)">
+							<g
+								filter="url(#filter30_b_35_11)"
+								id="arunachalpradesh"
+								className={`location ${
+									activeLocation === "arunachalpradesh" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter31_b_35_11)">
 									<path
 										d="M418 114.453C418 113.098 419.098 112 420.453 112H549V135.547C549 136.902 547.902 138 546.547 138H418V114.453Z"
@@ -1270,7 +1327,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter33_b_35_11)">
+							<g
+								filter="url(#filter33_b_35_11)"
+								id="karnataka"
+								className={`location ${
+									activeLocation === "karnataka" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter34_b_35_11)">
 									<path
 										d="M128 369.453C128 368.098 129.098 367 130.453 367H227.677V390.103C227.677 391.458 226.578 392.556 225.223 392.556H128V369.453Z"
@@ -1289,7 +1352,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter36_b_35_11)">
+							<g
+								filter="url(#filter36_b_35_11)"
+								id="punjab"
+								className={`location ${activeLocation === "punjab" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter37_b_35_11)">
 									<path
 										d="M127 90.4534C127 89.0984 128.098 88 129.453 88H226.677V111.103C226.677 112.458 225.578 113.556 224.223 113.556H127V90.4534Z"
@@ -1308,7 +1375,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter39_b_35_11)">
+							<g
+								filter="url(#filter39_b_35_11)"
+								id="tamilnadu"
+								className={`location ${
+									activeLocation === "tamilnadu" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter40_b_35_11)">
 									<path
 										d="M170 411.453C170 410.098 171.098 409 172.453 409H269.677V432.103C269.677 433.458 268.578 434.556 267.223 434.556H170V411.453Z"
@@ -1327,7 +1400,11 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter42_b_35_11)">
+							<g
+								filter="url(#filter42_b_35_11)"
+								id="kerala"
+								className={`location ${activeLocation === "kerala" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter43_b_35_11)">
 									<path
 										d="M141 454.453C141 453.098 142.098 452 143.453 452H240.677V475.103C240.677 476.458 239.578 477.556 238.223 477.556H141V454.453Z"
@@ -1346,7 +1423,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter45_b_35_11)">
+							<g
+								filter="url(#filter45_b_35_11)"
+								id="uttarakhand"
+								className={`location ${
+									activeLocation === "uttarakhand" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter46_b_35_11)">
 									<path
 										d="M198 90.4534C198 89.0984 199.098 88 200.453 88H297.677V111.103C297.677 112.458 296.578 113.556 295.223 113.556H198V90.4534Z"
@@ -1365,7 +1448,11 @@ export default function ScaleBusiness() {
 									/>
 								</g>
 							</g>
-							<g filter="url(#filter48_b_35_11)">
+							<g
+								filter="url(#filter48_b_35_11)"
+								id="haryana"
+								className={`location ${activeLocation === "haryana" ? "visible" : ""}`}
+							>
 								<g filter="url(#filter49_b_35_11)">
 									<path
 										d="M142 123.453C142 122.098 143.098 121 144.453 121H241.677V144.103C241.677 145.458 240.578 146.556 239.223 146.556H142V123.453Z"
@@ -1384,7 +1471,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter51_b_35_11)">
+							<g
+								filter="url(#filter51_b_35_11)"
+								id="uttarpradesh"
+								className={`location ${
+									activeLocation === "uttarpradesh" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter52_b_35_11)">
 									<path
 										d="M214 162.453C214 161.098 215.098 160 216.453 160H313.677V183.103C313.677 184.458 312.578 185.556 311.223 185.556H214V162.453Z"
@@ -1403,7 +1496,13 @@ export default function ScaleBusiness() {
 									fill="white"
 								/>
 							</g>
-							<g filter="url(#filter54_b_35_11)">
+							<g
+								filter="url(#filter54_b_35_11)"
+								id="westbengal"
+								className={`location ${
+									activeLocation === "westbengal" ? "visible" : ""
+								}`}
+							>
 								<g filter="url(#filter55_b_35_11)">
 									<path
 										d="M323 231.453C323 230.098 324.098 229 325.453 229H422.677V252.103C422.677 253.458 421.578 254.556 420.223 254.556H323V231.453Z"
