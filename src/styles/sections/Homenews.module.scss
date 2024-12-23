@@ -86,7 +86,7 @@
 			}
 
 			.box1 {
-				width: 60%;
+				width: 100%;
 
 				@media (max-width: 911px) {
 					width: 96%;
@@ -103,11 +103,17 @@
 							width: 95%;
 						}
 					}
+
+					.logo {
+						position: absolute;
+						bottom: 20px;
+						right: 20px;
+					}
 				}
 			}
 
 			.box2 {
-				width: 37%;
+				// width: 0%;
 
 				@media (max-width: 911px) {
 					width: 96%;
@@ -117,6 +123,8 @@
 					position: relative;
 
 					.mainImg {
+						width: 100%;
+						object-fit: cover;
 						@media (max-width: 991px) {
 							width: 100%;
 						}
@@ -124,6 +132,12 @@
 						@media (max-width: 767px) {
 							width: 95%;
 						}
+					}
+
+					.logo {
+						position: absolute;
+						bottom: 15px;
+						right: 25px;
 					}
 				}
 			}
@@ -137,14 +151,14 @@
 		}
 
 		.awardBox {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			column-gap: 30px;
+			// display: grid;
+			// grid-template-columns: 1fr 1fr 1fr;
+			// column-gap: 30px;
 
-			@media (max-width: 767px) {
-				grid-template-columns: 1fr;
-				row-gap: 30px;
-			}
+			// @media (max-width: 767px) {
+			// 	grid-template-columns: 1fr;
+			// 	row-gap: 30px;
+			// }
 
 			.box1 {
 				width: 370px;
@@ -230,7 +244,7 @@
 			background-color: transparent;
 			border: 2px solid #dddddd;
 			bottom: -35px;
-
+			cursor: pointer;
 			@media (max-width: 1024px) {
 				right: 20px;
 				background-color: transparent;
@@ -248,7 +262,7 @@
 			background-color: transparent;
 			border: 2px solid #dddddd;
 			bottom: -34px;
-
+			cursor: pointer;
 			@media (max-width: 1024px) {
 				right: 70px;
 			}
