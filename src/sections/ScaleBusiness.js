@@ -2835,7 +2835,6 @@ export default function ScaleBusiness() {
 								</filter>
 							</defs>
 						</svg>{" "}
-						*/}
 					</div>
 				</div>
 			</div>
