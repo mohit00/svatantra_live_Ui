@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable react/jsx-no-target-blank */
 // MODULES //
+import { useRef, useState } from "react";
 
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import { useForm } from "react-hook-form";
 import * as Scroll from "react-scroll";
 import {
 	Link as ScrollSection,
@@ -34,6 +36,59 @@ import ting from "../../public/img/footer/ting.svg";
 
 /** Footer Component */
 export default function Footer() {
+	const formRef = useRef();
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm({ mode: "onChange" });
+	const [loading, setLoading] = useState(false);
+	const [isSubmited, setIsSubmited] = useState(false);
+
+	/** resend */
+	async function SendEmailViaSend({ body }) {
+		try {
+			const res = await fetch("/api/sendEmail", {
+				method: "POST",
+				body: JSON.stringify({ ...body }),
+			});
+			const data = await res.json();
+			return data;
+		} catch (error) {
+			console.error("SendEmailViaSend failed", error);
+			return null; // Return null or any value to indicate failure
+		}
+	}
+
+	/** Function to handle submit */
+	const onSubmit = async (data, e) => {
+		const formdata = {
+			name: data.name,
+			email: data.email,
+			number: data.number,
+			message: data.message,
+		};
+		setLoading(true);
+
+		// await SendEmailViaSend({ body: { ...formdata } });
+		// reset();
+		// setIsSubmited(true);
+		// setTimeout(() => {
+		// 	setIsSubmited(false);
+		// }, 5000);
+
+		// Use Promise.allSettled to ensure both functions run, even if one fails
+		const result = await SendEmailViaSend({ body: { ...formdata } });
+		console.log(result);
+
+		reset();
+		setIsSubmited(true);
+		setTimeout(() => {
+			setIsSubmited(false);
+		}, 5000);
+		setLoading(false);
+	};
 	return (
 		<footer className={`${styles.main_footer}`}>
 			{/* <p>© {new Date().getFullYear()} Copyright</p> */}
@@ -146,16 +201,36 @@ export default function Footer() {
 
 						<div>
 							<h1 className="text_reg color_white pb_10">Signup for our newsletter</h1>
-							<div className={`${styles.emailBox}`}>
-								<input
-									type="email"
-									placeholder="Enter your email here..."
-									className={`${styles.inputField}`}
-								/>
-								<div className={`${styles.arrowBox}`}>
-									<img src={footerarrow.src} alt="arrow" className={`${styles.arrow}`} />
+							<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+								<div className={`${styles.emailBox}`}>
+									<input
+										placeholder="Enter your email here..."
+										className={`${styles.inputField}`}
+										type="email"
+										id="email"
+										name="email"
+										{...register("email", {
+											required: true,
+											pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+										})}
+									/>
+									{errors.email && errors.email.type == "required" && (
+										<label className="error">This field is required</label>
+									)}
+									{errors.email && errors.email.type == "pattern" && (
+										<label className="error_footer">Enter valid email</label>
+									)}
+									<div className={`${styles.arrowBox}`}>
+										<button type="submit">
+											<img
+												src={footerarrow.src}
+												alt="arrow"
+												className={`${styles.arrow}`}
+											/>
+										</button>
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 					{/* row2 */}

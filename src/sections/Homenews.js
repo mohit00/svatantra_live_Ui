@@ -46,8 +46,8 @@ export default function Homenews() {
 
 	const mediaSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
-		spaceBetween: 20, // Adjust spacing between slides
-		slidesPerView: 3, // Show 3 slides fully
+		spaceBetween: 20, // Default spacing between slides
+		slidesPerView: 1, // Default: Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -63,12 +63,16 @@ export default function Homenews() {
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile view
-				spaceBetween: 0,
+				slidesPerView: 1, // Mobile screens: 1 slide visible
+				spaceBetween: 10, // Reduced spacing for smaller screens
+			},
+			991: {
+				slidesPerView: 2, // Medium screens: 2 slides visible
+				spaceBetween: 20, // Adjust spacing for tablets
 			},
 			1024: {
-				slidesPerView: 3, // Tablet and desktop view
-				spaceBetween: 30, // Increase spacing if needed for larger screens
+				slidesPerView: 3, // Large screens: 3 slides visible
+				spaceBetween: 30, // Increased spacing for larger screens
 			},
 		},
 	};
@@ -76,7 +80,7 @@ export default function Homenews() {
 	const awardSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Adjust spacing between slides
-		slidesPerView: 3, // Show 3 slides fully
+		slidesPerView: 1, // Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -92,8 +96,11 @@ export default function Homenews() {
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile view
-				spaceBetween: 0,
+				slidesPerView: 1, // Mobile screens
+				spaceBetween: 10, // Adjust spacing for mobile if needed
+			},
+			991: {
+				slidesPerView: 3, // iPad Air portrait mode (820px width)
 			},
 			1024: {
 				slidesPerView: 3, // Tablet and desktop view
@@ -129,9 +136,9 @@ export default function Homenews() {
 					</div>
 
 					<div>
-						<Swiper {...mediaSettings}>
-							{activeTab == "media" ? (
-								<>
+						{activeTab == "media" ? (
+							<>
+								<Swiper {...mediaSettings}>
 									<SwiperSlide>
 										<div className={`${styles.slider}`}>
 											<div className={`${styles.box1}`}>
@@ -225,82 +232,83 @@ export default function Homenews() {
 											</div>
 										</div>
 									</SwiperSlide>
-								</>
-							) : (
-								<>
-									<Swiper {...awardSettings}>
-										<SwiperSlide>
-											<div className={`${styles.awardBox}`}>
-												<div className={`${styles.box1}`}>
-													<div className={`${styles.logoBox}`}>
-														<img
-															src={award1.src}
-															alt="awardLogo"
-															className={`${styles.awardLogo}`}
-														/>
-													</div>
-													<div className={`${styles.dateBox}`}>
-														<p>5 November 2024</p>
-													</div>
-													<p className="text_reg">GPTW Certified 2020 and 2022</p>
+								</Swiper>
+							</>
+						) : (
+							<>
+								<Swiper {...awardSettings}>
+									<SwiperSlide>
+										<div className={`${styles.awardBox}`}>
+											<div className={`${styles.box1}`}>
+												<div className={`${styles.logoBox}`}>
+													<img
+														src={award1.src}
+														alt="awardLogo"
+														className={`${styles.awardLogo}`}
+													/>
 												</div>
-											</div>
-										</SwiperSlide>
-										<SwiperSlide>
-											<div className={`${styles.awardBox}`}>
-												<div className={`${styles.box1}`}>
-													<div className={`${styles.logoBox}`}>
-														<img
-															src={award1.src}
-															alt="awardLogo"
-															className={`${styles.awardLogo}`}
-														/>
-													</div>
-													<div className={`${styles.dateBox}`}>
-														<p>5 November 2024</p>
-													</div>
-													<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												<div className={`${styles.dateBox}`}>
+													<p>5 November 2024</p>
 												</div>
+												<p className="text_reg">GPTW Certified 2020 and 2022</p>
 											</div>
-										</SwiperSlide>
-										<SwiperSlide>
-											<div className={`${styles.awardBox}`}>
-												<div className={`${styles.box1}`}>
-													<div className={`${styles.logoBox}`}>
-														<img
-															src={award1.src}
-															alt="awardLogo"
-															className={`${styles.awardLogo}`}
-														/>
-													</div>
-													<div className={`${styles.dateBox}`}>
-														<p>5 November 2024</p>
-													</div>
-													<p className="text_reg">GPTW Certified 2020 and 2022</p>
+										</div>
+									</SwiperSlide>
+									<SwiperSlide>
+										<div className={`${styles.awardBox}`}>
+											<div className={`${styles.box1}`}>
+												<div className={`${styles.logoBox}`}>
+													<img
+														src={award1.src}
+														alt="awardLogo"
+														className={`${styles.awardLogo}`}
+													/>
 												</div>
-											</div>
-										</SwiperSlide>
-										<SwiperSlide>
-											<div className={`${styles.awardBox}`}>
-												<div className={`${styles.box1}`}>
-													<div className={`${styles.logoBox}`}>
-														<img
-															src={award1.src}
-															alt="awardLogo"
-															className={`${styles.awardLogo}`}
-														/>
-													</div>
-													<div className={`${styles.dateBox}`}>
-														<p>5 November 2024</p>
-													</div>
-													<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												<div className={`${styles.dateBox}`}>
+													<p>5 November 2024</p>
 												</div>
+												<p className="text_reg">GPTW Certified 2020 and 2022</p>
 											</div>
-										</SwiperSlide>
-									</Swiper>
-								</>
-							)}
-						</Swiper>
+										</div>
+									</SwiperSlide>
+									<SwiperSlide>
+										<div className={`${styles.awardBox}`}>
+											<div className={`${styles.box1}`}>
+												<div className={`${styles.logoBox}`}>
+													<img
+														src={award1.src}
+														alt="awardLogo"
+														className={`${styles.awardLogo}`}
+													/>
+												</div>
+												<div className={`${styles.dateBox}`}>
+													<p>5 November 2024</p>
+												</div>
+												<p className="text_reg">GPTW Certified 2020 and 2022</p>
+											</div>
+										</div>
+									</SwiperSlide>
+									<SwiperSlide>
+										<div className={`${styles.awardBox}`}>
+											<div className={`${styles.box1}`}>
+												<div className={`${styles.logoBox}`}>
+													<img
+														src={award1.src}
+														alt="awardLogo"
+														className={`${styles.awardLogo}`}
+													/>
+												</div>
+												<div className={`${styles.dateBox}`}>
+													<p>5 November 2024</p>
+												</div>
+												<p className="text_reg">GPTW Certified 2020 and 2022</p>
+											</div>
+										</div>
+									</SwiperSlide>
+								</Swiper>
+							</>
+						)}
+
 						<div className={`${styles.items}`}>
 							<div
 								className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
@@ -319,6 +327,16 @@ export default function Homenews() {
 					</div>
 				</div>
 			</div>
+			{/* <div className="container">
+				<div className={`${styles.BtnBx} pt_20`}>
+					<Button
+						buttonType="secondary"
+						condition={"white"}
+						link={"#"}
+						title={"Grow More"}
+					/>
+				</div>
+			</div> */}
 		</section>
 	);
 }
