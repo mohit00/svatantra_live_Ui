@@ -29,6 +29,8 @@ import styles from "@/styles/components/Footer.module.scss";
 import footerarrow from "../../public/img/footer/footerarrow.svg";
 import twitter from "../../public/img/footer/twitter.svg";
 import facebook from "../../public/img/footer/facebook.svg";
+import insta from "../../public/img/footer/insta.svg";
+import yt from "../../public/img/footer/yt.svg";
 import linkdin from "../../public/img/footer/linkdin.svg";
 import logo from "../../public/img/footer/logo.svg";
 import ting from "../../public/img/footer/ting.svg";
@@ -108,7 +110,7 @@ export default function Footer() {
 									duration={500}
 									className={`${styles.link_title} text_xs`}
 								>
-									We are svatantra
+									About
 								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
@@ -123,7 +125,7 @@ export default function Footer() {
 									duration={500}
 									className={`${styles.link_title} text_xs`}
 								>
-									Our impact
+									Our Impact
 								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
@@ -138,7 +140,7 @@ export default function Footer() {
 									duration={500}
 									className={`${styles.link_title} text_xs`}
 								>
-									Connect with us
+									Contact Us
 								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
@@ -153,7 +155,7 @@ export default function Footer() {
 									duration={500}
 									className={`${styles.link_title} text_xs`}
 								>
-									Our finance
+									Our Finance
 								</ScrollSection>
 							</li>
 							{/* <li className="text_xs color_white pb_10">
@@ -265,7 +267,7 @@ export default function Footer() {
 									target="_blank"
 								>
 									<div className={`${styles.box1}`}>
-										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
+										<img src={yt.src} alt="twitter" className={`${styles.icon}`} />
 									</div>
 								</a>
 								<a
@@ -273,7 +275,7 @@ export default function Footer() {
 									target="_blank"
 								>
 									<div className={`${styles.box1}`}>
-										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
+										<img src={insta.src} alt="twitter" className={`${styles.icon}`} />
 									</div>
 								</a>
 							</div>
