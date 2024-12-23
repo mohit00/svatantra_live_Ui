@@ -42,7 +42,6 @@ export default function DigitallySvatantra() {
 							title={"Explore More"}
 						/>
 					</div>{" "}
-					*/}
 				</div>
 				<div className={`${styles.ImgBx}`}>
 					<img src={DigitalImg.src} alt="" />

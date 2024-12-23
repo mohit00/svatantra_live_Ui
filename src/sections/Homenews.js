@@ -39,6 +39,7 @@ import nbfc from "../../public/img/nbfc.png";
 import advent from "../../public/img/advent.png";
 import PEOS from "../../public/img/PEOS.png";
 import business from "../../public/img/Business.png";
+import newBharat from "../../public/img/newbharat.jpg";
 // DATA //
 
 /** Homenews Section */
