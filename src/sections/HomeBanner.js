@@ -46,6 +46,7 @@ export default function HomeBanner() {
 							Indian toward economic independence, prosperity, and success.
 						</p>
 					</div>
+					<p className={`${styles.scroll} text_xs`}>Scroll To Discover</p>
 				</div>
 			</div>
 
