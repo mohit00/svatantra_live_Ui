@@ -172,7 +172,7 @@ export default function Homecontact() {
 
 							{isSubmited && (
 								<p className="text_xs pt_10">
-									Thank you for contacting us. Our team will get back to you.
+									We appreciate you contacting us. We&lsquo;ll respond shortly. N
 								</p>
 							)}
 						</form>

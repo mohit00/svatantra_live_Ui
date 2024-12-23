@@ -49,7 +49,7 @@ export default function Footer() {
 	/** resend */
 	async function SendEmailViaSend({ body }) {
 		try {
-			const res = await fetch("/api/sendEmail", {
+			const res = await fetch("/api/sendEmailNews", {
 				method: "POST",
 				body: JSON.stringify({ ...body }),
 			});
@@ -64,10 +64,7 @@ export default function Footer() {
 	/** Function to handle submit */
 	const onSubmit = async (data, e) => {
 		const formdata = {
-			name: data.name,
 			email: data.email,
-			number: data.number,
-			message: data.message,
 		};
 		setLoading(true);
 
@@ -230,6 +227,11 @@ export default function Footer() {
 										</button>
 									</div>
 								</div>
+								{isSubmited && (
+									<p className="text_xs pt_10 color_white">
+										Thank you for subscribing to our newsletter!
+									</p>
+								)}
 							</form>
 						</div>
 					</div>
