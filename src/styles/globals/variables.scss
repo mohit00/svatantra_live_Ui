@@ -2,21 +2,21 @@ $browser-prefixes: false !default;
 
 :root {
 	// Fonts
-	--font_primary: "Poppins", sans-serif;
-	--font_secondary: "Poppins", sans-serif;
+	--font_primary: "Arpona";
+	--font_secondary: "AvenirMed", sans-serif;
 
 	// colors
-	--color_primary: #00783C;
-	--color_primary_tint: #6EB457;
-	--color_primary_light: #1F7542;
-	--color_pastel_green : #76CD67;
-	--color_secondary: #034EA2;
-	--color_secondary_tint: #0065B6;
-	--color_seashell: #F6EFEA;
-	--color_light_gray: #DDDDDD;
+	--color_primary: #00783c;
+	--color_primary_tint: #6eb457;
+	--color_primary_light: #1f7542;
+	--color_pastel_green: #76cd67;
+	--color_secondary: #034ea2;
+	--color_secondary_tint: #0065b6;
+	--color_seashell: #f6efea;
+	--color_light_gray: #dddddd;
 	--color_black: #000000;
 	--color_white: #ffffff;
-	--color_light_black: #1E1E1E;
+	--color_light_black: #1e1e1e;
 
 	// Extras
 	--container_width: 100%;

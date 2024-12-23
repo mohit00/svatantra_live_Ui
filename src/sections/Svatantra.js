@@ -1,6 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
+import Button from "../../src/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -27,6 +28,14 @@ export default function Svatantra() {
 							Svatantra is for the millions of foundational entrepreneurs who are the
 							backbone of <span>India&lsquo;s growth story.</span>
 						</p>
+						<div className={`${styles.BtnBx} pt_20`}>
+							<Button
+								buttonType="secondary"
+								condition={"white"}
+								link={"#"}
+								title={"Grow More"}
+							/>
+						</div>
 					</div>
 					<div className={styles.right_box}>
 						<div className={`${styles.box} ${styles.box_1} f_r_a_center`}>

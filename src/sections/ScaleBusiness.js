@@ -67,13 +67,13 @@ export default function ScaleBusiness() {
 									toggleItem={toggleItem}
 									accTitle={data.maintitle}
 									accNo={data.AccNo}
-									titleClass="text_lg font_primary color_white"
+									titleClass="text_lg font_primary text_500 color_white"
 									borderClass="white"
 									key={index}
 								>
 									<div className={`${styles.AccContentBx}`}>
 										<div className={`${styles.ContentBx} color_white`}>
-											<p className="text_sm text_500">{parse(data.description)}</p>
+											<p className="text_xs text_500">{parse(data.description)}</p>
 										</div>
 									</div>
 								</Accordian>
