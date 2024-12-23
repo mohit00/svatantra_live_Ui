@@ -4,6 +4,7 @@ import { useState } from "react";
 // COMPONENTS //
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../../src/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -56,37 +57,49 @@ export default function Header() {
 					<div className={`${styles.links_wrap}`}>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>About</div>
+								<div className={`${styles.link_title} text_xs`}>About</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>Our Finance</div>
+								<div className={`${styles.link_title} text_xs`}>Our Finance</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>Digitally Svatantra</div>
+								<div className={`${styles.link_title} text_xs`}>
+									Digitally Svatantra
+								</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>Our Impact</div>
+								<div className={`${styles.link_title} text_xs`}>Our Impact</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>For Investors</div>
+								<div className={`${styles.link_title} text_xs`}>For Investors</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>Careers</div>
+								<div className={`${styles.link_title} text_xs`}>Careers</div>
 							</Link>
 						</div>
 						<div className={styles.links}>
 							<Link href="javascript:void(0)">
-								<div className={styles.link_title}>Media</div>
+								<div className={`${styles.link_title} text_xs`}>Media</div>
+							</Link>
+						</div>
+						<div className={styles.links}>
+							<Link href="javascript:void(0)">
+								<Button
+									buttonType="secondary"
+									condition={"white"}
+									link={"#"}
+									title={"Contact Us"}
+								/>
 							</Link>
 						</div>
 					</div>
