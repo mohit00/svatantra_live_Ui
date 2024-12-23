@@ -75,6 +75,10 @@
 	}
 	&.white {
 		.btn_outer_span {
+			button{
+				border: 0;
+				cursor: pointer;
+			}
 			.btn_inner_text {
 				background-image: unset;
 				background-color: transparent;

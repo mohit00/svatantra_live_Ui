@@ -73,6 +73,33 @@ const Button = ({ buttonType, link, title, condition }) => {
 					</a>
 				</Link>
 			);
+
+		case "four":
+			return (
+				// <Link >
+				<div>
+					<a
+						className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
+						href={link}
+					>
+						<span className={styles.btn_outer_span}>
+							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+							</span>
+							<button
+								type="submit"
+								className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
+							>
+								{title}
+							</button>
+							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+							</span>
+						</span>
+					</a>
+				</div>
+				// </Link>
+			);
 	}
 };
 export default Button;

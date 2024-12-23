@@ -31,7 +31,14 @@ export default function HomePage() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Home"} Desc={"Home Desc"} OgImg={""} Url={"/"} />
+			<MetaTags
+				Title={"Svatantra Microfinance"}
+				Desc={
+					" We are India’s second largest microfinance institution, offering diverse financial solutions for rural and semi-urban women at one of the lowest interest rates in the industry."
+				}
+				OgImg={""}
+				Url={"/"}
+			/>
 
 			{/* Header */}
 			<Header />
