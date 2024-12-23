@@ -11,7 +11,9 @@ import { useForm } from "react-hook-form";
 // UTILS //
 
 // STYLES //
-import styles from "@/styles/sections/ContactForm.module.scss";
+// import styles from "@/styles/sections/ContactForm.module.scss";
+
+import styles from "@/styles/sections/Homecontact.module.scss";
 
 // IMAGES //
 
