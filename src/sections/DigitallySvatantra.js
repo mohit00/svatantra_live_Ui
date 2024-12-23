@@ -20,7 +20,7 @@ import DigitalImg from "../../public/img/home/DigitalImg.png";
 /** DigitallySvatantra Section */
 export default function DigitallySvatantra() {
 	return (
-		<section className={styles.DigitallySvatantra}>
+		<section className={styles.DigitallySvatantra} name="DigitallySvatantra">
 			{/* <div className="container"> */}
 			<div className={`${styles.DigitalFlex}`}>
 				<div className={`${styles.ContentBx}`}>
@@ -34,14 +34,14 @@ export default function DigitallySvatantra() {
 						cashless disbursement and roll out a customer facing app, bringing success
 						to your fingertips.
 					</p>
-					<div className={`${styles.BtnBx}`}>
+					{/* <div className={`${styles.BtnBx}`}>
 						<Button
 							buttonType="secondary"
 							condition={"white"}
 							link={"#"}
 							title={"Explore More"}
 						/>
-					</div>
+					</div> */}
 				</div>
 				<div className={`${styles.ImgBx}`}>
 					<img src={DigitalImg.src} alt="" />

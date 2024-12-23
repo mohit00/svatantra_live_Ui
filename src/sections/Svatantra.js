@@ -19,7 +19,7 @@ import styles from "@/styles/sections/Svatantra.module.scss";
 /** Svatantra Component */
 export default function Svatantra() {
 	return (
-		<div className={`${styles.svatantra_section} ptb_100`}>
+		<div className={`${styles.svatantra_section} ptb_100`} name="About">
 			<div className={styles.svatantra_wrapper}>
 				<div className={styles.left_box}>
 					<h2 className="section_title">We are Svatantra</h2>
