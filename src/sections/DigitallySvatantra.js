@@ -14,7 +14,6 @@ import styles from "@/styles/sections/DigitallySvatantra.module.scss";
 
 // IMAGES //
 import DigitalImg from "../../public/img/home/DigitalImg.png";
-import BtnArrow from "../../public/img/home/BtnArrow.svg";
 
 // DATA //
 
@@ -28,7 +27,7 @@ export default function DigitallySvatantra() {
 					<h2 className="text_xxxl color_primary pb_20">
 						Making every Indian digitally Svatantra
 					</h2>
-					<p className="text_sm">
+					<p className="text_sm color_light_black opacity_8">
 						At Svatantra, we harness the power of technology to make our services far
 						more accessible and impactful, ensuring entrepreneurial freedom with
 						growth and prosperity. We were the first in the sector to implement 100%
@@ -36,10 +35,12 @@ export default function DigitallySvatantra() {
 						to your fingertips.
 					</p>
 					<div className={`${styles.BtnBx}`}>
-						<Button color="secondary" variant="filled" shape="rounded">
-							Read More
-							<img src={BtnArrow.src} alt="" />
-						</Button>
+						<Button
+							buttonType="secondary"
+							condition={"white"}
+							link={"#"}
+							title={"Explore More"}
+						/>
 					</div>
 				</div>
 				<div className={`${styles.ImgBx}`}>
