@@ -44,7 +44,63 @@ export default function Homenews() {
 		setActiveTab(tab);
 	};
 
-	var mediaSettings = {};
+	const mediaSettings = {
+		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
+		spaceBetween: 20, // Adjust spacing between slides
+		slidesPerView: 3, // Show 3 slides fully
+		autoWidth: false,
+		loop: true,
+		pagination: {
+			clickable: true,
+			type: "progressbar",
+			el: ".swiper-pagination-news",
+		},
+		observer: true,
+		observeParents: true,
+		navigation: {
+			prevEl: "#customPrev",
+			nextEl: "#customNext",
+		},
+		breakpoints: {
+			767: {
+				slidesPerView: 1, // Mobile view
+				spaceBetween: 0,
+			},
+			1024: {
+				slidesPerView: 3, // Tablet and desktop view
+				spaceBetween: 30, // Increase spacing if needed for larger screens
+			},
+		},
+	};
+
+	const awardSettings = {
+		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
+		spaceBetween: 20, // Adjust spacing between slides
+		slidesPerView: 3, // Show 3 slides fully
+		autoWidth: false,
+		loop: true,
+		pagination: {
+			clickable: true,
+			type: "progressbar",
+			el: ".swiper-pagination-news",
+		},
+		observer: true,
+		observeParents: true,
+		navigation: {
+			prevEl: "#customPrev",
+			nextEl: "#customNext",
+		},
+		breakpoints: {
+			767: {
+				slidesPerView: 1, // Mobile view
+				spaceBetween: 0,
+			},
+			1024: {
+				slidesPerView: 3, // Tablet and desktop view
+				spaceBetween: 30, // Increase spacing if needed for larger screens
+			},
+		},
+	};
 
 	return (
 		<section className={styles.Homenews}>
@@ -81,38 +137,7 @@ export default function Homenews() {
 					</div>
 
 					<div>
-						<Swiper
-							modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-							spaceBetween={60}
-							slidesPerView={1.6}
-							autoWidth={true}
-							loop={true}
-							// autoplay={{
-							// 	delay: 5000,
-							// 	disableOnInteraction: false,
-							// }}
-							pagination={{
-								clickable: true,
-								type: "progressbar",
-								el: ".swiper-pagination",
-							}}
-							observer={true}
-							observeParents={true}
-							navigation={{
-								prevEl: "#customPrev",
-								nextEl: "#customNext",
-							}}
-							breakpoints={{
-								767: {
-									slidesPerView: 1,
-									spaceBetween: 0,
-								},
-								1024: {
-									slidesPerView: 2,
-									spaceBetween: 50,
-								},
-							}}
-						>
+						<Swiper {...mediaSettings}>
 							{activeTab == "media" ? (
 								<>
 									<SwiperSlide>
@@ -211,48 +236,83 @@ export default function Homenews() {
 								</>
 							) : (
 								<>
-									<SwiperSlide>
-										<div className={`${styles.awardBox}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.logoBox}`}>
-													<img
-														src={award1.src}
-														alt="awardLogo"
-														className={`${styles.awardLogo}`}
-													/>
+									<Swiper {...awardSettings}>
+										<SwiperSlide>
+											<div className={`${styles.awardBox}`}>
+												<div className={`${styles.box1}`}>
+													<div className={`${styles.logoBox}`}>
+														<img
+															src={award1.src}
+															alt="awardLogo"
+															className={`${styles.awardLogo}`}
+														/>
+													</div>
+													<div className={`${styles.dateBox}`}>
+														<p>5 November 2024</p>
+													</div>
+													<p className="text_reg">GPTW Certified 2020 and 2022</p>
 												</div>
-												<div className={`${styles.dateBox}`}>
-													<p>5 November 2024</p>
-												</div>
-												<p className="text_reg">GPTW Certified 2020 and 2022</p>
 											</div>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.awardBox}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.logoBox}`}>
-													<img
-														src={award1.src}
-														alt="awardLogo"
-														className={`${styles.awardLogo}`}
-													/>
+										</SwiperSlide>
+										<SwiperSlide>
+											<div className={`${styles.awardBox}`}>
+												<div className={`${styles.box1}`}>
+													<div className={`${styles.logoBox}`}>
+														<img
+															src={award1.src}
+															alt="awardLogo"
+															className={`${styles.awardLogo}`}
+														/>
+													</div>
+													<div className={`${styles.dateBox}`}>
+														<p>5 November 2024</p>
+													</div>
+													<p className="text_reg">GPTW Certified 2020 and 2022</p>
 												</div>
-												<div className={`${styles.dateBox}`}>
-													<p>5 November 2024</p>
-												</div>
-												<p className="text_reg">
-													National Awards for Excellence in BFSI - Microfinance Company of
-													the Year 2024
-												</p>
 											</div>
-										</div>
-									</SwiperSlide>
+										</SwiperSlide>
+										<SwiperSlide>
+											<div className={`${styles.awardBox}`}>
+												<div className={`${styles.box1}`}>
+													<div className={`${styles.logoBox}`}>
+														<img
+															src={award1.src}
+															alt="awardLogo"
+															className={`${styles.awardLogo}`}
+														/>
+													</div>
+													<div className={`${styles.dateBox}`}>
+														<p>5 November 2024</p>
+													</div>
+													<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												</div>
+											</div>
+										</SwiperSlide>
+										<SwiperSlide>
+											<div className={`${styles.awardBox}`}>
+												<div className={`${styles.box1}`}>
+													<div className={`${styles.logoBox}`}>
+														<img
+															src={award1.src}
+															alt="awardLogo"
+															className={`${styles.awardLogo}`}
+														/>
+													</div>
+													<div className={`${styles.dateBox}`}>
+														<p>5 November 2024</p>
+													</div>
+													<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												</div>
+											</div>
+										</SwiperSlide>
+									</Swiper>
 								</>
 							)}
 						</Swiper>
 						<div className={`${styles.items}`}>
-							<div className={`${styles.progressBar} m_t_30 swiper-pagination`}></div>
+							<div
+								className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
+							></div>
 							<div className={`${styles.arrowSection} f_w_a_j_center`}>
 								<button className={`${styles.customPrev}`} id="customPrev">
 									<img src={prevImg.src} alt="" />
