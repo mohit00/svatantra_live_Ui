@@ -48,6 +48,7 @@ export default function HomeBanner() {
 					</div>
 					<p className={`${styles.scroll} text_xs hidden`}>Scroll To Discover</p>
 				</div>
+				<p className={`${styles.scroll} text_xs hidden_xs`}>Scroll To Discover</p>
 			</div>
 
 			<div className={styles.line_1}>

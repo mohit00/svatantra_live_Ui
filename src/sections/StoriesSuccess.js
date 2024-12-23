@@ -36,18 +36,18 @@ import logo from "../../public/img/logo.jpg";
 
 /** StoriesSuccess Section */
 export default function StoriesSuccess() {
-	var settings = {
-		dots: true,
-		infinite: true,
-		speed: 2000,
-		autoplaySpeed: 5000,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		pauseOnHover: false,
-		autoplay: true,
-	};
+	// var settings = {
+	// 	dots: true,
+	// 	infinite: true,
+	// 	speed: 2000,
+	// 	autoplaySpeed: 5000,
+	// 	slidesToShow: 1,
+	// 	slidesToScroll: 1,
+	// 	pauseOnHover: false,
+	// 	autoplay: true,
+	// };
 	return (
-		<section className={styles.StoriesSuccess}>
+		<section className={styles.StoriesSuccess} name="Media">
 			<div className="container">
 				<div className={`${styles.StoriesFlex}`}>
 					<div className={`${styles.StoriesBx}`}>

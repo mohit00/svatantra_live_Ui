@@ -3,8 +3,8 @@
 .main_footer {
 	position: relative;
 	z-index: 1;
-	&:after{
-		content: '';
+	&:after {
+		content: "";
 		right: 0;
 		bottom: 0;
 		width: 100%;
@@ -39,7 +39,9 @@
 				flex-direction: column;
 				align-items: unset;
 			}
-
+			.link_title {
+				cursor: pointer;
+			}
 			.firstLogo {
 				display: none;
 
@@ -48,7 +50,6 @@
 					width: 80%;
 					margin: auto;
 				}
-				
 			}
 
 			.firstBreakLine {
@@ -106,6 +107,7 @@
 					width: 100%;
 					border-radius: 100px;
 					border: none;
+					margin-bottom: 20px;
 					&:focus{
 						outline: none;
 					}
@@ -126,7 +128,11 @@
 					position: absolute;
 					top: 3px;
 					right: 5px;
-					.arrow {
+					cursor: pointer;
+					button{
+						border: 0;
+						cursor: pointer;
+						background-color: transparent;
 					}
 				}
 			}

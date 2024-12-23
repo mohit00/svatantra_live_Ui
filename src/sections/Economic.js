@@ -19,7 +19,7 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 /** DummyComponent Component */
 export default function Economic() {
 	return (
-		<div className={`${styles.economic} pb_100`}>
+		<div className={`${styles.economic} pb_100`} name="OurImpact">
 			<div className="container">
 				<div className={styles.economic_wrapper}>
 					<h2 className="section_title">

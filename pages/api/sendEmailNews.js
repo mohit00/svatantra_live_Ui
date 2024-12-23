@@ -1,12 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { EmailTemplate } from "@/components/email/EmailTemplate.jsx";
+import { EmailTemplateNews } from "@/components/email/EmailTemplateNews.jsx";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async (req, res) => {
 	try {
-		const { name, email, number, message } = JSON.parse(req.body);
+		const { email } = JSON.parse(req.body);
 		// const name = "developer name";
 		// const email = "developer email";
 
@@ -16,11 +16,8 @@ export default async (req, res) => {
 			// to: "developer@ting.in",
 			subject: "New submission to your form",
 			// html: "<h1>hello</h1>",
-			react: EmailTemplate({
-				name,
+			react: EmailTemplateNews({
 				email,
-				number,
-				message,
 			}),
 		});
 

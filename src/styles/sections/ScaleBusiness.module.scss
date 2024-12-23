@@ -48,6 +48,14 @@
 					width: 100%;
 				}
 			}
+			:global(.location) {
+				opacity: 0;
+				transition: 0.3s;
+				pointer-events: none;
+				&:global(.visible) {
+					opacity: 1;
+				}
+			}
 		}
 	}
 }

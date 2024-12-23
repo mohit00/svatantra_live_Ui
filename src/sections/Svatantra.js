@@ -19,13 +19,15 @@ import styles from "@/styles/sections/Svatantra.module.scss";
 /** Svatantra Component */
 export default function Svatantra() {
 	return (
-		<div className={`${styles.svatantra_section} ptb_100`}>
+		<div className={`${styles.svatantra_section} ptb_100`} name="About">
 			<div className={styles.svatantra_wrapper}>
 				<div className={styles.left_box}>
 					<h2 className="section_title">We are Svatantra</h2>
 					<p className={`${styles.para_width} text_lg pt_10 opacity_80`}>
 						Svatantra is for the millions of foundational entrepreneurs who are the
-						backbone of <span>India&lsquo;s growth story.</span>
+						backbone of India&lsquo;s growth story. These visionary individuals, with
+						grit and determination, fuel the engines of progress, propelling our
+						nation towards <span>a brighter future</span>
 					</p>
 					<div className={`${styles.BtnBx} pt_20 hidden`}>
 						<Button
