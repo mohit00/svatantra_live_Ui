@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable react/jsx-no-target-blank */
 // MODULES //
 
@@ -79,15 +80,21 @@ export default function Footer() {
 					<div className={`${styles.row2}`}>
 						<div className={`${styles.left}`}>
 							<div className={`${styles.socialIcons} pb_20`}>
-								<div className={`${styles.box1}`}>
-									<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
-								</div>
-								<div className={`${styles.box1}`}>
-									<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
-								</div>
-								<div className={`${styles.box1}`}>
-									<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
-								</div>
+								<a href="#" target="_blank">
+									<div className={`${styles.box1}`}>
+										<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
+									</div>
+								</a>
+								<a href="#" target="_blank">
+									<div className={`${styles.box1}`}>
+										<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
+									</div>
+								</a>
+								<a href="#" target="_blank">
+									<div className={`${styles.box1}`}>
+										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
+									</div>
+								</a>
 							</div>
 
 							<hr className={`${styles.thirdLine}`} />
@@ -99,7 +106,9 @@ export default function Footer() {
 							</div>
 						</div>
 						<div className={`${styles.right}`}>
-							<img src={logo.src} alt="logo" className={`${styles.secondLogo} `} />
+							<a href="/">
+								<img src={logo.src} alt="logo" className={`${styles.secondLogo} `} />
+							</a>
 						</div>
 					</div>
 				</div>
