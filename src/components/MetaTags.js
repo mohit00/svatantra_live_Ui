@@ -36,13 +36,28 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 
 	return (
 		<Head>
-			<title>{title}</title>
-			<meta name="description" content={desc} />
+			<title>
+				Svatantra Microfin - Empowering Rural India with Microfinance Solutions
+			</title>
+			<meta
+				name="description"
+				content=" Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."
+			/>
 			<meta name="theme-color" content="#000" />
 
 			{/* OG Tags  */}
-			<meta property="og:title" content={title} />
-			<meta property="og:description" content={desc} />
+			<meta
+				property="og:title"
+				content={
+					"Svatantra Microfin - Empowering Rural India with Microfinance Solutions"
+				}
+			/>
+			<meta
+				property="og:description"
+				content={
+					"Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."
+				}
+			/>
 			<meta property="og:url" content={url} />
 			<meta property="og:image" content={ogImg} />
 			<meta property="og:image:secure_url" content={ogImg} />

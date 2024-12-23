@@ -172,9 +172,9 @@ export default function StoriesSuccess() {
 													<p className="text_sm text_700">Svatantra</p>
 												</div>
 												<p className={styles.desc}>
-													We asked our followers on various platforms about their
-													understanding of MSMEs and their economical impact.about their
-													understanding of MSMEs and their economical impact.
+													She breaks gender stereotypes for breakfast. We’re talking about
+													Bindhu Jeevan, one of Svatantra’s customers who made sure her
+													family had a support system even during the pandemic.
 												</p>
 											</div>
 										</div>
@@ -192,9 +192,9 @@ export default function StoriesSuccess() {
 													<p className="text_sm text_700">Svatantra</p>
 												</div>
 												<p className={styles.desc}>
-													Homeowners contribute significantly to a nation’s economy. Every
-													customer at SMHFC thus becomes a part of a larger change that
-													transforms our country’s socio-economical landscape,...
+													She breaks gender stereotypes for breakfast. We’re talking about
+													Bindhu Jeevan, one of Svatantra’s customers who made sure her
+													family had a support system even during the pandemic.
 												</p>
 											</div>
 										</div>

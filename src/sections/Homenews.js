@@ -72,7 +72,7 @@ export default function Homenews() {
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile screens: 1 slide visible
+				slidesPerView: 2, // Mobile screens: 1 slide visible
 				spaceBetween: 10, // Reduced spacing for smaller screens
 			},
 			991: {
