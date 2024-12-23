@@ -210,16 +210,11 @@
 			}
 		}
 
-		:global(.swiper-slide-active) {
-			@media (max-width: 767px) {
-				width: 400px !important;
-			}
-		}
-
 		:global(.swiper-pagination-progressbar) {
 			top: unset;
-			width: 87%;
+			width: 85%;
 			height: 2px;
+			left: 13px;
 
 			@media (max-width: 991px) {
 				width: 82%;
@@ -267,5 +262,11 @@
 				right: 70px;
 			}
 		}
+	}
+
+	.buttonBox {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
