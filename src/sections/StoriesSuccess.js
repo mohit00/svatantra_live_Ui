@@ -148,7 +148,7 @@ export default function StoriesSuccess() {
 										<div className={`${styles.SliderContent}`}>
 											<div className={`${styles.SliderTopFlex}`}>
 												<img src={SliderLogo.src} alt="" />
-												<p className="text_sm text_700">Svatantra</p>
+												<p className="text_sm text_800">Svatantra</p>
 											</div>
 											<p className={styles.desc}>
 												Homeowners contribute significantly to a nation’s economy. Every
@@ -166,7 +166,7 @@ export default function StoriesSuccess() {
 										<div className={`${styles.SliderContent}`}>
 											<div className={`${styles.SliderTopFlex}`}>
 												<img src={SliderLogo.src} alt="" />
-												<p className="text_sm text_700">Svatantra</p>
+												<p className="text_sm text_800">Svatantra</p>
 											</div>
 											<p className={styles.desc}>
 												Homeowners contribute significantly to a nation’s economy. Every
@@ -184,7 +184,7 @@ export default function StoriesSuccess() {
 										<div className={`${styles.SliderContent}`}>
 											<div className={`${styles.SliderTopFlex}`}>
 												<img src={SliderLogo.src} alt="" />
-												<p className="text_sm text_700">Svatantra</p>
+												<p className="text_sm text_800">Svatantra</p>
 											</div>
 											<p className={styles.desc}>
 												Homeowners contribute significantly to a nation’s economy. Every
@@ -202,7 +202,7 @@ export default function StoriesSuccess() {
 										<div className={`${styles.SliderContent}`}>
 											<div className={`${styles.SliderTopFlex}`}>
 												<img src={SliderLogo.src} alt="" />
-												<p className="text_sm text_700">Svatantra</p>
+												<p className="text_sm text_800">Svatantra</p>
 											</div>
 											<p className={styles.desc}>
 												Homeowners contribute significantly to a nation’s economy. Every
