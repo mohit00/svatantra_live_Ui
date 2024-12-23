@@ -121,6 +121,9 @@
 				@media (max-width: 911px) {
 					width: 96%;
 				}
+				@media (max-width: 767px) {
+					width: 100%;
+				}
 
 				.imgBox {
 					position: relative;
@@ -172,7 +175,7 @@
 				}
 
 				@media (max-width: 991px) {
-					width: 220px;
+					width: 98%;
 				}
 
 				@media (max-width: 767px) {
