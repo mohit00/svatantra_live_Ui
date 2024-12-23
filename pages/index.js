@@ -42,7 +42,7 @@ export default function HomePage() {
 				{/* <h2>This is ting base next.js template</h2> */}
 				{/* <HomeBanner /> */}
 				<Svatantra />
-				{/* <Economic /> */}
+				<Economic />
 				{/* <ScaleBusiness /> */}
 				{/* <DigitallySvatantra /> */}
 				{/* <StoriesSuccess /> */}

@@ -1,68 +1,129 @@
 @import "../helpers/helpers.scss";
-.svatantra_section{
-    .svatantra_wrapper{
-        padding: 50px;
-        display: flex;
-        position: relative;
-        align-items: center;
-        border-radius: 10px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        justify-content: space-between;
-        background-image: url('/img/home/svatantra_bg.jpg');
-        .left_box{
-            width: 48%;
-            .para_width{
-                width: 90%;
-                span{
-                    color: var(--color_primary);
-                }
-            }
-        }
-        .right_box{
-            width: 48%;
-            .box{
-                padding: 0 20px;
-                min-height: 80px;
-                border-radius: 6px;
-                padding-bottom: 10px;
-                .title{
-                    width: 160px;
-                    h5{
-                        font-size: 26px;
-                        line-height: 1.2;
-                        font-weight: 400;
-                        @media (max-width: 767px) {
-                            font-size: 20px;
-                        }
-                    }
-                }
-                .desc{
-                    h6{
-                        font-size: 20px;
-                        line-height: 1.3;
-                        font-weight: 400;
-                        @media (max-width: 767px) {
-                            font-size: 18px;
-                        }
-                    }
-                }
-                &.box_1{
-                    background-color: var(--color_white);
-                }
-                &.box_2{
-                    width: 90%;
-                    margin-top: -15px;
-                    background-color: var(--color_primary_tint);
-                }
-                &.box_3{
-                    width: 80%;
-                    margin-top: -15px;
-                    padding-bottom: 0;
-                    background-color: var(--color_primary);
-                }
-            }
-        }
-    }
+.svatantra_section {
+	.svatantra_wrapper {
+		padding: 50px;
+		display: flex;
+		position: relative;
+		align-items: center;
+		border-radius: 10px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		justify-content: space-between;
+		background-image: url("/img/home/svatantra_bg.jpg");
+
+		@media (max-width: 1024px) {
+			padding: 50px 50px 100px 50px;
+		}
+
+		@media (max-width: 767px) {
+			background-position: unset;
+			padding: 50px 15px 50px 15px;
+			flex-direction: column;
+			gap: 50px;
+			// background-image: url("/public/img/home/mobilebg.jpg");
+		}
+
+		.left_box {
+			width: 48%;
+
+			@media (max-width: 1024px) {
+				h2 {
+					font-size: 45px;
+				}
+
+				p {
+					font-size: 22px;
+				}
+			}
+
+			@media (max-width: 991px) {
+				h2 {
+					font-size: 35px;
+				}
+
+				p {
+					font-size: 18px;
+				}
+			}
+
+			@media (max-width: 767px) {
+				width: 100%;
+			}
+
+			.para_width {
+				width: 90%;
+
+				span {
+					color: var(--color_primary);
+				}
+			}
+		}
+		.right_box {
+			width: 48%;
+
+			@media (max-width: 767px) {
+				width: 100%;
+			}
+			.box {
+				padding: 0 20px;
+				min-height: 80px;
+				border-radius: 6px;
+				padding-bottom: 10px;
+				.title {
+					width: 160px;
+					h5 {
+						font-size: 26px;
+						line-height: 1.2;
+						font-weight: 400;
+
+						@media (max-width: 1024px) {
+							font-size: 20px;
+						}
+
+						@media (max-width: 991px) {
+							font-size: 18px;
+						}
+
+						// @media (max-width: 767px) {
+						// 	font-size: 20px;
+						// }
+					}
+				}
+				.desc {
+					h6 {
+						font-size: 20px;
+						line-height: 1.3;
+						font-weight: 400;
+
+						@media (max-width: 1024px) {
+							font-size: 18px;
+						}
+
+						@media (max-width: 991px) {
+							font-size: 16px;
+						}
+
+						// @media (max-width: 767px) {
+						// 	font-size: 18px;
+						// }
+					}
+				}
+				&.box_1 {
+					background-color: var(--color_white);
+				}
+				&.box_2 {
+					width: 90%;
+					margin-top: -15px;
+					background-color: var(--color_primary_tint);
+				}
+				&.box_3 {
+					width: 80%;
+					margin-top: -15px;
+					padding-bottom: 0;
+					background-color: var(--color_primary);
+				}
+			}
+		}
+	}
 }
