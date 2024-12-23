@@ -33,6 +33,12 @@ import prevImg from "../../public/img/news/prevImg.svg";
 import award1 from "../../public/img/news/award1.svg";
 import award2 from "../../public/img/news/award2.svg";
 import award3 from "../../public/img/news/award3.svg";
+import workplace from "../../public/img/work.jpg";
+import awardds from "../../public/img/awards.jpg";
+import nbfc from "../../public/img/nbfc.png";
+import advent from "../../public/img/advent.png";
+import PEOS from "../../public/img/PEOS.png";
+import business from "../../public/img/Business.png";
 // DATA //
 
 /** Homenews Section */
@@ -133,7 +139,7 @@ export default function Homenews() {
 								<p className="text_reg f_w_m">Awards</p>
 							</div>
 						</div>
-						<div className={`${styles.BtnBx} ${styles.hiddenButton}`}>
+						<div className={`${styles.BtnBx} ${styles.hiddenButton} hidden`}>
 							<Button
 								buttonType="secondary"
 								condition={"white"}
@@ -151,8 +157,8 @@ export default function Homenews() {
 										<div className={`${styles.slider}`}>
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.imgBox}`}>
-													<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
-													<img src={box11.src} alt="logo" className={`${styles.logo}`} />
+													<img src={advent.src} alt="box1" className={`${styles.mainImg}`} />
+													{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
 												</div>
 
 												<div className={`${styles.categoryBox}`}>
@@ -160,7 +166,7 @@ export default function Homenews() {
 														<p>News</p>
 													</div>
 													<div className={`${styles.date}`}>
-														<p>5 November 2024</p>
+														<p>4 March 2024</p>
 													</div>
 												</div>
 
@@ -175,15 +181,15 @@ export default function Homenews() {
 										<div className={`${styles.slider}`}>
 											<div className={`${styles.box2}`}>
 												<div className={`${styles.imgBox}`}>
-													<img src={box2.src} alt="box1" className={`${styles.mainImg}`} />
-													<img src={box22.src} alt="logo" className={`${styles.logo}`} />
+													<img src={PEOS.src} alt="box1" className={`${styles.mainImg}`} />
+													{/* <img src={box22.src} alt="logo" className={`${styles.logo}`} /> */}
 												</div>
 												<div className={`${styles.categoryBox}`}>
 													<div className={`${styles.news}`}>
 														<p>News</p>
 													</div>
 													<div className={`${styles.date}`}>
-														<p>5 November 2024</p>
+														<p>4 March 2024</p>
 													</div>
 												</div>
 												<p className="text_reg f_w_m pt_10">
@@ -196,8 +202,12 @@ export default function Homenews() {
 										<div className={`${styles.slider}`}>
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.imgBox}`}>
-													<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
-													<img src={box11.src} alt="logo" className={`${styles.logo}`} />
+													<img
+														src={business.src}
+														alt="box1"
+														className={`${styles.mainImg}`}
+													/>
+													{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
 												</div>
 
 												<div className={`${styles.categoryBox}`}>
@@ -205,18 +215,17 @@ export default function Homenews() {
 														<p>News</p>
 													</div>
 													<div className={`${styles.date}`}>
-														<p>5 November 2024</p>
+														<p>24 December 2023</p>
 													</div>
 												</div>
 
 												<p className="text_reg f_w_m pt_10">
-													Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s
-													Svatantra Microfin
+													Ms. Birla Featured Among The Most Powerful Women in Business.
 												</p>
 											</div>
 										</div>
 									</SwiperSlide>
-									<SwiperSlide>
+									{/* <SwiperSlide>
 										<div className={`${styles.slider}`}>
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.imgBox}`}>
@@ -239,7 +248,7 @@ export default function Homenews() {
 												</p>
 											</div>
 										</div>
-									</SwiperSlide>
+									</SwiperSlide> */}
 								</Swiper>
 							</>
 						) : (
@@ -250,15 +259,18 @@ export default function Homenews() {
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.logoBox}`}>
 													<img
-														src={award1.src}
+														src={nbfc.src}
 														alt="awardLogo"
 														className={`${styles.awardLogo}`}
 													/>
 												</div>
 												<div className={`${styles.dateBox}`}>
-													<p>5 November 2024</p>
+													<p className="hidden_lg">5 November 2024</p>
 												</div>
-												<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												<p className="text_reg">
+													Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential
+													Microfinance Company of the Year 2024
+												</p>
 											</div>
 										</div>
 									</SwiperSlide>
@@ -267,15 +279,15 @@ export default function Homenews() {
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.logoBox}`}>
 													<img
-														src={award1.src}
+														src={workplace.src}
 														alt="awardLogo"
 														className={`${styles.awardLogo}`}
 													/>
 												</div>
 												<div className={`${styles.dateBox}`}>
-													<p>5 November 2024</p>
+													<p className="hidden_lg">5 November 2024</p>
 												</div>
-												<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												<p className="text_reg">IGPTW Certified 2020 and 2022</p>
 											</div>
 										</div>
 									</SwiperSlide>
@@ -284,32 +296,18 @@ export default function Homenews() {
 											<div className={`${styles.box1}`}>
 												<div className={`${styles.logoBox}`}>
 													<img
-														src={award1.src}
+														src={awardds.src}
 														alt="awardLogo"
 														className={`${styles.awardLogo}`}
 													/>
 												</div>
 												<div className={`${styles.dateBox}`}>
-													<p>5 November 2024</p>
+													<p className="hidden_lg">5 November 2024</p>
 												</div>
-												<p className="text_reg">GPTW Certified 2020 and 2022</p>
-											</div>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.awardBox}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.logoBox}`}>
-													<img
-														src={award1.src}
-														alt="awardLogo"
-														className={`${styles.awardLogo}`}
-													/>
-												</div>
-												<div className={`${styles.dateBox}`}>
-													<p>5 November 2024</p>
-												</div>
-												<p className="text_reg">GPTW Certified 2020 and 2022</p>
+												<p className="text_reg">
+													INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin,
+													Microfinance Organisation of the year 2021.
+												</p>
 											</div>
 										</div>
 									</SwiperSlide>

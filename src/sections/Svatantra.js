@@ -27,7 +27,7 @@ export default function Svatantra() {
 						Svatantra is for the millions of foundational entrepreneurs who are the
 						backbone of <span>India&lsquo;s growth story.</span>
 					</p>
-					<div className={`${styles.BtnBx} pt_20`}>
+					<div className={`${styles.BtnBx} pt_20 hidden`}>
 						<Button
 							buttonType="secondary"
 							condition={"white"}

@@ -34,7 +34,7 @@ export default function DigitallySvatantra() {
 						cashless disbursement and roll out a customer facing app, bringing success
 						to your fingertips.
 					</p>
-					<div className={`${styles.BtnBx}`}>
+					<div className={`${styles.BtnBx} hidden`}>
 						<Button
 							buttonType="secondary"
 							condition={"white"}
