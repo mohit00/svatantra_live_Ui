@@ -122,7 +122,7 @@ export default function ScaleBusiness() {
 					</div>
 					<div className={`${styles.MapImgBx}`}>
 						{/* <img src={Map.src} alt="" /> */}
-						<svg
+						{/* <svg
 							width="549"
 							height="502"
 							viewBox="0 0 549 502"
@@ -2735,7 +2735,7 @@ export default function ScaleBusiness() {
 									/>
 								</filter>
 							</defs>
-						</svg>
+						</svg> */}
 					</div>
 				</div>
 			</div>
