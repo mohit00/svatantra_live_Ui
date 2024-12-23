@@ -1,5 +1,5 @@
 // MODULES //
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 // COMPONENTS //
 
@@ -24,13 +24,56 @@ export default function Homecontact() {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm({ mode: "onChange" });
+	const [loading, setLoading] = useState(false);
+	const [isSubmited, setIsSubmited] = useState(false);
+
+	/** resend */
+	async function SendEmailViaSend({ body }) {
+		try {
+			const res = await fetch("/api/sendEmail", {
+				method: "POST",
+				body: JSON.stringify({ ...body }),
+			});
+			const data = await res.json();
+			return data;
+		} catch (error) {
+			console.error("SendEmailViaSend failed", error);
+			return null; // Return null or any value to indicate failure
+		}
+	}
 
 	/** Function to handle submit */
 	const onSubmit = async (data, e) => {
-		// Write form submission codes here
+		const formdata = {
+			name: data.name,
+			email: data.email,
+			number: data.number,
+			message: data.message,
+		};
+		setLoading(true);
+
+		// await SendEmailViaSend({ body: { ...formdata } });
+		// reset();
+		// setIsSubmited(true);
+		// setTimeout(() => {
+		// 	setIsSubmited(false);
+		// }, 5000);
+
+		// Use Promise.allSettled to ensure both functions run, even if one fails
+		const result = await SendEmailViaSend({ body: { ...formdata } });
+		console.log(result);
+
+		reset();
+		setIsSubmited(true);
+		setTimeout(() => {
+			setIsSubmited(false);
+		}, 5000);
+		setLoading(false);
 	};
+
 	return (
 		<section className={styles.Homecontact} name="ContactUs">
 			<div className="container">
@@ -126,6 +169,12 @@ export default function Homecontact() {
 							<div className={`${styles.BtnBx} pt_10`}>
 								<Button buttonType="four" condition={"white"} title={"Submit"} />
 							</div>
+
+							{isSubmited && (
+								<p className="text_xs pt_10">
+									Thank you for contacting us. Our team will get back to you.
+								</p>
+							)}
 						</form>
 					</div>
 				</div>
