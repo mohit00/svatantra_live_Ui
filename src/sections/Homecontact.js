@@ -83,7 +83,7 @@ export default function Homecontact() {
 							</div>
 							<div className={`${styles.form_field}`}>
 								<input
-									type="text"
+									// type="text"
 									placeholder="Phone No"
 									className={`${styles.inputField}`}
 									type="number"
