@@ -9,6 +9,16 @@ import { useRef, useState } from "react";
 
 // PLUGINS //
 import { useForm } from "react-hook-form";
+import * as Scroll from "react-scroll";
+import {
+	Link as ScrollSection,
+	// Button,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from "react-scroll";
 
 // UTILS //
 
@@ -90,28 +100,100 @@ export default function Footer() {
 
 						<ul>
 							<li className="text_xs color_white pb_10">
-								<a>We are svatantra</a>
+								{/* <a>We are svatantra</a> */}
+								<ScrollSection
+									// onClick={toggleSidebar}
+									activeClass="active"
+									to="About"
+									spy={true}
+									smooth={true}
+									offset={-50}
+									duration={500}
+									className={`${styles.link_title} text_xs`}
+								>
+									We are svatantra
+								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
-								<a>Our impact</a>
+								{/* <a>Our impact</a> */}
+								<ScrollSection
+									// onClick={toggleSidebar}
+									activeClass="active"
+									to="OurImpact"
+									spy={true}
+									smooth={true}
+									offset={-100}
+									duration={500}
+									className={`${styles.link_title} text_xs`}
+								>
+									Our impact
+								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
-								<a>Connect with us</a>
+								{/* <a>Connect with us</a> */}
+								<ScrollSection
+									// onClick={toggleSidebar}
+									activeClass="active"
+									to="ContactUs"
+									spy={true}
+									smooth={true}
+									offset={-50}
+									duration={500}
+									className={`${styles.link_title} text_xs`}
+								>
+									Connect with us
+								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
-								<a>Our finance</a>
+								{/* <a>Our finance</a> */}
+								<ScrollSection
+									// onClick={toggleSidebar}
+									activeClass="active"
+									to="OurFinance"
+									spy={true}
+									smooth={true}
+									offset={-50}
+									duration={500}
+									className={`${styles.link_title} text_xs`}
+								>
+									Our finance
+								</ScrollSection>
 							</li>
-							<li className="text_xs color_white pb_10">
+							{/* <li className="text_xs color_white pb_10">
 								<a>For investors</a>
 							</li>
 							<li className="text_xs color_white pb_10">
 								<a>Pay now</a>
+							</li> */}
+							<li>
+								{/* <a>Digitally svatantra</a> */}
+								<ScrollSection
+									// onClick={toggleSidebar}
+									activeClass="active"
+									to="DigitallySvatantra"
+									spy={true}
+									smooth={true}
+									offset={-50}
+									duration={500}
+									className={`${styles.link_title} text_xs color_white pb_10`}
+								>
+									Digitally Svatantra
+								</ScrollSection>
 							</li>
 							<li className="text_xs color_white pb_10">
-								<a>Digitally svatantra</a>
-							</li>
-							<li className="text_xs color_white pb_10">
-								<a>Media</a>
+								{/* <a>Media</a> */}
+								<ScrollSection
+									// onClick={toggleSidebar}
+									activeClass="active"
+									to="Media"
+									spy={true}
+									smooth={true}
+									offset={-100}
+									duration={500}
+									className={`${styles.link_title} text_xs`}
+								>
+									Media
+								</ScrollSection>
 							</li>
 						</ul>
 
@@ -155,17 +237,39 @@ export default function Footer() {
 					<div className={`${styles.row2}`}>
 						<div className={`${styles.left}`}>
 							<div className={`${styles.socialIcons} pb_20`}>
-								<a href="#" target="_blank">
+								<a href="https://x.com/WeAreSvatantra" target="_blank">
 									<div className={`${styles.box1}`}>
 										<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
 									</div>
 								</a>
-								<a href="#" target="_blank">
+								<a
+									href="https://www.linkedin.com/company/7951922?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A7951922%2Cidx%3A2-1-9%2CtarId%3A1480583980673%2Ctas%3Asvatantra"
+									target="_blank"
+								>
 									<div className={`${styles.box1}`}>
 										<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
 									</div>
 								</a>
-								<a href="#" target="_blank">
+								<a
+									href="https://www.facebook.com/svatantramicrofinance"
+									target="_blank"
+								>
+									<div className={`${styles.box1}`}>
+										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
+									</div>
+								</a>
+								<a
+									href="https://www.youtube.com/channel/UCDN7Vupq3kJt5PRjjkffytA"
+									target="_blank"
+								>
+									<div className={`${styles.box1}`}>
+										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
+									</div>
+								</a>
+								<a
+									href="https://www.instagram.com/wearesvatantra?igsh=Zmh0b2hnOHZoaTh5"
+									target="_blank"
+								>
 									<div className={`${styles.box1}`}>
 										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
 									</div>
@@ -175,9 +279,15 @@ export default function Footer() {
 							<hr className={`${styles.thirdLine}`} />
 
 							<div className={`${styles.cats}`}>
-								<p className="text_sm color_white">Smart ODR</p>
-								<p className="text_sm color_white">Chaitanaya India</p>
-								<p className="text_sm color_white">Svatantra Microhousing</p>
+								<p className="text_sm color_white">
+									<a href="https://smartodr.in/login">Smart ODR</a>
+								</p>
+								<p className="text_sm color_white">
+									<a href="https://www.chaitanyaindia.in/">Chaitanaya India</a>
+								</p>
+								<p className="text_sm color_white">
+									<a href="https://www.svatantramhfc.com/">Svatantra Microhousing</a>
+								</p>
 							</div>
 						</div>
 						<div className={`${styles.right}`}>
@@ -197,10 +307,10 @@ export default function Footer() {
 
 					{/* <hr className={`${styles.lastLine}`} /> */}
 
-					<div className={`${styles.box2}`}>
+					{/* <div className={`${styles.box2}`}>
 						<p className="text_xs f_w_r color_white opacity_70">Privacy Policy</p>
 						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
-					</div>
+					</div> */}
 
 					<a href="https://www.ting.in/" target="_blank">
 						<img src={ting.src} alt="tinglogo" />
