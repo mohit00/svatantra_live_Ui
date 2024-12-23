@@ -31,7 +31,7 @@ export default function Economic() {
 							</h6>
 						</div>
 						<div className={styles.title}>
-							<h5 className="text_reg">
+							<h5 className="text_reg opacity_80">
 								<span>*Crisil</span> A - Stable Rating
 							</h5>
 						</div>
@@ -58,7 +58,7 @@ export default function Economic() {
 												<h4 className="text_xxl" ref={countUpRef}>
 													4.18
 												</h4>
-												<span className="color_primary text_xxl">M+</span>
+												<span className="color_primary_tint text_xxl">M+</span>
 											</div>
 
 											<h5 className="text_xs">Active customer</h5>
@@ -90,7 +90,7 @@ export default function Economic() {
 												<span className="color_primary text_xxl">CR</span>
 											</div>
 
-											<h5 className="text_xs">Loans disbursed</h5>
+											<h5 className="color_primary_tint text_xs">Loans disbursed</h5>
 										</>
 									)}
 								</CountUp>
@@ -120,7 +120,7 @@ export default function Economic() {
 												<h4 className="text_xxl" ref={countUpRef}>
 													4.18
 												</h4>
-												<span className="color_primary text_xxl">CR</span>
+												<span className="color_primary_tint text_xxl">CR</span>
 											</div>
 
 											<h5 className="text_xs">AM</h5>
@@ -153,7 +153,7 @@ export default function Economic() {
 												<h4 className="text_xxl" ref={countUpRef}>
 													4.18
 												</h4>
-												<span className="color_primary text_xxl">+</span>
+												<span className="color_primary_tint text_xxl">+</span>
 											</div>
 
 											<h5 className="text_xs">Total employees</h5>
@@ -186,7 +186,7 @@ export default function Economic() {
 												<h4 className="text_xxl" ref={countUpRef}>
 													4.18
 												</h4>
-												<span className="color_primary text_xxl">+</span>
+												<span className="color_primary_tint text_xxl">+</span>
 											</div>
 
 											<h5 className="text_xs">Total branches</h5>

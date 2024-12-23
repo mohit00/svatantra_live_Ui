@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 // MODULES //
 
 // COMPONENTS //
@@ -61,9 +62,7 @@ export default function Footer() {
 						<hr className={`${styles.secondBreakLine}`} />
 
 						<div>
-							<h1 className="text_reg f_w_s_b color_white pb_10">
-								Signup for our newsletter
-							</h1>
+							<h1 className="text_reg color_white pb_10">Signup for our newsletter</h1>
 							<div className={`${styles.emailBox}`}>
 								<input
 									type="email"
@@ -79,7 +78,7 @@ export default function Footer() {
 					{/* row2 */}
 					<div className={`${styles.row2}`}>
 						<div className={`${styles.left}`}>
-							<div className={`${styles.socialIcons} pb_40`}>
+							<div className={`${styles.socialIcons} pb_20`}>
 								<div className={`${styles.box1}`}>
 									<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
 								</div>
@@ -94,9 +93,9 @@ export default function Footer() {
 							<hr className={`${styles.thirdLine}`} />
 
 							<div className={`${styles.cats}`}>
-								<p className="text_sm f_w_b color_white">Smart ODR</p>
-								<p className="text_sm f_w_b color_white">Chaitanaya India</p>
-								<p className="text_sm f_w_b color_white">Svatantra Microhousing</p>
+								<p className="text_sm color_white">Smart ODR</p>
+								<p className="text_sm color_white">Chaitanaya India</p>
+								<p className="text_sm color_white">Svatantra Microhousing</p>
 							</div>
 						</div>
 						<div className={`${styles.right}`}>
@@ -108,18 +107,20 @@ export default function Footer() {
 			<hr className={`${styles.fourthLine}`} />
 			<div className="container">
 				<div className={`${styles.copyright}`}>
-					<p className="text_xs f_w_r color_white opacity_8">
-						Copyright ©2024 Svatantra. All rights reserved.
+					<p className="text_xs f_w_r color_white opacity_70">
+						Copyright ©2024, Svatantra. All rights reserve.
 					</p>
 
 					{/* <hr className={`${styles.lastLine}`} /> */}
 
 					<div className={`${styles.box2}`}>
-						<p className="text_xs f_w_r color_white opacity_8">Privacy Policy</p>
-						<p className="text_xs f_w_r color_white opacity_8">Terms & Conditions</p>
+						<p className="text_xs f_w_r color_white opacity_70">Privacy Policy</p>
+						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
 					</div>
 
-					<img src={ting.src} alt="tinglogo" />
+					<a href="https://www.ting.in/" target="_blank">
+						<img src={ting.src} alt="tinglogo" />
+					</a>
 				</div>
 			</div>
 		</footer>
