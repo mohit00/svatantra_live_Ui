@@ -38,7 +38,8 @@ export default function HomeBanner() {
 					</div>
 					<div className={styles.info}>
 						<h1 className="section_title">
-							Building the <span>Entrepreneurs</span> that build India’s economy
+							Building the <span>Entrepreneurs</span> <br className="hidden-xs" /> that
+							build India’s economy
 						</h1>
 						<p className="text_md pt_20 opacity_80">
 							We turn aspirations into breakthroughs, powering the journey of every

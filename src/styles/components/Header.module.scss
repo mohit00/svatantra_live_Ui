@@ -60,6 +60,7 @@
 						font-size: 16px;
 						@extend %f_r_a_center;
 						justify-content: space-between;
+						font-family: var(--font_secondary);
 					}
 
 					// Dropdown on links
@@ -146,23 +147,48 @@
 		}
 
 		// This class is added when hamburger is clicked to open in mobile
-		&.sidebar_opened {
-			.hamburger_icon {
-				.hamburger_line {
-					&:first-child {
-						transform: rotate(45deg);
-					}
-					&:nth-child(2) {
-						opacity: 0;
-					}
-					&:last-child {
-						transform: rotate(-45deg);
-					}
-				}
+		// &.sidebar_opened {
+		// 	position: relative;
+		// 	z-index: 111111;
+		// 	background-color: red;
+		// 	.hamburger_icon {
+		// 		.hamburger_line {
+		// 			&:first-child {
+		// 				transform: rotate(45deg);
+		// 			}
+		// 			&:nth-child(2) {
+		// 				opacity: 0;
+		// 			}
+		// 			&:last-child {
+		// 				transform: rotate(-45deg);
+		// 			}
+		// 		}
+		// 	}
+		// 	.links_wrap {
+		// 		transform: translateX(0) !important;
+		// 	}
+		// }
+	}
+}
+
+.sidebar_opened {
+	position: relative;
+	z-index: 111111;
+	background-color: red;
+	.hamburger_icon {
+		.hamburger_line {
+			&:first-child {
+				transform: rotate(45deg);
 			}
-			.links_wrap {
-				transform: translateX(0) !important;
+			&:nth-child(2) {
+				opacity: 0;
+			}
+			&:last-child {
+				transform: rotate(-45deg);
 			}
 		}
+	}
+	.links_wrap {
+		transform: translateX(0) !important;
 	}
 }
