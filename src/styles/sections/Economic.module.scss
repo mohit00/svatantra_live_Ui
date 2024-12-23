@@ -45,14 +45,25 @@
 				min-height: 140px;
 				border-radius: 12px;
 				padding: 0 20px;
-				background: rgb(82,134,195);
-				background: linear-gradient(120deg, rgba(82,134,195,1) 0%, rgba(40,89,169,1) 43%);
+				background: rgb(82, 134, 195);
+				background: linear-gradient(
+					120deg,
+					rgba(82, 134, 195, 1) 0%,
+					rgba(40, 89, 169, 1) 43%
+				);
+				position: relative;
 				// background-color: var(--color_secondary);
 
 				@media (max-width: 767px) {
 					padding: 0 10px;
 				}
 				.count {
+					display: flex;
+
+					@media (max-width: 767px) {
+						flex-direction: column;
+						margin-bottom: 25px;
+					}
 					.counterInfo {
 						display: flex;
 						align-items: center;
@@ -77,6 +88,17 @@
 					}
 					h5 {
 						color: var(--color_white);
+					}
+
+					.counterImg {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+					}
+
+					.mobile {
+						position: absolute;
+						bottom: 0;
 					}
 				}
 			}

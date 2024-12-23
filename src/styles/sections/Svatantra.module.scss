@@ -126,6 +126,12 @@
 				}
 				&.box_1 {
 					background-color: var(--color_white);
+
+					@media (max-width: 767px) {
+						.title {
+							width: 40%;
+						}
+					}
 				}
 				&.box_2 {
 					width: 90%;
@@ -134,6 +140,10 @@
 					.title {
 						h5 {
 							color: #014c26;
+						}
+
+						@media (max-width: 767px) {
+							width: 40%;
 						}
 					}
 					.desc {
