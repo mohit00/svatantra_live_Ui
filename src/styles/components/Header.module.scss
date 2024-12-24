@@ -37,20 +37,23 @@
 				padding-inline-start: 0;
 				// The menu is transformed as per sidebar on click of hamburger icon
 				@media (max-width: 1200px) {
-					padding-top: 5%;
+					padding: 20px 0 ;
 					background-color: var(--color_white);
 					transition: ease all 300ms;
-					transform: translateX(-105%);
+					transform: translateY(-150%);
 					flex-direction: column;
-					width: 105vw;
+					width: 100%;
 					position: absolute;
-					top: 100%;
+					top: 89px;
 					left: 0;
-					height: 100vh;
+					height: fit-content;
+					// height: 100vh;
 					background-size: cover;
 					background-position: center;
 					background-repeat: no-repeat;
 					background-image: url(/img/home/banner_bg.jpg);
+					border-radius: 20px;
+					border: 1px solid var(--color_secondary);
 				}
 				.links {
 					@extend %relative_box;
@@ -204,6 +207,6 @@
 		}
 	}
 	.links_wrap {
-		transform: translateX(-5%) !important;
+		transform: translateY(-5%) !important;
 	}
 }
