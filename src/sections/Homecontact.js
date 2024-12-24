@@ -1,11 +1,12 @@
 // MODULES //
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import ScrollOut from "scroll-out";
 import { useForm } from "react-hook-form";
 
 // UTILS //
@@ -20,6 +21,11 @@ import styles from "@/styles/sections/Homecontact.module.scss";
 
 /** Homecontact Section */
 export default function Homecontact() {
+	useEffect(() => {
+		ScrollOut({
+			once: true,
+		});
+	}, []);
 	const formRef = useRef();
 	const {
 		register,
@@ -78,7 +84,7 @@ export default function Homecontact() {
 		<section className={styles.Homecontact} name="ContactUs">
 			<div className="container">
 				<div className={`${styles.mainbox}`}>
-					<div className={`${styles.left}`}>
+					<div className={`${styles.left}`} data-scroll>
 						<h1 className="text_xxxl pb_20 color_primary">Connect with us</h1>
 						<p className="text_sm pb_20 opacity_80">
 							Have questions or need support? We&lsquo;re here to guide and assist you
@@ -90,7 +96,7 @@ export default function Homecontact() {
 							18002679911
 						</h3>
 					</div>
-					<div className={`${styles.right}`}>
+					<div className={`${styles.right}`} data-scroll>
 						<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 							<div className={`${styles.form_field}`}>
 								<input

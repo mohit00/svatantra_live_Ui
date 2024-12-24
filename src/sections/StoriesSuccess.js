@@ -1,10 +1,12 @@
 // MODULES //
+import { useEffect } from "react";
 
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import ScrollOut from "scroll-out";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
 	Navigation,
@@ -36,6 +38,11 @@ import logo from "../../public/img/logo.jpg";
 
 /** StoriesSuccess Section */
 export default function StoriesSuccess() {
+	useEffect(() => {
+		ScrollOut({
+			once: true,
+		});
+	}, []);
 	// var settings = {
 	// 	dots: true,
 	// 	infinite: true,
@@ -51,8 +58,10 @@ export default function StoriesSuccess() {
 			<div className="container">
 				<div className={`${styles.StoriesFlex}`}>
 					<div className={`${styles.StoriesBx}`}>
-						<h2 className="text_xxxl color_primary pb_20">Stories of success</h2>
-						<div className={`${styles.StoriesSlider}`}>
+						<h2 className="text_xxxl color_primary pb_20" data-scroll>
+							Stories of success
+						</h2>
+						<div className={`${styles.StoriesSlider}`} data-scroll>
 							<Swiper
 								modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
 								spaceBetween={50}
@@ -117,7 +126,7 @@ export default function StoriesSuccess() {
 							</div>
 						</div>
 					</div>
-					<div className={`${styles.FollowBx}`}>
+					<div className={`${styles.FollowBx}`} data-scroll>
 						<h2 className="text_xxxl color_primary pb_20">Follow us</h2>
 						<div className={`${styles.FollowSlider}`}>
 							<Swiper

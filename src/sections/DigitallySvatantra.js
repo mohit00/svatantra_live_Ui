@@ -1,4 +1,5 @@
 // MODULES //
+import { useEffect } from "react";
 
 // COMPONENTS //
 import Button from "../../src/components/Buttons/Button";
@@ -14,16 +15,41 @@ import styles from "@/styles/sections/DigitallySvatantra.module.scss";
 
 // IMAGES //
 import DigitalImg from "../../public/img/home/DigitalImg.png";
+import HandImg from "../../public/img/home/HandImg.png";
+import DesignBg from "../../public/img/home/DesignBg.png";
 
 // DATA //
 
 /** DigitallySvatantra Section */
-export default function DigitallySvatantra() {
+export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
+	useEffect(() => {
+		const counterAnimTimeline = gsap.timeline({});
+
+		/** animation counter */
+		function counterAnimation() {
+			counterAnimTimeline.to(".ContentBx", { x: "0", opacity: "1" });
+			// counterAnimTimeline.to(".ImgBx", { scale: "1" });
+			counterAnimTimeline.to(`.${styles.DesignImg}`, { rotate: "720deg" }, 5);
+			// .fromTo(".OverviewLines", { width: "0%" }, { width: "auto" }, 0);
+			ScrollTrigger.create({
+				animation: counterAnimTimeline,
+				trigger: ".DigitallySvatantra",
+				start: "top center",
+				end: "bottom bottom",
+				scrub: 1,
+				markers: true,
+			});
+		}
+		counterAnimation();
+	}, []);
 	return (
-		<section className={styles.DigitallySvatantra} name="DigitallySvatantra">
+		<section
+			className={`${styles.DigitallySvatantra} DigitallySvatantra ptb_80`}
+			name="DigitallySvatantra"
+		>
 			{/* <div className="container"> */}
 			<div className={`${styles.DigitalFlex}`}>
-				<div className={`${styles.ContentBx}`}>
+				<div className={`${styles.ContentBx} ContentBx`}>
 					<h2 className="text_xxxl color_primary pb_20">
 						Making every Indian digitally Svatantra
 					</h2>
@@ -43,8 +69,13 @@ export default function DigitallySvatantra() {
 						/>
 					</div>{" "}
 				</div>
-				<div className={`${styles.ImgBx}`}>
-					<img src={DigitalImg.src} alt="" />
+				<div className={`${styles.ImgBx} ImgBx`}>
+					<img src={HandImg.src} className={`${styles.HandImg}`} alt="Hand Image" />
+					<img
+						src={DesignBg.src}
+						className={`${styles.DesignImg}`}
+						alt="Design Image"
+					/>
 				</div>
 			</div>
 			{/* </div> */}

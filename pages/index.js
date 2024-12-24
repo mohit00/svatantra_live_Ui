@@ -13,6 +13,8 @@ import DigitallySvatantra from "../src/sections/DigitallySvatantra";
 import StoriesSuccess from "../src/sections/StoriesSuccess";
 
 // PLUGINS //
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // UTILS //
 
@@ -28,6 +30,7 @@ import Economic from "@/sections/Economic";
 
 /** Home Page */
 export default function HomePage() {
+	gsap.registerPlugin(ScrollTrigger);
 	return (
 		<div>
 			{/* Metatags */}
@@ -51,7 +54,7 @@ export default function HomePage() {
 				<Svatantra />
 				<Economic />
 				<ScaleBusiness />
-				<DigitallySvatantra />
+				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<StoriesSuccess />
 				<Homenews />
 				<Homecontact />

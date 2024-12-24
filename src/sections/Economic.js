@@ -1,10 +1,12 @@
 // MODULES //
-import CountUp from "react-countup";
+import { useEffect } from "react";
+
 // COMPONENTS //
 
 // SECTIONS //
 
 // PLUGINS //
+import ScrollOut from "scroll-out";
 
 // UTILS //
 
@@ -18,6 +20,11 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 
 /** DummyComponent Component */
 export default function Economic() {
+	useEffect(() => {
+		ScrollOut({
+			once: true,
+		});
+	}, []);
 	return (
 		<div className={`${styles.economic} pb_100`} name="OurImpact">
 			<div className="container">
@@ -39,7 +46,7 @@ export default function Economic() {
 					</div>
 
 					<div className={`${styles.counter} `}>
-						<div className={`${styles.box} f_r_a_center`}>
+						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								{/* <CountUp
 									start={0}
@@ -82,7 +89,7 @@ export default function Economic() {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-						<div className={`${styles.box} f_r_a_center`}>
+						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								{/* <CountUp
 									start={0}
@@ -124,7 +131,7 @@ export default function Economic() {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-						<div className={`${styles.box} f_r_a_center`}>
+						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								{/* <CountUp
 									start={0}
@@ -166,7 +173,7 @@ export default function Economic() {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-						<div className={`${styles.box} f_r_a_center`}>
+						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								{/* <CountUp
 									start={0}
@@ -208,7 +215,7 @@ export default function Economic() {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-						<div className={`${styles.box} f_r_a_center`}>
+						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								{/* <CountUp
 									start={0}
@@ -248,7 +255,7 @@ export default function Economic() {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-						<div className={`${styles.box} f_r_a_center`}>
+						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								{/* <CountUp
 									start={0}

@@ -1,7 +1,7 @@
 @import "../helpers/helpers.scss";
 
 .DigitallySvatantra {
-	padding: 60px 0;
+	// padding: 60px 0;
 	.DigitalFlex {
 		// padding-left: calc(var(--container_left_space) + 15);
 		display: flex;
@@ -17,6 +17,7 @@
 		}
 		.ContentBx {
 			width: 45%;
+			transform: translateX(-150%);
 			@media screen and (max-width: 1199px) {
 				width: 50%;
 				padding-right: 10px;
@@ -30,6 +31,7 @@
 		}
 		.ImgBx {
 			width: 50%;
+			position: relative;
 			@media screen and (max-width: 1199px) {
 				width: 45%;
 			}
@@ -37,12 +39,27 @@
 				width: 100%;
 			}
 			// width: calc(60% + var(--container_left_space) + 15);
-			img {
-				width: 100%;
-				@media screen and (max-width: 992px) {
-					width: 80%;
-					margin-left: auto;
-				}
+			// img {
+			// 	width: 100%;
+			// 	@media screen and (max-width: 992px) {
+			// 		width: 80%;
+			// 		margin-left: auto;
+			// 	}
+			// }
+			.HandImg{
+					width: 100%;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					z-index: 3;
+					@media screen and (max-width: 992px) {
+						width: 80%;
+						margin-left: auto;
+					}
+			}
+			.DesignImg{
+				position: relative;
+				z-index: 1;
 			}
 		}
 	}
