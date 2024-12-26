@@ -51,7 +51,7 @@ export default function HomePage() {
 			<main className={`${styles.HomePage} `}>
 				{/* <h2>This is ting base next.js template</h2> */}
 				<HomeBanner />
-				<Svatantra />
+				<Svatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />

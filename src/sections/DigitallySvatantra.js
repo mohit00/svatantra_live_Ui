@@ -27,9 +27,11 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 
 		/** animation counter */
 		function counterAnimation() {
-			counterAnimTimeline.to(".ContentBx", { x: "0", opacity: "1" });
-			// counterAnimTimeline.to(".ImgBx", { scale: "1" });
-			counterAnimTimeline.to(`.${styles.DesignImg}`, { rotate: "720deg" }, 5);
+			counterAnimTimeline
+				.to(".ContentBx", { x: "0", opacity: "1" }, "first")
+				// counterAnimTimeline.to(".ImgBx", { scale: "1" });
+				.to(`.${styles.ImgInsideBx}`, { width: "100%", paddingTop: "0" }, "first")
+				.to(`.${styles.DesignImg}`, { rotate: "360deg" }, "first");
 			// .fromTo(".OverviewLines", { width: "0%" }, { width: "auto" }, 0);
 			ScrollTrigger.create({
 				animation: counterAnimTimeline,
@@ -70,12 +72,14 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 					</div>{" "}
 				</div>
 				<div className={`${styles.ImgBx} ImgBx`}>
-					<img src={HandImg.src} className={`${styles.HandImg}`} alt="Hand Image" />
-					<img
-						src={DesignBg.src}
-						className={`${styles.DesignImg}`}
-						alt="Design Image"
-					/>
+					<div className={`${styles.ImgInsideBx}`}>
+						<img src={HandImg.src} className={`${styles.HandImg}`} alt="Hand Image" />
+						<img
+							src={DesignBg.src}
+							className={`${styles.DesignImg}`}
+							alt="Design Image"
+						/>
+					</div>
 				</div>
 			</div>
 			{/* </div> */}

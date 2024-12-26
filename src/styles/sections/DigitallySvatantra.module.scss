@@ -1,6 +1,7 @@
 @import "../helpers/helpers.scss";
 
 .DigitallySvatantra {
+	overflow: hidden;
 	// padding: 60px 0;
 	.DigitalFlex {
 		// padding-left: calc(var(--container_left_space) + 15);
@@ -46,20 +47,28 @@
 			// 		margin-left: auto;
 			// 	}
 			// }
-			.HandImg{
-					width: 100%;
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-					z-index: 3;
-					@media screen and (max-width: 992px) {
-						width: 80%;
-						margin-left: auto;
-					}
-			}
-			.DesignImg{
+			.ImgInsideBx{
 				position: relative;
-				z-index: 1;
+				padding-top: 60px;
+				width: 60%;
+				margin-left: auto;
+				.HandImg{
+						width: 100%;
+						// width: 60%;
+						// right: 0;
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						z-index: 3;
+						@media screen and (max-width: 992px) {
+							width: 80%;
+							margin-left: auto;
+						}
+				}
+				.DesignImg{
+					position: relative;
+					z-index: 1;
+				}
 			}
 		}
 	}
