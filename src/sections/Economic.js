@@ -1,5 +1,6 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // COMPONENTS //
 
@@ -20,11 +21,68 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 
 /** DummyComponent Component */
 export default function Economic() {
+	const [values, setValues] = useState([0, 0, 0, 0, 0, 0]);
+	const refs = [
+		useRef(null),
+		useRef(null),
+		useRef(null),
+		useRef(null),
+		useRef(null),
+		useRef(null),
+	];
+
+	const countersData = [
+		{ end: 4.18, suffix: "M+", decimals: 2 },
+		{ end: 48636, suffix: "CR", decimals: 0 },
+		{ end: 14149, suffix: "CR", decimals: 0 },
+		{ end: 21500, suffix: "+", decimals: 0 },
+		{ end: 2000, suffix: "", decimals: 0 },
+		{ end: 19, suffix: "", decimals: 0 },
+	];
+
 	useEffect(() => {
-		ScrollOut({
-			once: true,
+		const observers = refs.map((ref, index) => {
+			const observer = new IntersectionObserver(
+				([entry]) => {
+					if (entry.isIntersecting) {
+						animateCounter(
+							index,
+							countersData[index].end,
+							2000,
+							countersData[index].decimals
+						);
+						observer.disconnect(); // Stop observing after animation starts
+					}
+				},
+				{ threshold: 0.5 }
+			);
+			if (ref.current) observer.observe(ref.current);
+			return observer;
 		});
+
+		return () => observers.forEach((observer) => observer.disconnect());
 	}, []);
+
+	const animateCounter = (index, end, duration, decimals) => {
+		const start = 0;
+		const startTime = performance.now();
+		const step = (currentTime) => {
+			const progress = Math.min((currentTime - startTime) / duration, 1);
+			const value = start + progress * (end - start);
+
+			setValues((prevValues) => {
+				const updatedValues = [...prevValues];
+				updatedValues[index] = value;
+				return updatedValues;
+			});
+
+			if (progress < 1) {
+				requestAnimationFrame(step);
+			}
+		};
+
+		requestAnimationFrame(step);
+	};
 	return (
 		<div className={`${styles.economic} pb_100`} name="OurImpact">
 			<div className="container">
@@ -48,36 +106,14 @@ export default function Economic() {
 					<div className={`${styles.counter} `}>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
-								{/* <CountUp
-									start={0}
-									end={4.18}
-									duration={5}
-									separator=" "
-									decimals={2}
-									decimal="."
-									// prefix="EUR "
-									// suffix=""
-									onEnd={() => console.log("Ended! 👏")}
-									onStart={() => console.log("Started! 💨")}
-								>
-									{({ countUpRef, start }) => (
-										<>
-											<div>
-												<div className={`${styles.counterInfo}`}>
-													<h4 className="text_xxl" ref={countUpRef}>
-														4.18
-													</h4>
-													<span className="color_primary_tint text_xxl">M+</span>
-												</div>
-
-												<h5 className="text_xs">Active customer</h5>
-											</div>
-										</>
-									)}
-								</CountUp> */}
-								<div className={`${styles.counterInfo}`}>
+								<div className={`${styles.counterInfo}`} ref={refs[0]}>
 									<h4 className="text_xxl">
-										4.18 <span>M+</span>
+										{/* 4.18 <span>M+</span> */}
+										{values[0].toLocaleString(undefined, {
+											minimumFractionDigits: countersData[0].decimals,
+											maximumFractionDigits: countersData[0].decimals,
+										})}{" "}
+										<span>{countersData[0].suffix}</span>
 									</h4>
 									<h5 className="text_xs">Active customer</h5>
 								</div>
@@ -91,36 +127,14 @@ export default function Economic() {
 						</div>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
-								{/* <CountUp
-									start={0}
-									end={48636}
-									duration={5}
-									separator=","
-									decimals={0}
-									decimal=""
-									// prefix="EUR "
-									// suffix=""
-									onEnd={() => console.log("Ended! 👏")}
-									onStart={() => console.log("Started! 💨")}
-								>
-									{({ countUpRef, start }) => (
-										<>
-											<div>
-												<div className={`${styles.counterInfo}`}>
-													<h4 className="text_xxl" ref={countUpRef}>
-														4.18
-													</h4>
-													<span className="color_primary text_xxl">CR</span>
-												</div>
-
-												<h5 className="color_primary_tint text_xs">Loans disbursed</h5>
-											</div>
-										</>
-									)}
-								</CountUp> */}
-								<div className={`${styles.counterInfo}`}>
+								<div className={`${styles.counterInfo}`} ref={refs[1]}>
 									<h4 className="text_xxl">
-										48,636 <span>CR</span>
+										{/* 48,636 <span>CR</span> */}
+										{values[1].toLocaleString(undefined, {
+											minimumFractionDigits: countersData[1].decimals,
+											maximumFractionDigits: countersData[1].decimals,
+										})}{" "}
+										<span>{countersData[1].suffix}</span>
 									</h4>
 									<h5 className="text_xs">Loans disbursed</h5>
 								</div>
@@ -133,36 +147,14 @@ export default function Economic() {
 						</div>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
-								{/* <CountUp
-									start={0}
-									end={14149}
-									duration={5}
-									separator=","
-									decimals={0}
-									decimal=""
-									// prefix="EUR "
-									// suffix=""
-									onEnd={() => console.log("Ended! 👏")}
-									onStart={() => console.log("Started! 💨")}
-								>
-									{({ countUpRef, start }) => (
-										<>
-											<div>
-												<div className={`${styles.counterInfo}`}>
-													<h4 className="text_xxl" ref={countUpRef}>
-														4.18
-													</h4>
-													<span className="color_primary_tint text_xxl">CR</span>
-												</div>
-
-												<h5 className="text_xs">AM</h5>
-											</div>
-										</>
-									)}
-								</CountUp> */}
-								<div className={`${styles.counterInfo}`}>
+								<div className={`${styles.counterInfo}`} ref={refs[2]}>
 									<h4 className="text_xxl">
-										14,149 <span>CR</span>
+										{/* 14,149 <span>CR</span> */}
+										{values[2].toLocaleString(undefined, {
+											minimumFractionDigits: countersData[2].decimals,
+											maximumFractionDigits: countersData[2].decimals,
+										})}{" "}
+										<span>{countersData[2].suffix}</span>
 									</h4>
 									<h5 className="text_xs">AUM</h5>
 								</div>
@@ -175,36 +167,14 @@ export default function Economic() {
 						</div>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
-								{/* <CountUp
-									start={0}
-									end={21500}
-									duration={5}
-									separator=","
-									decimals={0}
-									decimal=""
-									// prefix="EUR "
-									// suffix=""
-									onEnd={() => console.log("Ended! 👏")}
-									onStart={() => console.log("Started! 💨")}
-								>
-									{({ countUpRef, start }) => (
-										<>
-											<div>
-												<div className={`${styles.counterInfo}`}>
-													<h4 className="text_xxl" ref={countUpRef}>
-														4.18
-													</h4>
-													<span className="color_primary_tint text_xxl">+</span>
-												</div>
-
-												<h5 className="text_xs">Total employees</h5>
-											</div>
-										</>
-									)}
-								</CountUp> */}
-								<div className={`${styles.counterInfo}`}>
+								<div className={`${styles.counterInfo}`} ref={refs[3]}>
 									<h4 className="text_xxl">
-										21,500 <span>+</span>
+										{/* 21,500 <span>+</span> */}
+										{values[3].toLocaleString(undefined, {
+											minimumFractionDigits: countersData[3].decimals,
+											maximumFractionDigits: countersData[3].decimals,
+										})}{" "}
+										<span>{countersData[3].suffix}</span>
 									</h4>
 									<h5 className="text_xs">Total employees</h5>
 								</div>
@@ -217,35 +187,14 @@ export default function Economic() {
 						</div>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
-								{/* <CountUp
-									start={0}
-									end={2000}
-									duration={5}
-									separator=","
-									decimals={0}
-									decimal=""
-									// prefix="EUR "
-									// suffix=""
-									onEnd={() => console.log("Ended! 👏")}
-									onStart={() => console.log("Started! 💨")}
-								>
-									{({ countUpRef, start }) => (
-										<>
-											<div>
-												<div className={`${styles.counterInfo}`}>
-													<h4 className="text_xxl" ref={countUpRef}>
-														4.18
-													</h4>
-													<span className="color_primary_tint text_xxl">+</span>
-												</div>
-
-												<h5 className="text_xs">Total branches</h5>
-											</div>
-										</>
-									)}
-								</CountUp> */}
-								<div className={`${styles.counterInfo}`}>
-									<h4 className="text_xxl">2000</h4>
+								<div className={`${styles.counterInfo}`} ref={refs[4]}>
+									<h4 className="text_xxl">
+										{values[4].toLocaleString(undefined, {
+											minimumFractionDigits: countersData[4].decimals,
+											maximumFractionDigits: countersData[4].decimals,
+										})}{" "}
+										<span>{countersData[4].suffix}</span>
+									</h4>
 									<h5 className="text_xs">Total branches</h5>
 								</div>
 								<img
@@ -257,34 +206,14 @@ export default function Economic() {
 						</div>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
-								{/* <CountUp
-									start={0}
-									end={19}
-									duration={5}
-									separator=","
-									decimals={0}
-									decimal=""
-									// prefix="EUR "
-									// suffix=""
-									onEnd={() => console.log("Ended! 👏")}
-									onStart={() => console.log("Started! 💨")}
-								>
-									{({ countUpRef, start }) => (
-										<>
-											<div>
-												<div className={`${styles.counterInfo}`}>
-													<h4 className="text_xxl" ref={countUpRef}>
-														19
-													</h4>
-												</div>
-
-												<h5 className="text_xs">States</h5>
-											</div>
-										</>
-									)}
-								</CountUp> */}
-								<div className={`${styles.counterInfo}`}>
-									<h4 className="text_xxl">19</h4>
+								<div className={`${styles.counterInfo}`} ref={refs[5]}>
+									<h4 className="text_xxl">
+										{values[5].toLocaleString(undefined, {
+											minimumFractionDigits: countersData[5].decimals,
+											maximumFractionDigits: countersData[5].decimals,
+										})}{" "}
+										<span>{countersData[5].suffix}</span>
+									</h4>
 									<h5 className="text_xs">States</h5>
 								</div>
 								<img

@@ -57,12 +57,20 @@ export default function Header() {
 		>
 			<div className={`${styles.header_section} header_container`}>
 				<div className={`${styles.header_inside}`}>
-					{/* Logo wrap */}
-					<Link href="/">
-						<div className={styles.image_wrap}>
-							<Image src={HeaderLogo} alt="Logo" />
+					<div className={`${styles.header_logo}`}>
+						{/* Logo wrap */}
+						<Link href="/">
+							<div className={styles.image_wrap}>
+								<Image src={HeaderLogo} alt="Logo" />
+							</div>
+						</Link>
+						{/* Hamburger icon visible in mobile only */}
+						<div className={styles.hamburger_icon} onClick={toggleSidebar}>
+							<span className={styles.hamburger_line}></span>
+							<span className={styles.hamburger_line}></span>
+							<span className={styles.hamburger_line}></span>
 						</div>
-					</Link>
+					</div>
 
 					{/* Links Wrap */}
 					<div className={`${styles.links_wrap}`}>
@@ -190,13 +198,6 @@ export default function Header() {
 								/>
 							</Link> */}
 						</div>
-					</div>
-
-					{/* Hamburger icon visible in mobile only */}
-					<div className={styles.hamburger_icon} onClick={toggleSidebar}>
-						<span className={styles.hamburger_line}></span>
-						<span className={styles.hamburger_line}></span>
-						<span className={styles.hamburger_line}></span>
 					</div>
 				</div>
 			</div>
