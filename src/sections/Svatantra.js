@@ -1,4 +1,5 @@
 // MODULES //
+import { useEffect } from "react";
 
 // COMPONENTS //
 import Button from "../../src/components/Buttons/Button";
@@ -17,27 +18,103 @@ import styles from "@/styles/sections/Svatantra.module.scss";
 // DATA //
 
 /** Svatantra Component */
-export default function Svatantra() {
+export default function Svatantra({ gsap, ScrollTrigger }) {
+	useEffect(() => {
+		let Anim2, independentTimeline, scrollTriggerInstance;
+
+		/** First animation triggered by ScrollTrigger */
+		function Anim2Animation() {
+			Anim2 = gsap.timeline({
+				onComplete: () => {
+					startIndependentAnimations();
+				},
+			});
+
+			Anim2.to(`.${styles.OverlayWrap}`, { width: "100%" }, "first")
+				.to(
+					`.${styles.left_box}`,
+					{
+						x: 0,
+						opacity: 1,
+					},
+					"first"
+				)
+				.to(
+					`.${styles.box_1}`,
+					{
+						x: 0,
+					},
+					"first"
+				);
+
+			scrollTriggerInstance = ScrollTrigger.create({
+				animation: Anim2,
+				trigger: `.${styles.svatantra_section}`,
+				start: "top bottom-=200px",
+				end: "bottom bottom-=200px",
+				scrub: 1,
+				markers: false,
+			});
+		}
+
+		/** Independent animations after the first one */
+		function startIndependentAnimations() {
+			independentTimeline = gsap.timeline({
+				onComplete: () => {
+					cleanupAnimations();
+				},
+			});
+
+			independentTimeline
+				.to(`.${styles.box_2}`, { x: 0, duration: 1 })
+				.to(`.${styles.box_3}`, { x: 0, duration: 1 });
+		}
+
+		/** Cleanup animations and ScrollTrigger */
+		function cleanupAnimations() {
+			if (Anim2) {
+				Anim2.kill();
+			}
+			if (independentTimeline) {
+				independentTimeline.kill();
+			}
+			if (scrollTriggerInstance) {
+				scrollTriggerInstance.kill();
+			}
+		}
+
+		Anim2Animation();
+
+		// Clean up on component unmount
+		return () => {
+			cleanupAnimations();
+		};
+	}, []);
+
 	return (
 		<div className={`${styles.svatantra_section} ptb_100`} name="About">
 			<div className={styles.svatantra_wrapper}>
-				<div className={styles.left_box}>
-					<h2 className="section_title">We are Svatantra</h2>
-					<p className={`${styles.para_width} text_lg pt_10 opacity_80`}>
-						Svatantra is for the millions of foundational entrepreneurs who are the
-						backbone of India&lsquo;s growth story. These visionary individuals, with
-						grit and determination, fuel the engines of progress, propelling our
-						nation towards <span>a brighter future</span>
-					</p>
-					<div className={`${styles.BtnBx} pt_20 hidden`}>
-						<Button
-							buttonType="secondary"
-							condition={"white"}
-							link={"#"}
-							title={"Grow More"}
-						/>
+				<div className={`${styles.OverlayWrap}`}></div>
+				<div className={`${styles.left_boxWrap}`}>
+					<div className={styles.left_box}>
+						<h2 className="section_title">We are Svatantra</h2>
+						<p className={`${styles.para_width} text_lg pt_10 opacity_80`}>
+							Svatantra is for the millions of foundational entrepreneurs who are the
+							backbone of India&lsquo;s growth story. These visionary individuals, with
+							grit and determination, fuel the engines of progress, propelling our
+							nation towards <span>a brighter future</span>
+						</p>
+						<div className={`${styles.BtnBx} pt_20 hidden`}>
+							<Button
+								buttonType="secondary"
+								condition={"white"}
+								link={"#"}
+								title={"Grow More"}
+							/>
+						</div>
 					</div>
 				</div>
+
 				<div className={styles.right_box}>
 					<div className={`${styles.box} ${styles.box_1} f_r_a_center`}>
 						<div className={styles.title}>

@@ -37,9 +37,9 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 				animation: counterAnimTimeline,
 				trigger: ".DigitallySvatantra",
 				start: "top bottom",
-				end: "bottom bottom-=100px",
+				end: "center bottom",
 				scrub: 1,
-				markers: true,
+				markers: false,
 			});
 		}
 		counterAnimation();
