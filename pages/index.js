@@ -23,6 +23,7 @@ import styles from "@/styles/pages/Home.module.scss";
 import HomeBanner from "@/sections/HomeBanner";
 import Svatantra from "@/sections/Svatantra";
 import Economic from "@/sections/Economic";
+import Intro from "@/components/intro";
 
 // IMAGES //
 
@@ -43,6 +44,7 @@ export default function HomePage() {
 				Url={"/"}
 			/>
 
+			{/* <Intro /> */}
 			{/* Header */}
 			<Header />
 
@@ -50,7 +52,7 @@ export default function HomePage() {
 
 			<main className={`${styles.HomePage} `}>
 				{/* <h2>This is ting base next.js template</h2> */}
-				<HomeBanner />
+				<HomeBanner gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<Svatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<Economic />
 				<ScaleBusiness />

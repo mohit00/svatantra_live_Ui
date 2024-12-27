@@ -51,7 +51,7 @@ export default function Header() {
 
 	return (
 		<div
-			className={`${styles.main_header} ${
+			className={`${styles.main_header} main_header ${
 				openSidebar ? styles.sidebar_opened : ""
 			}`}
 		>
