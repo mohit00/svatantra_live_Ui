@@ -26,9 +26,13 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 		{ src: "/lottie/loading.json" },
 		{ src: "/lottie/line1.json" },
 		{ src: "/lottie/line2.json" },
+		{ src: "/lottie/mobile_loader.json" },
 	];
 
 	useEffect(() => {
+		const winH = window.innerHeight;
+		const winW = window.innerWidth;
+
 		const introTimeline = gsap.timeline({
 			onStart: () => {
 				document.body.style.overflow = "hidden";
@@ -94,6 +98,15 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 			"3st"
 		);
 		introTimeline.to(
+			// eslint-disable-next-line quotes
+			`.${styles.intro_loader_mobile}`,
+			{
+				y: "-18vh",
+				delay: 1,
+			},
+			"2st"
+		);
+		introTimeline.to(
 			`.${styles.line_1}`,
 			1,
 			{
@@ -114,9 +127,17 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 	return (
 		<div className={styles.home_banner}>
 			<div className={styles.home_banner_bg}></div>
-			<div className={styles.intro_loader}>
+			<div className={`${styles.intro_loader} hidden_xs`}>
 				<DotLottieReact
 					src={lottieAnimations[0].src}
+					autoplay
+					loop
+					renderer="svg"
+				/>
+			</div>
+			<div className={`${styles.intro_loader_mobile} visible_xs`}>
+				<DotLottieReact
+					src={lottieAnimations[3].src}
 					autoplay
 					loop
 					renderer="svg"

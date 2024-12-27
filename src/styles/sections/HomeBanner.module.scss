@@ -36,6 +36,14 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+	.intro_loader_mobile{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		position: absolute;
+		align-items: center;
+		justify-content: space-between;
+	}
 	// padding-top: 100px;
 	.banner {
 		height: 100vh;
@@ -130,6 +138,15 @@
 		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 		img {
 			width: 100%;
+		}
+		@media screen and (max-width: 767px) {
+			bottom: 10px;
+		}
+		@media (min-width: 768px) and (max-width: 992px) {
+			bottom: 18px;
+		}
+		@media (min-width: 993px) and (max-width: 1200px) {
+			bottom: 25px;
 		}
 	}
 	.line_2 {
