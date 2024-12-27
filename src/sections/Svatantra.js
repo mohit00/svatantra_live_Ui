@@ -103,12 +103,13 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 			/** First animation */
 			Anim2 = gsap.timeline();
 
-			Anim2.to(`.${styles.OverlayWrap}`, { width: "100%" }, "first")
+			Anim2.to(`.${styles.OverlayWrap}`, { width: "100%", duration: 2 }, "first")
 				.to(
 					`.${styles.left_box}`,
 					{
 						x: 0,
 						opacity: 1,
+						duration: 2,
 					},
 					"first"
 				)
@@ -116,6 +117,7 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 					`.${styles.box_1}`,
 					{
 						x: 0,
+						duration: 2,
 					},
 					"first"
 				)
@@ -152,29 +154,31 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 					</div>
 				</div>
 
-				<div className={styles.right_box}>
-					<div className={`${styles.box} ${styles.box_1} f_r_a_center`}>
-						<div className={styles.title}>
-							<h5>First</h5>
+				<div className={styles.right_box_wrapper}>
+					<div className={styles.right_box}>
+						<div className={`${styles.box} ${styles.box_1} f_r_a_center`}>
+							<div className={styles.title}>
+								<h5>First</h5>
+							</div>
+							<div className={styles.desc}>
+								<h6>to receive NBFC-MFI license from RBI</h6>
+							</div>
 						</div>
-						<div className={styles.desc}>
-							<h6>to receive NBFC-MFI license from RBI</h6>
+						<div className={`${styles.box} ${styles.box_2} f_r_a_center`}>
+							<div className={styles.title}>
+								<h5>Second</h5>
+							</div>
+							<div className={styles.desc}>
+								<h6>largest MFI in the country</h6>
+							</div>
 						</div>
-					</div>
-					<div className={`${styles.box} ${styles.box_2} f_r_a_center`}>
-						<div className={styles.title}>
-							<h5>Second</h5>
-						</div>
-						<div className={styles.desc}>
-							<h6>largest MFI in the country</h6>
-						</div>
-					</div>
-					<div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
-						<div className={styles.title}>
-							<h5>Largest PE</h5>
-						</div>
-						<div className={styles.desc}>
-							<h6>investment in the sector</h6>
+						<div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
+							<div className={styles.title}>
+								<h5>Largest PE</h5>
+							</div>
+							<div className={styles.desc}>
+								<h6>investment in the sector</h6>
+							</div>
 						</div>
 					</div>
 				</div>
