@@ -12,9 +12,10 @@
 		margin-left: auto;
 		@media screen and (max-width: 992px) {
 			flex-direction: column;
+			gap: 30px;
 		}
 		@media screen and (max-width: 767px) {
-			gap: 30px;
+			// gap: 30px;
 		}
 		.ContentBx {
 			width: 45%;
@@ -47,27 +48,34 @@
 			// 		margin-left: auto;
 			// 	}
 			// }
-			.ImgInsideBx{
+			.ImgInsideBx {
 				position: relative;
 				padding-top: 60px;
 				width: 60%;
 				margin-left: auto;
-				.HandImg{
-						width: 100%;
-						// width: 60%;
-						// right: 0;
-						position: absolute;
-						top: 50%;
-						transform: translateY(-50%);
-						z-index: 3;
-						@media screen and (max-width: 992px) {
-							width: 80%;
-							margin-left: auto;
-						}
+				.HandImg {
+					width: 100%;
+					// width: 60%;
+					// right: 0;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					z-index: 3;
+					@media screen and (max-width: 1199px) {
+						width: 80%;
+						right: 0;
+					}
+					@media screen and (max-width: 992px) {
+						width: 80%;
+						margin-left: auto;
+					}
 				}
-				.DesignImg{
+				.DesignImg {
 					position: relative;
 					z-index: 1;
+					@media screen and (max-width: 992px) {
+						margin: auto;
+					}
 				}
 			}
 		}

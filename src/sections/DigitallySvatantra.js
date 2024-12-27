@@ -36,8 +36,8 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 			ScrollTrigger.create({
 				animation: counterAnimTimeline,
 				trigger: ".DigitallySvatantra",
-				start: "top center",
-				end: "bottom bottom",
+				start: "top bottom",
+				end: "bottom bottom-=100px",
 				scrub: 1,
 				markers: true,
 			});
