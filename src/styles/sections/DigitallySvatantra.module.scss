@@ -24,7 +24,7 @@
 				width: 50%;
 				padding-right: 10px;
 			}
-			@media screen and (max-width: 991px) {
+			@media screen and (max-width: 992px) {
 				width: 100%;
 			}
 			.BtnBx {
@@ -75,9 +75,6 @@
 					z-index: 1;
 					@media screen and (max-width: 992px) {
 						margin: auto;
-					}
-					@media screen and (max-width: 767px) {
-						width: 85%;
 					}
 				}
 			}
