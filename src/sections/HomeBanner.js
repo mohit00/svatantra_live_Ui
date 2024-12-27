@@ -15,30 +15,55 @@ import styles from "@/styles/sections/HomeBanner.module.scss";
 
 // IMAGES //
 import Line1 from "../../public/img/home/banner_line.png";
-import RoateteImg from "../../public/img/home/rotate_img.png";
-import rupeesImg from "../../public/img/home/rupees_img.png";
+import Blue from "../../public/img/home/blue.png";
+import Green from "../../public/img/home/green.png";
 
 // DATA //
 
 /** HomeBanner Component */
 export default function HomeBanner({ gsap, ScrollTrigger }) {
-	const lottieAnimations = [{ src: "/lottie/loading.json" }];
+	const lottieAnimations = [
+		{ src: "/lottie/loading.json" },
+		{ src: "/lottie/line1.json" },
+		{ src: "/lottie/line2.json" },
+	];
 
 	useEffect(() => {
 		const introTimeline = gsap.timeline({
-			// onStart: () => {
-			// 	document.body.style.overflow = "hidden";
-			// 	document.body.style.height = "100vh";
-			// 	document.documentElement.style.overflow = "hidden";
-			// },
+			onStart: () => {
+				document.body.style.overflow = "hidden";
+				document.body.style.height = "100vh";
+				document.documentElement.style.overflow = "hidden";
+			},
+			onComplete: () => {
+				document.body.style.overflow = "";
+				document.body.style.height = "";
+				document.documentElement.style.overflow = "";
+			},
 		});
 
 		introTimeline.to(
 			`.${styles.home_banner_bg}`,
-			1.5,
+			1,
 			{
 				y: "0",
-				delay: 5,
+				delay: 3,
+			},
+			"1st"
+		);
+		introTimeline.to(
+			`.${styles.line1}`,
+			{
+				opacity: 0,
+				delay: 3,
+			},
+			"1st"
+		);
+		introTimeline.to(
+			`.${styles.line2}`,
+			{
+				opacity: 0,
+				delay: 3,
 			},
 			"1st"
 		);
@@ -53,7 +78,7 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 		);
 		introTimeline.to(
 			`.${styles.intro_loader}`,
-			1.5,
+			1,
 			{
 				x: "-22%",
 				delay: 1,
@@ -70,25 +95,21 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 		);
 		introTimeline.to(
 			`.${styles.line_1}`,
+			1,
 			{
 				clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
 			},
 			"3st"
 		);
-		// aa.fromTo(
-		// 	".banner_animation",
-		// 	1,
-		// 	{
-		// 		y: "90%",
-		// 		opacity: 1,
-		// 	},
-		// 	{
-		// 		y: "0%",
-		// 		opacity: 1,
-		// 		delay: 0.1,
-		// 	},
-		// 	"1st"
-		// )
+		introTimeline.to(
+			`.${styles.line_2}`,
+			1,
+			{
+				clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+				delay: 0.1,
+			},
+			"3st"
+		);
 	}, []);
 	return (
 		<div className={styles.home_banner}>
@@ -96,6 +117,22 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 			<div className={styles.intro_loader}>
 				<DotLottieReact
 					src={lottieAnimations[0].src}
+					autoplay
+					loop
+					renderer="svg"
+				/>
+			</div>
+			<div className={styles.line1}>
+				<DotLottieReact
+					src={lottieAnimations[1].src}
+					autoplay
+					loop
+					renderer="svg"
+				/>
+			</div>
+			<div className={styles.line2}>
+				<DotLottieReact
+					src={lottieAnimations[2].src}
 					autoplay
 					loop
 					renderer="svg"
@@ -133,7 +170,10 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 			</div>
 
 			<div className={styles.line_1}>
-				<img src={Line1.src} alt="Line 1" className="img-responsive" />
+				<img src={Blue.src} alt="Line 1" className="img-responsive" />
+			</div>
+			<div className={styles.line_2}>
+				<img src={Green.src} alt="Line 1" className="img-responsive" />
 			</div>
 		</div>
 	);
