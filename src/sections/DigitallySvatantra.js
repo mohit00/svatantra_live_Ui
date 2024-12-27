@@ -29,17 +29,14 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 		function counterAnimation() {
 			counterAnimTimeline
 				.to(".ContentBx", { x: "0", opacity: "1" }, "first")
-				// counterAnimTimeline.to(".ImgBx", { scale: "1" });
 				.to(`.${styles.ImgInsideBx}`, { width: "100%", paddingTop: "0" }, "first")
 				.to(`.${styles.DesignImg}`, { rotate: "360deg" }, "first");
-			// .fromTo(".OverviewLines", { width: "0%" }, { width: "auto" }, 0);
 			ScrollTrigger.create({
 				animation: counterAnimTimeline,
 				trigger: ".DigitallySvatantra",
-				start: "top bottom-=200px",
+				start: "top bottom-=35%",
 				end: "center bottom",
 				scrub: 1,
-				markers: true,
 			});
 		}
 		counterAnimation();

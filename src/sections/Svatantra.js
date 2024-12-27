@@ -135,7 +135,7 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 				<div className={`${styles.left_boxWrap}`}>
 					<div className={styles.left_box}>
 						<h2 className="section_title">We are Svatantra</h2>
-						<p className={`${styles.para_width} text_lg pt_10 opacity_80`}>
+						<p className={`${styles.para_width} text_reg pt_10 opacity_80`}>
 							Svatantra is for the millions of foundational entrepreneurs who are the
 							backbone of India&lsquo;s growth story. These visionary individuals, with
 							grit and determination, fuel the engines of progress, propelling our

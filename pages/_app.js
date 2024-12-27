@@ -19,9 +19,9 @@ import "@/styles/globals/globals.scss";
 
 /** App Page */
 export default function MyApp({ Component, pageProps }) {
-	useEffect(() => {
-		SmoothScrolling();
-	}, []);
+	// useEffect(() => {
+	// 	SmoothScrolling();
+	// }, []);
 
 	return <Component {...pageProps} />;
 }
