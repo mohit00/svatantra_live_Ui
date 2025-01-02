@@ -31,6 +31,7 @@
 				}
 				.SliderItem {
 					.quote {
+						min-height: 190px;
 						padding: 20px 0 50px;
 						@media screen and (max-width: 767px) {
 							padding: 17px 0 14px;
@@ -49,6 +50,7 @@
 				justify-content: flex-end;
 				button {
 					border: 0;
+					cursor: pointer;
 					background-color: transparent;
 				}
 			}

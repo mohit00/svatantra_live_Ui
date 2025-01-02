@@ -87,21 +87,9 @@ export default function Economic() {
 		<div className={`${styles.economic} pb_100`} name="OurImpact">
 			<div className="container">
 				<div className={styles.economic_wrapper}>
-					<h2 className="section_title">
+					<h2 className="section_title pb_40">
 						We are in the business of activating economic engines of growth
 					</h2>
-					<div className={`${styles.economic_info} f_r_aj_between ptb_30`}>
-						<div className={styles.desc}>
-							<h6 className="text_sm">
-								*Combined numbers of Svatantra Microfin Pvt. Ltd. & Chaitanya India
-							</h6>
-						</div>
-						<div className={styles.title}>
-							<h5 className="text_reg opacity_80">
-								<span>*Crisil</span> A - Stable Rating
-							</h5>
-						</div>
-					</div>
 
 					<div className={`${styles.counter} `}>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
@@ -222,6 +210,19 @@ export default function Economic() {
 								/>
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
+						</div>
+					</div>
+
+					<div className={`${styles.economic_info} f_r_aj_between pt_30`}>
+						<div className={styles.desc}>
+							<h6 className="text_sm">
+								*Combined numbers of Svatantra Microfin Pvt. Ltd. & Chaitanya India
+							</h6>
+						</div>
+						<div className={styles.title}>
+							<h5 className="text_reg opacity_80">
+								<span>*CRISIL</span> A - (Stable Rating)
+							</h5>
 						</div>
 					</div>
 				</div>

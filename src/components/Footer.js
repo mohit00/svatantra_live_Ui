@@ -287,10 +287,10 @@ export default function Footer() {
 									<a href="https://smartodr.in/login">Smart ODR</a>
 								</p>
 								<p className="text_sm color_white">
-									<a href="https://www.chaitanyaindia.in/">Chaitanaya India</a>
+									<a href="https://www.chaitanyaindia.in/">Chaitanya India</a>
 								</p>
 								<p className="text_sm color_white">
-									<a href="https://www.svatantramhfc.com/">Svatantra Microhousing</a>
+									<a href="https://www.svatantramhfc.com/">Svatantra Micro Housing</a>
 								</p>
 							</div>
 						</div>
@@ -316,9 +316,9 @@ export default function Footer() {
 						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
 					</div> */}
 
-					<a href="https://www.ting.in/" target="_blank">
+					{/* <a href="https://www.ting.in/" target="_blank">
 						<img src={ting.src} alt="tinglogo" />
-					</a>
+					</a> */}
 				</div>
 			</div>
 		</footer>
