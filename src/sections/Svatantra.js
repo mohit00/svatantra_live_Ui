@@ -141,7 +141,7 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 							Svatantra is for the millions of foundational entrepreneurs who are the
 							backbone of India&lsquo;s growth story. These visionary individuals, with
 							grit and determination, fuel the engines of progress, propelling our
-							nation towards <span>a brighter future</span>
+							nation towards a brighter future.
 						</p>
 						<div className={`${styles.BtnBx} pt_20 hidden`}>
 							<Button
