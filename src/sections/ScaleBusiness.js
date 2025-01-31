@@ -35,17 +35,17 @@ export default function ScaleBusiness() {
 				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
 		},
 		{
-			maintitle: "Individual loan",
+			maintitle: "MSME loans",
 			AccNo: "02",
 			description:
 				"Enabling entrepreneurs, especially rural women to meet their needs and scale their businesses to new heights.",
 		},
-		{
-			maintitle: "Insurance",
-			AccNo: "03",
-			description:
-				"A support system for our women customers and their family ensuring financial security and future stability.",
-		},
+		// {
+		// 	maintitle: "Insurance",
+		// 	AccNo: "03",
+		// 	description:
+		// 		"A support system for our women customers and their family ensuring financial security and future stability.",
+		// },
 	];
 
 	const [activeLocation, setActiveLocation] = useState(0);

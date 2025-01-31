@@ -292,6 +292,11 @@ export default function Footer() {
 								<p className="text_sm color_white">
 									<a href="https://www.svatantramhfc.com/">Svatantra Micro Housing</a>
 								</p>
+								<p className="text_sm color_white">
+									<a href=" https://www.svatantramicrofin.com/composition-of-the-board-and-kmp">
+										Investors
+									</a>
+								</p>
 							</div>
 						</div>
 						<div className={`${styles.right}`}>

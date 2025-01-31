@@ -32,11 +32,11 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4.18, suffix: "M+", decimals: 2 },
-		{ end: 48636, suffix: "CR", decimals: 0 },
-		{ end: 14149, suffix: "CR", decimals: 0 },
-		{ end: 21500, suffix: "+", decimals: 0 },
-		{ end: 2000, suffix: "", decimals: 0 },
+		{ end: 4, suffix: "M+", decimals: 2 },
+		{ end: 21170, suffix: " CR", decimals: 0 },
+		{ end: 13885, suffix: "CR", decimals: 0 },
+		{ end: 22135, suffix: "+", decimals: 0 },
+		{ end: 2024, suffix: "", decimals: 0 },
 		{ end: 19, suffix: "", decimals: 0 },
 	];
 
@@ -121,7 +121,7 @@ export default function Economic() {
 										{values[1].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[1].decimals,
 											maximumFractionDigits: countersData[1].decimals,
-										})}{" "}
+										})}
 										<span>{countersData[1].suffix}</span>
 									</h4>
 									<h5 className="text_xs">Loans disbursed</h5>
