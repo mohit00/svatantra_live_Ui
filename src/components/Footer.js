@@ -143,8 +143,8 @@ export default function Footer() {
 									Contact Us
 								</ScrollSection>
 							</li>
-							<li className="text_xs color_white pb_10">
-								{/* <a>Our finance</a> */}
+							{/* <li className="text_xs color_white pb_10">
+								<a>Our finance</a>
 								<ScrollSection
 									// onClick={toggleSidebar}
 									activeClass="active"
@@ -157,13 +157,22 @@ export default function Footer() {
 								>
 									Our Finance
 								</ScrollSection>
-							</li>
+							</li> */}
 							{/* <li className="text_xs color_white pb_10">
 								<a>For investors</a>
 							</li>
 							<li className="text_xs color_white pb_10">
 								<a>Pay now</a>
 							</li> */}
+							<li className="text_xs color_white pb_10">
+								<a
+									href="https://www.svatantramicrofin.com/composition-of-the-board-and-kmp"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Resources
+								</a>
+							</li>
 							<li>
 								{/* <a>Digitally svatantra</a> */}
 								<ScrollSection
@@ -241,7 +250,7 @@ export default function Footer() {
 					<div className={`${styles.row2}`}>
 						<div className={`${styles.left}`}>
 							<div className={`${styles.socialIcons} pb_20`}>
-								<a href="https://x.com/WeAreSvatantra" target="_blank">
+								<a href="https://x.com/WeAreSvatantra" target="_blank" rel="noreferrer">
 									<div className={`${styles.box1}`}>
 										<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
 									</div>
@@ -249,6 +258,7 @@ export default function Footer() {
 								<a
 									href="https://www.linkedin.com/company/7951922?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A7951922%2Cidx%3A2-1-9%2CtarId%3A1480583980673%2Ctas%3Asvatantra"
 									target="_blank"
+									rel="noreferrer"
 								>
 									<div className={`${styles.box1}`}>
 										<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
@@ -257,6 +267,7 @@ export default function Footer() {
 								<a
 									href="https://www.facebook.com/svatantramicrofinance"
 									target="_blank"
+									rel="noreferrer"
 								>
 									<div className={`${styles.box1}`}>
 										<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
@@ -265,6 +276,7 @@ export default function Footer() {
 								<a
 									href="https://www.youtube.com/channel/UCDN7Vupq3kJt5PRjjkffytA"
 									target="_blank"
+									rel="noreferrer"
 								>
 									<div className={`${styles.box1}`}>
 										<img src={yt.src} alt="twitter" className={`${styles.icon}`} />
@@ -273,6 +285,7 @@ export default function Footer() {
 								<a
 									href="https://www.instagram.com/wearesvatantra?igsh=Zmh0b2hnOHZoaTh5"
 									target="_blank"
+									rel="noreferrer"
 								>
 									<div className={`${styles.box1}`}>
 										<img src={insta.src} alt="twitter" className={`${styles.icon}`} />
@@ -284,16 +297,34 @@ export default function Footer() {
 
 							<div className={`${styles.cats}`}>
 								<p className="text_sm color_white">
-									<a href="https://smartodr.in/login">Smart ODR</a>
+									<a href="https://smartodr.in/login" target="_blank" rel="noreferrer">
+										Smart ODR
+									</a>
 								</p>
 								<p className="text_sm color_white">
-									<a href="https://www.chaitanyaindia.in/">Chaitanya India</a>
+									<a
+										href="https://www.chaitanyaindia.in/"
+										target="_blank"
+										rel="noreferrer"
+									>
+										Chaitanya India
+									</a>
 								</p>
 								<p className="text_sm color_white">
-									<a href="https://www.svatantramhfc.com/">Svatantra Micro Housing</a>
+									<a
+										href="https://www.svatantramhfc.com/"
+										target="_blank"
+										rel="noreferrer"
+									>
+										Svatantra Micro Housing
+									</a>
 								</p>
 								<p className="text_sm color_white">
-									<a href=" https://www.svatantramicrofin.com/composition-of-the-board-and-kmp">
+									<a
+										href=" https://www.svatantramicrofin.com/composition-of-the-board-and-kmp"
+										target="_blank"
+										rel="noreferrer"
+									>
 										Investors
 									</a>
 								</p>

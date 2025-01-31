@@ -99,7 +99,7 @@ export default function Header() {
 									</ScrollSection>
 								</div>
 
-								<div className={styles.links}>
+								{/* <div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
@@ -112,6 +112,24 @@ export default function Header() {
 									>
 										Our Finance
 									</ScrollSection>
+								</div> */}
+								<div className={styles.links}>
+									<ul className={styles.menuItemNew}>
+										<a
+											href="https://www.svatantramicrofin.com/composition-of-the-board-and-kmp"
+											target="_blank"
+											rel="noreferrer"
+										>
+											Resources
+										</a>
+										{/* {isOpen && (
+												<span className={styles.hiddenItem}>
+													<li>Svatantra Microfin</li>
+													<li>Chaitanya India</li>
+													<li>Svatantra Micro Housing</li>
+												</span>
+											)} */}
+									</ul>
 								</div>
 								<div className={styles.links}>
 									<ScrollSection
@@ -141,20 +159,20 @@ export default function Header() {
 										Media
 									</ScrollSection>
 								</div>
-								<div className={styles.links}>
+								{/* <div className={styles.links}>
 									<ul className={styles.menuItemNew}>
 										<a href="https://www.svatantramicrofin.com/composition-of-the-board-and-kmp">
 											Resources
 										</a>
-										{/* {isOpen && (
+										{isOpen && (
 												<span className={styles.hiddenItem}>
 													<li>Svatantra Microfin</li>
 													<li>Chaitanya India</li>
 													<li>Svatantra Micro Housing</li>
 												</span>
-											)} */}
+											)}
 									</ul>
-								</div>
+								</div> */}
 								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
