@@ -205,7 +205,7 @@ export default function Footer() {
 							</li>
 						</ul>
 
-						{/* <hr className={`${styles.secondBreakLine}`} />
+						<hr className={`${styles.secondBreakLine}`} />
 
 						<div>
 							<h1 className="text_reg color_white pb_10">Signup for our newsletter</h1>
@@ -244,7 +244,7 @@ export default function Footer() {
 									</p>
 								)}
 							</form>
-						</div> */}
+						</div>
 					</div>
 					{/* row2 */}
 					<div className={`${styles.row2}`}>

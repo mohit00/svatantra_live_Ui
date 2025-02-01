@@ -96,7 +96,7 @@ export default function Homecontact() {
 							18002679911
 						</h3>
 					</div>
-					{/* <div className={`${styles.right}`} data-scroll>
+					<div className={`${styles.right}`} data-scroll>
 						<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 							<div className={`${styles.form_field}`}>
 								<input
@@ -182,7 +182,7 @@ export default function Homecontact() {
 								</p>
 							)}
 						</form>
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</section>

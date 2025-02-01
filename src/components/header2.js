@@ -67,8 +67,135 @@ export default function Header() {
 					</div>
 
 					{/* Links Wrap */}
+					<div className={`${styles.links_wrap}`}>
+						{isClient && (
+							<>
+								<div className={styles.links}>
+									<ScrollSection
+										onClick={toggleSidebar}
+										activeClass="active"
+										to="About"
+										spy={true}
+										smooth={true}
+										offset={-50}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										About
+									</ScrollSection>
+								</div>
+								<div className={styles.links}>
+									<ScrollSection
+										onClick={toggleSidebar}
+										activeClass="active"
+										to="OurImpact"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										Our Impact
+									</ScrollSection>
+								</div>
 
-					<div className={`${styles.links_wrap} ${styles.mobile}`}>
+								{/* <div className={styles.links}>
+									<ScrollSection
+										onClick={toggleSidebar}
+										activeClass="active"
+										to="OurFinance"
+										spy={true}
+										smooth={true}
+										offset={-50}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										Our Finance
+									</ScrollSection>
+								</div> */}
+								<div className={styles.links}>
+									<ul className={styles.menuItemNew}>
+										<a
+											href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
+											target="_blank"
+											rel="noreferrer"
+										>
+											Resources
+										</a>
+										{/* {isOpen && (
+												<span className={styles.hiddenItem}>
+													<li>Svatantra Microfin</li>
+													<li>Chaitanya India</li>
+													<li>Svatantra Micro Housing</li>
+												</span>
+											)} */}
+									</ul>
+								</div>
+								<div className={styles.links}>
+									<ScrollSection
+										onClick={toggleSidebar}
+										activeClass="active"
+										to="DigitallySvatantra"
+										spy={true}
+										smooth={true}
+										offset={-50}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										Digitally Svatantra
+									</ScrollSection>
+								</div>
+								<div className={styles.links}>
+									<ScrollSection
+										onClick={toggleSidebar}
+										activeClass="active"
+										to="Media"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										Media
+									</ScrollSection>
+								</div>
+								{/* <div className={styles.links}>
+									<ul className={styles.menuItemNew}>
+										<a href="https://www.svatantramicrofin.com/composition-of-the-board-and-kmp">
+											Resources
+										</a>
+										{isOpen && (
+												<span className={styles.hiddenItem}>
+													<li>Svatantra Microfin</li>
+													<li>Chaitanya India</li>
+													<li>Svatantra Micro Housing</li>
+												</span>
+											)}
+									</ul>
+								</div> */}
+								<div className={styles.links}>
+									<ScrollSection
+										onClick={toggleSidebar}
+										activeClass="active"
+										to="ContactUs"
+										spy={true}
+										smooth={true}
+										offset={-50}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										<Button
+											buttonType="secondary"
+											condition={"white"}
+											link={"#"}
+											title={"Contact Us"}
+										/>
+									</ScrollSection>
+								</div>
+							</>
+						)}
+					</div>
+					{/* <div className={`${styles.links_wrap} ${styles.mobile}`}>
 						{isClient && (
 							<>
 								<div className={styles.links}>
@@ -104,49 +231,21 @@ export default function Header() {
 										<ul className={styles.menuItemNew}>
 											<p
 												onClick={() => setIsOpen(true)}
-												className={`${styles.link_title} text_xs`}
 												// onMouseLeave={() => setIsOpen(false)}
 											>
-												Resources
+												For Business
 											</p>
 											{isOpen && (
 												<span className={styles.hiddenItem}>
-													<li>
-														<a
-															href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Svatantra Microfin
-														</a>
-													</li>
-													<li>
-														<a
-															href="https://www.chaitanyaindia.in/"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Chaitanya India
-														</a>
-													</li>
-													<li>
-														<a
-															href="https://www.svatantramhfc.com/"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Svatantra Micro Housing
-														</a>
-													</li>
+													<li>Svatantra Microfin</li>
+													<li>Chaitanya India</li>
+													<li>Svatantra Micro Housing</li>
 												</span>
 											)}
 										</ul>
 									</div>
 								</div>
-								{/* <div className={styles.links}>
+								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
@@ -159,7 +258,7 @@ export default function Header() {
 									>
 										Our Finance
 									</ScrollSection>
-								</div> */}
+								</div>
 								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
@@ -189,18 +288,6 @@ export default function Header() {
 									</ScrollSection>
 								</div>
 								<div className={styles.links}>
-									<ul className={styles.menuItemNew}>
-										<a
-											href="https://smartodr.in/login"
-											target="_blank"
-											rel="noreferrer"
-											className={`${styles.link_title} text_xs`}
-										>
-											Smart ODR
-										</a>
-									</ul>
-								</div>
-								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
@@ -221,7 +308,7 @@ export default function Header() {
 								</div>
 							</>
 						)}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
