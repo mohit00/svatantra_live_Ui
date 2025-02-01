@@ -116,7 +116,7 @@ export default function Header() {
 								<div className={styles.links}>
 									<ul className={styles.menuItemNew}>
 										<a
-											href="https://www.svatantramicrofin.com/composition-of-the-board-and-kmp"
+											href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
 											target="_blank"
 											rel="noreferrer"
 										>

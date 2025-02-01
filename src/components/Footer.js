@@ -166,7 +166,7 @@ export default function Footer() {
 							</li> */}
 							<li className="text_xs color_white pb_10">
 								<a
-									href="https://www.svatantramicrofin.com/composition-of-the-board-and-kmp"
+									href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -321,7 +321,7 @@ export default function Footer() {
 								</p>
 								<p className="text_sm color_white">
 									<a
-										href=" https://www.svatantramicrofin.com/composition-of-the-board-and-kmp"
+										href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
 										target="_blank"
 										rel="noreferrer"
 									>
@@ -342,7 +342,7 @@ export default function Footer() {
 			<div className="container">
 				<div className={`${styles.copyright}`}>
 					<p className="text_xs f_w_r color_white opacity_70">
-						Copyright ©2024, Svatantra. All rights reserve.
+						Copyright ©2025, Svatantra. All rights reserve.
 					</p>
 
 					{/* <hr className={`${styles.lastLine}`} /> */}
