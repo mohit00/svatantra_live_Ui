@@ -1,5 +1,6 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // COMPONENTS //
 import Image from "next/image";
@@ -26,6 +27,20 @@ export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [isClient, setIsClient] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
+	const dropdownRef = useRef(null);
+
+	// Close dropdown when clicking outside
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+				setIsOpen(false);
+			}
+		};
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
 
 	// Ensure client-side rendering
 	useEffect(() => {
@@ -37,11 +52,6 @@ export default function Header() {
 		setOpenSidebar((prev) => !prev);
 	};
 
-	/** */
-	// const openHandleToggleBar = () => {
-	// 	setIsOpen(true);
-	// };
-
 	return (
 		<div
 			className={`${styles.main_header} main_header ${
@@ -52,13 +62,11 @@ export default function Header() {
 				<div className={`${styles.header_inside}`}>
 					{/* Logo Section */}
 					<div className={`${styles.header_logo}`}>
-						{/* Logo Wrap */}
 						<Link href="/">
 							<div className={styles.image_wrap}>
 								<Image src={HeaderLogo} alt="Logo" priority />
 							</div>
 						</Link>
-						{/* Hamburger Icon for Mobile */}
 						<div className={styles.hamburger_icon} onClick={toggleSidebar}>
 							<span className={styles.hamburger_line}></span>
 							<span className={styles.hamburger_line}></span>
@@ -67,7 +75,6 @@ export default function Header() {
 					</div>
 
 					{/* Links Wrap */}
-
 					<div className={`${styles.links_wrap} ${styles.mobile}`}>
 						{isClient && (
 							<>
@@ -99,13 +106,12 @@ export default function Header() {
 										Our Impact
 									</ScrollSection>
 								</div>
-								<div className={styles.links}>
+								<div className={styles.links} ref={dropdownRef}>
 									<div>
 										<ul className={styles.menuItemNew}>
 											<p
-												onClick={() => setIsOpen(true)}
+												onClick={() => setIsOpen((prev) => !prev)}
 												className={`${styles.link_title} text_xs`}
-												// onMouseLeave={() => setIsOpen(false)}
 											>
 												Resources
 											</p>
@@ -146,20 +152,6 @@ export default function Header() {
 										</ul>
 									</div>
 								</div>
-								{/* <div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="OurFinance"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										Our Finance
-									</ScrollSection>
-								</div> */}
 								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
