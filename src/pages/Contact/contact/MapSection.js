@@ -13,7 +13,7 @@ import ContactPageForm from "@/sections/ContactPageForm";
 import styles from "@/styles/sections/pages/Contact/MapSection.module.scss";
 
 // IMAGES //
-import Map from "../../../public/img/contact/map.jpg";
+import Map from "../../../../public/img/contact/map.jpg";
 
 // DATA //
 

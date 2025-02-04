@@ -1,0 +1,34 @@
+@import "../../../helpers/helpers.scss";
+
+.AccordionSection{
+    .accordian_main{
+        .activeBgTitle{
+            margin-top: 10px;    
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            background-color: var(--color_white);
+        }
+        .activeBgContent{
+            margin-bottom: 10px;    
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            background-color: var(--color_white);
+        }
+        .table_wrap{
+            grid-gap: 30px;
+            .box1{
+                width: 48%;
+                ul{
+                    padding-left: 20px;
+                    li{
+                        opacity: 0.8;
+                        padding-bottom: 10px;
+                        &::marker {
+                            color: #0072CD;
+                          }
+                    }
+                }
+            }
+        }
+    }
+}

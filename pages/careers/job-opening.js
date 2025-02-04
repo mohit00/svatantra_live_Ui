@@ -4,16 +4,14 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
+import AccordionSection from "@/pages/Contact/careers/AccordionSection";
 
 // SECTIONS //
-import InnerBanner from "@/components/InnerBanner";
-import ContactSection from "@/pages/Contact/contact/ContactSection";
-import MapSection from "@/pages/Contact/contact/MapSection";
 
 // PLUGINS //
 
 // STYLES //
-import styles from "@/styles/pages/Contact.module.scss";
+import styles from "@/styles/pages/careers.module.scss";
 
 // UTILS //
 
@@ -22,7 +20,7 @@ import styles from "@/styles/pages/Contact.module.scss";
 // DATA //
 
 /** Contact Page */
-export default function ContactPage() {
+export default function JobOpening() {
 	return (
 		<div>
 			{/* Metatags */}
@@ -32,10 +30,8 @@ export default function ContactPage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={styles.ContactPage}>
-				<InnerBanner bannerTitle="Get In touch" />
-				<ContactSection />
-				<MapSection />
+			<main className={styles.JobOpeningPage}>
+				<AccordionSection />
 			</main>
 			{/* Page Content ends here */}
 

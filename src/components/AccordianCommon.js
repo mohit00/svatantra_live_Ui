@@ -9,6 +9,7 @@ import React, { useState, useRef, useEffect } from "react";
 // UTILS //
 
 // STYLES //
+import BgStyles from "@/styles/sections/pages/careers/AccordionSection.module.scss";
 import styles from "@/styles/components/AccordianCommon.module.scss";
 
 // IMAGES //
@@ -59,7 +60,9 @@ export default function AccordianCommon({
 				<div key={index} className={`${styles.accordionItem} b_r_12`}>
 					{/* Accordion Header */}
 					<div
-						className={`${styles.accordionHeader} `}
+						className={`${styles.accordionHeader}  ${
+							activeIndex === index ? BgStyles.activeBgTitle : ""
+						}`}
 						// onClick={() => handleAccordionClick(index)}
 						onClick={() => toggleAccordion(index)}
 					>
@@ -81,7 +84,7 @@ export default function AccordianCommon({
 					<div
 						className={`${styles.accordionContent} ${
 							activeIndex === index ? styles.active : ""
-						}`}
+						} ${activeIndex === index ? BgStyles.activeBgContent : ""}`}
 						ref={(el) => (contentRefs.current[index] = el)}
 						style={{
 							height: activeIndex === index ? `${heights[index]}px` : "0px",
