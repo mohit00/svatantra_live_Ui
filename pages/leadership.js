@@ -1,0 +1,213 @@
+// MODULES //
+import { useEffect, useState, useRef } from "react";
+
+// COMPONENTS //
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import MetaTags from "@/components/MetaTags";
+import Popup from "@/components/Popup";
+
+// SECTIONS //
+
+// PLUGINS //
+
+// UTILS //
+
+// STYLES //
+import styles from "@/styles/pages/Leadership.module.scss";
+
+// IMAGES //
+import Leader1 from "../public/img/leadership/Leader1.jpg";
+import PlusIcon from "../public/img/leadership/PlusIcon.svg";
+import Sec1Bg from "../public/img/leadership/Sec1_bg.jpg";
+import Ananya from "../public/img/leadership/Ananya.png";
+import design from "../public/img/leadership/design.png";
+
+// DATA //
+
+/** Leadership Page */
+export default function LeadershipPage() {
+	const [isPopupOpen, setIsPopupOpen] = useState(false);
+	const [slideNo, setSlideNo] = useState(0);
+
+	const [openPop1, setOpenPop1] = useState(false);
+
+	/** handleSlideClick Function */
+	const handleSlideClick = (e, index) => {
+		e.preventDefault();
+		setSlideNo(index);
+		setIsPopupOpen(true);
+		setOpenPop1(true);
+	};
+
+	/** handleClosePopup Function */
+	const handleClosePopup = () => {
+		setIsPopupOpen(false);
+	};
+	const data = [
+		{
+			image: Leader1.src,
+			name: "Vineet Chattree",
+			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			desc:
+				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
+		},
+		{
+			image: Leader1.src,
+			name: "Vineet Chattree",
+			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			desc:
+				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
+		},
+		{
+			image: Leader1.src,
+			name: "Vineet Chattree",
+			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			desc:
+				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
+		},
+		{
+			image: Leader1.src,
+			name: "Vineet Chattree",
+			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			desc:
+				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
+		},
+	];
+	return (
+		<div>
+			{/* Metatags */}
+			<MetaTags Title={"Leadership"} Desc={""} OgImg={""} Url={"/leadership"} />
+
+			{/* Header */}
+			<Header />
+
+			{/* Page Content starts here */}
+			<main className={`${styles.LeadershipPage} ptb_80`}>
+				<div className="container">
+					<div className={`${styles.Sec1}`}>
+						<h2 className="section_title pb_20">
+							Guiding Svatantra with a<br /> commitment to financial freedom
+						</h2>
+						<p className="text_md color_light_black opacity_80 pb_60">
+							Our team leads by example at the forefront of change, <br />
+							building a future where financial freedom is accessible to all.
+						</p>
+						<div className={`${styles.AnanyaIntro}`}>
+							<div className={`${styles.Left}`}>
+								<div className={`${styles.DetailsHead} pb_40`}>
+									<p className="text_md">Ananya Birla</p>
+									<p className="color_light_black text_xs opacity_80">
+										Founder, Chairperson, and Director |{" "}
+										<a target="_blank" href="www.ananyabirla.com">
+											www.ananyabirla.com
+										</a>
+									</p>
+								</div>
+								<p className="text_sm color_light_black f_w_m opacity_80">
+									At 17, Ananya Birla founded Svatantra Microfin Pvt. Ltd., setting a new
+									benchmark in microfinance with a vision for technology-led financial
+									inclusion. Steering the company to become one of India’s
+									fastest-growing MFIs, she introduced transformative practices like 100%
+									cashless disbursements and tailored microfinance solutions. Her
+									leadership extends beyond Svatantra, as Chairperson of Svatantra Micro
+									Housing Finance Corporation and Co-Chairperson of ASSOCHAM’s
+									Microfinance Council of India, driving systemic change in how financial
+									services empower rural and semi-urban India.
+								</p>
+								<div className={`${styles.Btn} pt_30`}>Read Here</div>
+							</div>
+							<div className={`${styles.Right}`}>
+								<img src={design.src} className="img-responsive" alt="Design Image" />
+								<img src={Ananya.src} className={styles.AnanyaImg} alt="Design Image" />
+							</div>
+						</div>
+					</div>
+					<div className={`${styles.ChangeMakers}`}>
+						<h2 className="section_title pb_40">Our changemakers</h2>
+						<div className={`${styles.GridContainer}`}>
+							{data.map((item, index) => (
+								<div className={`${styles.GridItem} b_r_16`} key={index}>
+									<div className={styles.ImgBx}>
+										<img
+											src={item.image}
+											className="img-responsive b_r_10"
+											alt="Leaders Image"
+										/>
+										<div
+											className={`${styles.box_btn} bx1`}
+											onClick={(e) => handleSlideClick(e, index)}
+											data-slide={index}
+										>
+											<div className={`${styles.btn_primary}`}>
+												<img src={PlusIcon.src} className="img-responsive" />
+											</div>
+										</div>
+									</div>
+									<div className={styles.DetailsBx}>
+										<div className={styles.Details}>
+											<p className={`${styles.Name} font_primary text_md f_w_m`}>
+												{item.name}
+											</p>
+											<p
+												className={`${styles.Designation} color_light_black text_xs opacity_80`}
+											>
+												{item.designation}
+											</p>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+				{isPopupOpen && (
+					<Popup isOpen={isPopupOpen} onClose={handleClosePopup}>
+						<div>
+							{openPop1 && (
+								<div className={`${styles.className}`}>
+									{data.map((item, ind) => {
+										return (
+											<>
+												{slideNo == ind && (
+													<div className={`${styles.PopupItem}`} key={ind}>
+														<div className={styles.ImgBx}>
+															<img
+																src={item.image}
+																className="img-responsive b_r_10"
+																alt="Leaders Image"
+															/>
+															<div className={`${styles.Details} pt_10`}>
+																<p className={`${styles.Name} text_md`}>{item.name}</p>
+																<p className={`${styles.Designation} text_sm`}>
+																	{item.designation}
+																</p>
+															</div>
+														</div>
+														<div className={`${styles.DetailsBx} b_r_10`}>
+															<p className={`${styles.Name} font_primary text_lg pb_10`}>
+																{item.name}
+															</p>
+															<p className={`${styles.Designation} text_sm opacity_80 pb_40`}>
+																{item.designation}
+															</p>
+															<p className="text_sm opacity_80">{item.desc}</p>
+														</div>
+													</div>
+												)}
+											</>
+										);
+									})}
+								</div>
+							)}
+						</div>
+					</Popup>
+				)}
+			</main>
+			{/* Page Content ends here */}
+
+			{/* Footer */}
+			<Footer />
+		</div>
+	);
+}
