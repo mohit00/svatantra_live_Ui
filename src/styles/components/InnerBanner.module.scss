@@ -15,4 +15,35 @@
 		display: grid;
 		place-items: center center;
 	}
+	.line_1 {
+		bottom: 34px;
+		left: 0;
+		width: 100%;
+		transition: all 1s;
+		position: absolute;
+		// clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+		img {
+			width: 100%;
+		}
+		@media screen and (max-width: 767px) {
+			bottom: 10px;
+		}
+		@media (min-width: 768px) and (max-width: 992px) {
+			bottom: 18px;
+		}
+		@media (min-width: 993px) and (max-width: 1200px) {
+			bottom: 25px;
+		}
+	}
+	.line_2 {
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		transition: all 1s;
+		position: absolute;
+		// clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+		img {
+			width: 100%;
+		}
+	}
 }

@@ -7,6 +7,9 @@ import ContactForm from "@/sections/ContactForm";
 import MetaTags from "@/components/MetaTags";
 
 // SECTIONS //
+import InnerBanner from "@/components/InnerBanner";
+import ContactSection from "@/pages/Contact/ContactSection";
+import MapSection from "@/pages/Contact/MapSection";
 
 // PLUGINS //
 
@@ -31,10 +34,9 @@ export default function ContactPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
-				<div className="container">
-					<h2>This is contact page</h2>
-					<ContactForm />
-				</div>
+				<InnerBanner bannerTitle="Get In touch" />
+				<ContactSection />
+				<MapSection />
 			</main>
 			{/* Page Content ends here */}
 

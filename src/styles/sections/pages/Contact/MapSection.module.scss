@@ -1,0 +1,30 @@
+@import "../../../helpers/helpers.scss";
+
+.map_section{
+    grid-gap: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../../../../public/img//contact/bg_img.jpg);
+    .map{
+        width: 55%;
+        border-radius: 10px;
+        @media screen and (max-width: 767px) {
+			width: 100%;
+		}
+        img{   
+            border-radius: 6px;
+        }
+    }
+    .info{
+        width: 41%;
+        @media screen and (max-width: 767px) {
+			width: 100%;
+		}
+        @media (min-width: 768px) and (max-width: 992px) {
+            width: 40%;
+        }
+    }
+}
