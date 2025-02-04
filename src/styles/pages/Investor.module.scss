@@ -1,0 +1,64 @@
+@import "../helpers/helpers.scss";
+
+.investors_page {
+	.investors_main{
+    .title_wrap{
+
+    }
+    .table_wrap{
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        background-color: var(--color_white);
+        // border-radius: 12px;
+        td, th {
+          // border-bottom: 1px solid #ddd;
+          padding: 20px 20px;
+          @media (max-width: 767px) {
+            padding: 15px 15px;
+          }
+        }
+        td{
+          color: var(--color_light_black);
+          font-family: var(--font_secondary);
+          font-size: 18px;
+          font-weight: 500;
+          opacity: 0.8;
+          @media (max-width: 767px) {
+            font-size: 16px;
+          }
+          a{
+            display: flex;
+            align-items: center;
+            color: var(--color_secondary);
+            img{
+              margin-right: 5px;
+            }
+            span{
+              border-bottom: 1px solid var(--color_secondary);
+            }
+          }
+        }
+        tr{
+          border-bottom: 1px solid #ddd;
+          &:last-child{
+            border-bottom: none;
+          }
+        }
+        thead{
+          background-color: #0072CD;
+          color: var(--color_white);
+          border-radius: 12px 12px 0px 0px;
+          th {
+            text-align: left;
+            opacity: 0.8;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: var(--font_secondary);
+          }
+        }
+      }
+      
+    }
+  }
+}
