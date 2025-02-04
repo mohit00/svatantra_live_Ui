@@ -66,7 +66,7 @@ export default function Investors() {
 						<div className={`${styles.title_wrap} pb_60`}>
 							<h1 className="text_xxxl color_primary">Annual Return</h1>
 						</div>
-						{/* <div className={`${styles.table_wrap}`}>
+						<div className={`${styles.table_wrap}`}>
 							<table>
 								<thead>
 									<tr>
@@ -92,9 +92,9 @@ export default function Investors() {
 									</tr>
 								))}
 							</table>
-						</div> */}
+						</div>
 
-						<div className={`${styles.accordian_main}`}>
+						<div className={`${styles.accordian_main} pt_60`}>
 							<AccordianCommon
 								fontStyle={"text_lg"}
 								fontWeight={"f_w_m"}

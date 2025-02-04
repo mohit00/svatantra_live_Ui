@@ -8,9 +8,9 @@
 		// border-bottom: 1px solid #ddd;
 		//margin-bottom: 15px;
 		// background-color: white;
-		border-top: 1px solid var(--color_light_black);
+		border-top: 1px solid rgba(30, 30, 30, 0.2);
 		&:last-child {
-			border-bottom: 1px solid var(--color_light_black);
+			border-bottom: 1px solid rgba(30, 30, 30, 0.2);
 		}
 
 		.accordionHeader {

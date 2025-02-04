@@ -1,0 +1,39 @@
+@import "../helpers/helpers.scss";
+
+.StoriesOfSvatantra_page {
+	.StoriesOfSvatantra_main{
+    .switchBox {
+      display: inline-flex;
+      align-items: center;
+      background-color: #F6F6F6;
+      border-radius: 100px;
+      cursor: pointer;
+      border: 1px solid #EAEAEA;
+      padding: 4px 4px;
+      .media {
+        padding: 8px 40px 5px 40px;
+        border-radius: 100px;
+      }
+
+      .award {
+        padding: 8px 40px 8px 40px;
+        border-radius: 100px;
+      }
+
+      .active {
+        background-color: #00783c;
+        color: white;
+      }
+    }
+    .box_wrap{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+      .box_item{
+        background-color: var(--color_white);
+        border-radius: 8px;
+        padding: 10px 10px 20px;
+      }
+    }
+  }
+}

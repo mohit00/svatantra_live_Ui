@@ -12,7 +12,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "@/styles/components/AccordianCommon.module.scss";
 
 // IMAGES //
-import ArrowIcon from "@/../public/img/icons/acc_arrow.svg";
+import plus_arrow from "@/../public/img/icons/plus_arrow.svg";
 
 // DATA //
 
@@ -68,7 +68,7 @@ export default function AccordianCommon({
 						</div>
 						<span>
 							<img
-								src={ArrowIcon.src}
+								src={plus_arrow.src}
 								className={`${styles.AccImg} ${
 									activeIndex === index ? styles.activeImg : "+"
 								}`}
