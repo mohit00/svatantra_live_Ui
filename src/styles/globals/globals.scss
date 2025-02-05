@@ -137,6 +137,9 @@ section {
 	span {
 		color: var(--color_secondary_tint);
 	}
+	&.color_white{
+		color: var(--color_white);
+	}
 }
 .header_container {
 	width: 100%;

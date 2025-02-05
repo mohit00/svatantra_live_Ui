@@ -1,0 +1,16 @@
+@import "../../../helpers/helpers.scss";
+
+.Journey{
+    .Journey_section{
+        .Journey_info{
+            width: 60%;
+            padding-right: 100px;
+        }
+        .Journey_img{
+            width: 40%;
+            img{
+                border-radius: 12px;
+            }
+        }
+    }
+}

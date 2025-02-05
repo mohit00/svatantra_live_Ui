@@ -10,6 +10,9 @@
 			object-fit: cover;
 		}
 	}
+	.banner_info{
+		width: 80%;
+	}
 	.banner_content {
 		@extend %full_overlay;
 		display: grid;

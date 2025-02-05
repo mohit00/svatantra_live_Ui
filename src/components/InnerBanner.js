@@ -6,10 +6,9 @@
 import styles from "@/styles/components/InnerBanner.module.scss";
 
 // PLUGINS //
+import parse from "html-react-parser";
 
 // IMAGES //
-import Blue from "../../public/img/home/blue.svg";
-import Green from "../../public/img/home/green.svg";
 import DefaultBanner from "@/../public/img/contact/d_banner.png";
 import DefaultBannerMob from "@/../public/img/banner/defaultMobileBanner.jpg";
 
@@ -21,7 +20,9 @@ function InnerBanner({ desktopImage, bannerTitle, mobileImage }) {
 		<div className={`${styles.inner_banner_wrap} `}>
 			{/* Banner Content */}
 			<div className="container">
-				<h1 className="section_title pb_30">{bannerTitle}</h1>
+				<div className={`${styles.banner_info}`}>
+					<h1 className="section_title pb_30">{parse(bannerTitle || "")}</h1>
+				</div>
 			</div>
 
 			{/* Banner Image */}

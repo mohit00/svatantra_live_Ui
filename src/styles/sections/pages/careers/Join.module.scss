@@ -1,0 +1,20 @@
+@import "../../../helpers/helpers.scss";
+
+.join{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../../../../public/img/careers/join_bg.jpg);
+    .join_section{
+        .join_info{
+            width: 60%;
+            padding-right: 100px;
+        }
+        .join_img{
+            width: 40%;
+            img{
+                border-radius: 12px;
+            }
+        }
+    }
+}
