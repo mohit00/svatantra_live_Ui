@@ -25,7 +25,7 @@ import advent from "../public/img/advent.png";
 /** Blogs Page */
 export default function BlogsPage() {
 	const [selectedOptions, setSelectedOptions] = useState({
-		select1: "SVATANTRA MICROFIN",
+		select1: "Svatantra Microfin",
 		select2: "2023",
 	});
 
@@ -35,15 +35,11 @@ export default function BlogsPage() {
 	});
 
 	const options = [
-		{ label: "SVATANTRA MICROFIN" },
-		{ label: "SVATANTRA MICROFIN" },
-		{ label: "SVATANTRA MICROFIN" },
+		{ label: "Svatantra Microfin" },
+		{ label: "Svatantra Microfin" },
+		{ label: "Svatantra Microfin" },
 	];
-	const options2 = [
-		{ label: "All" },
-		{ label: "Newest Arrivals" },
-		{ label: "Best Sellers" },
-	];
+	const options2 = [{ label: "2024" }, { label: "2025" }, { label: "2026" }];
 
 	const toggleDropdown = (dropdown) => {
 		setOpenDropdowns((prevState) => ({
@@ -115,13 +111,13 @@ export default function BlogsPage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={styles.BlogsPage}>
+			<main className={`${styles.BlogsPage} pb_80`}>
 				<div className="container">
 					<Breadcrumb link5={"blogs"} linkTitle={"Blogs"} />
 					<section className={`${styles.BlogsListingMain}`}>
 						<div className={`${styles.Head}`}>
 							<h2 className="section_title pb_20">Stories of spearheading change</h2>
-							<p className="text_md color_light_black opacity_80 pb_60">
+							<p className="text_md color_light_black opacity_80">
 								Insights into the future of rural entrepreneurship in India
 							</p>
 							{/* <div className={`${styles.Tabs}`}>
@@ -133,54 +129,105 @@ export default function BlogsPage() {
 								<div className={`${styles.btn} text_16 color_primary`}>Videos</div>
 								<div className={`${styles.btn} text_16 color_primary`}>Recipes</div>
 							</div> */}
-							<div className={`${styles.Filter}`}>
-								<p className="text_reg text_700">Categories</p>
-								<div className={`${styles.selectBx}`}>
-									<div className={`${styles.custom_select}`}>
-										<div
-											className={`${styles.select_header}`}
-											onClick={() => toggleDropdown("select1")}
-											tabIndex={0}
-										>
-											<div className={`${styles.selected}`}>
-												{/* <img
+							<div className={`${styles.FiltersBox}`}>
+								<div className={`${styles.Filter}`}>
+									<div className={`${styles.selectBx}`}>
+										<div className={`${styles.custom_select}`}>
+											<div
+												className={`${styles.select_header}`}
+												onClick={() => toggleDropdown("select1")}
+												tabIndex={0}
+											>
+												<div className={`${styles.selected}`}>
+													{/* <img
 														src={options.find((opt) => opt.label === selectedOption)?.icon}
 														alt={selectedOption}
 														className={`${styles.icon}`}
 													/> */}
-												<span className="text_reg text_700">{selectedOptions.select1}</span>
+													<span className="text_reg">{selectedOptions.select1}</span>
+												</div>
+												<img
+													src={
+														openDropdowns.select1
+															? "img/icons/UpArrow.svg"
+															: "img/icons/DownArrow.svg"
+													}
+													alt="Toggle Dropdown"
+													className={`${styles.arrow}`}
+												/>
 											</div>
-											<img
-												src={
-													openDropdowns.select1
-														? "img/product/filterIcons/UpArrow.svg"
-														: "img/product/filterIcons/DnArrow.svg"
-												}
-												alt="Toggle Dropdown"
-												className={`${styles.arrow}`}
-											/>
-										</div>
 
-										{openDropdowns.select1 && (
-											<ul className={`${styles.select_options}`}>
-												{options.map((option) => (
-													<li
-														key={option.label}
-														className={`${styles.select_option} ${
-															option.label === selectedOptions.select1 ? styles.selected : ""
-														}`}
-														onClick={() => handleOptionClick(option, "select1")}
-													>
-														{/* <img
+											{openDropdowns.select1 && (
+												<ul className={`${styles.select_options}`}>
+													{options.map((option) => (
+														<li
+															key={option.label}
+															className={`${styles.select_option} ${
+																option.label === selectedOptions.select1 ? styles.selected : ""
+															}`}
+															onClick={() => handleOptionClick(option, "select1")}
+														>
+															{/* <img
 															src={option.icon}
 															alt={option.label}
 															className={`${styles.option_icon}`}
 														/> */}
-														<span className="text_reg text_600">{option.label}</span>
-													</li>
-												))}
-											</ul>
-										)}
+															<span className="text_reg">{option.label}</span>
+														</li>
+													))}
+												</ul>
+											)}
+										</div>
+									</div>
+								</div>
+								<div className={`${styles.Filter}`}>
+									<div className={`${styles.selectBx}`}>
+										<div className={`${styles.custom_select}`}>
+											<div
+												className={`${styles.select_header}`}
+												onClick={() => toggleDropdown("select2")}
+												tabIndex={0}
+											>
+												<div className={`${styles.selected}`}>
+													{/* <img
+														src={options.find((opt) => opt.label === selectedOption)?.icon}
+														alt={selectedOption}
+														className={`${styles.icon}`}
+													/> */}
+													<span className="text_reg">{selectedOptions.select2}</span>
+												</div>
+												<img
+													src={
+														openDropdowns.select2
+															? "img/icons/UpArrow.svg"
+															: "img/icons/DownArrow.svg"
+													}
+													alt="Toggle Dropdown"
+													className={`${styles.arrow}`}
+												/>
+											</div>
+
+											{openDropdowns.select2 && (
+												<ul className={`${styles.select_options}`}>
+													{options2.map((option) => (
+														<li
+															key={option.label}
+															className={`${styles.select_option} ${
+																option.label === selectedOptions.select2 ? styles.selected : ""
+															}`}
+															onClick={() => handleOptionClick(option, "select2")}
+														>
+															{/* <img
+															src={option.icon}
+															alt={option.label}
+															className={`${styles.option_icon}`}
+														/> */}
+															<span className="text_reg">{option.label}</span>
+														</li>
+													))}
+												</ul>
+											)}
+										</div>
 									</div>
 								</div>
 							</div>

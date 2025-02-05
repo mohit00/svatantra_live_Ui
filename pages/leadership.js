@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Popup from "@/components/Popup";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // SECTIONS //
 
@@ -83,7 +84,8 @@ export default function LeadershipPage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.LeadershipPage} ptb_80`}>
+			<main className={`${styles.LeadershipPage}`}>
+				<Breadcrumb link5={"leadership"} linkTitle={"Leadership"} />
 				<div className="container">
 					<div className={`${styles.Sec1}`}>
 						<h2 className="section_title pb_20">
