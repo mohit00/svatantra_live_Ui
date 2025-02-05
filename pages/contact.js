@@ -14,6 +14,7 @@ import MapSection from "@/pages/Contact/contact/MapSection";
 
 // STYLES //
 import styles from "@/styles/pages/Contact.module.scss";
+import Breadcrum from "@/components/Breadcrumb";
 
 // UTILS //
 
@@ -33,6 +34,7 @@ export default function ContactPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
+				<Breadcrum link2="contact" />
 				<InnerBanner bannerTitle="Get In touch" />
 				<ContactSection />
 				<MapSection />

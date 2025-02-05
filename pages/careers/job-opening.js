@@ -1,6 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
+import Breadcrum from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
@@ -31,6 +32,7 @@ export default function JobOpening() {
 
 			{/* Page Content starts here */}
 			<main className={styles.JobOpeningPage}>
+				<Breadcrum link2="Careers" link3="job-opening" />
 				<AccordionSection />
 			</main>
 			{/* Page Content ends here */}

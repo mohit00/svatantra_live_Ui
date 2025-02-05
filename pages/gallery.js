@@ -1,6 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
+import Breadcrum from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
@@ -31,6 +32,7 @@ export default function GalleryPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
+				<Breadcrum link2="gallery" />
 				<GalleryComponent />
 			</main>
 			{/* Page Content ends here */}

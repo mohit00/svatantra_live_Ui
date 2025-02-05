@@ -2,35 +2,53 @@
 
 .talent{
     .talent_section{
-        .switchBox {
-			display: inline-flex;
-			align-items: center;
+        .switchBox_wrapper{
 			background-color: #f6f6f6;
 			border-radius: 100px;
 			cursor: pointer;
+            display: inline-block;
 			border: 1px solid #eaeaea;
 			padding: 4px 4px;
-
-			.tabNav {
-				text-align: center;
-				padding: 8px 40px 8px 40px;
-				border-radius: 100px;
-				@media (max-width: 767px) {
-					padding: 8px 20px 8px 20px;
-				}
-                p{
-                    opacity: 0.4;
+            @media (max-width: 767px) {
+               display: block;
+            }
+            .switchBox {
+                display: flex;
+                @media (max-width: 767px) {
+                    flex-wrap: nowrap;
+                    overflow-x: auto;
+                    white-space: nowrap;
                 }
-			}
-
-			.active {
-				background-color: #00783c;
-				color: white;
-                p{
-                    opacity: 1;
+                .tabNav {
+                    text-align: center;
+                    padding: 8px 40px 8px 40px;
+                    border-radius: 100px;
+                    @media (max-width: 767px) {
+                        padding: 8px 20px 8px 20px;
+                    }
+                    p{
+                        opacity: 0.4;
+                    }
                 }
-			}
-		}
+
+                .active {
+                    background-color: #00783c;
+                    color: white;
+                    p{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .item{
+            .itemContent{
+                .item_img{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
 
         .btn_section{
             margin-top: 40px;
@@ -41,6 +59,12 @@
             position: relative;
             background: rgba(0, 0, 0, 0.1);
             width: 90%;
+            @media (max-width: 767px) {
+                width: 70vw;
+            }
+            @media (min-width: 768px) and (max-width: 992px) {
+                width: 85%;
+            }
             span {
                 background-color: var(--color_black);
             }
@@ -58,6 +82,9 @@
             position: absolute;
             right: 0px;
             bottom: -15px;
+            @media (max-width: 992px) {
+                right: 15px;
+            }
             .customPrev,
             .customNext {
                 background-color: unset;
@@ -72,5 +99,8 @@
     .btn_section{
         grid-gap: 50px;
         margin-top: 40px;
+        @media (max-width: 767px) {
+            grid-gap: 20px;
+        }
     }
 }

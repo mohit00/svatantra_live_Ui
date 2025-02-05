@@ -65,10 +65,10 @@ export default function EmployeesComponent() {
 							slidesPerView: 1.5,
 						},
 						993: {
-							slidesPerView: 2.9,
+							slidesPerView: 1.1,
 						},
 						768: {
-							slidesPerView: 1.9,
+							slidesPerView: 1.6,
 						},
 						0: {
 							spaceBetween: 12,

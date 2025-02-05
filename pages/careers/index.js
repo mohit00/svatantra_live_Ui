@@ -1,6 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
+import Breadcrum from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InnerBanner from "@/components/InnerBanner";
@@ -36,6 +37,7 @@ export default function CareersPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.CareersPage}>
+				<Breadcrum link2="careers" />
 				<InnerBanner bannerTitle="Elevate your career and create a purpose-driven future" />
 				<Journey />
 				<WhyComponent />

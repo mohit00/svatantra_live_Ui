@@ -1,1 +1,101 @@
 @import "../helpers/helpers.scss";
+
+.gallery{
+    .gallery_section{
+        .driving_img_box {
+            .item_img {
+                cursor: pointer;
+                position: relative;
+                margin-bottom: 20px;
+                @media (max-width: 767px) {
+                    margin-bottom: 15px;
+                }
+                .zoom{
+                    right: 10px;
+                    width: 30px;
+                    height: 30px;
+                    bottom: 10px;
+                    position: absolute;
+                }
+                &:nth-child(1) {
+                    width: 30%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(5n+6) {
+                    width: 30%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(2) {
+                    width: 68%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(5n+7) {
+                    width: 68%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(3) {
+                    width: 39%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(5n+8) {
+                    width: 39%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(4) {
+                    width: 29%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(5n+9) {
+                    width: 29%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(5) {
+                    width: 29%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+                &:nth-child(5n+10) {
+                    width: 29%;
+                    @media (max-width: 767px) {
+                        width: 48%;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 370px;
+                    object-fit: cover;
+                    object-position: center;
+                    @media (max-width: 1199px) {
+                        height: 350px;
+                    }
+                    @media (max-width: 991px) {
+                        height: 250px;
+                    }
+                    @media (max-width: 767px) {
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

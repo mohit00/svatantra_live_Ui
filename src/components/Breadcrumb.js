@@ -20,7 +20,6 @@ import styles from "@/styles/components/Breadcrumb.module.scss";
 /** Breadcrumb Component */
 export default function Breadcrum({
 	classname,
-	link1,
 	link2,
 	link3,
 	link4,
@@ -29,12 +28,6 @@ export default function Breadcrum({
 	link7,
 	link8,
 	link9,
-	blogTitle,
-	blogSlug,
-	brandTitle,
-	brandSlug,
-	brandInnerTitle,
-	brandInnerSlug,
 	blackColor,
 	linkTitle,
 	linkTitle2,
@@ -56,7 +49,7 @@ export default function Breadcrum({
 			<div className="container">
 				<div className={`${styles.breadcrumbFlex} text_sm text_600`}>
 					<ul>
-						<li>
+						<li className="f_w_r">
 							<Link href="/">Home</Link>
 						</li>
 						{link2 && (

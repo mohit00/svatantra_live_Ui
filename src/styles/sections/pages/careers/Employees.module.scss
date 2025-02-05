@@ -9,9 +9,15 @@
             background-position: center;
             background-repeat: no-repeat;
             background-image: url(../../../../../public/img/careers//employeesBg.jpg);
+            @media (max-width: 767px) {
+                padding: 20px 10px;
+            }
             .itemContent{
                 .item_img{
                     width: 40%;
+                    @media (max-width: 992px) {
+                        width: 100%;
+                    }
                     img{
                         width: 100%;
                         border-radius: 12px;
@@ -20,6 +26,11 @@
                 .item_info{
                     width: 60%;
                     padding-left: 30px;
+                    @media (max-width: 992px) {
+                        width: 100%;
+                        padding-left: 0;
+                        padding-top: 20px;
+                    }
                 }
             }
         }
@@ -31,6 +42,12 @@
         position: relative;
         background: rgba(0, 0, 0, 0.1);
         width: 90%;
+        @media (max-width: 767px) {
+            width: 70vw;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            width: 85%;
+         }
         span {
             background-color: var(--color_black);
         }
@@ -48,6 +65,9 @@
         position: absolute;
         right: 0px;
         bottom: -15px;
+        @media (max-width: 767px) {
+            right: 15px;
+        }
         .customPrev,
         .customNext {
             background-color: unset;

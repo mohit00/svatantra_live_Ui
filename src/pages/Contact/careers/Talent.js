@@ -30,25 +30,27 @@ export default function TalentComponent() {
 			<div className="container">
 				<h2 className="section_title pb_20">Svatantra’s got talent!</h2>
 				<div className={`${styles.talent_section}`}>
-					<div className={`${styles.switchBox}`}>
-						<div className={`${styles.tabNav} `}>
-							<p className="text_reg f_w_m">Paintings</p>
-						</div>
-						<div className={`${styles.tabNav} ${styles.active}`}>
-							<p className="text_reg f_w_m">Handicraft</p>
-						</div>
-						<div className={`${styles.tabNav} `}>
-							<p className="text_reg f_w_m">Poems</p>
-						</div>
-						<div className={`${styles.tabNav} `}>
-							<p className="text_reg f_w_m">Videos</p>
+					<div className={`${styles.switchBox_wrapper}`}>
+						<div className={`${styles.switchBox}`}>
+							<div className={`${styles.tabNav} `}>
+								<p className="text_reg f_w_m">Paintings</p>
+							</div>
+							<div className={`${styles.tabNav} ${styles.active}`}>
+								<p className="text_reg f_w_m">Handicraft</p>
+							</div>
+							<div className={`${styles.tabNav} `}>
+								<p className="text_reg f_w_m">Poems</p>
+							</div>
+							<div className={`${styles.tabNav} `}>
+								<p className="text_reg f_w_m">Videos</p>
+							</div>
 						</div>
 					</div>
 					<div className="pt_40">
 						<Swiper
 							modules={[Navigation, Pagination, Autoplay]}
-							slidesPerView={1}
-							spaceBetween={15}
+							// slidesPerView={1}
+							// spaceBetween={15}
 							grabCursor={true}
 							speed={500}
 							loop={true}
@@ -66,8 +68,12 @@ export default function TalentComponent() {
 								clickable: true, // Makes it interactive
 							}}
 							breakpoints={{
+								0: {
+									slidesPerView: 1,
+									spaceBetween: 20,
+								},
 								767: {
-									slidesPerView: 2,
+									slidesPerView: 2.3,
 									spaceBetween: 20,
 								},
 								992: {
