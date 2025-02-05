@@ -1,7 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
-import ContentFromCms from "@/components/ContentFromCms";
+import Button from "@/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -34,6 +34,9 @@ export default function Journey() {
 							drive innovations that celebrate the entrepreneurial spirit and
 							strengthen our economy.
 						</p>
+						<div className={`${styles.BtnBx} pt_20`}>
+							<Button buttonType="four" condition={"white"} title={"Join Us"} />
+						</div>
 					</div>
 					<div className={`${styles.Journey_img}`}>
 						<img src={Indoor.src} className="img-responsive" alt="Indoor" />

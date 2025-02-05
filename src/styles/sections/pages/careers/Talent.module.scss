@@ -1,0 +1,76 @@
+@import "../../../helpers/helpers.scss";
+
+.talent{
+    .talent_section{
+        .switchBox {
+			display: inline-flex;
+			align-items: center;
+			background-color: #f6f6f6;
+			border-radius: 100px;
+			cursor: pointer;
+			border: 1px solid #eaeaea;
+			padding: 4px 4px;
+
+			.tabNav {
+				text-align: center;
+				padding: 8px 40px 8px 40px;
+				border-radius: 100px;
+				@media (max-width: 767px) {
+					padding: 8px 20px 8px 20px;
+				}
+                p{
+                    opacity: 0.4;
+                }
+			}
+
+			.active {
+				background-color: #00783c;
+				color: white;
+                p{
+                    opacity: 1;
+                }
+			}
+		}
+
+        .btn_section{
+            margin-top: 40px;
+            grid-gap: 75px;
+        }
+
+        :global(.swiper-pagination2) {
+            position: relative;
+            background: rgba(0, 0, 0, 0.1);
+            width: 90%;
+            span {
+                background-color: var(--color_black);
+            }
+        }
+        :global(.swiper) {
+            height: 100%;
+        }
+        :global(.swiper-slide) {
+            height: auto !important;
+        }
+        :global(.swiper-content) {
+            height: 100% !important;
+        }
+        .arrowSection {
+            position: absolute;
+            right: 0px;
+            bottom: -15px;
+            .customPrev,
+            .customNext {
+                background-color: unset;
+                border: none;
+                cursor: pointer;
+            }
+            .customPrev {
+                rotate: 180deg;
+            }
+        }
+    }
+    .btn_section{
+        grid-gap: 50px;
+        margin-top: 40px;
+    }
+}

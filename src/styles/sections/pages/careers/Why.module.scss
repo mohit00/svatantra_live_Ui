@@ -1,0 +1,52 @@
+@import "../../../helpers/helpers.scss";
+
+.SliderMain {
+    position: relative;
+    .item {
+        border-radius: 10px;
+        background-color: var(--color_white);
+        .itemContent {
+            .title{
+                padding: 15px;
+                background-color: #0072CD;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+            .info{
+                padding: 25px 15px;
+            }
+        }
+    }
+
+    :global(.swiper-pagination) {
+        position: relative;
+        background: rgba(0, 0, 0, 0.1);
+        width: 90%;
+        span {
+            background-color: var(--color_black);
+        }
+    }
+    :global(.swiper) {
+        height: 100%;
+    }
+    :global(.swiper-slide) {
+        height: auto !important;
+    }
+    :global(.swiper-content) {
+        height: 100% !important;
+    }
+    .arrowSection {
+        position: absolute;
+        right: 0px;
+        bottom: -15px;
+        .customPrev,
+        .customNext {
+            background-color: unset;
+            border: none;
+            cursor: pointer;
+        }
+        .customPrev {
+            rotate: 180deg;
+        }
+    }
+}
