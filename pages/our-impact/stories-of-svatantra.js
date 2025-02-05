@@ -24,6 +24,8 @@ import styles from "@/styles/pages/StoriesOfSvatantra.module.scss";
 
 // IMAGES //
 import story_one from "../../public/img/our-impact/stories/story_one.jpg";
+import arrow_btn from "../../public/img/arrow_btn.svg";
+import youtube from "../../public/img/youtube.svg";
 
 /** StoriesOfSvatantra Page */
 export default function StoriesOfSvatantra() {
@@ -37,44 +39,49 @@ export default function StoriesOfSvatantra() {
 		{
 			title: "Literacy is the key to change23!",
 			thumbnail: story_one.src,
-			link: "text",
+			link: "",
+			youTubeLink: "text",
 		},
 		{
 			title: "Literacy is the key to change2!",
 			thumbnail: story_one.src,
-			link: "text",
+			link: "https://www.google.com/",
 		},
 		{
 			title: "Literacy is the key to chang3!",
 			thumbnail: story_one.src,
-			link: "text",
+			link: "https://www.google.com/",
 		},
 		{
 			title: "Literacy is the key to chang3!",
 			thumbnail: story_one.src,
-			link: "text",
+			link: "https://www.google.com/",
 		},
 	];
 	const financialTrainingData = [
 		{
 			title: "Literacy is the key to45",
 			thumbnail: story_one.src,
-			link: "text",
+			link: "",
+			youTubeLink: "https://www.google.com/",
 		},
 		{
 			title: "Literacy is the ",
 			thumbnail: story_one.src,
-			link: "text",
+			link: "https://www.google.com/",
+			youTubeLink: "",
+		},
+		{
+			title: "Literacy is the key to 1 !",
+			thumbnail: story_one.src,
+			link: "https://www.google.com/",
+			youTubeLink: "",
 		},
 		{
 			title: "Literacy is the key to !",
 			thumbnail: story_one.src,
-			link: "text",
-		},
-		{
-			title: "Literacy is the key to !",
-			thumbnail: story_one.src,
-			link: "text",
+			link: "https://www.google.com/",
+			youTubeLink: "",
 		},
 	];
 	return (
@@ -92,7 +99,7 @@ export default function StoriesOfSvatantra() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.StoriesOfSvatantra_page}`}>
-				<section className={`${styles.StoriesOfSvatantra_main} ptb_100`}>
+				<section className={`${styles.StoriesOfSvatantra_main} ptb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
 							<h1 className="text_xxxl color_primary">
@@ -103,7 +110,7 @@ export default function StoriesOfSvatantra() {
 
 						<div className={`${styles.switchBox}`}>
 							<div
-								className={`${styles.media} ${
+								className={`${styles.tabNav} ${
 									activeTab === "CustomerTestimonials" ? styles.active : ""
 								}`}
 								onClick={() => handleTabClick("CustomerTestimonials")}
@@ -111,7 +118,7 @@ export default function StoriesOfSvatantra() {
 								<p className="text_reg f_w_m">Customer Testimonials</p>
 							</div>
 							<div
-								className={`${styles.award} ${
+								className={`${styles.tabNav} ${
 									activeTab === "FinancialTraining" ? styles.active : ""
 								}`}
 								onClick={() => handleTabClick("FinancialTraining")}
@@ -124,43 +131,59 @@ export default function StoriesOfSvatantra() {
 							{activeTab == "CustomerTestimonials" ? (
 								<>
 									<div className={`${styles.box_wrap}`}>
-										{customerTestimonialsData.map((item) => (
-											<div className={`${styles.box_item}`} key={item.title}>
-												<img src={item.thumbnail} className="b_r_10" alt="story img" />
-												<div className={`${styles.content} pt_20 d_f`}>
-													<p>{item.title}</p>
-													{/* <div className={`${styles.BtnBx}`}>
-														<Button
-															buttonType="secondary"
-															condition={"white"}
-															link={"#"}
-															title={"View More"}
-														/>
-													</div> */}
+										{customerTestimonialsData.map((item, ind) => {
+											return (
+												<div className={`${styles.box_item}`} key={ind}>
+													<img src={item.thumbnail} className="b_r_10" alt="story img" />
+													<div className={`${styles.content} pt_20 f_r_aj_between`}>
+														<p>{item.title}</p>
+														<div>
+															{item.link && (
+																<a href={item.link}>
+																	<img src={arrow_btn.src} alt="arrow icon" />
+																</a>
+															)}
+															{item.youTubeLink && (
+																<div>
+																	<a href={item.youTubeLink}>
+																		<img src={youtube.src} alt="arrow icon" />
+																	</a>
+																</div>
+															)}
+														</div>
+													</div>
 												</div>
-											</div>
-										))}
+											);
+										})}
 									</div>
 								</>
 							) : (
 								<>
 									<div className={`${styles.box_wrap}`}>
-										{financialTrainingData.map((item1) => (
-											<div className={`${styles.box_item}`} key={item1.title}>
-												<img src={item1.thumbnail} className="b_r_10" alt="story img" />
-												<div className={`${styles.content} pt_20 d_f`}>
-													<p>{item1.title}</p>
-													{/* <div className={`${styles.BtnBx}`}>
-													<Button
-														buttonType="secondary"
-														condition={"white"}
-														link={"#"}
-														title={"View More"}
-													/>
-												</div> */}
+										{financialTrainingData.map((item1, ind) => {
+											return (
+												<div className={`${styles.box_item}`} key={ind}>
+													<img src={item1.thumbnail} className="b_r_10" alt="story img" />
+													<div className={`${styles.content} pt_20 f_r_aj_between`}>
+														<p>{item1.title}</p>
+														<div>
+															{item1.link && (
+																<a href={item1.link}>
+																	<img src={arrow_btn.src} alt="arrow icon" />
+																</a>
+															)}
+															{item1.youTubeLink && (
+																<div>
+																	<a href={item1.youTubeLink}>
+																		<img src={youtube.src} alt="arrow icon" />
+																	</a>
+																</div>
+															)}
+														</div>
+													</div>
 												</div>
-											</div>
-										))}
+											);
+										})}
 									</div>
 								</>
 							)}

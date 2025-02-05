@@ -1,0 +1,72 @@
+@import "../helpers/helpers.scss";
+
+.csr_page {
+	.title_wrap {
+		width: 85%;
+	}
+	.csr_main {
+		.SliderMain {
+			position: relative;
+			.item {
+				background-color: var(--color_white);
+				padding: 40px 30px;
+				border-radius: 10px;
+				.itemContent {
+					h4 {
+						width: 75%;
+					}
+				}
+			}
+		}
+		:global(.swiper-pagination) {
+			position: relative;
+			background: rgba(0, 0, 0, 0.1);
+			width: 90%;
+			span {
+				background-color: var(--color_black);
+			}
+		}
+		:global(.swiper) {
+			height: 100%;
+		}
+		:global(.swiper-slide) {
+			height: auto !important;
+		}
+		:global(.swiper-content) {
+			height: 100% !important;
+		}
+		.arrowSection {
+			position: absolute;
+			right: 0px;
+			bottom: -15px;
+			.customPrev,
+			.customNext {
+				background-color: unset;
+				border: none;
+				cursor: pointer;
+			}
+			.customPrev {
+				rotate: 180deg;
+			}
+		}
+	}
+	.driving_wrap {
+		.driving_img_box {
+			.item_img {
+				&:nth-child(1) {
+					width: 30%;
+				}
+				&:nth-child(2) {
+					width: 68%;
+				}
+
+				img {
+					width: 100%;
+					height: 370px;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+		}
+	}
+}

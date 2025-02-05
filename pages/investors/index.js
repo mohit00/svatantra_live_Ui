@@ -61,7 +61,7 @@ export default function Investors() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.investors_page}`}>
-				<section className={`${styles.investors_main} ptb_100`}>
+				<section className={`${styles.investors_main} ptb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
 							<h1 className="text_xxxl color_primary">Annual Return</h1>
