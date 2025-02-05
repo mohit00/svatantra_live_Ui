@@ -1,0 +1,55 @@
+@import "../helpers/helpers.scss";
+.Journey_section{
+    .banner_info{
+        width: 80%;
+        p{
+            padding-right: 150px;
+        }
+    }
+    .Journey_box_wrapper{
+        padding: 60px 50px;
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
+        border-radius: 12px;
+        background-image: url(../../../public/img/journey/Journey_bg.jpg);
+        .Journey_box{
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #205491;
+            .title{
+                width: 50%;
+                h2{
+                    color: #0072CD;
+                    font-size: 150px;
+                    font-style: normal;
+                    font-weight: 600;   
+                    line-height: 100px;
+                    font-family: var(--font_primary);
+                }
+                .position_fixed{
+                    top: 450px;
+                    position: fixed;
+                    color: var(--color_black);
+                }
+                .color_trans{
+                    color: transparent;
+                }
+            }
+            .info_wrapper{
+                width: 50%;
+                .info{
+                    padding-bottom: 40px;
+                    &:last-child{
+                        padding-bottom: 0;
+                    }
+                    .image{
+                        img{
+                            border-radius: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
