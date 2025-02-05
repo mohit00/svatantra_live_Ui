@@ -31,9 +31,12 @@
 			.AccImg {
 				transition: all 0.5s;
 				&.activeImg {
-					transform: rotate(180deg);
+					//transform: rotate(180deg);
 				}
 			}
+			// .AccImgMinus {
+			// 	display: none;
+			// }
 
 			span {
 				font-size: 18px;
@@ -52,7 +55,7 @@
 					//border-top: 1px solid #ababab;
 				}
 			}
-			
+
 			.activeInner {
 				padding: 20px 0 20px;
 				@media (max-width: 767px) {
@@ -61,4 +64,9 @@
 			}
 		}
 	}
+	// .activeBgTitle {
+	// 	.AccImgMinus {
+	// 		display: block !important;
+	// 	}
+	// }
 }

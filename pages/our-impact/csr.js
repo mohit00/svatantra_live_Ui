@@ -30,6 +30,9 @@ import styles from "@/styles/pages/csr.module.scss";
 // IMAGES //
 import img_one from "../../public/img/our-impact/csr/img_one.jpg";
 import img_two from "../../public/img/our-impact/csr/img_two.jpg";
+import img_three from "../../public/img/our-impact/csr/img_three.jpg";
+import img_four from "../../public/img/our-impact/csr/img_four.jpg";
+import img_five from "../../public/img/our-impact/csr/img_five.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
 
 /** csr Page */
@@ -56,6 +59,18 @@ export default function csr() {
 				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
 		},
 	];
+
+	const drivingOne = [
+		[
+			{ thumbnail: img_one.src },
+			{ thumbnail: img_two.src },
+			{ thumbnail: img_three.src },
+			{ thumbnail: img_four.src },
+			{ thumbnail: img_five.src },
+		],
+	];
+	console.log(drivingOne);
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -123,8 +138,8 @@ export default function csr() {
 								}}
 								className={styles.slider}
 							>
-								{svatantraPath.map((item) => (
-									<SwiperSlide className={`${styles.item}`} key={item.title}>
+								{svatantraPath.map((item, ind) => (
+									<SwiperSlide className={`${styles.item}`} key={ind}>
 										<div className={styles.itemContent}>
 											<h4 className="text_md color_light_black pb_20">{item.title}</h4>
 											<p className="text_xs color_light_black opacity_8">{item.desc}</p>
@@ -171,14 +186,15 @@ export default function csr() {
 								of health.
 							</p>
 						</div>
-						<div className={`${styles.driving_img_box} f_j`}>
-							<div className={`${styles.item_img}`}>
-								<img src={img_one.src} className="b_r_10" alt="img" />
+						{drivingOne.map((row, rowIndex) => (
+							<div className={`${styles.driving_img_box} f_w_j`} key={rowIndex}>
+								{row.map((item1, colIndex) => (
+									<div className={`${styles.item_img}`} key={colIndex}>
+										<img src={item1.thumbnail} className="b_r_10" alt="img" />
+									</div>
+								))}
 							</div>
-							<div className={`${styles.item_img}`}>
-								<img src={img_two.src} className="b_r_10" alt="img" />
-							</div>
-						</div>
+						))}
 					</div>
 				</section>
 			</main>

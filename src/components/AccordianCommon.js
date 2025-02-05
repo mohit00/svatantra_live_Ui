@@ -14,6 +14,7 @@ import styles from "@/styles/components/AccordianCommon.module.scss";
 
 // IMAGES //
 import plus_arrow from "@/../public/img/icons/plus_arrow.svg";
+import minus_icon from "@/../public/img/icons/minus_icon.svg";
 
 // DATA //
 
@@ -26,7 +27,7 @@ export default function AccordianCommon({
 	fontColor,
 }) {
 	// const [activeIndex, setActiveIndex] = useState(null);
-	const [activeIndex, setActiveIndex] = useState(null);
+	const [activeIndex, setActiveIndex] = useState(0);
 	const [heights, setHeights] = useState([]);
 	const contentRefs = useRef([]);
 	useEffect(() => {
@@ -70,13 +71,25 @@ export default function AccordianCommon({
 							{item.title}
 						</div>
 						<span>
-							<img
+							{activeIndex === index ? (
+								<img src={minus_icon.src} className={`${styles.AccImgMinus}`} alt="" />
+							) : (
+								<img src={plus_arrow.src} className={`${styles.AccImg} `} alt="" />
+							)}
+							{/* <img
 								src={plus_arrow.src}
 								className={`${styles.AccImg} ${
 									activeIndex === index ? styles.activeImg : "+"
 								}`}
 								alt=""
-							/>
+							/> */}
+							{/* <img
+								src={minus_icon.src}
+								className={`${styles.AccImgMinus} ${
+									activeIndex === index ? styles.activeImg : "+"
+								}`}
+								alt=""
+							/> */}
 						</span>
 					</div>
 
