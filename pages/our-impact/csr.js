@@ -89,7 +89,7 @@ export default function csr() {
 						<div className={`${styles.SliderMain}`}>
 							<Swiper
 								modules={[Navigation, Pagination, Autoplay]}
-								slidesPerView={1.2}
+								slidesPerView={1}
 								spaceBetween={15}
 								grabCursor={true}
 								speed={500}
