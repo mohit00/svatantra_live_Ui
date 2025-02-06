@@ -1,3 +1,43 @@
 @import "../helpers/helpers.scss";
 			
-.BlogsInsidePage{}
+.BlogsInsidePage{
+    .HeadBx{
+        .TitleBx{
+            .DetailsStrip{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding-bottom: 40px;
+                .Left{
+                    .DateLink{
+                        display: flex;
+                        gap: 10px;
+                        .ShareBtn{
+                            a{
+                                display: flex;
+                                gap: 15px;
+                            }
+                        }
+                    }
+                }
+				.socialIcons {
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					.box1 {
+						width: 30px;
+						height: 30px;
+						background-color: #63B22E;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-radius: 50%;
+                        img{
+                            width: 15px;
+                        }
+					}
+				}
+            }
+        }
+    }
+}
