@@ -2,6 +2,11 @@
 
 .contentFromCms {
 	p {
+		font-size: 18px;
+		line-height: 1.5;
+		opacity: 0.8;
+		font-weight: 500;
+		color: #1e1e1e;
 		margin-bottom: 15px;
 	}
 	strong {
@@ -20,5 +25,12 @@
 		@include xxxl-down {
 			font-size: 20px;
 		}
+	}
+	h5{
+		font-size: 18px;
+		line-height: 1.5;
+		opacity: 0.8;
+		font-weight: 800;
+		color: #1e1e1e;
 	}
 }
