@@ -6,8 +6,9 @@ import { useState } from "react";
 import MetaTags from "@/components/MetaTags";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import AccordianCommon from "@/components/AccordianCommon";
 import Button from "@/components/Buttons/Button";
+import Breadcrum from "@/components/Breadcrumb";
+import InnerBanner from "@/components/InnerBanner";
 
 // SECTIONS //
 
@@ -28,6 +29,7 @@ import styles from "@/styles/pages/csr.module.scss";
 /** Data Fetching  */
 
 // IMAGES //
+import banner_desktop from "../../public/img/faq/banner_desktop.jpg";
 import img_one from "../../public/img/our-impact/csr/img_one.jpg";
 import img_two from "../../public/img/our-impact/csr/img_two.jpg";
 import img_three from "../../public/img/our-impact/csr/img_three.jpg";
@@ -86,6 +88,13 @@ export default function csr() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.csr_page}`}>
+				<Breadcrum link2="Our Impact" link3="Customer Testimonials" />
+				<InnerBanner
+					desktopImage={banner_desktop.src}
+					mobileImage={banner_desktop.src}
+					bannerTitle="We pledge to power sustainable entrepreneurs"
+					bannerDesc="Accessible financial solutions that push individuals to break barriers and drive innovation"
+				/>
 				<section className={`${styles.csr_main} ptb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
