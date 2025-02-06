@@ -1,0 +1,221 @@
+@import "../helpers/helpers.scss";
+
+.AboutPage{
+    .Committed{
+        h4{
+            width: 82%;
+            @media (max-width: 992px) {
+                width: 100%;
+            }
+        }
+        .committed_section_wrapper{
+            .committed_section{
+                padding-bottom: 45px;
+                &:last-child{
+                    padding-bottom: 0;
+                }
+                .committed_img{
+                    width: 55%;
+                    padding-right: 40px;
+                    @media (max-width: 767px) {
+                        width: 100%;
+                        padding-right: 0;
+                        padding-bottom: 20px;
+                    }
+                    img{
+                        width: 100%;
+                        border-radius: 12px;
+                    }
+                }
+                .committed_info{
+                    width: 45%;
+                    padding-left: 20px;
+                    @media (max-width: 767px) {
+                        width: 100%;
+                        padding-left: 0;
+                    }
+                }
+                &:nth-child(even){
+                    .committed_img{
+                       order: 1;
+                       padding-right: 0;
+                       padding-left: 40px;
+                       @media (max-width: 767px) {
+                        order: 0;
+                        padding-left: 0;
+                    }
+                    }
+                    .committed_info{
+                        padding-left: 0;
+                        padding-right: 20px;
+                        @media (max-width: 767px) {
+                            padding-right: 0;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+    .turning{
+        h4{
+            width: 80%;
+            @media (max-width: 992px) {
+                width: 100%;
+            }
+        }
+        .turning_section{
+            grid-gap: 18px;
+            @media (max-width: 767px) {
+                grid-gap: 10px;
+            }
+            .turning_box{
+                width: 32.2%;
+                padding: 20px;
+                cursor: pointer;
+                border-radius: 12px;
+                border: 1px solid #E8D6C9;
+                transition: all 0.2s;
+                @media (max-width: 767px) {
+                    width: 48.5%;
+                }
+                @media (min-width: 768px) and (max-width: 1200px) {
+                    width: 31.6%;
+                }
+                &:hover{
+                    background-color: var(--color_white);
+                }
+                .img_box{
+                    height: 100px;
+                }
+                p{
+                    padding-top: 5px;
+                }
+            }
+        }
+    }
+
+    .accelerating{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../../../public/img/about/accelerating.jpg);
+        .SliderMain {
+            position: relative;
+            .item {
+                border-radius: 14px;
+                background-color: var(--color_white);
+                .itemContent {
+                    .title{
+                        padding: 15px;
+                        background-color: #0072CD;
+                        border-top-left-radius: 12px;
+                        border-top-right-radius: 12px;
+                    }
+                    .info{
+                        padding: 25px 15px;
+                    }
+                }
+            }
+        
+            :global(.swiper-pagination) {
+                position: relative;
+                background: rgba(0, 0, 0, 0.1);
+                width: 90%;
+                @media (max-width: 767px) {
+                    width: 70vw;
+                }
+                @media (min-width: 768px) and (max-width: 992px) {
+                   width: 85%;
+                }
+                span {
+                    background-color: var(--color_black);
+                }
+            }
+            :global(.swiper) {
+                height: 100%;
+            }
+            :global(.swiper-slide) {
+                height: auto !important;
+            }
+            :global(.swiper-content) {
+                height: 100% !important;
+            }
+            .arrowSection {
+                position: absolute;
+                right: 15px;
+                bottom: -15px;
+                
+                .customPrev,
+                .customNext {
+                    background-color: unset;
+                    border: none;
+                    cursor: pointer;
+                }
+                .customPrev {
+                    rotate: 180deg;
+                }
+            }
+        }
+    }
+
+    .recognised{
+        .talent_section{
+            .item{
+                .itemContent{
+                    .item_img{
+                        img{
+                            width: 100%;
+                            border-radius: 12px;
+                        }
+                    }
+                }
+            }
+    
+            .btn_section{
+                margin-top: 40px;
+                grid-gap: 75px;
+            }
+    
+            :global(.swiper-pagination2) {
+                position: relative;
+                background: rgba(0, 0, 0, 0.1);
+                width: 90%;
+                @media (max-width: 767px) {
+                    width: 70vw;
+                }
+                @media (min-width: 768px) and (max-width: 992px) {
+                    width: 85%;
+                }
+                span {
+                    background-color: var(--color_black);
+                }
+            }
+            :global(.swiper) {
+                height: 100%;
+            }
+            :global(.swiper-slide) {
+                height: auto !important;
+            }
+            :global(.swiper-content) {
+                height: 100% !important;
+            }
+            .arrowSection {
+                position: absolute;
+                right: 0px;
+                bottom: -15px;
+                @media (max-width: 992px) {
+                    right: 15px;
+                }
+                .customPrev,
+                .customNext {
+                    background-color: unset;
+                    border: none;
+                    cursor: pointer;
+                }
+                .customPrev {
+                    rotate: 180deg;
+                }
+            }
+        }
+    }
+}

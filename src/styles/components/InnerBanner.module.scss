@@ -12,6 +12,15 @@
 	}
 	.banner_info{
 		width: 80%;
+		@media (max-width: 992px) {
+			width: 100%;
+		}
+		p{
+			width: 80%;
+			@media (max-width: 992px) {
+                width: 100%;
+            }
+		}
 	}
 	.banner_content {
 		@extend %full_overlay;
