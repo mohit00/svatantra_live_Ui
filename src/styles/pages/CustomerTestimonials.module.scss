@@ -1,0 +1,28 @@
+@import "../helpers/helpers.scss";
+
+.StoriesOfSvatantra_page {
+	.StoriesOfSvatantra_main {
+		
+		.box_wrap {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 30px;
+			@media (max-width: 767px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+			.box_item {
+				background-color: var(--color_white);
+				border-radius: 8px;
+				padding: 10px 10px 20px;
+				.content {
+					p {
+						width: 88%;
+					}
+					a {
+						width: 32px;
+					}
+				}
+			}
+		}
+	}
+}

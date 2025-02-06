@@ -1,0 +1,9 @@
+@import "../helpers/helpers.scss";
+
+.FaqsPage {
+	.faqs_main{
+    :global(.activeSpace){
+      padding-top: 0px !important;
+    }
+  }
+}

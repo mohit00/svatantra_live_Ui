@@ -15,13 +15,18 @@ import DefaultBannerMob from "@/../public/img/banner/defaultMobileBanner.jpg";
 // UTILS //
 
 /** Inner Banner component */
-function InnerBanner({ desktopImage, bannerTitle, mobileImage }) {
+function InnerBanner({ desktopImage, mobileImage, bannerTitle, bannerDesc }) {
 	return (
 		<div className={`${styles.inner_banner_wrap} `}>
 			{/* Banner Content */}
 			<div className="container">
 				<div className={`${styles.banner_info}`}>
-					<h1 className="section_title pb_30">{parse(bannerTitle || "")}</h1>
+					<h1 className="section_title pb_10">{parse(bannerTitle || "")}</h1>
+					{bannerDesc && (
+						<p className="text_md color_light_black opacity_8 pb_30">
+							{parse(bannerDesc || "")}
+						</p>
+					)}
 				</div>
 			</div>
 

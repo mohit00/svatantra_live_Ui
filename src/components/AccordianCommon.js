@@ -76,20 +76,6 @@ export default function AccordianCommon({
 							) : (
 								<img src={plus_arrow.src} className={`${styles.AccImg} `} alt="" />
 							)}
-							{/* <img
-								src={plus_arrow.src}
-								className={`${styles.AccImg} ${
-									activeIndex === index ? styles.activeImg : "+"
-								}`}
-								alt=""
-							/> */}
-							{/* <img
-								src={minus_icon.src}
-								className={`${styles.AccImgMinus} ${
-									activeIndex === index ? styles.activeImg : "+"
-								}`}
-								alt=""
-							/> */}
 						</span>
 					</div>
 
@@ -105,7 +91,11 @@ export default function AccordianCommon({
 							transition: "height 0.3s ease",
 						}}
 					>
-						<div className={`${activeIndex === index ? styles.activeInner : ""}`}>
+						<div
+							className={`${
+								activeIndex === index ? styles.activeInner : ""
+							} activeSpace`}
+						>
 							{item.children}
 						</div>
 					</div>

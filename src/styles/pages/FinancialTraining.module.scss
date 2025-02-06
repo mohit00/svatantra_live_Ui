@@ -2,29 +2,7 @@
 
 .StoriesOfSvatantra_page {
 	.StoriesOfSvatantra_main {
-		.switchBox {
-			display: inline-flex;
-			align-items: center;
-			background-color: #f6f6f6;
-			border-radius: 100px;
-			cursor: pointer;
-			border: 1px solid #eaeaea;
-			padding: 4px 4px;
-
-			.tabNav {
-				text-align: center;
-				padding: 8px 40px 8px 40px;
-				border-radius: 100px;
-				@media (max-width: 767px) {
-					padding: 8px 20px 8px 20px;
-				}
-			}
-
-			.active {
-				background-color: #00783c;
-				color: white;
-			}
-		}
+		
 		.box_wrap {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -36,6 +14,7 @@
 				background-color: var(--color_white);
 				border-radius: 8px;
 				padding: 10px 10px 20px;
+				cursor: pointer;
 				.content {
 					p {
 						width: 88%;

@@ -10,7 +10,7 @@
         width: 100%;
         border-collapse: collapse;
         background-color: var(--color_white);
-        // border-radius: 12px;
+        border-radius: 12px;
         td, th {
           // border-bottom: 1px solid #ddd;
           padding: 20px 20px;
@@ -48,13 +48,18 @@
         thead{
           background-color: #0072CD;
           color: var(--color_white);
-          border-radius: 12px 12px 0px 0px;
           th {
             text-align: left;
             opacity: 0.8;
             font-size: 18px;
             font-weight: 700;
             font-family: var(--font_secondary);
+            &:first-child{
+              border-top-left-radius: 10px;
+            }
+            &:last-child{
+              border-top-right-radius: 10px;
+            }
           }
         }
       }
