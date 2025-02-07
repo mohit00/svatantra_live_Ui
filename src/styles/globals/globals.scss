@@ -184,3 +184,20 @@ section {
 	transform: translateY(0);
 	transition: all 0.5s ease;
   }
+
+  ::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background: #1e1e1e;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--color_white);
+	border-radius: 50px;
+}

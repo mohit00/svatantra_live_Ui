@@ -49,11 +49,28 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 			sessionStorage.setItem("homeBannerAnimation", "true");
 
 			introTimeline
-				.to(`.${styles.home_banner_bg}`, 1, { y: "0", delay: 3 }, "1st")
+				.fromTo(
+					`.${styles.home_banner_bg}`,
+					1,
+					{ y: "-100%" },
+					{ y: "0", delay: 3 },
+					"1st"
+				)
 				.to(`.${styles.line1}, .${styles.line2}`, { opacity: 0, delay: 3 }, "1st")
-				.to(`.${styles.info}`, 1.5, { x: "0", delay: 1.5 }, "2nd")
+				.fromTo(
+					`.${styles.info}`,
+					1.5,
+					{ x: "-100%" },
+					{ x: "0", delay: 1.5 },
+					"2nd"
+				)
 				.to(`.${styles.intro_loader}`, 1, { x: "-22%", delay: 1 }, "2nd")
-				.to(`.main_header`, { y: "12px" }, "3rd")
+				.fromTo(
+					`.main_header`,
+					{ y: "-110%" },
+					{ y: "12px", marginTop: "0" },
+					"3rd"
+				)
 				.to(`.${styles.intro_loader_mobile}`, { y: "-18vh", delay: 1 }, "2nd")
 				.to(
 					`.${styles.line_1}`,
@@ -70,19 +87,19 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 		} else {
 			// Second animation (different logic)
 			introTimeline
-				.to(`.${styles.home_banner_bg}`, { y: "0", duration: 0.5 }, "1st")
-				.to(`.${styles.intro_loader}`, { x: "-22%", duration: 0.5 }, "1st")
-				.to(`.${styles.info}`, { x: "0", duration: 0.5 }, "1st")
-				.to(`.main_header`, { y: "12px", duration: 0.5 }, "1st")
+				.to(`.${styles.home_banner_bg}`, { y: "0" }, "1st")
+				.to(`.${styles.intro_loader}`, { x: "-22%" }, "1st")
+				.to(`.${styles.info}`, { x: "0" }, "1st")
+				.to(`.main_header`, { y: "12px", marginTop: "0" }, "1st")
 				.to(`.${styles.line1}, .${styles.line2}`, { display: "none" }, "1st")
 				.to(
 					`.${styles.line_1}`,
-					{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", duration: 0.5 },
+					{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" },
 					"1st"
 				)
 				.to(
 					`.${styles.line_2}`,
-					{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", duration: 0.5 },
+					{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" },
 					"1st"
 				);
 		}
