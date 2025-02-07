@@ -54,7 +54,8 @@ export default function BlogsInsidePage() {
 					<div className={`${styles.HeadBx}`}>
 						<div className={`${styles.TitleBx}`}>
 							<h2 className="section_title pb_20">
-								Malati&rsquo;s Tea Stall - A Blend for Business Excellence
+								Ananya Birla’s Svatantra set to acquire Sachin Bansal’s Chaitanya for
+								INR 1,479 cr
 							</h2>
 							<div className={`${styles.DetailsStrip}`}>
 								<div className={`${styles.Left}`}>

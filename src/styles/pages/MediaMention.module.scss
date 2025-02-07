@@ -1,0 +1,73 @@
+@import "../helpers/helpers.scss";
+
+.MediaMentionPage {
+	.MediaListingMain {
+		.Head {
+		}
+		.GridBox {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			column-gap: 20px;
+			row-gap: 50px;
+			@media screen and (max-width: 1199px) {
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: 30px;
+			}
+			@media screen and (max-width: 767px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+			.slider {
+				display: flex;
+				justify-content: space-between;
+				gap: 40px;
+
+				@media (max-width: 991px) {
+					flex-direction: column;
+				}
+
+				.box1 {
+					.imgBox {
+						position: relative;
+
+						.logo {
+							position: absolute;
+							bottom: 20px;
+							right: 20px;
+						}
+					}
+				}
+			}
+			.categoryBox {
+				display: flex;
+				gap: 10px;
+				padding: 15px 0;
+				.news {
+					display: flex;
+					align-items: center;
+					padding: 8px 18px 8px 18px;
+					border-radius: 100px;
+					background-color: var(--color_secondary);
+					p {
+						font-size: 10px;
+						line-height: 1;
+						color: white;
+					}
+				}
+
+				.date {
+					display: flex;
+					align-items: center;
+					padding: 8px 18px 8px 18px;
+					border-radius: 100px;
+					background-color: var(--color_white);
+
+					p {
+						font-size: 10px;
+						line-height: 1;
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}

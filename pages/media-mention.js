@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 // MODULES //
 
 // COMPONENTS //
@@ -14,26 +13,26 @@ import Breadcrumb from "@/components/Breadcrumb";
 // UTILS //
 
 // STYLES //
-import styles from "@/styles/pages/PressRelease.module.scss";
+import styles from "@/styles/pages/MediaMention.module.scss";
 
 // IMAGES //
 import advent from "../public/img/advent.png";
 
 // DATA //
 
-/** PressRelease Page */
-export default function PressReleasePage() {
+/** Media Mention Page */
+export default function MediaMentionPage() {
 	const BlogList = [
 		{
 			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
+			cardtype: "News",
 			date: "14 June 2024",
 			title: "Malati's Tea Stall - A Blend for Business Excellence",
 			link: "/blogs-inside",
 		},
 		{
 			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
+			cardtype: "News",
 			date: "14 June 2024",
 			title:
 				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
@@ -41,21 +40,21 @@ export default function PressReleasePage() {
 		},
 		{
 			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
+			cardtype: "News",
 			date: "14 June 2024",
 			title: "Role of rural women in Indian agricultural businesses",
 			link: "/blogs-inside",
 		},
 		{
 			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
+			cardtype: "News",
 			date: "14 June 2024",
 			title: "Malati's Tea Stall - A Blend for Business Excellence",
 			link: "/blogs-inside",
 		},
 		{
 			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
+			cardtype: "News",
 			date: "14 June 2024",
 			title:
 				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
@@ -63,7 +62,7 @@ export default function PressReleasePage() {
 		},
 		{
 			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
+			cardtype: "News",
 			date: "14 June 2024",
 			title: "Role of rural women in Indian agricultural businesses",
 			link: "/blogs-inside",
@@ -73,25 +72,26 @@ export default function PressReleasePage() {
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Press Release"}
+				Title={"Media Mention"}
 				Desc={""}
 				OgImg={""}
-				Url={"/press-releaase"}
+				Url={"/media-mention"}
 			/>
 
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.PressReleasePage} pb_80`}>
+			<main className={styles.MediaMentionPage}>
+				<Breadcrumb link5={"media-mention"} linkTitle={"Media Mention"} />
 				<div className="container">
-					<Breadcrumb link5={"press-release"} linkTitle={"Press Release"} />
-					<section className={`${styles.PressReleaseListingMain}`}>
-						<div className={`${styles.Head}`}>
-							<h2 className="section_title pb_10">Documenting the path to change</h2>
+					<section className={`${styles.MediaListingMain} pb_80`}>
+						<div className={`${styles.Head} pb_50`}>
+							<h2 className="section_title pb_10">
+								A reflection of our growing impact
+							</h2>
 							<p className="text_md color_light_black opacity_80">
-								Read the latest updates on how we are creating ripples across
-								industries.
+								Turning the spotlight on real stories of change, captured by the media.
 							</p>
 						</div>
 						<div className={`${styles.GridBox}`}>
@@ -100,8 +100,11 @@ export default function PressReleasePage() {
 									<div className={`${styles.slider}`} key={ind}>
 										<div className={`${styles.box1}`}>
 											<div className={`${styles.imgBox}`}>
-												<img src={item.image} alt="box1" className={`${styles.mainImg}`} />
-												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
+												<img
+													src={item.image}
+													alt="box1"
+													className={`${styles.mainImg} width_100`}
+												/>
 											</div>
 
 											<div className={`${styles.categoryBox}`}>
@@ -113,16 +116,11 @@ export default function PressReleasePage() {
 												</div>
 											</div>
 
-											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
+											<p className="text_reg_20 f_w_m">{item.title}</p>
 										</div>
 									</div>
 								);
 							})}
-						</div>
-						<div className={`${styles.ViewBtn}`}>
-							{/* <Button color="secondary" variant="filled">
-								View All
-							</Button> */}
 						</div>
 					</section>
 				</div>
