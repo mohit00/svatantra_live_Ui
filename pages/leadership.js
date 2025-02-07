@@ -84,7 +84,7 @@ export default function LeadershipPage() {
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={`${styles.LeadershipPage}`}>
+			<main className={`${styles.LeadershipPage} pb_80`}>
 				<Breadcrumb link5={"leadership"} linkTitle={"Leadership"} />
 				<div className="container">
 					<div className={`${styles.Sec1}`}>

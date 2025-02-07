@@ -116,19 +116,10 @@ export default function BlogsPage() {
 					<Breadcrumb link5={"blogs"} linkTitle={"Blogs"} />
 					<section className={`${styles.BlogsListingMain}`}>
 						<div className={`${styles.Head}`}>
-							<h2 className="section_title pb_20">Stories of spearheading change</h2>
+							<h2 className="section_title pb_10">Stories of spearheading change</h2>
 							<p className="text_md color_light_black opacity_80">
 								Insights into the future of rural entrepreneurship in India
 							</p>
-							{/* <div className={`${styles.Tabs}`}>
-								<div className={`${styles.btn} ${styles.active} text_16 color_primary`}>
-									Filter Articles
-								</div>
-								<div className={`${styles.btn} text_16 color_primary`}>Blogs</div>
-								<div className={`${styles.btn} text_16 color_primary`}>Articles</div>
-								<div className={`${styles.btn} text_16 color_primary`}>Videos</div>
-								<div className={`${styles.btn} text_16 color_primary`}>Recipes</div>
-							</div> */}
 							<div className={`${styles.FiltersBox}`}>
 								<div className={`${styles.Filter}`}>
 									<div className={`${styles.selectBx}`}>
@@ -256,11 +247,6 @@ export default function BlogsPage() {
 									</div>
 								);
 							})}
-						</div>
-						<div className={`${styles.ViewBtn}`}>
-							{/* <Button color="secondary" variant="filled">
-								View All
-							</Button> */}
 						</div>
 					</section>
 				</div>
