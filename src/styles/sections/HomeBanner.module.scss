@@ -85,7 +85,7 @@
 				width: 100%;
 			}
 			.info {
-				transition: all 0.4s;
+				// transition: all 0.4s;
 				transform: translateX(-100%);
 				@media (max-width: 767px) {
 					transform: translate(100%, 0);
