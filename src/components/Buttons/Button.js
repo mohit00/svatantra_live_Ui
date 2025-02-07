@@ -19,7 +19,7 @@ import btnArrow from "../../../public/img/home/BtnArrow.svg";
 // DATA //
 
 /** Button Component */
-const Button = ({ buttonType, link, title, condition }) => {
+const Button = ({ buttonType, link, title, condition, isButton }) => {
 	switch (buttonType) {
 		case "primary":
 			return (

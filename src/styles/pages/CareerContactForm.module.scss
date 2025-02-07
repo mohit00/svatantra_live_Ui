@@ -1,0 +1,176 @@
+@import "../helpers/helpers.scss";
+
+.CareerContactFormPage {
+	.inputBox {
+		position: relative;
+		width: 100%;
+
+		.field {
+			width: 100%;
+		}
+
+		.error {
+			font-size: 12px;
+			position: absolute;
+			width: 100%;
+			top: 60px;
+			left: 0;
+			color: red;
+		}
+	}
+	.form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 70px;
+		row-gap: 40px;
+		// padding-bottom:60px ;
+		// padding-top: 60px;
+		@media (max-width: 767px) {
+			grid-template-columns: 1fr;
+		}
+
+		input {
+			background-color: transparent;
+			border: none;
+			padding-top: 16px;
+			padding-bottom: 16px;
+			border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+
+			&::placeholder {
+				font-size: 16px;
+				font-weight: 400;
+				font-family: var(--font_secondary);
+				color: rgba(30, 49, 87, 1);
+			}
+		}
+
+		input:focus {
+			// border: none;
+			// background-color: red;
+		}
+
+		select {
+			width: 100%;
+			padding-top: 16px;
+			padding-bottom: 16px;
+			border: none;
+			background: transparent;
+			border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+			font-size: 16px;
+			font-weight: 400;
+			font-family: var(--font_secondary);
+			color: rgba(30, 49, 87, 1);
+		}
+
+		.file {
+			width: 100%;
+			padding-top: 16px;
+			padding-bottom: 16px;
+			// padding-right: 16px;
+			border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+			// display: none;
+		}
+
+		.inputFileData {
+			display: flex;
+			// border: 1px solid black;
+		}
+	}
+
+	.consentCheckbox {
+		padding-top: 60px;
+
+		.mainDiv {
+			width: 100%;
+			display: flex;
+			align-items: start;
+			gap: 10px;
+
+			.box {
+				width: 50px;
+				height: 50px;
+				margin-top: -10px;
+			}
+		}
+	}
+
+	.checkboxContainer {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+	}
+
+	/* Hide default checkbox */
+	.hiddenCheckbox {
+		display: none;
+	}
+
+	/* Custom checkbox */
+	.customCheckbox {
+		width: 20px;
+		height: 20px;
+		border: 1px solid rgba(30, 41, 59, 0.2);
+		border-radius: 4px;
+		display: inline-block;
+		position: relative;
+		transition: all 0.3s ease;
+	}
+
+	/* Checked state with tick */
+	.hiddenCheckbox:checked + .customCheckbox {
+		background-color: var(--color_primary);
+		// border-color: #007bff;
+	}
+
+	.hiddenCheckbox:checked + .customCheckbox::after {
+		content: "✔";
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+		position: absolute;
+		left: 50%;
+		top: 58%;
+		transform: translate(-50%, -50%);
+	}
+
+	/* Hover effect */
+	.customCheckbox:hover {
+		border-color: #0056b3;
+	}
+
+	// .submit {
+	// 	padding: 11px 70px 11px 70px;
+	// 	font-size: 16px;
+	// 	font-family: var(--font_secondary);
+	// 	color: white;
+	// 	background-color: #0056b3;
+	// 	border-radius: 100px;
+	// 	border: none;
+	// 	cursor: pointer;
+	// }
+
+	.data {
+		width: 100%;
+		border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+		position: relative;
+		display: flex;
+		align-items: center;
+		p {
+			font-size: 16px;
+			font-weight: 400;
+			font-family: var(--font_secondary);
+			color: rgba(30, 49, 87, 1);
+		}
+
+		.hiddenFileInput {
+			display: none;
+		}
+
+		.upload {
+			position: absolute;
+			top: 25%;
+			right: 2%;
+		}
+	}
+}
