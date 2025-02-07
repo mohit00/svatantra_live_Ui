@@ -67,7 +67,7 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 				.to(`.${styles.intro_loader}`, 1, { x: "-22%", delay: 1 }, "2nd")
 				.fromTo(
 					`.main_header`,
-					{ y: "-110%" },
+					{ y: "-120%" },
 					{ y: "12px", marginTop: "0" },
 					"3rd"
 				)
