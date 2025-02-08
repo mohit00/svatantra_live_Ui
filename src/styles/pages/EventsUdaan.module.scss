@@ -28,4 +28,142 @@
 			padding-right: 0px;
 		}
 	}
+
+	.results {
+		background-image: url(../../../public/img/bg.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding-top: 80px;
+		padding-bottom: 80px;
+
+		.box {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 30px;
+
+			@media (max-width: 767px) {
+				grid-template-columns: 1fr;
+				row-gap: 50px;
+			}
+			.box1 {
+				.row1 {
+					padding-top: 15px;
+					padding-bottom: 15px;
+					background-color: rgba(0, 114, 205, 1);
+					border-top-left-radius: 12px;
+					border-top-right-radius: 12px;
+				}
+
+				.row2 {
+					border-bottom-right-radius: 12px;
+					border-bottom-left-radius: 12px;
+					padding-top: 20px;
+					padding-bottom: 20px;
+					background-color: rgba(255, 255, 255, 1);
+				}
+			}
+		}
+	}
+
+	.Institutes {
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+		@media (max-width: 767px) {
+			padding-bottom: 50px;
+		}
+
+		table {
+			width: 100%;
+			padding-bottom: 40px;
+			td {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr;
+
+				tr {
+					padding: 20px 0 20px 40px;
+					border-right: 1px solid white;
+					opacity: 80%;
+
+					@media (max-width: 767px) {
+						padding: 20px 0 20px 5px;
+					}
+				}
+			}
+
+			td:nth-child(odd) {
+				background-color: rgba(239, 228, 220, 1);
+			}
+
+			td:nth-child(even) {
+				background-color: white;
+			}
+		}
+	}
+
+	.points {
+		display: flex;
+		align-items: start;
+		gap: 10px;
+
+		img {
+			margin-top: 8px;
+		}
+	}
+
+	ul {
+		padding-left: 0px;
+	}
+
+	.statements {
+		table {
+			width: 100%;
+			border: 12px;
+			.title {
+				background-color: rgba(0, 114, 205, 1);
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
+			td {
+				display: flex;
+				background-color: white;
+				tr:nth-child(1) {
+					width: 15%;
+					// background-color: red;
+				}
+				tr:nth-child(2) {
+					width: 70%;
+					// background-color: green;
+
+					@media (max-width: 767px) {
+						width: 58%;
+					}
+				}
+				tr:nth-child(3) {
+					width: 15%;
+					// background-color: pink;
+				}
+			}
+
+			.number {
+				padding-left: 40px;
+
+				@media (max-width: 767px) {
+					padding-left: 20px;
+				}
+			}
+		}
+
+		.download {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+
+			p {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+		}
+	}
 }
