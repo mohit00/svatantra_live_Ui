@@ -32,10 +32,10 @@ import styles from "@/styles/pages/FinancialTraining.module.scss";
 /** Data Fetching  */
 
 // IMAGES //
-import banner_desktop from "../../public/img/faq/banner_desktop.jpg";
-import story_one from "../../public/img/our-impact/stories/story_one.jpg";
-import arrow_btn from "../../public/img/arrow_btn.svg";
-import youtube from "../../public/img/youtube.svg";
+import banner_desktop from "../../../public/img/faq/banner_desktop.jpg";
+import story_one from "../../../public/img/our-impact/stories/story_one.jpg";
+import arrow_btn from "../../../public/img/arrow_btn.svg";
+import youtube from "../../../public/img/youtube.svg";
 
 /** FinancialTraining Page */
 export default function FinancialTraining() {
@@ -76,7 +76,11 @@ export default function FinancialTraining() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.StoriesOfSvatantra_page}`}>
-				<Breadcrum link2="Our Impact" link3="Financial Training" />
+				<Breadcrum
+					link2="Our Impact"
+					link3="Stories Of Svatantra"
+					link4="Financial Training"
+				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
