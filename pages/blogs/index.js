@@ -1,76 +1,257 @@
-/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable require-jsdoc */
 // MODULES //
+import { useState, useEffect } from "react";
 
 // COMPONENTS //
-import MetaTags from "@/components/MetaTags";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import DummyComponent from "@/components/DummyComponent";
+import MetaTags from "@/components/MetaTags";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // SECTIONS //
 
 // PLUGINS //
 
-// IMAGES //
+// UTILS //
 
 // STYLES //
 import styles from "@/styles/pages/Blogs.module.scss";
 
-// SERVICES //
-import { getAllBlogs } from "@/services/BlogService";
+// IMAGES //
+import advent from "../../public/img/advent.png";
 
 // DATA //
-import dummyData from "@/data/tempStrapiData.json";
-
-/** Data Fetching  */
-export async function getServerSideProps() {
-	// API call to get all Blogs
-	const blogs = await getAllBlogs();
-
-	return {
-		props: { blogsData: blogs.data },
-		// revalidate: 120,
-	};
-}
 
 /** Blogs Page */
-export default function Blogs({ blogsData }) {
-	// When fetching data from strapi use blogsData directly instead of dummyData,
-	// Here dummyData is used just for demonstration purpose
+export default function BlogsPage() {
+	const [selectedOptions, setSelectedOptions] = useState({
+		select1: "Svatantra Microfin",
+		select2: "2023",
+	});
 
+	const [openDropdowns, setOpenDropdowns] = useState({
+		select1: false,
+		select2: false,
+	});
+
+	const options = [
+		{ label: "Svatantra Microfin" },
+		{ label: "Svatantra Microfin" },
+		{ label: "Svatantra Microfin" },
+	];
+	const options2 = [{ label: "2024" }, { label: "2025" }, { label: "2026" }];
+
+	const toggleDropdown = (dropdown) => {
+		setOpenDropdowns((prevState) => ({
+			select1: dropdown === "select1" ? !prevState.select1 : false,
+			select2: dropdown === "select2" ? !prevState.select2 : false,
+		}));
+	};
+
+	const handleOptionClick = (option, dropdown) => {
+		setSelectedOptions((prevState) => ({
+			...prevState,
+			[dropdown]: option.label,
+		}));
+
+		setOpenDropdowns({ select1: false, select2: false });
+	};
+	const BlogList = [
+		{
+			image: advent.src,
+			cardtype: "SVATANTRA MICROFIN",
+			date: "14 June 2024",
+			title: "Malati's Tea Stall - A Blend for Business Excellence",
+			link: "/blogs-inside",
+		},
+		{
+			image: advent.src,
+			cardtype: "SVATANTRA MICROFIN",
+			date: "14 June 2024",
+			title:
+				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
+			link: "/blogs-inside",
+		},
+		{
+			image: advent.src,
+			cardtype: "SVATANTRA MICROFIN",
+			date: "14 June 2024",
+			title: "Role of rural women in Indian agricultural businesses",
+			link: "/blogs-inside",
+		},
+		{
+			image: advent.src,
+			cardtype: "SVATANTRA MICROFIN",
+			date: "14 June 2024",
+			title: "Malati's Tea Stall - A Blend for Business Excellence",
+			link: "/blogs-inside",
+		},
+		{
+			image: advent.src,
+			cardtype: "SVATANTRA MICROFIN",
+			date: "14 June 2024",
+			title:
+				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
+			link: "/blogs-inside",
+		},
+		{
+			image: advent.src,
+			cardtype: "SVATANTRA MICROFIN",
+			date: "14 June 2024",
+			title: "Role of rural women in Indian agricultural businesses",
+			link: "/blogs-inside",
+		},
+	];
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags
-				Title={"Blogs"}
-				Desc={""}
-				Keywords={""}
-				OgImg={""}
-				Url={"/blogs"}
-			/>
+			<MetaTags Title={"Blogs"} Desc={""} OgImg={""} Url={"/blogs"} />
+
 			{/* Header */}
 			<Header />
 
-			{/* Page Content Starts */}
-			<main className={`${styles.blogs_page}`}>
-				<div className="section_spacing">
-					<div className="container">
-						<div className={`${styles.blog_wrap}`}>
-							{dummyData.map((item, index) => {
+			{/* Page Content starts here */}
+			<main className={`${styles.BlogsPage} pb_80`}>
+				<div className="container">
+					<Breadcrumb link5={"blogs"} linkTitle={"Blogs"} />
+					<section className={`${styles.BlogsListingMain}`}>
+						<div className={`${styles.Head}`}>
+							<h2 className="section_title pb_10">Stories of spearheading change</h2>
+							<p className="text_md color_light_black opacity_80">
+								Insights into the future of rural entrepreneurship in India
+							</p>
+							<div className={`${styles.FiltersBox}`}>
+								<div className={`${styles.Filter}`}>
+									<div className={`${styles.selectBx}`}>
+										<div className={`${styles.custom_select}`}>
+											<div
+												className={`${styles.select_header}`}
+												onClick={() => toggleDropdown("select1")}
+												tabIndex={0}
+											>
+												<div className={`${styles.selected}`}>
+													{/* <img
+														src={options.find((opt) => opt.label === selectedOption)?.icon}
+														alt={selectedOption}
+														className={`${styles.icon}`}
+													/> */}
+													<span className="text_reg">{selectedOptions.select1}</span>
+												</div>
+												<img
+													src={
+														openDropdowns.select1
+															? "img/icons/UpArrow.svg"
+															: "img/icons/DownArrow.svg"
+													}
+													alt="Toggle Dropdown"
+													className={`${styles.arrow}`}
+												/>
+											</div>
+
+											{openDropdowns.select1 && (
+												<ul className={`${styles.select_options}`}>
+													{options.map((option) => (
+														<li
+															key={option.label}
+															className={`${styles.select_option} ${
+																option.label === selectedOptions.select1 ? styles.selected : ""
+															}`}
+															onClick={() => handleOptionClick(option, "select1")}
+														>
+															{/* <img
+															src={option.icon}
+															alt={option.label}
+															className={`${styles.option_icon}`}
+														/> */}
+															<span className="text_reg">{option.label}</span>
+														</li>
+													))}
+												</ul>
+											)}
+										</div>
+									</div>
+								</div>
+								<div className={`${styles.Filter}`}>
+									<div className={`${styles.selectBx}`}>
+										<div className={`${styles.custom_select}`}>
+											<div
+												className={`${styles.select_header}`}
+												onClick={() => toggleDropdown("select2")}
+												tabIndex={0}
+											>
+												<div className={`${styles.selected}`}>
+													{/* <img
+														src={options.find((opt) => opt.label === selectedOption)?.icon}
+														alt={selectedOption}
+														className={`${styles.icon}`}
+													/> */}
+													<span className="text_reg">{selectedOptions.select2}</span>
+												</div>
+												<img
+													src={
+														openDropdowns.select2
+															? "img/icons/UpArrow.svg"
+															: "img/icons/DownArrow.svg"
+													}
+													alt="Toggle Dropdown"
+													className={`${styles.arrow}`}
+												/>
+											</div>
+
+											{openDropdowns.select2 && (
+												<ul className={`${styles.select_options}`}>
+													{options2.map((option) => (
+														<li
+															key={option.label}
+															className={`${styles.select_option} ${
+																option.label === selectedOptions.select2 ? styles.selected : ""
+															}`}
+															onClick={() => handleOptionClick(option, "select2")}
+														>
+															{/* <img
+															src={option.icon}
+															alt={option.label}
+															className={`${styles.option_icon}`}
+														/> */}
+															<span className="text_reg">{option.label}</span>
+														</li>
+													))}
+												</ul>
+											)}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className={`${styles.GridBox}`}>
+							{BlogList.map((item, ind) => {
 								return (
-									<DummyComponent
-										key={item.attributes.title + index}
-										title={item.attributes.title}
-										desc={item.attributes.desc}
-										thumbImage={item.attributes.thumbImage}
-									/>
+									<div className={`${styles.slider}`} key={ind}>
+										<div className={`${styles.box1}`}>
+											<div className={`${styles.imgBox}`}>
+												<img src={item.image} alt="box1" className={`${styles.mainImg}`} />
+												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
+											</div>
+
+											<div className={`${styles.categoryBox}`}>
+												<div className={`${styles.news}`}>
+													<p>{item.cardtype}</p>
+												</div>
+												<div className={`${styles.date}`}>
+													<p>{item.date}</p>
+												</div>
+											</div>
+
+											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
+										</div>
+									</div>
 								);
 							})}
 						</div>
-					</div>
+					</section>
 				</div>
 			</main>
-			{/* Page Content Ends */}
+			{/* Page Content ends here */}
 
 			{/* Footer */}
 			<Footer />

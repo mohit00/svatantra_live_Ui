@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
-import Button from "../src/components/Buttons/Button";
+import Button from "../../src/components/Buttons/Button";
 import { useForm } from "react-hook-form";
 // SECTIONS //
 
@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 import styles from "@/styles/pages/CareerContactForm.module.scss";
 
 // IMAGES //
-import upload from "../public/img/upload.svg";
+import upload from "../../public/img/upload.svg";
 // DATA //
 
 /** Career Contact Form Page */

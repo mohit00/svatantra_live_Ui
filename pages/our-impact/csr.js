@@ -88,7 +88,7 @@ export default function csr() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.csr_page}`}>
-				<Breadcrum link2="Our Impact" link3="Customer Testimonials" />
+				<Breadcrum link2="Our Impact" link3="CSR" />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}

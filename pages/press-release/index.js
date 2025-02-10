@@ -17,7 +17,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import styles from "@/styles/pages/PressRelease.module.scss";
 
 // IMAGES //
-import advent from "../public/img/advent.png";
+import advent from "../../public/img/advent.png";
 
 // DATA //
 

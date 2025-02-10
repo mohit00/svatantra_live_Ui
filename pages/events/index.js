@@ -23,9 +23,9 @@ import styles from "@/styles/pages/events.module.scss";
 /** Data Fetching  */
 
 // IMAGES //
-import event_one from "../../../public/img/media/events/event_one.jpg";
-import event_two from "../../../public/img/media/events/event_two.jpg";
-import arrow_btn from "../../../public/img/arrow_btn.svg";
+import event_one from "../../public/img/media/events/event_one.jpg";
+import event_two from "../../public/img/media/events/event_two.jpg";
+import arrow_btn from "../../public/img/arrow_btn.svg";
 
 /** events Page */
 export default function events() {

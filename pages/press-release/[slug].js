@@ -17,13 +17,13 @@ import ContentFromCms from "@/components/ContentFromCms";
 import styles from "@/styles/pages/BlogsInside.module.scss";
 
 // IMAGES //
-import twitter from "../public/img/footer/twitter.svg";
-import facebook from "../public/img/footer/facebook.svg";
-import insta from "../public/img/footer/insta.svg";
-import yt from "../public/img/footer/yt.svg";
-import linkdin from "../public/img/footer/linkdin.svg";
-import BlogBanner from "../public/img/blogs/BlogBanner.jpg";
-import ShareIcon from "../public/img/blogs/ShareIcon.svg";
+import twitter from "../../public/img/footer/twitter.svg";
+import facebook from "../../public/img/footer/facebook.svg";
+import insta from "../../public/img/footer/insta.svg";
+import yt from "../../public/img/footer/yt.svg";
+import linkdin from "../../public/img/footer/linkdin.svg";
+import BlogBanner from "../../public/img/blogs/BlogBanner.jpg";
+import ShareIcon from "../../public/img/blogs/ShareIcon.svg";
 
 // DATA //
 

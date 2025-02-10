@@ -15,11 +15,11 @@ import MetaTags from "@/components/MetaTags";
 import styles from "@/styles/pages/EventsUdaan.module.scss";
 
 // IMAGES //
-import udaan from "../public/img/udaan.jpg";
+import udaan from "../../public/img/udaan.jpg";
 import GalleryComponent from "@/sections/Gallery";
 import Udaangallery from "@/components/Udaangallery";
-import dots from "../public/img/dot.svg";
-import download from "../public/img/download.svg";
+import dots from "../../public/img/dot.svg";
+import download from "../../public/img/download.svg";
 // DATA //
 
 /** Events Udaan Page */
@@ -213,7 +213,7 @@ export default function EventsUdaanPage() {
 							</div>
 						</ul>
 					</div>
-					<div className={`${styles.statements}  ptb_100`}>
+					<div className={`${styles.statements}  pb_100`}>
 						<div className={`${styles.titleBox}`}>
 							<h1 className="text_xxxl color_primary pb_60">Problem Statements</h1>
 						</div>
