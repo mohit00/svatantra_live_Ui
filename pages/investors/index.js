@@ -6,6 +6,7 @@ import MetaTags from "@/components/MetaTags";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AccordianCommon from "@/components/AccordianCommon";
+import Breadcrum from "@/components/Breadcrumb";
 
 // SECTIONS //
 
@@ -61,7 +62,8 @@ export default function Investors() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.investors_page}`}>
-				<section className={`${styles.investors_main} ptb_80`}>
+				<Breadcrum link2="For Investors" link3="Financial TrainingAnnual Return" />
+				<section className={`${styles.investors_main} pb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
 							<h1 className="text_xxxl color_primary">Annual Return</h1>
