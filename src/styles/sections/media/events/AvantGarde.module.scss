@@ -1,0 +1,33 @@
+@import "../../../helpers/helpers.scss";
+
+.AvantGarde {
+	background: radial-gradient(
+		194.31% 263.83% at 103.82% -2.53%,
+		#fff 0%,
+		#7fca66 37.63%,
+		#0072cd 63.19%,
+		#f6efea 100%
+	);
+
+	.avant_garde_flex {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		.itemContent {
+			background-color: var(--color_white);
+			border-radius: 12px;
+			.title {
+				padding: 15px;
+				background-color: #0072cd;
+				border-top-left-radius: 12px;
+				border-top-right-radius: 12px;
+			}
+			.info {
+				padding: 25px 15px;
+			}
+		}
+	}
+}

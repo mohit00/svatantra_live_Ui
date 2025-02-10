@@ -102,7 +102,9 @@ export default function FinancialTraining() {
 												<div data-src={item1.youTubeLink}>
 													<img src={item1.thumbnail} className="b_r_10" alt="story img" />
 													<div className={`${styles.content} pt_20 f_r_aj_between`}>
-														<p>{item1.title}</p>
+														<p className="text_md color_light_black font_secondary opacity_8">
+															{item1.title}
+														</p>
 														<div>
 															<a>
 																<img src={youtube.src} alt="arrow icon" />

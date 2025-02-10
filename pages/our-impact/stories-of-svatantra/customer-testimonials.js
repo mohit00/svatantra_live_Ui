@@ -133,7 +133,9 @@ export default function CustomerTestimonials() {
 										<div className={`${styles.box_item}`} key={ind}>
 											<img src={item.thumbnail} className="b_r_10" alt="story img" />
 											<div className={`${styles.content} pt_20 f_r_aj_between`}>
-												<p>{item.title}</p>
+												<p className="text_md color_light_black font_secondary opacity_8">
+													{item.title}
+												</p>
 												<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
 													{item.link && (
 														<a href={item.link}>
