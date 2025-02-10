@@ -13,6 +13,7 @@ import styles from "@/styles/components/Header.module.scss";
 
 // IMAGES //
 import HeaderLogo from "../../public/img/home/header_logo.svg";
+import arrow from "../../public/img/caret.svg.svg";
 
 // Dynamically import react-scroll without SSR
 const ScrollSection = dynamic(
@@ -28,18 +29,27 @@ export default function Header() {
 	const [isClient, setIsClient] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef(null);
+	const [isAboutOpen, setIsAboutOpen] = useState(false);
+	const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+	const [isImpact, setIsImpact] = useState(false);
+	const [isDigital, setIsDigital] = useState(false);
+	const [isMedia, setIsMedia] = useState(false);
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-				setIsOpen(false);
+				setIsAboutOpen(false);
+				setIsResourcesOpen(false);
+				setIsImpact(false);
+				setIsMedia(false);
+				setIsDigital(false);
+				// setIsOpen(false);
 			}
 		};
-		document.addEventListener("mousedown", handleClickOutside);
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
+
+		document.addEventListener("click", handleClickOutside);
+		return () => document.removeEventListener("click", handleClickOutside);
 	}, []);
 
 	// Ensure client-side rendering
@@ -80,17 +90,49 @@ export default function Header() {
 							<>
 								<div className={styles.links}>
 									<ScrollSection
-										onClick={toggleSidebar}
+										// onClick={toggleSidebar}
 										activeClass="active"
-										to="About"
+										// to="About"
 										spy={true}
 										smooth={true}
 										offset={-50}
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										About
+										<p
+											className={`${styles.link_title} text_xs`}
+											onClick={(e) => {
+												e.stopPropagation();
+												setIsAboutOpen((prev) => !prev);
+											}}
+										>
+											About
+										</p>
 									</ScrollSection>
+									{isAboutOpen && (
+										<div className={styles.subItem}>
+											<ul>
+												<li>
+													<span
+														className={styles.row1}
+														onClick={(e) => {
+															setIsOpen((prev) => !prev);
+															e.stopPropagation();
+														}}
+													>
+														<p className="text_xs">Reports & statement</p>
+														<img src={arrow.src} />
+													</span>
+
+													{isOpen && (
+														<ul className={styles.row2}>
+															<li className="text_xs">Annual report</li>
+														</ul>
+													)}
+												</li>
+											</ul>
+										</div>
+									)}
 								</div>
 								<div className={styles.links}>
 									<ScrollSection
@@ -103,68 +145,124 @@ export default function Header() {
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										Our Impact
+										<p
+											className={`${styles.link_title} text_xs`}
+											onClick={(e) => {
+												e.stopPropagation();
+												setIsImpact((prev) => !prev);
+											}}
+										>
+											Our Impact
+										</p>
 									</ScrollSection>
+									{isImpact && (
+										<div className={styles.subItem}>
+											<ul>
+												<li>
+													<span
+														className={styles.row1}
+														onClick={(e) => {
+															setIsOpen((prev) => !prev);
+															e.stopPropagation();
+														}}
+													>
+														<p className="text_xs">Reports & statement</p>
+														<img src={arrow.src} />
+													</span>
+
+													{isOpen && (
+														<ul>
+															<li className="text_xs">Annual report</li>
+														</ul>
+													)}
+												</li>
+											</ul>
+										</div>
+									)}
 								</div>
 								<div className={styles.links} ref={dropdownRef}>
 									<div>
 										<ul className={styles.menuItemNew}>
 											<p
-												onClick={() => setIsOpen((prev) => !prev)}
 												className={`${styles.link_title} text_xs`}
+												onClick={(e) => {
+													e.stopPropagation();
+													setIsResourcesOpen((prev) => !prev);
+												}}
 											>
 												Resources
 											</p>
-											{isOpen && (
-												<span className={styles.hiddenItem}>
-													<li>
-														<a
-															href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Svatantra Microfin
-														</a>
-													</li>
-													<li>
-														<a
-															href="https://www.chaitanyaindia.in/"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Chaitanya India
-														</a>
-													</li>
-													<li>
-														<a
-															href="https://www.svatantramhfc.com/"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Svatantra Micro Housing
-														</a>
-													</li>
-												</span>
-											)}
 										</ul>
+										{isResourcesOpen && (
+											<div className={styles.subItem}>
+												<ul>
+													<li>
+														<span
+															className={styles.row1}
+															onClick={(e) => {
+																setIsOpen((prev) => !prev);
+																e.stopPropagation();
+															}}
+														>
+															<p className="text_xs">Reports & statement</p>
+															<img src={arrow.src} />
+														</span>
+
+														{isOpen && (
+															<ul>
+																<li className="text_xs">Annual report</li>
+															</ul>
+														)}
+													</li>
+												</ul>
+											</div>
+										)}
 									</div>
 								</div>
 								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
-										to="DigitallySvatantra"
+										// to="DigitallySvatantra"
 										spy={true}
 										smooth={true}
 										offset={-50}
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										Digitally Svatantra
+										<p
+											onClick={(e) => {
+												e.stopPropagation();
+												setIsDigital((prev) => !prev);
+											}}
+										>
+											Digitally Svatantra
+										</p>
 									</ScrollSection>
+									{isDigital && (
+										<div className={styles.subItem}>
+											<ul>
+												<li>
+													<span
+														className={styles.row1}
+														onClick={(e) => {
+															setIsOpen((prev) => !prev);
+															e.stopPropagation();
+														}}
+													>
+														<p className="text_xs">Reports & statement</p>
+														<img src={arrow.src} />
+													</span>
+
+													{isOpen && (
+														<ul>
+															<li className="text_xs">Annual report</li>
+														</ul>
+													)}
+												</li>
+											</ul>
+										</div>
+									)}
 								</div>
 								<div className={styles.links}>
 									<ScrollSection
@@ -177,8 +275,39 @@ export default function Header() {
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										Media
+										<p
+											onClick={(e) => {
+												e.stopPropagation();
+												setIsMedia((prev) => !prev);
+											}}
+										>
+											Media
+										</p>
 									</ScrollSection>
+									{isMedia && (
+										<div className={styles.subItem}>
+											<ul>
+												<li>
+													<span
+														className={styles.row1}
+														onClick={(e) => {
+															setIsOpen((prev) => !prev);
+															e.stopPropagation();
+														}}
+													>
+														<p className="text_xs">Reports & statement</p>
+														<img src={arrow.src} />
+													</span>
+
+													{isOpen && (
+														<ul>
+															<li className="text_xs">Annual report</li>
+														</ul>
+													)}
+												</li>
+											</ul>
+										</div>
+									)}
 								</div>
 								<div className={styles.links}>
 									<ul className={styles.menuItemNew}>
@@ -218,4 +347,21 @@ export default function Header() {
 			</div>
 		</div>
 	);
+}
+
+{
+	/* <div className={styles.subItem}>
+										<ul>
+											<li>
+												<span className={styles.row1}>
+													<p className="text_xs">Reports & statement</p>
+													<img src={arrow.src} />
+												</span>
+
+												<ul>
+													<li className="text_xs">Annual report</li>
+												</ul>
+											</li>
+										</ul>
+									</div> */
 }
