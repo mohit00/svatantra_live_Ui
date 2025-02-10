@@ -1,8 +1,8 @@
 @import "../helpers/helpers.scss";
 
 .StoriesOfSvatantra_page {
+	position: relative;
 	.StoriesOfSvatantra_main {
-		
 		.box_wrap {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
@@ -23,6 +23,53 @@
 					}
 				}
 			}
+		}
+	}
+
+	:global(.popup_content) {
+		background-color: #2859a9;
+		padding: 80px 80px;
+		@media (max-width: 1199px) {
+			padding: 50px 30px;
+		}
+		@media (max-width: 767px) {
+			padding: 50px 20px 30px;
+			width: 95%;
+		}
+	}
+	.PopupItem {
+		height: 350px;
+		overflow: auto;
+		@media (max-width: 1199px) {
+			height: auto;
+		}
+		&::-webkit-scrollbar {
+			width: 2px;
+			height: 2px;
+			// background: var(--color_white);
+		}
+	}
+	.arrowSection {
+		position: absolute;
+		right: 30px;
+		bottom: 20px;
+		z-index: 1;
+		.customPrev,
+		.customNext {
+			background-color: unset;
+			border: none;
+			cursor: pointer;
+		}
+		.customPrev {
+			rotate: 180deg;
+		}
+	}
+	.frame {
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+		img {
+			width: 100%;
 		}
 	}
 }

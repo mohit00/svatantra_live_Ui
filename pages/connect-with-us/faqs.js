@@ -18,7 +18,7 @@ import styles from "@/styles/pages/Faqs.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../public/img/faq/banner_desktop.jpg";
+import banner_desktop from "../../public/img/faq/banner_desktop.jpg";
 
 // DATA //
 

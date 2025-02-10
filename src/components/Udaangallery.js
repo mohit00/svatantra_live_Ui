@@ -34,25 +34,27 @@ export default function Udaangallery() {
 		{ thumbnail: img_three.src, full: img_three.src },
 		{ thumbnail: img_four.src, full: img_four.src },
 		{ thumbnail: img_five.src, full: img_five.src },
-		{ thumbnail: img_one.src, full: img_one.src },
-		{ thumbnail: img_two.src, full: img_two.src },
-		{ thumbnail: img_three.src, full: img_three.src },
-		{ thumbnail: img_four.src, full: img_four.src },
-		{ thumbnail: img_five.src, full: img_five.src },
-		{ thumbnail: img_one.src, full: img_one.src },
-		{ thumbnail: img_two.src, full: img_two.src },
-		{ thumbnail: img_three.src, full: img_three.src },
-		{ thumbnail: img_four.src, full: img_four.src },
-		{ thumbnail: img_five.src, full: img_five.src },
-		{ thumbnail: img_one.src, full: img_one.src },
-		{ thumbnail: img_two.src, full: img_two.src },
-		{ thumbnail: img_three.src, full: img_three.src },
-		{ thumbnail: img_four.src, full: img_four.src },
-		{ thumbnail: img_five.src, full: img_five.src },
+
+		// { thumbnail: img_one.src, full: img_one.src },
+		// { thumbnail: img_two.src, full: img_two.src },
+		// { thumbnail: img_three.src, full: img_three.src },
+		// { thumbnail: img_four.src, full: img_four.src },
+		// { thumbnail: img_five.src, full: img_five.src },
+
+		// { thumbnail: img_one.src, full: img_one.src },
+		// { thumbnail: img_two.src, full: img_two.src },
+		// { thumbnail: img_three.src, full: img_three.src },
+		// { thumbnail: img_four.src, full: img_four.src },
+		// { thumbnail: img_five.src, full: img_five.src },
+		// { thumbnail: img_one.src, full: img_one.src },
+		// { thumbnail: img_two.src, full: img_two.src },
+		// { thumbnail: img_three.src, full: img_three.src },
+		// { thumbnail: img_four.src, full: img_four.src },
+		// { thumbnail: img_five.src, full: img_five.src },
 	];
 	return (
 		<div className="">
-			<div className={`${styles.gallery_section} pt_40`}>
+			<div className={`${styles.gallery_section} pb_80`}>
 				<div className={`${styles.driving_img_box} f_w_j`}>
 					{drivingOne.map((item, colIndex) => (
 						<div key={colIndex} className={`${styles.item_img}`}>
