@@ -13,6 +13,7 @@ import styles from "@/styles/components/Header.module.scss";
 
 // IMAGES //
 import HeaderLogo from "../../public/img/home/header_logo.svg";
+import arrow from "../../public/img/caret.svg.svg";
 
 // Dynamically import react-scroll without SSR
 const ScrollSection = dynamic(
@@ -26,20 +27,57 @@ const ScrollSection = dynamic(
 export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [isClient, setIsClient] = useState(false);
-	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef(null);
+	const [isAboutOpen, setIsAboutOpen] = useState(false);
+	const [activeMenu, setActiveMenu] = useState(null);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			setIsMobile(window.innerWidth < 768);
+			const handleResize = () => setIsMobile(window.innerWidth < 768);
+			window.addEventListener("resize", handleResize);
+			return () => window.removeEventListener("resize", handleResize);
+		}
+	}, []);
+
+	const menuData = [
+		{
+			title: "Reports & statement",
+			subItems: [
+				"Annual report",
+				"Annual return",
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		{
+			title: "Circulars and announcements",
+			subItems: [
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Agency partners", subItems: [] },
+		{ title: "Connect with us", subItems: [] },
+		{ title: "Credit and grading", subItems: [] },
+	];
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-				setIsOpen(false);
+				setIsAboutOpen(false);
+
+				// setIsOpen(false);
 			}
 		};
-		document.addEventListener("mousedown", handleClickOutside);
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
+
+		document.addEventListener("click", handleClickOutside);
+		return () => document.removeEventListener("click", handleClickOutside);
 	}, []);
 
 	// Ensure client-side rendering
@@ -50,6 +88,11 @@ export default function Header() {
 	/** Open sidebar on click of hamburger */
 	const toggleSidebar = () => {
 		setOpenSidebar((prev) => !prev);
+	};
+
+	/** */
+	const handleMenuClick = (index, e) => {
+		setActiveMenu((prev) => (prev === index ? null : index));
 	};
 
 	return (
@@ -78,20 +121,80 @@ export default function Header() {
 					<div className={`${styles.links_wrap} ${styles.mobile}`}>
 						{isClient && (
 							<>
-								<div className={styles.links}>
+								<div
+									className={styles.links}
+									onMouseEnter={() => !isMobile && setIsAboutOpen(true)}
+									onMouseLeave={() => !isMobile && setIsAboutOpen(false)}
+								>
 									<ScrollSection
-										onClick={toggleSidebar}
 										activeClass="active"
-										to="About"
 										spy={true}
 										smooth={true}
 										offset={-50}
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										About
+										<p
+											className={`${styles.link_title} text_xs`}
+											onClick={(e) => {
+												if (isMobile) {
+													e.stopPropagation();
+													setIsAboutOpen((prev) => !prev);
+												}
+											}}
+										>
+											About
+										</p>
 									</ScrollSection>
+
+									{isAboutOpen && (
+										<div
+											className={styles.subItem}
+											onMouseEnter={() => !isMobile && setIsAboutOpen(true)} // Keep open when hovering inside
+											onMouseLeave={() => !isMobile && setIsAboutOpen(false)} // Close only when fully leaving
+											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+										>
+											<ul className={styles.newBox}>
+												{menuData.map((menu, index) => (
+													<li key={index} className={styles.menuItem}>
+														<div
+															className={styles.menuTitle}
+															onClick={(e) => {
+																if (isMobile) {
+																	e.stopPropagation();
+																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																}
+															}}
+															onMouseEnter={() => !isMobile && setActiveMenu(index)}
+															onMouseLeave={() => !isMobile && setActiveMenu(null)}
+														>
+															<span className={activeMenu === index ? styles.active : ""}>
+																{menu.title}
+															</span>
+															{menu.subItems.length > 0 && <img src={arrow.src} />}
+														</div>
+
+														{activeMenu === index && menu.subItems.length > 0 && (
+															<ul
+																className={styles.subMenu}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+															>
+																{menu.subItems.map((subItem, subIndex) => (
+																	<li key={subIndex} className={styles.subMenuItem}>
+																		{subItem}
+																	</li>
+																))}
+															</ul>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
 								</div>
+
 								<div className={styles.links}>
 									<ScrollSection
 										onClick={toggleSidebar}
@@ -103,52 +206,29 @@ export default function Header() {
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										Our Impact
+										<p
+											className={`${styles.link_title} text_xs`}
+											onClick={(e) => {
+												e.stopPropagation();
+												// setIsImpact((prev) => !prev);
+											}}
+										>
+											Our Impact
+										</p>
 									</ScrollSection>
 								</div>
 								<div className={styles.links} ref={dropdownRef}>
 									<div>
 										<ul className={styles.menuItemNew}>
 											<p
-												onClick={() => setIsOpen((prev) => !prev)}
 												className={`${styles.link_title} text_xs`}
+												onClick={(e) => {
+													e.stopPropagation();
+													// setIsResourcesOpen((prev) => !prev);
+												}}
 											>
 												Resources
 											</p>
-											{isOpen && (
-												<span className={styles.hiddenItem}>
-													<li>
-														<a
-															href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Svatantra Microfin
-														</a>
-													</li>
-													<li>
-														<a
-															href="https://www.chaitanyaindia.in/"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Chaitanya India
-														</a>
-													</li>
-													<li>
-														<a
-															href="https://www.svatantramhfc.com/"
-															target="_blank"
-															rel="noreferrer"
-															className={`${styles.link_title} text_xs`}
-														>
-															Svatantra Micro Housing
-														</a>
-													</li>
-												</span>
-											)}
 										</ul>
 									</div>
 								</div>
@@ -156,14 +236,21 @@ export default function Header() {
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
-										to="DigitallySvatantra"
+										// to="DigitallySvatantra"
 										spy={true}
 										smooth={true}
 										offset={-50}
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										Digitally Svatantra
+										<p
+											onClick={(e) => {
+												e.stopPropagation();
+												// setIsDigital((prev) => !prev);
+											}}
+										>
+											Digitally Svatantra
+										</p>
 									</ScrollSection>
 								</div>
 								<div className={styles.links}>
@@ -177,7 +264,14 @@ export default function Header() {
 										duration={500}
 										className={`${styles.link_title} text_xs`}
 									>
-										Media
+										<p
+											onClick={(e) => {
+												e.stopPropagation();
+												// setIsMedia((prev) => !prev);
+											}}
+										>
+											Media
+										</p>
 									</ScrollSection>
 								</div>
 								<div className={styles.links}>
@@ -218,4 +312,21 @@ export default function Header() {
 			</div>
 		</div>
 	);
+}
+
+{
+	/* <div className={styles.subItem}>
+										<ul>
+											<li>
+												<span className={styles.row1}>
+													<p className="text_xs">Reports & statement</p>
+													<img src={arrow.src} />
+												</span>
+
+												<ul>
+													<li className="text_xs">Annual report</li>
+												</ul>
+											</li>
+										</ul>
+									</div> */
 }
