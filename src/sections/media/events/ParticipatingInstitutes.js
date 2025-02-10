@@ -48,12 +48,6 @@ export default function ParticipatingInstitutes() {
 			textThree: "IIM A",
 			textFour: "IIM B",
 		},
-		{
-			textOne: "FMS",
-			textTwo: "IIFT Delhi & Kolkata",
-			textThree: "IIM A",
-			textFour: "IIM B",
-		},
 	];
 	return (
 		<section className={`${styles.ParticipatingInstitutes} ptb_80`}>
