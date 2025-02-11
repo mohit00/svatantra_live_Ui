@@ -68,7 +68,7 @@ export default function AccordionSection() {
 					Take the next big step in your career
 					<br className="hidden_sm" /> by becoming a part of Svatantra
 				</h2>
-				<p className="text_md opacity_80 pt_20 pb_80">
+				<p className="text_md opacity_80 pt_20 pb_40">
 					Explore our current openings and find the perfect role that aligns with
 					your career goals.
 				</p>
