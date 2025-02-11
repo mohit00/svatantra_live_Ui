@@ -1,0 +1,62 @@
+@import "../../helpers/helpers.scss";
+
+.PavingThePath {
+	.title_wrap {
+		width: 85%;
+		@media (max-width: 1199px) {
+			width: 100%;
+		}
+	}
+  .keyfeatureFlex{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    @media (max-width: 1199px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .item {
+      background-color: var(--color_white);
+      padding: 40px 30px;
+      border-radius: 10px;
+      .circleBox{
+        display: flex;
+        p{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          border: 1px solid #DFDFDF;
+          position: relative;
+        }
+        .firstBox{
+          background-color: var(--color_white);
+          z-index: 1;
+        }
+        .secondBox{
+          border: none;
+          background-color: #80CD66;
+          color: white;
+          margin-left: -8px;
+          z-index: 0;
+        }
+      }
+      .itemContent {
+        h4 {
+          width: 75%;
+          @media (max-width: 1199px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  
+}

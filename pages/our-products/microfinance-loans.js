@@ -9,6 +9,7 @@ import MetaTags from "@/components/MetaTags";
 
 // SECTIONS //
 import LoanAmount from "@/sections/our-products/LoanAmount";
+import PavingThePath from "@/sections/our-products/PavingThePath";
 
 // PLUGINS //
 
@@ -46,6 +47,7 @@ export default function MicrofinanceLoans() {
 					bannerTitle="Microfinance loans"
 				/>
 				<LoanAmount />
+				<PavingThePath />
 			</main>
 			{/* Page Content ends here */}
 
