@@ -29,8 +29,12 @@ export default function Header() {
 	const [isClient, setIsClient] = useState(false);
 	const dropdownRef = useRef(null);
 	const [isAboutOpen, setIsAboutOpen] = useState(false);
+	const [isImpact, setIsImpact] = useState(false);
 	const [activeMenu, setActiveMenu] = useState(null);
 	const [isMobile, setIsMobile] = useState(false);
+	const [isResource, setIsResource] = useState(false);
+	const [isDigital, setIsDigital] = useState(false);
+	const [isMedia, setIsMedia] = useState(false);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -66,12 +70,115 @@ export default function Header() {
 		{ title: "Credit and grading", subItems: [] },
 	];
 
+	const aboutData = [
+		{
+			title: "Reports & statement",
+			subItems: [
+				"Annual report",
+				"Annual return",
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		{
+			title: "Circulars and announcements",
+			subItems: [
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Agency partners", subItems: [] },
+		{ title: "Connect with us", subItems: [] },
+		{ title: "Credit and grading", subItems: [] },
+	];
+
+	const resourcesData = [
+		{
+			title: "Reports & statement",
+			subItems: [
+				"Annual report",
+				"Annual return",
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		{
+			title: "Circulars and announcements",
+			subItems: [
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Agency partners", subItems: [] },
+		{ title: "Connect with us", subItems: [] },
+		{ title: "Credit and grading", subItems: [] },
+	];
+
+	const digitalData = [
+		{
+			title: "Reports & statement",
+			subItems: [
+				"Annual report",
+				"Annual return",
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		{
+			title: "Circulars and announcements",
+			subItems: [
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Agency partners", subItems: [] },
+		{ title: "Connect with us", subItems: [] },
+		{ title: "Credit and grading", subItems: [] },
+	];
+
+	const mediaData = [
+		{
+			title: "Reports & statement",
+			subItems: [
+				"Annual report",
+				"Annual return",
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		{
+			title: "Circulars and announcements",
+			subItems: [
+				"Board of Directors and KMP",
+				"List of committees",
+				"ISIN reconciliation statement",
+			],
+		},
+		{ title: "Agency partners", subItems: [] },
+		{ title: "Connect with us", subItems: [] },
+		{ title: "Credit and grading", subItems: [] },
+	];
+
 	// Close dropdown when clicking outside
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
 				setIsAboutOpen(false);
-
+				setIsImpact(false);
+				setIsResource(false);
+				setIsDigital(false);
+				setIsMedia(false);
 				// setIsOpen(false);
 			}
 		};
@@ -94,6 +201,15 @@ export default function Header() {
 	const handleMenuClick = (index, e) => {
 		setActiveMenu((prev) => (prev === index ? null : index));
 	};
+	useEffect(() => {
+		// const commonClassSelector = document.querySelectorAll(".commonCls");
+		// if (isClient && commonClassSelector) {
+		// 	console.log(commonClassSelector);
+		// }
+		setTimeout(() => {
+			isClient ? console.log("true") : console.log("false");
+		}, 5000);
+	}, []);
 
 	return (
 		<div
@@ -122,7 +238,7 @@ export default function Header() {
 						{isClient && (
 							<>
 								<div
-									className={styles.links}
+									className={`${styles.links} commonCls`}
 									onMouseEnter={() => !isMobile && setIsAboutOpen(true)}
 									onMouseLeave={() => !isMobile && setIsAboutOpen(false)}
 								>
@@ -195,7 +311,11 @@ export default function Header() {
 									)}
 								</div>
 
-								<div className={styles.links}>
+								<div
+									className={`${styles.links} commonCls`}
+									onMouseEnter={() => !isMobile && setIsImpact(true)}
+									onMouseLeave={() => !isMobile && setIsImpact(false)}
+								>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
@@ -209,30 +329,146 @@ export default function Header() {
 										<p
 											className={`${styles.link_title} text_xs`}
 											onClick={(e) => {
-												e.stopPropagation();
-												// setIsImpact((prev) => !prev);
+												if (isMobile) {
+													e.stopPropagation();
+													setIsAboutOpen((prev) => !prev);
+												}
 											}}
 										>
 											Our Impact
 										</p>
 									</ScrollSection>
+									{isImpact && (
+										<div
+											className={styles.subItem}
+											onMouseEnter={() => !isMobile && setIsImpact(true)} // Keep open when hovering inside
+											onMouseLeave={() => !isMobile && setIsImpact(false)} // Close only when fully leaving
+											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+										>
+											<ul className={styles.newBox}>
+												{aboutData.map((menu, index) => (
+													<li key={index} className={styles.menuItem}>
+														<div
+															className={styles.menuTitle}
+															onClick={(e) => {
+																if (isMobile) {
+																	e.stopPropagation();
+																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																}
+															}}
+															onMouseEnter={() => !isMobile && setActiveMenu(index)}
+															onMouseLeave={() => !isMobile && setActiveMenu(null)}
+														>
+															<span className={activeMenu === index ? styles.active : ""}>
+																{menu.title}
+															</span>
+															{menu.subItems.length > 0 && <img src={arrow.src} />}
+														</div>
+
+														{activeMenu === index && menu.subItems.length > 0 && (
+															<ul
+																className={styles.subMenu}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+															>
+																{menu.subItems.map((subItem, subIndex) => (
+																	<li key={subIndex} className={styles.subMenuItem}>
+																		{subItem}
+																	</li>
+																))}
+															</ul>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
 								</div>
-								<div className={styles.links} ref={dropdownRef}>
+
+								<div
+									className={`${styles.links} commonCls`}
+									ref={dropdownRef}
+									onMouseEnter={() => !isMobile && setIsResource(true)}
+									onMouseLeave={() => !isMobile && setIsResource(false)}
+								>
 									<div>
-										<ul className={styles.menuItemNew}>
+										<ScrollSection
+											onClick={toggleSidebar}
+											activeClass="active"
+											to="OurImpact"
+											spy={true}
+											smooth={true}
+											offset={-100}
+											duration={500}
+											className={`${styles.link_title} text_xs`}
+										>
 											<p
 												className={`${styles.link_title} text_xs`}
 												onClick={(e) => {
-													e.stopPropagation();
-													// setIsResourcesOpen((prev) => !prev);
+													if (isMobile) {
+														e.stopPropagation();
+														setIsResource((prev) => !prev);
+													}
 												}}
 											>
 												Resources
 											</p>
-										</ul>
+										</ScrollSection>
+
+										{isResource && (
+											<div
+												className={styles.subItem}
+												onMouseEnter={() => !isMobile && setIsResource(true)} // Keep open when hovering inside
+												onMouseLeave={() => !isMobile && setIsResource(false)} // Close only when fully leaving
+												onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+											>
+												<ul className={styles.newBox}>
+													{resourcesData.map((menu, index) => (
+														<li key={index} className={styles.menuItem}>
+															<div
+																className={styles.menuTitle}
+																onClick={(e) => {
+																	if (isMobile) {
+																		e.stopPropagation();
+																		setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																	}
+																}}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)}
+																onMouseLeave={() => !isMobile && setActiveMenu(null)}
+															>
+																<span className={activeMenu === index ? styles.active : ""}>
+																	{menu.title}
+																</span>
+																{menu.subItems.length > 0 && <img src={arrow.src} />}
+															</div>
+
+															{activeMenu === index && menu.subItems.length > 0 && (
+																<ul
+																	className={styles.subMenu}
+																	onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																	onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																	onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+																>
+																	{menu.subItems.map((subItem, subIndex) => (
+																		<li key={subIndex} className={styles.subMenuItem}>
+																			{subItem}
+																		</li>
+																	))}
+																</ul>
+															)}
+														</li>
+													))}
+												</ul>
+											</div>
+										)}
 									</div>
 								</div>
-								<div className={styles.links}>
+								<div
+									className={`${styles.links} commonCls`}
+									onMouseEnter={() => !isMobile && setIsDigital(true)}
+									onMouseLeave={() => !isMobile && setIsDigital(false)}
+								>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
@@ -244,16 +480,69 @@ export default function Header() {
 										className={`${styles.link_title} text_xs`}
 									>
 										<p
+											className={`${styles.link_title} text_xs`}
 											onClick={(e) => {
-												e.stopPropagation();
-												// setIsDigital((prev) => !prev);
+												if (isMobile) {
+													e.stopPropagation();
+													setIsDigital((prev) => !prev);
+												}
 											}}
 										>
 											Digitally Svatantra
 										</p>
 									</ScrollSection>
+									{isDigital && (
+										<div
+											className={styles.subItem}
+											onMouseEnter={() => !isMobile && setIsDigital(true)} // Keep open when hovering inside
+											onMouseLeave={() => !isMobile && setIsDigital(false)} // Close only when fully leaving
+											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+										>
+											<ul className={styles.newBox}>
+												{digitalData.map((menu, index) => (
+													<li key={index} className={styles.menuItem}>
+														<div
+															className={styles.menuTitle}
+															onClick={(e) => {
+																if (isMobile) {
+																	e.stopPropagation();
+																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																}
+															}}
+															onMouseEnter={() => !isMobile && setActiveMenu(index)}
+															onMouseLeave={() => !isMobile && setActiveMenu(null)}
+														>
+															<span className={activeMenu === index ? styles.active : ""}>
+																{menu.title}
+															</span>
+															{menu.subItems.length > 0 && <img src={arrow.src} />}
+														</div>
+
+														{activeMenu === index && menu.subItems.length > 0 && (
+															<ul
+																className={styles.subMenu}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+															>
+																{menu.subItems.map((subItem, subIndex) => (
+																	<li key={subIndex} className={styles.subMenuItem}>
+																		{subItem}
+																	</li>
+																))}
+															</ul>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
 								</div>
-								<div className={styles.links}>
+								<div
+									className={`${styles.links} commonCls`}
+									onMouseEnter={() => !isMobile && setIsMedia(true)}
+									onMouseLeave={() => !isMobile && setIsMedia(false)}
+								>
 									<ScrollSection
 										onClick={toggleSidebar}
 										activeClass="active"
@@ -265,14 +554,63 @@ export default function Header() {
 										className={`${styles.link_title} text_xs`}
 									>
 										<p
+											className={`${styles.link_title} text_xs`}
 											onClick={(e) => {
-												e.stopPropagation();
-												// setIsMedia((prev) => !prev);
+												if (isMobile) {
+													e.stopPropagation();
+													setIsDigital((prev) => !prev);
+												}
 											}}
 										>
 											Media
 										</p>
 									</ScrollSection>
+									{isMedia && (
+										<div
+											className={styles.subItem}
+											onMouseEnter={() => !isMobile && setIsMedia(true)} // Keep open when hovering inside
+											onMouseLeave={() => !isMobile && setIsMedia(false)} // Close only when fully leaving
+											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+										>
+											<ul className={styles.newBox}>
+												{mediaData.map((menu, index) => (
+													<li key={index} className={styles.menuItem}>
+														<div
+															className={styles.menuTitle}
+															onClick={(e) => {
+																if (isMobile) {
+																	e.stopPropagation();
+																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																}
+															}}
+															onMouseEnter={() => !isMobile && setActiveMenu(index)}
+															onMouseLeave={() => !isMobile && setActiveMenu(null)}
+														>
+															<span className={activeMenu === index ? styles.active : ""}>
+																{menu.title}
+															</span>
+															{menu.subItems.length > 0 && <img src={arrow.src} />}
+														</div>
+
+														{activeMenu === index && menu.subItems.length > 0 && (
+															<ul
+																className={styles.subMenu}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+															>
+																{menu.subItems.map((subItem, subIndex) => (
+																	<li key={subIndex} className={styles.subMenuItem}>
+																		{subItem}
+																	</li>
+																))}
+															</ul>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
 								</div>
 								<div className={styles.links}>
 									<ul className={styles.menuItemNew}>
