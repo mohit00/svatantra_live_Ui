@@ -167,11 +167,22 @@
 			flex: 1;
 			@media only screen and (max-width: 992px) {
 				flex: unset;
+				width: 50%;
 			}
 			img {
 				width: 100%;
 			}
 			.Details {
+				.Name {
+					@media (max-width: 767px) {
+						font-size: 24px;
+					}
+				}
+				.Designation {
+					@media (max-width: 767px) {
+						font-size: 18px;
+					}
+				}
 			}
 		}
 		.DetailsBx {
@@ -188,11 +199,12 @@
 			}
 			@media only screen and (max-width: 992px) {
 				width: 100%;
-				padding-right: 0;
+				// padding-right: 0;
 			}
 			@media only screen and (max-width: 767px) {
 				overflow: hidden;
 				overflow-y: scroll;
+				padding: 30px 30px;
 			}
 
 			.box_btn {

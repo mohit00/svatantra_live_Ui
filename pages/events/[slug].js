@@ -4,7 +4,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
-
+import Breadcrumb from "@/components/Breadcrumb";
 // SECTIONS //
 
 // PLUGINS //
@@ -40,6 +40,7 @@ export default function EventsUdaanPage() {
 			{/* Page Content starts here */}
 			<main className={styles.EventsUdaanPage}>
 				<div className="container">
+					<Breadcrumb link5={"events"} linkTitle={"events"} />
 					<div className={styles.contentBox}>
 						<div className={styles.titleBox}>
 							<h1 className="text_xxxl color_primary">

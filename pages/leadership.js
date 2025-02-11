@@ -133,7 +133,7 @@ export default function LeadershipPage() {
 									<div className={styles.ImgBx}>
 										<img
 											src={item.image}
-											className="img-responsive b_r_10"
+											className="img-responsive b_r_10 width_100"
 											alt="Leaders Image"
 										/>
 										<div
