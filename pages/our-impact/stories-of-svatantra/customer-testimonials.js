@@ -69,28 +69,24 @@ export default function CustomerTestimonials() {
 			desc:
 				"This is Sangeeta Dhone, our client from Maharashtra, India. A small loan from Svatantra helped her procure goods for her store and in turn, generate a decent profit. The income generated from the store helped Sangeeta in sending her daughter to school and give her the education she deserves! <br /> The income generated from the store helped Sangeeta in sending her daughter to school and give her the education she deserves!",
 			thumbnail: story_one.src,
-			link: "https://www.google.com/",
 		},
 		{
 			title: "Literacy is the key to change2!",
 			desc:
 				"This is Sangeeta Dhone, our client from Maharashtra, India. A small loan from Svatantra helped her procure goods for her store and in turn, generate a decent profit. The income generated from the store helped Sangeeta in sending her daughter to school and give her the education she deserves!",
 			thumbnail: story_one.src,
-			link: "https://www.google.com/",
 		},
 		{
 			title: "Literacy is the key to chang3!",
 			desc:
 				"This is Sangeeta Dhone, our client from Maharashtra, India. A small loan from Svatantra helped her procure goods for her store and in turn, generate a decent profit. The income generated from the store helped Sangeeta in sending her daughter to school and give her the education she deserves!",
 			thumbnail: story_one.src,
-			link: "https://www.google.com/",
 		},
 		{
 			title: "Literacy is the key to chang3!",
 			desc:
 				"This is Sangeeta Dhone, our client from Maharashtra, India. A small loan from Svatantra helped her procure goods for her store and in turn, generate a decent profit. The income generated from the store helped Sangeeta in sending her daughter to school and give her the education she deserves!",
 			thumbnail: story_one.src,
-			link: "https://www.google.com/",
 		},
 	];
 
@@ -137,11 +133,9 @@ export default function CustomerTestimonials() {
 													{item.title}
 												</p>
 												<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
-													{item.link && (
-														<a href={item.link}>
-															<img src={arrow_btn.src} alt="arrow icon" />
-														</a>
-													)}
+													<a href="">
+														<img src={arrow_btn.src} alt="arrow icon" />
+													</a>
 												</div>
 											</div>
 										</div>
