@@ -1,0 +1,83 @@
+@import "../../helpers/helpers.scss";
+
+.LoanAmount {
+	.right_box {
+    .box {
+      justify-content: space-between;
+      padding: 0 40px;
+      min-height: 80px;
+      border-radius: 6px;
+      padding-bottom: 10px;
+      @media (max-width: 767px) {
+        padding: 0 15px;
+      }
+      .title {
+        @media (max-width: 767px) {
+          width: 45%;
+        }
+        h5 {
+          color: #014C26;
+        }
+      }
+      .desc {
+        @media (max-width: 767px) {
+          width: 50%;
+        }
+        
+      }
+      &.box_1 {
+        background-color: var(--color_white);
+      }
+      &.box_2 {
+        width: 90%;
+        margin-top: -15px;
+        background-color: var(--color_primary_tint);
+        @media (max-width: 767px) {
+          width: 95%;
+        }
+        .title {
+          h5 {
+            color: #014c26;
+          }
+
+          @media (max-width: 767px) {
+            width: 50%;
+          }
+        }
+        .desc {
+          @media (max-width: 767px) {
+            width: 45%;
+          }
+          h6 {
+            color: #014c26;
+          }
+        }
+      }
+      &.box_3 {
+        width: 80%;
+        margin-top: -15px;
+        padding-bottom: 0;
+        background-color: var(--color_primary);
+        @media (max-width: 767px) {
+          width: 90%;
+        }
+        .title {
+          @media (max-width: 767px) {
+            width: 50%;
+          }
+          h5 {
+            color: #80cd66;
+          }
+        }
+        .desc {
+          @media (max-width: 767px) {
+            width: 45%;
+          }
+          h6 {
+            color: #80cd66;
+          }
+        }
+      }
+    }
+  }
+}
