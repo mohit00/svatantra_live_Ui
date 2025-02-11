@@ -18,8 +18,10 @@ import styles from "@/styles/pages/EventsUdaan.module.scss";
 import udaan from "../../public/img/udaan.jpg";
 import GalleryComponent from "@/sections/Gallery";
 import Udaangallery from "@/components/Udaangallery";
-import dots from "../../public/img/dot.svg";
-import download from "../../public/img/download.svg";
+
+import EventsTop from "@/sections/media/events/EventsTop";
+import AvantGarde from "@/sections/media/events/AvantGarde";
+import Event_insti from "@/sections/media/events/event_insti";
 // DATA //
 
 /** Events Udaan Page */
@@ -41,74 +43,15 @@ export default function EventsUdaanPage() {
 			<main className={styles.EventsUdaanPage}>
 				<div className="container">
 					<Breadcrumb link5={"events"} linkTitle={"events"} />
-					<div className={styles.contentBox}>
-						<div className={styles.titleBox}>
-							<h1 className="text_xxxl color_primary">
-								Udaan Scholarship <br />
-								programme
-							</h1>
-							<img src={udaan.src} />
-						</div>
-					</div>
-					{/*  */}
-					<div className={`${styles.para} pb_50`}>
-						<p className="text_xs  pb_20">
-							In July 2019, Svatantra launched Udaan Scholarship programme with the
-							intention of providing scholarships and career guidance to rural Indian
-							girl students. We selected 96 girl students from across 7 states, and
-							with the aid of a career counselling specialist, we organised a tailored
-							career exploration programme for them and their parents. An extensive
-							online examination was used to conduct the counselling, and this was
-							followed by an in-person interview. For a year, these female students
-							were awarded a monthly scholarship.
-						</p>
-						<p className="text_xs">
-							The company intended to make a longterm difference in students&apos;
-							lives through Udaan Scholarship. In addition to providing students with
-							financial support, scholarships will also help them in the long run by
-							providing career counselling. The goal of career counselling is to make
-							sure that students adopt the road that will lead them to their ideal
-							career.
-						</p>
-					</div>
-					{/*  */}
+
+					<EventsTop />
 					<Udaangallery />
-					{/*  */}
-					<div className={styles.contentBox}>
-						<div className={styles.titleBox}>
-							<h1 className="text_xxxl color_primary">Avant-Garde</h1>
-							{/* <img src={udaan.src} /> */}
-						</div>
-					</div>
-					{/*  */}
-					<div className={`${styles.para} pb_50`}>
-						<p className="text_xs  pb_20 opacity_8">
-							Avant-garde encourages India&apos;s brightest minds to collaborate and
-							develop innovative solutions to revolutionize the microfinance industry.
-							The event provides students an opportunity to present game-changing ideas
-							to a distinguished panel of judges, aiming to redefine the microfinance
-							and affordable housing sectors.
-						</p>
-						<p className="text_xs opacity_8 pb_50">
-							This year, Avant-garde celebrated its 8th successful edition, receiving
-							over 690 registrations from top B-Schools across India, with 9 teams
-							reaching the national finals. Unlike previous years, there were two case
-							studies—one for Svatantra Microfin Pvt. Ltd. (SMPL) focusing on
-							partnerships with startups to address Health, Education, Employment, and
-							Finclusion, and another for Svatantra Micro Housing Finance Corporation
-							Ltd. (SMHFC) exploring technology to address reverse migration.
-						</p>
-						<p className="text_xs opacity_8">
-							The winning team from S.P. Jain Institute of Management and Research—Sai
-							Sankalp Vemavarapu, Rishabh Mishra, and Ishant Bansal—earned INR 2 lakh
-							and a PPI with the Aditya Birla Group Leadership Program. The runner-up
-							team, Nidhi Dave, Khushi Bahl, and Dhruvin Zaveri, received INR 1 lakh
-							and a PPI with the same program.
-						</p>
-					</div>
-					{/*  */}
 				</div>
-				<div className={styles.results}>
+				<AvantGarde />
+				<div className="container">
+					<Event_insti />
+				</div>
+				{/* <div className={styles.results}>
 					<div className="container">
 						<h1 className="text_xxxl color_white pb_60">Avant-Garde 2022 Results</h1>
 
@@ -298,7 +241,7 @@ export default function EventsUdaanPage() {
 							</table>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</main>
 			{/* Page Content ends here */}
 
