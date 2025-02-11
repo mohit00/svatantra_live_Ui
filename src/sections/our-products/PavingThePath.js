@@ -22,11 +22,9 @@ export default function PavingThePath() {
 		<section className={`${styles.PavingThePath} pb_80`}>
 			<div className="container">
 				<div className={`${styles.title_wrap} pb_40`}>
-					<h1 className="text_xxxl color_primary pb_20">
-						{/* The Svatantra path to a <br className="hidden_xs" />
-						harmonious future for all */}
+					<h2 className="text_xxxl color_primary pb_20">
 						Paving the path to prosperity for women entrepreneurs
-					</h1>
+					</h2>
 					<p className="text_md color_light_black opacity_8">
 						Svatantra’s micro finance loans have been instrumental in promoting
 						entrepreneurship, especially among semi-urban and rural women, making them

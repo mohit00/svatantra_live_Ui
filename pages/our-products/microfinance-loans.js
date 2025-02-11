@@ -10,6 +10,9 @@ import MetaTags from "@/components/MetaTags";
 // SECTIONS //
 import LoanAmount from "@/sections/our-products/LoanAmount";
 import PavingThePath from "@/sections/our-products/PavingThePath";
+import LoanFactSheet from "@/sections/our-products/LoanFactSheet";
+import SixSteps from "@/sections/our-products/SixSteps";
+import CommonQueries from "@/sections/our-products/CommonQueries";
 
 // PLUGINS //
 
@@ -48,6 +51,9 @@ export default function MicrofinanceLoans() {
 				/>
 				<LoanAmount />
 				<PavingThePath />
+				<LoanFactSheet />
+				<SixSteps />
+				<CommonQueries />
 			</main>
 			{/* Page Content ends here */}
 
