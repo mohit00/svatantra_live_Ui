@@ -2,6 +2,9 @@
 
 .AccordionSection {
 	.accordian_main {
+		.activeBgTitle_1 {
+			padding: 30px 20px !important;
+		}
 		.activeBgTitle {
 			margin-top: 10px;
 			border-top-left-radius: 12px;
@@ -9,6 +12,7 @@
 			background-color: var(--color_white);
 		}
 		.activeBgContent {
+			padding: 0 20px !important;
 			margin-bottom: 10px;
 			border-bottom-left-radius: 12px;
 			border-bottom-right-radius: 12px;

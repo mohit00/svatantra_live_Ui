@@ -127,7 +127,7 @@ export default function AccordionSection() {
 						</div>
 					</div>
 				</div>
-				<div className={`${styles.accordian_main} pt_60`}>
+				<div className={`${styles.accordian_main}`}>
 					<AccordianCommon
 						fontStyle={"text_lg"}
 						fontWeight={"f_w_m"}

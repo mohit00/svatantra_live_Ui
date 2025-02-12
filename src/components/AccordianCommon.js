@@ -61,7 +61,7 @@ export default function AccordianCommon({
 				<div key={index} className={`${styles.accordionItem} b_r_12`}>
 					{/* Accordion Header */}
 					<div
-						className={`${styles.accordionHeader}  ${
+						className={`${styles.accordionHeader} ${BgStyles.activeBgTitle_1}  ${
 							activeIndex === index ? BgStyles.activeBgTitle : ""
 						}`}
 						// onClick={() => handleAccordionClick(index)}
