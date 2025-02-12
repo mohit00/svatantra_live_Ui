@@ -27,7 +27,7 @@ export default function SixSteps({ title, steps }) {
 					{steps.map((step, index) => (
 						<div key={index} className={`${styles.item}`}>
 							<div className={`${styles.circleBox} pb_30`}>
-								<img src={step.image} alt={step.title} />
+								<img src={step.icon} alt={step.title} />
 							</div>
 							<div className={styles.itemContent}>
 								<h5 className="text_md color_light_black font_primary pb_20">

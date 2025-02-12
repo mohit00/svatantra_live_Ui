@@ -58,37 +58,37 @@ export default function MicrofinanceLoans() {
 		title: "Take the six steps to economic self-sufficiency",
 		steps: [
 			{
-				image: identification.src,
+				icon: identification.src,
 				title: "Identification",
 				description:
 					"Identify customers, especially rural women who benefit from loans through detailed surveys.",
 			},
 			{
-				image: training.src,
+				icon: training.src,
 				title: "Training",
 				description:
 					"Conduct workshops on financial literacy to help prospective customers develop money management skills.",
 			},
 			{
-				image: disbursement.src,
+				icon: disbursement.src,
 				title: "Disbursement",
 				description:
 					"Transfer money to bank accounts of the shortlisted customers who are starting a business or expanding existing ventures.",
 			},
 			{
-				image: formation.src,
+				icon: formation.src,
 				title: "Formation",
 				description:
 					"The field officers create groups of 5-12 people, primarily of women customers.",
 			},
 			{
-				image: appraisal.src,
+				icon: appraisal.src,
 				title: "Group Appraisal",
 				description:
 					"Implement a detailed application process to shortlist potential customers.",
 			},
 			{
-				image: repayment.src,
+				icon: repayment.src,
 				title: "Repayment/Collection",
 				description:
 					"Offer timely guidance and collection of the monthly loan installments.",
