@@ -19,12 +19,13 @@ import Homecontact from "@/sections/Homecontact";
 // PLUGINS //
 
 // STYLES //
-import styles from "@/styles/pages/MicrofinanceLoans.module.scss";
+import styles from "@/styles/pages/MsmeLoans.module.scss";
 
 // UTILS //
 
 // IMAGES //
 import banner_desktop from "../../public/img/our-products/microfinance/banner_desktop.jpg";
+import pdf_icon from "../../public/img/pdf_icon.svg";
 
 import identification from "../../public/img/our-products/microfinance/identification.svg";
 import training from "../../public/img/our-products/microfinance/training.svg";
@@ -35,23 +36,23 @@ import repayment from "../../public/img/our-products/microfinance/repayment.svg"
 
 // DATA //
 
-/** MicrofinanceLoans Page */
-export default function MicrofinanceLoans() {
+/** MsmeLoans Page */
+export default function MsmeLoans() {
 	const loanAmountData = {
-		loanAmount: "₹ 5,369 to ₹ 1 lakh",
-		tenure: "12 to 30 Months",
-		interestRate: "19.75% to 24.25%",
+		loanAmount: "₹ 3,3456 to ₹ 1 lakh",
+		tenure: "20 to 30 Months",
+		interestRate: "20.75% to 24.25%",
 	};
 	const pavingThePathData = {
-		title: "Paving the path to prosperity for women entrepreneurs",
+		title: "Paving the path to prosperity for women entrepreneurs2",
 		description:
 			"Svatantra’s micro finance loans have been instrumental in promoting entrepreneurship, especially among semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
-		subTitle: "Key features powering our entrepreneurs and our economy",
+		subTitle: "Key features powering our entrepreneurs and our economy3",
 		features: [
-			"We provide one of the lowest interest rates in India.",
-			"Services that enable rural and semi-urban women entrepreneurs to become agents of change within their communities.",
-			"Customised solutions for entrepreneurs to achieve business goals and drive economic growth.",
-			"A financial ecosystem that ensures every individual experiences a self-reliant future.",
+			"We provide one of the lowest interest.",
+			"Services that enable rural and semi-urban women entrepreneurs to become agents of ",
+			"Customised solutions for entrepreneurs to achieve business ",
+			"A financial ecosystem that ensures every individual experiences ",
 		],
 	};
 	const sixStepsData = {
@@ -96,7 +97,7 @@ export default function MicrofinanceLoans() {
 		],
 	};
 	const commonQueriesData = {
-		title: "Common Queries",
+		title: "Common Queries3",
 		faqItems: [
 			{
 				title: "What is microfinance?",
@@ -135,29 +136,24 @@ export default function MicrofinanceLoans() {
 				),
 			},
 		],
-		brochureText: "Everything you need to know about our financial services",
+		brochureText: "Everything you need to know about our financial services2",
 		brochureUrl: "https://www.google.com/",
 	};
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags
-				Title={"Microfinance Loans"}
-				Desc={""}
-				OgImg={""}
-				Url={"/microfinance-loans"}
-			/>
+			<MetaTags Title={"MSME Loans"} Desc={""} OgImg={""} Url={"/msme-loans"} />
 
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
-			<main className={styles.MicrofinanceLoansPage}>
-				<Breadcrum link2="Our Products" link3="Microfinance Loans" />
+			<main className={styles.MsmeLoansPage}>
+				<Breadcrum link2="Our Products" link3="MSME Loans" />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
-					bannerTitle="Microfinance loans"
+					bannerTitle="MSME Loans"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}
@@ -170,7 +166,87 @@ export default function MicrofinanceLoans() {
 					subTitle={pavingThePathData.subTitle}
 					features={pavingThePathData.features}
 				/>
-				<LoanFactSheet />
+				<section className={`${styles.LoanFactSheet} pb_80`}>
+					<div className="container">
+						<div className={`${styles.title_wrap} pb_40`}>
+							<h2 className="text_xxxl color_primary ">
+								A quick guide to our loan fact sheet
+							</h2>
+						</div>
+						<div className={`${styles.table_wrap}`}>
+							<table>
+								<thead>
+									<tr>
+										<th>Products</th>
+										<th>Loan amount</th>
+										<th>Tenure</th>
+										<th>Repayment option</th>
+										<th>Rate of interest (p.a)</th>
+										<th>Loan processing fee</th>
+										<th>Repayment charges</th>
+									</tr>
+								</thead>
+								<tr>
+									<td>Microfinance loans</td>
+									<td>₹ 5,369 to ₹ 1 lakh</td>
+									<td>12 to 30 Months</td>
+									<td>Monthly</td>
+									<td>19.75% to 24.25%*</td>
+									<td>0.75% to 1.50% (+GST)</td>
+									<td>Nil</td>
+								</tr>
+								<tr>
+									<td>MSME loans</td>
+									<td>₹ 1 lakh to ₹ 3 lakh</td>
+									<td>24 to 36 Months</td>
+									<td>Monthly</td>
+									<td>23%</td>
+									<td>2% (+GST)</td>
+									<td>
+										2% (excluding GST) on principal amount outstanding as on date of
+										payment
+									</td>
+								</tr>
+								<tr>
+									<td rowSpan="2">Insurance</td>
+									<td colSpan="6" className={`${styles.bgBorder}`}>
+										Life Insurance
+									</td>
+								</tr>
+								<tr className={`${styles.bgWhite} ${styles.bgBorder}`}>
+									<td colSpan="6">
+										₹ 1 lakh to ₹ 3 lakhCredit Linked Insurance is a life insurance
+										offered by Svatantra to women customers and her spouse to provide
+										relief to her family in case of death of the insured person.
+									</td>
+								</tr>
+								<tr className={`${styles.bgWhite} `}>
+									<td colSpan="7" className={`${styles.bgBorder}`}>
+										ROI is a function of risk profile of the customers and will be
+										reviewed periodically. All the products above Rs.25000 have tenure
+										ranging from 24 to 30 months. Apart from credit life insurance all
+										other insurance products are optional (consent based) Penal charges -
+										Nil
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div className={`${styles.btnBox} pt_30`}>
+							<a href="">
+								<span>
+									<img src={pdf_icon.src} alt="icon" />
+								</span>
+								Disclouser of Interest Rate
+							</a>
+							<a href="">
+								<span>
+									<img src={pdf_icon.src} alt="icon" />
+								</span>
+								Customer Awareness on Overdue, SMA/ NPA
+							</a>
+						</div>
+					</div>
+				</section>
 				<SixSteps title={sixStepsData.title} steps={sixStepsData.steps} />
 				<CommonQueries
 					title={commonQueriesData.title}

@@ -59,7 +59,7 @@ export default function BlogsInsights() {
 		<section className={`${styles.BlogsInsights} pb_80`}>
 			<div className="container">
 				<div className={`${styles.title_wrap} pb_30`}>
-					<h2 className="text_xxxl color_primary">Blogs & insightss</h2>
+					<h2 className="text_xxxl color_primary">Blogs & insights</h2>
 				</div>
 				<div className={`${styles.SliderMain}`}>
 					<Swiper
