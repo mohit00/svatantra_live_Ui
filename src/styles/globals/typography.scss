@@ -84,6 +84,15 @@
 		font-size: 14px;
 	}
 }
+.text_xxs {
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 400;
+	font-family: var(--font_secondary);
+	@media (max-width: 1199px) {
+		font-size: 13px;
+	}
+}
 
 .opacity_8 {
 	opacity: 0.8;
@@ -548,7 +557,7 @@ $sizes: 300, 400, 500, 600, 700, 800, 900;
 // 	}
 // }
 
-.hidden_sm{
+.hidden_sm {
 	display: block;
 
 	@media (max-width: 992px) {

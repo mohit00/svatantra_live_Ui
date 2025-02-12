@@ -2,6 +2,7 @@
 
 // COMPONENTS //
 import AccordianCommon from "@/components/AccordianCommon";
+import Button from "@/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -132,6 +133,23 @@ export default function CommonQueries() {
 								},
 							]}
 						/>
+					</div>
+				</div>
+				<div className={`${styles.brochureBg} f_w_j`}>
+					<div className={`${styles.brochureTxt}`}>
+						<h2 className="text_lg color_primary font_primary f_w_b">
+							Everything you need to know about our financial services
+						</h2>
+					</div>
+					<div className={`${styles.brochureBtn}`}>
+						<div className={`${styles.BtnBx}`}>
+							<Button
+								buttonType="secondary"
+								condition={"white"}
+								link={"#"}
+								title={"Download brochure"}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

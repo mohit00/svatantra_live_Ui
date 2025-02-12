@@ -13,6 +13,7 @@ import PavingThePath from "@/sections/our-products/PavingThePath";
 import LoanFactSheet from "@/sections/our-products/LoanFactSheet";
 import SixSteps from "@/sections/our-products/SixSteps";
 import CommonQueries from "@/sections/our-products/CommonQueries";
+import BlogsInsights from "@/sections/our-products/BlogsInsights";
 
 // PLUGINS //
 
@@ -54,6 +55,7 @@ export default function MicrofinanceLoans() {
 				<LoanFactSheet />
 				<SixSteps />
 				<CommonQueries />
+				<BlogsInsights />
 			</main>
 			{/* Page Content ends here */}
 

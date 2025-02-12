@@ -67,7 +67,9 @@ export default function AccordianCommon({
 						// onClick={() => handleAccordionClick(index)}
 						onClick={() => toggleAccordion(index)}
 					>
-						<div className={`${fontStyle} ${fontWeight} ${fontFamily} ${fontColor} `}>
+						<div
+							className={`${fontStyle} ${fontWeight} ${fontFamily} ${fontColor} ${fontColor} headerF`}
+						>
 							{item.title}
 						</div>
 						<span>

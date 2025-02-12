@@ -39,9 +39,20 @@
 			// 	display: none;
 			// }
 
+			:global(.headerF) {
+				width: 95%;
+				@media (max-width: 767px) {
+					width: 95%;
+				}
+			}
+
 			span {
 				font-size: 18px;
 				font-weight: bold;
+				width: 30px;
+				@media (max-width: 767px) {
+					width: 30px;
+				}
 			}
 		}
 
