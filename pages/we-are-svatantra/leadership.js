@@ -18,11 +18,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 import styles from "@/styles/pages/Leadership.module.scss";
 
 // IMAGES //
-import Leader1 from "../public/img/leadership/Leader1.jpg";
-import PlusIcon from "../public/img/leadership/PlusIcon.svg";
-import Sec1Bg from "../public/img/leadership/Sec1_bg.jpg";
-import Ananya from "../public/img/leadership/Ananya.png";
-import design from "../public/img/leadership/design.png";
+import Leader1 from "../../public/img/leadership/Leader1.jpg";
+import PlusIcon from "../../public/img/leadership/PlusIcon.svg";
+import Ananya from "../../public/img/leadership/Ananya.png";
+import design from "../../public/img/leadership/design.png";
 
 // DATA //
 

@@ -22,17 +22,16 @@ import Breadcrum from "@/components/Breadcrumb";
 // UTILS //
 
 // IMAGES //
-import Girl1 from "../public/img/about/girl.jpg";
-import Girl2 from "../public/img/about/girl2.jpg";
-import Icon1 from "../public/img/about/icon_1.png";
-import Icon2 from "../public/img/about/icon_2.png";
-import Icon3 from "../public/img/about/icon_3.png";
-import Icon4 from "../public/img/about/icon_4.png";
-import Icon5 from "../public/img/about/icon_5.png";
-import WhyComponent from "@/pages/Contact/careers/Why";
-import arrow_btn from "../public/img/arrow_btn.svg";
-import RecognisedImg1 from "../public/img/about/recognisedImg1.jpg";
-import DesktopBanner from "../public/img/about/desktop_banner.jpg";
+import Girl1 from "../../public/img/about/girl.jpg";
+import Girl2 from "../../public/img/about/girl2.jpg";
+import Icon1 from "../../public/img/about/icon_1.png";
+import Icon2 from "../../public/img/about/icon_2.png";
+import Icon3 from "../../public/img/about/icon_3.png";
+import Icon4 from "../../public/img/about/icon_4.png";
+import Icon5 from "../../public/img/about/icon_5.png";
+import arrow_btn from "../../public/img/arrow_btn.svg";
+import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
+import DesktopBanner from "../../public/img/about/desktop_banner.jpg";
 
 // DATA //
 

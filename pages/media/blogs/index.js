@@ -18,7 +18,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import styles from "@/styles/pages/Blogs.module.scss";
 
 // IMAGES //
-import advent from "../../public/img/advent.png";
+import advent from "../../../public/img/advent.png";
 
 // DATA //
 
@@ -140,8 +140,8 @@ export default function BlogsPage() {
 												<img
 													src={
 														openDropdowns.select1
-															? "img/icons/UpArrow.svg"
-															: "img/icons/DownArrow.svg"
+															? "../img/icons/UpArrow.svg"
+															: "../img/icons/DownArrow.svg"
 													}
 													alt="Toggle Dropdown"
 													className={`${styles.arrow}`}
@@ -190,8 +190,8 @@ export default function BlogsPage() {
 												<img
 													src={
 														openDropdowns.select2
-															? "img/icons/UpArrow.svg"
-															: "img/icons/DownArrow.svg"
+															? "../img/icons/UpArrow.svg"
+															: "../img/icons/DownArrow.svg"
 													}
 													alt="Toggle Dropdown"
 													className={`${styles.arrow}`}
