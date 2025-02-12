@@ -12,7 +12,7 @@
 import styles from "@/styles/sections/our-products/LoanFactSheet.module.scss";
 
 // IMAGES //
-import check from "../../../public/img/check.svg";
+import pdf_icon from "../../../public/img/pdf_icon.svg";
 
 // DATA //
 
@@ -82,13 +82,17 @@ export default function LoanFactSheet() {
 						</tr>
 					</table>
 				</div>
-				<div className={`${styles.btnBox}`}>
+				<div className={`${styles.btnBox} pt_30`}>
 					<a href="">
-						<span></span>
+						<span>
+							<img src={pdf_icon.src} alt="icon" />
+						</span>
 						Disclouser of Interest Rate
 					</a>
 					<a href="">
-						<span></span>
+						<span>
+							<img src={pdf_icon.src} alt="icon" />
+						</span>
 						Customer Awareness on Overdue, SMA/ NPA
 					</a>
 				</div>

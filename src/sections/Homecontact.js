@@ -164,6 +164,7 @@ export default function Homecontact() {
 									className={styles.textarea}
 									id="message"
 									name="message"
+									placeholder="Message"
 									{...register("message", {
 										required: true,
 									})}
