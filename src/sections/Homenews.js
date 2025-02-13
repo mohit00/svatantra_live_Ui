@@ -119,7 +119,7 @@ export default function Homenews() {
 	};
 
 	return (
-		<section className={styles.Homenews}>
+		<section className={`${styles.Homenews} ptb_80`}>
 			<div className="container">
 				<div className={`${styles.mainBox}`}>
 					<h1 className="text_xxxl color_primary pb_10">In the news</h1>
