@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Homecontact from "@/sections/Homecontact";
 import Homenews from "@/sections/Homenews";
+import HomeInvestors from "@/sections/HomeInvestors";
 
 // SECTIONS //
 import ScaleBusiness from "../src/sections/ScaleBusiness";
@@ -58,6 +59,7 @@ export default function HomePage() {
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<StoriesSuccess />
 				<Homenews />
+				<HomeInvestors />
 				<Homecontact />
 			</main>
 			{/* Page Content ends here */}

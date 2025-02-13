@@ -9,6 +9,8 @@ import InnerBanner from "@/components/InnerBanner";
 
 // SECTIONS //
 import TechnologyDriven from "@/sections/digitally-svatantra/TechnologyDriven";
+import StoriesOfSuccess from "@/sections/digitally-svatantra/StoriesOfSuccess";
+import ConnectWithUs from "@/sections/digitally-svatantra/ConnectWithUs";
 
 // PLUGINS //
 
@@ -46,6 +48,8 @@ export default function DigitallySvatantra() {
 					bannerTitle="Leveraging technology for growth and efficiency"
 				/>
 				<TechnologyDriven />
+				<StoriesOfSuccess />
+				<ConnectWithUs />
 			</main>
 			{/* Page Content ends here */}
 

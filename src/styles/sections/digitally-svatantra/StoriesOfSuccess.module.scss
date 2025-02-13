@@ -1,0 +1,87 @@
+@import "../../helpers/helpers.scss";
+
+.StoriesOfSuccess{
+    .slider_section{
+        margin-left: calc(var(--container_left_space) + 15px);
+        .item{
+            opacity: 0.7;
+            padding: 60px 50px;
+            border-radius: 10px;
+            background-color: #2859a9;
+            background-image: url(../../../../public/img/home/SliderBgImg.png);
+            background-position: right;
+            background-repeat: no-repeat;
+            transition:all 0.3s ease;
+            @media screen and (max-width: 767px) {
+                // padding: 25px 25px 50px;
+                padding: 25px;
+                background-size: 60%;
+                background-position: bottom right;
+            }
+            .SliderItem {
+                .quote {
+                    min-height: 190px;
+                    padding: 20px 0 50px;
+                    @media screen and (max-width: 767px) {
+                        padding: 20px 0 ;
+                    }
+                }
+                .Name {
+                    font-size: 20px;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+    .container{
+        margin-left: calc(var(--container_left_space) + 15px);
+    }
+    :global(.swiper-pagination1) {
+        position: relative;
+        background: rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin-top: 50px;
+        @media (max-width: 767px) {
+            width: 68vw;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            width: 85%;
+         }
+        span {
+            background-color: var(--color_black);
+        }
+    }
+    :global(.swiper) {
+        height: 100%;
+    }
+    :global(.swiper-slide) {
+        height: auto !important;
+    }
+    :global(.swiper-slide-active) {
+        opacity: 1 !important;
+        transition:all 0.3s ease;
+    }
+    :global(.swiper-content) {
+        height: 100% !important;
+    }
+    .arrowSection {
+        position: absolute;
+        right: 0px;
+        bottom: -15px;
+        @media (max-width: 767px) {
+            right: 15px;
+        }
+        .customPrev,
+        .customNext {
+            background-color: unset;
+            border: none;
+            cursor: pointer;
+            @media (max-width: 767px) {
+                width: 40px;
+            }
+        }
+        .customPrev {
+            rotate: 180deg;
+        }
+    }
+}
