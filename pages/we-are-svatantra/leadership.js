@@ -225,7 +225,7 @@ export default function LeadershipPage() {
 																		<p className={`${styles.EmailId} text_xs opacity_80`}>
 																			Connect on LinkedIn
 																		</p>
-																		<img src={arrow_btn.src} alt="" />
+																		<img src={arrow_btn.src} alt="Arrow" />
 																	</a>
 																</div>
 															</div>
