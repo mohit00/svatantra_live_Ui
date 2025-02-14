@@ -54,7 +54,7 @@ export default function StoriesSuccess() {
 	// 	autoplay: true,
 	// };
 	return (
-		<section className={styles.StoriesSuccess} name="Media">
+		<section className={`${styles.StoriesSuccess} pb_80`} name="Media">
 			<div className="container">
 				<div className={`${styles.StoriesFlex}`}>
 					<div className={`${styles.StoriesBx}`}>

@@ -57,6 +57,15 @@
 	}
 }
 
+.text_reg_20 {
+	font-size: 20px;
+	line-height: 1.4;
+	font-weight: 400;
+	@media (max-width: 767px) {
+		font-size: 18px;
+	}
+}
+
 .text_sm {
 	font-size: 18px;
 	line-height: 1.4;
@@ -73,6 +82,15 @@
 	font-family: var(--font_secondary);
 	@media (max-width: 767px) {
 		font-size: 14px;
+	}
+}
+.text_xxs {
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 400;
+	font-family: var(--font_secondary);
+	@media (max-width: 1199px) {
+		font-size: 13px;
 	}
 }
 
@@ -531,10 +549,18 @@ $sizes: 300, 400, 500, 600, 700, 800, 900;
 		display: none !important;
 	}
 }
+// .hidden_sm {
+// 	display: block;
+
+// 	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+// 		display: none !important;
+// 	}
+// }
+
 .hidden_sm {
 	display: block;
 
-	@media only screen and (min-width: 767px) and (max-width: 1024px) {
+	@media (max-width: 992px) {
 		display: none !important;
 	}
 }

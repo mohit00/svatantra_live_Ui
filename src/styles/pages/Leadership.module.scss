@@ -1,0 +1,254 @@
+@import "../helpers/helpers.scss";
+
+.LeadershipPage {
+	.Sec1 {
+		padding-bottom: 80px;
+		.AnanyaIntro {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			// align-items: center;
+			border-radius: 10px;
+			padding: 50px;
+			background-image: url(../../../public/img/leadership/Sec1_bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@media screen and (max-width: 1199px) {
+				overflow: hidden;
+			}
+			@media screen and (max-width: 992px) {
+				flex-direction: column;
+				gap: 60px;
+			}
+			@media screen and (max-width: 767px) {
+				padding: 30px;
+				gap: 100px;
+			}
+			.Left {
+				width: 50%;
+				@media screen and (max-width: 992px) {
+					width: 100%;
+				}
+				.DetailsHead {
+					@media screen and (max-width: 767px) {
+						padding-bottom: 20px;
+					}
+				}
+			}
+			.Right {
+				width: 44%;
+				position: relative;
+				@media screen and (max-width: 992px) {
+					width: 100%;
+				}
+				.AnanyaImg {
+					position: absolute;
+					bottom: -50px;
+					left: 50%;
+					transform: translateX(-50%);
+					@media screen and (max-width: 1199px) {
+						// bottom: -120px;
+					}
+					@media screen and (max-width: 992px) {
+						bottom: -50px;
+					}
+					@media screen and (max-width: 767px) {
+						bottom: -30px;
+					}
+				}
+				img {
+					margin-left: auto;
+					@media screen and (max-width: 992px) {
+						margin-left: unset;
+						margin: auto;
+					}
+				}
+			}
+		}
+	}
+	.ChangeMakers {
+		.GridContainer {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			row-gap: 50px;
+			column-gap: 30px;
+			z-index: 1;
+			position: relative;
+			@media only screen and (max-width: 1199px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			@media only screen and (max-width: 992px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media only screen and (max-width: 767px) {
+				grid-template-columns: repeat(1, 1fr);
+				gap: 40px;
+			}
+
+			.GridItem {
+				.ImgBx {
+					position: relative;
+					// padding-bottom: 10px;
+					.box_btn {
+						position: absolute;
+						right: 20px;
+						bottom: 12px;
+						display: flex;
+						align-items: center;
+						justify-content: flex-end;
+						width: 100%;
+						@media only screen and (max-width: 1200px) {
+							padding-top: 5px;
+							// justify-content: flex-start;
+						}
+						.btn_primary {
+							width: 34px;
+							height: 34px;
+							background-color: var(--color_white);
+							border-radius: 50%;
+							display: flex;
+							cursor: pointer;
+							align-items: center;
+							justify-content: center;
+							transition: 0.3s ease-in-out;
+							&:hover {
+								// transform: rotate(-45deg);
+								// transition: 0.3s ease-in-out;
+							}
+						}
+					}
+				}
+
+				.DetailsBx {
+					padding-top: 20px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					.Details {
+						// min-height: 85px;
+						@media only screen and (max-width: 767px) {
+							min-height: unset;
+						}
+						.Name {
+							line-height: 1.2;
+							padding-bottom: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.paraWrapper {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+		padding: 0;
+	}
+
+	.show {
+		max-height: 250px;
+		@media screen and (max-width: 767px) {
+			max-height: 270px;
+		}
+	}
+	.PopupItem {
+		// height: 75vh;
+		overflow: auto;
+		color: var(--color_light_black);
+		display: flex !important;
+		gap: 50px;
+		@media only screen and (max-width: 1200px) {
+			padding: 0 10px;
+		}
+
+		@media only screen and (max-width: 992px) {
+			flex-direction: column;
+			margin-left: -1px;
+			gap: 30px;
+		}
+		@media only screen and (max-width: 767px) {
+			padding: 0 5px;
+		}
+		&::-webkit-scrollbar {
+			width: 2px;
+			height: 2px;
+			background: var(--color_white);
+		}
+		.ImgBx {
+			width: 40%;
+			position: sticky;
+			top: 0;
+			flex: 1;
+			@media only screen and (max-width: 992px) {
+				flex: unset;
+				width: 50%;
+			}
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+			}
+			img {
+				width: 100%;
+			}
+			.LinksBx {
+				.Link {
+					.MainLink {
+						display: flex;
+						align-items: center;
+						gap: 30px;
+						.EmailId {
+							border-bottom: 1px solid #1e1e1e;
+						}
+						img {
+							width: 30px;
+						}
+					}
+				}
+			}
+			.Details {
+				.Name {
+					@media (max-width: 767px) {
+						font-size: 24px;
+					}
+				}
+				.Designation {
+					@media (max-width: 767px) {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+		.DetailsBx {
+			width: 55%;
+			// padding-right: 50px;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: space-between;
+			background-color: #f6efea;
+			padding: 30px 45px;
+			// overflow: auto;
+			@media only screen and (min-width: 1400px) {
+				// width: 70%;
+			}
+			@media only screen and (max-width: 992px) {
+				width: 100%;
+				// padding-right: 0;
+			}
+			@media only screen and (max-width: 767px) {
+				overflow: hidden;
+				// overflow-y: scroll;
+				padding: 30px 30px;
+			}
+
+			.box_btn {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				width: 100%;
+				padding-top: 5px;
+				@media only screen and (max-width: 1200px) {
+					// justify-content: flex-start;
+				}
+			}
+		}
+	}
+}

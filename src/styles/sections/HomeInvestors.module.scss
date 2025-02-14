@@ -1,0 +1,77 @@
+@import "../helpers/helpers.scss";
+			
+.HomeInvestors{
+    .title_wrap{
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+    .box_wrap {
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // grid-gap: 30px;
+        // @media (max-width: 767px) {
+        //     grid-template-columns: repeat(1, 1fr);
+        // }
+        .box_item {
+            background-color: var(--color_white);
+            border-radius: 8px;
+            padding: 10px 10px 20px;
+            .content {
+                p {
+                    width: 88%;
+                }
+                a {
+                    width: 32px;
+                }
+            }
+        }
+    }
+    :global(.swiper-pagination1) {
+        position: relative;
+        background: rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin-top: 50px;
+        @media (max-width: 767px) {
+            width: 68vw;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            width: 85%;
+         }
+        span {
+            background-color: var(--color_black);
+        }
+    }
+    :global(.swiper) {
+        height: 100%;
+    }
+    :global(.swiper-slide) {
+        height: auto !important;
+    }
+    :global(.swiper-content) {
+        height: 100% !important;
+    }
+    .arrowSection {
+        position: absolute;
+        right: 0px;
+        bottom: -15px;
+        @media (max-width: 767px) {
+            right: 15px;
+        }
+        .customPrev,
+        .customNext {
+            background-color: unset;
+            border: none;
+            cursor: pointer;
+            @media (max-width: 767px) {
+                width: 40px;
+            }
+        }
+        .customPrev {
+            rotate: 180deg;
+        }
+    }
+}

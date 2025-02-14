@@ -15,11 +15,12 @@ import styles from "@/styles/components/Buttons/Button.module.scss";
 
 // IMAGES //
 import btnArrow from "../../../public/img/home/BtnArrow.svg";
+import btnArrowBlack from "../../../public/img/home/BtnArrowBlack.svg";
 
 // DATA //
 
 /** Button Component */
-const Button = ({ buttonType, link, title, condition }) => {
+const Button = ({ buttonType, link, title, condition, isButton }) => {
 	switch (buttonType) {
 		case "primary":
 			return (
@@ -94,6 +95,34 @@ const Button = ({ buttonType, link, title, condition }) => {
 							</button>
 							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
 								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+							</span>
+						</span>
+					</a>
+				</div>
+				// </Link>
+			);
+		case "five":
+			return (
+				// <Link >
+				<div>
+					<a className={`${styles.btn_five}`} href={link}>
+						<span className={styles.btn_outer_span}>
+							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+								<img
+									src={btnArrowBlack.src}
+									className={`${styles.btn_arrow1}`}
+									alt=""
+								/>
+							</span>
+							<button className={`${styles.btn_inner_text} text_xs color_light_black`}>
+								{title}
+							</button>
+							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+								<img
+									src={btnArrowBlack.src}
+									className={`${styles.btn_arrow1}`}
+									alt=""
+								/>
 							</span>
 						</span>
 					</a>

@@ -1,0 +1,25 @@
+@import "../../../helpers/helpers.scss";
+
+.contentBox {
+	padding: 20px 0px 40px 0px;
+	.titleBox {
+		display: flex;
+		gap: 80px;
+
+		@media (max-width: 767px) {
+			flex-direction: column;
+			gap: 40px;
+		}
+		img {
+			border-radius: 12px;
+		}
+	}
+}
+
+.para {
+	width: 85%;
+
+	@media (max-width: 1199px) {
+		width: 100%;
+	}
+}

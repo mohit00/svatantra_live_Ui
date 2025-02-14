@@ -81,7 +81,7 @@ export default function Homenews() {
 			},
 			1024: {
 				slidesPerView: 3, // Large screens: 3 slides visible
-				spaceBetween: 30, // Increased spacing for larger screens
+				spaceBetween: 20, // Increased spacing for larger screens
 			},
 		},
 	};
@@ -113,13 +113,13 @@ export default function Homenews() {
 			},
 			1024: {
 				slidesPerView: 3, // Tablet and desktop view
-				spaceBetween: 30, // Increase spacing if needed for larger screens
+				spaceBetween: 20, // Increase spacing if needed for larger screens
 			},
 		},
 	};
 
 	return (
-		<section className={styles.Homenews}>
+		<section className={`${styles.Homenews} ptb_80`}>
 			<div className="container">
 				<div className={`${styles.mainBox}`}>
 					<h1 className="text_xxxl color_primary pb_10">In the news</h1>
@@ -268,7 +268,7 @@ export default function Homenews() {
 													/>
 												</div>
 												<div className={`${styles.dateBox}`}>
-													<p className="hidden_lg">5 November 2024</p>
+													<p className="">5 November 2024</p>
 												</div>
 												<p className="text_reg">
 													Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential
@@ -288,7 +288,7 @@ export default function Homenews() {
 													/>
 												</div>
 												<div className={`${styles.dateBox}`}>
-													<p className="hidden_lg">5 November 2024</p>
+													<p className="">5 November 2024</p>
 												</div>
 												<p className="text_reg">IGPTW Certified 2020 and 2022</p>
 											</div>
@@ -305,7 +305,7 @@ export default function Homenews() {
 													/>
 												</div>
 												<div className={`${styles.dateBox}`}>
-													<p className="hidden_lg">5 November 2024</p>
+													<p className="">5 November 2024</p>
 												</div>
 												<p className="text_reg">
 													INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin,
