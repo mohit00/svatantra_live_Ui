@@ -95,12 +95,13 @@ export default function Eventinsti() {
 					<div className={`${styles.titleBox}`}>
 						<h1 className="text_xxxl color_primary pb_60">Problem Statements</h1>
 					</div>
-					<div>
+					<div className={styles.pdfData}>
 						<table>
 							<td className={styles.title}>
 								<tr></tr>
 								<tr className="text_sm color_white">Details</tr>
 								<tr className="text_sm color_white">Enclosures</tr>
+								{/* <tr className="text_sm color_white">Enclosures</tr> */}
 							</td>
 							<td>
 								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>1</tr>
