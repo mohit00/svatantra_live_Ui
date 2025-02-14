@@ -2,6 +2,9 @@
 .Journey_section {
 	.banner_info {
 		width: 80%;
+		@media (max-width: 991px) {
+			width: 100%;
+		}
 		p {
 			padding-right: 150px;
 
