@@ -17,7 +17,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import styles from "@/styles/pages/PressRelease.module.scss";
 
 // IMAGES //
-import advent from "../../../public/img/advent.png";
+import arrow_btn from "../../../public/img/arrow_btn.svg";
 
 // DATA //
 
@@ -25,47 +25,39 @@ import advent from "../../../public/img/advent.png";
 export default function PressReleasePage() {
 	const BlogList = [
 		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Malati's Tea Stall - A Blend for Business Excellence",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
+			date: "Mumbai, 4 March, 2024",
 			title:
-				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
+				"Advent International and Multiples to invest INR 1,930 Crore or $230M in Ananya Birla’s Svatantra Microfin, which marks the largest private equity investment in India in the sector",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Role of rural women in Indian agricultural businesses",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Malati's Tea Stall - A Blend for Business Excellence",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
+			date: "Mumbai, 4 March, 2024",
 			title:
-				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
+				"Ananya Birla’s Svatantra set to acquire Sachin Bansal’s Chaitanya for INR 1,479 cr",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Role of rural women in Indian agricultural businesses",
+			date: "Mumbai, 4 March, 2024",
+			title:
+				"Ananya Birla founded Svatantra Microfin partners with Propaco for women empowerment in India",
+			link: "/blogs-inside",
+		},
+		{
+			date: "Mumbai, 4 March, 2024",
+			title:
+				"Advent International and Multiples to invest INR 1,930 Crore or $230M in Ananya Birla’s Svatantra Microfin, which marks the largest private equity investment in India in the sector",
+			link: "/blogs-inside",
+		},
+		{
+			date: "Mumbai, 4 March, 2024",
+			title:
+				"Ananya Birla’s Svatantra set to acquire Sachin Bansal’s Chaitanya for INR 1,479 cr",
+			link: "/blogs-inside",
+		},
+		{
+			date: "Mumbai, 4 March, 2024",
+			title:
+				"Ananya Birla founded Svatantra Microfin partners with Propaco for women empowerment in India",
 			link: "/blogs-inside",
 		},
 	];
@@ -97,23 +89,21 @@ export default function PressReleasePage() {
 						<div className={`${styles.GridBox}`}>
 							{BlogList.map((item, ind) => {
 								return (
-									<div className={`${styles.slider}`} key={ind}>
+									<div className={`${styles.MainBox}`} key={ind}>
 										<div className={`${styles.box1}`}>
-											<div className={`${styles.imgBox}`}>
-												<img src={item.image} alt="box1" className={`${styles.mainImg}`} />
-												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
+											<div className={`${styles.Title}`}>
+												<p className="text_xs">{item.title}</p>
 											</div>
-
 											<div className={`${styles.categoryBox}`}>
 												<div className={`${styles.news}`}>
-													<p>{item.cardtype}</p>
-												</div>
-												<div className={`${styles.date}`}>
 													<p>{item.date}</p>
 												</div>
+												<div className={`${styles.arrow}`}>
+													<a href={item.link} rel="noopener noreferrer">
+														<img src={arrow_btn.src} alt="Arrow" />
+													</a>
+												</div>
 											</div>
-
-											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
 										</div>
 									</div>
 								);

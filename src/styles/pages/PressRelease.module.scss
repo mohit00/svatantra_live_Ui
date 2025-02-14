@@ -1,9 +1,9 @@
 @import "../helpers/helpers.scss";
 
-.PressReleasePage{
-    .PressReleaseListingMain{
+.PressReleasePage {
+	.PressReleaseListingMain {
 		.Head {
-            padding-bottom: 50px;
+			padding-bottom: 50px;
 		}
 		.GridBox {
 			display: grid;
@@ -12,21 +12,30 @@
 			row-gap: 50px;
 			@media screen and (max-width: 1199px) {
 				grid-template-columns: repeat(2, 1fr);
-				column-gap: 30px;
+				gap: 30px;
 			}
 			@media screen and (max-width: 767px) {
 				grid-template-columns: repeat(1, 1fr);
 			}
-			.slider {
+			.MainBox {
 				display: flex;
 				justify-content: space-between;
 				gap: 40px;
+				border-radius: 6px;
+				background-color: #fff;
+				padding: 25px;
 
 				@media (max-width: 991px) {
-					flex-direction: column;
+					// flex-direction: column;
+				}
+				@media (max-width: 767px) {
+					padding: 20px;
 				}
 
 				.box1 {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
 					width: 100%;
 
 					@media (max-width: 911px) {
@@ -56,43 +65,11 @@
 						}
 					}
 				}
-
-				.box2 {
-					// width: 0%;
-
-					@media (max-width: 911px) {
-						width: 96%;
-					}
-					@media (max-width: 767px) {
-						width: 100%;
-					}
-
-					.imgBox {
-						position: relative;
-
-						.mainImg {
-							width: 100%;
-							object-fit: cover;
-							@media (max-width: 991px) {
-								width: 100%;
-							}
-
-							@media (max-width: 767px) {
-								width: 95%;
-							}
-						}
-
-						.logo {
-							position: absolute;
-							bottom: 15px;
-							right: 25px;
-						}
-					}
-				}
 			}
 			.categoryBox {
 				display: flex;
-				gap: 10px;
+				justify-content: space-between;
+				// gap: 10px;
 				padding-top: 15px;
 				.news {
 					display: flex;
@@ -106,21 +83,7 @@
 						color: white;
 					}
 				}
-
-				.date {
-					display: flex;
-					align-items: center;
-					padding: 8px 18px 8px 18px;
-					border-radius: 100px;
-					background-color: var(--color_white);
-
-					p {
-						font-size: 14px;
-						line-height: 1;
-						color: black;
-					}
-				}
 			}
 		}
-    }
+	}
 }

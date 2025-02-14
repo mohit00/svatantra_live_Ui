@@ -6,7 +6,8 @@
 		.AnanyaIntro {
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
+			align-items: flex-end;
+			// align-items: center;
 			border-radius: 10px;
 			padding: 50px;
 			background-image: url(../../../public/img/leadership/Sec1_bg.jpg);
@@ -46,7 +47,7 @@
 					left: 50%;
 					transform: translateX(-50%);
 					@media screen and (max-width: 1199px) {
-						bottom: -120px;
+						// bottom: -120px;
 					}
 					@media screen and (max-width: 992px) {
 						bottom: -50px;
@@ -137,8 +138,21 @@
 			}
 		}
 	}
+	.paraWrapper {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+		padding: 0;
+	}
+
+	.show {
+		max-height: 250px;
+		@media screen and (max-width: 767px) {
+			max-height: 270px;
+		}
+	}
 	.PopupItem {
-		height: 75vh;
+		// height: 75vh;
 		overflow: auto;
 		color: var(--color_light_black);
 		display: flex !important;
@@ -169,8 +183,26 @@
 				flex: unset;
 				width: 50%;
 			}
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+			}
 			img {
 				width: 100%;
+			}
+			.LinksBx {
+				.Link {
+					.MainLink {
+						display: flex;
+						align-items: center;
+						gap: 30px;
+						.EmailId {
+							border-bottom: 1px solid #1e1e1e;
+						}
+						img {
+							width: 30px;
+						}
+					}
+				}
 			}
 			.Details {
 				.Name {
@@ -203,7 +235,7 @@
 			}
 			@media only screen and (max-width: 767px) {
 				overflow: hidden;
-				overflow-y: scroll;
+				// overflow-y: scroll;
 				padding: 30px 30px;
 			}
 

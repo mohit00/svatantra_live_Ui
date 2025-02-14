@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Popup from "@/components/Popup";
 import Breadcrumb from "@/components/Breadcrumb";
+import Button from "@/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -22,11 +23,13 @@ import Leader1 from "../../public/img/leadership/Leader1.jpg";
 import PlusIcon from "../../public/img/leadership/PlusIcon.svg";
 import Ananya from "../../public/img/leadership/Ananya.png";
 import design from "../../public/img/leadership/design.png";
+import arrow_btn from "../../public/img/arrow_btn.svg";
 
 // DATA //
 
 /** Leadership Page */
 export default function LeadershipPage() {
+	const [isVisible, setIsVisible] = useState(false);
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	const [slideNo, setSlideNo] = useState(0);
 
@@ -105,7 +108,7 @@ export default function LeadershipPage() {
 										</a>
 									</p>
 								</div>
-								<p className="text_sm color_light_black f_w_m opacity_80">
+								<p className="text_sm color_light_black f_w_m opacity_80 pb_20">
 									At 17, Ananya Birla founded Svatantra Microfin Pvt. Ltd., setting a new
 									benchmark in microfinance with a vision for technology-led financial
 									inclusion. Steering the company to become one of India’s
@@ -116,7 +119,28 @@ export default function LeadershipPage() {
 									Microfinance Council of India, driving systemic change in how financial
 									services empower rural and semi-urban India.
 								</p>
-								<div className={`${styles.Btn} pt_30`}>Read Here</div>
+								<div
+									className={`${styles.paraWrapper} ${isVisible ? styles.show : ""}`}
+								>
+									<p className="text_sm color_light_black f_w_m opacity_80">
+										Ananya’s achievements reflect a relentless commitment to meaningful
+										impact from being honored by the former Chief Minister of Maharashtra
+										for empowering over 500,000 women to co-founding the Mpower movement
+										to break mental health stigmas. An Oxford alumna and celebrated
+										musician, she approaches leadership with a balance of innovation and
+										empathy, creating an environment that inspires bold ideas and fosters
+										tangible progress.
+									</p>
+								</div>
+								<div
+									className={`${styles.Btn} pt_20`}
+									onClick={() => setIsVisible(!isVisible)}
+								>
+									<Button
+										buttonType="five"
+										title={isVisible ? "Read Less" : "Read More"}
+									/>
+								</div>
 							</div>
 							<div className={`${styles.Right}`}>
 								<img src={design.src} className="img-responsive" alt="Design Image" />
@@ -178,11 +202,32 @@ export default function LeadershipPage() {
 																className="img-responsive b_r_10"
 																alt="Leaders Image"
 															/>
-															<div className={`${styles.Details} pt_10`}>
-																<p className={`${styles.Name} text_md`}>{item.name}</p>
-																<p className={`${styles.Designation} text_sm`}>
-																	{item.designation}
-																</p>
+															<div className={`${styles.LinksBx} pt_10`}>
+																<div className={`${styles.Link} pt_20`}>
+																	<a
+																		href="mailto:vineetchattree@svatantra.com"
+																		rel="noopener noreferrer"
+																		className={styles.MainLink}
+																	>
+																		<p className={`${styles.EmailId} text_xs opacity_80`}>
+																			vineetchattree@svatantra.com
+																		</p>
+																		<img src={arrow_btn.src} alt="" />
+																	</a>
+																</div>
+																<div className={`${styles.Link} pt_20`}>
+																	<a
+																		href="https://"
+																		target="_blank"
+																		rel="noopener noreferrer"
+																		className={styles.MainLink}
+																	>
+																		<p className={`${styles.EmailId} text_xs opacity_80`}>
+																			Connect on LinkedIn
+																		</p>
+																		<img src={arrow_btn.src} alt="Arrow" />
+																	</a>
+																</div>
 															</div>
 														</div>
 														<div className={`${styles.DetailsBx} b_r_10`}>
