@@ -35,6 +35,7 @@ export default function Header() {
 	const [isResource, setIsResource] = useState(false);
 	const [isDigital, setIsDigital] = useState(false);
 	const [isMedia, setIsMedia] = useState(false);
+	const devRefs = useRef([]);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -202,14 +203,14 @@ export default function Header() {
 		setActiveMenu((prev) => (prev === index ? null : index));
 	};
 	useEffect(() => {
-		// const commonClassSelector = document.querySelectorAll(".commonCls");
-		// if (isClient && commonClassSelector) {
-		// 	console.log(commonClassSelector);
-		// }
-		setTimeout(() => {
-			isClient ? console.log("true") : console.log("false");
-		}, 5000);
-	}, []);
+		if (isClient) {
+			const devElements = devRefs.current;
+			if (devElements.length >= 2) {
+				devElements[devElements.length - 1].classList.add(styles.rightShift);
+				devElements[devElements.length - 2].classList.add(styles.rightShift);
+			}
+		}
+	}, [isClient]);
 
 	return (
 		<div
@@ -241,6 +242,7 @@ export default function Header() {
 									className={`${styles.links} commonCls`}
 									onMouseEnter={() => !isMobile && setIsAboutOpen(true)}
 									onMouseLeave={() => !isMobile && setIsAboutOpen(false)}
+									ref={(el) => (devRefs.current[0] = el)}
 								>
 									<ScrollSection
 										activeClass="active"
@@ -274,7 +276,7 @@ export default function Header() {
 												{menuData.map((menu, index) => (
 													<li key={index} className={styles.menuItem}>
 														<div
-															className={styles.menuTitle}
+															className={`${styles.menuTitle} text_xs`}
 															onClick={(e) => {
 																if (isMobile) {
 																	e.stopPropagation();
@@ -298,7 +300,7 @@ export default function Header() {
 																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 															>
 																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={styles.subMenuItem}>
+																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
 																		{subItem}
 																	</li>
 																))}
@@ -315,6 +317,7 @@ export default function Header() {
 									className={`${styles.links} commonCls`}
 									onMouseEnter={() => !isMobile && setIsImpact(true)}
 									onMouseLeave={() => !isMobile && setIsImpact(false)}
+									ref={(el) => (devRefs.current[1] = el)}
 								>
 									<ScrollSection
 										onClick={toggleSidebar}
@@ -349,7 +352,7 @@ export default function Header() {
 												{aboutData.map((menu, index) => (
 													<li key={index} className={styles.menuItem}>
 														<div
-															className={styles.menuTitle}
+															className={`${styles.menuTitle} text_xs`}
 															onClick={(e) => {
 																if (isMobile) {
 																	e.stopPropagation();
@@ -373,7 +376,7 @@ export default function Header() {
 																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 															>
 																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={styles.subMenuItem}>
+																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
 																		{subItem}
 																	</li>
 																))}
@@ -427,7 +430,7 @@ export default function Header() {
 													{resourcesData.map((menu, index) => (
 														<li key={index} className={styles.menuItem}>
 															<div
-																className={styles.menuTitle}
+																className={`${styles.menuTitle} text_xs`}
 																onClick={(e) => {
 																	if (isMobile) {
 																		e.stopPropagation();
@@ -451,7 +454,10 @@ export default function Header() {
 																	onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 																>
 																	{menu.subItems.map((subItem, subIndex) => (
-																		<li key={subIndex} className={styles.subMenuItem}>
+																		<li
+																			key={subIndex}
+																			className={`${styles.subMenuItem} text_xs`}
+																		>
 																			{subItem}
 																		</li>
 																	))}
@@ -468,6 +474,7 @@ export default function Header() {
 									className={`${styles.links} commonCls`}
 									onMouseEnter={() => !isMobile && setIsDigital(true)}
 									onMouseLeave={() => !isMobile && setIsDigital(false)}
+									ref={(el) => (devRefs.current[2] = el)}
 								>
 									<ScrollSection
 										onClick={toggleSidebar}
@@ -502,7 +509,7 @@ export default function Header() {
 												{digitalData.map((menu, index) => (
 													<li key={index} className={styles.menuItem}>
 														<div
-															className={styles.menuTitle}
+															className={`${styles.menuTitle} text_xs`}
 															onClick={(e) => {
 																if (isMobile) {
 																	e.stopPropagation();
@@ -526,7 +533,7 @@ export default function Header() {
 																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 															>
 																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={styles.subMenuItem}>
+																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
 																		{subItem}
 																	</li>
 																))}
@@ -542,6 +549,7 @@ export default function Header() {
 									className={`${styles.links} commonCls`}
 									onMouseEnter={() => !isMobile && setIsMedia(true)}
 									onMouseLeave={() => !isMobile && setIsMedia(false)}
+									ref={(el) => (devRefs.current[3] = el)}
 								>
 									<ScrollSection
 										onClick={toggleSidebar}
@@ -576,7 +584,7 @@ export default function Header() {
 												{mediaData.map((menu, index) => (
 													<li key={index} className={styles.menuItem}>
 														<div
-															className={styles.menuTitle}
+															className={`${styles.menuTitle} text_xs`}
 															onClick={(e) => {
 																if (isMobile) {
 																	e.stopPropagation();
@@ -600,7 +608,7 @@ export default function Header() {
 																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 															>
 																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={styles.subMenuItem}>
+																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
 																		{subItem}
 																	</li>
 																))}
