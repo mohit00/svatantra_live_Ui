@@ -1,4 +1,5 @@
 // MODULES //
+import { useState } from "react";
 
 // COMPONENTS //
 import Breadcrum from "@/components/Breadcrumb";
@@ -22,6 +23,7 @@ import national from "../../public/img/media/awards/national.png";
 import best_workplace from "../../public/img/media/awards/best_workplace.png";
 import inclusive from "../../public/img/media/awards/inclusive.png";
 import innovation from "../../public/img/media/awards/innovation.png";
+import btnArrow from "../../public/img/home/BtnArrow.svg";
 
 // DATA //
 
@@ -38,10 +40,7 @@ export default function AwardsPage() {
 				"National Awards for Excellence in BFSI - Microfinance Company of the Year 2024",
 			thumbnail: national.src,
 		},
-		{
-			title: "IGPTW Certified 2020 and 2022",
-			thumbnail: best_workplace.src,
-		},
+		{ title: "IGPTW Certified 2020 and 2022", thumbnail: best_workplace.src },
 		{
 			title:
 				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
@@ -62,9 +61,26 @@ export default function AwardsPage() {
 				"National Awards for Excellence in BFSI - Microfinance Company of the Year 2024",
 			thumbnail: national.src,
 		},
+		{ title: "IGPTW Certified 2020 and 2022", thumbnail: best_workplace.src },
 		{
-			title: "IGPTW Certified 2020 and 2022",
-			thumbnail: best_workplace.src,
+			title:
+				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
+			thumbnail: inclusive.src,
+		},
+		{
+			title:
+				"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
+			thumbnail: innovation.src,
+		},
+		{
+			title:
+				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
+			thumbnail: inclusive.src,
+		},
+		{
+			title:
+				"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
+			thumbnail: innovation.src,
 		},
 		{
 			title:
@@ -77,6 +93,18 @@ export default function AwardsPage() {
 			thumbnail: innovation.src,
 		},
 	];
+
+	const initialLimit = 9;
+	const [visibleAwards, setVisibleAwards] = useState(initialLimit);
+	const isAllDisplayed = visibleAwards >= awardsData.length;
+
+	/** handleLoadMore */
+	const handleLoadMore = () => {
+		setVisibleAwards(isAllDisplayed ? initialLimit : awardsData.length);
+	};
+
+	//console.log(awardsData);
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -96,30 +124,49 @@ export default function AwardsPage() {
 
 						<div className={`${styles.content_main_wrap} pt_50`}>
 							<div className={`${styles.box_wrap}`}>
-								{awardsData.map((item, ind) => {
-									return (
-										<div className={`${styles.box_item}`} key={ind}>
-											<div className={`${styles.imgBox}`}>
-												<img src={item.thumbnail} className="b_r_10" alt="story img" />
-											</div>
-											<div className={`${styles.content} pt_20 f_r_aj_between`}>
-												<p className="text_reg_20 color_light_black font_secondary">
-													{item.title}
-												</p>
-											</div>
+								{awardsData.slice(0, visibleAwards).map((item, ind) => (
+									<div className={`${styles.box_item}`} key={ind}>
+										<div className={`${styles.imgBox}`}>
+											<img src={item.thumbnail} className="b_r_10" alt="story img" />
 										</div>
-									);
-								})}
+										<div className={`${styles.content} pt_20 f_r_aj_between`}>
+											<p className="text_reg_20 color_light_black font_secondary">
+												{item.title}
+											</p>
+										</div>
+									</div>
+								))}
 							</div>
-							{/*  */}
 						</div>
 						<div className={`${styles.BtnBx} f_r_aj_center pt_30`}>
-							<Button
+							{/* <Button
 								buttonType="secondary"
 								condition={"white"}
 								link={"#"}
-								title={"Load More"}
-							/>
+								title={isAllDisplayed ? "Load Less" : "Load More"}
+								onClick={handleLoadMore}
+							/> */}
+							<div onClick={handleLoadMore}>
+								<a className={styles.btn_secondary}>
+									<span className={styles.btn_outer_span}>
+										<span
+											className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}
+										>
+											<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+										</span>
+										<span
+											className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
+										>
+											{isAllDisplayed ? "Load Less" : "Load More"}
+										</span>
+										<span
+											className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}
+										>
+											<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+										</span>
+									</span>
+								</a>
+							</div>
 						</div>
 					</div>
 				</section>
