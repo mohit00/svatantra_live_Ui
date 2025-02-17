@@ -59,7 +59,6 @@ export default function HomePage() {
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<StoriesSuccess />
 				<Homenews />
-				<HomeInvestors />
 				<Homecontact />
 			</main>
 			{/* Page Content ends here */}
