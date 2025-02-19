@@ -308,7 +308,7 @@
 	background-color: #f6efea;
 	position: absolute;
 	top: 70px;
-	padding: 20px 30px;
+
 	border-radius: 12px;
 
 	@media (max-width: 1024px) {
@@ -319,13 +319,13 @@
 	ul {
 		list-style: none;
 		padding-left: 0px;
-
+		padding: 20px 0;
 		li {
 			display: flex;
 			align-items: start;
 			white-space: nowrap;
 			gap: 40px;
-
+			padding: 0 30px 10px;
 			@media (max-width: 1024px) {
 				flex-direction: column;
 				width: 100%;
@@ -365,7 +365,7 @@
 .newBox {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	// gap: 15px;
 }
 
 .menuTitle {
@@ -408,7 +408,8 @@
 	}
 
 	li {
-		margin-top: 20px;
+		// margin-top: 20px;
+		padding: 20px 0;
 		@media (max-width: 991px) {
 			// margin-top: 10px;
 			padding-left: 20px;

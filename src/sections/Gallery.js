@@ -70,7 +70,7 @@ export default function GalleryComponent() {
 					Browse through the powerful visuals that bring our stories to life.
 				</p>
 				<div className={`${styles.gallery_section} pt_40`}>
-					<div className={`${styles.driving_img_box} f_w_j`}>
+					{/* <div className={`${styles.driving_img_box} f_w_j`}>
 						{drivingOne.map((item, colIndex) => (
 							<div key={colIndex} className={`${styles.item_img}`}>
 								<LightGallery
@@ -90,7 +90,31 @@ export default function GalleryComponent() {
 								<img src={Zoom.src} className={`${styles.zoom}`} alt="Zoom" />
 							</div>
 						))}
-					</div>
+					</div> */}
+
+					<LightGallery
+						onInit={(lg) => (lightGalleryRef.current = lg.instance)}
+						speed={500}
+						plugins={[lgThumbnail, lgZoom]}
+						elementClassNames={`${styles.driving_img_box} f_w_j custom-lightgallery`}
+					>
+						{drivingOne.map((item, colIndex) => (
+							<div
+								data-src={item.full}
+								key={colIndex}
+								className={`${styles.item_img}`}
+							>
+								<img
+									src={item.full} // Thumbnail image
+									className="b_r_10"
+									alt={`Image ${colIndex + 1}`}
+								/>
+								<img src={Zoom.src} className={`${styles.zoom}`} alt="Zoom" />
+							</div>
+						))}
+					</LightGallery>
+
+					{/* end */}
 				</div>
 			</div>
 		</div>

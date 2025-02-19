@@ -274,18 +274,13 @@ export default function Header() {
 										>
 											<ul className={styles.newBox}>
 												{menuData.map((menu, index) => (
-													<li key={index} className={styles.menuItem}>
-														<div
-															className={`${styles.menuTitle} text_xs`}
-															onClick={(e) => {
-																if (isMobile) {
-																	e.stopPropagation();
-																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-																}
-															}}
-															onMouseEnter={() => !isMobile && setActiveMenu(index)}
-															onMouseLeave={() => !isMobile && setActiveMenu(null)}
-														>
+													<li
+														key={index}
+														className={styles.menuItem}
+														onMouseEnter={() => !isMobile && setActiveMenu(index)}
+														onMouseLeave={() => !isMobile && setActiveMenu(null)}
+													>
+														<div className={`${styles.menuTitle} text_xs`}>
 															<span className={activeMenu === index ? styles.active : ""}>
 																{menu.title}
 															</span>
@@ -350,18 +345,19 @@ export default function Header() {
 										>
 											<ul className={styles.newBox}>
 												{aboutData.map((menu, index) => (
-													<li key={index} className={styles.menuItem}>
-														<div
-															className={`${styles.menuTitle} text_xs`}
-															onClick={(e) => {
-																if (isMobile) {
-																	e.stopPropagation();
-																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-																}
-															}}
-															onMouseEnter={() => !isMobile && setActiveMenu(index)}
-															onMouseLeave={() => !isMobile && setActiveMenu(null)}
-														>
+													<li
+														key={index}
+														className={styles.menuItem}
+														onClick={(e) => {
+															if (isMobile) {
+																e.stopPropagation();
+																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+															}
+														}}
+														onMouseEnter={() => !isMobile && setActiveMenu(index)}
+														onMouseLeave={() => !isMobile && setActiveMenu(null)}
+													>
+														<div className={`${styles.menuTitle} text_xs`}>
 															<span className={activeMenu === index ? styles.active : ""}>
 																{menu.title}
 															</span>
@@ -428,18 +424,19 @@ export default function Header() {
 											>
 												<ul className={styles.newBox}>
 													{resourcesData.map((menu, index) => (
-														<li key={index} className={styles.menuItem}>
-															<div
-																className={`${styles.menuTitle} text_xs`}
-																onClick={(e) => {
-																	if (isMobile) {
-																		e.stopPropagation();
-																		setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-																	}
-																}}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)}
-																onMouseLeave={() => !isMobile && setActiveMenu(null)}
-															>
+														<li
+															key={index}
+															className={styles.menuItem}
+															onClick={(e) => {
+																if (isMobile) {
+																	e.stopPropagation();
+																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																}
+															}}
+															onMouseEnter={() => !isMobile && setActiveMenu(index)}
+															onMouseLeave={() => !isMobile && setActiveMenu(null)}
+														>
+															<div className={`${styles.menuTitle} text_xs`}>
 																<span className={activeMenu === index ? styles.active : ""}>
 																	{menu.title}
 																</span>
@@ -507,18 +504,19 @@ export default function Header() {
 										>
 											<ul className={styles.newBox}>
 												{digitalData.map((menu, index) => (
-													<li key={index} className={styles.menuItem}>
-														<div
-															className={`${styles.menuTitle} text_xs`}
-															onClick={(e) => {
-																if (isMobile) {
-																	e.stopPropagation();
-																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-																}
-															}}
-															onMouseEnter={() => !isMobile && setActiveMenu(index)}
-															onMouseLeave={() => !isMobile && setActiveMenu(null)}
-														>
+													<li
+														key={index}
+														className={styles.menuItem}
+														onClick={(e) => {
+															if (isMobile) {
+																e.stopPropagation();
+																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+															}
+														}}
+														onMouseEnter={() => !isMobile && setActiveMenu(index)}
+														onMouseLeave={() => !isMobile && setActiveMenu(null)}
+													>
+														<div className={`${styles.menuTitle} text_xs`}>
 															<span className={activeMenu === index ? styles.active : ""}>
 																{menu.title}
 															</span>
@@ -582,18 +580,19 @@ export default function Header() {
 										>
 											<ul className={styles.newBox}>
 												{mediaData.map((menu, index) => (
-													<li key={index} className={styles.menuItem}>
-														<div
-															className={`${styles.menuTitle} text_xs`}
-															onClick={(e) => {
-																if (isMobile) {
-																	e.stopPropagation();
-																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-																}
-															}}
-															onMouseEnter={() => !isMobile && setActiveMenu(index)}
-															onMouseLeave={() => !isMobile && setActiveMenu(null)}
-														>
+													<li
+														key={index}
+														className={styles.menuItem}
+														onClick={(e) => {
+															if (isMobile) {
+																e.stopPropagation();
+																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+															}
+														}}
+														onMouseEnter={() => !isMobile && setActiveMenu(index)}
+														onMouseLeave={() => !isMobile && setActiveMenu(null)}
+													>
+														<div className={`${styles.menuTitle} text_xs`}>
 															<span className={activeMenu === index ? styles.active : ""}>
 																{menu.title}
 															</span>
