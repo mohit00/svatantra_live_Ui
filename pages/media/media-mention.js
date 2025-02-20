@@ -1,5 +1,5 @@
 // MODULES //
-
+import { useState } from "react";
 // COMPONENTS //
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -17,21 +17,41 @@ import styles from "@/styles/pages/MediaMention.module.scss";
 
 // IMAGES //
 import advent from "../../public/img/advent.png";
+import ladki from "../../public/img/media/ladki.jpg";
+import logo from "../../public/img/media/logo.svg";
+import MediaPopupContent from "@/components/MediaPopupContent";
 
 // DATA //
 
 /** Media Mention Page */
 export default function MediaMentionPage() {
+	const [isOpen, setIsOpen] = useState(false);
+	const [selectedBlog, setSelectedBlog] = useState(null);
+
+	/** */
+	const openPopup = (blog) => {
+		setSelectedBlog(blog);
+		setIsOpen(true);
+	};
+
+	/** */
+	const closePopup = () => {
+		setIsOpen(false);
+		setSelectedBlog(null);
+	};
+
 	const BlogList = [
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Malati's Tea Stall - A Blend for Business Excellence",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title:
@@ -39,21 +59,24 @@ export default function MediaMentionPage() {
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Role of rural women in Indian agricultural businesses",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Malati's Tea Stall - A Blend for Business Excellence",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title:
@@ -61,7 +84,8 @@ export default function MediaMentionPage() {
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Role of rural women in Indian agricultural businesses",
@@ -97,7 +121,11 @@ export default function MediaMentionPage() {
 						<div className={`${styles.GridBox}`}>
 							{BlogList.map((item, ind) => {
 								return (
-									<div className={`${styles.slider}`} key={ind}>
+									<div
+										className={`${styles.slider}`}
+										key={ind}
+										onClick={() => openPopup(item)}
+									>
 										<div className={`${styles.box1}`}>
 											<div className={`${styles.imgBox}`}>
 												<img
@@ -105,6 +133,9 @@ export default function MediaMentionPage() {
 													alt="box1"
 													className={`${styles.mainImg} width_100`}
 												/>
+												<div className={styles.logoBox}>
+													<img src={item.logo} />
+												</div>
 											</div>
 
 											<div className={`${styles.categoryBox}`}>
@@ -121,6 +152,17 @@ export default function MediaMentionPage() {
 									</div>
 								);
 							})}
+							<MediaPopupContent isOpen={isOpen} isClose={closePopup}>
+								{selectedBlog && (
+									<div className={styles.popupContent}>
+										<img
+											src={selectedBlog.image}
+											alt="blog-image"
+											className="width_100"
+										/>
+									</div>
+								)}
+							</MediaPopupContent>
 						</div>
 					</section>
 				</div>
