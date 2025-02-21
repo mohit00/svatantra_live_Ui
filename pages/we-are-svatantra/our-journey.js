@@ -19,9 +19,15 @@ import JourneyComponent from "@/sections/Journey";
 // IMAGES //
 
 // DATA //
+import { getOurJourney } from "@/services/whoWeAreService";
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const journeyData = await getOurJourney();
+	return { props: { journeyData }, revalidate: 60 };
+};
 
 /** Contact Page */
-export default function OurJourneyPage() {
+export default function OurJourneyPage({ journeyData }) {
 	return (
 		<div>
 			{/* Metatags */}
@@ -33,7 +39,7 @@ export default function OurJourneyPage() {
 			{/* Page Content starts here */}
 			<main className={styles.OurJourneyPage}>
 				<Breadcrum link2="our-journey" />
-				<JourneyComponent />
+				<JourneyComponent journeyData={journeyData} />
 			</main>
 			{/* Page Content ends here */}
 
