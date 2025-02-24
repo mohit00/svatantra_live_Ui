@@ -22,15 +22,24 @@ import parse from "html-react-parser";
 import styles from "@/styles/pages/InvestorIndex.module.scss";
 
 // IMAGES //
-
 import story_one from "../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
 import arrow_btn_popup from "../../public/img/arrow_btn_popup.svg";
 import frame from "../../public/img/frame.png";
+
 // DATA //
+import { getInvestors } from "@/services/Investors";
+
+/** getInvestors */
+export const getStaticProps = async (context) => {
+	const data = await getInvestors();
+	return { props: { data }, revalidate: 60 };
+};
 
 /** Investor Index Page */
-export default function InvestorIndexPage() {
+export default function InvestorIndexPage({ data }) {
+	console.log(data, "data");
+
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	const [slideNo, setSlideNo] = useState(0);
 
