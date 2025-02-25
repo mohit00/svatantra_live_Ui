@@ -20,6 +20,7 @@ import styles from "@/styles/pages/About.module.scss";
 import Breadcrum from "@/components/Breadcrumb";
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // IMAGES //
 import Girl1 from "../../public/img/about/girl.jpg";
@@ -34,9 +35,18 @@ import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
 import DesktopBanner from "../../public/img/about/desktop_banner.jpg";
 
 // DATA //
+import { getAwards } from "@/services/awardsService";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const awardsData = await getAwards();
+	return { props: { awardsData }, revalidate: 60 };
+};
 
 /** Contact Page */
-export default function AboutPage() {
+export default function AboutPage({ awardsData }) {
+	console.log(awardsData.data, " awardsData");
+
 	const svatantraPath = [
 		{
 			title: "Growth and expansion",
@@ -309,7 +319,24 @@ export default function AboutPage() {
 									}}
 									className={styles.slider}
 								>
-									<SwiperSlide className={`${styles.item}`}>
+									{awardsData.data &&
+										awardsData.data.map((item, ind) => {
+											return (
+												<SwiperSlide className={`${styles.item}`} key={ind}>
+													<div className={styles.itemContent}>
+														<div className={`${styles.item_img} pb_30`}>
+															<img
+																src={StrapiImage(item.logo).url}
+																className="img-responsive"
+																alt="Talent1"
+															/>
+														</div>
+														<p>{item.title}</p>
+													</div>
+												</SwiperSlide>
+											);
+										})}
+									{/* <SwiperSlide className={`${styles.item}`}>
 										<div className={styles.itemContent}>
 											<div className={`${styles.item_img} pb_30`}>
 												<img
@@ -365,7 +392,7 @@ export default function AboutPage() {
 												Year 2024
 											</p>
 										</div>
-									</SwiperSlide>
+									</SwiperSlide> */}
 								</Swiper>
 								<div
 									className={`${styles.progressBar} m_t_30 swiper-pagination2`}
