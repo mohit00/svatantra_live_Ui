@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
 
 // COMPONENTS //
@@ -20,8 +21,16 @@ import styles from "@/styles/pages/GalleryPage.module.scss";
 
 // DATA //
 
+// SERVICES //
+import { getGallery } from "@/services/galleryService";
+
+export const getStaticProps = async () => {
+	const GalleryList = await getGallery();
+	return { props: { GalleryList }, revalidate: 60 };
+};
+
 /** Contact Page */
-export default function GalleryPage() {
+export default function GalleryPage({ GalleryList }) {
 	return (
 		<div>
 			{/* Metatags */}
@@ -33,7 +42,7 @@ export default function GalleryPage() {
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
 				<Breadcrum link2="gallery" />
-				<GalleryComponent />
+				<GalleryComponent GalleryList={GalleryList} />
 			</main>
 			{/* Page Content ends here */}
 

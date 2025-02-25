@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 // MODULES //
 import { useEffect, useRef } from "react";
 
@@ -11,6 +12,7 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import "lightgallery/css/lightgallery.css"; // Core LightGallery CSS
@@ -29,7 +31,7 @@ import Zoom from "../../public/img/careers/zoom.png";
 // DATA //
 
 /** DummyComponent Component */
-export default function GalleryComponent() {
+export default function GalleryComponent({ GalleryList }) {
 	const lightGalleryRef = useRef(null);
 
 	// useEffect(() => {
@@ -62,6 +64,7 @@ export default function GalleryComponent() {
 		{ thumbnail: img_five.src, full: img_five.src },
 	];
 
+	console.log(GalleryList, "Gallery");
 	return (
 		<div className={`${styles.gallery} pb_80`}>
 			<div className="container">
@@ -98,14 +101,15 @@ export default function GalleryComponent() {
 						plugins={[lgThumbnail, lgZoom]}
 						elementClassNames={`${styles.driving_img_box} f_w_j custom-lightgallery`}
 					>
-						{drivingOne.map((item, colIndex) => (
+						{GalleryList.data.images.map((item, colIndex) => (
 							<div
-								data-src={item.full}
+								data-src={StrapiImage(item)?.url}
 								key={colIndex}
 								className={`${styles.item_img}`}
 							>
 								<img
-									src={item.full} // Thumbnail image
+									// src={item.full} // Thumbnail image
+									src={StrapiImage(item)?.url}
 									className="b_r_10"
 									alt={`Image ${colIndex + 1}`}
 								/>

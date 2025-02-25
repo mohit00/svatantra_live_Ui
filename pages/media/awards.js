@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable require-jsdoc */
 // MODULES //
 import { useState } from "react";
 
@@ -13,6 +15,7 @@ import Button from "@/components/Buttons/Button";
 // PLUGINS //
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/pages/Awards.module.scss";
@@ -27,83 +30,92 @@ import btnArrow from "../../public/img/home/BtnArrow.svg";
 
 // DATA //
 
+// SERVICES //
+import { getAwards } from "@/services/awardsService";
+
+export const getStaticProps = async () => {
+	const AwardsList = await getAwards();
+	return { props: { AwardsList }, revalidate: 60 };
+};
+
 /** Awards Page */
-export default function AwardsPage() {
-	const awardsData = [
-		{
-			title:
-				"Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential Microfinance Company of the Year 2024",
-			thumbnail: fintech.src,
-		},
-		{
-			title:
-				"National Awards for Excellence in BFSI - Microfinance Company of the Year 2024",
-			thumbnail: national.src,
-		},
-		{ title: "IGPTW Certified 2020 and 2022", thumbnail: best_workplace.src },
-		{
-			title:
-				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
-			thumbnail: inclusive.src,
-		},
-		{
-			title:
-				"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
-			thumbnail: innovation.src,
-		},
-		{
-			title:
-				"Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential Microfinance Company of the Year 2024",
-			thumbnail: fintech.src,
-		},
-		{
-			title:
-				"National Awards for Excellence in BFSI - Microfinance Company of the Year 2024",
-			thumbnail: national.src,
-		},
-		{ title: "IGPTW Certified 2020 and 2022", thumbnail: best_workplace.src },
-		{
-			title:
-				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
-			thumbnail: inclusive.src,
-		},
-		{
-			title:
-				"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
-			thumbnail: innovation.src,
-		},
-		{
-			title:
-				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
-			thumbnail: inclusive.src,
-		},
-		{
-			title:
-				"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
-			thumbnail: innovation.src,
-		},
-		{
-			title:
-				"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
-			thumbnail: inclusive.src,
-		},
-		{
-			title:
-				"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
-			thumbnail: innovation.src,
-		},
-	];
+export default function AwardsPage({ AwardsList }) {
+	// const awardsData = [
+	// 	{
+	// 		title:
+	// 			"Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential Microfinance Company of the Year 2024",
+	// 		thumbnail: fintech.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"National Awards for Excellence in BFSI - Microfinance Company of the Year 2024",
+	// 		thumbnail: national.src,
+	// 	},
+	// 	{ title: "IGPTW Certified 2020 and 2022", thumbnail: best_workplace.src },
+	// 	{
+	// 		title:
+	// 			"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
+	// 		thumbnail: inclusive.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
+	// 		thumbnail: innovation.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential Microfinance Company of the Year 2024",
+	// 		thumbnail: fintech.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"National Awards for Excellence in BFSI - Microfinance Company of the Year 2024",
+	// 		thumbnail: national.src,
+	// 	},
+	// 	{ title: "IGPTW Certified 2020 and 2022", thumbnail: best_workplace.src },
+	// 	{
+	// 		title:
+	// 			"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
+	// 		thumbnail: inclusive.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
+	// 		thumbnail: innovation.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
+	// 		thumbnail: inclusive.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
+	// 		thumbnail: innovation.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin, Microfinance Organisation of the year 2021.",
+	// 		thumbnail: inclusive.src,
+	// 	},
+	// 	{
+	// 		title:
+	// 			"Awarded for innovative indigenous App “SAATHI” by The Economic Times BFSI Innovation Tribe Summit & Awards 2020",
+	// 		thumbnail: innovation.src,
+	// 	},
+	// ];
 
 	const initialLimit = 9;
 	const [visibleAwards, setVisibleAwards] = useState(initialLimit);
-	const isAllDisplayed = visibleAwards >= awardsData.length;
+	const isAllDisplayed = visibleAwards >= AwardsList.length;
 
 	/** handleLoadMore */
 	const handleLoadMore = () => {
-		setVisibleAwards(isAllDisplayed ? initialLimit : awardsData.length);
+		setVisibleAwards(visibleAwards + 3);
+		// setVisibleAwards(isAllDisplayed ? initialLimit : AwardsList.length);
 	};
 
-	//console.log(awardsData);
+	console.log(AwardsList, "AwardsList");
 
 	return (
 		<div>
@@ -124,10 +136,15 @@ export default function AwardsPage() {
 
 						<div className={`${styles.content_main_wrap} pt_50`}>
 							<div className={`${styles.box_wrap}`}>
-								{awardsData.slice(0, visibleAwards).map((item, ind) => (
+								{AwardsList.data.slice(0, visibleAwards).map((item, ind) => (
 									<div className={`${styles.box_item}`} key={ind}>
 										<div className={`${styles.imgBox}`}>
-											<img src={item.thumbnail} className="b_r_10" alt="story img" />
+											<img
+												// src={item.thumbnail}
+												src={StrapiImage(item?.logo)?.url}
+												className="b_r_10"
+												alt="story img"
+											/>
 										</div>
 										<div className={`${styles.content} pt_20 f_r_aj_between`}>
 											<p className="text_reg_20 color_light_black font_secondary">
@@ -146,27 +163,30 @@ export default function AwardsPage() {
 								title={isAllDisplayed ? "Load Less" : "Load More"}
 								onClick={handleLoadMore}
 							/> */}
-							<div onClick={handleLoadMore}>
-								<a className={styles.btn_secondary}>
-									<span className={styles.btn_outer_span}>
-										<span
-											className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}
-										>
-											<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+							{!isAllDisplayed && (
+								<div onClick={handleLoadMore}>
+									<a className={styles.btn_secondary}>
+										<span className={styles.btn_outer_span}>
+											<span
+												className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}
+											>
+												<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+											</span>
+											<span
+												className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
+											>
+												{/* {isAllDisplayed ? "Load Less" : "Load More"} */}
+												Load More
+											</span>
+											<span
+												className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}
+											>
+												<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+											</span>
 										</span>
-										<span
-											className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
-										>
-											{isAllDisplayed ? "Load Less" : "Load More"}
-										</span>
-										<span
-											className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}
-										>
-											<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
-										</span>
-									</span>
-								</a>
-							</div>
+									</a>
+								</div>
+							)}
 						</div>
 					</div>
 				</section>
