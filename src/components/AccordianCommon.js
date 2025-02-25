@@ -57,7 +57,7 @@ export default function AccordianCommon({
 
 	return (
 		<div className={styles.accordion}>
-			{items.map((item, index) => (
+			{items?.map((item, index) => (
 				<div key={index} className={`${styles.accordionItem} b_r_12`}>
 					{/* Accordion Header */}
 					<div
