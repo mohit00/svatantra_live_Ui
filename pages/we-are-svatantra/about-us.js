@@ -51,8 +51,13 @@ export default function AboutPage() {
 			desc: "We will continue leveraging the power of digital technology.",
 		},
 		{
-			title: "Transformative solutions",
-			desc: "Offer more tailormade accessible credit solutions.",
+			title: "Foster synergies",
+			desc: "Closer synergies between our teams to drive industry leadership.",
+		},
+		{
+			title: "Undisputed leader",
+			desc:
+				"In asset management, customer satisfaction and operational excellence.",
 		},
 	];
 	return (
@@ -69,8 +74,8 @@ export default function AboutPage() {
 				<InnerBanner
 					desktopImage={DesktopBanner.src}
 					mobileImage={DesktopBanner.src}
-					bannerTitle="Helping you leave your mark on tomorrow"
-					bannerDesc="Fueling grassroots ambition with innovation, to power India's journey to global economic leadership."
+					bannerTitle="Enabling you leave your mark on tomorrow"
+					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of lowest interest rates in the country"
 				/>
 				<section className={`${styles.Committed} ptb_80`}>
 					<div className="container">
