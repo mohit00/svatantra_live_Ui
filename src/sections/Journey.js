@@ -20,7 +20,7 @@ import Journey1 from "../../public/img/journey/Journey1.jpg";
 
 /** DummyComponent Component */
 export default function JourneyComponent({ journeyData }) {
-	// console.log(journeyData, " journeyData");
+	console.log(journeyData, " journeyData");
 
 	const journeyBoxRef = useRef(null);
 	const [isInView, setIsInView] = useState(false);
@@ -62,11 +62,33 @@ export default function JourneyComponent({ journeyData }) {
 					<div ref={titleRef}>
 						{journeyData.data &&
 							journeyData.data.map((item, index) => {
+								const isLast = index === journeyData.data.length - 1;
+
 								return (
-									<div className={`${styles.Journey_box} f_w_j`} key={index}>
+									<div
+										className={`${styles.Journey_box} ${
+											isLast ? "last" : "notLast"
+										} f_w_j`}
+										key={index}
+										ref={isLast ? journeyBoxRef : null}
+									>
 										<div className={`${styles.title}`}>
 											<h2>
-												<span className={`${styles.color_trans}`}>20</span>
+												<span
+													className={`${styles.position_fixed} ${
+														isInView ? styles.additionalClass : ""
+													}`}
+													style={{ top: `${offsetTop}px` }}
+												>
+													20
+												</span>
+												<span
+													className={`${styles.color_trans} ${
+														isInView ? styles.additionalClassRemove : ""
+													}`}
+												>
+													20
+												</span>
 												{item.year.toString().substring(2)}
 											</h2>
 										</div>
@@ -92,117 +114,6 @@ export default function JourneyComponent({ journeyData }) {
 									</div>
 								);
 							})}
-						{/* <div className={`${styles.Journey_box} f_w_j`}>
-							<div className={`${styles.title}`}>
-								<h2>
-									<span className={`${styles.color_trans}`}>20</span>12
-								</h2>
-							</div>
-							<div className={`${styles.info_wrapper}`}>
-								<div className={`${styles.info}`}>
-									<h4 className="text_reg f_w_b">February</h4>
-									<h6 className="text_sm f_w_m opacity_80">
-										Svatantra Microfin founded by Ananya Birla.
-									</h6>
-									<div className={`${styles.image} pt_20`}>
-										<img src={Journey1.src} className="img-responsive" alt="Journey" />
-									</div>
-								</div>
-								<div className={`${styles.info}`}>
-									<h4 className="text_reg f_w_b">February</h4>
-									<h6 className="text_sm f_w_m opacity_80">
-										Svatantra Microfin founded by Ananya Birla.
-									</h6>
-									<div className={`${styles.image} pt_20`}>
-										<img src={Journey1.src} className="img-responsive" alt="Journey" />
-									</div>
-								</div>
-								<div className={`${styles.info}`}>
-									<h4 className="text_reg f_w_b">February</h4>
-									<h6 className="text_sm f_w_m opacity_80">
-										Svatantra Microfin founded by Ananya Birla.
-									</h6>
-									<div className={`${styles.image} pt_20`}>
-										<img src={Journey1.src} className="img-responsive" alt="Journey" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className={`${styles.Journey_box} f_w_j`}>
-							<div className={`${styles.title}`}>
-								<h2>
-									<span className={`${styles.color_trans}`}>20</span>13
-								</h2>
-							</div>
-							<div className={`${styles.info_wrapper}`}>
-								<div className={`${styles.info}`}>
-									<h4 className="text_reg f_w_b">February</h4>
-									<h6 className="text_sm f_w_m opacity_80">
-										Svatantra Microfin founded by Ananya Birla.
-									</h6>
-									<div className={`${styles.image} pt_20`}>
-										<img src={Journey1.src} className="img-responsive" alt="Journey" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className={`${styles.Journey_box} f_w_j`}>
-							<div className={`${styles.title}`}>
-								<h2>
-									<span className={`${styles.color_trans}`}>20</span>14
-								</h2>
-							</div>
-							<div className={`${styles.info_wrapper}`}>
-								<div className={`${styles.info}`}>
-									<h4 className="text_reg f_w_b">February</h4>
-									<h6 className="text_sm f_w_m opacity_80">
-										Svatantra Microfin founded by Ananya Birla.
-									</h6>
-									<div className={`${styles.image} pt_20`}>
-										<img src={Journey1.src} className="img-responsive" alt="Journey" />
-									</div>
-								</div>
-							</div>
-						</div> */}
-						<div className={`${styles.Journey_box} f_w_j`} ref={journeyBoxRef}>
-							{/* <div className={`${styles.title}`}>
-							<h2>
-								<span className={`${styles.position_fixed}`}>20</span>
-								<span className={`${styles.color_trans}`}>20</span>15
-							</h2>
-						</div> */}
-							<div className={`${styles.title}`}>
-								<h2>
-									<span
-										className={`${styles.position_fixed} ${
-											isInView ? styles.additionalClass : ""
-										}`}
-										style={{ top: `${offsetTop}px` }}
-									>
-										20
-									</span>
-									<span
-										className={`${styles.color_trans} ${
-											isInView ? styles.additionalClassRemove : ""
-										}`}
-									>
-										20
-									</span>
-									15
-								</h2>
-							</div>
-							<div className={`${styles.info_wrapper}`}>
-								<div className={`${styles.info}`}>
-									<h4 className="text_reg f_w_b">February</h4>
-									<h6 className="text_sm f_w_m opacity_80">
-										Svatantra Microfin founded by Ananya Birla.
-									</h6>
-									<div className={`${styles.image} pt_20`}>
-										<img src={Journey1.src} className="img-responsive" alt="Journey" />
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
