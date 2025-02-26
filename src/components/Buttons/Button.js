@@ -20,38 +20,70 @@ import btnArrowBlack from "../../../public/img/home/BtnArrowBlack.svg";
 // DATA //
 
 /** Button Component */
-const Button = ({ buttonType, link, title, condition, isButton }) => {
+const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 	switch (buttonType) {
 		case "primary":
 			return (
-				<Link href={link}>
-					<a className={styles.btn_primary}>
-						<span className={styles.span_inner}>
-							<img src={btnArrow.src} className={`${styles.btn_arrow}`} />
-						</span>
-					</a>
-				</Link>
+				<>
+					{isHref ? (
+						<Link href={link}>
+							<a className={styles.btn_primary}>
+								<span className={styles.span_inner}>
+									<img src={btnArrow.src} className={`${styles.btn_arrow}`} />
+								</span>
+							</a>
+						</Link>
+					) : (
+						<button className={styles.btn_primary}>
+							<span className={styles.span_inner}>
+								<img src={btnArrow.src} className={`${styles.btn_arrow}`} />
+							</span>
+						</button>
+					)}
+				</>
 			);
 		case "secondary":
 			return (
 				// <Link >
 				<div>
-					<a
-						className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
-						href={link}
-					>
-						<span className={styles.btn_outer_span}>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
-								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+					{isHref ? (
+						<a
+							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
+							href={link}
+						>
+							<span className={styles.btn_outer_span}>
+								<span
+									className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}
+								>
+									<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+								</span>
+								<span className={`${styles.btn_inner_text} text_xs color_white f_w_m`}>
+									{title}
+								</span>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+									<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+								</span>
 							</span>
-							<span className={`${styles.btn_inner_text} text_xs color_white f_w_m`}>
-								{title}
+						</a>
+					) : (
+						<button
+							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
+						>
+							<span className={styles.btn_outer_span}>
+								<span
+									className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}
+								>
+									<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+								</span>
+								<span className={`${styles.btn_inner_text} text_xs color_white f_w_m`}>
+									{title}
+								</span>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+									<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+								</span>
 							</span>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
-								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
-							</span>
-						</span>
-					</a>
+						</button>
+					)}
 				</div>
 				// </Link>
 			);

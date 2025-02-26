@@ -27,6 +27,7 @@ import styles from "@/styles/pages/CustomerTestimonials.module.scss";
 // SERVICES //
 
 // DATA //
+import { getCustomerTestimonials } from "@/services/impactService";
 
 /** Data Fetching  */
 
@@ -37,8 +38,19 @@ import arrow_btn from "../../../public/img/arrow_btn.svg";
 import arrow_btn_popup from "../../../public/img/arrow_btn_popup.svg";
 import frame from "../../../public/img/frame.png";
 
+// UTILS //
+import StrapiImage from "@/utils/StrapiImage";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const customertTestimonialData = await getCustomerTestimonials();
+	return { props: { customertTestimonialData }, revalidate: 60 };
+};
+
 /** CustomerTestimonials Page */
-export default function CustomerTestimonials() {
+export default function CustomerTestimonials({ customertTestimonialData }) {
+	const [showItems, setShowItems] = useState(4); // State to manage the number of items to show
+
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
 	const [slideNo, setSlideNo] = useState(0);
 
@@ -50,6 +62,10 @@ export default function CustomerTestimonials() {
 		setSlideNo(index);
 		setIsPopupOpen(true);
 		setOpenPop1(true);
+	};
+	/** handleShowMore function */
+	const handleLoadMore = () => {
+		setShowItems(showItems + 2); // Increase the number of items to show by 6
 	};
 
 	/** handleClosePopup Function */
@@ -124,7 +140,28 @@ export default function CustomerTestimonials() {
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
 							<div className={`${styles.box_wrap}`}>
-								{customerTestimonialsData.map((item, ind) => {
+								{customertTestimonialData.data.slice(0, showItems).map((item, ind) => {
+									return (
+										<div className={`${styles.box_item}`} key={ind}>
+											<img
+												src={StrapiImage(item.thumbnail).url}
+												className="b_r_10"
+												alt="story img"
+											/>
+											<div className={`${styles.content} pt_20 f_r_aj_between`}>
+												<p className="text_md color_light_black font_secondary opacity_8">
+													{item.title}
+												</p>
+												<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
+													<a href="">
+														<img src={arrow_btn.src} alt="arrow icon" />
+													</a>
+												</div>
+											</div>
+										</div>
+									);
+								})}
+								{/* {customerTestimonialsData.map((item, ind) => {
 									return (
 										<div className={`${styles.box_item}`} key={ind}>
 											<img src={item.thumbnail} className="b_r_10" alt="story img" />
@@ -140,18 +177,26 @@ export default function CustomerTestimonials() {
 											</div>
 										</div>
 									);
-								})}
+								})} */}
 							</div>
 							{/*  */}
 						</div>
-						<div className={`${styles.BtnBx} f_r_aj_center pt_60`}>
-							<Button
-								buttonType="secondary"
-								condition={"white"}
-								link={"#"}
-								title={"More Stories"}
-							/>
-						</div>
+						{customertTestimonialData.data.length > showItems ? (
+							<div
+								className={`${styles.BtnBx} f_r_aj_center pt_60`}
+								onClick={handleLoadMore}
+							>
+								<Button
+									buttonType="secondary"
+									condition={"white"}
+									link={"#"}
+									title={"More Stories"}
+									isHref={false}
+								/>
+							</div>
+						) : (
+							""
+						)}
 					</div>
 				</section>
 
@@ -174,7 +219,7 @@ export default function CustomerTestimonials() {
 										className={styles.slider}
 										ref={sliderRef}
 									>
-										{customerTestimonialsData.map((item, ind) => (
+										{customertTestimonialData.data.map((item, ind) => (
 											<SwiperSlide className={`${styles.item}`} key={ind}>
 												<div className={`${styles.PopupItem}`}>
 													<div className={styles.ImgBx}>

@@ -13,6 +13,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 // PLUGINS //
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/pages/Blogs.module.scss";
@@ -21,11 +22,19 @@ import styles from "@/styles/pages/Blogs.module.scss";
 import advent from "../../../public/img/advent.png";
 
 // DATA //
+import { getAllBlogs } from "@/services/BlogService";
 
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const blogsData = await getAllBlogs();
+	return { props: { blogsData }, revalidate: 60 };
+};
 /** Blogs Page */
-export default function BlogsPage() {
+export default function BlogsPage({ blogsData }) {
+	console.log(blogsData, " blogsData");
+
 	const [selectedOptions, setSelectedOptions] = useState({
-		select1: "Svatantra Microfin",
+		select1: blogsData.data[0].author.name,
 		select2: "2023",
 	});
 
@@ -42,6 +51,8 @@ export default function BlogsPage() {
 	const options2 = [{ label: "2024" }, { label: "2025" }, { label: "2026" }];
 
 	const toggleDropdown = (dropdown) => {
+		console.log(dropdown, " dropdown");
+
 		setOpenDropdowns((prevState) => ({
 			select1: dropdown === "select1" ? !prevState.select1 : false,
 			select2: dropdown === "select2" ? !prevState.select2 : false,
@@ -51,7 +62,7 @@ export default function BlogsPage() {
 	const handleOptionClick = (option, dropdown) => {
 		setSelectedOptions((prevState) => ({
 			...prevState,
-			[dropdown]: option.label,
+			[dropdown]: option.author.name,
 		}));
 
 		setOpenDropdowns({ select1: false, select2: false });
@@ -150,20 +161,21 @@ export default function BlogsPage() {
 
 											{openDropdowns.select1 && (
 												<ul className={`${styles.select_options}`}>
-													{options.map((option) => (
+													{[
+														...new Map(
+															blogsData.data.map((item) => [item.author.name, item])
+														).values(),
+													].map((option) => (
 														<li
-															key={option.label}
+															key={option.title}
 															className={`${styles.select_option} ${
-																option.label === selectedOptions.select1 ? styles.selected : ""
+																option.author.name === selectedOptions.select1
+																	? styles.selected
+																	: ""
 															}`}
 															onClick={() => handleOptionClick(option, "select1")}
 														>
-															{/* <img
-															src={option.icon}
-															alt={option.label}
-															className={`${styles.option_icon}`}
-														/> */}
-															<span className="text_reg">{option.label}</span>
+															<span className="text_reg">{option.author.name}</span>
 														</li>
 													))}
 												</ul>
@@ -224,6 +236,33 @@ export default function BlogsPage() {
 							</div>
 						</div>
 						<div className={`${styles.GridBox}`}>
+							{blogsData.data.map((item, ind) => {
+								return (
+									<div className={`${styles.slider}`} key={ind}>
+										<div className={`${styles.box1}`}>
+											<div className={`${styles.imgBox}`}>
+												<img
+													src={StrapiImage(item.thumbnail).url}
+													alt="box1"
+													className={`${styles.mainImg}`}
+												/>
+												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
+											</div>
+
+											<div className={`${styles.categoryBox}`}>
+												<div className={`${styles.news}`}>
+													<p>{item.author.name}</p>
+												</div>
+												<div className={`${styles.date}`}>
+													<p>{item.date}</p>
+												</div>
+											</div>
+
+											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
+										</div>
+									</div>
+								);
+							})}
 							{BlogList.map((item, ind) => {
 								return (
 									<div className={`${styles.slider}`} key={ind}>
