@@ -46,54 +46,18 @@ export default function Header() {
 		}
 	}, []);
 
-	const menuData = [
-		{
-			title: "Reports & statement",
-			subItems: [
-				"Annual report",
-				"Annual return",
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
-		{
-			title: "Circulars and announcements",
-			subItems: [
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Agency partners", subItems: [] },
-		{ title: "Connect with us", subItems: [] },
-		{ title: "Credit and grading", subItems: [] },
+	const aboutData = [
+		{ title: "Overview", subItems: [] },
+		{ title: "Our Journey ", subItems: [] },
+		{ title: "Leadership Team", subItems: [] },
 	];
 
-	const aboutData = [
+	const menuData = [
 		{
-			title: "Reports & statement",
-			subItems: [
-				"Annual report",
-				"Annual return",
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
+			title: "Stories of Svatantra",
+			subItems: ["Customer Testimonials", "Financial Training"],
 		},
-		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
-		{
-			title: "Circulars and announcements",
-			subItems: [
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Agency partners", subItems: [] },
-		{ title: "Connect with us", subItems: [] },
-		{ title: "Credit and grading", subItems: [] },
+		{ title: "CSR", subItems: [] },
 	];
 
 	const resourcesData = [
@@ -147,28 +111,32 @@ export default function Header() {
 	];
 
 	const mediaData = [
-		{
-			title: "Reports & statement",
-			subItems: [
-				"Annual report",
-				"Annual return",
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
-		{
-			title: "Circulars and announcements",
-			subItems: [
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Agency partners", subItems: [] },
-		{ title: "Connect with us", subItems: [] },
-		{ title: "Credit and grading", subItems: [] },
+		// {
+		// 	title: "Reports & statement",
+		// 	subItems: [
+		// 		"Annual report",
+		// 		"Annual return",
+		// 		"Board of Directors and KMP",
+		// 		"List of committees",
+		// 		"ISIN reconciliation statement",
+		// 	],
+		// },
+		// { title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		// {
+		// 	title: "Circulars and announcements",
+		// 	subItems: [
+		// 		"Board of Directors and KMP",
+		// 		"List of committees",
+		// 		"ISIN reconciliation statement",
+		// 	],
+		// },
+		{ title: "Blogs", subItems: [] },
+		{ title: "Events", subItems: [] },
+		{ title: "Press Release", subItems: [] },
+		{ title: "Media Mention", subItems: [] },
+		{ title: "Gallery", subItems: [] },
+		{ title: "Corporate Brochure", subItems: [] },
+		{ title: "Awards", subItems: [] },
 	];
 
 	// Close dropdown when clicking outside
@@ -273,7 +241,7 @@ export default function Header() {
 											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 										>
 											<ul className={styles.newBox}>
-												{menuData.map((menu, index) => (
+												{aboutData.map((menu, index) => (
 													<li
 														key={index}
 														className={styles.menuItem}
@@ -344,7 +312,7 @@ export default function Header() {
 											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 										>
 											<ul className={styles.newBox}>
-												{aboutData.map((menu, index) => (
+												{menuData.map((menu, index) => (
 													<li
 														key={index}
 														className={styles.menuItem}

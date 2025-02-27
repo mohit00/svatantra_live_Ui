@@ -143,11 +143,12 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 							grit and determination, fuel the engines of progress, propelling our
 							nation towards a brighter future.
 						</p>
-						<div className={`${styles.BtnBx} pt_20 hidden`}>
+						<div className={`${styles.BtnBx} pt_20 `}>
 							<Button
+								isHref
 								buttonType="secondary"
 								condition={"white"}
-								link={"#"}
+								link={"/we-are-svatantra/about-us"}
 								title={"Grow More"}
 							/>
 						</div>

@@ -65,11 +65,12 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 						cashless disbursement and roll out a customer facing app, bringing success
 						to your fingertips.
 					</p>
-					<div className={`${styles.BtnBx} hidden`}>
+					<div className={`${styles.BtnBx}`}>
 						<Button
+							isHref
 							buttonType="secondary"
 							condition={"white"}
-							link={"#"}
+							link={"/digitally-svatantra"}
 							title={"Explore More"}
 						/>
 					</div>{" "}

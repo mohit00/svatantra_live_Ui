@@ -106,10 +106,11 @@ export default function AboutPage({ awardsData }) {
 								</div>
 								<div className={`${styles.committed_info}`}>
 									<p className="text_sm opacity_8">
-										Our purpose is to cultivate a new generation of entrepreneurs who will
-										shape India’s journey into a global economic superpower. Taking every
-										step forward, we strive to turn aspirations into accomplishments,
-										creating ripples of progress far beyond our own world.
+										We provide rural and semi-urban communities with access to diverse
+										microfinance solutions using the latest technology. From offering one
+										of the lowest interest rates in the industry to pioneering 100%
+										cashless disbursements, our approach is built on innovation,
+										transparency, and empowerment.
 									</p>
 								</div>
 							</div>

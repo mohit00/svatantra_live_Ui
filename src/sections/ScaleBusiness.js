@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 
 // COMPONENTS //
 import Accordian from "@/components/Accordian";
+import Button from "@/components/Buttons/Button";
 
 // SECTIONS //
 
@@ -30,12 +31,14 @@ export default function ScaleBusiness() {
 	const accordianData = [
 		{
 			maintitle: "Microfinance loans",
+			PageLink: "/our-products/microfinance-loans",
 			AccNo: "01",
 			description:
 				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
 		},
 		{
 			maintitle: "MSME loans",
+			PageLink: "/our-products/msme-loans",
 			AccNo: "02",
 			description:
 				"Enabling entrepreneurs, especially rural women to meet their needs and scale their businesses to new heights.",
@@ -119,9 +122,16 @@ export default function ScaleBusiness() {
 									key={index}
 								>
 									<div className={`${styles.AccContentBx}`}>
-										<div className={`${styles.ContentBx} color_white`}>
+										<div className={`${styles.ContentBx} color_white pb_10`}>
 											<p className="text_xs text_500">{parse(data.description)}</p>
 										</div>
+										<Button
+											isHref
+											buttonType="secondary"
+											condition={"white"}
+											link={data.PageLink}
+											title={"Read More"}
+										/>
 									</div>
 								</Accordian>
 							))}

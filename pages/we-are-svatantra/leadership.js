@@ -106,6 +106,8 @@ export default function LeadershipPage({ leadershipsData }) {
 							building a future where financial freedom is accessible to all.
 						</p>
 						{leadershipsData.data.map((item, index) => {
+							if (!item.desc) return null;
+							const paragraphs = item.desc.split(/<br\s*\/?>/i);
 							return (
 								<>
 									{item.isFounder && (
@@ -120,8 +122,20 @@ export default function LeadershipPage({ leadershipsData }) {
 														</a>
 													</p>
 												</div>
-												<div className="text_sm color_light_black f_w_m opacity_80 pb_20">
+												{/* <div className="text_sm color_light_black f_w_m opacity_80 pb_20">
 													{parse(item.desc)}
+												</div> */}
+												<div className="text_sm color_light_black f_w_m opacity_80 pb_20">
+													{parse(paragraphs[0])}
+												</div>
+												<div
+													className={`${styles.paraWrapper} ${isVisible ? styles.show : ""}`}
+												>
+													{isVisible && paragraphs[2] && (
+														<p className="text_sm color_light_black f_w_m opacity_80">
+															{parse(paragraphs.slice(2).join("<br>"))}
+														</p>
+													)}
 												</div>
 												{/* <p className="text_sm color_light_black f_w_m opacity_80 pb_20">
 													At 17, Ananya Birla founded Svatantra Microfin Pvt. Ltd., setting a
