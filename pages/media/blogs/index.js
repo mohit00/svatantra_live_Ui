@@ -239,50 +239,29 @@ export default function BlogsPage({ blogsData }) {
 							{blogsData.data.map((item, ind) => {
 								return (
 									<div className={`${styles.slider}`} key={ind}>
-										<div className={`${styles.box1}`}>
-											<div className={`${styles.imgBox}`}>
-												<img
-													src={StrapiImage(item.thumbnail).url}
-													alt="box1"
-													className={`${styles.mainImg}`}
-												/>
-												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
-											</div>
-
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>{item.author.name}</p>
+										<a href={`blogs/${item.slug}`}>
+											<div className={`${styles.box1}`}>
+												<div className={`${styles.imgBox}`}>
+													<img
+														src={StrapiImage(item.thumbnail).url}
+														alt="box1"
+														className={`${styles.mainImg}`}
+													/>
+													{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
 												</div>
-												<div className={`${styles.date}`}>
-													<p>{item.date}</p>
-												</div>
-											</div>
 
-											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
-										</div>
-									</div>
-								);
-							})}
-							{BlogList.map((item, ind) => {
-								return (
-									<div className={`${styles.slider}`} key={ind}>
-										<div className={`${styles.box1}`}>
-											<div className={`${styles.imgBox}`}>
-												<img src={item.image} alt="box1" className={`${styles.mainImg}`} />
-												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
-											</div>
-
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>{item.cardtype}</p>
+												<div className={`${styles.categoryBox}`}>
+													<div className={`${styles.news}`}>
+														<p>{item.author.name}</p>
+													</div>
+													<div className={`${styles.date}`}>
+														<p>{item.date}</p>
+													</div>
 												</div>
-												<div className={`${styles.date}`}>
-													<p>{item.date}</p>
-												</div>
-											</div>
 
-											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
-										</div>
+												<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
+											</div>
+										</a>
 									</div>
 								);
 							})}
