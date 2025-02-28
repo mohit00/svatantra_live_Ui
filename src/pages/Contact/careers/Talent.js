@@ -1,4 +1,5 @@
 // MODULES //
+import { useState } from "react";
 
 // COMPONENTS //
 import Button from "@/components/Buttons/Button";
@@ -24,7 +25,16 @@ import Talent1 from "../../../../public/img/careers/talent1.jpg";
 // DATA //
 
 /** DummyComponent Component */
-export default function TalentComponent() {
+export default function TalentComponent({ data }) {
+	console.log(data, "talents");
+	const [activeType, setActiveType] = useState("Paintings");
+
+	// Get unique types
+	const uniqueTypes = [...new Set(data.data.map((item) => item.types))];
+
+	// Filtered data based on activeType
+	const filteredData = data.data.filter((item) => item.types === activeType);
+
 	return (
 		<div className={`${styles.talent} pt_40 pb_80`}>
 			<div className="container">
@@ -32,18 +42,17 @@ export default function TalentComponent() {
 				<div className={`${styles.talent_section}`}>
 					<div className={`${styles.switchBox_wrapper}`}>
 						<div className={`${styles.switchBox}`}>
-							<div className={`${styles.tabNav} `}>
-								<p className="text_reg f_w_m">Paintings</p>
-							</div>
-							<div className={`${styles.tabNav} ${styles.active}`}>
-								<p className="text_reg f_w_m">Handicraft</p>
-							</div>
-							<div className={`${styles.tabNav} `}>
-								<p className="text_reg f_w_m">Poems</p>
-							</div>
-							<div className={`${styles.tabNav} `}>
-								<p className="text_reg f_w_m">Videos</p>
-							</div>
+							{uniqueTypes.map((type) => (
+								<div
+									key={type}
+									className={`${styles.tabNav} ${
+										activeType === type ? styles.active : ""
+									}`}
+									onClick={() => setActiveType(type)}
+								>
+									<p className="text_reg f_w_m">{type}</p>
+								</div>
+							))}
 						</div>
 					</div>
 					<div className="pt_40">
@@ -87,42 +96,17 @@ export default function TalentComponent() {
 							}}
 							className={styles.slider}
 						>
-							<SwiperSlide className={`${styles.item}`}>
-								<div className={styles.itemContent}>
-									<div className={`${styles.item_img} pb_30`}>
-										<img src={Talent1.src} className="img-responsive" alt="Talent1" />
+							{filteredData.map((item) => (
+								<SwiperSlide key={item.id} className={styles.item}>
+									<div className={styles.itemContent}>
+										<div className={`${styles.item_img} pb_30`}>
+											<img src={Talent1.src} className="img-responsive" alt="Talent1" />
+										</div>
+										<h4 className="text_md">{item.name}</h4>
+										<h6 className="text_xs opacity_80">{item.location}</h6>
 									</div>
-									<h4 className="text_md">Shital Kalambe</h4>
-									<h6 className="text_xs opacity_80">Mumbai</h6>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide className={`${styles.item}`}>
-								<div className={styles.itemContent}>
-									<div className={`${styles.item_img} pb_30`}>
-										<img src={Talent1.src} className="img-responsive" alt="Talent1" />
-									</div>
-									<h4 className="text_md">Shital Kalambe</h4>
-									<h6 className="text_xs opacity_80">Mumbai</h6>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide className={`${styles.item}`}>
-								<div className={styles.itemContent}>
-									<div className={`${styles.item_img} pb_30`}>
-										<img src={Talent1.src} className="img-responsive" alt="Talent1" />
-									</div>
-									<h4 className="text_md">Shital Kalambe</h4>
-									<h6 className="text_xs opacity_80">Mumbai</h6>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide className={`${styles.item}`}>
-								<div className={styles.itemContent}>
-									<div className={`${styles.item_img} pb_30`}>
-										<img src={Talent1.src} className="img-responsive" alt="Talent1" />
-									</div>
-									<h4 className="text_md">Shital Kalambe</h4>
-									<h6 className="text_xs opacity_80">Mumbai</h6>
-								</div>
-							</SwiperSlide>
+								</SwiperSlide>
+							))}
 						</Swiper>
 						<div className={`${styles.progressBar} m_t_30 swiper-pagination2`}></div>
 						<div className={`${styles.arrowSection} f_w_a_j_center`}>

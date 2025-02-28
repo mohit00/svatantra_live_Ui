@@ -5,6 +5,7 @@
 // SECTIONS //
 
 // PLUGINS //
+import parse from "html-react-parser";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -23,7 +24,7 @@ import Employees from "../../../../public/img/careers/employees1.jpg";
 // DATA //
 
 /** DummyComponent Component */
-export default function EmployeesComponent() {
+export default function EmployeesComponent({ data }) {
 	return (
 		<div className={`${styles.Employees} pt_40 pb_80`}>
 			<div className="container">
@@ -77,94 +78,22 @@ export default function EmployeesComponent() {
 					}}
 					className={styles.slider}
 				>
-					<SwiperSlide className={`${styles.item}`}>
-						<div className={`${styles.itemContent} f_r_aj_between f_w`}>
-							<div className={`${styles.item_img}`}>
-								<img src={Employees.src} className="img-responsive" alt="Employees" />
-							</div>
-							<div className={`${styles.item_info}`}>
-								<h4 className="text_md">Vineet Chattree</h4>
-								<h6 className="text_xs opacity_80 pb_20">
-									Managing Director, Svatantra Microfin Pvt. Ltd
-								</h6>
-								<p className="text_sm opacity_80">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-									commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-									velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-									occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className={`${styles.item}`}>
-						<div className={`${styles.itemContent} f_r_aj_between f_w`}>
-							<div className={`${styles.item_img}`}>
-								<img src={Employees.src} className="img-responsive" alt="Employees" />
-							</div>
-							<div className={`${styles.item_info}`}>
-								<h4 className="text_md">Vineet Chattree</h4>
-								<h6 className="text_xs opacity_80 pb_20">
-									Managing Director, Svatantra Microfin Pvt. Ltd
-								</h6>
-								<p className="text_sm opacity_80">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-									commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-									velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-									occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className={`${styles.item}`}>
-						<div className={`${styles.itemContent} f_r_aj_between f_w`}>
-							<div className={`${styles.item_img}`}>
-								<img src={Employees.src} className="img-responsive" alt="Employees" />
-							</div>
-							<div className={`${styles.item_info}`}>
-								<h4 className="text_md">Vineet Chattree</h4>
-								<h6 className="text_xs opacity_80 pb_20">
-									Managing Director, Svatantra Microfin Pvt. Ltd
-								</h6>
-								<p className="text_sm opacity_80">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-									commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-									velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-									occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide className={`${styles.item}`}>
-						<div className={`${styles.itemContent} f_r_aj_between f_w`}>
-							<div className={`${styles.item_img}`}>
-								<img src={Employees.src} className="img-responsive" alt="Employees" />
-							</div>
-							<div className={`${styles.item_info}`}>
-								<h4 className="text_md">Vineet Chattree</h4>
-								<h6 className="text_xs opacity_80 pb_20">
-									Managing Director, Svatantra Microfin Pvt. Ltd
-								</h6>
-								<p className="text_sm opacity_80">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-									veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-									commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-									velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-									occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-									mollit anim id est laborum.
-								</p>
-							</div>
-						</div>
-					</SwiperSlide>
+					{data.data.map((item, ind) => {
+						return (
+							<SwiperSlide className={`${styles.item}`} key={ind}>
+								<div className={`${styles.itemContent} f_r_aj_between f_w`}>
+									<div className={`${styles.item_img}`}>
+										<img src={Employees.src} className="img-responsive" alt="Employees" />
+									</div>
+									<div className={`${styles.item_info}`}>
+										<h4 className="text_md">{item.name}</h4>
+										<h6 className="text_xs opacity_80 pb_20">{item.designation}</h6>
+										<p className="text_sm opacity_80">{parse(item.desc)}</p>
+									</div>
+								</div>
+							</SwiperSlide>
+						);
+					})}
 				</Swiper>
 			</div>
 			<div className="container">
