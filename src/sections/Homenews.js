@@ -142,8 +142,9 @@ export default function Homenews() {
 								<p className="text_reg f_w_m">Awards</p>
 							</div>
 						</div>
-						<div className={`${styles.BtnBx} ${styles.hiddenButton} hidden`}>
+						<div className={`${styles.BtnBx} ${styles.hiddenButton}`}>
 							<Button
+								isHref
 								buttonType="secondary"
 								condition={"white"}
 								link={"#"}
