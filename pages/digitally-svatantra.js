@@ -23,7 +23,7 @@ import styles from "@/styles/pages/DigitallySvatantra.module.scss";
 import banner_desktop from "../public/img/digitally-svatantra/banner_desktop.jpg";
 
 // DATA //
-import { getDigitalSvatantra } from "@/services/digitalSvatantra";
+import { getDigitalSvatantra } from "@/services/digitalSvatantraService";
 /** getDigitallySvatantra */
 /** */
 export const getStaticProps = async () => {
