@@ -157,11 +157,11 @@ export default function BlogsInsidePage({ data }) {
 						<div className={`${styles.ImgBx}`}>
 							<picture>
 								<source
-									srcSet={StrapiImage(data?.banner.mobile).url}
+									srcSet={StrapiImage(data?.banner.mobile)?.url}
 									media="(max-width:767px)"
 								/>
 								<img
-									src={StrapiImage(data?.banner.desktop).url}
+									src={StrapiImage(data?.banner.desktop)?.url}
 									className="b_r_10"
 									alt=""
 								/>
