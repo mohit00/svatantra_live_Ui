@@ -49,7 +49,7 @@ export default function MicrofinanceLoans() {
 		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
 			"We provide one of the lowest interest rates in India.",
-			"Services that enable rural and semi-urban women entrepreneurs to become agents of change within their communities.",
+			" Services that enable rural and semi-urban women entrepreneurs to become agents of change within their communities.",
 			"Customised solutions for entrepreneurs to achieve business goals and drive economic growth.",
 			"A financial ecosystem that ensures every individual experiences a self-reliant future.",
 		],
