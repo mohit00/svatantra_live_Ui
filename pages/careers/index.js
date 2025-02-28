@@ -24,10 +24,20 @@ import styles from "@/styles/pages/careers.module.scss";
 // IMAGES //
 import Girl1 from "../../public/img/about/girl.jpg";
 import Girl2 from "../../public/img/about/girl2.jpg";
+
+// SERVICES //
+import { getEmployeeTestimonials, getTalents } from "@/services/CareersService";
+
 // DATA //
+/** employee data */
+export const getStaticProps = async () => {
+	const employee = await getEmployeeTestimonials();
+	const talents = await getTalents();
+	return { props: { employee, talents }, revalidate: 60 };
+};
 
 /** Contact Page */
-export default function CareersPage() {
+export default function CareersPage({ employee, talents }) {
 	return (
 		<div>
 			{/* Metatags */}
@@ -42,7 +52,7 @@ export default function CareersPage() {
 				<InnerBanner bannerTitle="Elevate your career and create a purpose-driven future" />
 				<Journey />
 				<WhyComponent />
-				<EmployeesComponent />
+				<EmployeesComponent data={employee} />
 				<div>
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
@@ -89,7 +99,7 @@ export default function CareersPage() {
 						</div>
 					</section>
 				</div>
-				<TalentComponent />
+				<TalentComponent data={talents} />
 				<JoinComponent />
 			</main>
 			{/* Page Content ends here */}
