@@ -108,6 +108,7 @@ export default function LeadershipPage({ leadershipsData }) {
 						{leadershipsData.data.map((item, index) => {
 							if (!item.desc) return null;
 							const paragraphs = item.desc.split(/<br\s*\/?>/i);
+
 							return (
 								<>
 									{item.isFounder && (

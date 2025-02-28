@@ -44,15 +44,15 @@ export default function MsmeLoans() {
 		interestRate: "20.75% to 24.25%",
 	};
 	const pavingThePathData = {
-		title: "Paving the path to prosperity for women entrepreneurs2",
+		title: "Scale your MSMEs to large enterprises",
 		description:
-			"Svatantra’s micro finance loans have been instrumental in promoting entrepreneurship, especially among semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
-		subTitle: "Key features powering our entrepreneurs and our economy3",
+			"We tailor our MSME loans to build entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to micro-credit at one of the lowest interest rates in the Country, we provide timely support to address the evolving business needs. From starting a venture or expanding your startup, our MSME loans can help maximise success and achievements throughout your entrepreneurial journey.",
+		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
-			"We provide one of the lowest interest.",
-			"Services that enable rural and semi-urban women entrepreneurs to become agents of ",
-			"Customised solutions for entrepreneurs to achieve business ",
-			"A financial ecosystem that ensures every individual experiences ",
+			"We provide one of the lowest interest rates in India.",
+			"Services that enable rural and semi-urban women to become agents of change within their communities.",
+			"Customised solutions for entrepreneurs to achieve business goals and drive economic growth.",
+			"A financial ecosystem that ensures every individual experiences a self-reliant future.",
 		],
 	};
 	const sixStepsData = {
@@ -92,7 +92,7 @@ export default function MsmeLoans() {
 				icon: repayment.src,
 				title: "Repayment/Collection",
 				description:
-					"Offer timely guidance and collection of the monthly loan installments.",
+					"Offer timely guidance and collection of the monthly loan instalments.",
 			},
 		],
 	};
@@ -153,7 +153,7 @@ export default function MsmeLoans() {
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
-					bannerTitle="MSME Loans"
+					bannerTitle="Micro Small & Medium Enterprise (MSME) loans"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}

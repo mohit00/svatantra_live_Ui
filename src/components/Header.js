@@ -29,6 +29,7 @@ export default function Header() {
 	const [isClient, setIsClient] = useState(false);
 	const dropdownRef = useRef(null);
 	const [isAboutOpen, setIsAboutOpen] = useState(false);
+	const [isProductsOpen, setIsProductsOpen] = useState(false);
 	const [isImpact, setIsImpact] = useState(false);
 	const [activeMenu, setActiveMenu] = useState(null);
 	const [isMobile, setIsMobile] = useState(false);
@@ -47,96 +48,100 @@ export default function Header() {
 	}, []);
 
 	const aboutData = [
-		{ title: "Overview", subItems: [] },
-		{ title: "Our Journey ", subItems: [] },
-		{ title: "Leadership Team", subItems: [] },
+		{ title: "Overview", link: "/we-are-svatantra/about-us", subItems: [] },
+		{
+			title: "Our Journey ",
+			link: "/we-are-svatantra/our-journey",
+			subItems: [],
+		},
+		{
+			title: "Leadership Team",
+			link: "/we-are-svatantra/leadership",
+			subItems: [],
+		},
+	];
+	const productsData = [
+		{ title: "MSME Loans", link: "/our-products/msme-loans", subItems: [] },
+		{
+			title: "Micro-finance Loans",
+			link: "/our-products/microfinance-loans",
+			subItems: [],
+		},
 	];
 
 	const menuData = [
 		{
 			title: "Stories of Svatantra",
-			subItems: ["Customer Testimonials", "Financial Training"],
+			subItems: [
+				{
+					title: "Customer Testimonials",
+					link: "/our-impact/stories-of-svatantra/customer-testimonials",
+				},
+				{
+					title: "Financial Training",
+					link: "/our-impact/stories-of-svatantra/financial-training",
+				},
+			],
 		},
-		{ title: "CSR", subItems: [] },
+		{ title: "CSR", link: "/our-impact/csr", subItems: [] },
 	];
 
 	const resourcesData = [
 		{
 			title: "Reports & statement",
 			subItems: [
-				"Annual report",
-				"Annual return",
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
+				{ title: "Annual report", link: "/reports/annual" },
+				{ title: "Annual return", link: "/reports/return" },
+				{ title: "Board of Directors and KMP", link: "/reports/board" },
+				{ title: "List of committees", link: "/reports/committees" },
+				{ title: "ISIN reconciliation statement", link: "/reports/isin" },
 			],
 		},
-		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
+		{
+			title: "Disclosures",
+			subItems: [
+				{ title: "Annual report", link: "/disclosures/annual" },
+				{ title: "Annual return", link: "/disclosures/return" },
+			],
+		},
 		{
 			title: "Circulars and announcements",
 			subItems: [
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
+				{ title: "Board of Directors and KMP", link: "/circulars/board" },
+				{ title: "List of committees", link: "/circulars/committees" },
+				{ title: "ISIN reconciliation statement", link: "/circulars/isin" },
 			],
 		},
-		{ title: "Agency partners", subItems: [] },
-		{ title: "Connect with us", subItems: [] },
-		{ title: "Credit and grading", subItems: [] },
+		{ title: "Agency partners", link: "/agency-partners", subItems: [] },
+		{ title: "Connect with us", link: "/contact", subItems: [] },
+		{ title: "Credit and grading", link: "/credit-grading", subItems: [] },
 	];
 
 	const digitalData = [
-		{
-			title: "Reports & statement",
-			subItems: [
-				"Annual report",
-				"Annual return",
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Disclosures", subItems: ["Annual report", "Annual return"] },
-		{
-			title: "Circulars and announcements",
-			subItems: [
-				"Board of Directors and KMP",
-				"List of committees",
-				"ISIN reconciliation statement",
-			],
-		},
-		{ title: "Agency partners", subItems: [] },
-		{ title: "Connect with us", subItems: [] },
-		{ title: "Credit and grading", subItems: [] },
+		{ title: "Life at Svatantra", link: "/careers", subItems: [] },
+		{ title: "Join us", link: "/careers/job-opening", subItems: [] },
 	];
 
 	const mediaData = [
-		// {
-		// 	title: "Reports & statement",
-		// 	subItems: [
-		// 		"Annual report",
-		// 		"Annual return",
-		// 		"Board of Directors and KMP",
-		// 		"List of committees",
-		// 		"ISIN reconciliation statement",
-		// 	],
-		// },
-		// { title: "Disclosures", subItems: ["Annual report", "Annual return"] },
-		// {
-		// 	title: "Circulars and announcements",
-		// 	subItems: [
-		// 		"Board of Directors and KMP",
-		// 		"List of committees",
-		// 		"ISIN reconciliation statement",
-		// 	],
-		// },
-		{ title: "Blogs", subItems: [] },
-		{ title: "Events", subItems: [] },
-		{ title: "Press Release", subItems: [] },
-		{ title: "Media Mention", subItems: [] },
-		{ title: "Gallery", subItems: [] },
-		{ title: "Corporate Brochure", subItems: [] },
-		{ title: "Awards", subItems: [] },
+		{ title: "Blogs", link: "/media/blogs", subItems: [] },
+		{ title: "Events", link: "/media/events", subItems: [] },
+		{
+			title: "Press Release",
+			link: "/media/press-release",
+			subItems: [],
+		},
+		{
+			title: "Media Mention",
+			link: "/media/media-mention",
+			subItems: [],
+		},
+		{ title: "Gallery", link: "/media/gallery", subItems: [] },
+		{
+			title: "Corporate Brochure",
+			link: "/media/leadership",
+			subItems: [],
+		},
+		{ title: "Awards", link: "/media/awards", subItems: [] },
 	];
 
 	// Close dropdown when clicking outside
@@ -245,13 +250,25 @@ export default function Header() {
 													<li
 														key={index}
 														className={styles.menuItem}
+														onClick={(e) => {
+															if (isMobile) {
+																e.stopPropagation();
+																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+															}
+														}}
 														onMouseEnter={() => !isMobile && setActiveMenu(index)}
 														onMouseLeave={() => !isMobile && setActiveMenu(null)}
 													>
 														<div className={`${styles.menuTitle} text_xs`}>
-															<span className={activeMenu === index ? styles.active : ""}>
-																{menu.title}
-															</span>
+															{menu.subItems.length > 0 ? (
+																<span className={activeMenu === index ? styles.active : ""}>
+																	{menu.title}
+																</span>
+															) : (
+																<a href={menu.link} className={styles.noSubLink}>
+																	{menu.title}
+																</a>
+															)}
 															{menu.subItems.length > 0 && <img src={arrow.src} />}
 														</div>
 
@@ -264,7 +281,88 @@ export default function Header() {
 															>
 																{menu.subItems.map((subItem, subIndex) => (
 																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		{subItem}
+																		<a href={subItem.link}>{subItem.title}</a>
+																	</li>
+																))}
+															</ul>
+														)}
+													</li>
+												))}
+											</ul>
+										</div>
+									)}
+								</div>
+								<div
+									className={`${styles.links} commonCls`}
+									onMouseEnter={() => !isMobile && setIsProductsOpen(true)}
+									onMouseLeave={() => !isMobile && setIsProductsOpen(false)}
+									ref={(el) => (devRefs.current[0] = el)}
+								>
+									<ScrollSection
+										activeClass="active"
+										spy={true}
+										smooth={true}
+										offset={-50}
+										duration={500}
+										className={`${styles.link_title} text_xs`}
+									>
+										<p
+											className={`${styles.link_title} text_xs`}
+											onClick={(e) => {
+												if (isMobile) {
+													e.stopPropagation();
+													setIsProductsOpen((prev) => !prev);
+												}
+											}}
+										>
+											Our Products
+										</p>
+									</ScrollSection>
+
+									{isProductsOpen && (
+										<div
+											className={styles.subItem}
+											onMouseEnter={() => !isMobile && setIsProductsOpen(true)} // Keep open when hovering inside
+											onMouseLeave={() => !isMobile && setIsProductsOpen(false)} // Close only when fully leaving
+											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+										>
+											<ul className={styles.newBox}>
+												{productsData.map((menu, index) => (
+													<li
+														key={index}
+														className={styles.menuItem}
+														onClick={(e) => {
+															if (isMobile) {
+																e.stopPropagation();
+																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+															}
+														}}
+														onMouseEnter={() => !isMobile && setActiveMenu(index)}
+														onMouseLeave={() => !isMobile && setActiveMenu(null)}
+													>
+														<div className={`${styles.menuTitle} text_xs`}>
+															{menu.subItems.length > 0 ? (
+																<span className={activeMenu === index ? styles.active : ""}>
+																	{menu.title}
+																</span>
+															) : (
+																<a href={menu.link} className={styles.noSubLink}>
+																	{menu.title}
+																</a>
+															)}
+															{menu.subItems.length > 0 && <img src={arrow.src} />}
+														</div>
+
+														{activeMenu === index && menu.subItems.length > 0 && (
+															<ul
+																className={styles.subMenu}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+															>
+																{menu.subItems.map((subItem, subIndex) => (
+																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
+																		<a href={subItem.link}>{subItem.title}</a>
 																	</li>
 																))}
 															</ul>
@@ -326,9 +424,15 @@ export default function Header() {
 														onMouseLeave={() => !isMobile && setActiveMenu(null)}
 													>
 														<div className={`${styles.menuTitle} text_xs`}>
-															<span className={activeMenu === index ? styles.active : ""}>
-																{menu.title}
-															</span>
+															{menu.subItems.length > 0 ? (
+																<span className={activeMenu === index ? styles.active : ""}>
+																	{menu.title}
+																</span>
+															) : (
+																<a href={menu.link} className={styles.noSubLink}>
+																	{menu.title}
+																</a>
+															)}
 															{menu.subItems.length > 0 && <img src={arrow.src} />}
 														</div>
 
@@ -341,7 +445,7 @@ export default function Header() {
 															>
 																{menu.subItems.map((subItem, subIndex) => (
 																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		{subItem}
+																		<a href={subItem.link}>{subItem.title}</a>
 																	</li>
 																))}
 															</ul>
@@ -379,7 +483,7 @@ export default function Header() {
 													}
 												}}
 											>
-												Resources
+												Investors
 											</p>
 										</ScrollSection>
 
@@ -405,9 +509,15 @@ export default function Header() {
 															onMouseLeave={() => !isMobile && setActiveMenu(null)}
 														>
 															<div className={`${styles.menuTitle} text_xs`}>
-																<span className={activeMenu === index ? styles.active : ""}>
-																	{menu.title}
-																</span>
+																{menu.subItems.length > 0 ? (
+																	<span className={activeMenu === index ? styles.active : ""}>
+																		{menu.title}
+																	</span>
+																) : (
+																	<a href={menu.link} className={styles.noSubLink}>
+																		{menu.title}
+																	</a>
+																)}
 																{menu.subItems.length > 0 && <img src={arrow.src} />}
 															</div>
 
@@ -423,7 +533,7 @@ export default function Header() {
 																			key={subIndex}
 																			className={`${styles.subMenuItem} text_xs`}
 																		>
-																			{subItem}
+																			<a href={subItem.link}>{subItem.title}</a>
 																		</li>
 																	))}
 																</ul>
@@ -460,7 +570,7 @@ export default function Header() {
 												}
 											}}
 										>
-											Digitally Svatantra
+											Careers
 										</p>
 									</ScrollSection>
 									{isDigital && (
@@ -485,9 +595,15 @@ export default function Header() {
 														onMouseLeave={() => !isMobile && setActiveMenu(null)}
 													>
 														<div className={`${styles.menuTitle} text_xs`}>
-															<span className={activeMenu === index ? styles.active : ""}>
-																{menu.title}
-															</span>
+															{menu.subItems.length > 0 ? (
+																<span className={activeMenu === index ? styles.active : ""}>
+																	{menu.title}
+																</span>
+															) : (
+																<a href={menu.link} className={styles.noSubLink}>
+																	{menu.title}
+																</a>
+															)}
 															{menu.subItems.length > 0 && <img src={arrow.src} />}
 														</div>
 
@@ -500,7 +616,7 @@ export default function Header() {
 															>
 																{menu.subItems.map((subItem, subIndex) => (
 																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		{subItem}
+																		<a href={subItem.link}>{subItem.title}</a>
 																	</li>
 																))}
 															</ul>
@@ -561,9 +677,15 @@ export default function Header() {
 														onMouseLeave={() => !isMobile && setActiveMenu(null)}
 													>
 														<div className={`${styles.menuTitle} text_xs`}>
-															<span className={activeMenu === index ? styles.active : ""}>
-																{menu.title}
-															</span>
+															{menu.subItems.length > 0 ? (
+																<span className={activeMenu === index ? styles.active : ""}>
+																	{menu.title}
+																</span>
+															) : (
+																<a href={menu.link} className={styles.noSubLink}>
+																	{menu.title}
+																</a>
+															)}
 															{menu.subItems.length > 0 && <img src={arrow.src} />}
 														</div>
 
@@ -576,7 +698,7 @@ export default function Header() {
 															>
 																{menu.subItems.map((subItem, subIndex) => (
 																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		{subItem}
+																		<a href={subItem.link}>{subItem.title}</a>
 																	</li>
 																))}
 															</ul>
