@@ -42,7 +42,7 @@ export default function Header() {
 		};
 	}, []);
 
-	// Ensure client-side rendering
+	// Ensure client-side renderings
 	useEffect(() => {
 		setIsClient(true);
 	}, []);
