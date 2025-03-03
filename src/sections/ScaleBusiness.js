@@ -37,8 +37,8 @@ export default function ScaleBusiness() {
 				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
 		},
 		{
-			maintitle: "MSME loans",
-			PageLink: "/our-products/msme-loans",
+			maintitle: "Individual loans",
+			PageLink: "/our-products/individual-loans",
 			AccNo: "02",
 			description:
 				"Enabling entrepreneurs, especially rural women to meet their needs and scale their businesses to new heights.",
@@ -126,8 +126,7 @@ export default function ScaleBusiness() {
 											<p className="text_xs text_500">{parse(data.description)}</p>
 										</div>
 										<Button
-											isHref
-											buttonType="secondary"
+											buttonType="five"
 											condition={"white"}
 											link={data.PageLink}
 											title={"Read More"}

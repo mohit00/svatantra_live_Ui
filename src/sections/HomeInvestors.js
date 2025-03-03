@@ -61,7 +61,13 @@ export default function HomeInvestors() {
 				<div className={`${styles.title_wrap}`}>
 					<h2 className="text_xxxl color_primary">Investors</h2>
 					<div className={`${styles.BtnBx} pt_10`}>
-						<Button buttonType="four" condition={"white"} title={"View More"} />
+						<Button
+							isHref
+							buttonType="secondary"
+							link="/investors"
+							condition={"white"}
+							title={"View More"}
+						/>
 					</div>
 				</div>
 

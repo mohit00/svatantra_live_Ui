@@ -137,7 +137,10 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 			return (
 				// <Link >
 				<div>
-					<a className={`${styles.btn_five}`} href={link}>
+					<a
+						className={`${styles.btn_five} ${condition ? styles.white : ""}`}
+						href={link}
+					>
 						<span className={styles.btn_outer_span}>
 							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
 								<img
