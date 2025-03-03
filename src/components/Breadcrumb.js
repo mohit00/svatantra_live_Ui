@@ -28,6 +28,7 @@ export default function Breadcrum({
 	link7,
 	link8,
 	link9,
+	link10,
 	blackColor,
 	linkTitle,
 	linkTitle2,
@@ -91,6 +92,14 @@ export default function Breadcrum({
 							<li>
 								<Link href={`/${link9}`}>{linkTitle}</Link>
 							</li>
+						)}
+						{link10 && (
+							<>
+								<li className="f_w_r">{linkTitle}</li>
+								<li>
+									<Link href={`/${link10}`}>{linkTitle2}</Link>
+								</li>
+							</>
 						)}
 						{/* {blogTitle && (
 							<li>

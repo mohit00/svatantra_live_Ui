@@ -84,6 +84,9 @@ export default function LoanFactSheet() {
 							</td>
 						</tr> */}
 					</table>
+					<p className="text_sm pt_20 f_w_l opacity_80">
+						*Average rate of interest for Q4 FY24: 23.21%
+					</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a href="">

@@ -39,14 +39,14 @@ import repayment from "../../public/img/our-products/microfinance/repayment.svg"
 /** MsmeLoans Page */
 export default function MsmeLoans() {
 	const loanAmountData = {
-		loanAmount: "₹ 3,3456 to ₹ 1 lakh",
-		tenure: "20 to 30 Months",
-		interestRate: "20.75% to 24.25%",
+		loanAmount: "₹ 1 lakh to ₹ 3 lakh",
+		tenure: "24 to 36 Months",
+		interestRate: "23%",
 	};
 	const pavingThePathData = {
-		title: "Scale your MSMEs to large enterprises",
+		title: "Scale small businesses to robust MSMEs",
 		description:
-			"We tailor our MSME loans to build entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to micro-credit at one of the lowest interest rates in the Country, we provide timely support to address the evolving business needs. From starting a venture or expanding your startup, our MSME loans can help maximise success and achievements throughout your entrepreneurial journey.",
+			"We tailor our Individual Loans to build entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to micro-credit at one of the lowest interest rates in the Country, we provide timely support to address the evolving business needs. From starting a venture or expanding a rural based business, our Individual Loans can help maximise success and achievements throughout an individual's entrepreneurial journey.",
 		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
 			"We provide one of the lowest interest rates in India.",
@@ -97,7 +97,7 @@ export default function MsmeLoans() {
 		],
 	};
 	const commonQueriesData = {
-		title: "Common Queries3",
+		title: "Common Queries",
 		faqItems: [
 			{
 				title: "What is microfinance?",
@@ -142,18 +142,27 @@ export default function MsmeLoans() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"MSME Loans"} Desc={""} OgImg={""} Url={"/msme-loans"} />
+			<MetaTags
+				Title={"Individual Loans"}
+				Desc={""}
+				OgImg={""}
+				Url={"/individual-loans"}
+			/>
 
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
 			<main className={styles.MsmeLoansPage}>
-				<Breadcrum link2="Our Products" link3="MSME Loans" />
+				<Breadcrum
+					linkTitle="Our Products"
+					linkTitle2="Individual Loans"
+					link10="/our-products/individual-loans"
+				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
-					bannerTitle="Micro Small & Medium Enterprise (MSME) loans"
+					bannerTitle="Individual Loans"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}
@@ -233,6 +242,9 @@ export default function MsmeLoans() {
 									</td>
 								</tr> */}
 							</table>
+							<p className="text_sm pt_20 f_w_l opacity_80">
+								*Average rate of interest for Q4 FY24: 23.21%
+							</p>
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
 							<a href="">
@@ -258,7 +270,10 @@ export default function MsmeLoans() {
 					brochureUrl={commonQueriesData.brochureUrl}
 				/>
 				<BlogsInsights />
-				<Homecontact />
+				<Homecontact
+					formTitle="Fill in the details, and our team of experts will contact you to help
+								bring your entrepreneurial vision to life."
+				/>
 			</main>
 			{/* Page Content ends here */}
 

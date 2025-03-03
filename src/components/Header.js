@@ -61,7 +61,11 @@ export default function Header() {
 		},
 	];
 	const productsData = [
-		{ title: "MSME Loans", link: "/our-products/msme-loans", subItems: [] },
+		{
+			title: "Individual Loans",
+			link: "/our-products/individual-loans",
+			subItems: [],
+		},
 		{
 			title: "Micro-finance Loans",
 			link: "/our-products/microfinance-loans",

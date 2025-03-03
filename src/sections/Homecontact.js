@@ -20,7 +20,7 @@ import styles from "@/styles/sections/Homecontact.module.scss";
 // DATA //
 
 /** Homecontact Section */
-export default function Homecontact() {
+export default function Homecontact({ formTitle }) {
 	useEffect(() => {
 		ScrollOut({
 			once: true,
@@ -97,6 +97,11 @@ export default function Homecontact() {
 						</h3>
 					</div>
 					<div className={`${styles.right}`} data-scroll>
+						{formTitle ? (
+							<p className="text_sm opacity_80 pb_20">{formTitle}</p>
+						) : (
+							"  "
+						)}
 						<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 							<div className={`${styles.form_field}`}>
 								<input
