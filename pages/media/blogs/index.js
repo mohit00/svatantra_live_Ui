@@ -31,11 +31,12 @@ export const getStaticProps = async (context) => {
 };
 /** Blogs Page */
 export default function BlogsPage({ blogsData }) {
-	console.log(blogsData, " blogsData");
+	const dateString = blogsData.data[0].date;
+	const year = dateString.split(" ")[2]; // Extracts "2024"
 
 	const [selectedOptions, setSelectedOptions] = useState({
 		select1: blogsData.data[0].author.name,
-		select2: "2023",
+		select2: year,
 	});
 
 	const [openDropdowns, setOpenDropdowns] = useState({
@@ -62,7 +63,7 @@ export default function BlogsPage({ blogsData }) {
 	const handleOptionClick = (option, dropdown) => {
 		setSelectedOptions((prevState) => ({
 			...prevState,
-			[dropdown]: option.author.name,
+			[dropdown]: option,
 		}));
 
 		setOpenDropdowns({ select1: false, select2: false });
@@ -173,7 +174,7 @@ export default function BlogsPage({ blogsData }) {
 																	? styles.selected
 																	: ""
 															}`}
-															onClick={() => handleOptionClick(option, "select1")}
+															onClick={() => handleOptionClick(option.author.name, "select1")}
 														>
 															<span className="text_reg">{option.author.name}</span>
 														</li>
@@ -183,6 +184,7 @@ export default function BlogsPage({ blogsData }) {
 										</div>
 									</div>
 								</div>
+								{/* year */}
 								<div className={`${styles.Filter}`}>
 									<div className={`${styles.selectBx}`}>
 										<div className={`${styles.custom_select}`}>
@@ -218,13 +220,8 @@ export default function BlogsPage({ blogsData }) {
 															className={`${styles.select_option} ${
 																option.label === selectedOptions.select2 ? styles.selected : ""
 															}`}
-															onClick={() => handleOptionClick(option, "select2")}
+															onClick={() => handleOptionClick(option.label, "select2")}
 														>
-															{/* <img
-															src={option.icon}
-															alt={option.label}
-															className={`${styles.option_icon}`}
-														/> */}
 															<span className="text_reg">{option.label}</span>
 														</li>
 													))}

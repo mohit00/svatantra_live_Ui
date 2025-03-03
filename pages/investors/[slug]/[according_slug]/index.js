@@ -130,7 +130,7 @@ export default function Investors({ data }) {
 								<table>
 									<thead>
 										<tr>
-											<th></th>
+											{/* <th></th> */}
 											<th>Details</th>
 											<th>Enclosures</th>
 										</tr>
@@ -138,10 +138,13 @@ export default function Investors({ data }) {
 									<tbody>
 										{filteredData[0].row.map((item) => (
 											<tr key={item.id}>
-												<td>{item.id}</td>
+												{/* <td>{item.id}</td> */}
 												<td>{item.title}</td>
 												<td>
-													<a href={item.media.url} download>
+													<a
+														href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.media.url}`}
+														download
+													>
 														<img
 															src={download_icon.src}
 															className={styles.download_icon}
@@ -172,7 +175,7 @@ export default function Investors({ data }) {
 											<table>
 												<thead>
 													<tr>
-														<th></th>
+														{/* <th></th> */}
 														<th>Details</th>
 														<th>Enclosures</th>
 													</tr>
@@ -180,10 +183,13 @@ export default function Investors({ data }) {
 												<tbody>
 													{item.row.map((item) => (
 														<tr key={item.id}>
-															<td>{item.id}</td>
+															{/* <td>{item.id}</td> */}
 															<td>{item.title}</td>
 															<td>
-																<a href={item.media.url} download>
+																<a
+																	href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/${item.media.url}`}
+																	download
+																>
 																	<img
 																		src={download_icon.src}
 																		className={styles.download_icon}
