@@ -34,11 +34,30 @@ export default function MediaPopupContent({ children, isOpen, isClose }) {
 		};
 	}, [isOpen, isClose]);
 
+	useEffect(() => {
+		/** */
+		const preventScroll = (event) => {
+			event.stopPropagation();
+		};
+		if (isOpen) {
+			document.body.style.overflow = "hidden"; // Prevents background scrolling
+			document.addEventListener("wheel", preventScroll, { passive: false });
+		} else {
+			document.body.style.overflow = "";
+		}
+		return () => {
+			document.removeEventListener("wheel", preventScroll);
+			document.body.style.overflow = "";
+		};
+	}, [isOpen]);
+
 	/** */
 	const handleOverlayClick = (event) => {
-		if (event.target.classList.contains("popup_overlay")) {
-			isClose();
+		if (event.target.closest(`.${styles.popup_content}`)) {
+			// If the click is inside the content area, do nothing
+			return;
 		}
+		isClose();
 	};
 
 	if (!isOpen) return null;
