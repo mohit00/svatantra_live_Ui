@@ -31,7 +31,7 @@ import { getAllBlogs, getBlogBySlug } from "@/services/BlogService";
 
 /** getStaticPaths */
 export async function getStaticPaths() {
-	const { data: insights } = await getBlogBySlug();
+	const { data: insights } = await getAllBlogs();
 
 	const paths = insights.map((post) => ({
 		params: { slug: post.slug || "test" },
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 
 /** getStaticProps */
 export async function getStaticProps({ params }) {
-	const { data: insights } = await getAllBlogs(params.slug);
+	const { data: insights } = await getBlogBySlug(params.slug);
 	// const { data: related } = await getAllBlogs(insights[0]?.type, params.slug);
 
 	return {
@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
 }
 
 /** Blogs Inside Page */
-export default function BlogsInsidePage({ data, related }) {
+export default function BlogsInsidePage({ data }) {
 	console.log(data, " data");
 
 	return (
@@ -77,8 +77,8 @@ export default function BlogsInsidePage({ data, related }) {
 				<Breadcrumb
 					link7={"blogs"}
 					linkTitle={"Blogs"}
-					link8={"blogs-inside"}
-					linkTitle2={"Blogs Inside"}
+					link8={`Blogs/${data?.slug}`}
+					linkTitle2={`${data?.title}`}
 				/>
 				<div className="container">
 					<div className={`${styles.HeadBx}`}>
@@ -142,7 +142,7 @@ export default function BlogsInsidePage({ data, related }) {
 											<img src={yt.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
 									</a>
-									<a
+									{/* <a
 										href="https://www.instagram.com/wearesvatantra?igsh=Zmh0b2hnOHZoaTh5"
 										target="_blank"
 										rel="noreferrer"
@@ -150,80 +150,25 @@ export default function BlogsInsidePage({ data, related }) {
 										<div className={`${styles.box1}`}>
 											<img src={insta.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a>
+									</a> */}
 								</div>
 							</div>
 						</div>
 						<div className={`${styles.ImgBx}`}>
-							{/* <img
-								src={StrapiImage(data?.banner.desktop).url}
-								className="b_r_10"
-								alt=""
-							/> */}
+							<picture>
+								<source
+									srcSet={StrapiImage(data?.banner.mobile)?.url}
+									media="(max-width:767px)"
+								/>
+								<img
+									src={StrapiImage(data?.banner.desktop)?.url}
+									className="b_r_10"
+									alt=""
+								/>
+							</picture>
 						</div>
 					</div>
-					<ContentFromCms>
-						{`
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<p>
-								Egestas ultricies dolor turpis auctor potenti laoreet euismod. Placerat
-								mi morbi lorem ullamcorper vitae porttitor eleifend amet. Egestas
-								dignissim ac turpis dolor. Purus ac in porttitor a turpis scelerisque.
-								Lectus amet pellentesque volutpat diam mattis facilisis sed enim. Leo
-								vitae sed pellentesque vehicula diam a faucibus morbi. Nisl pretium
-								velit lectus sed eget. Ut pretium platea habitasse dolor ultricies
-								integer ipsum.
-							</p>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<p>
-								Egestas ultricies dolor turpis auctor potenti laoreet euismod. Placerat
-								mi morbi lorem ullamcorper vitae porttitor eleifend amet. Egestas
-								dignissim ac turpis dolor. Purus ac in porttitor a turpis scelerisque.
-							</p>
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<p>
-								Egestas ultricies dolor turpis auctor potenti laoreet euismod. Placerat
-								mi morbi lorem ullamcorper vitae porttitor eleifend amet. Egestas
-								dignissim ac turpis dolor. Purus ac in porttitor a turpis scelerisque.
-							</p>
-						`}
-					</ContentFromCms>
+					<ContentFromCms>{data?.desc}</ContentFromCms>
 				</div>
 			</main>
 			{/* Page Content ends here */}
