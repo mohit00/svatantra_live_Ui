@@ -158,6 +158,17 @@
 			}
 		}
 	}
+	&.white {
+		border-bottom: 1px solid #fff;
+		.btn_inner_circle {
+			img {
+				filter: invert(1);
+			}
+		}
+		.btn_inner_text {
+			color: #fff !important;
+		}
+	}
 }
 button.btn_primary,
 button.btn_secondary,
