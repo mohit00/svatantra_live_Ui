@@ -9,7 +9,7 @@ import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 // UTILS //
-
+import StrapiImage from "@/utils/StrapiImage";
 // STYLES //
 import styles from "@/styles/components/Udaangallery.module.scss";
 import "lightgallery/css/lightgallery.css"; // Core LightGallery CSS
@@ -25,7 +25,7 @@ import Zoom from "../../public/img/careers/zoom.png";
 // DATA //
 
 /** Udaangallery Component */
-export default function Udaangallery() {
+export default function Udaangallery({ imageData }) {
 	const lightGalleryRef = useRef(null);
 
 	const drivingOne = [
@@ -52,11 +52,17 @@ export default function Udaangallery() {
 		// { thumbnail: img_four.src, full: img_four.src },
 		// { thumbnail: img_five.src, full: img_five.src },
 	];
+	const galleryImages = imageData?.map((img) => ({
+		src: `${StrapiImage(img)?.url || " "}`,
+		thumbnail: `${StrapiImage(img)?.url || " "}`,
+	}));
+	console.log(galleryImages, "  galleryImagesgalleryImagesgalleryImages");
+
 	return (
 		<div className="">
 			<div className={`${styles.gallery_section} pb_80`}>
 				<div className={`${styles.driving_img_box} f_w_j`}>
-					{drivingOne.map((item, colIndex) => (
+					{galleryImages.map((item, colIndex) => (
 						<div key={colIndex} className={`${styles.item_img}`}>
 							<LightGallery
 								elementClassNames="custom-lightgallery"
@@ -64,9 +70,9 @@ export default function Udaangallery() {
 								speed={500}
 								plugins={[lgThumbnail, lgZoom]}
 							>
-								<a data-src={item.full}>
+								<a data-src={item.src}>
 									<img
-										src={item.full} // Thumbnail image
+										src={item.src} // Thumbnail image
 										className="b_r_10"
 										alt={`Image ${colIndex + 1}`}
 									/>

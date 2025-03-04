@@ -24,9 +24,36 @@ import udaan from "../../../public/img/udaan.jpg";
 import GalleryComponent from "@/sections/Gallery";
 
 // DATA //
+import { getEvents, getEventsBySlug } from "@/services/eventsService";
+
+/** getStaticPaths */
+export async function getStaticPaths() {
+	const { data: insights } = await getEvents();
+
+	const paths = insights.map((post) => ({
+		params: { slug: post.slug || "test" },
+	}));
+
+	// We'll prerender only these paths at build time.
+	// { fallback: false } means other routes should 404.
+	return { paths, fallback: true };
+}
+
+/** getStaticProps */
+export async function getStaticProps({ params }) {
+	const { data: insights } = await getEventsBySlug(params.slug);
+	// const { data: related } = await getAllBlogs(insights[0]?.type, params.slug);
+
+	return {
+		props: { data: insights[0] || { error: true } },
+		// Next.js will invalidate the cache when a
+		// request comes in, at most once every 60 seconds.
+		revalidate: 60,
+	};
+}
 
 /** Events Udaan Page */
-export default function EventsUdaanPage() {
+export default function EventsUdaanPage({ data }) {
 	return (
 		<div>
 			{/* Metatags */}
@@ -44,9 +71,14 @@ export default function EventsUdaanPage() {
 			<main className={styles.EventsUdaanPage}>
 				<div className="container">
 					<Breadcrumb link5={"events"} linkTitle={"events"} />
-
-					<EventsTop />
-					<Udaangallery />
+				</div>
+				<div className="container">
+					<EventsTop
+						title={data?.title}
+						logoImg={data?.thumbnail}
+						desc1={data?.desc}
+					/>
+					<Udaangallery imageData={data?.images} />
 				</div>
 				<AvantGarde />
 				<div className="container">

@@ -1,7 +1,8 @@
 // MODULES //
 
 // COMPONENTS //
-
+import ContentFromCms from "@/components/ContentFromCms";
+import StrapiImage from "@/utils/StrapiImage";
 // SECTIONS //
 
 // PLUGINS //
@@ -17,21 +18,23 @@ import udaan from "../../../../public/img/udaan.jpg";
 // DATA //
 
 /** EventsTop Component */
-export default function EventsTop() {
+export default function EventsTop({ title, logoImg, desc1 }) {
 	return (
 		<section className={`${styles.EventsTop} pb_50`}>
 			<div className="container">
 				<div className={styles.contentBox}>
 					<div className={styles.titleBox}>
 						<h1 className="text_xxxl color_primary">
-							Udaan Scholarship <br />
-							programme
+							{title}
+							{/* Udaan Scholarship <br />
+							programme */}
 						</h1>
-						<img src={udaan.src} />
+						<img src={StrapiImage(logoImg).url} />
 					</div>
 				</div>
 				<div className={`${styles.para}`}>
-					<p className="text_sm color_light_black font_secondary opacity_8 pb_20">
+					<ContentFromCms>{desc1}</ContentFromCms>
+					{/* <p className="text_sm color_light_black font_secondary opacity_8 pb_20">
 						In July 2019, Svatantra launched Udaan Scholarship programme with the
 						intention of providing scholarships and career guidance to rural Indian
 						girl students. We selected 96 girl students from across 7 states, and with
@@ -48,7 +51,7 @@ export default function EventsTop() {
 						providing career counselling. The goal of career counselling is to make
 						sure that students adopt the road that will lead them to their ideal
 						career.
-					</p>
+					</p> */}
 				</div>
 			</div>
 		</section>

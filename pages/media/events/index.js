@@ -13,6 +13,9 @@ import Breadcrum from "@/components/Breadcrumb";
 
 // PLUGINS //
 
+// UTILS //
+import StrapiImage from "@/utils/StrapiImage";
+
 // STYLES //
 import styles from "@/styles/pages/events.module.scss";
 
@@ -80,16 +83,20 @@ export default function events({ eventsAllData }) {
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
 							<div className={`${styles.box_wrap}`}>
-								{eventsData.map((item, ind) => {
+								{eventsAllData.data.map((item, ind) => {
 									return (
 										<div className={`${styles.box_item}`} key={ind}>
-											<img src={item.thumbnail} className="b_r_10" alt="story img" />
+											<img
+												src={StrapiImage(item.thumbnail).url}
+												className="b_r_10"
+												alt="story img"
+											/>
 											<div className={`${styles.content} pt_20 f_r_aj_between`}>
 												<p className="text_md color_light_black font_secondary opacity_8">
 													{item.title}
 												</p>
 												<div>
-													<a href={item.link}>
+													<a href={`/media/events/${item.slug}`}>
 														<img src={arrow_btn.src} alt="arrow icon" />
 													</a>
 												</div>
