@@ -143,7 +143,8 @@ export default function Investors({ data }) {
 												<td>
 													<a
 														href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.media.url}`}
-														download
+														target="_blank"
+														rel="noreferrer"
 													>
 														<img
 															src={download_icon.src}
@@ -188,7 +189,8 @@ export default function Investors({ data }) {
 															<td>
 																<a
 																	href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/${item.media.url}`}
-																	download
+																	target="_blank"
+																	rel="noreferrer"
 																>
 																	<img
 																		src={download_icon.src}
