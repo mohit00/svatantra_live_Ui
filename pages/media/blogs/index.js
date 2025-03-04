@@ -52,8 +52,6 @@ export default function BlogsPage({ blogsData }) {
 	const options2 = [{ label: "2024" }, { label: "2025" }, { label: "2026" }];
 
 	const toggleDropdown = (dropdown) => {
-		console.log(dropdown, " dropdown");
-
 		setOpenDropdowns((prevState) => ({
 			select1: dropdown === "select1" ? !prevState.select1 : false,
 			select2: dropdown === "select2" ? !prevState.select2 : false,
@@ -114,6 +112,15 @@ export default function BlogsPage({ blogsData }) {
 			link: "/blogs-inside",
 		},
 	];
+	const filteredData = blogsData.data.filter(
+		(item) =>
+			(selectedOptions.select1 === "" ||
+				item.author.name === selectedOptions.select1) &&
+			(selectedOptions.select2 === "" ||
+				item.date.includes(selectedOptions.select2))
+	);
+	console.log(filteredData, " filteredData");
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -233,8 +240,8 @@ export default function BlogsPage({ blogsData }) {
 							</div>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{blogsData.data.map((item, ind) => {
-								return (
+							{filteredData.length > 0 ? (
+								filteredData.map((item, ind) => (
 									<div className={`${styles.slider}`} key={ind}>
 										<a href={`blogs/${item.slug}`}>
 											<div className={`${styles.box1}`}>
@@ -244,7 +251,6 @@ export default function BlogsPage({ blogsData }) {
 														alt="box1"
 														className={`${styles.mainImg}`}
 													/>
-													{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
 												</div>
 
 												<div className={`${styles.categoryBox}`}>
@@ -260,8 +266,10 @@ export default function BlogsPage({ blogsData }) {
 											</div>
 										</a>
 									</div>
-								);
-							})}
+								))
+							) : (
+								<p>No blogs found</p>
+							)}
 						</div>
 					</section>
 				</div>
