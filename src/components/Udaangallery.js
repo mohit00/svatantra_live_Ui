@@ -56,13 +56,12 @@ export default function Udaangallery({ imageData }) {
 		src: `${StrapiImage(img)?.url || " "}`,
 		thumbnail: `${StrapiImage(img)?.url || " "}`,
 	}));
-	console.log(galleryImages, "  galleryImagesgalleryImagesgalleryImages");
 
 	return (
 		<div className="">
 			<div className={`${styles.gallery_section} pb_80`}>
 				<div className={`${styles.driving_img_box} f_w_j`}>
-					{galleryImages.map((item, colIndex) => (
+					{galleryImages?.map((item, colIndex) => (
 						<div key={colIndex} className={`${styles.item_img}`}>
 							<LightGallery
 								elementClassNames="custom-lightgallery"

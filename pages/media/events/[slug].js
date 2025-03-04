@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 	const { data: insights } = await getEvents();
 
 	const paths = insights.map((post) => ({
-		params: { slug: post.slug || "test" },
+		params: { slug: post?.slug || "test" },
 	}));
 
 	// We'll prerender only these paths at build time.
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
 /** getStaticProps */
 export async function getStaticProps({ params }) {
-	const { data: insights } = await getEventsBySlug(params.slug);
+	const { data: insights } = await getEventsBySlug(params?.slug);
 	// const { data: related } = await getAllBlogs(insights[0]?.type, params.slug);
 
 	return {
