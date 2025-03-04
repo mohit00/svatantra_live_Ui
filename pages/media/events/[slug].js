@@ -57,12 +57,18 @@ export default function EventsUdaanPage({ data }) {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags
+			{/* <MetaTags
 				Title={"Events Udaan"}
 				Desc={""}
 				OgImg={""}
 				Url={"/events-udaan"}
-			/>
+			/> */}
+			{/* <Breadcrumb
+				link7={"events"}
+				linkTitle={"events"}
+				link8={`events/${data?.slug}`}
+				linkTitle2={`${data?.title}`}
+			/> */}
 
 			{/* Header */}
 			<Header />
@@ -70,7 +76,12 @@ export default function EventsUdaanPage({ data }) {
 			{/* Page Content starts here */}
 			<main className={styles.EventsUdaanPage}>
 				<div className="container">
-					<Breadcrumb link5={"events"} linkTitle={"events"} />
+					<Breadcrumb
+						link7={"media/events"}
+						linkTitle={"events"}
+						link8={`media/events/${data?.slug}`}
+						linkTitle2={`${data?.title}`}
+					/>
 				</div>
 				<div className="container">
 					<EventsTop

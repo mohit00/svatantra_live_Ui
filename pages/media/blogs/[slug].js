@@ -77,7 +77,7 @@ export default function BlogsInsidePage({ data }) {
 				<Breadcrumb
 					link7={"blogs"}
 					linkTitle={"Blogs"}
-					link8={`Blogs/${data?.slug}`}
+					link8={`media/Blogs/${data?.slug}`}
 					linkTitle2={`${data?.title}`}
 				/>
 				<div className="container">
