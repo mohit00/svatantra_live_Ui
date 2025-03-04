@@ -83,7 +83,7 @@ export default function BlogsInsidePage({ data }) {
 				<div className="container">
 					<div className={`${styles.HeadBx}`}>
 						<div className={`${styles.TitleBx}`}>
-							<h2 className="section_title pb_20">{data.title}</h2>
+							<h2 className="section_title pb_20">{data?.title}</h2>
 							<div className={`${styles.DetailsStrip}`}>
 								<div className={`${styles.Left}`}>
 									<p
