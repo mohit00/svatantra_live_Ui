@@ -83,20 +83,20 @@ export default function events({ eventsAllData }) {
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
 							<div className={`${styles.box_wrap}`}>
-								{eventsAllData.data.map((item, ind) => {
+								{eventsAllData?.data.map((item, ind) => {
 									return (
 										<div className={`${styles.box_item}`} key={ind}>
 											<img
-												src={StrapiImage(item.thumbnail).url}
+												src={StrapiImage(item?.thumbnail).url}
 												className="b_r_10"
 												alt="story img"
 											/>
 											<div className={`${styles.content} pt_20 f_r_aj_between`}>
 												<p className="text_md color_light_black font_secondary opacity_8">
-													{item.title}
+													{item?.title}
 												</p>
 												<div>
-													<a href={`/media/events/${item.slug}`}>
+													<a href={`/media/events/${item?.slug}`}>
 														<img src={arrow_btn.src} alt="arrow icon" />
 													</a>
 												</div>
