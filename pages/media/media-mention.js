@@ -11,6 +11,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 // PLUGINS //
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/pages/MediaMention.module.scss";
@@ -22,14 +23,25 @@ import logo from "../../public/img/media/logo.svg";
 import MediaPopupContent from "@/components/MediaPopupContent";
 
 // DATA //
+import { mediaMention } from "@/services/mediaMentionService";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const mediaMentionsData = await mediaMention();
+	return { props: { mediaMentionsData }, revalidate: 60 };
+};
 
 /** Media Mention Page */
-export default function MediaMentionPage() {
+export default function MediaMentionPage({ mediaMentionsData }) {
+	console.log(mediaMentionsData, " mediaMentionsData");
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 
 	/** */
 	const openPopup = (blog) => {
+		console.log(blog, " blog");
+
 		setSelectedBlog(blog);
 		setIsOpen(true);
 	};
@@ -119,7 +131,7 @@ export default function MediaMentionPage() {
 							</p>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{BlogList.map((item, ind) => {
+							{mediaMentionsData.data.map((item, ind) => {
 								return (
 									<div
 										className={`${styles.slider}`}
@@ -129,18 +141,18 @@ export default function MediaMentionPage() {
 										<div className={`${styles.box1}`}>
 											<div className={`${styles.imgBox}`}>
 												<img
-													src={item.image}
+													src={StrapiImage(item.thumbnail).url}
 													alt="box1"
 													className={`${styles.mainImg} width_100`}
 												/>
 												<div className={styles.logoBox}>
-													<img src={item.logo} />
+													<img src={StrapiImage(item.logo).url} />
 												</div>
 											</div>
 
 											<div className={`${styles.categoryBox}`}>
 												<div className={`${styles.news}`}>
-													<p>{item.cardtype}</p>
+													<p>{item.tag}</p>
 												</div>
 												<div className={`${styles.date}`}>
 													<p>{item.date}</p>
@@ -156,7 +168,7 @@ export default function MediaMentionPage() {
 								{selectedBlog && (
 									<div className={styles.popupContent}>
 										<img
-											src={selectedBlog.image}
+											src={StrapiImage(selectedBlog.thumbnail).url}
 											alt="blog-image"
 											className="width_100"
 										/>

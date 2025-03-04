@@ -20,9 +20,18 @@ import styles from "@/styles/pages/PressRelease.module.scss";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 
 // DATA //
+import { pressRelease } from "@/services/PressReleaseService";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const pressReleaseData = await pressRelease();
+	return { props: { pressReleaseData }, revalidate: 60 };
+};
 
 /** PressRelease Page */
-export default function PressReleasePage() {
+export default function PressReleasePage({ pressReleaseData }) {
+	console.log(pressReleaseData, " pressReleaseData");
+
 	const BlogList = [
 		{
 			date: "Mumbai, 4 March, 2024",
@@ -87,7 +96,7 @@ export default function PressReleasePage() {
 							</p>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{BlogList.map((item, ind) => {
+							{pressReleaseData.data.map((item, ind) => {
 								return (
 									<div className={`${styles.MainBox}`} key={ind}>
 										<div className={`${styles.box1}`}>
@@ -99,7 +108,7 @@ export default function PressReleasePage() {
 													<p>{item.date}</p>
 												</div>
 												<div className={`${styles.arrow}`}>
-													<a href={item.link} rel="noopener noreferrer">
+													<a href={`press-release/${item.slug}`} rel="noopener noreferrer">
 														<img src={arrow_btn.src} alt="Arrow" />
 													</a>
 												</div>

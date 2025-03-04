@@ -19,8 +19,13 @@ import styles from "@/styles/pages/events.module.scss";
 // SERVICES //
 
 // DATA //
+import { getEvents } from "@/services/eventsService";
 
-/** Data Fetching  */
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const eventsAllData = await getEvents();
+	return { props: { eventsAllData }, revalidate: 60 };
+};
 
 // IMAGES //
 import event_one from "../../../public/img/media/events/event_one.jpg";
@@ -28,7 +33,9 @@ import event_two from "../../../public/img/media/events/event_two.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 
 /** events Page */
-export default function events() {
+export default function events({ eventsAllData }) {
+	console.log(eventsAllData, " eventsAllData");
+
 	const eventsData = [
 		{
 			title: "Udaan Scholarship programme",

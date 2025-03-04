@@ -26,9 +26,41 @@ import BlogBanner from "../../../public/img/blogs/BlogBanner.jpg";
 import ShareIcon from "../../../public/img/blogs/ShareIcon.svg";
 
 // DATA //
+import {
+	pressRelease,
+	getPressReleaseBySlug,
+} from "@/services/PressReleaseService";
+
+/** getStaticPaths */
+export async function getStaticPaths() {
+	const { data: insights } = await pressRelease();
+
+	const paths = insights.map((post) => ({
+		params: { slug: post.slug || "test" },
+	}));
+
+	// We'll prerender only these paths at build time.
+	// { fallback: false } means other routes should 404.
+	return { paths, fallback: true };
+}
+
+/** getStaticProps */
+export async function getStaticProps({ params }) {
+	const { data: insights } = await getPressReleaseBySlug(params.slug);
+	// const { data: related } = await getAllBlogs(insights[0]?.type, params.slug);
+
+	return {
+		props: { data: insights[0] || { error: true } },
+		// Next.js will invalidate the cache when a
+		// request comes in, at most once every 60 seconds.
+		revalidate: 60,
+	};
+}
 
 /** Blogs Inside Page */
-export default function BlogsInsidePage() {
+export default function BlogsInsidePage({ data }) {
+	console.log(data, " data");
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -45,24 +77,21 @@ export default function BlogsInsidePage() {
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsInsidePage} pb_80`}>
 				<Breadcrumb
-					link7={"blogs"}
-					linkTitle={"Blogs"}
-					link8={"blogs-inside"}
-					linkTitle2={"Blogs Inside"}
+					link7={"/media/press-release"}
+					linkTitle={"Press Release"}
+					link8={`/media/press-release/${data.slug}`}
+					linkTitle2={`${data.title}`}
 				/>
 				<div className="container">
 					<div className={`${styles.HeadBx}`}>
 						<div className={`${styles.TitleBx}`}>
-							<h2 className="section_title pb_20">
-								Ananya Birla’s Svatantra set to acquire Sachin Bansal’s Chaitanya for
-								INR 1,479 cr
-							</h2>
+							<h2 className="section_title pb_20">{data.title}</h2>
 							<div className={`${styles.DetailsStrip}`}>
 								<div className={`${styles.Left}`}>
 									<p
 										className={`${styles.DateLink} text_sm color_light_black opacity_80`}
 									>
-										<span>Jul 01, 2024 |</span>{" "}
+										<span>{data.date} |</span>{" "}
 										<span className={styles.ShareBtn}>
 											<a rel="noreferrer" href="">
 												Share
@@ -124,72 +153,11 @@ export default function BlogsInsidePage() {
 								</div>
 							</div>
 						</div>
-						<div className={`${styles.ImgBx}`}>
+						{/* <div className={`${styles.ImgBx}`}>
 							<img src={BlogBanner.src} className="b_r_10" alt="" />
-						</div>
+						</div> */}
 					</div>
-					<ContentFromCms>
-						{`
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<p>
-								Egestas ultricies dolor turpis auctor potenti laoreet euismod. Placerat
-								mi morbi lorem ullamcorper vitae porttitor eleifend amet. Egestas
-								dignissim ac turpis dolor. Purus ac in porttitor a turpis scelerisque.
-								Lectus amet pellentesque volutpat diam mattis facilisis sed enim. Leo
-								vitae sed pellentesque vehicula diam a faucibus morbi. Nisl pretium
-								velit lectus sed eget. Ut pretium platea habitasse dolor ultricies
-								integer ipsum.
-							</p>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<p>
-								Egestas ultricies dolor turpis auctor potenti laoreet euismod. Placerat
-								mi morbi lorem ullamcorper vitae porttitor eleifend amet. Egestas
-								dignissim ac turpis dolor. Purus ac in porttitor a turpis scelerisque.
-							</p>
-							<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur. Ut cursus mattis dui eget duis
-								pretium at fames non. Malesuada risus blandit a id. Volutpat iaculis
-								orci porta tristique. Malesuada tincidunt at morbi interdum. Aliquam
-								consequat mi dignissim leo eleifend dignissim interdum. Lobortis
-								placerat fringilla felis non id eu adipiscing mauris.
-							</p>
-							<p>
-								Egestas ultricies dolor turpis auctor potenti laoreet euismod. Placerat
-								mi morbi lorem ullamcorper vitae porttitor eleifend amet. Egestas
-								dignissim ac turpis dolor. Purus ac in porttitor a turpis scelerisque.
-							</p>
-						`}
-					</ContentFromCms>
+					<ContentFromCms>{data.desc}</ContentFromCms>
 				</div>
 			</main>
 			{/* Page Content ends here */}
