@@ -29,7 +29,7 @@ export default function EventsTop({ title, logoImg, desc1 }) {
 							{/* Udaan Scholarship <br />
 							programme */}
 						</h1>
-						{/* <img src={StrapiImage(logoImg).url} /> */}
+						<img src={logoImg} />
 					</div>
 				</div>
 				<div className={`${styles.para}`}>

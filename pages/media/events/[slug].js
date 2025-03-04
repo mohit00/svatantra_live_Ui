@@ -86,10 +86,10 @@ export default function EventsUdaanPage({ data }) {
 				<div className="container">
 					<EventsTop
 						title={data?.title}
-						logoImg={data?.thumbnail}
+						logoImg={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${data?.thumbnail.url}`}
 						desc1={data?.desc}
 					/>
-					{/* <Udaangallery imageData={data?.images} /> */}
+					<Udaangallery imageData={data?.images} />
 				</div>
 				<AvantGarde />
 				<div className="container">
