@@ -89,7 +89,7 @@ export default function EventsUdaanPage({ data }) {
 						logoImg={data?.thumbnail}
 						desc1={data?.desc}
 					/>
-					<Udaangallery imageData={data?.images} />
+					{/* <Udaangallery imageData={data?.images} /> */}
 				</div>
 				<AvantGarde />
 				<div className="container">
