@@ -59,8 +59,6 @@ export async function getStaticProps({ params }) {
 
 /** Blogs Inside Page */
 export default function BlogsInsidePage({ data }) {
-	console.log(data, " data");
-
 	return (
 		<div>
 			{/* Metatags */}
@@ -68,7 +66,7 @@ export default function BlogsInsidePage({ data }) {
 				Title={"Blogs Inside"}
 				Desc={""}
 				OgImg={""}
-				Url={"/blogs-inside"}
+				Url={"/press-releaase"}
 			/>
 
 			{/* Header */}
@@ -79,8 +77,8 @@ export default function BlogsInsidePage({ data }) {
 				<Breadcrumb
 					link7={"/media/press-release"}
 					linkTitle={"Press Release"}
-					link8={`/media/press-release/${data.slug}`}
-					linkTitle2={`${data.title}`}
+					link8={`/media/press-release/${data?.slug}`}
+					linkTitle2={`${data?.title}`}
 				/>
 				<div className="container">
 					<div className={`${styles.HeadBx}`}>
@@ -91,7 +89,7 @@ export default function BlogsInsidePage({ data }) {
 									<p
 										className={`${styles.DateLink} text_sm color_light_black opacity_80`}
 									>
-										<span>{data.date} |</span>{" "}
+										<span>{data?.date} |</span>{" "}
 										<span className={styles.ShareBtn}>
 											<a rel="noreferrer" href="">
 												Share
@@ -157,7 +155,7 @@ export default function BlogsInsidePage({ data }) {
 							<img src={BlogBanner.src} className="b_r_10" alt="" />
 						</div> */}
 					</div>
-					<ContentFromCms>{data.desc}</ContentFromCms>
+					<ContentFromCms>{data?.desc}</ContentFromCms>
 				</div>
 			</main>
 			{/* Page Content ends here */}
