@@ -29,9 +29,16 @@ import Intro from "@/components/intro";
 // IMAGES //
 
 // DATA //
+import { getDigitalSvatantra } from "@/services/digitalSvatantraService";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const successStoriesData = await getDigitalSvatantra();
+	return { props: { successStoriesData }, revalidate: 60 };
+};
 
 /** Home Page */
-export default function HomePage() {
+export default function HomePage({ successStoriesData }) {
 	gsap.registerPlugin(ScrollTrigger);
 	return (
 		<div>
@@ -57,7 +64,7 @@ export default function HomePage() {
 				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				<StoriesSuccess />
+				<StoriesSuccess successStoriesData={successStoriesData} />
 				<Homenews />
 				<HomeInvestors />
 				<Homecontact />

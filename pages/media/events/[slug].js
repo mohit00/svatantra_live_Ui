@@ -84,17 +84,34 @@ export default function EventsUdaanPage({ data }) {
 					/>
 				</div>
 				<div className="container">
-					<EventsTop
-						title={data?.title}
-						logoImg={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${data?.logo.url}`}
-						desc1={data?.desc}
-					/>
-					<Udaangallery imageData={data?.images} />
+					{data?.title || data?.logo || data?.desc ? (
+						<EventsTop
+							title={data?.title}
+							logoImg={`${data?.logo?.url}`}
+							desc1={data?.desc}
+						/>
+					) : (
+						""
+					)}
+
+					{data?.images && <Udaangallery imageData={data?.images} />}
 				</div>
-				<AvantGarde />
-				<div className="container">
-					<Eventinsti />
-				</div>
+				{data?.result && data?.result_title ? (
+					<AvantGarde resultTitle={data?.result_title} resultData={data?.result} />
+				) : (
+					""
+				)}
+				{data?.table != null || data?.desc2 != null || data?.problems != null ? (
+					<div className="container">
+						<Eventinsti
+							tableData={data?.table}
+							descData={data?.desc2}
+							problemStatementData={data?.problems}
+						/>
+					</div>
+				) : (
+					""
+				)}
 			</main>
 			{/* Page Content ends here */}
 

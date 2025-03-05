@@ -1,7 +1,7 @@
 // MODULES //
 
 // COMPONENTS //
-
+import ContentFromCms from "@/components/ContentFromCms";
 // SECTIONS //
 
 // PLUGINS //
@@ -19,49 +19,42 @@ import download from "../../../../public/img/download.svg";
 // DATA //
 
 /** event_insti Section */
-export default function Eventinsti() {
+export default function Eventinsti({
+	tableData,
+	descData,
+	problemStatementData,
+}) {
+	console.log(descData, " problemStatementData");
+
 	return (
 		<section className={styles.event_insti}>
 			<div className="container">
-				<div className={styles.Institutes}>
-					<div className={styles.titleBox}>
-						<h1 className="text_xxxl color_primary pb_60">
-							Participating Institutes
-						</h1>
-					</div>
-					<table>
-						<td>
-							<tr className="text_sm">FMS</tr>
-							<tr className="text_sm">XIMB Bbn</tr>
-							<tr className="text_sm">IIM A</tr>
-							<tr className="text_sm">IIM B</tr>
-						</td>
-						<td>
-							<tr className="text_sm">IIM C</tr>
-							<tr className="text_sm">IIM I</tr>
-							<tr className="text_sm">IIM K</tr>
-							<tr className="text_sm">IIM L</tr>
-						</td>
-						<td>
-							<tr className="text_sm">IIM Shillong</tr>
-							<tr className="text_sm">TISS</tr>
-							<tr className="text_sm">JBIMS</tr>
-							<tr className="text_sm">MDI</tr>
-						</td>
-						<td>
-							<tr className="text_sm">NMIMS</tr>
-							<tr className="text_sm">SCMHRD</tr>
-							<tr className="text_sm">SIBM</tr>
-							<tr className="text_sm">SP Jain</tr>
-						</td>
-						<td>
-							<tr className="text_sm">XLRI</tr>
-							<tr className="text_sm">IIFT Delhi & Kolkata</tr>
-							<tr className="text_sm"></tr>
-							<tr className="text_sm"></tr>
-						</td>
-					</table>
-					<p className="text_sm opacity_8">
+				{tableData && descData && (
+					<div className={styles.Institutes}>
+						<div className={styles.titleBox}>
+							<h1 className="text_xxxl color_primary pb_60">
+								Participating Institutes
+							</h1>
+						</div>
+						<table>
+							{tableData?.map((item, ind) => {
+								return (
+									<td key={ind}>
+										<tr className="text_sm">{item.col1}</tr>
+										<tr className="text_sm">{item.col2}</tr>
+										<tr className="text_sm">{item.col3}</tr>
+										<tr className="text_sm">{item.col4}</tr>
+									</td>
+								);
+							})}
+						</table>
+						{descData && (
+							<div>
+								<ContentFromCms>{descData}</ContentFromCms>
+							</div>
+						)}
+
+						{/* <p className="text_sm opacity_8">
 						End-to-end competition was hosted virtually, where students had to form
 						teams of 3 and register online. The case study based on an existing
 						challenge faced by Svatantra Microfin was shared with all the registered
@@ -89,93 +82,47 @@ export default function Eventinsti() {
 								panellists.
 							</p>
 						</div>
-					</ul>
-				</div>
-				<div className={`${styles.statements}  pb_100`}>
-					<div className={`${styles.titleBox}`}>
-						<h1 className="text_xxxl color_primary pb_60">Problem Statements</h1>
+					</ul> */}
 					</div>
-					<div className={styles.pdfData}>
-						<table>
-							<td className={styles.title}>
-								<tr></tr>
-								<tr className="text_sm color_white">Details</tr>
-								<tr className="text_sm color_white">Enclosures</tr>
-								{/* <tr className="text_sm color_white">Enclosures</tr> */}
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>1</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 2.0, 2016
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>2</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 3.0, 2017
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>3</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 4.0, 2018
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>4</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 5.0, 2019
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>5</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 6.0, 2020
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>6</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 7.0, 2021
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-							<td>
-								<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>7</tr>
-								<tr className="text_sm pt_20 pb_20 opacity_8">
-									Avant- Garde 8.0, 2022
-								</tr>
-								<tr className={`${styles.download} pt_20 pb_20`}>
-									<img src={download.src} />
-									<p className="text_xs color_secondary_tint opacity_8">Download</p>
-								</tr>
-							</td>
-						</table>
+				)}
+
+				{problemStatementData.length > 0 && (
+					<div className={`${styles.statements}  pb_100`}>
+						<div className={`${styles.titleBox}`}>
+							<h1 className="text_xxxl color_primary pb_60">Problem Statements</h1>
+						</div>
+						<div className={styles.pdfData}>
+							<table>
+								<td className={styles.title}>
+									<tr></tr>
+									<tr className="text_sm color_white">Details</tr>
+									<tr className="text_sm color_white">Enclosures</tr>
+								</td>
+								{problemStatementData.map((item, ind) => {
+									return (
+										<td key={ind}>
+											<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>
+												{ind + 1}
+											</tr>
+											<tr className="text_sm pt_20 pb_20 opacity_8">{item.title}</tr>
+											<tr className={`${styles.downloads} pt_20 pb_20`}>
+												<a
+													href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.media.url}`}
+													className={`${styles.download}`}
+													target="_blank"
+													rel="noreferrer"
+												>
+													<img src={download.src} />
+													<p className="text_xs color_secondary_tint opacity_8">Download</p>
+												</a>
+											</tr>
+										</td>
+									);
+								})}
+							</table>
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</section>
 	);

@@ -57,8 +57,6 @@ export async function getStaticProps({ params }) {
 
 /** Blogs Inside Page */
 export default function BlogsInsidePage({ data }) {
-	console.log(data, " data");
-
 	return (
 		<div>
 			{/* Metatags */}
@@ -77,7 +75,7 @@ export default function BlogsInsidePage({ data }) {
 				<Breadcrumb
 					link7={"blogs"}
 					linkTitle={"Blogs"}
-					link8={`media/Blogs/${data?.slug}`}
+					link8={`Blogs/${data?.slug}`}
 					linkTitle2={`${data?.title}`}
 				/>
 				<div className="container">
