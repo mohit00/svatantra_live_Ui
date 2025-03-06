@@ -50,7 +50,7 @@ export default function SlugPage({ data }) {
 
 			{/* Header */}
 			<Header />
-			<Breadcrum link2="For Investors" link3="Financial TrainingAnnual Return" />
+			<Breadcrum link2="Investors" link3={data[0].title} />
 			{/* Page Content starts here */}
 			<main className={styles.investors_page}>
 				<div className="container">

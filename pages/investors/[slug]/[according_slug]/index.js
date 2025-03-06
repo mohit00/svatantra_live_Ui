@@ -37,7 +37,7 @@ import download_icon from "../../../../public/img/download_icon.svg";
 
 /** Investors Page */
 export default function Investors({ data }) {
-	// console.log(data[0].slugRow);
+	console.log(data[0].slugRow[0].title, "meta");
 	const [filteredData, setFilteredData] = useState([]);
 
 	const router = useRouter();
@@ -119,11 +119,16 @@ export default function Investors({ data }) {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.investors_page}`}>
-				<Breadcrum link2="For Investors" link3="Financial TrainingAnnual Return" />
+				<Breadcrum
+					link2="Investors"
+					link3={data[0].title}
+					link4={data[0].slugRow[0].title}
+				/>
+				{/* <Breadcrum link2="For Investors" link3="Financial TrainingAnnual Return" /> */}
 				<section className={`${styles.investors_main} pb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap}`}>
-							<h1 className="text_xxxl color_primary">Annual Return</h1>
+							<h1 className="text_xxxl color_primary">{data[0].slugRow[0].title}</h1>
 						</div>
 						{filteredData[0]?.row?.length > 0 && (
 							<div className={`${styles.table_wrap} pt_40`}>
