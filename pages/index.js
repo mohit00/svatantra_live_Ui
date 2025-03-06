@@ -30,15 +30,29 @@ import Intro from "@/components/intro";
 
 // DATA //
 import { getDigitalSvatantra } from "@/services/digitalSvatantraService";
+import { mediaMention } from "@/services/mediaMentionService";
+import { getAwards } from "@/services/awardsService";
+import { getInvestors } from "@/services/Investors";
 
 /** getOurLeaderships */
 export const getStaticProps = async (context) => {
 	const successStoriesData = await getDigitalSvatantra();
-	return { props: { successStoriesData }, revalidate: 60 };
+	const mediaMentionData = await mediaMention();
+	const getAwardsData = await getAwards();
+	const investorData = await getInvestors();
+	return {
+		props: { successStoriesData, mediaMentionData, getAwardsData, investorData },
+		revalidate: 60,
+	};
 };
 
 /** Home Page */
-export default function HomePage({ successStoriesData }) {
+export default function HomePage({
+	successStoriesData,
+	mediaMentionData,
+	getAwardsData,
+	investorData,
+}) {
 	gsap.registerPlugin(ScrollTrigger);
 	return (
 		<div>
@@ -64,9 +78,12 @@ export default function HomePage({ successStoriesData }) {
 				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				<StoriesSuccess successStoriesData={successStoriesData} />
-				<Homenews />
-				<HomeInvestors />
+				<StoriesSuccess successStoriesData={successStoriesData} getAwards />
+				<Homenews
+					mediaMentionData={mediaMentionData}
+					getAwardsData={getAwardsData}
+				/>
+				<HomeInvestors investorData={investorData} />
 				<Homecontact />
 			</main>
 			{/* Page Content ends here */}

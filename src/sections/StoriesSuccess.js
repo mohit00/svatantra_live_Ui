@@ -38,8 +38,6 @@ import logo from "../../public/img/logo.jpg";
 
 /** StoriesSuccess Section */
 export default function StoriesSuccess({ successStoriesData }) {
-	console.log(successStoriesData, " successStoriesData");
-
 	useEffect(() => {
 		ScrollOut({
 			once: true,

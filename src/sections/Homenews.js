@@ -1,5 +1,5 @@
 // MODULES //
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
 	Navigation,
@@ -10,11 +10,14 @@ import {
 } from "swiper/modules";
 // COMPONENTS //
 import Button from "@/components/Buttons/Button";
+import MediaPopupContent from "@/components/MediaPopupContent";
 // SECTIONS //
 
 // PLUGINS //
+import Moment from "moment";
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/sections/Homenews.module.scss";
@@ -45,8 +48,24 @@ import finance from "../../public/img/finance.png";
 // DATA //
 
 /** Homenews Section */
-export default function Homenews() {
+export default function Homenews({ mediaMentionData, getAwardsData }) {
+	const [isOpen, setIsOpen] = useState(false);
+	const [selectedBlog, setSelectedBlog] = useState(null);
 	const [activeTab, setActiveTab] = useState("media");
+	const [lenghtCount, setLenghtCount] = useState(4);
+
+	/** */
+	const openPopup = (blog) => {
+		console.log(blog, " blog");
+		setSelectedBlog(blog);
+		setIsOpen(true);
+	};
+
+	/** */
+	const closePopup = () => {
+		setIsOpen(false);
+		setSelectedBlog(null);
+	};
 
 	/** */
 	const handleTabClick = (tab) => {
@@ -117,6 +136,11 @@ export default function Homenews() {
 			},
 		},
 	};
+	useEffect(() => {
+		if (window.innerWidth < 767) {
+			setLenghtCount(2);
+		}
+	}, []);
 
 	return (
 		<section className={`${styles.Homenews} ptb_80`}>
@@ -147,7 +171,7 @@ export default function Homenews() {
 								isHref
 								buttonType="secondary"
 								condition={"white"}
-								link={"#"}
+								link={activeTab === "media" ? "/media/media-mention" : "/media/awards"}
 								title={"View More"}
 							/>
 						</div>
@@ -156,166 +180,128 @@ export default function Homenews() {
 					<div>
 						{activeTab == "media" ? (
 							<>
-								<Swiper {...mediaSettings}>
-									<SwiperSlide>
-										<div className={`${styles.slider}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.imgBox}`}>
-													<img src={advent.src} alt="box1" className={`${styles.mainImg}`} />
-													{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
-												</div>
+								{mediaMentionData.data.length >= lenghtCount ? (
+									<Swiper {...mediaSettings}>
+										{mediaMentionData.data?.map((item, ind) => {
+											const date = Moment(item.date).format("MMM DD, YYYY");
+											return (
+												<SwiperSlide key={ind}>
+													<div
+														className={`${styles.slider}`}
+														onClick={() => openPopup(item)}
+													>
+														<div className={`${styles.box1}`}>
+															<div className={`${styles.imgBox}`}>
+																<img
+																	src={StrapiImage(item.thumbnail).url}
+																	alt="box1"
+																	className={`${styles.mainImg}`}
+																/>
+															</div>
 
-												<div className={`${styles.categoryBox}`}>
-													<div className={`${styles.news}`}>
-														<p>News</p>
-													</div>
-													<div className={`${styles.date}`}>
-														<p>4 March 2024</p>
-													</div>
-												</div>
+															<div className={`${styles.categoryBox}`}>
+																{/* <div className={`${styles.news}`}>
+																<p>News</p>
+															</div> */}
+																<div className={`${styles.date}`}>
+																	<p>{date}</p>
+																</div>
+															</div>
 
-												<p className="text_reg f_w_m pt_10">
-													Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s
-													Svatantra Microfin
-												</p>
-											</div>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.slider}`}>
-											<div className={`${styles.box2}`}>
-												<div className={`${styles.imgBox}`}>
-													<img src={PEOS.src} alt="box1" className={`${styles.mainImg}`} />
-													{/* <img src={box22.src} alt="logo" className={`${styles.logo}`} /> */}
-												</div>
-												<div className={`${styles.categoryBox}`}>
-													<div className={`${styles.news}`}>
-														<p>News</p>
+															<p className="text_reg f_w_m pt_10">{item.title}</p>
+														</div>
 													</div>
-													<div className={`${styles.date}`}>
-														<p>4 March 2024</p>
-													</div>
-												</div>
-												<p className="text_reg f_w_m pt_10">
-													PE cos Advent, Multiples to invest Rs 1,930 crore in Ananya Birla’s
-												</p>
-											</div>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.slider}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.imgBox}`}>
-													<img
-														src={business.src}
-														alt="box1"
-														className={`${styles.mainImg}`}
-													/>
-													{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
-												</div>
+												</SwiperSlide>
+											);
+										})}
+									</Swiper>
+								) : (
+									<div className={styles.gridBx}>
+										{mediaMentionData.data?.map((item, ind) => {
+											const date = Moment(item.date).format("MMM DD, YYYY");
+											return (
+												<div
+													className={`${styles.slider}`}
+													key={ind}
+													onClick={() => openPopup(item)}
+												>
+													<div className={`${styles.box1}`}>
+														<div className={`${styles.imgBox}`}>
+															<img
+																src={StrapiImage(item.thumbnail).url}
+																alt="box1"
+																className={`${styles.mainImg}`}
+															/>
+														</div>
 
-												<div className={`${styles.categoryBox}`}>
-													<div className={`${styles.news}`}>
-														<p>News</p>
-													</div>
-													<div className={`${styles.date}`}>
-														<p>24 December 2023</p>
+														<div className={`${styles.categoryBox}`}>
+															{/* <div className={`${styles.news}`}>
+																<p>News</p>
+															</div> */}
+															<div className={`${styles.date}`}>
+																<p>{date}</p>
+															</div>
+														</div>
+
+														<p className="text_reg f_w_m pt_10">{item.title}</p>
 													</div>
 												</div>
-
-												<p className="text_reg f_w_m pt_10">
-													Ms. Birla Featured Among The Most Powerful Women in Business.
-												</p>
-											</div>
-										</div>
-									</SwiperSlide>
-									{/* <SwiperSlide>
-										<div className={`${styles.slider}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.imgBox}`}>
-													<img src={box1.src} alt="box1" className={`${styles.mainImg}`} />
-													<img src={box11.src} alt="logo" className={`${styles.logo}`} />
-												</div>
-
-												<div className={`${styles.categoryBox}`}>
-													<div className={`${styles.news}`}>
-														<p>News</p>
-													</div>
-													<div className={`${styles.date}`}>
-														<p>5 November 2024</p>
-													</div>
-												</div>
-
-												<p className="text_reg f_w_m pt_10">
-													Advent, Multiples to invest ₹1,930 crore in Ananya Birla’s
-													Svatantra Microfin
-												</p>
-											</div>
-										</div>
-									</SwiperSlide> */}
-								</Swiper>
+											);
+										})}
+									</div>
+								)}
 							</>
 						) : (
 							<>
-								<Swiper {...awardSettings}>
-									<SwiperSlide>
-										<div className={`${styles.awardBox}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.logoBox}`}>
-													<img
-														src={newBharat.src}
-														alt="awardLogo"
-														className={`${styles.awardLogo}`}
-													/>
+								{getAwardsData?.data.length >= lenghtCount ? (
+									<Swiper {...awardSettings}>
+										{getAwardsData.data?.map((item, ind) => {
+											const date = Moment(item.date).format("MMM DD, YYYY");
+											return (
+												<SwiperSlide key={ind}>
+													<div className={`${styles.awardBox}`}>
+														<div className={`${styles.box1}`}>
+															<div className={`${styles.logoBox}`}>
+																<img
+																	src={StrapiImage(item.logo).url}
+																	alt="awardLogo"
+																	className={`${styles.awardLogo}`}
+																/>
+															</div>
+															<div className={`${styles.dateBox}`}>
+																<p className="">{date}</p>
+															</div>
+															<p className="text_reg">{item.title}</p>
+														</div>
+													</div>
+												</SwiperSlide>
+											);
+										})}
+									</Swiper>
+								) : (
+									<div className={styles.gridBx}>
+										{getAwardsData.data?.map((item, ind) => {
+											const date = Moment(item.date).format("MMM DD, YYYY");
+											return (
+												<div className={`${styles.awardBox}`} key={ind}>
+													<div className={`${styles.box1}`}>
+														<div className={`${styles.logoBox}`}>
+															<img
+																src={StrapiImage(item.logo).url}
+																alt="awardLogo"
+																className={`${styles.awardLogo}`}
+															/>
+														</div>
+														<div className={`${styles.dateBox}`}>
+															<p className="">{date}</p>
+														</div>
+														<p className="text_reg">{item.title}</p>
+													</div>
 												</div>
-												<div className={`${styles.dateBox}`}>
-													<p className="">5 November 2024</p>
-												</div>
-												<p className="text_reg">
-													Bharat NBFC & Fintech Summit and Awards 2024 - Most Influential
-													Microfinance Company of the Year 2024
-												</p>
-											</div>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.awardBox}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.logoBox}`}>
-													<img
-														src={bestwork.src}
-														alt="awardLogo"
-														className={`${styles.awardLogo}`}
-													/>
-												</div>
-												<div className={`${styles.dateBox}`}>
-													<p className="">5 November 2024</p>
-												</div>
-												<p className="text_reg">IGPTW Certified 2020 and 2022</p>
-											</div>
-										</div>
-									</SwiperSlide>
-									<SwiperSlide>
-										<div className={`${styles.awardBox}`}>
-											<div className={`${styles.box1}`}>
-												<div className={`${styles.logoBox}`}>
-													<img
-														src={finance.src}
-														alt="awardLogo"
-														className={`${styles.awardLogo}`}
-													/>
-												</div>
-												<div className={`${styles.dateBox}`}>
-													<p className="">5 November 2024</p>
-												</div>
-												<p className="text_reg">
-													INCLUSIVE FINANCE INDIA AWARDS 2021 - Svatantra Microfin,
-													Microfinance Organisation of the year 2021.
-												</p>
-											</div>
-										</div>
-									</SwiperSlide>
-								</Swiper>
+											);
+										})}
+									</div>
+								)}
 							</>
 						)}
 
@@ -347,6 +333,17 @@ export default function Homenews() {
 					/>
 				</div>
 			</div> */}
+			<MediaPopupContent isOpen={isOpen} isClose={closePopup}>
+				{selectedBlog && (
+					<div className={styles.popupContent}>
+						<img
+							src={StrapiImage(selectedBlog.thumbnail).url}
+							alt="blog-image"
+							className="width_100"
+						/>
+					</div>
+				)}
+			</MediaPopupContent>
 		</section>
 	);
 }

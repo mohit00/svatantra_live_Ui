@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 // SECTIONS //
 
 // PLUGINS //
-
+import Moment from "moment";
 // UTILS //
 import StrapiImage from "@/utils/StrapiImage";
 
@@ -33,8 +33,6 @@ export const getStaticProps = async (context) => {
 
 /** Media Mention Page */
 export default function MediaMentionPage({ mediaMentionsData }) {
-	console.log(mediaMentionsData, " mediaMentionsData");
-
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 
@@ -132,6 +130,8 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 						</div>
 						<div className={`${styles.GridBox}`}>
 							{mediaMentionsData.data.map((item, ind) => {
+								// const formattedDate = new Date(item.date).toISOString().split("T")[0];
+								const date = Moment(item.date).format("MMM DD, YYYY");
 								return (
 									<div
 										className={`${styles.slider}`}
@@ -155,7 +155,7 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 													<p>{item.tag}</p>
 												</div>
 												<div className={`${styles.date}`}>
-													<p>{item.date}</p>
+													<p>{date}</p>
 												</div>
 											</div>
 

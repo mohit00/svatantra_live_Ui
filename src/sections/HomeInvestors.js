@@ -20,7 +20,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 // UTILS //
-
+import StrapiImage from "@/utils/StrapiImage";
 // STYLES //
 import styles from "@/styles/sections/HomeInvestors.module.scss";
 
@@ -32,7 +32,9 @@ import arrow_btn from "../../public/img/arrow_btn.svg";
 // DATA //
 
 /** HomeInvestors Section */
-export default function HomeInvestors() {
+export default function HomeInvestors({ investorData }) {
+	console.log(investorData, " investorData");
+
 	const eventsData = [
 		{
 			title: "Udaan Scholarship programme",
@@ -97,17 +99,21 @@ export default function HomeInvestors() {
 								},
 							}}
 						>
-							{eventsData.map((item, ind) => {
+							{investorData.data?.map((item, ind) => {
 								return (
 									<SwiperSlide key={ind}>
 										<div className={`${styles.box_item}`}>
-											<img src={item.thumbnail} className="b_r_10" alt="story img" />
+											<img
+												src={StrapiImage(item.thumbnail).url}
+												className="b_r_10"
+												alt="story img"
+											/>
 											<div className={`${styles.content} pt_20 f_r_aj_between`}>
 												<p className="text_md color_light_black font_secondary opacity_8">
 													{item.title}
 												</p>
 												<div>
-													<a href={item.link}>
+													<a href={`/investors/${item.slug}`}>
 														<img src={arrow_btn.src} alt="arrow icon" />
 													</a>
 												</div>
