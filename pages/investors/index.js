@@ -41,20 +41,13 @@ export default function InvestorIndexPage({ data }) {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags
-				Title={"Investor Index"}
-				Desc={""}
-				OgImg={""}
-				Url={"/investor-index"}
-			/>
+			<MetaTags Title={"Investors"} Desc={""} OgImg={""} Url={"/investors"} />
 
 			{/* Header */}
 			<Header />
 			<Breadcrum
 				// link2="For Investors"
-				link2="Our Impact"
-				link3="Stories Of Svatantra"
-				link4="Customer Testimonials"
+				link2="Investors"
 			/>
 			{/* Page Content starts here */}
 			<main className={styles.InvestorIndexPage}>
