@@ -27,11 +27,46 @@ export default function ContactPageForm() {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm({ mode: "onChange" });
 
 	/** Function to handle submit */
 	const onSubmit = async (data, e) => {
+		const Headers = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+			},
+			body: JSON.stringify({
+				data: data,
+			}),
+		};
+		const { firstName, surname, email, tel, message } = data;
+
+		/** */
+		async function sendData() {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/contact-us-leads`,
+				Headers
+			);
+
+			if (!res.ok) {
+				return;
+			}
+			const result = await res.json();
+			console.log(result, " res");
+			reset();
+			setIsSubmited(true);
+			setTimeout(() => {
+				setIsSubmited(false);
+			}, 2000);
+			// emailData();
+		}
+
+		sendData();
+
 		// Write form submission codes here
 	};
 
@@ -43,25 +78,25 @@ export default function ContactPageForm() {
 					<input
 						type="text"
 						placeholder="Name"
-						id="name"
-						name="First Name *"
+						id="firstName"
+						name="firstName"
 						className={`${styles.inputField}`}
-						{...register("name", { required: true })}
+						{...register("firstName", { required: true })}
 					/>
-					{errors.name && errors.name.type == "required" && (
+					{errors.firstName && errors.firstName.type == "required" && (
 						<label className="error">This field is required</label>
 					)}
 				</div>
 				<div className={`${styles.form_field}`}>
 					<input
 						type="text"
-						placeholder="surname"
+						placeholder="Surname"
 						id="surname"
-						name="Surname *"
+						name="surname"
 						className={`${styles.inputField}`}
-						{...register("name", { required: true })}
+						{...register("surname", { required: true })}
 					/>
-					{errors.name && errors.name.type == "required" && (
+					{errors.surname && errors.surname.type == "required" && (
 						<label className="error">This field is required</label>
 					)}
 				</div>
@@ -90,10 +125,10 @@ export default function ContactPageForm() {
 						placeholder="Telephone *"
 						className={`${styles.inputField}`}
 						type="number"
-						id="number"
-						name="number"
+						id="tel"
+						name="tel"
 						maxLength="10"
-						{...register("number", {
+						{...register("tel", {
 							required: "This field is required",
 							minLength: {
 								value: 10,
@@ -109,7 +144,7 @@ export default function ContactPageForm() {
 							},
 						})}
 					/>
-					{errors.number && <label className="error">{errors.number.message}</label>}
+					{errors.tel && <label className="error">{errors.tel.message}</label>}
 				</div>
 				<div className={`${styles.form_field}`}>
 					<textarea
@@ -131,7 +166,7 @@ export default function ContactPageForm() {
 
 				{isSubmited && (
 					<p className="text_xs pt_10">
-						We appreciate you contacting us. We&lsquo;ll respond shortly. N
+						We appreciate you contacting us. We&lsquo;ll respond shortly.
 					</p>
 				)}
 			</form>
