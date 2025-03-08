@@ -12,8 +12,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import LightGallery from "lightgallery/react";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/sections/pages/careers/Talent.module.scss";
@@ -98,15 +105,39 @@ export default function TalentComponent({ data, pdfTalent }) {
 							}}
 							className={styles.slider}
 						>
-							{filteredData.map((item) => (
+							{filteredData?.map((item) => (
 								<SwiperSlide key={item.id} className={styles.item}>
-									<div className={styles.itemContent}>
+									<LightGallery
+										speed={100}
+										plugins={[lgThumbnail, lgZoom]}
+										thumbnail={true}
+									>
+										<a
+											href={Talent1.src}
+											// data-lg-size="1400-1400"
+											data-src={Talent1.src}
+											data-thumb={Talent1.src}
+										>
+											<div className={styles.itemContent}>
+												<div className={`${styles.item_img} pb_30`}>
+													<img
+														src={StrapiImage(item?.thumb)?.url}
+														className="img-responsive"
+														alt="Talent1"
+													/>
+												</div>
+												<h4 className="text_md">{item.name}</h4>
+												<h6 className="text_xs opacity_80">{item.location}</h6>
+											</div>
+										</a>
+									</LightGallery>
+									{/* <div className={styles.itemContent}>
 										<div className={`${styles.item_img} pb_30`}>
 											<img src={Talent1.src} className="img-responsive" alt="Talent1" />
 										</div>
 										<h4 className="text_md">{item.name}</h4>
 										<h6 className="text_xs opacity_80">{item.location}</h6>
-									</div>
+									</div> */}
 								</SwiperSlide>
 							))}
 						</Swiper>
