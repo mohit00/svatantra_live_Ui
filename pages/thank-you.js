@@ -33,16 +33,22 @@ export default function NotFoundPage() {
 			{/* Page Content starts here */}
 			<main className={styles.not_found_page}>
 				<div className={styles.not_found_wrap}>
-					<h2 className={`${styles.title}`}>404</h2>
-					<p className={`${styles.desp} text_center`}>
-						The page that you are
-						<br /> looking for does not exist!
+					<h2 className={`${styles.title} color_secondary text_center`}>
+						Thank you
+						<br />
+						for your interest.
+					</h2>
+					<p className={`${styles.desp} text_center color_primary text_center`}>
+						We will be in touch with you shortly.
 					</p>
 					<Link href={"/"}>
 						<div className={styles.home_btn}>
-							<Button color="primary" variant="filled" shape="rounded">
-								Go to Homepage
-							</Button>
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Go to Homepage"}
+								link={"/careers/career-contact-form"}
+							/>
 						</div>
 					</Link>
 				</div>

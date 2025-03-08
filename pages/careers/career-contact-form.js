@@ -1,5 +1,7 @@
 // MODULES //
 import { useRef, useState, useEffect } from "react";
+import { useRouter } from "next/router";
+
 // COMPONENTS //
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -23,6 +25,9 @@ import { headers } from "next.config";
 
 /** Career Contact Form Page */
 export default function CareerContactFormPage() {
+	const router = useRouter();
+	// const { slug } = router.query;
+
 	const [fileName, setFileName] = useState("");
 	const [isSubmited, setIsSubmited] = useState(false);
 	const formRef = useRef();
@@ -35,6 +40,20 @@ export default function CareerContactFormPage() {
 	} = useForm({ mode: "onChange" });
 	const [loading, setLoading] = useState(false);
 	const fileInputRef = useRef(null);
+
+	const [designation, setDesignation] = useState("");
+
+	useEffect(() => {
+		const savedDesignation = localStorage.getItem("designation"); // Get stored designation
+		if (savedDesignation) {
+			setDesignation(savedDesignation);
+		}
+	}, []);
+
+	/** handleFileInputClick */
+	const handleFileInputClick = () => {
+		fileInputRef.current.click();
+	};
 
 	/** */
 	// const handleFileChange = (event) => {
@@ -126,7 +145,9 @@ export default function CareerContactFormPage() {
 
 			reset();
 			setIsSubmited(true);
+			router.push("/thank-you");
 			setTimeout(() => setIsSubmited(false), 2000);
+			setDesignation("");
 		} catch (error) {
 			console.error("Form Submission Error:", error);
 			alert("Submission failed. Please try again.");
@@ -509,6 +530,7 @@ export default function CareerContactFormPage() {
 									id="designation"
 									placeholder="Designation*"
 									name="designation"
+									value={designation}
 									{...register("designation", { required: true })}
 								/>
 								{errors.designation && errors.designation.type == "required" && (
@@ -527,13 +549,13 @@ export default function CareerContactFormPage() {
 							</div> */}
 
 							<div className={styles.data}>
-								<p>CV *</p>
+								{/* <p>CV *</p> */}
 								<input
 									className={`${styles.fileInput}`}
 									type="file"
 									name="cv"
 									id="cv"
-									placeholder="Upload resume *"
+									// placeholder="Upload resume *"
 									accept=".pdf,.doc,.docx"
 									{...register("cv", {
 										required: "Please upload your resume",
@@ -555,12 +577,22 @@ export default function CareerContactFormPage() {
 									ref={fileInputRef}
 									onChange={handleFileChange}
 								/>
-								<img
+								{/* <img
 									src={upload.src}
 									id="fileInput"
 									onClick={triggerFileInput}
 									className={styles.upload}
-								/>
+								/> */}
+								<div className={styles.customFileInput} onClick={handleFileInputClick}>
+									{fileName ? (
+										<span>
+											{!isSubmited ? fileName : "Upload resume*"}
+											<span className={styles.fileName}></span>
+										</span>
+									) : (
+										"Upload resume*"
+									)}
+								</div>
 							</div>
 						</div>
 
@@ -570,7 +602,11 @@ export default function CareerContactFormPage() {
 									<input
 										type="checkbox"
 										id="customCheckbox"
+										name="customCheckbox"
 										className={styles.hiddenCheckbox}
+										// {...register("customCheckbox", {
+										// 	required: "You must agree before submitting", // Error message
+										// })}
 									/>
 									<label
 										htmlFor="customCheckbox"
@@ -589,6 +625,9 @@ export default function CareerContactFormPage() {
 									</p>
 								</div>
 							</div>
+							{errors.customCheckbox && (
+								<label className={styles.error}>{errors.customCheckbox.message}</label>
+							)}
 						</div>
 
 						{/* <button type="submit">Submit</button> */}

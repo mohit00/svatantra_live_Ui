@@ -1,5 +1,6 @@
 // MODULES //
 import { useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 // COMPONENTS //
 import Button from "@/components/Buttons/Button";
@@ -22,6 +23,7 @@ import styles from "@/styles/sections/formcontact.module.scss";
 
 /** ContactForm Section */
 export default function ContactPageForm() {
+	const router = useRouter();
 	const [isSubmited, setIsSubmited] = useState(false);
 	const formRef = useRef();
 	const {
@@ -59,6 +61,7 @@ export default function ContactPageForm() {
 			console.log(result, " res");
 			reset();
 			setIsSubmited(true);
+			router.push("/thank-you");
 			setTimeout(() => {
 				setIsSubmited(false);
 			}, 2000);

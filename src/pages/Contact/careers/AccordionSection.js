@@ -1,6 +1,7 @@
 /* eslint-disable require-jsdoc */
 // MODULES //
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 // COMPONENTS //
 import AccordianCommon from "@/components/AccordianCommon";
@@ -23,6 +24,15 @@ import Button from "@/components/Buttons/Button";
 
 /** DummyComponent Component */
 export default function AccordionSection({ data }) {
+	/** DummyComponent Component */
+	const handleApplyClick = (value) => {
+		if (typeof window !== "undefined") {
+			// Ensure code runs only in the browser
+			localStorage.setItem("designation", value); // Store job title
+			window.location.href = "/careers/career-contact-form"; // Redirect to form page
+		}
+	};
+
 	console.log(data);
 	const [activeIndex, setActiveIndex] = useState(null);
 
@@ -179,7 +189,10 @@ export default function AccordionSection({ data }) {
 													</div>
 												</div>
 
-												<div className={`${styles.BtnBx} ptb_20`}>
+												<div
+													className={`${styles.BtnBx} ptb_20`}
+													onClick={() => handleApplyClick(item.title)}
+												>
 													<Button
 														buttonType="four"
 														condition={"white"}
