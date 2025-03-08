@@ -19,3 +19,23 @@ export const getTalents = async () => {
 	const res = await req.json();
 	return res;
 };
+
+/** Fetch Talent pdf */
+export const getTalentPdf = async () => {
+	const req = await fetch(
+		`${process.env.STRAPI_DO_BASE_URL}/api/career?populate=*`,
+		ServerHeaders
+	);
+	const res = await req.json();
+	return res;
+};
+
+/**Fetch getJob details */
+export const getJobDetails = async () => {
+	const req = await fetch(
+		`${process.env.STRAPI_DO_BASE_URL}/api/jobs?populate=*`,
+		ServerHeaders
+	);
+	const res = await req.json();
+	return res;
+};

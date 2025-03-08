@@ -26,18 +26,25 @@ import Girl1 from "../../public/img/about/girl.jpg";
 import Girl2 from "../../public/img/about/girl2.jpg";
 
 // SERVICES //
-import { getEmployeeTestimonials, getTalents } from "@/services/CareersService";
+import {
+	getEmployeeTestimonials,
+	getTalentPdf,
+	getTalents,
+} from "@/services/CareersService";
 
 // DATA //
 /** employee data */
 export const getStaticProps = async () => {
 	const employee = await getEmployeeTestimonials();
 	const talents = await getTalents();
-	return { props: { employee, talents }, revalidate: 60 };
+	const pdfTalent = await getTalentPdf();
+
+	return { props: { employee, talents, pdfTalent }, revalidate: 60 };
 };
 
 /** Contact Page */
-export default function CareersPage({ employee, talents }) {
+export default function CareersPage({ employee, talents, pdfTalent }) {
+	// console.log(pdfTalent, "dddd");
 	return (
 		<div>
 			{/* Metatags */}
@@ -99,7 +106,7 @@ export default function CareersPage({ employee, talents }) {
 						</div>
 					</section>
 				</div>
-				<TalentComponent data={talents} />
+				<TalentComponent data={talents} pdfTalent={pdfTalent} />
 				<JoinComponent />
 			</main>
 			{/* Page Content ends here */}
