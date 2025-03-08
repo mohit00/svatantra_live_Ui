@@ -32,7 +32,13 @@ export default function JoinComponent() {
 							your career goals.
 						</p>
 						<div className={`${styles.BtnBx} pt_20`}>
-							<Button buttonType="four" condition={"white"} title={"Join Us"} />
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Join Us"}
+								isHref={true}
+								link={"/careers/job-opening"}
+							/>
 						</div>
 					</div>
 					<div className={`${styles.join_img}`}>

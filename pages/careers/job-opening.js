@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import AccordionSection from "@/pages/Contact/careers/AccordionSection";
+import { getJobDetails } from "@/services/CareersService";
 
 // SECTIONS //
 
@@ -19,9 +20,15 @@ import styles from "@/styles/pages/careers.module.scss";
 // IMAGES //
 
 // DATA //
+/**Job opening */
+export const getStaticProps = async () => {
+	const jobDetailsData = await getJobDetails();
 
+	return { props: { jobDetailsData }, revalidate: 60 };
+};
 /** Contact Page */
-export default function JobOpening() {
+export default function JobOpening({ jobDetailsData }) {
+	// console.log(jobDetailsData, "ddddddddd");
 	return (
 		<div>
 			{/* Metatags */}
@@ -33,7 +40,7 @@ export default function JobOpening() {
 			{/* Page Content starts here */}
 			<main className={styles.JobOpeningPage}>
 				<Breadcrum link2="Careers" link3="job-opening" />
-				<AccordionSection />
+				<AccordionSection data={jobDetailsData} />
 			</main>
 			{/* Page Content ends here */}
 
