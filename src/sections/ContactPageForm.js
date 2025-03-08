@@ -87,7 +87,7 @@ export default function ContactPageForm() {
 						<label className="error">This field is required</label>
 					)}
 				</div>
-				<div className={`${styles.form_field}`}>
+				{/* <div className={`${styles.form_field}`}>
 					<input
 						type="text"
 						placeholder="Surname"
@@ -99,7 +99,7 @@ export default function ContactPageForm() {
 					{errors.surname && errors.surname.type == "required" && (
 						<label className="error">This field is required</label>
 					)}
-				</div>
+				</div> */}
 				<div className={`${styles.form_field}`}>
 					<input
 						type="email"
@@ -109,7 +109,7 @@ export default function ContactPageForm() {
 							required: true,
 							pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
 						})}
-						placeholder="Email *"
+						placeholder="Email Address"
 						className={`${styles.inputField}`}
 					/>
 					{errors.email && errors.email.type == "required" && (
@@ -122,7 +122,7 @@ export default function ContactPageForm() {
 				<div className={`${styles.form_field}`}>
 					<input
 						// type="text"
-						placeholder="Telephone *"
+						placeholder="Phone No"
 						className={`${styles.inputField}`}
 						type="number"
 						id="tel"
@@ -151,7 +151,7 @@ export default function ContactPageForm() {
 						className={styles.textarea}
 						id="message"
 						name="message"
-						placeholder="Message *"
+						placeholder="Message"
 						{...register("message", {
 							required: true,
 						})}

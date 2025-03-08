@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Homecontact from "@/sections/Homecontact";
+import ContactPageForm from "@/sections/ContactPageForm";
 import Homenews from "@/sections/Homenews";
 import HomeInvestors from "@/sections/HomeInvestors";
 
