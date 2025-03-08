@@ -200,9 +200,6 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 															</div>
 
 															<div className={`${styles.categoryBox}`}>
-																{/* <div className={`${styles.news}`}>
-																<p>News</p>
-															</div> */}
 																<div className={`${styles.date}`}>
 																	<p>{date}</p>
 																</div>
