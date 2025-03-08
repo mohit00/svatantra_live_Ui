@@ -25,8 +25,10 @@ import Talent1 from "../../../../public/img/careers/talent1.jpg";
 // DATA //
 
 /** DummyComponent Component */
-export default function TalentComponent({ data }) {
-	console.log(data, "talents");
+export default function TalentComponent({ data, pdfTalent }) {
+	// console.log(data, "talents");
+
+	console.log(pdfTalent, "data hai bhai");
 	const [activeType, setActiveType] = useState("Paintings");
 
 	// Get unique types
@@ -122,18 +124,34 @@ export default function TalentComponent({ data }) {
 			</div>
 			<div className={`${styles.btn_section}  f_w_a_j_center`}>
 				<div className={`${styles.BtnBx}`}>
-					<Button
-						buttonType="four"
-						condition={"white"}
-						title={"Job Disclaimer and Caution Notice"}
-					/>
+					{pdfTalent.data.cautionNotice.url && (
+						<a
+							href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${pdfTalent.data.cautionNotice.url}`}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Job Disclaimer and Caution Notice"}
+							/>
+						</a>
+					)}
 				</div>
 				<div className={`${styles.BtnBx}`}>
-					<Button
-						buttonType="four"
-						condition={"white"}
-						title={"Employee Code of Conduct"}
-					/>
+					{pdfTalent.data.codeOfConduct.url && (
+						<a
+							href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${pdfTalent.data.codeOfConduct.url}`}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Employee Code of Conduct"}
+							/>
+						</a>
+					)}
 				</div>
 			</div>
 		</div>
