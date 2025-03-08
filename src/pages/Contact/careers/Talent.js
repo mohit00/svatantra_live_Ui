@@ -28,7 +28,7 @@ import Talent1 from "../../../../public/img/careers/talent1.jpg";
 export default function TalentComponent({ data, pdfTalent }) {
 	// console.log(data, "talents");
 
-	console.log(pdfTalent, "data hai bhai");
+	// console.log(pdfTalent, "data hai bhai");
 	const [activeType, setActiveType] = useState("Paintings");
 
 	// Get unique types
