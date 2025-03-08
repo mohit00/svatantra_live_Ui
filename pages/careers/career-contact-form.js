@@ -18,69 +18,154 @@ import styles from "@/styles/pages/CareerContactForm.module.scss";
 
 // IMAGES //
 import upload from "../../public/img/upload.svg";
+import { headers } from "next.config";
 // DATA //
 
 /** Career Contact Form Page */
 export default function CareerContactFormPage() {
 	const [fileName, setFileName] = useState("");
+	const [isSubmited, setIsSubmited] = useState(false);
 	const formRef = useRef();
 	const {
 		register,
 		handleSubmit,
 		reset,
+		setValue,
 		formState: { errors },
 	} = useForm({ mode: "onChange" });
 	const [loading, setLoading] = useState(false);
-	const [isSubmited, setIsSubmited] = useState(false);
+	const fileInputRef = useRef(null);
 
 	/** */
-	const handleFileChange = (event) => {
-		if (event.target.files.length > 0) {
-			setFileName(event.target.files[0].name);
-		}
-	};
+	// const handleFileChange = (event) => {
+	// 	if (event.target.files.length > 0) {
+	// 		setFileName(event.target.files[0].name);
+	// 	}
+	// };
 
 	/** */
-	const triggerFileInput = () => {
-		document.getElementById("fileInput").click();
-	};
+	// const triggerFileInput = () => {
+	// 	document.getElementById("fileInput").click();
+	// };
 
-	/** */
-	const onSubmit = async (data, e) => {
-		const formdata = {
-			name: data.name,
-			email: data.email,
-			number: data.number,
-			message: data.message,
+	/** sendMedia */
+	/** sendMedia - Uploads CV and returns the file ID */
+	/** Uploads CV and returns the file ID */
+	async function sendMedia(file) {
+		const formData = new FormData();
+		formData.append("files", file);
+
+		const requestOptions = {
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+			},
+			body: formData,
 		};
-		setLoading(true);
 
-		// Use Promise.allSettled to ensure both functions run, even if one fails
-		const result = await SendEmailViaSend({ body: { ...formdata } });
-		console.log(result);
-
-		reset();
-		setIsSubmited(true);
-		setTimeout(() => {
-			setIsSubmited(false);
-		}, 5000);
-		setLoading(false);
-	};
-
-	/** */
-	async function SendEmailViaSend({ body }) {
 		try {
-			const res = await fetch("/api/sendEmail", {
-				method: "POST",
-				body: JSON.stringify({ ...body }),
-			});
-			const data = await res.json();
-			return data;
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/upload`,
+				requestOptions
+			);
+			if (!res.ok) throw new Error("File upload failed");
+
+			const result = await res.json();
+			return result[0].id; // ✅ Return file ID for form submission
 		} catch (error) {
-			console.error("SendEmailViaSend failed", error);
-			return null; // Return null or any value to indicate failure
+			console.error("File Upload Error:", error);
+			return null;
 		}
 	}
+
+	/** Handles form submission */
+	const onSubmit = async (data) => {
+		if (!data.cv || data.cv.length === 0) {
+			alert("Please upload your CV.");
+			return;
+		}
+
+		setLoading(true);
+
+		// ✅ Upload file and get file ID
+		const fileId = await sendMedia(data.cv[0]);
+
+		if (!fileId) {
+			alert("File upload failed. Please try again.");
+			setLoading(false);
+			return;
+		}
+
+		// ✅ Send form data with uploaded file ID
+		const requestBody = {
+			data: {
+				...data,
+
+				cv: fileId, // Attach uploaded file ID
+			},
+		};
+
+		const Headers = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+			},
+			body: JSON.stringify(requestBody),
+		};
+
+		try {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/jobs-leads`,
+				Headers
+			);
+			if (!res.ok) throw new Error("Form submission failed");
+
+			const result = await res.json();
+			console.log("Success:", result);
+
+			reset();
+			setIsSubmited(true);
+			setTimeout(() => setIsSubmited(false), 2000);
+		} catch (error) {
+			console.error("Form Submission Error:", error);
+			alert("Submission failed. Please try again.");
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	/** Handles file input change */
+	const handleFileChange = (event) => {
+		const file = event.target.files[0];
+		if (file) {
+			setFileName(file.name);
+			setValue("cv", [file], { shouldValidate: true });
+		} else {
+			setFileName("");
+		}
+	};
+
+	/** Triggers file input */
+	const triggerFileInput = () => {
+		if (fileInputRef.current) {
+			fileInputRef.current.click();
+		}
+	};
+	/** */
+	// async function SendEmailViaSend({ body }) {
+	// 	try {
+	// 		const res = await fetch("/api/sendEmail", {
+	// 			method: "POST",
+	// 			body: JSON.stringify({ ...body }),
+	// 		});
+	// 		const data = await res.json();
+	// 		return data;
+	// 	} catch (error) {
+	// 		console.error("SendEmailViaSend failed", error);
+	// 		return null; // Return null or any value to indicate failure
+	// 	}
+	// }
 
 	return (
 		<div>
@@ -161,7 +246,17 @@ export default function CareerContactFormPage() {
 								)}
 							</div>
 
-							<input className={styles.field} placeholder="Date of birth *" />
+							<div className={styles.inputBox}>
+								<input
+									className={styles.field}
+									placeholder="Date of birth *"
+									name="dob"
+									{...register("dob", { required: true })}
+								/>
+								{errors.dob && (
+									<label className={styles.error}>{errors.dob.message}</label>
+								)}
+							</div>
 
 							<div className={styles.inputBox}>
 								<div>
@@ -169,10 +264,22 @@ export default function CareerContactFormPage() {
 										{...register("qualification", {
 											required: "This field is required",
 										})}
+										name="qualification"
 									>
-										<option value="">Qualification *</option>
-										<option value="">Qualification *</option>
-										<option value="">Qualification *</option>
+										<option value="">Select Qualification</option>
+										<option value="HSC">HSC</option>
+										<option value="Graduation">Graduation</option>
+										<option value="Post Graduation">Post Graduation</option>
+										<option value="Diploma (3 years full time)">
+											Diploma (3 years full time)
+										</option>
+										<option value="MSW/BSW">MSW/BSW</option>
+										<option value="Professional Qualifications">
+											Professional Qualifications
+										</option>
+										<option value="PAdditional Certifications">
+											PAdditional Certifications
+										</option>
 									</select>
 									{errors.qualification && (
 										<label className={styles.error}>{errors.qualification.message}</label>
@@ -187,11 +294,19 @@ export default function CareerContactFormPage() {
 										required: "This field is required",
 									})}
 								>
-									<option value="">Experience *</option>
-									<option value="0-1">Experience *</option>
-									<option value="2-3">Experience *</option>
-									<option value="4-5">Experience *</option>
-									<option value="5+">Experience *</option>
+									<option value="">Select Experience</option>
+									<option value="Fresher">Fresher</option>
+									<option value="0-1 year">0-1 year</option>
+									<option value="1-2 years">1-2 years</option>
+									<option value="2-3 years">2-3 years</option>
+									<option value="3-4 years">3-4 years</option>
+									<option value="4-5 years">4-5 years</option>
+									<option value="5-6 years">5-6 years</option>
+									<option value="6-7 years">6-7 years</option>
+									<option value="7-8 years">7-8 years</option>
+									<option value="8-9 years">8-9 years</option>
+									<option value="9-10 years">9-10 years</option>
+									<option value="Above 10 years">Above 10 years</option>
 								</select>
 								{errors.experience && (
 									<label className={styles.error}>{errors.experience.message}</label>
@@ -205,12 +320,45 @@ export default function CareerContactFormPage() {
 										required: "This field is required",
 									})}
 								>
-									<option value="">State *</option> {/* Placeholder option */}
-									<option value="new-york">New York</option>
-									<option value="california">California</option>
-									<option value="texas">Texas</option>
-									<option value="florida">Florida</option>
-									<option value="illinois">Illinois</option>
+									<option value="">Select State *</option>
+									<option value="Andhra Pradesh">Andhra Pradesh</option>
+									<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+									<option value="Assam">Assam</option>
+									<option value="Bihar">Bihar</option>
+									<option value="Chhattisgarh">Chhattisgarh</option>
+									<option value="Goa">Goa</option>
+									<option value="Gujarat">Gujarat</option>
+									<option value="Haryana">Haryana</option>
+									<option value="Himachal Pradesh">Himachal Pradesh</option>
+									<option value="Jharkhand">Jharkhand</option>
+									<option value="Karnataka">Karnataka</option>
+									<option value="Kerala">Kerala</option>
+									<option value="Madhya Pradesh">Madhya Pradesh</option>
+									<option value="Maharashtra">Maharashtra</option>
+									<option value="Manipur">Manipur</option>
+									<option value="Meghalaya">Meghalaya</option>
+									<option value="Mizoram">Mizoram</option>
+									<option value="Nagaland">Nagaland</option>
+									<option value="Odisha">Odisha</option>
+									<option value="Punjab">Punjab</option>
+									<option value="Rajasthan">Rajasthan</option>
+									<option value="Sikkim">Sikkim</option>
+									<option value="Tamil Nadu">Tamil Nadu</option>
+									<option value="Telangana">Telangana</option>
+									<option value="Tripura">Tripura</option>
+									<option value="Uttar Pradesh">Uttar Pradesh</option>
+									<option value="Uttarakhand">Uttarakhand</option>
+									<option value="West Bengal">West Bengal</option>
+									<option value="Andaman and Nicobar Islands">
+										Andaman and Nicobar Islands
+									</option>
+									<option value="Chandigarh">Chandigarh</option>
+									<option value="Dadra and Nagar Haveli and Daman and Diu">
+										Dadra and Nagar Haveli and Daman and Diu
+									</option>
+									<option value="Delhi">Delhi</option>
+									<option value="Lakshadweep">Lakshadweep</option>
+									<option value="Puducherry">Puducherry</option>
 								</select>
 								{errors.state && (
 									<label className={styles.error}>{errors.state.message}</label>
@@ -224,12 +372,45 @@ export default function CareerContactFormPage() {
 										required: "This field is required",
 									})}
 								>
-									<option value="">Preferred State *</option> {/* Placeholder option */}
-									<option value="new-york">New York</option>
-									<option value="california">California</option>
-									<option value="texas">Texas</option>
-									<option value="florida">Florida</option>
-									<option value="illinois">Illinois</option>
+									<option value="">Select State *</option>
+									<option value="Andhra Pradesh">Andhra Pradesh</option>
+									<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+									<option value="Assam">Assam</option>
+									<option value="Bihar">Bihar</option>
+									<option value="Chhattisgarh">Chhattisgarh</option>
+									<option value="Goa">Goa</option>
+									<option value="Gujarat">Gujarat</option>
+									<option value="Haryana">Haryana</option>
+									<option value="Himachal Pradesh">Himachal Pradesh</option>
+									<option value="Jharkhand">Jharkhand</option>
+									<option value="Karnataka">Karnataka</option>
+									<option value="Kerala">Kerala</option>
+									<option value="Madhya Pradesh">Madhya Pradesh</option>
+									<option value="Maharashtra">Maharashtra</option>
+									<option value="Manipur">Manipur</option>
+									<option value="Meghalaya">Meghalaya</option>
+									<option value="Mizoram">Mizoram</option>
+									<option value="Nagaland">Nagaland</option>
+									<option value="Odisha">Odisha</option>
+									<option value="Punjab">Punjab</option>
+									<option value="Rajasthan">Rajasthan</option>
+									<option value="Sikkim">Sikkim</option>
+									<option value="Tamil Nadu">Tamil Nadu</option>
+									<option value="Telangana">Telangana</option>
+									<option value="Tripura">Tripura</option>
+									<option value="Uttar Pradesh">Uttar Pradesh</option>
+									<option value="Uttarakhand">Uttarakhand</option>
+									<option value="West Bengal">West Bengal</option>
+									<option value="Andaman and Nicobar Islands">
+										Andaman and Nicobar Islands
+									</option>
+									<option value="Chandigarh">Chandigarh</option>
+									<option value="Dadra and Nagar Haveli and Daman and Diu">
+										Dadra and Nagar Haveli and Daman and Diu
+									</option>
+									<option value="Delhi">Delhi</option>
+									<option value="Lakshadweep">Lakshadweep</option>
+									<option value="Puducherry">Puducherry</option>
 								</select>
 								{errors.preferredState && (
 									<label className={styles.error}>{errors.preferredState.message}</label>
@@ -239,40 +420,40 @@ export default function CareerContactFormPage() {
 							<div className={styles.inputBox}>
 								<select
 									className={styles.field}
-									{...register("industryType", {
+									{...register("industry", {
 										required: "This field is required",
 									})}
 								>
-									<option value="">Type of Industry *</option> {/* Placeholder option */}
-									<option value="it">Information Technology</option>
-									<option value="finance">Finance</option>
-									<option value="healthcare">Healthcare</option>
-									<option value="education">Education</option>
-									<option value="manufacturing">Manufacturing</option>
-									<option value="retail">Retail</option>
+									<option value="">Select Type of Industry *</option>
+									<option value="Fresher">Fresher</option>
+									<option value="MFI">MFI (Microfinance Institution)</option>
+									<option value="Non MFI">Non MFI</option>
+									<option value="NBFC">NBFC (Non-Banking Financial Company)</option>
+									<option value="BFSI">
+										BFSI (Banking, Financial Services, and Insurance)
+									</option>
+									<option value="Others">Others</option>
 								</select>
-								{errors.industryType && (
-									<label className={styles.error}>{errors.industryType.message}</label>
+								{errors.industry && (
+									<label className={styles.error}>{errors.industry.message}</label>
 								)}
 							</div>
 
 							<div className={styles.inputBox}>
 								<select
 									className={styles.field}
-									{...register("previousMFIExperience", {
+									{...register("previousMFI", {
 										required: "This field is required",
 									})}
 								>
-									<option value="">Previous MFI Experience *</option>{" "}
-									{/* Placeholder option */}
+									<option value="">Previous MFI Experience *</option>
+
 									<option value="yes">Yes</option>
 									<option value="no">No</option>
 									<option value="not-sure">Not Sure</option>
 								</select>
-								{errors.previousMFIExperience && (
-									<label className={styles.error}>
-										{errors.previousMFIExperience.message}
-									</label>
+								{errors.previousMFI && (
+									<label className={styles.error}>{errors.previousMFI.message}</label>
 								)}
 							</div>
 
@@ -283,13 +464,11 @@ export default function CareerContactFormPage() {
 										required: "This field is required",
 									})}
 								>
-									<option value="">Current job status *</option>{" "}
-									{/* Placeholder option */}
-									<option value="employed">Employed</option>
-									<option value="unemployed">Unemployed</option>
-									<option value="self-employed">Self-Employed</option>
-									<option value="student">Student</option>
-									<option value="other">Other</option>
+									<option value="">Select Current Job Status *</option>
+									<option value="Fresher">Fresher</option>
+									<option value="Currently Working">Currently Working</option>
+									<option value="Serving Notice Period">Serving Notice Period</option>
+									<option value="Currently Not Working">Currently Not Working</option>
 								</select>
 								{errors.currentJobStatus && (
 									<label className={styles.error}>
@@ -301,40 +480,39 @@ export default function CareerContactFormPage() {
 							<div className={styles.inputBox}>
 								<select
 									className={styles.field}
-									{...register("sourceOfCV", {
+									{...register("sourceOfCv", {
 										required: "This field is required",
 									})}
 								>
-									<option value="">Source of CV *</option> {/* Placeholder option */}
-									<option value="linkedin">LinkedIn</option>
-									<option value="job-portal">Job Portal</option>
-									<option value="employee-referral">Employee Referral</option>
-									<option value="company-website">Company Website</option>
-									<option value="recruiter">Recruiter</option>
-									<option value="other">Other</option>
+									<option value="">Select Source of CV *</option>
+									<option value="Advertisement / Social Media">
+										Advertisement / Social Media
+									</option>
+									<option value="Campus">Campus</option>
+									<option value="Careers">Careers</option>
+									<option value="Direct">Direct</option>
+									<option value="Employee Referral">Employee Referral</option>
+									<option value="Job Portal">Job Portal</option>
+									<option value="Recruitment Drives / Job Fair">
+										Recruitment Drives / Job Fair
+									</option>
 								</select>
-								{errors.sourceOfCV && (
-									<label className={styles.error}>{errors.sourceOfCV.message}</label>
+								{errors.sourceOfCv && (
+									<label className={styles.error}>{errors.sourceOfCv.message}</label>
 								)}
 							</div>
 
 							<div className={styles.inputBox}>
-								<select
+								<input
+									type="text"
 									className={styles.field}
-									{...register("designation", {
-										required: "This field is required",
-									})}
-								>
-									<option value="">Designation *</option> {/* Placeholder option */}
-									<option value="manager">Manager</option>
-									<option value="team-lead">Team Lead</option>
-									<option value="executive">Executive</option>
-									<option value="analyst">Analyst</option>
-									<option value="intern">Intern</option>
-									<option value="other">Other</option>
-								</select>
-								{errors.designation && (
-									<label className={styles.error}>{errors.designation.message}</label>
+									id="designation"
+									placeholder="Designation*"
+									name="designation"
+									{...register("designation", { required: true })}
+								/>
+								{errors.designation && errors.designation.type == "required" && (
+									<label className={styles.error}>This field is required</label>
 								)}
 							</div>
 
@@ -351,9 +529,30 @@ export default function CareerContactFormPage() {
 							<div className={styles.data}>
 								<p>CV *</p>
 								<input
+									className={`${styles.fileInput}`}
 									type="file"
-									id="fileInput"
-									className={styles.hiddenFileInput}
+									name="cv"
+									id="cv"
+									placeholder="Upload resume *"
+									accept=".pdf,.doc,.docx"
+									{...register("cv", {
+										required: "Please upload your resume",
+										validate: {
+											acceptedFormats: (files) =>
+												(files &&
+													files[0] &&
+													[
+														"application/pdf",
+														"application/msword",
+														"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+													].includes(files[0].type)) ||
+												"Only .pdf, .doc, and .docx files are accepted",
+											maxSize: (files) =>
+												(files && files[0] && files[0].size <= 10485760) ||
+												"File size should be less than 10MB",
+										},
+									})}
+									ref={fileInputRef}
 									onChange={handleFileChange}
 								/>
 								<img
@@ -406,6 +605,13 @@ export default function CareerContactFormPage() {
 							/>
 						</div>
 					</form>
+					<div>
+						{isSubmited && (
+							<p className="text_xs color_light_black m_b_5 pb_50">
+								Thank your for submitting the form
+							</p>
+						)}
+					</div>
 				</div>
 			</main>
 			{/* Page Content ends here */}
