@@ -13,7 +13,7 @@ export const getEmployeeTestimonials = async () => {
 /** Fetch Employee Testimonials Data */
 export const getTalents = async () => {
 	const req = await fetch(
-		`${process.env.STRAPI_DO_BASE_URL}/api/talents?populate[0]=thumb`,
+		`${process.env.STRAPI_DO_BASE_URL}/api/talents?populate[0]=thumb&populate[1]=image`,
 		ServerHeaders
 	);
 	const res = await req.json();
