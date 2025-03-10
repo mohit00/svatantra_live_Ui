@@ -97,6 +97,7 @@
 					position: relative;
 
 					.mainImg {
+						margin: 0 auto;
 						@media (max-width: 991px) {
 							width: 100%;
 						}
@@ -129,6 +130,7 @@
 					.mainImg {
 						width: 100%;
 						object-fit: cover;
+						margin: 0 auto;
 						@media (max-width: 991px) {
 							width: 100%;
 						}
@@ -279,6 +281,12 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 50px 30px;
+		.mainImg {
+			margin: 0 auto;
+		}
+		.awardLogo {
+			margin: 0 auto;
+		}
 		.slider {
 			cursor: pointer;
 		}

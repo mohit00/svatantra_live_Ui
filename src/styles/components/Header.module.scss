@@ -44,6 +44,7 @@
 			}
 			.image_wrap {
 				@extend %f_r_a_center;
+				cursor: pointer;
 			}
 			.links_wrap {
 				@extend %d_flex;
