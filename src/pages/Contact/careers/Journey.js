@@ -35,7 +35,12 @@ export default function Journey() {
 							strengthen our economy.
 						</p>
 						<div className={`${styles.BtnBx} pt_20`}>
-							<Button buttonType="four" condition={"white"} title={"Join Us"} />
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Join Us"}
+								link={"/careers/job-opening"}
+							/>
 						</div>
 					</div>
 					<div className={`${styles.Journey_img}`}>

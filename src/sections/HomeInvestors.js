@@ -28,7 +28,8 @@ import styles from "@/styles/sections/HomeInvestors.module.scss";
 import event_one from "../../public/img/media/events/event_one.jpg";
 import event_two from "../../public/img/media/events/event_two.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
-
+import rightArrow from "../../public/img/news/rightarrow.svg";
+import prevImg from "../../public/img/news/prevImg.svg";
 // DATA //
 
 /** HomeInvestors Section */
@@ -84,10 +85,10 @@ export default function HomeInvestors({ investorData }) {
 								prevEl: "#customPrev",
 								nextEl: "#customNext",
 							}}
-							autoplay={{
-								delay: 3000,
-								disableOnInteraction: false,
-							}}
+							// autoplay={{
+							// 	delay: 3000,
+							// 	disableOnInteraction: false,
+							// }}
 							pagination={{
 								el: ".swiper-pagination1", // Attach to a pagination container
 								type: "progressbar", // Choose 'progressbar' type
@@ -127,10 +128,10 @@ export default function HomeInvestors({ investorData }) {
 					<div className={`${styles.progressBar} swiper-pagination1`}></div>
 					<div className={`${styles.arrowSection} f_w_a_j_center`}>
 						<button className={`${styles.customPrev}`} id="customPrev">
-							<img src={arrow_btn.src} alt="icon" />
+							<img src={prevImg.src} alt="icon" />
 						</button>
 						<button className={styles.customNext} id="customNext">
-							<img src={arrow_btn.src} alt="icon" />
+							<img src={rightArrow.src} alt="icon" />
 						</button>
 					</div>
 				</div>

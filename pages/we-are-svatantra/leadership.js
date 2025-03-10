@@ -115,7 +115,7 @@ export default function LeadershipPage({ leadershipsData }) {
 										<div className={`${styles.AnanyaIntro}`} key={index}>
 											<div className={`${styles.Left}`}>
 												<div className={`${styles.DetailsHead} pb_40`}>
-													<p className="text_md">{item.name}</p>
+													<p className="text_md font_primary pb_10">{item.name}</p>
 													<p className="color_light_black text_xs opacity_80">
 														{item.designation} |{" "}
 														<a target="_blank" href={`${item.websiteLink}`} rel="noreferrer">
@@ -298,7 +298,7 @@ export default function LeadershipPage({ leadershipsData }) {
 												</div>
 												<div className={styles.DetailsBx}>
 													<div className={styles.Details}>
-														<p className={`${styles.Name} font_primary text_md f_w_m`}>
+														<p className={`${styles.Name} font_primary text_md f_w_r`}>
 															{item.name}
 															{/* item.name */}
 														</p>

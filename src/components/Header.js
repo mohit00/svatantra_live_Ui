@@ -97,6 +97,7 @@ export default function Header() {
 				setIsResource(false);
 				setIsDigital(false);
 				setIsMedia(false);
+				setActiveMenu(null);
 				// setIsOpen(false);
 			}
 		};
@@ -117,8 +118,11 @@ export default function Header() {
 
 	/** */
 	const handleMenuClick = (index, e) => {
+		e.stopPropagation();
+
 		setActiveMenu((prev) => (prev === index ? null : index));
 	};
+
 	useEffect(() => {
 		if (isClient) {
 			const devElements = devRefs.current;
@@ -178,6 +182,25 @@ export default function Header() {
 		})) || [];
 
 	console.log(data || [], "headers data");
+
+	// useEffect(() => {
+	// 	const handleClickOutside = (event) => {
+	// 		if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+	// 			setIsAboutOpen(false);
+	// 			setIsProductsOpen(false);
+	// 			setIsImpact(false);
+	// 			setIsResource(false);
+	// 			setIsDigital(false);
+	// 			setIsMedia(false);
+	// 			setActiveMenu(null); // Close active submenu if any
+	// 		}
+	// 	};
+
+	// 	document.addEventListener("mousedown", handleClickOutside);
+	// 	return () => {
+	// 		document.removeEventListener("mousedown", handleClickOutside);
+	// 	};
+	// }, []);
 
 	return (
 		<div

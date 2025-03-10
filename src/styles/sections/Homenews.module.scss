@@ -3,6 +3,13 @@
 .Homenews {
 	position: relative;
 	background-color: var(--color_white);
+
+	@media (max-width: 767px) {
+		:global(.swiper-slide) {
+			width: 100% !important;
+		}
+	}
+
 	.mainBox {
 		.category {
 			display: flex;
@@ -17,11 +24,19 @@
 				.media {
 					padding: 8px 40px 5px 40px;
 					border-radius: 100px;
+
+					@media (max-width: 767px) {
+						padding: 8px 20px 8px 20px;
+					}
 				}
 
 				.award {
 					padding: 8px 40px 8px 40px;
 					border-radius: 100px;
+
+					@media (max-width: 767px) {
+						padding: 8px 20px 8px 20px;
+					}
 				}
 
 				.active {
@@ -32,7 +47,7 @@
 
 			.hiddenButton {
 				@media (max-width: 767px) {
-					display: none;
+					display: block;
 				}
 			}
 		}
@@ -53,16 +68,31 @@
 				}
 			}
 
+			// .date {
+			// 	display: flex;
+			// 	align-items: center;
+			// 	padding: 4px 18px 4px 0;
+			// 	border-radius: 100px;
+			// 	background-color: var(--color_white);
+
+			// 	p {
+			// 		font-size: 10px;
+			// 		color: black;
+			// 	}
+			// }
+
 			.date {
+				width: 100px;
+				background-color: #f1f1f1;
+				padding: 8px 10px 5px 10px;
+				border-radius: 100px;
 				display: flex;
 				align-items: center;
-				padding: 4px 18px 4px 0;
-				border-radius: 100px;
-				background-color: var(--color_white);
-
+				justify-content: center;
+				margin-bottom: 15px;
 				p {
-					font-size: 10px;
-					color: black;
+					font-size: 12px;
+					font-weight: 400;
 				}
 			}
 		}
@@ -84,7 +114,7 @@
 			}
 
 			.box1 {
-				width: 100%;
+				// width: 100%;
 
 				@media (max-width: 911px) {
 					width: 96%;
@@ -167,7 +197,7 @@
 			// }
 
 			.box1 {
-				width: 370px;
+				// width: 370px;
 				// height: 350px;
 				padding: 0 10px;
 
@@ -196,21 +226,22 @@
 				}
 
 				.dateBox {
-					width: 150px;
+					width: 100px;
 					background-color: #f1f1f1;
-					padding: 5px 10px;
+					padding: 8px 10px 5px 10px;
 					border-radius: 100px;
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					margin-bottom: 15px;
 					p {
-						font-size: 10px;
+						font-size: 12px;
 						font-weight: 400;
 					}
 				}
 
 				p {
+					// text-align: justify;
 					@media (max-width: 991px) {
 						font-size: 14px;
 					}

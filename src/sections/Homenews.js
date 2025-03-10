@@ -75,7 +75,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const mediaSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Default spacing between slides
-		slidesPerView: 1, // Default: Show 3 slides fully
+		slidesPerView: 2, // Default: Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -91,15 +91,15 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 2, // Mobile screens: 1 slide visible
+				slidesPerView: 1, // Mobile screens: 1 slide visible
 				spaceBetween: 10, // Reduced spacing for smaller screens
 			},
 			991: {
-				slidesPerView: 2, // Medium screens: 2 slides visible
+				slidesPerView: 3, // Medium screens: 2 slides visible
 				spaceBetween: 20, // Adjust spacing for tablets
 			},
 			1024: {
-				slidesPerView: 3, // Large screens: 3 slides visible
+				slidesPerView: 2, // Large screens: 3 slides visible
 				spaceBetween: 20, // Increased spacing for larger screens
 			},
 		},
@@ -108,7 +108,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const awardSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Adjust spacing between slides
-		slidesPerView: 1, // Show 3 slides fully
+		slidesPerView: 3, // Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {

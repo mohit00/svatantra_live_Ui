@@ -86,7 +86,7 @@ export default function EmployeesComponent({ data }) {
 										<img src={Employees.src} className="img-responsive" alt="Employees" />
 									</div>
 									<div className={`${styles.item_info}`}>
-										<h4 className="text_md">{item.name}</h4>
+										<h4 className="text_md font_primary pb_10">{item.name}</h4>
 										<h6 className="text_xs opacity_80 pb_20">{item.designation}</h6>
 										<p className="text_sm opacity_80">{parse(item.desc)}</p>
 									</div>

@@ -102,7 +102,7 @@ export default function JourneyComponent({ journeyData }) {
 															<h6 className="text_sm f_w_m opacity_80">{jitem.desc}</h6>
 															<div className={`${styles.image} pt_20`}>
 																<img
-																	src={StrapiImage(jitem.image).url}
+																	src={StrapiImage(jitem.image)?.url}
 																	className="img-responsive"
 																	alt="Journey"
 																/>

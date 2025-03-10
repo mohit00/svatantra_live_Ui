@@ -150,7 +150,9 @@ export default function csr() {
 								{svatantraPath.map((item, ind) => (
 									<SwiperSlide className={`${styles.item}`} key={ind}>
 										<div className={styles.itemContent}>
-											<h4 className="text_md color_light_black pb_20">{item.title}</h4>
+											<h4 className="text_md color_light_black pb_20 font_primary">
+												{item.title}
+											</h4>
 											<p className="text_xs color_light_black opacity_8">{item.desc}</p>
 										</div>
 									</SwiperSlide>

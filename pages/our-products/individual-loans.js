@@ -242,7 +242,7 @@ export default function MsmeLoans() {
 									</td>
 								</tr> */}
 							</table>
-							<p className="text_sm pt_20 f_w_l opacity_80">
+							<p className={`${styles.averageRate} text_sm pt_20 f_w_l opacity_80`}>
 								*Average rate of interest for Q4 FY24: 23.21%
 							</p>
 						</div>
@@ -251,7 +251,7 @@ export default function MsmeLoans() {
 								<span>
 									<img src={pdf_icon.src} alt="icon" />
 								</span>
-								Disclouser of Interest Rate
+								Disclosure of Interest Rate
 							</a>
 							<a href="">
 								<span>
