@@ -57,7 +57,7 @@ export default function Udaangallery({ imageData }) {
 	];
 	const galleryImages = imageData?.map((img) => ({
 		src: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
-		thumbnail: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
+		thumb: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
 		// src: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.url}`,
 		// thumbnail: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.url}`,
 		subHtml: `<h4>${img.image.caption || "Image"}</h4>`,
@@ -93,7 +93,13 @@ export default function Udaangallery({ imageData }) {
 				<div className={`${styles.driving_img_box} f_w_j`}>
 					{galleryImages?.map((item, colIndex) => (
 						<div key={colIndex} className={`${styles.item_img}`}>
-							<img src={item?.src} className="b_r_10" alt={`Image ${colIndex + 1}`} />
+							<img
+								// src={StrapiImage(item.image)?.url}
+								src={item?.src}
+								data-src={item?.src}
+								className="b_r_10"
+								alt={`Image ${colIndex + 1}`}
+							/>
 							<img
 								src={Zoom.src}
 								className={`${styles.zoom}`}
