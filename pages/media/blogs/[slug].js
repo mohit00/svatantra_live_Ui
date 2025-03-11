@@ -18,7 +18,7 @@ import StrapiImage from "@/utils/StrapiImage";
 import styles from "@/styles/pages/BlogsInside.module.scss";
 
 // IMAGES //
-import twitter from "../../../public/img/footer/twitter.svg";
+import twitter from "../../../public/x_thread.svg";
 import facebook from "../../../public/img/footer/facebook.svg";
 import insta from "../../../public/img/footer/insta.svg";
 import yt from "../../../public/img/footer/yt.svg";
@@ -140,7 +140,7 @@ export default function BlogsInsidePage({ data }) {
 											<img src={yt.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
 									</a>
-									{/* <a
+									<a
 										href="https://www.instagram.com/wearesvatantra?igsh=Zmh0b2hnOHZoaTh5"
 										target="_blank"
 										rel="noreferrer"
@@ -148,7 +148,7 @@ export default function BlogsInsidePage({ data }) {
 										<div className={`${styles.box1}`}>
 											<img src={insta.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a> */}
+									</a>
 								</div>
 							</div>
 						</div>

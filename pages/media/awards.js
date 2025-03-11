@@ -27,7 +27,7 @@ import best_workplace from "../../public/img/media/awards/best_workplace.png";
 import inclusive from "../../public/img/media/awards/inclusive.png";
 import innovation from "../../public/img/media/awards/innovation.png";
 import btnArrow from "../../public/img/home/BtnArrow.svg";
-
+import testLogo from "../../public/testLogo.svg";
 // DATA //
 
 // SERVICES //
@@ -139,9 +139,16 @@ export default function AwardsPage({ AwardsList }) {
 								{AwardsList.data.slice(0, visibleAwards).map((item, ind) => (
 									<div className={`${styles.box_item}`} key={ind}>
 										<div className={`${styles.imgBox}`}>
+											{/* <img
+												// src={item.thumbnail}
+												src={StrapiImage(item?.logo)?.url}
+												className="b_r_10"
+												alt="story img"
+											/> */}
 											<img
 												// src={item.thumbnail}
 												src={StrapiImage(item?.logo)?.url}
+												// src={testLogo.src}
 												className="b_r_10"
 												alt="story img"
 											/>

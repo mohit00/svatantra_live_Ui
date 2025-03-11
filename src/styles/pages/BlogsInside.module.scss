@@ -10,6 +10,7 @@
 				padding-bottom: 40px;
 				@media (max-width: 767px) {
 					align-items: start;
+					gap: 15px;
 				}
 				.Left {
 					.DateLink {
@@ -33,6 +34,10 @@
 					display: flex;
 					align-items: center;
 					gap: 15px;
+
+					@media (max-width: 767px) {
+						gap: 10px;
+					}
 					.box1 {
 						width: 30px;
 						height: 30px;

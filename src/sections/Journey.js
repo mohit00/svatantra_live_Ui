@@ -94,18 +94,20 @@ export default function JourneyComponent({ journeyData }) {
 										</div>
 
 										<div className={`${styles.info_wrapper}`}>
-											{item.months &&
-												item.months.map((jitem, ind) => {
+											{item?.months &&
+												item?.months.map((jitem, ind) => {
 													return (
 														<div className={`${styles.info}`} key={ind}>
 															<h4 className="text_reg f_w_b">{jitem.month}</h4>
 															<h6 className="text_sm f_w_m opacity_80">{jitem.desc}</h6>
 															<div className={`${styles.image} pt_20`}>
-																<img
-																	src={StrapiImage(jitem.image)?.url}
-																	className="img-responsive"
-																	alt="Journey"
-																/>
+																{jitem?.image && (
+																	<img
+																		src={StrapiImage(jitem?.image)?.url}
+																		className="img-responsive"
+																		alt="Journey"
+																	/>
+																)}
 															</div>
 														</div>
 													);

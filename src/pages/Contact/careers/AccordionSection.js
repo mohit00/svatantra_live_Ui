@@ -34,8 +34,8 @@ export default function AccordionSection({ data }) {
 	};
 
 	console.log(data);
-	const [activeIndex, setActiveIndex] = useState(null);
 
+	const [activeIndex, setActiveIndex] = useState(null);
 	const uniqueStates = [...new Set(data.data.map((job) => job.state))];
 	const [selectedState, setSelectedState] = useState("");
 
@@ -109,7 +109,9 @@ export default function AccordionSection({ data }) {
 														alt={selectedOption}
 														className={`${styles.icon}`}
 													/> */}
-											<span className="text_reg">{selectedState || "All States"}</span>
+											<span className="text_reg font_secondary">
+												{selectedState || "All States"}
+											</span>
 										</div>
 										<img
 											src={openDropdown.select1 ? upArrow.src : downArrow.src}
@@ -178,7 +180,9 @@ export default function AccordionSection({ data }) {
 														</ul>
 													</div>
 													<div className={`${styles.box1}`}>
-														<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
+														<h5 className="text_reg_20 f_w_m pb_20 font_primary">
+															Job Responsibilities:
+														</h5>
 														<ul>
 															{secondHalf.map((point, i) => (
 																<li key={i} className="text_sm">

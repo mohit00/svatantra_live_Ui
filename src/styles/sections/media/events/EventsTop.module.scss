@@ -1,7 +1,12 @@
 @import "../../../helpers/helpers.scss";
 
 .contentBox {
-	padding: 20px 0px 40px 0px;
+	padding: 20px 300px 40px 0px;
+
+	@media (max-width: 1024px) {
+		padding: 20px 150px 40px 0px;
+	}
+
 	.titleBox {
 		display: flex;
 		gap: 80px;

@@ -271,10 +271,78 @@ export default function AboutPage({ awardsData }) {
 							<div className={`${styles.progressBar} m_t_30 swiper-pagination`}></div>
 							<div className={`${styles.arrowSection} f_w_a_j_center`}>
 								<button className={`${styles.customPrev}`} id="customPrev">
-									<img src={arrow_btn.src} alt="icon" />
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clipPath="url(#clip0_1405_8574)">
+											<g clipPath="url(#clip1_1405_8574)">
+												<path
+													d="M9.91114 1.63464L4.35742 7.18836L9.91114 12.7409"
+													stroke="white"
+													strokeWidth="1.21875"
+												/>
+											</g>
+										</g>
+										<defs>
+											<clipPath id="clip0_1405_8574">
+												<rect
+													width="13"
+													height="13"
+													fill="white"
+													transform="matrix(0 1 1 0 0.5 0.5)"
+												/>
+											</clipPath>
+											<clipPath id="clip1_1405_8574">
+												<rect
+													width="13"
+													height="8.125"
+													fill="white"
+													transform="matrix(0 1 1 0 2.9375 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
 								</button>
 								<button className={styles.customNext} id="customNext">
-									<img src={arrow_btn.src} alt="icon" />
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clipPath="url(#clip0_1405_8574)">
+											<g clipPath="url(#clip1_1405_8574)">
+												<path
+													d="M9.91114 1.63464L4.35742 7.18836L9.91114 12.7409"
+													stroke="white"
+													strokeWidth="1.21875"
+												/>
+											</g>
+										</g>
+										<defs>
+											<clipPath id="clip0_1405_8574">
+												<rect
+													width="13"
+													height="13"
+													fill="white"
+													transform="matrix(0 1 1 0 0.5 0.5)"
+												/>
+											</clipPath>
+											<clipPath id="clip1_1405_8574">
+												<rect
+													width="13"
+													height="8.125"
+													fill="white"
+													transform="matrix(0 1 1 0 2.9375 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
 								</button>
 							</div>
 						</div>

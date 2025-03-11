@@ -98,11 +98,6 @@
 		}
 	}
 
-	:global(.swiper-pagination-progressbar-fill) {
-		background-color: white !important;
-		height: 2px !important;
-	}
-
 	.sliderBox {
 		padding-left: calc(var(--container_left_space) + 15px);
 	}
@@ -167,6 +162,14 @@
 				border-radius: 50%;
 				transform: rotate(180deg);
 				margin-right: 20px;
+
+				&:hover {
+					background-color: white;
+
+					svg path {
+						filter: invert(1);
+					}
+				}
 			}
 
 			:global(#customNext) {
@@ -178,13 +181,20 @@
 				justify-content: center;
 				border-radius: 50%;
 				transform: rotate(180deg);
+				transition: background-color 0.3s ease;
+
 				&:hover {
 					background-color: white;
 
-					svg {
-						fill: black;
+					svg path {
+						filter: invert(1);
 					}
 				}
+			}
+
+			:global(.swiper-pagination-progressbar-fill) {
+				background-color: white !important;
+				height: 2px !important;
 			}
 
 			.arrowSection {

@@ -140,7 +140,7 @@ export default function TalentComponent({ data, pdfTalent }) {
 														/>
 														<img src={playIcn.src} className={styles.playIcn} alt="" />
 													</div>
-													<h4 className="text_md">{item.name}</h4>
+													<h4 className="text_md font_primary">{item.name}</h4>
 													<h6 className="text_xs opacity_80">{item.location}</h6>
 												</div>
 											</a>
@@ -155,8 +155,9 @@ export default function TalentComponent({ data, pdfTalent }) {
 															className={`${styles.thumbImg} img-responsive`}
 															alt="Talent1"
 														/>
+														<img src={playIcn.src} className={styles.playIcn} alt="" />
 													</div>
-													<h4 className="text_md">{item.name}</h4>
+													<h4 className="text_md font_primary f_w_m">{item.name}</h4>
 													<h6 className="text_xs opacity_80">{item.location}</h6>
 												</div>
 											) : (
@@ -179,7 +180,7 @@ export default function TalentComponent({ data, pdfTalent }) {
 																	alt="Talent1"
 																/>
 															</div>
-															<h4 className="text_md">{item.name}</h4>
+															<h4 className="text_md font_primary f_w_m">{item.name}</h4>
 															<h6 className="text_xs opacity_80">{item.location}</h6>
 														</div>
 													</a>

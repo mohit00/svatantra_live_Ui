@@ -43,9 +43,14 @@
 		// 	rgba(2, 29, 93, 1) 15%,
 		// 	rgba(3, 22, 51, 1) 85%
 		// );
+
+		@media (max-width: 1024px) {
+			height: auto;
+		}
+
 		@media only screen and (max-width: 767px) {
 			padding: 60px 15px 30px;
-			height: 90vh;
+			height: auto;
 			overflow: auto;
 			width: calc(100% - 30px);
 		}

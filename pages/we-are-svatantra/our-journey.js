@@ -38,7 +38,7 @@ export default function OurJourneyPage({ journeyData }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.OurJourneyPage}>
-				<Breadcrum link2="our-journey" />
+				<Breadcrum link5="we-are-svatantra/our-journey" linkTitle="Our Journey" />
 				<JourneyComponent journeyData={journeyData} />
 			</main>
 			{/* Page Content ends here */}

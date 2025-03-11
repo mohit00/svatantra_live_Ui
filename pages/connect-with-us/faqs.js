@@ -66,7 +66,7 @@ export default function Faqs({ faqData }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.FaqsPage}>
-				<Breadcrum link5="/connect-with-us/faqs" linkTitle={"faqs"} />
+				<Breadcrum link5="/connect-with-us/faqs" linkTitle={"Faqs"} />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}

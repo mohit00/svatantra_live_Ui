@@ -97,7 +97,11 @@ export default function Homecontact({ formTitle }) {
 						</h3>
 					</div>
 					<div className={`${styles.right}`} data-scroll>
-						<ContactPageForm />
+						<ContactPageForm
+							formText={
+								"Fill in the details, and our team of experts will contact you to help bring your entrepreneurial vision to life."
+							}
+						/>
 						{/* {formTitle ? (
 							<p className="text_sm opacity_80 pb_20">{formTitle}</p>
 						) : (

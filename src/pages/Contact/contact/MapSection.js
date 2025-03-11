@@ -27,7 +27,9 @@ export default function MapSection() {
 						<img src={Map.src} className="img-responsive" alt="map" />
 					</div>
 					<div className={`${styles.info}`}>
-						<h4 className="text_reg f_w_s_b pb_10">Head Office Address</h4>
+						<h4 className="text_reg f_w_s_b pb_10 font_primary">
+							Head Office Address
+						</h4>
 						<h5 className="text_xs f_w_m">
 							Svatantra Microfin Pvt. Ltd., 20th Floor, Sunshine Towers, Senapati Bapat
 							Marg, Elphinstone Road (W), Mumbai - 400 013, Maharashtra, India

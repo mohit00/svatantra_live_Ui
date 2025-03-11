@@ -181,8 +181,9 @@
 					}
 
 					p {
-						text-decoration: underline;
-						text-underline-offset: 8px;
+						// text-decoration: underline;
+						// text-underline-offset: 8px;
+						border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 
 						@media (max-width: 991px) {
 							font-size: 12px;

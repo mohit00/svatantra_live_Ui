@@ -132,7 +132,7 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 					bannerTitle="From hopeful dreams to thriving realities"
 					bannerDesc="Enabling aspiring entrepreneurs to build lasting success stories across the nation"
 				/>
-				<section className={`${styles.StoriesOfSvatantra_main} ptb_80`}>
+				<section className={`${styles.StoriesOfSvatantra_main}`}>
 					<div className="container">
 						<div className={`${styles.title_wrap}`}>
 							<h2 className="text_xxxl color_primary">Customer Testimonial</h2>
@@ -140,27 +140,29 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
 							<div className={`${styles.box_wrap}`}>
-								{customertTestimonialData.data.slice(0, showItems).map((item, ind) => {
-									return (
-										<div className={`${styles.box_item}`} key={ind}>
-											<img
-												src={StrapiImage(item.thumbnail).url}
-												className="b_r_10"
-												alt="story img"
-											/>
-											<div className={`${styles.content} pt_20 f_r_aj_between`}>
-												<p className="text_md color_light_black font_secondary opacity_8">
-													{item.title}
-												</p>
-												<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
-													<a href="">
-														<img src={arrow_btn.src} alt="arrow icon" />
-													</a>
+								{customertTestimonialData?.data
+									?.slice(0, showItems)
+									.map((item, ind) => {
+										return (
+											<div className={`${styles.box_item}`} key={ind}>
+												<img
+													src={StrapiImage(item.thumbnail).url}
+													className="b_r_10"
+													alt="story img"
+												/>
+												<div className={`${styles.content} pt_20 f_r_aj_between`}>
+													<p className="text_md color_light_black font_secondary opacity_8">
+														{item.title}
+													</p>
+													<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
+														<a href="">
+															<img src={arrow_btn.src} alt="arrow icon" />
+														</a>
+													</div>
 												</div>
 											</div>
-										</div>
-									);
-								})}
+										);
+									})}
 								{/* {customerTestimonialsData.map((item, ind) => {
 									return (
 										<div className={`${styles.box_item}`} key={ind}>
@@ -232,7 +234,7 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 															<p
 																className={`${styles.Desc} text_md f_w_m font_secondary color_seashell`}
 															>
-																{parse(item.desc)}
+																{item.desc ? parse(String(item.desc)) : ""}
 															</p>
 														</div>
 													</div>

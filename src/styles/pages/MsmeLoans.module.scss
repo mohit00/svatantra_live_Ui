@@ -9,6 +9,15 @@
 				overflow-x: scroll;
 				white-space: nowrap;
 			}
+			&::-webkit-scrollbar {
+				width: 5px;
+				height: 5px;
+				background: #1e1e1e;
+				@media (max-width: 991px) {
+					width: 5px;
+					height: 2px;
+				}
+			}
 			table {
 				width: 100%;
 				border-collapse: collapse;

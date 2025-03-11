@@ -33,7 +33,7 @@ export default function NotFoundPage() {
 			{/* Page Content starts here */}
 			<main className={styles.not_found_page}>
 				<div className={styles.not_found_wrap}>
-					<h2 className={`${styles.title} color_secondary text_center`}>
+					<h2 className={`${styles.title} font_primary color_primary text_center`}>
 						Thank you
 						<br />
 						for your interest.

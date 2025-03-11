@@ -26,6 +26,7 @@
 				}
 
 				.box1 {
+					cursor: pointer;
 					.imgBox {
 						position: relative;
 
@@ -75,7 +76,7 @@
 		padding: 10px;
 		background-color: white;
 		position: absolute;
-		bottom: 10px;
+		bottom: 20px;
 		right: 0px;
 		border-radius: 5px;
 	}

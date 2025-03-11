@@ -154,7 +154,7 @@ export default function BlogsPage({ blogsData }) {
 														alt={selectedOption}
 														className={`${styles.icon}`}
 													/> */}
-													<span className="text_reg">{selectedOptions.select1}</span>
+													<span className="text_reg f_w_m">{selectedOptions.select1}</span>
 												</div>
 												<img
 													src={
@@ -183,7 +183,7 @@ export default function BlogsPage({ blogsData }) {
 															}`}
 															onClick={() => handleOptionClick(option.author.name, "select1")}
 														>
-															<span className="text_reg">{option.author.name}</span>
+															<span className="text_sm">{option.author.name}</span>
 														</li>
 													))}
 												</ul>

@@ -22,7 +22,7 @@ import styles from "@/styles/sections/formcontact.module.scss";
 // DATA //
 
 /** ContactForm Section */
-export default function ContactPageForm() {
+export default function ContactPageForm({ formText }) {
 	const router = useRouter();
 	const [isSubmited, setIsSubmited] = useState(false);
 	const formRef = useRef();
@@ -75,12 +75,19 @@ export default function ContactPageForm() {
 
 	return (
 		<div className={`${styles.form_section}`}>
-			<h2 className="text_md f_w_s_b pb_20">Send an enquiry</h2>
+			{formText ? (
+				formText
+			) : (
+				<h2 className="text_md f_w_s_b pb_20 font_primary">Send an enquiry</h2>
+			)}
+			{/* <h2 className="text_md f_w_s_b pb_20 font_primary">
+				{formText ? formText : "Send an enquiry"}
+			</h2> */}
 			<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 				<div className={`${styles.form_field}`}>
 					<input
 						type="text"
-						placeholder="Name"
+						placeholder="First Name *"
 						id="firstName"
 						name="firstName"
 						className={`${styles.inputField}`}
@@ -112,7 +119,7 @@ export default function ContactPageForm() {
 							required: true,
 							pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
 						})}
-						placeholder="Email Address"
+						placeholder="Email Address *"
 						className={`${styles.inputField}`}
 					/>
 					{errors.email && errors.email.type == "required" && (
@@ -125,7 +132,7 @@ export default function ContactPageForm() {
 				<div className={`${styles.form_field}`}>
 					<input
 						// type="text"
-						placeholder="Phone No"
+						placeholder="Phone No *"
 						className={`${styles.inputField}`}
 						type="number"
 						id="tel"
@@ -154,7 +161,7 @@ export default function ContactPageForm() {
 						className={styles.textarea}
 						id="message"
 						name="message"
-						placeholder="Message"
+						placeholder="Message *"
 						{...register("message", {
 							required: true,
 						})}

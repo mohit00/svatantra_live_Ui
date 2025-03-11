@@ -29,8 +29,7 @@ export default function EmployeesComponent({ data }) {
 		<div className={`${styles.Employees} pt_40 pb_80`}>
 			<div className="container">
 				<h2 className="section_title pb_40">
-					Hear it from our employees… <br className="hidden_sm" /> in their own
-					words!
+					Hear it from our employees… <br className="" /> in their own words!
 				</h2>
 			</div>
 			<div className={`${styles.slider_section}`}>

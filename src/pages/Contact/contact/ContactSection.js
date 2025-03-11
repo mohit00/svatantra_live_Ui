@@ -26,7 +26,7 @@ export default function ContactSection() {
 						<ContactPageForm />
 					</div>
 					<div className={`${styles.contact_info}`}>
-						<h4 className="text_reg f_w_s_b pb_10">Email</h4>
+						<h4 className="text_reg f_w_s_b pb_10 font_primary">Email</h4>
 
 						<h5 className="text_xs f_w_b">Complaint / Query: </h5>
 						<p className="text_xs pb_10">
@@ -64,7 +64,7 @@ export default function ContactSection() {
 						</p>
 
 						<div className={`${styles.number} pt_40`}>
-							<h5 className="text_xs f_w_b pb_10">Phone </h5>
+							<h5 className="text_reg f_w_s_b pb_10 font_primary">Phone </h5>
 							<p className="text_xs">
 								<a href="tel: + 91 22 6141 5900">Tel. No: + 91 22 6141 5900</a>
 							</p>
