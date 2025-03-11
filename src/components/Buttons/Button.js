@@ -117,7 +117,18 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 					>
 						<span className={styles.btn_outer_span}>
 							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
-								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+								<svg
+									width="14"
+									height="12"
+									viewBox="0 0 14 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
+										fill="white"
+									/>
+								</svg>
 							</span>
 							<button
 								type="submit"
@@ -126,7 +137,18 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 								{title}
 							</button>
 							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
-								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+								<svg
+									width="14"
+									height="12"
+									viewBox="0 0 14 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
+										fill="white"
+									/>
+								</svg>
 							</span>
 						</span>
 					</a>

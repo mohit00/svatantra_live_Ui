@@ -41,7 +41,7 @@ export default function GalleryPage({ GalleryList }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
-				<Breadcrum link2="gallery" />
+				<Breadcrum link5="/media/gallery" linkTitle={"Gallery"} />
 				<GalleryComponent GalleryList={GalleryList} />
 			</main>
 			{/* Page Content ends here */}

@@ -39,7 +39,7 @@ export default function JobOpening({ jobDetailsData }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.JobOpeningPage}>
-				<Breadcrum link2="Careers" link3="job-opening" />
+				<Breadcrum link5="/careers/job-opening" linkTitle={"Job Opening"} />
 				<AccordionSection data={jobDetailsData} />
 			</main>
 			{/* Page Content ends here */}
