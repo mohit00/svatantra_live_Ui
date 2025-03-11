@@ -20,6 +20,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import parse from "html-react-parser";
+import LightGallery from "lightgallery/react";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgVideo from "lightgallery/plugins/video";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-video.css";
 
 // STYLES //
 import styles from "@/styles/pages/CustomerTestimonials.module.scss";
@@ -150,15 +158,27 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 													className="b_r_10"
 													alt="story img"
 												/>
+
 												<div className={`${styles.content} pt_20 f_r_aj_between`}>
 													<p className="text_md color_light_black font_secondary opacity_8">
 														{item.title}
 													</p>
-													<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
-														<a href="">
-															<img src={arrow_btn.src} alt="arrow icon" />
-														</a>
-													</div>
+													{item.link ? (
+														<LightGallery
+															speed={500}
+															plugins={[lgThumbnail, lgZoom, lgVideo]}
+														>
+															<a data-src={item.link}>
+																<img src={arrow_btn.src} alt="arrow icon" />
+															</a>
+														</LightGallery>
+													) : (
+														<div onClick={(e) => handleSlideClick1(e, ind)} data-slide={ind}>
+															<a href="">
+																<img src={arrow_btn.src} alt="arrow icon" />
+															</a>
+														</div>
+													)}
 												</div>
 											</div>
 										);

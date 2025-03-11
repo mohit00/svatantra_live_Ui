@@ -94,7 +94,7 @@ export default function EventsUdaanPage({ data }) {
 						""
 					)}
 
-					{data?.images && <Udaangallery imageData={data?.images} />}
+					{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
 				</div>
 				{data?.result && data?.result_title ? (
 					<AvantGarde resultTitle={data?.result_title} resultData={data?.result} />

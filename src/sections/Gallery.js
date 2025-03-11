@@ -101,15 +101,15 @@ export default function GalleryComponent({ GalleryList }) {
 						plugins={[lgThumbnail, lgZoom]}
 						elementClassNames={`${styles.driving_img_box} f_w_j custom-lightgallery`}
 					>
-						{GalleryList.data.images.map((item, colIndex) => (
+						{GalleryList.data.gallery.map((item, colIndex) => (
 							<div
-								data-src={StrapiImage(item)?.url}
+								data-src={StrapiImage(item.image)?.url}
 								key={colIndex}
 								className={`${styles.item_img}`}
 							>
 								<img
 									// src={item.full} // Thumbnail image
-									src={StrapiImage(item)?.url}
+									src={StrapiImage(item.image)?.url}
 									className="b_r_10"
 									alt={`Image ${colIndex + 1}`}
 								/>

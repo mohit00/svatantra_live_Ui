@@ -31,6 +31,8 @@ export const getStaticProps = async () => {
 
 /** Contact Page */
 export default function GalleryPage({ GalleryList }) {
+	console.log(GalleryList, " GalleryList");
+
 	return (
 		<div>
 			{/* Metatags */}

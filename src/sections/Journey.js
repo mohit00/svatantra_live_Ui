@@ -20,7 +20,7 @@ import Journey1 from "../../public/img/journey/Journey1.jpg";
 
 /** DummyComponent Component */
 export default function JourneyComponent({ journeyData }) {
-	console.log(journeyData, " journeyData");
+	console.log(journeyData, " journeyData journeyData");
 
 	const journeyBoxRef = useRef(null);
 	const [isInView, setIsInView] = useState(false);
@@ -60,9 +60,9 @@ export default function JourneyComponent({ journeyData }) {
 				</div>
 				<div className={`${styles.Journey_box_wrapper}`}>
 					<div ref={titleRef}>
-						{journeyData.data &&
-							journeyData.data.map((item, index) => {
-								const isLast = index === journeyData.data.length - 1;
+						{journeyData?.data &&
+							journeyData?.data.map((item, index) => {
+								const isLast = index === journeyData?.data.length - 1;
 
 								return (
 									<div
@@ -94,7 +94,50 @@ export default function JourneyComponent({ journeyData }) {
 										</div>
 
 										<div className={`${styles.info_wrapper}`}>
-											{item?.months &&
+											{item?.year_content &&
+												item?.year_content.map((jitem, ind) => {
+													return (
+														<div className={`${styles.info}`} key={ind}>
+															{console.log(jitem, " jitem")}
+															<h4 className="text_reg f_w_b">{jitem.month}</h4>
+															<div>
+																{jitem?.content.map((titem, index) => {
+																	return (
+																		<div className="m_b_15" key={index}>
+																			{titem.title && (
+																				<h6 className="text_reg f_w_m opacity_80">{titem.title}</h6>
+																			)}
+																			{titem.desc && (
+																				<p className="text_sm f_w_m opacity_80">{titem.desc}</p>
+																			)}
+
+																			<div className={`${styles.image} pt_20`}>
+																				{titem?.image && (
+																					<img
+																						src={StrapiImage(titem?.image)?.url}
+																						className="img-responsive"
+																						alt="Journey"
+																					/>
+																				)}
+																			</div>
+																		</div>
+																	);
+																})}
+															</div>
+															{/* <h6 className="text_sm f_w_m opacity_80">{jitem.desc}</h6>
+															<div className={`${styles.image} pt_20`}>
+																{jitem?.image && (
+																	<img
+																		src={StrapiImage(jitem?.image)?.url}
+																		className="img-responsive"
+																		alt="Journey"
+																	/>
+																)}
+															</div> */}
+														</div>
+													);
+												})}
+											{/* {item?.months &&
 												item?.months.map((jitem, ind) => {
 													return (
 														<div className={`${styles.info}`} key={ind}>
@@ -111,7 +154,7 @@ export default function JourneyComponent({ journeyData }) {
 															</div>
 														</div>
 													);
-												})}
+												})} */}
 										</div>
 									</div>
 								);

@@ -12,7 +12,7 @@ export const getOurLeaderships = async () => {
 /** Fetch getOurJourney Data */
 export const getOurJourney = async () => {
 	const req = await fetch(
-		`${process.env.STRAPI_DO_BASE_URL}/api/journies?populate[0]=months.image`,
+		`${process.env.STRAPI_DO_BASE_URL}/api/journies?populate[0]=months.image&populate[1]=year_content.content.image`,
 		ServerHeaders
 	);
 	const res = await req.json();

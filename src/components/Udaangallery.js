@@ -27,6 +27,7 @@ import Zoom from "../../public/img/careers/zoom.png";
 /** Udaangallery Component */
 export default function Udaangallery({ imageData }) {
 	const lightGalleryRef = useRef(null);
+	console.log(imageData, "imageData");
 
 	const drivingOne = [
 		{ thumbnail: img_one.src, full: img_one.src },
@@ -53,8 +54,8 @@ export default function Udaangallery({ imageData }) {
 		// { thumbnail: img_five.src, full: img_five.src },
 	];
 	const galleryImages = imageData?.map((img) => ({
-		src: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.url}`,
-		thumbnail: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.url}`,
+		src: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
+		thumbnail: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
 	}));
 
 	return (
