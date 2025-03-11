@@ -59,8 +59,13 @@
 			width: 0px;
 		}
 		&:hover {
+			background-color: white;
+			svg path {
+				fill: var(--color_secondary);
+			}
 			.btn_inner_text {
 				padding: 12px 0;
+				color: var(--color_secondary);
 			}
 			.btn_inner_left {
 				opacity: 0;

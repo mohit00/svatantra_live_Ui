@@ -55,7 +55,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.CareersPage}>
-				<Breadcrum link2="careers" />
+				<Breadcrum link5="careers" linkTitle={"Careers"} />
 				<InnerBanner bannerTitle="Elevate your career and create a purpose-driven future" />
 				<Journey />
 				<WhyComponent />

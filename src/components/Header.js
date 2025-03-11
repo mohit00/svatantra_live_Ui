@@ -51,6 +51,7 @@ export default function Header() {
 	const [isDigital, setIsDigital] = useState(false);
 	const [isMedia, setIsMedia] = useState(false);
 	const devRefs = useRef([]);
+	const sidebarRef = useRef(null);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -105,6 +106,29 @@ export default function Header() {
 		document.addEventListener("click", handleClickOutside);
 		return () => document.removeEventListener("click", handleClickOutside);
 	}, []);
+
+	// useEffect(() => {
+	// 	const handleClickOutside = (event) => {
+	// 		if (openSidebar && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+	// 			setOpenSidebar(false); // Close sidebar
+	// 			setIsAboutOpen(false);
+	// 			setIsProductsOpen(false);
+	// 			setIsImpact(false);
+	// 			setIsResource(false);
+	// 			setIsDigital(false);
+	// 			setIsMedia(false);
+	// 			setActiveMenu(null);
+	// 		}
+	// 	};
+
+	// 	// Add event listener when component mounts
+	// 	document.addEventListener("click", handleClickOutside);
+
+	// 	return () => {
+	// 		// Clean up event listener when component unmounts
+	// 		document.removeEventListener("click", handleClickOutside);
+	// 	};
+	// }, [openSidebar]);
 
 	// Ensure client-side rendering
 	useEffect(() => {
@@ -183,30 +207,28 @@ export default function Header() {
 
 	console.log(data || [], "headers data");
 
-	// useEffect(() => {
-	// 	const handleClickOutside = (event) => {
-	// 		if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-	// 			setIsAboutOpen(false);
-	// 			setIsProductsOpen(false);
-	// 			setIsImpact(false);
-	// 			setIsResource(false);
-	// 			setIsDigital(false);
-	// 			setIsMedia(false);
-	// 			setActiveMenu(null); // Close active submenu if any
-	// 		}
-	// 	};
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			// Check if click is outside sidebar
+			if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+				setOpenSidebar(false);
+			}
+		};
 
-	// 	document.addEventListener("mousedown", handleClickOutside);
-	// 	return () => {
-	// 		document.removeEventListener("mousedown", handleClickOutside);
-	// 	};
-	// }, []);
+		// Add event listener
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			// Cleanup event listener
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
 
 	return (
 		<div
 			className={`${styles.main_header} main_header ${
 				openSidebar ? styles.sidebar_opened : ""
 			}`}
+			ref={sidebarRef}
 		>
 			<div className={`${styles.header_section} header_container`}>
 				<div className={`${styles.header_inside}`}>
@@ -234,26 +256,17 @@ export default function Header() {
 									onMouseLeave={() => !isMobile && setIsAboutOpen(false)}
 									ref={(el) => (devRefs.current[0] = el)}
 								>
-									<ScrollSection
-										activeClass="active"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
+									<p
 										className={`${styles.link_title} text_xs`}
+										onClick={(e) => {
+											if (isMobile) {
+												e.stopPropagation();
+												setIsAboutOpen((prev) => !prev);
+											}
+										}}
 									>
-										<p
-											className={`${styles.link_title} text_xs`}
-											onClick={(e) => {
-												if (isMobile) {
-													e.stopPropagation();
-													setIsAboutOpen((prev) => !prev);
-												}
-											}}
-										>
-											{data?.[0]?.title || ""}
-										</p>
-									</ScrollSection>
+										{data?.[0]?.title || ""}
+									</p>
 
 									{isAboutOpen && (
 										<div
@@ -318,26 +331,17 @@ export default function Header() {
 									onMouseLeave={() => !isMobile && setIsProductsOpen(false)}
 									ref={(el) => (devRefs.current[0] = el)}
 								>
-									<ScrollSection
-										activeClass="active"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
+									<p
 										className={`${styles.link_title} text_xs`}
+										onClick={(e) => {
+											if (isMobile) {
+												e.stopPropagation();
+												setIsProductsOpen((prev) => !prev);
+											}
+										}}
 									>
-										<p
-											className={`${styles.link_title} text_xs`}
-											onClick={(e) => {
-												if (isMobile) {
-													e.stopPropagation();
-													setIsProductsOpen((prev) => !prev);
-												}
-											}}
-										>
-											{data?.[5]?.title || ""}
-										</p>
-									</ScrollSection>
+										{data?.[5]?.title || ""}
+									</p>
 
 									{isProductsOpen && (
 										<div
@@ -403,28 +407,18 @@ export default function Header() {
 									onMouseLeave={() => !isMobile && setIsImpact(false)}
 									ref={(el) => (devRefs.current[1] = el)}
 								>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="OurImpact"
-										spy={true}
-										smooth={true}
-										offset={-100}
-										duration={500}
+									<p
 										className={`${styles.link_title} text_xs`}
+										onClick={(e) => {
+											if (isMobile) {
+												e.stopPropagation();
+												setIsAboutOpen((prev) => !prev);
+											}
+										}}
 									>
-										<p
-											className={`${styles.link_title} text_xs`}
-											onClick={(e) => {
-												if (isMobile) {
-													e.stopPropagation();
-													setIsAboutOpen((prev) => !prev);
-												}
-											}}
-										>
-											{data?.[4]?.title || ""}
-										</p>
-									</ScrollSection>
+										{data?.[4]?.title || ""}
+									</p>
+
 									{isImpact && (
 										<div
 											className={styles.subItem}
@@ -486,23 +480,14 @@ export default function Header() {
 									)}
 								</div>
 
-								<div
-									className={`${styles.links} commonCls`}
-									ref={dropdownRef}
-									onMouseEnter={() => !isMobile && setIsResource(true)}
-									onMouseLeave={() => !isMobile && setIsResource(false)}
-								>
-									<div>
-										<ScrollSection
-											onClick={toggleSidebar}
-											activeClass="active"
-											to="OurImpact"
-											spy={true}
-											smooth={true}
-											offset={-100}
-											duration={500}
-											className={`${styles.link_title} text_xs`}
-										>
+								{data?.title && (
+									<div
+										className={`${styles.links} commonCls`}
+										ref={dropdownRef}
+										onMouseEnter={() => !isMobile && setIsResource(true)}
+										onMouseLeave={() => !isMobile && setIsResource(false)}
+									>
+										<div>
 											<p
 												className={`${styles.link_title} text_xs`}
 												onClick={(e) => {
@@ -514,17 +499,95 @@ export default function Header() {
 											>
 												{data?.[7]?.title || ""}
 											</p>
-										</ScrollSection>
 
-										{isResource && (
+											{isResource && (
+												<div
+													className={styles.subItem}
+													onMouseEnter={() => !isMobile && setIsResource(true)} // Keep open when hovering inside
+													onMouseLeave={() => !isMobile && setIsResource(false)} // Close only when fully leaving
+													onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+												>
+													<ul className={styles.newBox}>
+														{resourcesData.map((menu, index) => (
+															<li
+																key={index}
+																className={styles.menuItem}
+																onClick={(e) => {
+																	if (isMobile) {
+																		e.stopPropagation();
+																		setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																	}
+																}}
+																onMouseEnter={() => !isMobile && setActiveMenu(index)}
+																onMouseLeave={() => !isMobile && setActiveMenu(null)}
+															>
+																<div className={`${styles.menuTitle} text_xs`}>
+																	{menu.subItems.length > 0 ? (
+																		<span className={activeMenu === index ? styles.active : ""}>
+																			{menu.title}
+																		</span>
+																	) : (
+																		<a href={menu.link} className={styles.noSubLink}>
+																			{menu.title}
+																		</a>
+																	)}
+																	{menu.subItems.length > 0 && <img src={arrow.src} />}
+																</div>
+
+																{activeMenu === index && menu.subItems.length > 0 && (
+																	<ul
+																		className={styles.subMenu}
+																		onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
+																		onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
+																		onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+																	>
+																		{menu.subItems.map((subItem, subIndex) => (
+																			<li
+																				key={subIndex}
+																				className={`${styles.subMenuItem} text_xs`}
+																			>
+																				<a href={subItem.link}>{subItem.title}</a>
+																			</li>
+																		))}
+																	</ul>
+																)}
+															</li>
+														))}
+													</ul>
+												</div>
+											)}
+										</div>
+									</div>
+								)}
+
+								{
+									<div
+										className={`${styles.links} commonCls`}
+										onMouseEnter={() => !isMobile && setIsDigital(true)}
+										onMouseLeave={() => !isMobile && setIsDigital(false)}
+										ref={(el) => (devRefs.current[2] = el)}
+									>
+										<p
+											className={`${styles.link_title} text_xs`}
+											onClick={(e) => {
+												if (isMobile) {
+													e.stopPropagation();
+													setIsDigital((prev) => !prev);
+												}
+											}}
+										>
+											{data?.[1]?.title || ""}
+										</p>
+
+										{isDigital && (
 											<div
 												className={styles.subItem}
-												onMouseEnter={() => !isMobile && setIsResource(true)} // Keep open when hovering inside
-												onMouseLeave={() => !isMobile && setIsResource(false)} // Close only when fully leaving
+												onMouseEnter={() => !isMobile && setIsDigital(true)} // Keep open when hovering inside
+												onMouseLeave={() => !isMobile && setIsDigital(false)} // Close only when fully leaving
 												onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
 											>
 												<ul className={styles.newBox}>
-													{resourcesData.map((menu, index) => (
+													{data?.[1]?.pageName?.map((menu, index) => (
 														<li
 															key={index}
 															className={styles.menuItem}
@@ -538,19 +601,22 @@ export default function Header() {
 															onMouseLeave={() => !isMobile && setActiveMenu(null)}
 														>
 															<div className={`${styles.menuTitle} text_xs`}>
-																{menu.subItems.length > 0 ? (
+																{/* Agar subItems ho to span me, warna anchor tag */}
+																{menu.subItems?.length > 0 ? (
 																	<span className={activeMenu === index ? styles.active : ""}>
-																		{menu.title}
+																		{menu.pageName}
 																	</span>
 																) : (
-																	<a href={menu.link} className={styles.noSubLink}>
-																		{menu.title}
+																	<a href={menu.pageUrl} className={styles.noSubLink}>
+																		{menu.pageName}
 																	</a>
 																)}
-																{menu.subItems.length > 0 && <img src={arrow.src} />}
+																{/* Agar subItems hain to arrow show karo */}
+																{menu.subItems?.length > 0 && <img src={arrow.src} />}
 															</div>
 
-															{activeMenu === index && menu.subItems.length > 0 && (
+															{/* Submenu ko show/hide karne ka logic */}
+															{activeMenu === index && menu.subItems?.length > 0 && (
 																<ul
 																	className={styles.subMenu}
 																	onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
@@ -573,120 +639,26 @@ export default function Header() {
 											</div>
 										)}
 									</div>
-								</div>
-								<div
-									className={`${styles.links} commonCls`}
-									onMouseEnter={() => !isMobile && setIsDigital(true)}
-									onMouseLeave={() => !isMobile && setIsDigital(false)}
-									ref={(el) => (devRefs.current[2] = el)}
-								>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										// to="DigitallySvatantra"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										<p
-											className={`${styles.link_title} text_xs`}
-											onClick={(e) => {
-												if (isMobile) {
-													e.stopPropagation();
-													setIsDigital((prev) => !prev);
-												}
-											}}
-										>
-											{data?.[1]?.title || ""}
-										</p>
-									</ScrollSection>
-									{isDigital && (
-										<div
-											className={styles.subItem}
-											onMouseEnter={() => !isMobile && setIsDigital(true)} // Keep open when hovering inside
-											onMouseLeave={() => !isMobile && setIsDigital(false)} // Close only when fully leaving
-											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-										>
-											<ul className={styles.newBox}>
-												{data?.[1]?.pageName?.map((menu, index) => (
-													<li
-														key={index}
-														className={styles.menuItem}
-														onClick={(e) => {
-															if (isMobile) {
-																e.stopPropagation();
-																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-															}
-														}}
-														onMouseEnter={() => !isMobile && setActiveMenu(index)}
-														onMouseLeave={() => !isMobile && setActiveMenu(null)}
-													>
-														<div className={`${styles.menuTitle} text_xs`}>
-															{/* Agar subItems ho to span me, warna anchor tag */}
-															{menu.subItems?.length > 0 ? (
-																<span className={activeMenu === index ? styles.active : ""}>
-																	{menu.pageName}
-																</span>
-															) : (
-																<a href={menu.pageUrl} className={styles.noSubLink}>
-																	{menu.pageName}
-																</a>
-															)}
-															{/* Agar subItems hain to arrow show karo */}
-															{menu.subItems?.length > 0 && <img src={arrow.src} />}
-														</div>
+								}
 
-														{/* Submenu ko show/hide karne ka logic */}
-														{activeMenu === index && menu.subItems?.length > 0 && (
-															<ul
-																className={styles.subMenu}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-															>
-																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		<a href={subItem.link}>{subItem.title}</a>
-																	</li>
-																))}
-															</ul>
-														)}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-								</div>
 								<div
 									className={`${styles.links} commonCls`}
 									onMouseEnter={() => !isMobile && setIsMedia(true)}
 									onMouseLeave={() => !isMobile && setIsMedia(false)}
 									ref={(el) => (devRefs.current[3] = el)}
 								>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="Media"
-										spy={true}
-										smooth={true}
-										offset={-100}
-										duration={500}
+									<p
 										className={`${styles.link_title} text_xs`}
+										onClick={(e) => {
+											if (isMobile) {
+												e.stopPropagation();
+												setIsDigital((prev) => !prev);
+											}
+										}}
 									>
-										<p
-											className={`${styles.link_title} text_xs`}
-											onClick={(e) => {
-												if (isMobile) {
-													e.stopPropagation();
-													setIsDigital((prev) => !prev);
-												}
-											}}
-										>
-											{data?.[3]?.title || ""}
-										</p>
-									</ScrollSection>
+										{data?.[3]?.title || ""}
+									</p>
+
 									{isMedia && (
 										<div
 											className={styles.subItem}
@@ -757,23 +729,12 @@ export default function Header() {
 									</ul>
 								</div>
 								<div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="ContactUs"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										<Button
-											buttonType="secondary"
-											condition={"white"}
-											link={"#"}
-											title={"Contact Us"}
-										/>
-									</ScrollSection>
+									<Button
+										buttonType="secondary"
+										condition={"white"}
+										link={"#"}
+										title={"Contact Us"}
+									/>
 								</div>
 							</>
 						)}

@@ -6,7 +6,11 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Breadcrumb from "@/components/Breadcrumb";
 import ContentFromCms from "@/components/ContentFromCms";
-
+import {
+	FacebookShareButton,
+	LinkedinShareButton,
+	TwitterShareButton,
+} from "react-share";
 // SECTIONS //
 
 // PLUGINS //
@@ -104,7 +108,7 @@ export default function BlogsInsidePage({ data }) {
 									</p>
 								</div>
 								<div className={`${styles.socialIcons}`}>
-									<a
+									{/* <a
 										href="https://x.com/WeAreSvatantra"
 										target="_blank"
 										rel="noreferrer"
@@ -112,8 +116,13 @@ export default function BlogsInsidePage({ data }) {
 										<div className={`${styles.box1}`}>
 											<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a>
-									<a
+									</a> */}
+									<TwitterShareButton url={"https://x.com/WeAreSvatantra"}>
+										<div className={`${styles.box1}`}>
+											<img src={twitter.src} alt="twitter" className={`${styles.icon}`} />
+										</div>
+									</TwitterShareButton>
+									{/* <a
 										href="https://www.linkedin.com/company/7951922?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A7951922%2Cidx%3A2-1-9%2CtarId%3A1480583980673%2Ctas%3Asvatantra"
 										target="_blank"
 										rel="noreferrer"
@@ -121,8 +130,17 @@ export default function BlogsInsidePage({ data }) {
 										<div className={`${styles.box1}`}>
 											<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a>
-									<a
+									</a> */}
+									<LinkedinShareButton
+										url={
+											"https://www.linkedin.com/company/7951922?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A7951922%2Cidx%3A2-1-9%2CtarId%3A1480583980673%2Ctas%3Asvatantra"
+										}
+									>
+										<div className={`${styles.box1}`}>
+											<img src={linkdin.src} alt="twitter" className={`${styles.icon}`} />
+										</div>
+									</LinkedinShareButton>
+									{/* <a
 										href="https://www.facebook.com/svatantramicrofinance"
 										target="_blank"
 										rel="noreferrer"
@@ -130,7 +148,14 @@ export default function BlogsInsidePage({ data }) {
 										<div className={`${styles.box1}`}>
 											<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a>
+									</a> */}
+									<FacebookShareButton
+										url={"https://www.facebook.com/svatantramicrofinance"}
+									>
+										<div className={`${styles.box1}`}>
+											<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
+										</div>
+									</FacebookShareButton>
 									<a
 										href="https://www.youtube.com/channel/UCDN7Vupq3kJt5PRjjkffytA"
 										target="_blank"
@@ -140,7 +165,7 @@ export default function BlogsInsidePage({ data }) {
 											<img src={yt.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
 									</a>
-									<a
+									{/* <a
 										href="https://www.instagram.com/wearesvatantra?igsh=Zmh0b2hnOHZoaTh5"
 										target="_blank"
 										rel="noreferrer"
@@ -148,7 +173,7 @@ export default function BlogsInsidePage({ data }) {
 										<div className={`${styles.box1}`}>
 											<img src={insta.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a>
+									</a> */}
 								</div>
 							</div>
 						</div>

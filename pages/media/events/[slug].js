@@ -78,7 +78,7 @@ export default function EventsUdaanPage({ data }) {
 				<div className="container">
 					<Breadcrumb
 						link7={"media/events"}
-						linkTitle={"events"}
+						linkTitle={"Events"}
 						link8={`media/events/${data?.slug}`}
 						linkTitle2={`${data?.title}`}
 					/>

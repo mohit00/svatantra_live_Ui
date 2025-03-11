@@ -29,6 +29,8 @@ export default function Udaangallery({ imageData }) {
 	const lightGalleryRef = useRef(null);
 	console.log(imageData, "imageData");
 
+	/** */
+
 	const drivingOne = [
 		{ thumbnail: img_one.src, full: img_one.src },
 		{ thumbnail: img_two.src, full: img_two.src },
@@ -56,29 +58,49 @@ export default function Udaangallery({ imageData }) {
 	const galleryImages = imageData?.map((img) => ({
 		src: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
 		thumbnail: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.image.url}`,
+		// src: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.url}`,
+		// thumbnail: `${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${img.url}`,
+		subHtml: `<h4>${img.image.caption || "Image"}</h4>`,
 	}));
 
+	useEffect(() => {
+		if (lightGalleryRef.current) {
+			console.log("LightGallery initialized:", lightGalleryRef.current);
+		}
+	}, []);
+
+	/** */
+	const openGalleryAtIndex = (index) => {
+		if (lightGalleryRef.current) {
+			lightGalleryRef.current.openGallery(index);
+		} else {
+			console.warn("LightGallery instance is not available.");
+		}
+	};
+
 	return (
-		<div className="">
+		<div className="gallery-container">
+			{/* LightGallery Global Instance */}
+			<LightGallery
+				onInit={(lg) => (lightGalleryRef.current = lg.instance)}
+				dynamic
+				dynamicEl={galleryImages}
+				plugins={[lgThumbnail, lgZoom]}
+			/>
+
+			{/* Image Thumbnails */}
 			<div className={`${styles.gallery_section} pb_80`}>
 				<div className={`${styles.driving_img_box} f_w_j`}>
 					{galleryImages?.map((item, colIndex) => (
 						<div key={colIndex} className={`${styles.item_img}`}>
-							<LightGallery
-								elementClassNames="custom-lightgallery"
-								onInit={(lg) => (lightGalleryRef.current = lg.instance)}
-								speed={500}
-								plugins={[lgThumbnail, lgZoom]}
-							>
-								<a data-src={item.src}>
-									<img
-										src={item.src} // Thumbnail image
-										className="b_r_10"
-										alt={`Image ${colIndex + 1}`}
-									/>
-								</a>
-							</LightGallery>
-							<img src={Zoom.src} className={`${styles.zoom}`} alt="Zoom" />
+							<img src={item?.src} className="b_r_10" alt={`Image ${colIndex + 1}`} />
+							<img
+								src={Zoom.src}
+								className={`${styles.zoom}`}
+								alt="Zoom"
+								onClick={() => openGalleryAtIndex(colIndex)}
+								style={{ cursor: "pointer" }}
+							/>
 						</div>
 					))}
 				</div>
