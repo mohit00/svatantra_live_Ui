@@ -62,7 +62,7 @@ export default function Header() {
 		// Add event listener
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => {
-			// Cleanup event listener
+			// Cleanup event listenereeeee
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
 	}, []);
