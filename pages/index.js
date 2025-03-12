@@ -8,7 +8,6 @@ import Homecontact from "@/sections/Homecontact";
 import ContactPageForm from "@/sections/ContactPageForm";
 import Homenews from "@/sections/Homenews";
 import HomeInvestors from "@/sections/HomeInvestors";
-import Header2 from "../src/components/Header2";
 // SECTIONS //
 import ScaleBusiness from "../src/sections/ScaleBusiness";
 import DigitallySvatantra from "../src/sections/DigitallySvatantra";
