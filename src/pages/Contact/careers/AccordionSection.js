@@ -1,3 +1,5 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable indent */
 /* eslint-disable require-jsdoc */
 // MODULES //
 import React, { useState } from "react";
@@ -24,6 +26,7 @@ import Button from "@/components/Buttons/Button";
 
 /** DummyComponent Component */
 export default function AccordionSection({ data }) {
+	// console.log(data, "hey ");
 	/** DummyComponent Component */
 	const handleApplyClick = (value) => {
 		if (typeof window !== "undefined") {
@@ -51,22 +54,8 @@ export default function AccordionSection({ data }) {
 		{ label: "Maharashtra" },
 		{ label: "Maharashtra" },
 	];
-	// const options2 = [{ label: "2024" }, { label: "2025" }, { label: "2026" }];
 
 	const toggleDropdown = () => setOpenDropdown(!openDropdown);
-
-	// const handleOptionClick = (option, dropdown) => {
-	// 	setSelectedOptions((prevState) => ({
-	// 		...prevState,
-	// 		[dropdown]: option.label,
-	// 	}));
-
-	// 	setOpenDropdowns({ select1: false, select2: false });
-	// };
-
-	// const handleAccordionClick = (index) => {
-	// 	setActiveIndex(activeIndex === index ? null : index);
-	// };
 
 	const filteredJobs = selectedState
 		? data.data.filter((job) => job.state === selectedState)
@@ -76,6 +65,48 @@ export default function AccordionSection({ data }) {
 		setSelectedState(state);
 		setOpenDropdown(false);
 	};
+
+	const accData = filteredJobs.length
+		? filteredJobs.map((item, ind) => {
+				return {
+					title: item?.title || "No Title",
+					children: (
+						<div className={`${styles.table_wrap}`}>
+							<div className=" f_j f_w ">
+								<div className={`${styles.box1}`}>
+									{item.col1 && (
+										<>
+											<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
+											<ContentFromCms>{item.col1}</ContentFromCms>
+										</>
+									)}
+								</div>
+								<div className={`${styles.box1}`}>
+									{item.col2 && (
+										<>
+											<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
+											<ContentFromCms>{item.col2}</ContentFromCms>
+										</>
+									)}
+								</div>
+							</div>
+
+							<div
+								className={`${styles.BtnBx} ptb_20`}
+								onClick={() => handleApplyClick(item.title)}
+							>
+								<Button
+									buttonType="four"
+									condition={"white"}
+									title={"Join Us"}
+									link={"/careers/career-contact-form"}
+								/>
+							</div>
+						</div>
+					),
+				};
+		  })
+		: [];
 
 	return (
 		<div className={`${styles.AccordionSection} pt_40 pb_80`}>
@@ -104,11 +135,6 @@ export default function AccordionSection({ data }) {
 										tabIndex={0}
 									>
 										<div className={`${styles.selected}`}>
-											{/* <img
-														src={options.find((opt) => opt.label === selectedOption)?.icon}
-														alt={selectedOption}
-														className={`${styles.icon}`}
-													/> */}
 											<span className="text_reg font_secondary">
 												{selectedState || "All States"}
 											</span>
@@ -148,558 +174,17 @@ export default function AccordionSection({ data }) {
 						</div>
 					</div>
 				</div>
-				{filteredJobs.map((item, index) => {
-					const responsibilities = item.responsibilities || [];
-					const mid = Math.ceil(responsibilities.length / 2);
-					const firstHalf = responsibilities.slice(0, mid);
-					const secondHalf = responsibilities.slice(mid);
-					console.log(firstHalf, " firstHalf");
-					console.log(secondHalf, " second");
 
-					return (
-						<div className={`${styles.accordian_main}`} key={index}>
-							<AccordianCommon
-								fontStyle={"text_lg"}
-								fontWeight={"f_w_m"}
-								fontFamily={"font_primary"}
-								fontColor={"color_light_black"}
-								items={[
-									{
-										title: item.title,
-										children: (
-											<div className={`${styles.table_wrap}`}>
-												<div className=" f_j f_w ">
-													<div className={`${styles.box1}`}>
-														<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-														<ul>
-															{firstHalf.map((point, i) => (
-																<li key={i} className="text_sm">
-																	{point.text}
-																</li>
-															))}
-														</ul>
-													</div>
-													<div className={`${styles.box1}`}>
-														<h5 className="text_reg_20 f_w_m pb_20 font_primary">
-															Job Responsibilities:
-														</h5>
-														<ul>
-															{secondHalf.map((point, i) => (
-																<li key={i} className="text_sm">
-																	{point.text}
-																</li>
-															))}
-														</ul>
-													</div>
-												</div>
-
-												<div
-													className={`${styles.BtnBx} ptb_20`}
-													onClick={() => handleApplyClick(item.title)}
-												>
-													<Button
-														buttonType="four"
-														condition={"white"}
-														title={"Join Us"}
-														link={"/careers/career-contact-form"}
-													/>
-												</div>
-											</div>
-										),
-									},
-								]}
-							/>
-						</div>
-					);
-				})}
+				<div className={`${styles.accordian_main}`}>
+					<AccordianCommon
+						fontStyle={"text_lg"}
+						fontWeight={"f_w_m"}
+						fontFamily={"font_primary"}
+						fontColor={"color_light_black"}
+						items={accData}
+					/>
+				</div>
 			</div>
 		</div>
 	);
 }
-
-// {
-// 	title: "Branch Manager- SME",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Area Credit Manager-SME",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Relationship Officer-Collections",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Relationship Officer-SME",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Telecalling Relationship Officer",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Area Manager",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Credit Officer",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Branch Manager",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },
-// {
-// 	title: "Assistant Branch Manager-SME",
-// 	children: (
-// 		<div className={`${styles.table_wrap}`}>
-// 			<div className=" f_j f_w ">
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 				<div className={`${styles.box1}`}>
-// 					<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
-// 					<ul>
-// 						<li className="text_sm">
-// 							Identifying customers suitable for various credit options.
-// 						</li>
-// 						<li className="text_sm">
-// 							Assisting Relationship Officer / Assistant Branch Manager durig
-// 							initial process execution.
-// 						</li>
-// 						<li className="text_sm">
-// 							Follow-up with clients on their monthly repayments.
-// 						</li>
-// 						<li className="text_sm">
-// 							Ensuring ethical collection practices are followed by the team.
-// 						</li>
-// 					</ul>
-// 				</div>
-// 			</div>
-
-// 			<div className={`${styles.BtnBx} ptb_20`}>
-// 				<Button
-// 					buttonType="four"
-// 					condition={"white"}
-// 					title={"Join Us"}
-// 					link={"/careers/career-contact-form"}
-// 				/>
-// 			</div>
-// 		</div>
-// 	),
-// },

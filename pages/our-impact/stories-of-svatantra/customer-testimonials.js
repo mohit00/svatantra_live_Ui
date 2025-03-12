@@ -130,9 +130,12 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 			{/* Page Content Starts */}
 			<main className={`${styles.StoriesOfSvatantra_page}`}>
 				<Breadcrum
-					link2="Our Impact"
-					link3="Stories Of Svatantra"
-					link4="Customer Testimonials"
+					link5="/our-impact/stories-of-svatantra/customer-testimonials"
+					linkTitle={"Our Impact"}
+					// linknest1={"/our-impact/stories-of-svatantra"}
+					// linknestTitle1={"Stories of svatantra"}
+					linknest2={"/our-impact/stories-of-svatantra/customer-testimonials"}
+					linknestTitle2={"Customer Testimonials"}
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}

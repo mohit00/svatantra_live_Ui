@@ -81,7 +81,7 @@ export default function AboutPage({ awardsData }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.AboutPage}>
-				<Breadcrum link2="About Us" />
+				<Breadcrum linkTitle="About Us" link5={"we-are-svatantra/about-us"} />
 				<InnerBanner
 					desktopImage={DesktopBanner.src}
 					mobileImage={DesktopBanner.src}

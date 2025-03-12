@@ -47,7 +47,8 @@ export default function InvestorIndexPage({ data }) {
 			<Header />
 			<Breadcrum
 				// link2="For Investors"
-				link2="Investors"
+				link5="/investors"
+				linkTitle={"Investors"}
 			/>
 			{/* Page Content starts here */}
 			<main className={styles.InvestorIndexPage}>

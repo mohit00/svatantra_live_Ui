@@ -37,7 +37,9 @@ import download_icon from "../../../../public/img/download_icon.svg";
 
 /** Investors Page */
 export default function Investors({ data }) {
-	console.log(data[0].slugRow[0].title, "meta");
+	// console.log(data[0].slugRow[0].title, "meta");
+	console.log(data, "dddddddddddddddddd");
+
 	const [filteredData, setFilteredData] = useState([]);
 
 	const router = useRouter();
@@ -104,6 +106,7 @@ export default function Investors({ data }) {
 			fileUrl: "#", // Replace with actual file URL
 		},
 	];
+	console.log(data[0].slugRow[0].title, "ddddddddddddd");
 	return (
 		<div>
 			{/* Metatags */}
@@ -120,10 +123,14 @@ export default function Investors({ data }) {
 			{/* Page Content Starts */}
 			<main className={`${styles.investors_page}`}>
 				<Breadcrum
-					link2="Investors"
-					link3={data[0].title}
-					link4={data[0].slugRow[0].title}
+					link5="investors"
+					linkTitle={"Investors"}
+					linknest1={`investors/${data[0]?.slug}`}
+					linknestTitle1={data[0]?.title}
+					linknest2={`investors/${data[0]?.slug}/${data[0].slugRow[0].title}`}
+					linknestTitle2={data[0].slugRow[0].title}
 				/>
+
 				{/* <Breadcrum link2="For Investors" link3="Financial TrainingAnnual Return" /> */}
 				<section className={`${styles.investors_main} pb_80`}>
 					<div className="container">

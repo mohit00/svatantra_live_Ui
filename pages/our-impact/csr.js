@@ -88,7 +88,14 @@ export default function csr() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.csr_page}`}>
-				<Breadcrum link2="Our Impact" link3="CSR" />
+				<Breadcrum
+					link5="/our-impact/csr"
+					linkTitle={"Our Impact"}
+					// linknest1={"/our-impact/stories-of-svatantra"}
+					// linknestTitle1={"Stories of svatantra"}
+					linknest2={"our-impact/csr"}
+					linknestTitle2={"CSR"}
+				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}

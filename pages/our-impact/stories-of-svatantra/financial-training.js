@@ -91,9 +91,12 @@ export default function FinancialTraining({ financialTrainingData }) {
 			{/* Page Content Starts */}
 			<main className={`${styles.StoriesOfSvatantra_page}`}>
 				<Breadcrum
-					link2="Our Impact"
-					link3="Stories Of Svatantra"
-					link4="Financial Training"
+					link5="/our-impact/stories-of-svatantra/financial-training"
+					linkTitle={"Our Impact"}
+					// linknest1={"/our-impact/stories-of-svatantra"}
+					// linknestTitle1={"Stories of svatantra"}
+					linknest2={"/our-impact/stories-of-svatantra/financial-training"}
+					linknestTitle2={"Financial Training"}
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}

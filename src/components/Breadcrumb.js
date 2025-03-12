@@ -32,6 +32,10 @@ export default function Breadcrum({
 	blackColor,
 	linkTitle,
 	linkTitle2,
+	linknest1,
+	linknestTitle1,
+	linknest2,
+	linknestTitle2,
 }) {
 	const [isClass, setIsClass] = useState(classname);
 	const [isColor, setIsColor] = useState(blackColor);
@@ -76,6 +80,17 @@ export default function Breadcrum({
 						{link6 && (
 							<li>
 								<Link href={`/${link6}`}>{linkTitle}</Link>
+							</li>
+						)}
+						{linknest1 && (
+							<li>
+								<Link href={`/${linknest1}`}>{linknestTitle1}</Link>
+							</li>
+						)}
+
+						{linknest2 && (
+							<li>
+								<Link href={`/${linknest2}`}>{linknestTitle2}</Link>
 							</li>
 						)}
 						{link7 && (

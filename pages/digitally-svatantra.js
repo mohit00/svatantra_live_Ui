@@ -48,7 +48,7 @@ export default function DigitallySvatantra({ successStoriesData }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.DigitallySvatantraPage}>
-				<Breadcrum link2="Digitally Svatantra" />
+				<Breadcrum linkTitle="Digitally Svatantra" link5={"/digitally-svatantra"} />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}

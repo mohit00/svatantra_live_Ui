@@ -189,7 +189,7 @@ export default function Header() {
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages`,
+				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages&sort[0]=order`,
 				{
 					method: "GET",
 					headers: {
@@ -206,7 +206,7 @@ export default function Header() {
 		fetchData();
 	}, []);
 
-	console.log(newHeaderData, "ddddddddd");
+	// console.log(newHeaderData, "ddddddddd");
 
 	const menuData =
 		data?.[4]?.pageName?.map((page) => ({

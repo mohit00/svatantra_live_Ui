@@ -95,7 +95,10 @@ export default function LeadershipPage({ leadershipsData }) {
 
 			{/* Page Content starts here */}
 			<main className={`${styles.LeadershipPage} pb_80`}>
-				<Breadcrumb link5={"leadership"} linkTitle={"Leadership"} />
+				<Breadcrumb
+					link5={"we-are-svatantra/leadership"}
+					linkTitle={"Leadership"}
+				/>
 				<div className="container">
 					<div className={`${styles.Sec1}`}>
 						<h2 className="section_title pb_20">
