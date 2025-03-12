@@ -392,12 +392,13 @@ export default function Header() {
 								))}
 
 								<div className={styles.links}>
-									<Button
+									{/* <Button
 										buttonType="secondary"
 										condition={"white"}
 										link={"#"}
 										title={"Contact Us"}
-									/>
+									/> */}
+									<a className={styles.btn_secondaryContact}>Contact us</a>
 								</div>
 							</>
 						)}

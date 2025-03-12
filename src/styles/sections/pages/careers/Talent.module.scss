@@ -50,6 +50,11 @@
 					.playIcn {
 						@extend %rel_xy_center;
 					}
+					.plusIcn {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+					}
 				}
 			}
 		}

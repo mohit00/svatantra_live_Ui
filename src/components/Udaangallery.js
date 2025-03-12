@@ -99,6 +99,7 @@ export default function Udaangallery({ imageData }) {
 								data-src={item?.src}
 								className="b_r_10"
 								alt={`Image ${colIndex + 1}`}
+								onClick={() => openGalleryAtIndex(colIndex)}
 							/>
 							<img
 								src={Zoom.src}

@@ -25,7 +25,8 @@
 			.committed_img {
 				width: 55%;
 				padding-right: 40px;
-				@media (max-width: 767px) {
+
+				@media (max-width: 992px) {
 					width: 100%;
 					padding-right: 0;
 					padding-bottom: 20px;
@@ -38,7 +39,7 @@
 			.committed_info {
 				width: 45%;
 				padding-left: 20px;
-				@media (max-width: 767px) {
+				@media (max-width: 992px) {
 					width: 100%;
 					padding-left: 0;
 				}
@@ -48,7 +49,7 @@
 					order: 1;
 					padding-right: 0;
 					padding-left: 40px;
-					@media (max-width: 767px) {
+					@media (max-width: 992px) {
 						order: 0;
 						padding-left: 0;
 					}
@@ -56,7 +57,7 @@
 				.committed_info {
 					padding-left: 0;
 					padding-right: 20px;
-					@media (max-width: 767px) {
+					@media (max-width: 992px) {
 						padding-right: 0;
 					}
 				}

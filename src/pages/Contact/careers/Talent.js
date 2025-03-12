@@ -32,7 +32,7 @@ import styles from "@/styles/sections/pages/careers/Talent.module.scss";
 import arrow_btn from "../../../../public/img/arrow_btn.svg";
 import Talent1 from "../../../../public/img/careers/talent1.jpg";
 import playIcn from "../../../../public/img/icons/play_btn.png";
-
+import plus from "../../../../public/img/careers/plus.svg";
 // DATA //
 
 /** DummyComponent Component */
@@ -132,7 +132,7 @@ export default function TalentComponent({ data, pdfTalent }) {
 										<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
 											<a data-src={item?.youTubeLink}>
 												<div className={styles.itemContent}>
-													<div className={`${styles.item_img} pb_30`}>
+													<div className={`${styles.item_img} `}>
 														<img
 															src={StrapiImage(item?.thumb)?.url}
 															className={`${styles.thumbImg} img-responsive`}
@@ -140,8 +140,13 @@ export default function TalentComponent({ data, pdfTalent }) {
 														/>
 														<img src={playIcn.src} className={styles.playIcn} alt="" />
 													</div>
-													<h4 className="text_md font_primary">{item.name}</h4>
-													<h6 className="text_xs opacity_80">{item.location}</h6>
+													<div className="f_r_aj_between pt_30">
+														<div>
+															<h4 className="text_md font_primary">{item.name}</h4>
+															<h6 className="text_xs opacity_80">{item.location}</h6>
+														</div>
+														{/* <img src={playIcn.src} /> */}
+													</div>
 												</div>
 											</a>
 										</LightGallery>
@@ -149,16 +154,20 @@ export default function TalentComponent({ data, pdfTalent }) {
 										<>
 											{item.types === "Poems" ? (
 												<div className={styles.itemContent} onClick={() => openPopup(item)}>
-													<div className={`${styles.item_img} pb_30`}>
+													<div className={`${styles.item_img}`}>
 														<img
 															src={StrapiImage(item?.thumb)?.url}
 															className={`${styles.thumbImg} img-responsive`}
 															alt="Talent1"
 														/>
-														<img src={playIcn.src} className={styles.playIcn} alt="" />
+														<img src={plus.src} className={styles.plusIcn} alt="" />
 													</div>
-													<h4 className="text_md font_primary f_w_m">{item.name}</h4>
-													<h6 className="text_xs opacity_80">{item.location}</h6>
+													<div className="f_r_aj_between pt_30">
+														<div>
+															<h4 className="text_md font_primary f_w_m">{item.name}</h4>
+															<h6 className="text_xs opacity_80">{item.location}</h6>
+														</div>
+													</div>
 												</div>
 											) : (
 												<LightGallery
@@ -173,15 +182,20 @@ export default function TalentComponent({ data, pdfTalent }) {
 														data-thumb={StrapiImage(item?.image)?.url}
 													>
 														<div className={styles.itemContent}>
-															<div className={`${styles.item_img} pb_30`}>
+															<div className={`${styles.item_img} `}>
 																<img
 																	src={StrapiImage(item?.thumb)?.url}
 																	className={`${styles.thumbImg} img-responsive`}
 																	alt="Talent1"
 																/>
+																<img src={plus.src} className={styles.plusIcn} alt="" />
 															</div>
-															<h4 className="text_md font_primary f_w_m">{item.name}</h4>
-															<h6 className="text_xs opacity_80">{item.location}</h6>
+															<div className="f_r_aj_between pt_30">
+																<div>
+																	<h4 className="text_md font_primary f_w_m">{item.name}</h4>
+																	<h6 className="text_xs opacity_80">{item.location}</h6>
+																</div>
+															</div>
 														</div>
 													</a>
 												</LightGallery>

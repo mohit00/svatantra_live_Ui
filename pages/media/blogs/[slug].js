@@ -156,7 +156,7 @@ export default function BlogsInsidePage({ data }) {
 											<img src={facebook.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
 									</FacebookShareButton>
-									<a
+									{/* <a
 										href="https://www.youtube.com/channel/UCDN7Vupq3kJt5PRjjkffytA"
 										target="_blank"
 										rel="noreferrer"
@@ -164,7 +164,7 @@ export default function BlogsInsidePage({ data }) {
 										<div className={`${styles.box1}`}>
 											<img src={yt.src} alt="twitter" className={`${styles.icon}`} />
 										</div>
-									</a>
+									</a> */}
 									{/* <a
 										href="https://www.instagram.com/wearesvatantra?igsh=Zmh0b2hnOHZoaTh5"
 										target="_blank"

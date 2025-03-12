@@ -36,6 +36,12 @@
 						}
 					}
 				}
+
+				&:first-child {
+					@media (max-width: 767px) {
+						margin-bottom: 20px;
+					}
+				}
 			}
 		}
 	}
