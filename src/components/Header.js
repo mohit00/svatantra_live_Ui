@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable require-jsdoc */
 // MODULES //
 import { useState, useEffect, useRef } from "react";
@@ -162,26 +163,50 @@ export default function Header() {
 	const [error, setError] = useState(null);
 
 	/** Fetch data on load  */
-	useEffect(() => {
-		headerData();
-	}, []);
+	// useEffect(() => {
+	// 	headerData();
+	// }, []);
 
 	/** Fetching data of Header */
-	const headerData = () => {
-		fetch(
-			`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages`,
-			{
-				headers: {
-					"Content-Type": "application/json",
-					Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
-				},
-			}
-		)
-			.then((res) => res.json())
-			.then((data) => {
-				setData(data.data);
-			});
-	};
+	// const headerData = () => {
+	// 	fetch(
+	// 		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages`,
+	// 		{
+	// 			headers: {
+	// 				"Content-Type": "application/json",
+	// 				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+	// 			},
+	// 		}
+	// 	)
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			setData(data.data);
+	// 		});
+	// };
+
+	const [newHeaderData, setNewHeaderData] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages`,
+				{
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+					},
+				}
+			);
+
+			const response = await res.json();
+			setNewHeaderData(response);
+		};
+
+		fetchData();
+	}, []);
+
+	console.log(newHeaderData, "ddddddddd");
 
 	const menuData =
 		data?.[4]?.pageName?.map((page) => ({
@@ -205,7 +230,7 @@ export default function Header() {
 				})) || [],
 		})) || [];
 
-	console.log(data || [], "headers data");
+	// console.log(data || [], "headers data");
 
 	useEffect(() => {
 		const handleClickOutside = (event) => {
@@ -222,6 +247,18 @@ export default function Header() {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
 	}, []);
+
+	const [openMenus, setOpenMenus] = useState(
+		Array(newHeaderData?.data?.length).fill(false)
+	);
+
+	const toggleMenu = (index) => {
+		setOpenMenus((prev) => {
+			const updatedMenus = [...prev];
+			updatedMenus[index] = !updatedMenus[index]; // Toggle only the clicked index
+			return updatedMenus;
+		});
+	};
 
 	return (
 		<div
@@ -250,484 +287,110 @@ export default function Header() {
 					<div className={`${styles.links_wrap} ${styles.mobile}`}>
 						{isClient && (
 							<>
-								<div
-									className={`${styles.links} commonCls`}
-									onMouseEnter={() => !isMobile && setIsAboutOpen(true)}
-									onMouseLeave={() => !isMobile && setIsAboutOpen(false)}
-									ref={(el) => (devRefs.current[0] = el)}
-								>
-									<p
-										className={`${styles.link_title} text_xs`}
-										onClick={(e) => {
-											if (isMobile) {
-												e.stopPropagation();
-												setIsAboutOpen((prev) => !prev);
-											}
-										}}
-									>
-										{data?.[0]?.title || ""}
-									</p>
-
-									{isAboutOpen && (
-										<div
-											className={styles.subItem}
-											onMouseEnter={() => !isMobile && setIsAboutOpen(true)} // Keep open when hovering inside
-											onMouseLeave={() => !isMobile && setIsAboutOpen(false)} // Close only when fully leaving
-											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-										>
-											<ul className={styles.newBox}>
-												{data?.[0]?.pageName?.map((menu, index) => (
-													<li
-														key={index}
-														className={styles.menuItem}
-														onClick={(e) => {
-															if (isMobile) {
-																e.stopPropagation();
-																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-															}
-														}}
-														onMouseEnter={() => !isMobile && setActiveMenu(index)}
-														onMouseLeave={() => !isMobile && setActiveMenu(null)}
-													>
-														<div className={`${styles.menuTitle} text_xs`}>
-															{/* Agar subItems ho to span me, warna anchor tag */}
-															{menu.subItems?.length > 0 ? (
-																<span className={activeMenu === index ? styles.active : ""}>
-																	{menu.pageName}
-																</span>
-															) : (
-																<a href={menu.pageUrl} className={styles.noSubLink}>
-																	{menu.pageName}
-																</a>
-															)}
-															{/* Agar subItems hain to arrow show karo */}
-															{menu.subItems?.length > 0 && <img src={arrow.src} />}
-														</div>
-
-														{/* Submenu ko show/hide karne ka logic */}
-														{activeMenu === index && menu.subItems?.length > 0 && (
-															<ul
-																className={styles.subMenu}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-															>
-																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		<a href={subItem.link}>{subItem.title}</a>
-																	</li>
-																))}
-															</ul>
-														)}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-								</div>
-								<div
-									className={`${styles.links} commonCls`}
-									onMouseEnter={() => !isMobile && setIsProductsOpen(true)}
-									onMouseLeave={() => !isMobile && setIsProductsOpen(false)}
-									ref={(el) => (devRefs.current[0] = el)}
-								>
-									<p
-										className={`${styles.link_title} text_xs`}
-										onClick={(e) => {
-											if (isMobile) {
-												e.stopPropagation();
-												setIsProductsOpen((prev) => !prev);
-											}
-										}}
-									>
-										{data?.[5]?.title || ""}
-									</p>
-
-									{isProductsOpen && (
-										<div
-											className={styles.subItem}
-											onMouseEnter={() => !isMobile && setIsProductsOpen(true)} // Keep open when hovering inside
-											onMouseLeave={() => !isMobile && setIsProductsOpen(false)} // Close only when fully leaving
-											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-										>
-											<ul className={styles.newBox}>
-												{data?.[5]?.pageName?.map((menu, index) => (
-													<li
-														key={index}
-														className={styles.menuItem}
-														onClick={(e) => {
-															if (isMobile) {
-																e.stopPropagation();
-																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-															}
-														}}
-														onMouseEnter={() => !isMobile && setActiveMenu(index)}
-														onMouseLeave={() => !isMobile && setActiveMenu(null)}
-													>
-														<div className={`${styles.menuTitle} text_xs`}>
-															{/* Agar subItems ho to span me, warna anchor tag */}
-															{menu.subItems?.length > 0 ? (
-																<span className={activeMenu === index ? styles.active : ""}>
-																	{menu.pageName}
-																</span>
-															) : (
-																<a href={menu.pageUrl} className={styles.noSubLink}>
-																	{menu.pageName}
-																</a>
-															)}
-															{/* Agar subItems hain to arrow show karo */}
-															{menu.subItems?.length > 0 && <img src={arrow.src} />}
-														</div>
-
-														{/* Submenu ko show/hide karne ka logic */}
-														{activeMenu === index && menu.subItems?.length > 0 && (
-															<ul
-																className={styles.subMenu}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-															>
-																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		<a href={subItem.link}>{subItem.title}</a>
-																	</li>
-																))}
-															</ul>
-														)}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-								</div>
-
-								<div
-									className={`${styles.links} commonCls`}
-									onMouseEnter={() => !isMobile && setIsImpact(true)}
-									onMouseLeave={() => !isMobile && setIsImpact(false)}
-									ref={(el) => (devRefs.current[1] = el)}
-								>
-									<p
-										className={`${styles.link_title} text_xs`}
-										onClick={(e) => {
-											if (isMobile) {
-												e.stopPropagation();
-												setIsAboutOpen((prev) => !prev);
-											}
-										}}
-									>
-										{data?.[4]?.title || ""}
-									</p>
-
-									{isImpact && (
-										<div
-											className={styles.subItem}
-											onMouseEnter={() => !isMobile && setIsImpact(true)} // Keep open when hovering inside
-											onMouseLeave={() => !isMobile && setIsImpact(false)} // Close only when fully leaving
-											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-										>
-											<ul className={styles.newBox}>
-												{menuData.map((menu, index) => (
-													<li
-														key={index}
-														className={styles.menuItem}
-														onClick={(e) => {
-															if (isMobile) {
-																e.stopPropagation();
-																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-															}
-														}}
-														onMouseEnter={() => !isMobile && setActiveMenu(index)}
-														onMouseLeave={() => !isMobile && setActiveMenu(null)}
-													>
-														<div className={`${styles.menuTitle} text_xs`}>
-															{menu.subItems.length > 0 ? (
-																<span className={activeMenu === index ? styles.active : ""}>
-																	{menu.title}
-																</span>
-															) : (
-																<a href={menu.link} className={styles.noSubLink}>
-																	{menu.title}
-																</a>
-															)}
-															{menu.subItems.length > 0 && <img src={arrow.src} />}
-														</div>
-
-														{activeMenu === index && menu.subItems.length > 0 && (
-															<ul
-																className={styles.subMenu}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-															>
-																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		<a
-																			href={
-																				subItem.link !== "No URL Available" ? subItem.link : "#"
-																			}
-																		>
-																			{subItem.title}
-																		</a>
-																	</li>
-																))}
-															</ul>
-														)}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-								</div>
-
-								{data?.title && (
+								{newHeaderData?.data?.map((item, index) => (
 									<div
+										key={index}
 										className={`${styles.links} commonCls`}
-										ref={dropdownRef}
-										onMouseEnter={() => !isMobile && setIsResource(true)}
-										onMouseLeave={() => !isMobile && setIsResource(false)}
-									>
-										<div>
-											<p
-												className={`${styles.link_title} text_xs`}
-												onClick={(e) => {
-													if (isMobile) {
-														e.stopPropagation();
-														setIsResource((prev) => !prev);
-													}
-												}}
-											>
-												{data?.[7]?.title || ""}
-											</p>
-
-											{isResource && (
-												<div
-													className={styles.subItem}
-													onMouseEnter={() => !isMobile && setIsResource(true)} // Keep open when hovering inside
-													onMouseLeave={() => !isMobile && setIsResource(false)} // Close only when fully leaving
-													onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-												>
-													<ul className={styles.newBox}>
-														{resourcesData.map((menu, index) => (
-															<li
-																key={index}
-																className={styles.menuItem}
-																onClick={(e) => {
-																	if (isMobile) {
-																		e.stopPropagation();
-																		setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-																	}
-																}}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)}
-																onMouseLeave={() => !isMobile && setActiveMenu(null)}
-															>
-																<div className={`${styles.menuTitle} text_xs`}>
-																	{menu.subItems.length > 0 ? (
-																		<span className={activeMenu === index ? styles.active : ""}>
-																			{menu.title}
-																		</span>
-																	) : (
-																		<a href={menu.link} className={styles.noSubLink}>
-																			{menu.title}
-																		</a>
-																	)}
-																	{menu.subItems.length > 0 && <img src={arrow.src} />}
-																</div>
-
-																{activeMenu === index && menu.subItems.length > 0 && (
-																	<ul
-																		className={styles.subMenu}
-																		onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																		onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																		onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-																	>
-																		{menu.subItems.map((subItem, subIndex) => (
-																			<li
-																				key={subIndex}
-																				className={`${styles.subMenuItem} text_xs`}
-																			>
-																				<a href={subItem.link}>{subItem.title}</a>
-																			</li>
-																		))}
-																	</ul>
-																)}
-															</li>
-														))}
-													</ul>
-												</div>
-											)}
-										</div>
-									</div>
-								)}
-
-								{
-									<div
-										className={`${styles.links} commonCls`}
-										onMouseEnter={() => !isMobile && setIsDigital(true)}
-										onMouseLeave={() => !isMobile && setIsDigital(false)}
-										ref={(el) => (devRefs.current[2] = el)}
+										onMouseEnter={() =>
+											!isMobile && setOpenMenus((prev) => prev.map((_, i) => i === index))
+										}
+										onMouseLeave={() =>
+											!isMobile &&
+											setOpenMenus(Array(newHeaderData.data.length).fill(false))
+										}
 									>
 										<p
 											className={`${styles.link_title} text_xs`}
 											onClick={(e) => {
 												if (isMobile) {
 													e.stopPropagation();
-													setIsDigital((prev) => !prev);
+													toggleMenu(index);
 												}
 											}}
 										>
-											{data?.[1]?.title || ""}
+											{item.title} {/*main name*/}
 										</p>
 
-										{isDigital && (
+										{openMenus[index] && (
 											<div
 												className={styles.subItem}
-												onMouseEnter={() => !isMobile && setIsDigital(true)} // Keep open when hovering inside
-												onMouseLeave={() => !isMobile && setIsDigital(false)} // Close only when fully leaving
-												onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
+												onMouseEnter={() =>
+													!isMobile &&
+													setOpenMenus((prev) => prev.map((_, i) => i === index))
+												}
+												onMouseLeave={() =>
+													!isMobile &&
+													setOpenMenus(Array(newHeaderData.data.length).fill(false))
+												}
+												onClick={(e) => e.stopPropagation()}
 											>
 												<ul className={styles.newBox}>
-													{data?.[1]?.pageName?.map((menu, index) => (
+													{item.pageName.map((page, pageIndex) => (
 														<li
-															key={index}
+															key={page.id}
 															className={styles.menuItem}
 															onClick={(e) => {
 																if (isMobile) {
 																	e.stopPropagation();
-																	setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
+																	setActiveMenu((prev) =>
+																		prev === `${index}-${pageIndex}`
+																			? null
+																			: `${index}-${pageIndex}`
+																	);
 																}
 															}}
-															onMouseEnter={() => !isMobile && setActiveMenu(index)}
+															onMouseEnter={() =>
+																!isMobile && setActiveMenu(`${index}-${pageIndex}`)
+															}
 															onMouseLeave={() => !isMobile && setActiveMenu(null)}
 														>
 															<div className={`${styles.menuTitle} text_xs`}>
-																{/* Agar subItems ho to span me, warna anchor tag */}
-																{menu.subItems?.length > 0 ? (
-																	<span className={activeMenu === index ? styles.active : ""}>
-																		{menu.pageName}
-																	</span>
-																) : (
-																	<a href={menu.pageUrl} className={styles.noSubLink}>
-																		{menu.pageName}
-																	</a>
-																)}
-																{/* Agar subItems hain to arrow show karo */}
-																{menu.subItems?.length > 0 && <img src={arrow.src} />}
+																<span
+																	className={
+																		activeMenu === `${index}-${pageIndex}` ? styles.active : ""
+																	}
+																>
+																	<Link href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
+																		{page.pageName}
+																	</Link>
+																</span>
+																{page.subPages.length > 0 && <img src={arrow.src} />}
 															</div>
 
-															{/* Submenu ko show/hide karne ka logic */}
-															{activeMenu === index && menu.subItems?.length > 0 && (
-																<ul
-																	className={styles.subMenu}
-																	onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																	onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																	onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-																>
-																	{menu.subItems.map((subItem, subIndex) => (
-																		<li
-																			key={subIndex}
-																			className={`${styles.subMenuItem} text_xs`}
-																		>
-																			<a href={subItem.link}>{subItem.title}</a>
-																		</li>
-																	))}
-																</ul>
-															)}
+															{activeMenu === `${index}-${pageIndex}` &&
+																page.subPages.length > 0 && (
+																	<ul
+																		className={styles.subMenu}
+																		onMouseEnter={() =>
+																			!isMobile && setActiveMenu(`${index}-${pageIndex}`)
+																		}
+																		onMouseLeave={() => !isMobile && setActiveMenu(null)}
+																		onClick={(e) => e.stopPropagation()}
+																	>
+																		{page.subPages.map((subPage) => (
+																			<li
+																				key={subPage.id}
+																				className={`${styles.subMenuItem} text_xs`}
+																			>
+																				<a href={subPage.pageUrl}>
+																					{/* {subPage.pageName} */}
+																					<Link href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
+																						{subPage.pageName}
+																					</Link>{" "}
+																					{/*secondLevelLinking*/}
+																				</a>
+																			</li>
+																		))}
+																	</ul>
+																)}
 														</li>
 													))}
 												</ul>
 											</div>
 										)}
 									</div>
-								}
+								))}
 
-								<div
-									className={`${styles.links} commonCls`}
-									onMouseEnter={() => !isMobile && setIsMedia(true)}
-									onMouseLeave={() => !isMobile && setIsMedia(false)}
-									ref={(el) => (devRefs.current[3] = el)}
-								>
-									<p
-										className={`${styles.link_title} text_xs`}
-										onClick={(e) => {
-											if (isMobile) {
-												e.stopPropagation();
-												setIsDigital((prev) => !prev);
-											}
-										}}
-									>
-										{data?.[3]?.title || ""}
-									</p>
-
-									{isMedia && (
-										<div
-											className={styles.subItem}
-											onMouseEnter={() => !isMobile && setIsMedia(true)} // Keep open when hovering inside
-											onMouseLeave={() => !isMobile && setIsMedia(false)} // Close only when fully leaving
-											onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-										>
-											<ul className={styles.newBox}>
-												{data?.[3]?.pageName?.map((menu, index) => (
-													<li
-														key={index}
-														className={styles.menuItem}
-														onClick={(e) => {
-															if (isMobile) {
-																e.stopPropagation();
-																setActiveMenu((prev) => (prev === index ? null : index)); // Toggle submenu
-															}
-														}}
-														onMouseEnter={() => !isMobile && setActiveMenu(index)}
-														onMouseLeave={() => !isMobile && setActiveMenu(null)}
-													>
-														<div className={`${styles.menuTitle} text_xs`}>
-															{/* Agar subItems ho to span me, warna anchor tag */}
-															{menu.subItems?.length > 0 ? (
-																<span className={activeMenu === index ? styles.active : ""}>
-																	{menu.pageName}
-																</span>
-															) : (
-																<a href={menu.pageUrl} className={styles.noSubLink}>
-																	{menu.pageName}
-																</a>
-															)}
-															{/* Agar subItems hain to arrow show karo */}
-															{menu.subItems?.length > 0 && <img src={arrow.src} />}
-														</div>
-
-														{/* Submenu ko show/hide karne ka logic */}
-														{activeMenu === index && menu.subItems?.length > 0 && (
-															<ul
-																className={styles.subMenu}
-																onMouseEnter={() => !isMobile && setActiveMenu(index)} // Keep submenu open on hover
-																onMouseLeave={() => !isMobile && setActiveMenu(null)} // Close only when fully leaving submenu
-																onClick={(e) => e.stopPropagation()} // Prevents accidental closing on mobile
-															>
-																{menu.subItems.map((subItem, subIndex) => (
-																	<li key={subIndex} className={`${styles.subMenuItem} text_xs`}>
-																		<a href={subItem.link}>{subItem.title}</a>
-																	</li>
-																))}
-															</ul>
-														)}
-													</li>
-												))}
-											</ul>
-										</div>
-									)}
-								</div>
-								<div className={styles.links}>
-									<ul className={styles.menuItemNew}>
-										<a
-											href="https://smartodr.in/login"
-											target="_blank"
-											rel="noreferrer"
-											className={`${styles.link_title} text_xs`}
-										>
-											Smart ODR
-										</a>
-									</ul>
-								</div>
 								<div className={styles.links}>
 									<Button
 										buttonType="secondary"
@@ -743,21 +406,4 @@ export default function Header() {
 			</div>
 		</div>
 	);
-}
-
-{
-	/* <div className={styles.subItem}>
-										<ul>
-											<li>
-												<span className={styles.row1}>
-													<p className="text_xs">Reports & statement</p>
-													<img src={arrow.src} />
-												</span>
-
-												<ul>
-													<li className="text_xs">Annual report</li>
-												</ul>
-											</li>
-										</ul>
-									</div> */
 }

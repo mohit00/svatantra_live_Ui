@@ -23,12 +23,11 @@ const ScrollSection = dynamic(
 
 /** Header Component */
 export default function Header() {
-	const [openSidebar, setOpenSidebar] = useState(false);
+	// const [openSidebar, setOpenSidebar] = useState(false);
 	const [isClient, setIsClient] = useState(false);
-	const [isOpen, setIsOpen] = useState(false);
-	const [isAboutOpen, setIsAboutOpen] = useState(false);
-	const [isMobile, setIsMobile] = useState(false);
+	const [openSidebar, setOpenSidebar] = useState(false);
 	const sidebarRef = useRef(null);
+
 	// Ensure client-side rendering
 	useEffect(() => {
 		setIsClient(true);
@@ -41,31 +40,21 @@ export default function Header() {
 
 	/** */
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			setIsMobile(window.innerWidth < 768);
-			/** */
-			const handleResize = () => setIsMobile(window.innerWidth < 768);
-			window.addEventListener("resize", handleResize);
-			return () => window.removeEventListener("resize", handleResize);
-		}
-	}, []);
-
-	useEffect(() => {
 		/** */
 		const handleClickOutside = (event) => {
-			// Check if click is outside sidebar
 			if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-				setOpenSidebar(false);
+				setOpenSidebar(false); // Close sidebar
 			}
 		};
 
-		// Add event listener
-		document.addEventListener("mousedown", handleClickOutside);
+		if (openSidebar) {
+			document.addEventListener("click", handleClickOutside);
+		}
+
 		return () => {
-			// Cleanup event listenereeeee
-			document.removeEventListener("mousedown", handleClickOutside);
+			document.removeEventListener("click", handleClickOutside);
 		};
-	}, []);
+	}, [openSidebar]);
 
 	return (
 		<div
@@ -97,112 +86,26 @@ export default function Header() {
 						{isClient && (
 							<>
 								<div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="About"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										About
-									</ScrollSection>
-								</div>
-								<div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="OurImpact"
-										spy={true}
-										smooth={true}
-										offset={-100}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										Our Impact
-									</ScrollSection>
+									<p className={`${styles.link_title} text_xs`}>About</p>
+									<div className={styles.subItem}>
+										<ul>
+											<li>
+												ABout
+												<ul>
+													<li>About</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
 								</div>
 
-								{/* <div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="OurFinance"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										Our Finance
-									</ScrollSection>
-								</div> */}
 								<div className={styles.links}>
-									<ul className={styles.menuItemNew}>
-										<a
-											href="https://investors.svatantramicrofin.com/composition-of-the-board-and-kmp"
-											target="_blank"
-											rel="noreferrer"
-										>
-											Resources
-										</a>
-										{/* {isOpen && (
-												<span className={styles.hiddenItem}>
-													<li>Svatantra Microfin</li>
-													<li>Chaitanya India</li>
-													<li>Svatantra Micro Housing</li>
-												</span>
-											)} */}
-									</ul>
-								</div>
-								<div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="DigitallySvatantra"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										Digitally Svatantra
-									</ScrollSection>
-								</div>
-								<div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="Media"
-										spy={true}
-										smooth={true}
-										offset={-100}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										Media
-									</ScrollSection>
-								</div>
-								<div className={styles.links}>
-									<ScrollSection
-										onClick={toggleSidebar}
-										activeClass="active"
-										to="ContactUs"
-										spy={true}
-										smooth={true}
-										offset={-50}
-										duration={500}
-										className={`${styles.link_title} text_xs`}
-									>
-										<Button
-											buttonType="secondary"
-											condition={"white"}
-											link={"#"}
-											title={"Contact Us"}
-										/>
-									</ScrollSection>
+									<Button
+										buttonType="secondary"
+										condition={"white"}
+										link={"#"}
+										title={"Contact Us"}
+									/>
 								</div>
 							</>
 						)}
@@ -211,4 +114,12 @@ export default function Header() {
 			</div>
 		</div>
 	);
+}
+
+{
+	/* <div className={styles.links}>Our Impact</div>
+
+								<div className={styles.links}>Resources</div>
+								<div className={styles.links}>Digitally Svatantra</div>
+								<div className={styles.links}>Media</div> */
 }

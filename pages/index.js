@@ -8,7 +8,7 @@ import Homecontact from "@/sections/Homecontact";
 import ContactPageForm from "@/sections/ContactPageForm";
 import Homenews from "@/sections/Homenews";
 import HomeInvestors from "@/sections/HomeInvestors";
-import Header2 from "@/components/header2";
+import Header2 from "../src/components/Header2";
 // SECTIONS //
 import ScaleBusiness from "../src/sections/ScaleBusiness";
 import DigitallySvatantra from "../src/sections/DigitallySvatantra";
@@ -69,8 +69,8 @@ export default function HomePage({
 
 			{/* <Intro /> */}
 			{/* Header */}
-			{/* <Header /> */}
-			<Header2 />
+			<Header />
+			{/* <Header2 /> */}
 
 			{/* Page Content starts here */}
 
