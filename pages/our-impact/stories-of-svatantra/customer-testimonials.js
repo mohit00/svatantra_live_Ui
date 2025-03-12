@@ -45,7 +45,7 @@ import story_one from "../../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 import arrow_btn_popup from "../../../public/img/arrow_btn_popup.svg";
 import frame from "../../../public/img/frame.png";
-
+import playBtn from "../../../public/img/icons/play_btn.png";
 // UTILS //
 import StrapiImage from "@/utils/StrapiImage";
 
@@ -146,7 +146,7 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 				<section className={`${styles.StoriesOfSvatantra_main}`}>
 					<div className="container">
 						<div className={`${styles.title_wrap}`}>
-							<h2 className="text_xxxl color_primary">Customer Testimonial</h2>
+							<h2 className="text_xxxl color_primary">Customer Testimonial </h2>
 						</div>
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
@@ -172,7 +172,7 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 															plugins={[lgThumbnail, lgZoom, lgVideo]}
 														>
 															<a data-src={item.link}>
-																<img src={arrow_btn.src} alt="arrow icon" />
+																<img src={playBtn.src} alt="arrow icon" /> {/*video img*/}
 															</a>
 														</LightGallery>
 													) : (
@@ -244,25 +244,33 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 										className={styles.slider}
 										ref={sliderRef}
 									>
-										{customertTestimonialData.data.map((item, ind) => (
-											<SwiperSlide className={`${styles.item}`} key={ind}>
-												<div className={`${styles.PopupItem}`}>
-													<div className={styles.ImgBx}>
-														<div className={`${styles.Details} pt_10`}>
-															<h3
-																className={`${styles.Name} text_xxl f_w_m font_primary color_seashell pb_30`}
-															>
-																{item.title}
-															</h3>
-															<p
-																className={`${styles.Desc} text_md f_w_m font_secondary color_seashell`}
-															>
-																{item.desc ? parse(String(item.desc)) : ""}
-															</p>
-														</div>
-													</div>
-												</div>
-											</SwiperSlide>
+										{customertTestimonialData?.data?.map((item, ind) => (
+											<>
+												{item?.link ? (
+													""
+												) : (
+													<SwiperSlide className={`${styles.item}`} key={ind}>
+														{
+															<div className={`${styles.PopupItem}`}>
+																<div className={styles.ImgBx}>
+																	<div className={`${styles.Details} pt_10`}>
+																		<h3
+																			className={`${styles.Name} text_xxl f_w_m font_primary color_seashell pb_30`}
+																		>
+																			{item.title}
+																		</h3>
+																		<p
+																			className={`${styles.Desc} text_md f_w_m font_secondary color_seashell`}
+																		>
+																			{item.desc ? parse(String(item.desc)) : ""}
+																		</p>
+																	</div>
+																</div>
+															</div>
+														}
+													</SwiperSlide>
+												)}
+											</>
 										))}
 									</Swiper>
 									<div className={`${styles.arrowSection} f_w_a_j_center`}>
