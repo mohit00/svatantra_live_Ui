@@ -67,7 +67,12 @@ export default function events({ eventsAllData }) {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.events_page}`}>
-				<Breadcrum link2="Media" link3="Events" />
+				<Breadcrum
+					linknest1={"/media/events"}
+					linknestTitle1={"Media"}
+					linknest2={"/media/events"}
+					linknestTitle2={"Events"}
+				/>
 
 				<section className={`${styles.events_main} pb_80`}>
 					<div className="container">

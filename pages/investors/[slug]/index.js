@@ -34,7 +34,6 @@ export async function getServerSideProps({ params }) {
 
 /** Inside1 Page */
 export default function SlugPage({ data }) {
-	console.log(data[0], "Slug");
 	/** createSlug */
 	const createSlug = (text) =>
 		text

@@ -132,7 +132,12 @@ export default function BlogsPage({ blogsData }) {
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsPage} pb_80`}>
 				<div className="container">
-					<Breadcrumb link5={"blogs"} linkTitle={"Blogs"} />
+					<Breadcrumb
+						linknest1={"/media/blogs"}
+						linknestTitle1={"Media"}
+						linknest2={"/media/blogs"}
+						linknestTitle2={"Blogs"}
+					/>
 					<section className={`${styles.BlogsListingMain}`}>
 						<div className={`${styles.Head}`}>
 							<h2 className="section_title pb_10">Stories of spearheading change</h2>

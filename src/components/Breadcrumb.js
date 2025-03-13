@@ -90,7 +90,7 @@ export default function Breadcrum({
 
 						{linknest2 && (
 							<li>
-								<Link href={`/${linknest2}`}>{linknestTitle2}</Link>
+								<div href={`/${linknest2}`}>{linknestTitle2}</div>
 							</li>
 						)}
 						{link7 && (

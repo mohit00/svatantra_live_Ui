@@ -172,7 +172,12 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 															plugins={[lgThumbnail, lgZoom, lgVideo]}
 														>
 															<a data-src={item.link}>
-																<img src={playBtn.src} alt="arrow icon" /> {/*video img*/}
+																<img
+																	src={playBtn.src}
+																	alt="arrow icon"
+																	className={styles.playBtn}
+																/>{" "}
+																{/*video img*/}
 															</a>
 														</LightGallery>
 													) : (

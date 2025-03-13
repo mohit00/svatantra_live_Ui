@@ -61,6 +61,7 @@ export async function getStaticProps({ params }) {
 
 /** Blogs Inside Page */
 export default function BlogsInsidePage({ data }) {
+	console.log(data);
 	return (
 		<div>
 			{/* Metatags */}
@@ -77,10 +78,10 @@ export default function BlogsInsidePage({ data }) {
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsInsidePage} pb_80`}>
 				<Breadcrumb
-					link7={"blogs"}
-					linkTitle={"Blogs"}
-					link8={`Blogs/${data?.slug}`}
-					linkTitle2={`${data?.title}`}
+					linknest1={"/media/blogs"}
+					linknestTitle1={"Blogs"}
+					linknest2={`/media/blogs/${data?.slug}`}
+					linknestTitle2={`${data?.slug}`}
 				/>
 				<div className="container">
 					<div className={`${styles.HeadBx}`}>

@@ -86,7 +86,13 @@ export default function PressReleasePage({ pressReleaseData }) {
 			{/* Page Content starts here */}
 			<main className={`${styles.PressReleasePage} pb_80`}>
 				<div className="container">
-					<Breadcrumb link5={"press-release"} linkTitle={"Press Release"} />
+					{/* <Breadcrumb link5={"press-release"} linkTitle={"Press Release"} /> */}
+					<Breadcrumb
+						linknest1={"/media/press-release"}
+						linknestTitle1={"Media"}
+						linknest2={"/media/press-release"}
+						linknestTitle2={"Press Release"}
+					/>
 					<section className={`${styles.PressReleaseListingMain}`}>
 						<div className={`${styles.Head}`}>
 							<h2 className="section_title pb_10">Documenting the path to change</h2>

@@ -117,7 +117,13 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.MediaMentionPage}>
-				<Breadcrumb link5={"media-mention"} linkTitle={"Media Mention"} />
+				{/* <Breadcrumb link5={"media-mention"} linkTitle={"Media Mention"} /> */}
+				<Breadcrumb
+					linknest1={"/media/media-mention"}
+					linknestTitle1={"Media"}
+					linknest2={"/media/media-mention"}
+					linknestTitle2={"Media Mention"}
+				/>
 				<div className="container">
 					<section className={`${styles.MediaListingMain} pb_80`}>
 						<div className={`${styles.Head} pb_50`}>

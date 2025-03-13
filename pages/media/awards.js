@@ -127,7 +127,13 @@ export default function AwardsPage({ AwardsList }) {
 
 			{/* Page Content starts here */}
 			<main className={styles.AwardsPage}>
-				<Breadcrum link2="Media" link3="Awards" />
+				{/* <Breadcrum link2="Media" link3="Awards" /> */}
+				<Breadcrum
+					linknest1={"/media/awards"}
+					linknestTitle1={"Media"}
+					linknest2={"/media/awards"}
+					linknestTitle2={"Awards"}
+				/>
 				<section className={`${styles.events_main} pb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap}`}>

@@ -18,7 +18,7 @@ import { getHeadersData } from "../services/header";
 // IMAGES //
 import HeaderLogo from "../../public/img/home/header_logo.svg";
 import arrow from "../../public/img/caret.svg.svg";
-
+import newArrow from "../../public/whiteArrow.svg";
 // Dynamically import react-scroll without SSR
 const ScrollSection = dynamic(
 	() => import("react-scroll").then((mod) => mod.Link),
@@ -162,28 +162,6 @@ export default function Header() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	/** Fetch data on load  */
-	// useEffect(() => {
-	// 	headerData();
-	// }, []);
-
-	/** Fetching data of Header */
-	// const headerData = () => {
-	// 	fetch(
-	// 		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages`,
-	// 		{
-	// 			headers: {
-	// 				"Content-Type": "application/json",
-	// 				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
-	// 			},
-	// 		}
-	// 	)
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 			setData(data.data);
-	// 		});
-	// };
-
 	const [newHeaderData, setNewHeaderData] = useState([]);
 
 	useEffect(() => {
@@ -205,32 +183,6 @@ export default function Header() {
 
 		fetchData();
 	}, []);
-
-	// console.log(newHeaderData, "ddddddddd");
-
-	const menuData =
-		data?.[4]?.pageName?.map((page) => ({
-			title: page.pageName, // Page title
-			link: page.pageUrl ? page.pageUrl : "#", // If URL is null, provide a fallback
-			subItems:
-				page.subPages?.map((subPage) => ({
-					title: subPage.pageName,
-					link: subPage.pageUrl,
-				})) || [],
-		})) || [];
-
-	const resourcesData =
-		data?.[7]?.pageName?.map((page) => ({
-			title: page.pageName, // Page title
-			link: page.pageUrl ? page.pageUrl : "#", // If URL is null, provide a fallback
-			subItems:
-				page.subPages?.map((subPage) => ({
-					title: subPage.pageName,
-					link: subPage.pageUrl,
-				})) || [],
-		})) || [];
-
-	// console.log(data || [], "headers data");
 
 	useEffect(() => {
 		const handleClickOutside = (event) => {
@@ -391,14 +343,14 @@ export default function Header() {
 									</div>
 								))}
 
-								<div className={styles.links}>
-									{/* <Button
-										buttonType="secondary"
+								<div className={styles.linkContact}>
+									<Button
+										buttonType="four"
 										condition={"white"}
-										link={"#"}
-										title={"Contact Us"}
-									/> */}
-									<a className={styles.btn_secondaryContact}>Contact us</a>
+										title={"Contact us	"}
+										isHref={true}
+										link={"/connect-with-us/contact"}
+									/>
 								</div>
 							</>
 						)}

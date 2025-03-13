@@ -272,6 +272,25 @@
 		// 	}
 		// }
 	}
+
+	.linkContact {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		.btn_secondaryContact {
+			padding: 15px 20px;
+			background-color: var(--color_secondary);
+			border-radius: 50px;
+			color: white;
+			font-size: 16px;
+			&::after {
+				content: "";
+				background-image: url("../../../public/whiteArrow.svg");
+				position: absolute;
+			}
+		}
+	}
 }
 .header_logo {
 	@media (max-width: 1200px) {
