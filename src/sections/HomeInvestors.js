@@ -34,7 +34,7 @@ import prevImg from "../../public/img/news/prevImg.svg";
 
 /** HomeInvestors Section */
 export default function HomeInvestors({ investorData }) {
-	// console.log(investorData, " investorData");
+	// console.log(investorData, " investorData dd");
 
 	const eventsData = [
 		{
