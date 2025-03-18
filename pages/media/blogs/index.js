@@ -13,6 +13,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 // PLUGINS //
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/pages/Blogs.module.scss";
@@ -21,12 +22,21 @@ import styles from "@/styles/pages/Blogs.module.scss";
 import advent from "../../../public/img/advent.png";
 
 // DATA //
+import { getAllBlogs } from "@/services/BlogService";
 
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const blogsData = await getAllBlogs();
+	return { props: { blogsData }, revalidate: 60 };
+};
 /** Blogs Page */
-export default function BlogsPage() {
+export default function BlogsPage({ blogsData }) {
+	const dateString = blogsData.data[0].date;
+	const year = dateString.split(" ")[2]; // Extracts "2024"
+
 	const [selectedOptions, setSelectedOptions] = useState({
-		select1: "Svatantra Microfin",
-		select2: "2023",
+		select1: blogsData.data[0].author.name,
+		select2: year,
 	});
 
 	const [openDropdowns, setOpenDropdowns] = useState({
@@ -51,7 +61,7 @@ export default function BlogsPage() {
 	const handleOptionClick = (option, dropdown) => {
 		setSelectedOptions((prevState) => ({
 			...prevState,
-			[dropdown]: option.label,
+			[dropdown]: option,
 		}));
 
 		setOpenDropdowns({ select1: false, select2: false });
@@ -102,6 +112,15 @@ export default function BlogsPage() {
 			link: "/blogs-inside",
 		},
 	];
+	const filteredData = blogsData.data.filter(
+		(item) =>
+			(selectedOptions.select1 === "" ||
+				item.author.name === selectedOptions.select1) &&
+			(selectedOptions.select2 === "" ||
+				item.date.includes(selectedOptions.select2))
+	);
+	console.log(filteredData, " filteredData");
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -113,7 +132,12 @@ export default function BlogsPage() {
 			{/* Page Content starts here */}
 			<main className={`${styles.BlogsPage} pb_80`}>
 				<div className="container">
-					<Breadcrumb link5={"blogs"} linkTitle={"Blogs"} />
+					<Breadcrumb
+						linknest1={"/media/blogs"}
+						linknestTitle1={"Media"}
+						linknest2={"/media/blogs"}
+						linknestTitle2={"Blogs"}
+					/>
 					<section className={`${styles.BlogsListingMain}`}>
 						<div className={`${styles.Head}`}>
 							<h2 className="section_title pb_10">Stories of spearheading change</h2>
@@ -135,7 +159,7 @@ export default function BlogsPage() {
 														alt={selectedOption}
 														className={`${styles.icon}`}
 													/> */}
-													<span className="text_reg">{selectedOptions.select1}</span>
+													<span className="text_reg f_w_m">{selectedOptions.select1}</span>
 												</div>
 												<img
 													src={
@@ -150,20 +174,21 @@ export default function BlogsPage() {
 
 											{openDropdowns.select1 && (
 												<ul className={`${styles.select_options}`}>
-													{options.map((option) => (
+													{[
+														...new Map(
+															blogsData.data.map((item) => [item.author.name, item])
+														).values(),
+													].map((option) => (
 														<li
-															key={option.label}
+															key={option.title}
 															className={`${styles.select_option} ${
-																option.label === selectedOptions.select1 ? styles.selected : ""
+																option.author.name === selectedOptions.select1
+																	? styles.selected
+																	: ""
 															}`}
-															onClick={() => handleOptionClick(option, "select1")}
+															onClick={() => handleOptionClick(option.author.name, "select1")}
 														>
-															{/* <img
-															src={option.icon}
-															alt={option.label}
-															className={`${styles.option_icon}`}
-														/> */}
-															<span className="text_reg">{option.label}</span>
+															<span className="text_sm">{option.author.name}</span>
 														</li>
 													))}
 												</ul>
@@ -171,6 +196,7 @@ export default function BlogsPage() {
 										</div>
 									</div>
 								</div>
+								{/* year */}
 								<div className={`${styles.Filter}`}>
 									<div className={`${styles.selectBx}`}>
 										<div className={`${styles.custom_select}`}>
@@ -206,13 +232,8 @@ export default function BlogsPage() {
 															className={`${styles.select_option} ${
 																option.label === selectedOptions.select2 ? styles.selected : ""
 															}`}
-															onClick={() => handleOptionClick(option, "select2")}
+															onClick={() => handleOptionClick(option.label, "select2")}
 														>
-															{/* <img
-															src={option.icon}
-															alt={option.label}
-															className={`${styles.option_icon}`}
-														/> */}
 															<span className="text_reg">{option.label}</span>
 														</li>
 													))}
@@ -224,29 +245,36 @@ export default function BlogsPage() {
 							</div>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{BlogList.map((item, ind) => {
-								return (
+							{filteredData.length > 0 ? (
+								filteredData.map((item, ind) => (
 									<div className={`${styles.slider}`} key={ind}>
-										<div className={`${styles.box1}`}>
-											<div className={`${styles.imgBox}`}>
-												<img src={item.image} alt="box1" className={`${styles.mainImg}`} />
-												{/* <img src={box11.src} alt="logo" className={`${styles.logo}`} /> */}
-											</div>
-
-											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>{item.cardtype}</p>
+										<a href={`blogs/${item.slug}`}>
+											<div className={`${styles.box1}`}>
+												<div className={`${styles.imgBox}`}>
+													<img
+														src={StrapiImage(item.thumbnail).url}
+														alt="box1"
+														className={`${styles.mainImg}`}
+													/>
 												</div>
-												<div className={`${styles.date}`}>
-													<p>{item.date}</p>
-												</div>
-											</div>
 
-											<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
-										</div>
+												<div className={`${styles.categoryBox}`}>
+													<div className={`${styles.news}`}>
+														<p>{item.author.name}</p>
+													</div>
+													<div className={`${styles.date}`}>
+														<p>{item.date}</p>
+													</div>
+												</div>
+
+												<p className="text_reg_20 f_w_m pt_20">{item.title}</p>
+											</div>
+										</a>
 									</div>
-								);
-							})}
+								))
+							) : (
+								<p>No blogs found</p>
+							)}
 						</div>
 					</section>
 				</div>

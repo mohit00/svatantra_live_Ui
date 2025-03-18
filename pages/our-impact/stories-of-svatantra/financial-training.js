@@ -28,8 +28,10 @@ import styles from "@/styles/pages/FinancialTraining.module.scss";
 // SERVICES //
 
 // DATA //
+import { getFinancialTraining } from "@/services/impactService";
 
-/** Data Fetching  */
+// UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // IMAGES //
 import banner_desktop from "../../../public/img/faq/banner_desktop.jpg";
@@ -37,30 +39,42 @@ import story_one from "../../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 import youtube from "../../../public/img/youtube.svg";
 
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const financialTrainingData = await getFinancialTraining();
+	return { props: { financialTrainingData }, revalidate: 60 };
+};
+
 /** FinancialTraining Page */
-export default function FinancialTraining() {
-	const financialTrainingData = [
-		{
-			title: "Literacy is the key to45",
-			thumbnail: story_one.src,
-			youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
-		},
-		{
-			title: "Literacy is the ",
-			thumbnail: story_one.src,
-			youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
-		},
-		{
-			title: "Literacy is the key to 1 !",
-			thumbnail: story_one.src,
-			youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
-		},
-		{
-			title: "Literacy is the key to !",
-			thumbnail: story_one.src,
-			youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
-		},
-	];
+export default function FinancialTraining({ financialTrainingData }) {
+	const [showItems, setShowItems] = useState(4); // State to manage the number of items to show
+
+	/** handleShowMore function */
+	const handleLoadMore = () => {
+		setShowItems(showItems + 2); // Increase the number of items to show by 6
+	};
+	// const financialTrainingData = [
+	// 	{
+	// 		title: "Literacy is the key to45",
+	// 		thumbnail: story_one.src,
+	// 		youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
+	// 	},
+	// 	{
+	// 		title: "Literacy is the ",
+	// 		thumbnail: story_one.src,
+	// 		youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
+	// 	},
+	// 	{
+	// 		title: "Literacy is the key to 1 !",
+	// 		thumbnail: story_one.src,
+	// 		youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
+	// 	},
+	// 	{
+	// 		title: "Literacy is the key to !",
+	// 		thumbnail: story_one.src,
+	// 		youTubeLink: "https://youtu.be/jS03Gupwdjw?si=uhVbQ1pV7I8lTI8j",
+	// 	},
+	// ];
 	return (
 		<div>
 			{/* Metatags */}
@@ -77,9 +91,12 @@ export default function FinancialTraining() {
 			{/* Page Content Starts */}
 			<main className={`${styles.StoriesOfSvatantra_page}`}>
 				<Breadcrum
-					link2="Our Impact"
-					link3="Stories Of Svatantra"
-					link4="Financial Training"
+					link5="/our-impact/stories-of-svatantra/financial-training"
+					linkTitle={"Our Impact"}
+					// linknest1={"/our-impact/stories-of-svatantra"}
+					// linknestTitle1={"Stories of svatantra"}
+					linknest2={"/our-impact/stories-of-svatantra/financial-training"}
+					linknestTitle2={"Financial Training"}
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
@@ -95,15 +112,19 @@ export default function FinancialTraining() {
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
 							<div className={`${styles.box_wrap}`}>
-								{financialTrainingData.map((item1, ind) => {
+								{financialTrainingData.data.slice(0, showItems).map((item, ind) => {
 									return (
 										<div className={`${styles.box_item}`} key={ind}>
 											<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
-												<div data-src={item1.youTubeLink}>
-													<img src={item1.thumbnail} className="b_r_10" alt="story img" />
+												<div data-src={item.video}>
+													<img
+														src={StrapiImage(item.thumbnail).url}
+														className="b_r_10"
+														alt="story img"
+													/>
 													<div className={`${styles.content} pt_20 f_r_aj_between`}>
 														<p className="text_md color_light_black font_secondary opacity_8">
-															{item1.title}
+															{item.title}
 														</p>
 														<div>
 															<a>
@@ -120,14 +141,22 @@ export default function FinancialTraining() {
 
 							{/*  */}
 						</div>
-						<div className={`${styles.BtnBx} f_r_aj_center pt_60`}>
-							<Button
-								buttonType="secondary"
-								condition={"white"}
-								link={"#"}
-								title={"More Stories"}
-							/>
-						</div>
+						{financialTrainingData.data.length > showItems ? (
+							<div
+								className={`${styles.BtnBx} f_r_aj_center pt_60`}
+								onClick={handleLoadMore}
+							>
+								<Button
+									buttonType="secondary"
+									condition={"white"}
+									link={"#"}
+									title={"More Stories"}
+									isHref={false}
+								/>
+							</div>
+						) : (
+							""
+						)}
 					</div>
 				</section>
 			</main>

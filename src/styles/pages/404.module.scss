@@ -13,8 +13,14 @@
 		color: var(--color_white);
 
 		.title {
-			font-size: 90px;
+			font-size: 50px;
 			font-weight: 600;
+			// line-height: 100px;
+			margin-bottom: 20px;
+			@media (max-width: 767px) {
+				font-size: 40px;
+				line-height: 50px;
+			}
 		}
 
 		.desp {

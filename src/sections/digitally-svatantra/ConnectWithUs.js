@@ -32,7 +32,12 @@ export default function ConnectWithUs() {
 							toward financial resilience and self-reliance.
 						</p>
 						<div className={`${styles.BtnBx} pt_10`}>
-							<Button buttonType="four" condition={"white"} title={"Submit"} />
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Submit"}
+								link={"/connect-with-us/contact"}
+							/>
 						</div>
 					</div>
 					<div className={`${styles.right}`}>

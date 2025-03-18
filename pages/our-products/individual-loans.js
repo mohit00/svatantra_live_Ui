@@ -39,20 +39,20 @@ import repayment from "../../public/img/our-products/microfinance/repayment.svg"
 /** MsmeLoans Page */
 export default function MsmeLoans() {
 	const loanAmountData = {
-		loanAmount: "₹ 3,3456 to ₹ 1 lakh",
-		tenure: "20 to 30 Months",
-		interestRate: "20.75% to 24.25%",
+		loanAmount: "₹ 1 lakh to ₹ 3 lakh",
+		tenure: "24 to 36 Months",
+		interestRate: "23%",
 	};
 	const pavingThePathData = {
-		title: "Paving the path to prosperity for women entrepreneurs2",
+		title: "Scale small businesses to robust MSMEs",
 		description:
-			"Svatantra’s micro finance loans have been instrumental in promoting entrepreneurship, especially among semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
-		subTitle: "Key features powering our entrepreneurs and our economy3",
+			"We tailor our Individual Loans to build entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to micro-credit at one of the lowest interest rates in the Country, we provide timely support to address the evolving business needs. From starting a venture or expanding a rural based business, our Individual Loans can help maximise success and achievements throughout an individual's entrepreneurial journey.",
+		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
-			"We provide one of the lowest interest.",
-			"Services that enable rural and semi-urban women entrepreneurs to become agents of ",
-			"Customised solutions for entrepreneurs to achieve business ",
-			"A financial ecosystem that ensures every individual experiences ",
+			"We provide one of the lowest interest rates in India.",
+			"Services that enable rural and semi-urban women to become agents of change within their communities.",
+			"Customised solutions for entrepreneurs to achieve business goals and drive economic growth.",
+			"A financial ecosystem that ensures every individual experiences a self-reliant future.",
 		],
 	};
 	const sixStepsData = {
@@ -92,12 +92,12 @@ export default function MsmeLoans() {
 				icon: repayment.src,
 				title: "Repayment/Collection",
 				description:
-					"Offer timely guidance and collection of the monthly loan installments.",
+					"Offer timely guidance and collection of the monthly loan instalments.",
 			},
 		],
 	};
 	const commonQueriesData = {
-		title: "Common Queries3",
+		title: "Common Queries",
 		faqItems: [
 			{
 				title: "What is microfinance?",
@@ -142,18 +142,27 @@ export default function MsmeLoans() {
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"MSME Loans"} Desc={""} OgImg={""} Url={"/msme-loans"} />
+			<MetaTags
+				Title={"Individual Loans"}
+				Desc={""}
+				OgImg={""}
+				Url={"/individual-loans"}
+			/>
 
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
 			<main className={styles.MsmeLoansPage}>
-				<Breadcrum link2="Our Products" link3="MSME Loans" />
+				<Breadcrum
+					linkTitle="Our Products"
+					linkTitle2="Individual Loans"
+					link10="/our-products/individual-loans"
+				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
-					bannerTitle="MSME Loans"
+					bannerTitle="Individual Loans"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}
@@ -209,11 +218,14 @@ export default function MsmeLoans() {
 								</tr>
 								<tr>
 									<td rowSpan="2">Insurance</td>
-									<td colSpan="6" className={`${styles.bgBorder}`}>
-										Life Insurance
+									<td colSpan="6">
+										Svantra offers Credit Linked Insurance, a life insurance tailored to
+										provide financial support to our women customers and their spouses. It
+										ensures the family remains economically independent, especially in
+										case of death of the insured person.
 									</td>
 								</tr>
-								<tr className={`${styles.bgWhite} ${styles.bgBorder}`}>
+								{/* <tr className={`${styles.bgWhite} ${styles.bgBorder}`}>
 									<td colSpan="6">
 										₹ 1 lakh to ₹ 3 lakhCredit Linked Insurance is a life insurance
 										offered by Svatantra to women customers and her spouse to provide
@@ -228,15 +240,18 @@ export default function MsmeLoans() {
 										other insurance products are optional (consent based) Penal charges -
 										Nil
 									</td>
-								</tr>
+								</tr> */}
 							</table>
+							<p className={`${styles.averageRate} text_sm pt_20 f_w_l opacity_80`}>
+								*Average rate of interest for Q4 FY24: 23.21%
+							</p>
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
 							<a href="">
 								<span>
 									<img src={pdf_icon.src} alt="icon" />
 								</span>
-								Disclouser of Interest Rate
+								Disclosure of Interest Rate
 							</a>
 							<a href="">
 								<span>
@@ -255,7 +270,10 @@ export default function MsmeLoans() {
 					brochureUrl={commonQueriesData.brochureUrl}
 				/>
 				<BlogsInsights />
-				<Homecontact />
+				<Homecontact
+					formTitle="Fill in the details, and our team of experts will contact you to help
+								bring your entrepreneurial vision to life."
+				/>
 			</main>
 			{/* Page Content ends here */}
 

@@ -23,9 +23,16 @@ import styles from "@/styles/pages/DigitallySvatantra.module.scss";
 import banner_desktop from "../public/img/digitally-svatantra/banner_desktop.jpg";
 
 // DATA //
+import { getDigitalSvatantra } from "@/services/digitalSvatantraService";
+/** getDigitallySvatantra */
+/** */
+export const getStaticProps = async () => {
+	const successStoriesData = await getDigitalSvatantra();
+	return { props: { successStoriesData }, revalidate: 60 };
+};
 
 /** DigitallySvatantra Page */
-export default function DigitallySvatantra() {
+export default function DigitallySvatantra({ successStoriesData }) {
 	return (
 		<div>
 			{/* Metatags */}
@@ -41,14 +48,14 @@ export default function DigitallySvatantra() {
 
 			{/* Page Content starts here */}
 			<main className={styles.DigitallySvatantraPage}>
-				<Breadcrum link2="Digitally Svatantra" />
+				<Breadcrum linkTitle="Digitally Svatantra" link5={"/digitally-svatantra"} />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
 					bannerTitle="Leveraging technology for growth and efficiency"
 				/>
 				<TechnologyDriven />
-				<StoriesOfSuccess />
+				<StoriesOfSuccess successStoriesData={successStoriesData} />
 				<ConnectWithUs />
 			</main>
 			{/* Page Content ends here */}

@@ -2,7 +2,7 @@
 
 // COMPONENTS //
 import ContentFromCms from "@/components/ContentFromCms";
-
+import Button from "@/components/Buttons/Button";
 // SECTIONS //
 
 // PLUGINS //
@@ -31,6 +31,15 @@ export default function JoinComponent() {
 							Explore our current openings and find the perfect role that aligns with
 							your career goals.
 						</p>
+						<div className={`${styles.BtnBx} pt_20`}>
+							<Button
+								buttonType="four"
+								condition={"white"}
+								title={"Join Us"}
+								isHref={true}
+								link={"/careers/job-opening"}
+							/>
+						</div>
 					</div>
 					<div className={`${styles.join_img}`}>
 						<img src={JoinImg.src} className="JoinImg" alt="JoinImg" />

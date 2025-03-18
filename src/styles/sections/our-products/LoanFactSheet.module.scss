@@ -36,6 +36,14 @@
 			tr {
 				&:last-child {
 					border-bottom: none;
+					td {
+						&:first-child {
+							border-bottom-left-radius: 10px;
+						}
+						&:last-child {
+							border-bottom-right-radius: 10px;
+						}
+					}
 				}
 			}
 			tr:nth-child(even) {

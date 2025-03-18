@@ -1,5 +1,5 @@
 // MODULES //
-
+import { useState, useEffect } from "react";
 // COMPONENTS //
 import AccordianCommon from "@/components/AccordianCommon";
 import Breadcrum from "@/components/Breadcrumb";
@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InnerBanner from "@/components/InnerBanner";
 import MetaTags from "@/components/MetaTags";
+import ContentFromCms from "@/components/ContentFromCms";
 
 // SECTIONS //
 
@@ -20,21 +21,52 @@ import styles from "@/styles/pages/Faqs.module.scss";
 // IMAGES //
 import banner_desktop from "../../public/img/faq/banner_desktop.jpg";
 
-// DATA //
+// SERVICES //
+import { getFaqs } from "@/services/connectWithUsService";
+
+/**  */
+export const getStaticProps = async () => {
+	const faqData = await getFaqs();
+	return { props: { faqData }, revalidate: 60 };
+};
 
 /** Faqs Page */
-export default function Faqs() {
+export default function Faqs({ faqData }) {
+	const [faqitem, setFaqitem] = useState([]);
+
+	useEffect(() => {
+		if (faqData?.data) {
+			const formattedFAQs = faqData?.data?.map((item) => ({
+				title: item?.title,
+				children: (
+					<div>
+						<ContentFromCms>
+							{item?.desc || "No description available"}
+						</ContentFromCms>
+					</div>
+				),
+			}));
+
+			setFaqitem(formattedFAQs);
+		}
+	}, [faqData]); // Runs only when `faqData` changes
+
 	return (
 		<div>
 			{/* Metatags */}
-			<MetaTags Title={"Faqs"} Desc={""} OgImg={""} Url={"/faqs"} />
+			<MetaTags
+				Title={"Faqs"}
+				Desc={""}
+				OgImg={""}
+				Url={"/connect-with-us/faqs"}
+			/>
 
 			{/* Header */}
 			<Header />
 
 			{/* Page Content starts here */}
 			<main className={styles.FaqsPage}>
-				<Breadcrum link2="faqs" />
+				<Breadcrum link5="/connect-with-us/faqs" linkTitle={"Faqs"} />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
@@ -47,106 +79,7 @@ export default function Faqs() {
 							fontWeight={"f_w_m"}
 							fontFamily={"font_primary"}
 							fontColor={"color_light_black"}
-							items={[
-								{
-									title: "What is microfinance?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-								{
-									title: "What is a Microfinance Institution (MFI)?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-								{
-									title: "How is Svatantra different from other MFIs?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-								{
-									title: "Who are microfinance clients?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-								{
-									title: "Why is microfinance important for rural women?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-								{
-									title: "What is the rate of interest charged on the loan?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-								{
-									title: "What is the recruitment process at Svatantra?",
-									children: (
-										<div>
-											<p className="text_sm color_light_black opacity_8">
-												Microfinance refers to a variety of affordable financial services
-												that target low-income clients, living either on or below the
-												poverty line, particularly women. It aims to empower these clients
-												by providing them access to microcredit for income-generating
-												activities, savings and insurance, and remittance services.
-											</p>
-										</div>
-									),
-								},
-							]}
+							items={faqitem} // Now faqitem updates correctly
 						/>
 					</div>
 				</section>

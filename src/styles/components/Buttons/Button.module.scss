@@ -17,6 +17,7 @@
 
 .btn_secondary {
 	display: inline-block;
+	background-color: transparent;
 	.btn_outer_span {
 		display: inline-flex;
 		align-items: center;
@@ -58,8 +59,13 @@
 			width: 0px;
 		}
 		&:hover {
+			background-color: white;
+			svg path {
+				fill: var(--color_secondary);
+			}
 			.btn_inner_text {
 				padding: 12px 0;
+				color: var(--color_secondary);
 			}
 			.btn_inner_left {
 				opacity: 0;
@@ -157,4 +163,20 @@
 			}
 		}
 	}
+	&.white {
+		border-bottom: 1px solid #fff;
+		.btn_inner_circle {
+			img {
+				filter: invert(1);
+			}
+		}
+		.btn_inner_text {
+			color: #fff !important;
+		}
+	}
+}
+button.btn_primary,
+button.btn_secondary,
+button.btn_five {
+	border: none;
 }

@@ -32,13 +32,15 @@
 		padding-top: 30px;
 		display: flex;
 		align-items: center;
+		// justify-content: space-between;
 		gap: 10px;
 		font-size: 16px;
 		font-weight: 500;
-		text-decoration: underline;
-		text-underline-offset: 5px;
 		background: transparent;
 		border: none;
 		cursor: pointer;
+		&:hover {
+			border-bottom: 1px solid black;
+		}
 	}
 }
