@@ -42,7 +42,6 @@ const ScrollSection = dynamic(
 export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	const [isClient, setIsClient] = useState(false);
-	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef(null);
 	const [isAboutOpen, setIsAboutOpen] = useState(false);
 	const [isProductsOpen, setIsProductsOpen] = useState(false);
@@ -104,10 +103,9 @@ export default function Header() {
 				// setIsOpen(false);
 			}
 		};
-		document.addEventListener("mousedown", handleClickOutside);
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
+
+		document.addEventListener("click", handleClickOutside);
+		return () => document.removeEventListener("click", handleClickOutside);
 	}, []);
 
 	// useEffect(() => {
