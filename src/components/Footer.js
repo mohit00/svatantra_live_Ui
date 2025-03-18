@@ -100,33 +100,11 @@ export default function Footer() {
 						<ul>
 							<li className="text_xs color_white pb_10">
 								{/* <a>We are svatantra</a> */}
-								<ScrollSection
-									// onClick={toggleSidebar}
-									activeClass="active"
-									to="About"
-									spy={true}
-									smooth={true}
-									offset={-50}
-									duration={500}
-									className={`${styles.link_title} text_xs`}
-								>
-									About
-								</ScrollSection>
+								<a href="/we-are-svatantra/about-us">We are svatantra</a>
 							</li>
 							<li className="text_xs color_white pb_10">
 								{/* <a>Our impact</a> */}
-								<ScrollSection
-									// onClick={toggleSidebar}
-									activeClass="active"
-									to="OurImpact"
-									spy={true}
-									smooth={true}
-									offset={-100}
-									duration={500}
-									className={`${styles.link_title} text_xs`}
-								>
-									Our Impact
-								</ScrollSection>
+								<a href="/careers">Careers</a>
 							</li>
 							<li className="text_xs color_white pb_10">
 								{/* <a>Connect with us</a> */}
