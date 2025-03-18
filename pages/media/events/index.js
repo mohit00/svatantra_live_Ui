@@ -13,14 +13,22 @@ import Breadcrum from "@/components/Breadcrumb";
 
 // PLUGINS //
 
+// UTILS //
+import StrapiImage from "@/utils/StrapiImage";
+
 // STYLES //
 import styles from "@/styles/pages/events.module.scss";
 
 // SERVICES //
 
 // DATA //
+import { getEvents } from "@/services/eventsService";
 
-/** Data Fetching  */
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const eventsAllData = await getEvents();
+	return { props: { eventsAllData }, revalidate: 60 };
+};
 
 // IMAGES //
 import event_one from "../../../public/img/media/events/event_one.jpg";
@@ -28,7 +36,9 @@ import event_two from "../../../public/img/media/events/event_two.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 
 /** events Page */
-export default function events() {
+export default function events({ eventsAllData }) {
+	console.log(eventsAllData, " eventsAllData");
+
 	const eventsData = [
 		{
 			title: "Udaan Scholarship programme",
@@ -57,7 +67,12 @@ export default function events() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.events_page}`}>
-				<Breadcrum link2="Media" link3="Events" />
+				<Breadcrum
+					linknest1={"/media/events"}
+					linknestTitle1={"Media"}
+					linknest2={"/media/events"}
+					linknestTitle2={"Events"}
+				/>
 
 				<section className={`${styles.events_main} pb_80`}>
 					<div className="container">
@@ -73,16 +88,20 @@ export default function events() {
 
 						<div className={`${styles.content_main_wrap} pt_40`}>
 							<div className={`${styles.box_wrap}`}>
-								{eventsData.map((item, ind) => {
+								{eventsAllData?.data.map((item, ind) => {
 									return (
 										<div className={`${styles.box_item}`} key={ind}>
-											<img src={item.thumbnail} className="b_r_10" alt="story img" />
+											<img
+												src={StrapiImage(item?.thumbnail).url}
+												className="b_r_10"
+												alt="story img"
+											/>
 											<div className={`${styles.content} pt_20 f_r_aj_between`}>
 												<p className="text_md color_light_black font_secondary opacity_8">
-													{item.title}
+													{item?.title}
 												</p>
 												<div>
-													<a href={item.link}>
+													<a href={`/media/events/${item?.slug}`}>
 														<img src={arrow_btn.src} alt="arrow icon" />
 													</a>
 												</div>

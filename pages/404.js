@@ -33,7 +33,7 @@ export default function NotFoundPage() {
 			{/* Page Content starts here */}
 			<main className={styles.not_found_page}>
 				<div className={styles.not_found_wrap}>
-					<h2 className={styles.title}>404</h2>
+					<h2 className={`${styles.title}`}>404</h2>
 					<p className={`${styles.desp} text_center`}>
 						The page that you are
 						<br /> looking for does not exist!

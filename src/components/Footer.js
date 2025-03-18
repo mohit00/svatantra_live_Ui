@@ -27,7 +27,7 @@ import styles from "@/styles/components/Footer.module.scss";
 
 // IMAGES //
 import footerarrow from "../../public/img/footer/footerarrow.svg";
-import twitter from "../../public/img/footer/twitter.svg";
+import twitter from "../../public/x_thread.svg";
 import facebook from "../../public/img/footer/facebook.svg";
 import insta from "../../public/img/footer/insta.svg";
 import yt from "../../public/img/footer/yt.svg";
@@ -207,8 +207,10 @@ export default function Footer() {
 
 						<hr className={`${styles.secondBreakLine}`} />
 
-						<div>
-							<h1 className="text_reg color_white pb_10">Signup for our newsletter</h1>
+						<div className={styles.letterBox}>
+							<h1 className="text_reg_20 f_w_s_b color_white pb_10 font_primary">
+								Signup for our newsletter
+							</h1>
 							<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 								<div className={`${styles.emailBox}`}>
 									<input
@@ -347,14 +349,14 @@ export default function Footer() {
 
 					{/* <hr className={`${styles.lastLine}`} /> */}
 
-					{/* <div className={`${styles.box2}`}>
+					<div className={`${styles.box2}`}>
 						<p className="text_xs f_w_r color_white opacity_70">Privacy Policy</p>
 						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
-					</div> */}
+					</div>
 
-					{/* <a href="https://www.ting.in/" target="_blank">
+					<a href="https://www.ting.in/" target="_blank">
 						<img src={ting.src} alt="tinglogo" />
-					</a> */}
+					</a>
 				</div>
 			</div>
 		</footer>

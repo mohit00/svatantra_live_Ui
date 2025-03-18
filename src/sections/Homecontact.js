@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 // COMPONENTS //
 
 // SECTIONS //
-
+import ContactPageForm from "../sections/ContactPageForm";
 // PLUGINS //
 import ScrollOut from "scroll-out";
 import { useForm } from "react-hook-form";
@@ -20,7 +20,7 @@ import styles from "@/styles/sections/Homecontact.module.scss";
 // DATA //
 
 /** Homecontact Section */
-export default function Homecontact() {
+export default function Homecontact({ formTitle }) {
 	useEffect(() => {
 		ScrollOut({
 			once: true,
@@ -97,6 +97,16 @@ export default function Homecontact() {
 						</h3>
 					</div>
 					<div className={`${styles.right}`} data-scroll>
+						<ContactPageForm
+							formText={
+								"Fill in the details, and our team of experts will contact you to help bring your entrepreneurial vision to life."
+							}
+						/>
+						{/* {formTitle ? (
+							<p className="text_sm opacity_80 pb_20">{formTitle}</p>
+						) : (
+							"  "
+						)}
 						<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 							<div className={`${styles.form_field}`}>
 								<input
@@ -182,7 +192,7 @@ export default function Homecontact() {
 									We appreciate you contacting us. We&lsquo;ll respond shortly. N
 								</p>
 							)}
-						</form>
+						</form> */}
 					</div>
 				</div>
 			</div>

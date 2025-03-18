@@ -37,7 +37,7 @@ import logo from "../../public/img/logo.jpg";
 // DATA //
 
 /** StoriesSuccess Section */
-export default function StoriesSuccess() {
+export default function StoriesSuccess({ successStoriesData }) {
 	useEffect(() => {
 		ScrollOut({
 			once: true,
@@ -76,54 +76,17 @@ export default function StoriesSuccess() {
 									nextEl: "#customNext",
 								}}
 							>
-								<SwiperSlide>
-									<div className={`${styles.SliderItem} color_white`}>
-										<img src={Qutoes.src} alt="Quote Image" />
-										<p className={`${styles.quote} text_sm text_500`}>
-											I took a loan from Svatantra Microfin to support my readymade
-											garments venture and the credit I received has helped my small
-											business grow and scale sustainably.
-										</p>
-										<p className={`${styles.Name}`}>- Animol, Ambalapuzha, Kerala</p>
-									</div>
-								</SwiperSlide>
-								<SwiperSlide>
-									<div className={`${styles.SliderItem} color_white`}>
-										<img src={Qutoes.src} alt="Quote Image" />
-										<p className={`${styles.quote} text_sm text_500`}>
-											I have never missed a single EMI of my Svatantra loan and have been
-											actively utilising the consumer facing app to pay by instalments.
-										</p>
-										<p className={`${styles.Name}`}>
-											- Sakshee Sandeep Kale, Ambernath, Maharashtra
-										</p>
-									</div>
-								</SwiperSlide>
-								<SwiperSlide>
-									<div className={`${styles.SliderItem} color_white`}>
-										<img src={Qutoes.src} alt="Quote Image" />
-										<p className={`${styles.quote} text_sm text_500`}>
-											It all started with a group loan to set up my kirana shop, and now I
-											also own a saree shop.
-										</p>
-										<p className={`${styles.Name}`}>
-											- Rekha Kailash Yamagavali, Amravati, Maharashtra
-										</p>
-									</div>
-								</SwiperSlide>
-								<SwiperSlide>
-									<div className={`${styles.SliderItem} color_white`}>
-										<img src={Qutoes.src} alt="Quote Image" />
-										<p className={`${styles.quote} text_sm text_500`}>
-											I took a loan from Svatantra Microfin to restart my late husband’s
-											transport business. Life was no doubt challenging but with hard work,
-											we were able to repay the debts and start afresh.
-										</p>
-										<p className={`${styles.Name}`}>
-											- Nanda Maruti Kokhale, Vadgaon, Pune, Maharashtra
-										</p>
-									</div>
-								</SwiperSlide>
+								{successStoriesData.data?.map((item, ind) => {
+									return (
+										<SwiperSlide key={ind}>
+											<div className={`${styles.SliderItem} color_white`}>
+												<img src={Qutoes.src} alt="Quote Image" />
+												<p className={`${styles.quote} text_sm text_500`}>{item.desc}</p>
+												<p className={`${styles.Name}`}>- {item.name}</p>
+											</div>
+										</SwiperSlide>
+									);
+								})}
 							</Swiper>
 							<div className={`${styles.arrowSection} f_w_a_j_center`}>
 								<button className={`${styles.customPrev}`} id="customPrev">

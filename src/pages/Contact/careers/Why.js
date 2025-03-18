@@ -91,7 +91,9 @@ export default function WhyComponent() {
 						<SwiperSlide className={`${styles.item}`} key={item.title}>
 							<div className={styles.itemContent}>
 								<div className={`${styles.title} text_center`}>
-									<h4 className="text_md color_white f_w_m">{item.title}</h4>
+									<h4 className="text_md color_white f_w_m font_primary">
+										{item.title}
+									</h4>
 								</div>
 								<div className={`${styles.info} text_center`}>
 									<p className="text_xs color_light_black opacity_8">{item.desc}</p>

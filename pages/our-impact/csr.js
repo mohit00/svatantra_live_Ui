@@ -88,7 +88,14 @@ export default function csr() {
 
 			{/* Page Content Starts */}
 			<main className={`${styles.csr_page}`}>
-				<Breadcrum link2="Our Impact" link3="CSR" />
+				<Breadcrum
+					link5="/our-impact/csr"
+					linkTitle={"Our Impact"}
+					// linknest1={"/our-impact/stories-of-svatantra"}
+					// linknestTitle1={"Stories of svatantra"}
+					linknest2={"our-impact/csr"}
+					linknestTitle2={"CSR"}
+				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={banner_desktop.src}
@@ -150,7 +157,9 @@ export default function csr() {
 								{svatantraPath.map((item, ind) => (
 									<SwiperSlide className={`${styles.item}`} key={ind}>
 										<div className={styles.itemContent}>
-											<h4 className="text_md color_light_black pb_20">{item.title}</h4>
+											<h4 className="text_md color_light_black pb_20 font_primary">
+												{item.title}
+											</h4>
 											<p className="text_xs color_light_black opacity_8">{item.desc}</p>
 										</div>
 									</SwiperSlide>

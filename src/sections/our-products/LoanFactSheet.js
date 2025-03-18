@@ -61,26 +61,32 @@ export default function LoanFactSheet() {
 						</tr>
 						<tr>
 							<td rowSpan="2">Insurance</td>
-							<td colSpan="6" className={`${styles.bgBorder}`}>
-								Life Insurance
+							<td colSpan="6">
+								Svantra offers Credit Linked Insurance, a life insurance tailored to
+								provide financial support to our women customers and their spouses. It
+								ensures the family remains economically independent, especially in case
+								of death of the insured person.
 							</td>
 						</tr>
-						<tr className={`${styles.bgWhite} ${styles.bgBorder}`}>
+						{/* <tr className={`${styles.bgWhite} ${styles.bgBorder}`}>
 							<td colSpan="6">
 								₹ 1 lakh to ₹ 3 lakhCredit Linked Insurance is a life insurance offered
 								by Svatantra to women customers and her spouse to provide relief to her
 								family in case of death of the insured person.
 							</td>
-						</tr>
-						<tr className={`${styles.bgWhite} `}>
+						</tr> */}
+						{/* <tr className={`${styles.bgWhite} `}>
 							<td colSpan="7" className={`${styles.bgBorder}`}>
 								ROI is a function of risk profile of the customers and will be reviewed
 								periodically. All the products above Rs.25000 have tenure ranging from
 								24 to 30 months. Apart from credit life insurance all other insurance
 								products are optional (consent based) Penal charges - Nil
 							</td>
-						</tr>
+						</tr> */}
 					</table>
+					<p className="text_sm pt_20 f_w_l opacity_80">
+						*Average rate of interest for Q4 FY24: 23.21%
+					</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a href="">

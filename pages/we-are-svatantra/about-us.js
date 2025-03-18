@@ -20,6 +20,7 @@ import styles from "@/styles/pages/About.module.scss";
 import Breadcrum from "@/components/Breadcrumb";
 
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // IMAGES //
 import Girl1 from "../../public/img/about/girl.jpg";
@@ -29,14 +30,24 @@ import Icon2 from "../../public/img/about/icon_2.png";
 import Icon3 from "../../public/img/about/icon_3.png";
 import Icon4 from "../../public/img/about/icon_4.png";
 import Icon5 from "../../public/img/about/icon_5.png";
-import arrow_btn from "../../public/img/arrow_btn.svg";
+import arrow_btn from "../../public/whiteArrow.svg";
+import arrow from "../../public/arrow.svg";
 import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
 import DesktopBanner from "../../public/img/about/desktop_banner.jpg";
-
+import dummyLogo from "../../public/nationalLogo.png";
 // DATA //
+import { getAwards } from "@/services/awardsService";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const awardsData = await getAwards();
+	return { props: { awardsData }, revalidate: 60 };
+};
 
 /** Contact Page */
-export default function AboutPage() {
+export default function AboutPage({ awardsData }) {
+	console.log(awardsData.data, " awardsData");
+
 	const svatantraPath = [
 		{
 			title: "Growth and expansion",
@@ -51,8 +62,13 @@ export default function AboutPage() {
 			desc: "We will continue leveraging the power of digital technology.",
 		},
 		{
-			title: "Transformative solutions",
-			desc: "Offer more tailormade accessible credit solutions.",
+			title: "Foster synergies",
+			desc: "Closer synergies between our teams to drive industry leadership.",
+		},
+		{
+			title: "Undisputed leader",
+			desc:
+				"In asset management, customer satisfaction and operational excellence.",
 		},
 	];
 	return (
@@ -65,12 +81,12 @@ export default function AboutPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.AboutPage}>
-				<Breadcrum link2="About Us" />
+				<Breadcrum linkTitle="About Us" link5={"we-are-svatantra/about-us"} />
 				<InnerBanner
 					desktopImage={DesktopBanner.src}
 					mobileImage={DesktopBanner.src}
-					bannerTitle="Helping you leave your mark on tomorrow"
-					bannerDesc="Fueling grassroots ambition with innovation, to power India's journey to global economic leadership."
+					bannerTitle="Enabling you leave your mark on tomorrow"
+					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of lowest interest rates in the country"
 				/>
 				<section className={`${styles.Committed} ptb_80`}>
 					<div className="container">
@@ -78,7 +94,7 @@ export default function AboutPage() {
 							Committed to fueling your journey <br className="hidden_sm" /> towards
 							self-powered growth
 						</h2>
-						<h4 className="text_lg pt_20 pb_40 opacity_80">
+						<h4 className="text_reg pt_20 pb_40  ">
 							At Svatantra, we are driven by a singular vision: to create a
 							self-powered system of growth. We believe in the transformative power of
 							grassroots entrepreneurship and are committed to championing the
@@ -91,10 +107,11 @@ export default function AboutPage() {
 								</div>
 								<div className={`${styles.committed_info}`}>
 									<p className="text_sm opacity_8">
-										Our purpose is to cultivate a new generation of entrepreneurs who will
-										shape India’s journey into a global economic superpower. Taking every
-										step forward, we strive to turn aspirations into accomplishments,
-										creating ripples of progress far beyond our own world.
+										We provide rural and semi-urban communities with access to diverse
+										microfinance solutions using the latest technology. From offering one
+										of the lowest interest rates in the industry to pioneering 100%
+										cashless disbursements, our approach is built on innovation,
+										transparency, and empowerment.
 									</p>
 								</div>
 							</div>
@@ -132,7 +149,7 @@ export default function AboutPage() {
 								<div className={`${styles.img_box}`}>
 									<img src={Icon1.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md">Transparency</h5>
+								<h5 className="text_md font_primary">Transparency</h5>
 								<p className="text_xs opacity_80">
 									Building trust through openness and clear communication at every step
 									of the journey.
@@ -142,7 +159,7 @@ export default function AboutPage() {
 								<div className={`${styles.img_box}`}>
 									<img src={Icon2.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md">Integrity</h5>
+								<h5 className="text_md font_primary">Integrity</h5>
 								<p className="text_xs opacity_80">
 									Upholding honesty and strong ethical values in all our practices.
 								</p>
@@ -151,7 +168,7 @@ export default function AboutPage() {
 								<div className={`${styles.img_box}`}>
 									<img src={Icon3.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md">Passion</h5>
+								<h5 className="text_md font_primary">Passion</h5>
 								<p className="text_xs opacity_80">
 									Driven by a deep commitment to making a lasting impact on the lives we
 									touch.
@@ -161,7 +178,7 @@ export default function AboutPage() {
 								<div className={`${styles.img_box}`}>
 									<img src={Icon4.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md">Teamwork</h5>
+								<h5 className="text_md font_primary">Teamwork</h5>
 								<p className="text_xs opacity_80">
 									Collaborating effectively with a shared goal of transforming lives and
 									communities.
@@ -171,7 +188,7 @@ export default function AboutPage() {
 								<div className={`${styles.img_box}`}>
 									<img src={Icon5.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md">Innovation</h5>
+								<h5 className="text_md font_primary">Innovation</h5>
 								<p className="text_xs opacity_80">
 									Pioneering solutions that drive progress and reshape the financial
 									landscape.
@@ -181,7 +198,7 @@ export default function AboutPage() {
 								<div className={`${styles.img_box}`}>
 									<img src={Icon1.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md">Customer Centricity</h5>
+								<h5 className="text_md font_primary">Customer Centricity</h5>
 								<p className="text_xs opacity_80">
 									Placing the needs of our customers at the heart of everything we do.
 								</p>
@@ -196,6 +213,8 @@ export default function AboutPage() {
 								Accelerating the path to <br className="hidden_sm" /> prosperity and
 								growth
 							</h2>
+						</div>
+						<div className={styles.sliderBox}>
 							<Swiper
 								modules={[Navigation, Pagination, Autoplay]}
 								slidesPerView={1.2}
@@ -207,10 +226,10 @@ export default function AboutPage() {
 									prevEl: "#customPrev",
 									nextEl: "#customNext",
 								}}
-								autoplay={{
-									delay: 3000,
-									disableOnInteraction: false,
-								}}
+								// autoplay={{
+								// 	delay: 3000,
+								// 	disableOnInteraction: false,
+								// }}
 								pagination={{
 									el: ".swiper-pagination", // Attach to a pagination container
 									type: "progressbar", // Choose 'progressbar' type
@@ -226,7 +245,7 @@ export default function AboutPage() {
 										spaceBetween: 20,
 									},
 									1200: {
-										slidesPerView: 3,
+										slidesPerView: 3.5,
 										spaceBetween: 20,
 									},
 								}}
@@ -236,10 +255,14 @@ export default function AboutPage() {
 									<SwiperSlide className={`${styles.item}`} key={item.title}>
 										<div className={styles.itemContent}>
 											<div className={`${styles.title} text_center`}>
-												<h4 className="text_md color_white f_w_m">{item.title}</h4>
+												<h4 className="text_md color_white  font_primary f_w_s_b">
+													{item.title}
+												</h4>
 											</div>
 											<div className={`${styles.info} text_center`}>
-												<p className="text_xs color_light_black opacity_8">{item.desc}</p>
+												<p className="text_xs color_light_black opacity_8 f_w_m">
+													{item.desc}
+												</p>
 											</div>
 										</div>
 									</SwiperSlide>
@@ -248,10 +271,78 @@ export default function AboutPage() {
 							<div className={`${styles.progressBar} m_t_30 swiper-pagination`}></div>
 							<div className={`${styles.arrowSection} f_w_a_j_center`}>
 								<button className={`${styles.customPrev}`} id="customPrev">
-									<img src={arrow_btn.src} alt="icon" />
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clipPath="url(#clip0_1405_8574)">
+											<g clipPath="url(#clip1_1405_8574)">
+												<path
+													d="M9.91114 1.63464L4.35742 7.18836L9.91114 12.7409"
+													stroke="white"
+													strokeWidth="1.21875"
+												/>
+											</g>
+										</g>
+										<defs>
+											<clipPath id="clip0_1405_8574">
+												<rect
+													width="13"
+													height="13"
+													fill="white"
+													transform="matrix(0 1 1 0 0.5 0.5)"
+												/>
+											</clipPath>
+											<clipPath id="clip1_1405_8574">
+												<rect
+													width="13"
+													height="8.125"
+													fill="white"
+													transform="matrix(0 1 1 0 2.9375 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
 								</button>
 								<button className={styles.customNext} id="customNext">
-									<img src={arrow_btn.src} alt="icon" />
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<g clipPath="url(#clip0_1405_8574)">
+											<g clipPath="url(#clip1_1405_8574)">
+												<path
+													d="M9.91114 1.63464L4.35742 7.18836L9.91114 12.7409"
+													stroke="white"
+													strokeWidth="1.21875"
+												/>
+											</g>
+										</g>
+										<defs>
+											<clipPath id="clip0_1405_8574">
+												<rect
+													width="13"
+													height="13"
+													fill="white"
+													transform="matrix(0 1 1 0 0.5 0.5)"
+												/>
+											</clipPath>
+											<clipPath id="clip1_1405_8574">
+												<rect
+													width="13"
+													height="8.125"
+													fill="white"
+													transform="matrix(0 1 1 0 2.9375 0.5)"
+												/>
+											</clipPath>
+										</defs>
+									</svg>
 								</button>
 							</div>
 						</div>
@@ -280,10 +371,10 @@ export default function AboutPage() {
 										prevEl: "#customPrev",
 										nextEl: "#customNext",
 									}}
-									autoplay={{
-										delay: 3000,
-										disableOnInteraction: false,
-									}}
+									// autoplay={{
+									// 	delay: 3000,
+									// 	disableOnInteraction: false,
+									// }}
 									pagination={{
 										el: ".swiper-pagination2", // Attach to a pagination container
 										type: "progressbar", // Choose 'progressbar' type
@@ -309,7 +400,25 @@ export default function AboutPage() {
 									}}
 									className={styles.slider}
 								>
-									<SwiperSlide className={`${styles.item}`}>
+									{awardsData.data &&
+										awardsData.data.map((item, ind) => {
+											return (
+												<SwiperSlide className={`${styles.item}`} key={ind}>
+													<div className={styles.itemContent}>
+														<div className={`${styles.item_img} pb_30 m_b_30`}>
+															<img
+																src={StrapiImage(item.logo).url}
+																// src={dummyLogo.src}
+																className="img-responsive"
+																alt="Talent1"
+															/>
+														</div>
+														<p className="text_reg_20">{item.title}</p>
+													</div>
+												</SwiperSlide>
+											);
+										})}
+									{/* <SwiperSlide className={`${styles.item}`}>
 										<div className={styles.itemContent}>
 											<div className={`${styles.item_img} pb_30`}>
 												<img
@@ -365,17 +474,17 @@ export default function AboutPage() {
 												Year 2024
 											</p>
 										</div>
-									</SwiperSlide>
+									</SwiperSlide> */}
 								</Swiper>
 								<div
 									className={`${styles.progressBar} m_t_30 swiper-pagination2`}
 								></div>
 								<div className={`${styles.arrowSection} f_w_a_j_center`}>
 									<button className={`${styles.customPrev}`} id="customPrev">
-										<img src={arrow_btn.src} alt="icon" />
+										<img src={arrow.src} alt="icon" />
 									</button>
 									<button className={styles.customNext} id="customNext">
-										<img src={arrow_btn.src} alt="icon" />
+										<img src={arrow.src} alt="icon" />
 									</button>
 								</div>
 							</div>

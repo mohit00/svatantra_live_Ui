@@ -1,5 +1,6 @@
 // MODULES //
 import { useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 // COMPONENTS //
 import Button from "@/components/Buttons/Button";
@@ -21,50 +22,94 @@ import styles from "@/styles/sections/formcontact.module.scss";
 // DATA //
 
 /** ContactForm Section */
-export default function ContactPageForm() {
+export default function ContactPageForm({ formText }) {
+	const router = useRouter();
 	const [isSubmited, setIsSubmited] = useState(false);
 	const formRef = useRef();
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm({ mode: "onChange" });
 
 	/** Function to handle submit */
 	const onSubmit = async (data, e) => {
+		const Headers = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+			},
+			body: JSON.stringify({
+				data: data,
+			}),
+		};
+		const { firstName, surname, email, tel, message } = data;
+
+		/** */
+		async function sendData() {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/contact-us-leads`,
+				Headers
+			);
+
+			if (!res.ok) {
+				return;
+			}
+			const result = await res.json();
+			console.log(result, " res");
+			reset();
+			setIsSubmited(true);
+			router.push("/thank-you");
+			setTimeout(() => {
+				setIsSubmited(false);
+			}, 2000);
+			// emailData();
+		}
+
+		sendData();
+
 		// Write form submission codes here
 	};
 
 	return (
 		<div className={`${styles.form_section}`}>
-			<h2 className="text_md f_w_s_b pb_20">Send an enquiry</h2>
+			{formText ? (
+				formText
+			) : (
+				<h2 className="text_md f_w_s_b pb_20 font_primary">Send an enquiry</h2>
+			)}
+			{/* <h2 className="text_md f_w_s_b pb_20 font_primary">
+				{formText ? formText : "Send an enquiry"}
+			</h2> */}
 			<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 				<div className={`${styles.form_field}`}>
 					<input
 						type="text"
-						placeholder="Name"
-						id="name"
-						name="First Name *"
+						placeholder="First Name *"
+						id="firstName"
+						name="firstName"
 						className={`${styles.inputField}`}
-						{...register("name", { required: true })}
+						{...register("firstName", { required: true })}
 					/>
-					{errors.name && errors.name.type == "required" && (
+					{errors.firstName && errors.firstName.type == "required" && (
 						<label className="error">This field is required</label>
 					)}
 				</div>
-				<div className={`${styles.form_field}`}>
+				{/* <div className={`${styles.form_field}`}>
 					<input
 						type="text"
-						placeholder="surname"
+						placeholder="Surname"
 						id="surname"
-						name="Surname *"
+						name="surname"
 						className={`${styles.inputField}`}
-						{...register("name", { required: true })}
+						{...register("surname", { required: true })}
 					/>
-					{errors.name && errors.name.type == "required" && (
+					{errors.surname && errors.surname.type == "required" && (
 						<label className="error">This field is required</label>
 					)}
-				</div>
+				</div> */}
 				<div className={`${styles.form_field}`}>
 					<input
 						type="email"
@@ -74,7 +119,7 @@ export default function ContactPageForm() {
 							required: true,
 							pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
 						})}
-						placeholder="Email *"
+						placeholder="Email Address *"
 						className={`${styles.inputField}`}
 					/>
 					{errors.email && errors.email.type == "required" && (
@@ -87,13 +132,13 @@ export default function ContactPageForm() {
 				<div className={`${styles.form_field}`}>
 					<input
 						// type="text"
-						placeholder="Telephone *"
+						placeholder="Phone No *"
 						className={`${styles.inputField}`}
 						type="number"
-						id="number"
-						name="number"
+						id="tel"
+						name="tel"
 						maxLength="10"
-						{...register("number", {
+						{...register("tel", {
 							required: "This field is required",
 							minLength: {
 								value: 10,
@@ -109,7 +154,7 @@ export default function ContactPageForm() {
 							},
 						})}
 					/>
-					{errors.number && <label className="error">{errors.number.message}</label>}
+					{errors.tel && <label className="error">{errors.tel.message}</label>}
 				</div>
 				<div className={`${styles.form_field}`}>
 					<textarea
@@ -131,7 +176,7 @@ export default function ContactPageForm() {
 
 				{isSubmited && (
 					<p className="text_xs pt_10">
-						We appreciate you contacting us. We&lsquo;ll respond shortly. N
+						We appreciate you contacting us. We&lsquo;ll respond shortly.
 					</p>
 				)}
 			</form>

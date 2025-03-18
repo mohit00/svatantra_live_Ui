@@ -1,5 +1,5 @@
 // MODULES //
-
+import { useState } from "react";
 // COMPONENTS //
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -9,29 +9,59 @@ import Breadcrumb from "@/components/Breadcrumb";
 // SECTIONS //
 
 // PLUGINS //
-
+import Moment from "moment";
 // UTILS //
+import StrapiImage from "@/utils/StrapiImage";
 
 // STYLES //
 import styles from "@/styles/pages/MediaMention.module.scss";
 
 // IMAGES //
 import advent from "../../public/img/advent.png";
+import ladki from "../../public/img/media/ladki.jpg";
+import logo from "../../public/img/media/logo.svg";
+import MediaPopupContent from "@/components/MediaPopupContent";
 
 // DATA //
+import { mediaMention } from "@/services/mediaMentionService";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const mediaMentionsData = await mediaMention();
+	return { props: { mediaMentionsData }, revalidate: 60 };
+};
 
 /** Media Mention Page */
-export default function MediaMentionPage() {
+export default function MediaMentionPage({ mediaMentionsData }) {
+	const [isOpen, setIsOpen] = useState(false);
+	const [selectedBlog, setSelectedBlog] = useState(null);
+
+	/** */
+	const openPopup = (blog) => {
+		console.log(blog, " blog");
+
+		setSelectedBlog(blog);
+		setIsOpen(true);
+	};
+
+	/** */
+	const closePopup = () => {
+		setIsOpen(false);
+		setSelectedBlog(null);
+	};
+
 	const BlogList = [
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Malati's Tea Stall - A Blend for Business Excellence",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title:
@@ -39,21 +69,24 @@ export default function MediaMentionPage() {
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Role of rural women in Indian agricultural businesses",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Malati's Tea Stall - A Blend for Business Excellence",
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title:
@@ -61,7 +94,8 @@ export default function MediaMentionPage() {
 			link: "/blogs-inside",
 		},
 		{
-			image: advent.src,
+			image: ladki.src,
+			logo: logo.src,
 			cardtype: "News",
 			date: "14 June 2024",
 			title: "Role of rural women in Indian agricultural businesses",
@@ -83,7 +117,13 @@ export default function MediaMentionPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.MediaMentionPage}>
-				<Breadcrumb link5={"media-mention"} linkTitle={"Media Mention"} />
+				{/* <Breadcrumb link5={"media-mention"} linkTitle={"Media Mention"} /> */}
+				<Breadcrumb
+					linknest1={"/media/media-mention"}
+					linknestTitle1={"Media"}
+					linknest2={"/media/media-mention"}
+					linknestTitle2={"Media Mention"}
+				/>
 				<div className="container">
 					<section className={`${styles.MediaListingMain} pb_80`}>
 						<div className={`${styles.Head} pb_50`}>
@@ -95,24 +135,33 @@ export default function MediaMentionPage() {
 							</p>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{BlogList.map((item, ind) => {
+							{mediaMentionsData.data.map((item, ind) => {
+								// const formattedDate = new Date(item.date).toISOString().split("T")[0];
+								const date = Moment(item.date).format("MMM DD, YYYY");
 								return (
-									<div className={`${styles.slider}`} key={ind}>
+									<div
+										className={`${styles.slider}`}
+										key={ind}
+										onClick={() => openPopup(item)}
+									>
 										<div className={`${styles.box1}`}>
 											<div className={`${styles.imgBox}`}>
 												<img
-													src={item.image}
+													src={StrapiImage(item.thumbnail).url}
 													alt="box1"
 													className={`${styles.mainImg} width_100`}
 												/>
+												<div className={styles.logoBox}>
+													<img src={StrapiImage(item.logo).url} />
+												</div>
 											</div>
 
 											<div className={`${styles.categoryBox}`}>
 												<div className={`${styles.news}`}>
-													<p>{item.cardtype}</p>
+													<p>{item.tag}</p>
 												</div>
 												<div className={`${styles.date}`}>
-													<p>{item.date}</p>
+													<p>{date}</p>
 												</div>
 											</div>
 
@@ -121,6 +170,17 @@ export default function MediaMentionPage() {
 									</div>
 								);
 							})}
+							<MediaPopupContent isOpen={isOpen} isClose={closePopup}>
+								{selectedBlog && (
+									<div className={styles.popupContent}>
+										<img
+											src={StrapiImage(selectedBlog.thumbnail).url}
+											alt="blog-image"
+											className="width_100"
+										/>
+									</div>
+								)}
+							</MediaPopupContent>
 						</div>
 					</section>
 				</div>

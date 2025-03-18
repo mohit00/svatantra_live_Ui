@@ -47,6 +47,7 @@
 		input:focus {
 			// border: none;
 			// background-color: red;
+			outline: none;
 		}
 
 		select {
@@ -79,6 +80,15 @@
 
 	.consentCheckbox {
 		padding-top: 60px;
+		position: relative;
+		.error {
+			font-size: 12px;
+			position: absolute;
+			width: 100%;
+			bottom: -35px;
+			left: 0;
+			color: red;
+		}
 
 		.mainDiv {
 			width: 100%;
@@ -92,6 +102,27 @@
 				margin-top: -10px;
 			}
 		}
+	}
+
+	.fileInput {
+		display: none;
+	}
+	.customFileInput {
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 400;
+		color: rgb(30, 49, 87);
+		width: 100%;
+		border: 0;
+		font-family: var(--font_secondary);
+		font-weight: 400;
+		color: #1e3157;
+		cursor: pointer;
+		overflow: hidden;
+		background-image: url(../../../public/img/upload.svg);
+		background-repeat: no-repeat;
+		background-position: 97% 50%;
+		padding-left: 5px;
 	}
 
 	.checkboxContainer {
@@ -172,5 +203,16 @@
 			top: 25%;
 			right: 2%;
 		}
+	}
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type="number"] {
+		-moz-appearance: textfield;
 	}
 }

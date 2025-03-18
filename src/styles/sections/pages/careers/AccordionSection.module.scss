@@ -36,6 +36,12 @@
 						}
 					}
 				}
+
+				&:first-child {
+					@media (max-width: 767px) {
+						margin-bottom: 20px;
+					}
+				}
 			}
 		}
 	}
@@ -88,7 +94,7 @@
 				justify-content: space-between;
 				align-items: center;
 				padding: 10px 65px 10px 25px;
-				background-color: #f6f6f6;
+				background-color: rgba(239, 228, 220, 1);
 				border: 2px solid #eaeaea;
 				border-radius: 24px;
 				cursor: pointer;

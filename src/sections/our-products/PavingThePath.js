@@ -38,7 +38,7 @@ export default function PavingThePath({
 						<div key={index} className={`${styles.item}`}>
 							<div className={`${styles.circleBox} pb_30`}>
 								<p className={`${styles.firstBox} text_sm color_light_black`}>
-									{index + 1}
+									0{index + 1}
 								</p>
 								<p className={`${styles.secondBox}`}>
 									<img src={check.src} alt="icon" />

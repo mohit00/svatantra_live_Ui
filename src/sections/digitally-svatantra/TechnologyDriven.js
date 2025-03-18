@@ -24,12 +24,12 @@ export default function TechnologyDriven() {
 		<section className={`${styles.TechnologyDriven} ptb_80`}>
 			<div className="container">
 				<div className={styles.titleBox}>
-					<h2 className="text_xxxl color_primary pb_20">
+					<h2 className="text_xxxl color_primary pb_20 f_w_m">
 						Technology-driven solutions
 					</h2>
 				</div>
 				<div className={`${styles.para}`}>
-					<p className="text_md color_light_black font_secondary opacity_8 pb_20">
+					<p className="text_md color_light_black font_secondary opacity_8 pb_20 l_h_6">
 						At Svatantra, we believe in harnessing the power of technology to create a
 						seamless, innovative, and personalised experience for both our customers
 						and employees. Our commitment to the technology-drive approach isn’t just

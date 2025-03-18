@@ -57,8 +57,9 @@ export default function AccordianCommon({
 
 	return (
 		<div className={styles.accordion}>
-			{items.map((item, index) => (
+			{items?.map((item, index) => (
 				<div key={index} className={`${styles.accordionItem} b_r_12`}>
+					{/* {console.log(items, "   itemsitemsitemsitemsitems")} */}
 					{/* Accordion Header */}
 					<div
 						className={`${styles.accordionHeader} ${BgStyles.activeBgTitle_1}  ${

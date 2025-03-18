@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Homecontact from "@/sections/Homecontact";
+import ContactPageForm from "@/sections/ContactPageForm";
 import Homenews from "@/sections/Homenews";
 import HomeInvestors from "@/sections/HomeInvestors";
-
 // SECTIONS //
 import ScaleBusiness from "../src/sections/ScaleBusiness";
 import DigitallySvatantra from "../src/sections/DigitallySvatantra";
@@ -29,9 +29,30 @@ import Intro from "@/components/intro";
 // IMAGES //
 
 // DATA //
+import { getDigitalSvatantra } from "@/services/digitalSvatantraService";
+import { mediaMention } from "@/services/mediaMentionService";
+import { getAwards } from "@/services/awardsService";
+import { getInvestors } from "@/services/Investors";
+
+/** getOurLeaderships */
+export const getStaticProps = async (context) => {
+	const successStoriesData = await getDigitalSvatantra();
+	const mediaMentionData = await mediaMention();
+	const getAwardsData = await getAwards();
+	const investorData = await getInvestors();
+	return {
+		props: { successStoriesData, mediaMentionData, getAwardsData, investorData },
+		revalidate: 60,
+	};
+};
 
 /** Home Page */
-export default function HomePage() {
+export default function HomePage({
+	successStoriesData,
+	mediaMentionData,
+	getAwardsData,
+	investorData,
+}) {
 	gsap.registerPlugin(ScrollTrigger);
 	return (
 		<div>
@@ -48,6 +69,7 @@ export default function HomePage() {
 			{/* <Intro /> */}
 			{/* Header */}
 			<Header />
+			{/* <Header2 /> */}
 
 			{/* Page Content starts here */}
 
@@ -57,8 +79,12 @@ export default function HomePage() {
 				<Economic />
 				<ScaleBusiness />
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				<StoriesSuccess />
-				<Homenews />
+				<StoriesSuccess successStoriesData={successStoriesData} getAwards />
+				<Homenews
+					mediaMentionData={mediaMentionData}
+					getAwardsData={getAwardsData}
+				/>
+				<HomeInvestors investorData={investorData} />
 				<Homecontact />
 			</main>
 			{/* Page Content ends here */}

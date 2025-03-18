@@ -22,7 +22,8 @@
 		background-position: top;
 		background-repeat: no-repeat;
 		background-image: url("/img/home/svatantra_bg.jpg");
-		@media (max-width: 767px) {
+
+		@media (max-width: 992px) {
 			background-position: unset;
 			// padding: 50px 15px 50px 15px;
 			flex-direction: column;
@@ -101,7 +102,7 @@
 				}
 			}
 		}
-		.right_box_wrapper{
+		.right_box_wrapper {
 			width: 48%;
 			overflow: hidden;
 			@media (max-width: 992px) {
