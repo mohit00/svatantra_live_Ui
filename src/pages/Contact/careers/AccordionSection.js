@@ -76,7 +76,7 @@ export default function AccordionSection({ data }) {
 								<div className={`${styles.box1}`}>
 									{item.col1 && (
 										<>
-											<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
+											{/* <h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5> */}
 											<ContentFromCms>{item.col1}</ContentFromCms>
 										</>
 									)}
@@ -84,7 +84,7 @@ export default function AccordionSection({ data }) {
 								<div className={`${styles.box1}`}>
 									{item.col2 && (
 										<>
-											<h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5>
+											{/* <h5 className="text_reg_20 f_w_m pb_20">Job Responsibilities:</h5> */}
 											<ContentFromCms>{item.col2}</ContentFromCms>
 										</>
 									)}

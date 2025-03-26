@@ -40,16 +40,19 @@ export default function TalentComponent({ data, pdfTalent }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 	// console.log(data, "talents");
+	console.log(data?.data, "All talents data");
 
 	// console.log(pdfTalent, "data hai bhai");
 	const [activeType, setActiveType] = useState("Paintings");
 
 	// Get unique types
-	const uniqueTypes = [...new Set(data?.data?.map((item) => item.types))];
+	const uniqueTypes = [
+		...new Set(data?.data?.map((item) => item.types).filter(Boolean)),
+	];
 
 	// Filtered data based on activeType
 	const filteredData = data?.data?.filter((item) => item.types === activeType);
-	console.log(filteredData, " filteredData filteredData");
+	// console.log(filteredData, " filteredData filteredData");
 	/** */
 	const openPopup = (blog) => {
 		console.log(blog, " blog");
@@ -127,7 +130,7 @@ export default function TalentComponent({ data, pdfTalent }) {
 						>
 							{filteredData?.map((item) => (
 								<SwiperSlide key={item.id} className={styles.item}>
-									{console.log(filteredData, " filteredDatafilteredData")}
+									{/* {console.log(filteredData, " filteredDatafilteredData")} */}
 									{item.types === "Videos" ? (
 										<LightGallery speed={500} plugins={[lgThumbnail, lgZoom, lgVideo]}>
 											<a data-src={item?.youTubeLink}>

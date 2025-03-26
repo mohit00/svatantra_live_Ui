@@ -52,7 +52,7 @@ export default function SlugPage({ data }) {
 			<Breadcrum
 				link5="investors"
 				linkTitle={"Investors"}
-				linknest1={`investors/${data[0]?.slug}`}
+				linknest1={`investors/${data[0]?.title}`}
 				linknestTitle1={data[0]?.title}
 			/>
 			{/* Page Content starts here */}

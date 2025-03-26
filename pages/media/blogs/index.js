@@ -32,11 +32,16 @@ export const getStaticProps = async (context) => {
 /** Blogs Page */
 export default function BlogsPage({ blogsData }) {
 	const dateString = blogsData.data[0].date;
-	const year = dateString.split(" ")[2]; // Extracts "2024"
+	const year = dateString.split(" ")[2];
+	const yearNew = [
+		...new Set(blogsData.data.map((item) => new Date(item.date).getFullYear())),
+	];
+
+	console.log(yearNew, "ddddd");
 
 	const [selectedOptions, setSelectedOptions] = useState({
-		select1: blogsData.data[0].author.name,
-		select2: year,
+		select1: "All",
+		select2: "All",
 	});
 
 	const [openDropdowns, setOpenDropdowns] = useState({
@@ -49,7 +54,10 @@ export default function BlogsPage({ blogsData }) {
 		{ label: "Svatantra Microfin" },
 		{ label: "Svatantra Microfin" },
 	];
-	const options2 = [{ label: "2024" }, { label: "2025" }, { label: "2026" }];
+	const options2 = [
+		{ label: "all" },
+		...yearNew.map((year) => ({ label: String(year) })),
+	];
 
 	const toggleDropdown = (dropdown) => {
 		setOpenDropdowns((prevState) => ({
@@ -66,60 +74,16 @@ export default function BlogsPage({ blogsData }) {
 
 		setOpenDropdowns({ select1: false, select2: false });
 	};
-	const BlogList = [
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Malati's Tea Stall - A Blend for Business Excellence",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title:
-				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Role of rural women in Indian agricultural businesses",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Malati's Tea Stall - A Blend for Business Excellence",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title:
-				"Small Grocery Stores and Shops:The Heart of Rural India's Economic and Social Fabric",
-			link: "/blogs-inside",
-		},
-		{
-			image: advent.src,
-			cardtype: "SVATANTRA MICROFIN",
-			date: "14 June 2024",
-			title: "Role of rural women in Indian agricultural businesses",
-			link: "/blogs-inside",
-		},
-	];
+
 	const filteredData = blogsData.data.filter(
 		(item) =>
-			(selectedOptions.select1 === "" ||
+			(selectedOptions.select1 === "All" ||
 				item.author.name === selectedOptions.select1) &&
-			(selectedOptions.select2 === "" ||
+			(selectedOptions.select2 === "All" ||
 				item.date.includes(selectedOptions.select2))
 	);
-	console.log(filteredData, " filteredData");
+
+	// console.log(filteredData, " filteredData");
 
 	return (
 		<div>

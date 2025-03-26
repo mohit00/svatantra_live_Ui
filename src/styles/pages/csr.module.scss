@@ -66,6 +66,7 @@
 		.driving_img_box {
 			.item_img {
 				margin-bottom: 20px;
+
 				@media (max-width: 767px) {
 					margin-bottom: 15px;
 				}
@@ -113,6 +114,8 @@
 					}
 					@media (max-width: 767px) {
 						height: 150px;
+						object-fit: cover;
+						object-position: top;
 					}
 				}
 			}

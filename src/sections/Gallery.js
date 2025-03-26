@@ -64,7 +64,7 @@ export default function GalleryComponent({ GalleryList }) {
 		{ thumbnail: img_five.src, full: img_five.src },
 	];
 
-	console.log(GalleryList, "Gallery");
+	// console.log(GalleryList, "Gallery");
 	return (
 		<div className={`${styles.gallery} pb_80`}>
 			<div className="container">

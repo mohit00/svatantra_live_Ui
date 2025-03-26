@@ -25,6 +25,7 @@ import Employees from "../../../../public/img/careers/employees1.jpg";
 
 /** DummyComponent Component */
 export default function EmployeesComponent({ data }) {
+	console.log(data, "ddddddddddddddd");
 	return (
 		<div className={`${styles.Employees} pt_40 pb_80`}>
 			<div className="container">
@@ -82,7 +83,11 @@ export default function EmployeesComponent({ data }) {
 							<SwiperSlide className={`${styles.item}`} key={ind}>
 								<div className={`${styles.itemContent} f_r_aj_between f_w`}>
 									<div className={`${styles.item_img}`}>
-										<img src={Employees.src} className="img-responsive" alt="Employees" />
+										<img
+											src={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.profileImg.url}`}
+											className="img-responsive"
+											alt="Employees"
+										/>
 									</div>
 									<div className={`${styles.item_info}`}>
 										<h4 className="text_md font_primary pb_10">{item.name}</h4>
