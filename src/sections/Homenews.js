@@ -66,7 +66,6 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		setIsOpen(false);
 		setSelectedBlog(null);
 	};
-
 	/** */
 	const handleTabClick = (tab) => {
 		setActiveTab(tab);
@@ -75,7 +74,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const mediaSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Default spacing between slides
-		slidesPerView: 2, // Default: Show 3 slides fully
+		slidesPerView: 3, // Default: Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -99,7 +98,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 				spaceBetween: 20, // Adjust spacing for tablets
 			},
 			1024: {
-				slidesPerView: 2, // Large screens: 3 slides visible
+				slidesPerView: 3, // Large screens: 3 slides visible
 				spaceBetween: 20, // Increased spacing for larger screens
 			},
 		},
@@ -138,7 +137,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	};
 	useEffect(() => {
 		if (window.innerWidth < 767) {
-			setLenghtCount(2);
+			setLenghtCount(3);
 		}
 	}, []);
 

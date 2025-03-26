@@ -34,7 +34,7 @@ export default function ContactPage() {
 
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
-				<Breadcrum link5="/connect-with-us/contact" linkTitle={"Contact Us"} />
+				<Breadcrum link5="/contact" linkTitle={"Contact Us"} />
 				<InnerBanner bannerTitle="Get In touch" />
 				<ContactSection />
 				<MapSection />

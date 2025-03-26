@@ -27,17 +27,6 @@ const ScrollSection = dynamic(
 	}
 );
 
-// DATA //
-/** Data Fetching getInvestors  */
-// export async function getServerSideProps() {
-// 	const headerData = await getHeadersData();
-// 	console.log(headerData);
-
-// 	return {
-// 		props: { data: headerData },
-// 	};
-// }
-
 /** Header Component */
 export default function Header() {
 	const [openSidebar, setOpenSidebar] = useState(false);
@@ -46,13 +35,15 @@ export default function Header() {
 	const [isAboutOpen, setIsAboutOpen] = useState(false);
 	const [isProductsOpen, setIsProductsOpen] = useState(false);
 	const [isImpact, setIsImpact] = useState(false);
-	const [activeMenu, setActiveMenu] = useState(null);
+	// const [activeMenu, setActiveMenu] = useState(null);
 	const [isMobile, setIsMobile] = useState(false);
 	const [isResource, setIsResource] = useState(false);
 	const [isDigital, setIsDigital] = useState(false);
 	const [isMedia, setIsMedia] = useState(false);
 	const devRefs = useRef([]);
 	const sidebarRef = useRef(null);
+	const [openMenuIndex, setOpenMenuIndex] = useState(null);
+	const [activeMenu, setActiveMenu] = useState(null);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -62,33 +53,6 @@ export default function Header() {
 			return () => window.removeEventListener("resize", handleResize);
 		}
 	}, []);
-
-	const digitalData = [
-		{ title: "Life at Svatantra", link: "/careers", subItems: [] },
-		{ title: "Join us", link: "/careers/job-opening", subItems: [] },
-	];
-
-	const mediaData = [
-		{ title: "Blogs", link: "/media/blogs", subItems: [] },
-		{ title: "Events", link: "/media/events", subItems: [] },
-		{
-			title: "Press Release",
-			link: "/media/press-release",
-			subItems: [],
-		},
-		{
-			title: "Media Mention",
-			link: "/media/media-mention",
-			subItems: [],
-		},
-		{ title: "Gallery", link: "/media/gallery", subItems: [] },
-		{
-			title: "Corporate Brochure",
-			link: "/media/leadership",
-			subItems: [],
-		},
-		{ title: "Awards", link: "/media/awards", subItems: [] },
-	];
 
 	// Close dropdown when clicking outside
 	useEffect(() => {
@@ -107,29 +71,6 @@ export default function Header() {
 		document.addEventListener("click", handleClickOutside);
 		return () => document.removeEventListener("click", handleClickOutside);
 	}, []);
-
-	// useEffect(() => {
-	// 	const handleClickOutside = (event) => {
-	// 		if (openSidebar && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-	// 			setOpenSidebar(false); // Close sidebar
-	// 			setIsAboutOpen(false);
-	// 			setIsProductsOpen(false);
-	// 			setIsImpact(false);
-	// 			setIsResource(false);
-	// 			setIsDigital(false);
-	// 			setIsMedia(false);
-	// 			setActiveMenu(null);
-	// 		}
-	// 	};
-
-	// 	// Add event listener when component mounts
-	// 	document.addEventListener("click", handleClickOutside);
-
-	// 	return () => {
-	// 		// Clean up event listener when component unmounts
-	// 		document.removeEventListener("click", handleClickOutside);
-	// 	};
-	// }, [openSidebar]);
 
 	// Ensure client-side rendering
 	useEffect(() => {
@@ -158,9 +99,9 @@ export default function Header() {
 		}
 	}, [isClient]);
 
-	const [data, setData] = useState(null);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	// const [data, setData] = useState(null);
+	// const [loading, setLoading] = useState(true);
+	// const [error, setError] = useState(null);
 
 	const [newHeaderData, setNewHeaderData] = useState([]);
 
@@ -210,6 +151,8 @@ export default function Header() {
 			updatedMenus[index] = !updatedMenus[index]; // Toggle only the clicked index
 			return updatedMenus;
 		});
+
+		setOpenMenuIndex((prev) => (prev === index ? null : index));
 	};
 
 	return (
@@ -243,13 +186,8 @@ export default function Header() {
 									<div
 										key={index}
 										className={`${styles.links} commonCls`}
-										onMouseEnter={() =>
-											!isMobile && setOpenMenus((prev) => prev.map((_, i) => i === index))
-										}
-										onMouseLeave={() =>
-											!isMobile &&
-											setOpenMenus(Array(newHeaderData.data.length).fill(false))
-										}
+										onMouseEnter={() => !isMobile && setOpenMenuIndex(index)}
+										onMouseLeave={() => !isMobile && setOpenMenuIndex(null)}
 									>
 										<p
 											className={`${styles.link_title} text_xs`}
@@ -260,20 +198,14 @@ export default function Header() {
 												}
 											}}
 										>
-											{item.title} {/*main name*/}
+											{item.title}
 										</p>
 
-										{openMenus[index] && (
+										{openMenuIndex === index && (
 											<div
 												className={styles.subItem}
-												onMouseEnter={() =>
-													!isMobile &&
-													setOpenMenus((prev) => prev.map((_, i) => i === index))
-												}
-												onMouseLeave={() =>
-													!isMobile &&
-													setOpenMenus(Array(newHeaderData.data.length).fill(false))
-												}
+												onMouseEnter={() => !isMobile && setOpenMenuIndex(index)}
+												onMouseLeave={() => !isMobile && setOpenMenuIndex(null)}
 												onClick={(e) => e.stopPropagation()}
 											>
 												<ul className={styles.newBox}>
@@ -324,13 +256,9 @@ export default function Header() {
 																				key={subPage.id}
 																				className={`${styles.subMenuItem} text_xs`}
 																			>
-																				<a href={subPage.pageUrl}>
-																					{/* {subPage.pageName} */}
-																					<Link href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
-																						{subPage.pageName}
-																					</Link>{" "}
-																					{/*secondLevelLinking*/}
-																				</a>
+																				<Link href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
+																					{subPage.pageName}
+																				</Link>
 																			</li>
 																		))}
 																	</ul>
@@ -349,7 +277,7 @@ export default function Header() {
 										condition={"white"}
 										title={"Contact us	"}
 										isHref={true}
-										link={"/connect-with-us/contact"}
+										link={"/contact"}
 									/>
 								</div>
 							</>

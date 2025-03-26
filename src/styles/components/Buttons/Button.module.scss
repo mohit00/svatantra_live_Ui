@@ -60,6 +60,7 @@
 		}
 		&:hover {
 			background-color: white;
+			border: 1px solid #2859a9;
 			svg path {
 				fill: var(--color_secondary);
 			}

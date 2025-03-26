@@ -25,24 +25,39 @@ import arrow_btn from "../../../../public/img/arrow_btn.svg";
 export default function WhyComponent() {
 	const svatantraPath = [
 		{
-			title: "People-driven",
+			title: "People-driven:",
 			desc:
-				"We are a people-driven organisation where every individual is valued, supported and empowered to advance their careers and achieve their goals.",
+				"We are a people-driven organisation where every individual is valued, supported and empowered to advance their careers and achieve their goals. ",
 		},
 		{
-			title: "Growth opportunities",
+			title: "Growth opportunities:",
 			desc:
 				"We have created an environment that nurtures talents, builds strong leadership and celebrates a culture where every individual has the equal opportunity to grow and reach their full potential.",
 		},
 		{
-			title: "Work-life balance",
+			title: "Work-life balance:",
 			desc:
 				"We are a firm believer in maintaining a healthy work-life balance, offering flexibility that enhances not only your professional growth but also your personal well-being.",
 		},
 		{
-			title: "Growth opportunities",
+			title: "Supportive team:",
 			desc:
-				"We have created an environment that nurtures talents, builds strong leadership and celebrates a culture where every individual has the equal opportunity to grow and reach their full potential.",
+				"We foster a culture of collaboration, innovation and inclusivity where every idea is valued and every member thrives and achieves their ambitions.",
+		},
+		{
+			title: "Parental support:",
+			desc:
+				"We offer both maternity and paternity leaves with flexible working arrangements for working mothers, ensuring they have the support needed to excel professionally and personally.",
+		},
+		{
+			title: "Employee wellbeing:",
+			desc:
+				"The company offers 24/7 access to the employee assistance programme and consultants for emotional support, mental health awareness workshops, and stress management training.",
+		},
+		{
+			title: "Amazing perks:",
+			desc:
+				"We always recognise and reward the hard work of our employees through attractive incentives, value awards, appreciation cards and much more.The company offers comprehensive healthcare coverage, menstrual leave for women, fitness programmes, and nutrition education.",
 		},
 	];
 	return (

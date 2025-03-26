@@ -41,24 +41,44 @@ import arrow_btn from "../../public/img/arrow_btn.svg";
 export default function csr() {
 	const svatantraPath = [
 		{
-			title: "Projects UNLEARN and Jazba",
+			title: "Mental Health Toolkit:",
+			desc:
+				"Offering vital tools to support emotional well-being and create understanding spaces.",
+		},
+		{
+			title: "School Initiative for Mental Health Advocacy (SIMHA):",
+			desc:
+				"An initiative that promotes mental wellbeing among the young in the education system across India.",
+		},
+		{
+			title: "Tree Plantation Drives:",
+			desc:
+				"Planting seeds of sustainability today for a greener, healthier planet tomorrow.",
+		},
+		{
+			title: "Animal care and adoption:",
+			desc:
+				"Providing support and welfare to animals, ensuring they are well cared for and thrive in a safe environment.",
+		},
+		{
+			title: "Fulfil a wish:",
+			desc:
+				"An initiative that takes necessary measures for reducing inequalities faced by socially and economically backward groups.",
+		},
+		{
+			title: "Projects UNLEARN and Jazba:",
 			desc:
 				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
 		},
 		{
-			title: "Education for Tribal Children",
+			title: "Education for Tribal Children:",
 			desc:
 				"Bringing classrooms closer to tribal communities, creating pathways to brighter tomorrows.",
 		},
 		{
-			title: "Education for Sex Worker’s Children",
+			title: "Education for Sex Worker’s Children:",
 			desc:
 				"Enabling the marginalised to integrate into society and open doors of opportunities through education.",
-		},
-		{
-			title: "Projects UNLEARN and Jazba",
-			desc:
-				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
 		},
 	];
 
@@ -91,8 +111,6 @@ export default function csr() {
 				<Breadcrum
 					link5="/our-impact/csr"
 					linkTitle={"Our Impact"}
-					// linknest1={"/our-impact/stories-of-svatantra"}
-					// linknestTitle1={"Stories of svatantra"}
 					linknest2={"our-impact/csr"}
 					linknestTitle2={"CSR"}
 				/>

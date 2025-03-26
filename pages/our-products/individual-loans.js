@@ -136,7 +136,7 @@ export default function MsmeLoans() {
 				),
 			},
 		],
-		brochureText: "Everything you need to know about our financial services2",
+		brochureText: "Everything you need to know about our financial services",
 		brochureUrl: "https://www.google.com/",
 	};
 	return (

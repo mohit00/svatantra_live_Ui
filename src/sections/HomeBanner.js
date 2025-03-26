@@ -17,7 +17,7 @@ import styles from "@/styles/sections/HomeBanner.module.scss";
 // IMAGES //
 import Line1 from "../../public/img/home/banner_line.png";
 import Blue from "../../public/img/home/blue.svg";
-import Green from "../../public/img/home/green.svg";
+import Green from "../../public/img/banner/newLineLine.svg";
 
 // DATA //
 

@@ -33,6 +33,7 @@ export const getStaticProps = async (context) => {
 
 /** Media Mention Page */
 export default function MediaMentionPage({ mediaMentionsData }) {
+	console.log(mediaMentionsData, "dddddddddddddd");
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 
@@ -174,7 +175,7 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 								{selectedBlog && (
 									<div className={styles.popupContent}>
 										<img
-											src={StrapiImage(selectedBlog.thumbnail).url}
+											src={StrapiImage(selectedBlog.image).url}
 											alt="blog-image"
 											className="width_100"
 										/>

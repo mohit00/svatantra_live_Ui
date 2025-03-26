@@ -105,16 +105,22 @@ export default function AwardsPage({ AwardsList }) {
 	// 	},
 	// ];
 
-	const initialLimit = 9;
+	const initialLimit = 6;
 	const [visibleAwards, setVisibleAwards] = useState(initialLimit);
-	const isAllDisplayed = visibleAwards >= AwardsList.length;
+	const [isAllDisplayed, setIsAllDisplayed] = useState(
+		visibleAwards >= AwardsList.data.length
+	);
 
 	/** handleLoadMore */
 	const handleLoadMore = () => {
-		setVisibleAwards(visibleAwards + 3);
-		// setVisibleAwards(isAllDisplayed ? initialLimit : AwardsList.length);
-	};
+		const newVisibleCount = visibleAwards + 6;
 
+		setVisibleAwards(newVisibleCount);
+
+		if (newVisibleCount >= AwardsList.data.length) {
+			setIsAllDisplayed(true);
+		}
+	};
 	console.log(AwardsList, "AwardsList");
 
 	return (
@@ -169,13 +175,6 @@ export default function AwardsPage({ AwardsList }) {
 							</div>
 						</div>
 						<div className={`${styles.BtnBx} f_r_aj_center pt_30`}>
-							{/* <Button
-								buttonType="secondary"
-								condition={"white"}
-								link={"#"}
-								title={isAllDisplayed ? "Load Less" : "Load More"}
-								onClick={handleLoadMore}
-							/> */}
 							{!isAllDisplayed && (
 								<div onClick={handleLoadMore}>
 									<a className={styles.btn_secondary}>
