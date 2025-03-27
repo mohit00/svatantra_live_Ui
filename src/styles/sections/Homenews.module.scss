@@ -14,12 +14,19 @@
 		.category {
 			display: flex;
 			justify-content: space-between;
+			@media (max-width: 767px) {
+				flex-direction: column;
+				padding-bottom: 15px;
+			}
 			.switchBox {
 				display: flex;
 				align-items: center;
 				background-color: #eaeaea;
 				border-radius: 100px;
 				cursor: pointer;
+				@media (max-width: 767px) {
+					// margin-bottom: 10px;
+				}
 
 				.media {
 					padding: 8px 40px 5px 40px;
@@ -47,7 +54,7 @@
 
 			.hiddenButton {
 				@media (max-width: 767px) {
-					display: block;
+					display: none;
 				}
 			}
 		}
@@ -323,6 +330,14 @@
 			@media (max-width: 1024px) {
 				right: 70px;
 			}
+		}
+	}
+	.Mobileshow {
+		display: none;
+		@media (max-width: 767px) {
+			display: block;
+			margin-top: 50px;
+			padding-left: 15px;
 		}
 	}
 
