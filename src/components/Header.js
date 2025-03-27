@@ -189,6 +189,7 @@ export default function Header() {
 										onMouseEnter={() => !isMobile && setOpenMenuIndex(index)}
 										onMouseLeave={() => !isMobile && setOpenMenuIndex(null)}
 									>
+										{console.log(item, "openMenuIdex")}
 										<p
 											className={`${styles.link_title} text_xs`}
 											onClick={(e) => {
@@ -198,7 +199,12 @@ export default function Header() {
 												}
 											}}
 										>
-											{item.title}
+											{/* <a href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>{item.title}</a> */}
+											{item.pageName.length >= 1 ? (
+												<a href={`${item?.url}`}>{item.title}</a>
+											) : (
+												item.title
+											)}
 										</p>
 
 										{openMenuIndex === index && (
@@ -209,62 +215,63 @@ export default function Header() {
 												onClick={(e) => e.stopPropagation()}
 											>
 												<ul className={styles.newBox}>
-													{item.pageName.map((page, pageIndex) => (
-														<li
-															key={page.id}
-															className={styles.menuItem}
-															onClick={(e) => {
-																if (isMobile) {
-																	e.stopPropagation();
-																	setActiveMenu((prev) =>
-																		prev === `${index}-${pageIndex}`
-																			? null
-																			: `${index}-${pageIndex}`
-																	);
-																}
-															}}
-															onMouseEnter={() =>
-																!isMobile && setActiveMenu(`${index}-${pageIndex}`)
-															}
-															onMouseLeave={() => !isMobile && setActiveMenu(null)}
-														>
-															<div className={`${styles.menuTitle} text_xs`}>
-																<span
-																	className={
-																		activeMenu === `${index}-${pageIndex}` ? styles.active : ""
+													{item.pageName.length > 1 &&
+														item.pageName.map((page, pageIndex) => (
+															<li
+																key={page.id}
+																className={styles.menuItem}
+																onClick={(e) => {
+																	if (isMobile) {
+																		e.stopPropagation();
+																		setActiveMenu((prev) =>
+																			prev === `${index}-${pageIndex}`
+																				? null
+																				: `${index}-${pageIndex}`
+																		);
 																	}
-																>
-																	<Link href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
-																		{page.pageName}
-																	</Link>
-																</span>
-																{page.subPages.length > 0 && <img src={arrow.src} />}
-															</div>
-
-															{activeMenu === `${index}-${pageIndex}` &&
-																page.subPages.length > 0 && (
-																	<ul
-																		className={styles.subMenu}
-																		onMouseEnter={() =>
-																			!isMobile && setActiveMenu(`${index}-${pageIndex}`)
+																}}
+																onMouseEnter={() =>
+																	!isMobile && setActiveMenu(`${index}-${pageIndex}`)
+																}
+																onMouseLeave={() => !isMobile && setActiveMenu(null)}
+															>
+																<div className={`${styles.menuTitle} text_xs`}>
+																	<span
+																		className={
+																			activeMenu === `${index}-${pageIndex}` ? styles.active : ""
 																		}
-																		onMouseLeave={() => !isMobile && setActiveMenu(null)}
-																		onClick={(e) => e.stopPropagation()}
 																	>
-																		{page.subPages.map((subPage) => (
-																			<li
-																				key={subPage.id}
-																				className={`${styles.subMenuItem} text_xs`}
-																			>
-																				<Link href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
-																					{subPage.pageName}
-																				</Link>
-																			</li>
-																		))}
-																	</ul>
-																)}
-														</li>
-													))}
+																		<Link href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
+																			{page.pageName}
+																		</Link>
+																	</span>
+																	{page.subPages.length > 0 && <img src={arrow.src} />}
+																</div>
+
+																{activeMenu === `${index}-${pageIndex}` &&
+																	page.subPages.length > 0 && (
+																		<ul
+																			className={styles.subMenu}
+																			onMouseEnter={() =>
+																				!isMobile && setActiveMenu(`${index}-${pageIndex}`)
+																			}
+																			onMouseLeave={() => !isMobile && setActiveMenu(null)}
+																			onClick={(e) => e.stopPropagation()}
+																		>
+																			{page.subPages.map((subPage) => (
+																				<li
+																					key={subPage.id}
+																					className={`${styles.subMenuItem} text_xs`}
+																				>
+																					<Link href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
+																						{subPage.pageName}
+																					</Link>
+																				</li>
+																			))}
+																		</ul>
+																	)}
+															</li>
+														))}
 												</ul>
 											</div>
 										)}

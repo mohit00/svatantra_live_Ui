@@ -71,7 +71,11 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 					{ y: "12px", marginTop: "0" },
 					"3rd"
 				)
-				.to(`.${styles.intro_loader_mobile}`, { y: "-18vh", delay: 1 }, "2nd")
+				.to(
+					`.${styles.intro_loader_mobile}`,
+					{ y: window.innerHeight < 767 ? "0" : "-18vh", delay: 1 },
+					"2nd"
+				)
 				.to(
 					`.${styles.line_1}`,
 					1,
