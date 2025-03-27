@@ -81,7 +81,7 @@ export default function BlogsInsidePage({ data }) {
 					linknest1={"/media/blogs"}
 					linknestTitle1={"Blogs"}
 					linknest2={`/media/blogs/${data?.slug}`}
-					linknestTitle2={`${data?.slug}`}
+					linknestTitle2={`${data?.title}`}
 				/>
 				<div className="container">
 					<div className={`${styles.HeadBx}`}>

@@ -267,7 +267,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 															<div className={`${styles.dateBox}`}>
 																<p className="">{date}</p>
 															</div>
-															<p className="text_reg">{item.title}</p>
+															<p className={`${styles.headTitle} text_reg`}>{item.title}</p>
 														</div>
 													</div>
 												</SwiperSlide>
@@ -291,7 +291,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 														<div className={`${styles.dateBox}`}>
 															<p className="">{date}</p>
 														</div>
-														<p className="text_reg">{item.title}</p>
+														<p className={`${styles.headTitle} text_reg`}>{item.title}</p>
 													</div>
 												</div>
 											);

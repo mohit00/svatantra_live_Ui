@@ -24,7 +24,7 @@ import blogOne from "../../../public/img/our-products/microfinance/blogOne.jpg";
 // DATA //
 
 /** BlogsInsights Component */
-export default function BlogsInsights() {
+export default function BlogsInsights({ data }) {
 	const BlogList = [
 		{
 			thumbnail: blogOne.src,
@@ -55,6 +55,9 @@ export default function BlogsInsights() {
 			link: "/blogs-inside",
 		},
 	];
+
+	console.log(data, "blogInsightsDatablogInsightsDatablogInsightsData");
+
 	return (
 		<section className={`${styles.BlogsInsights} pb_80`}>
 			<div className="container">
@@ -98,13 +101,13 @@ export default function BlogsInsights() {
 						}}
 						className={styles.slider}
 					>
-						{BlogList.map((item, ind) => {
+						{data.data.map((item, ind) => {
 							return (
 								<SwiperSlide key={ind}>
 									<div className={`${styles.box1}`}>
 										<div className={`${styles.imgBox}`}>
 											<img
-												src={item.thumbnail}
+												src={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.thumbnail.url}`}
 												alt="img"
 												className={`${styles.mainImg}`}
 											/>
@@ -113,7 +116,7 @@ export default function BlogsInsights() {
 										<div className={`${styles.categoryBox}`}>
 											<div className={`${styles.news}`}>
 												<p className="text_xxs color_white text_uppercase">
-													<p>{item.cardtype}</p>
+													<p>{item.author.name}</p>
 												</p>
 											</div>
 											<div className={`${styles.date}`}>
