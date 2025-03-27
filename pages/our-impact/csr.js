@@ -197,8 +197,11 @@ export default function csr() {
 							<Button
 								buttonType="secondary"
 								condition={"white"}
-								link={"#"}
+								link={
+									"https://investors.svatantramicrofin.com/pdf/Corporate-Social-Responsibility-Policy.pdf"
+								}
 								title={"Download our CSR policy"}
+								isHref={true}
 							/>
 						</div>
 					</div>

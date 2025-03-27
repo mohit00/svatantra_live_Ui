@@ -200,7 +200,7 @@ export default function Header() {
 											}}
 										>
 											{/* <a href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>{item.title}</a> */}
-											{item.pageName.length >= 1 ? (
+											{item.pageName.length == 1 ? (
 												<a href={`${item?.url}`}>{item.title}</a>
 											) : (
 												item.title

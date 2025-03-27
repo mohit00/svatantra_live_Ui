@@ -31,6 +31,7 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 	];
 
 	useEffect(() => {
+		const winW = window.innerWidth;
 		const hasAnimationPlayed = sessionStorage.getItem("homeBannerAnimation");
 
 		const introTimeline = gsap.timeline({
@@ -92,7 +93,11 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 			// Second animation (different logic)
 			introTimeline
 				.to(`.${styles.home_banner_bg}`, { y: "0" }, "1st")
-				.to(`.${styles.intro_loader}`, { x: "-22%" }, "1st")
+				.to(
+					`.${styles.intro_loader}`,
+					{ x: "-22%", y: winW > 992 ? "0%" : "-10%" },
+					"1st"
+				)
 				.to(`.${styles.info}`, { x: "0" }, "1st")
 				.to(`.main_header`, { y: "12px", marginTop: "0" }, "1st")
 				.to(`.${styles.line1}, .${styles.line2}`, { display: "none" }, "1st")
