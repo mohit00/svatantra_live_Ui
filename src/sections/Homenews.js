@@ -319,6 +319,15 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 					</div>
 				</div>
 			</div>
+			<div className={`${styles.BtnBx} ${styles.Mobileshow}`}>
+				<Button
+					isHref
+					buttonType="secondary"
+					condition={"white"}
+					link={activeTab === "media" ? "/media/media-mention" : "/media/awards"}
+					title={"View More"}
+				/>
+			</div>
 			{/* <div className="container">
 				<div className={`${styles.BtnBx} pt_20`}>
 					<Button
