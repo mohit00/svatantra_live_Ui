@@ -134,7 +134,7 @@ export default function Investors({ data }) {
 					link5="investors"
 					linkTitle={"Investors"}
 					linknest1={`investors/${data[0]?.slug}`}
-					linknestTitle1={data[0]?.slug}
+					linknestTitle1={data[0]?.title}
 					linknest2={`investors/${data[0]?.slug}/${filteredData[0]?.slug}`}
 					linknestTitle2={filteredData[0]?.title}
 				/>
