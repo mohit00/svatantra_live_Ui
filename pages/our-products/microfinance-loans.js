@@ -35,9 +35,14 @@ import appraisal from "../../public/img/our-products/microfinance/appraisal.svg"
 import repayment from "../../public/img/our-products/microfinance/repayment.svg";
 
 // DATA //
-
+import { getAllBlogs } from "@/services/BlogService";
+/** */
+export const getStaticProps = async (context) => {
+	const blogsData = await getAllBlogs();
+	return { props: { blogsData }, revalidate: 60 };
+};
 /** MicrofinanceLoans Page */
-export default function MicrofinanceLoans() {
+export default function MicrofinanceLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 5,369 to ₹ 1 lakh",
 		tenure: "12 to 30 Months",
@@ -363,7 +368,7 @@ export default function MicrofinanceLoans() {
 					brochureText={commonQueriesData.brochureText}
 					brochureUrl={commonQueriesData.brochureUrl}
 				/>
-				<BlogsInsights />
+				<BlogsInsights data={blogsData} />
 				<Homecontact
 					formTitle="Fill in the details, and our team of experts will contact you to help
 								bring your entrepreneurial vision to life."

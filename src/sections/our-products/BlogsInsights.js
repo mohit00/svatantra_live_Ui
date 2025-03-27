@@ -101,13 +101,13 @@ export default function BlogsInsights({ data }) {
 						}}
 						className={styles.slider}
 					>
-						{data.data.map((item, ind) => {
+						{data?.data?.map((item, ind) => {
 							return (
 								<SwiperSlide key={ind}>
 									<div className={`${styles.box1}`}>
 										<div className={`${styles.imgBox}`}>
 											<img
-												src={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.thumbnail.url}`}
+												src={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item?.thumbnail.url}`}
 												alt="img"
 												className={`${styles.mainImg}`}
 											/>
@@ -116,11 +116,11 @@ export default function BlogsInsights({ data }) {
 										<div className={`${styles.categoryBox}`}>
 											<div className={`${styles.news}`}>
 												<p className="text_xxs color_white text_uppercase">
-													<p>{item.author.name}</p>
+													<p>{item?.author.name}</p>
 												</p>
 											</div>
 											<div className={`${styles.date}`}>
-												<p>{item.date}</p>
+												<p>{item?.date}</p>
 											</div>
 										</div>
 
