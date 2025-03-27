@@ -158,12 +158,17 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 											</div>
 
 											<div className={`${styles.categoryBox}`}>
-												<div className={`${styles.news}`}>
-													<p>{item.tag}</p>
-												</div>
-												<div className={`${styles.date}`}>
-													<p>{date}</p>
-												</div>
+												{item.tag && (
+													<div className={`${styles.news}`}>
+														<p>{item.tag}</p>
+													</div>
+												)}
+
+												{item.date && (
+													<div className={`${styles.date}`}>
+														<p>{date}</p>
+													</div>
+												)}
 											</div>
 
 											<p className="text_reg_20 f_w_m">{item.title}</p>

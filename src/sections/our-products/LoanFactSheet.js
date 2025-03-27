@@ -93,7 +93,7 @@ export default function LoanFactSheet() {
 						<span>
 							<img src={pdf_icon.src} alt="icon" />
 						</span>
-						Disclouser of Interest Rate
+						Disclosure of Interest Rate
 					</a>
 					<a href="">
 						<span>
