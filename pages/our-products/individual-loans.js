@@ -33,11 +33,16 @@ import disbursement from "../../public/img/our-products/microfinance/disbursemen
 import formation from "../../public/img/our-products/microfinance/formation.svg";
 import appraisal from "../../public/img/our-products/microfinance/appraisal.svg";
 import repayment from "../../public/img/our-products/microfinance/repayment.svg";
+import { getAllBlogs } from "@/services/BlogService";
 
 // DATA //
-
+/** */
+export const getStaticProps = async (context) => {
+	const blogsData = await getAllBlogs();
+	return { props: { blogsData }, revalidate: 60 };
+};
 /** MsmeLoans Page */
-export default function MsmeLoans() {
+export default function MsmeLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 1 lakh to ₹ 3 lakh",
 		tenure: "24 to 36 Months",
@@ -269,7 +274,7 @@ export default function MsmeLoans() {
 					brochureText={commonQueriesData.brochureText}
 					brochureUrl={commonQueriesData.brochureUrl}
 				/>
-				<BlogsInsights />
+				<BlogsInsights data={blogsData} />
 				<Homecontact
 					formTitle="Fill in the details, and our team of experts will contact you to help
 								bring your entrepreneurial vision to life."
