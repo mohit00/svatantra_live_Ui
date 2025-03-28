@@ -42,6 +42,9 @@
 				overflow: hidden;
 				display: block;
 			}
+			@media (max-width: 992px) {
+				margin: 0 0;
+			}
 			.image_wrap {
 				@extend %f_r_a_center;
 				cursor: pointer;
@@ -142,7 +145,7 @@
 						align-items: stretch;
 					}
 					@media (min-width: 768px) and (max-width: 992px) {
-						padding: 15px 50px;
+						padding: 15px 15px;
 					}
 					@media (min-width: 993px) and (max-width: 1200px) {
 						padding: 15px 75px;
@@ -286,7 +289,9 @@
 		display: flex;
 		align-items: center;
 		cursor: pointer;
-
+		@media (max-width: 992px) and (min-width: 767px) {
+			padding: 0 15px;
+		}
 		.btn_secondaryContact {
 			padding: 15px 20px;
 			background-color: var(--color_secondary);
