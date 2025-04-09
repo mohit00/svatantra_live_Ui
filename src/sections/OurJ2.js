@@ -21,31 +21,31 @@ import Journey1 from "../../public/img/journey/Journey1.jpg";
 export default function OurJ2({ journeyData }) {
 	console.log(journeyData, " journeyData journeyData");
 
-	const journeyBoxRef = useRef(null);
-	const [isInView, setIsInView] = useState(false);
-	const titleRef = useRef(null);
-	const [offsetTop, setOffsetTop] = useState(0);
+	// const journeyBoxRef = useRef(null);
+	// const [isInView, setIsInView] = useState(false);
+	// const titleRef = useRef(null);
+	// const [offsetTop, setOffsetTop] = useState(0);
 
-	useEffect(() => {
-		if (titleRef.current) {
-			const topPosition =
-				titleRef.current.getBoundingClientRect().top + window.scrollY;
-			setOffsetTop(topPosition);
-		}
-	}, []);
-	useEffect(() => {
-		const handleScroll = () => {
-			if (journeyBoxRef.current) {
-				const rect = journeyBoxRef.current.getBoundingClientRect();
-				const isVisible = rect.top <= window.innerHeight * 0.57;
+	// useEffect(() => {
+	// 	if (titleRef.current) {
+	// 		const topPosition =
+	// 			titleRef.current.getBoundingClientRect().top + window.scrollY;
+	// 		setOffsetTop(topPosition);
+	// 	}
+	// }, []);
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		if (journeyBoxRef.current) {
+	// 			const rect = journeyBoxRef.current.getBoundingClientRect();
+	// 			const isVisible = rect.top <= window.innerHeight * 0.57;
 
-				setIsInView(isVisible);
-			}
-		};
+	// 			setIsInView(isVisible);
+	// 		}
+	// 	};
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	// 	window.addEventListener("scroll", handleScroll);
+	// 	return () => window.removeEventListener("scroll", handleScroll);
+	// }, []);
 
 	return (
 		<div className={`${styles.Journey_section} pb_80`}>
