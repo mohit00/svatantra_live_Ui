@@ -321,8 +321,8 @@ export default function MicrofinanceLoans({ blogsData }) {
 				),
 			},
 		],
-		brochureText: "Everything you need to know about our financial services",
-		brochureUrl: "https://www.google.com/",
+		// brochureText: "Everything you need to know about our financial services",
+		// brochureUrl: "https://www.google.com/",
 	};
 	return (
 		<div>

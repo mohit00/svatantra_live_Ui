@@ -110,7 +110,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 						</div>
 					</section>
 				</div>
-				<TalentComponent data={talents} pdfTalent={pdfTalent} />
+				{/* <TalentComponent data={talents} pdfTalent={pdfTalent} /> */}
 				<JoinComponent />
 			</main>
 			{/* Page Content ends here */}

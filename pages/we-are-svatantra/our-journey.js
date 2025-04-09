@@ -43,9 +43,9 @@ export default function OurJourneyPage({ journeyData }) {
 			{/* Page Content starts here */}
 			<main className={styles.OurJourneyPage}>
 				<Breadcrum link5="we-are-svatantra/our-journey" linkTitle="Our Journey" />
-				{/* <JourneyComponent journeyData={journeyData} /> */}
+				<JourneyComponent journeyData={journeyData} />
 				{/* <JourneySup gsap={gsap} ScrollTrigger={ScrollTrigger} /> */}
-				<OurJ2 journeyData={journeyData} />
+				{/* <OurJ2 journeyData={journeyData} /> */}
 			</main>
 			{/* Page Content ends here */}
 

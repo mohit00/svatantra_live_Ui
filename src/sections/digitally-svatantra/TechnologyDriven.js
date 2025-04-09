@@ -36,7 +36,7 @@ export default function TechnologyDriven() {
 						about staying ahead – it is also about creating a future where both
 						customers and employees thrive.
 					</p>
-					<h5 className="text_md  color_light_black font_secondary opacity_8 f_w_s_b pt_20">
+					<h5 className="text_sm  color_light_black font_secondary opacity_8 f_w_s_b pt_20">
 						Discover our digital solutions, tailor-made to enhance customer and
 						employee experience and generate operational efficacy:
 					</h5>

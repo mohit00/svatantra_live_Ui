@@ -41,7 +41,7 @@ export default function CommonQueries({
 						/>
 					</div>
 				</div>
-				<div className={`${styles.brochureBg} f_w_j`}>
+				{/* <div className={`${styles.brochureBg} f_w_j`}>
 					<div className={`${styles.brochureTxt}`}>
 						<h2 className="text_lg color_primary font_primary f_w_b">
 							{brochureText}
@@ -61,7 +61,7 @@ export default function CommonQueries({
 							/>
 						</a>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
