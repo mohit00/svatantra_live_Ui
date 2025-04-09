@@ -97,7 +97,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				icon: repayment.src,
 				title: "Repayment/Collection",
 				description:
-					"Offer timely guidance and collection of the monthly loan installments.",
+					"Offer timely guidance and collection of the monthly loan instalments.",
 			},
 		],
 	};

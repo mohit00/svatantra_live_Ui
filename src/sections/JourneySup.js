@@ -12,11 +12,37 @@
 import styles from "@/styles/sections/JourneySup.module.scss";
 
 // IMAGES //
+import img_20 from "../../public/img/year/20.svg";
+import img_24 from "../../public/img/year/13.svg";
+import img_23 from "../../public/img/year/12.svg";
+import img1 from "../../public/img/year/img1.jpg";
+import img2 from "../../public/img/year/img2.jpg";
+import { useEffect } from "react";
 
 // DATA //
 
 /** JourneySup Section */
 export default function JourneySup({ gsap, ScrollTrigger }) {
+	/** */
+	function scrollAnimation() {
+		const tl = gsap.timeline();
+		const winH = window.innerHeight;
+		ScrollTrigger.create({
+			trigger: ".mainBox",
+			start: "top top",
+			end: `+=${winH}`,
+			markers: true,
+			pin: true,
+			animation: tl,
+			scrub: true,
+		});
+
+		tl.to(".box1", { top: "-100%" });
+	}
+
+	useEffect(() => {
+		scrollAnimation();
+	}, []);
 	return (
 		<section className={styles.JourneySup}>
 			<div className="container">
@@ -28,6 +54,41 @@ export default function JourneySup({ gsap, ScrollTrigger }) {
 					A story of bold steps, innovation, and lasting impact from a single <br />
 					branch to India&apos;s second-largest MFI.
 				</p>
+				<div className={`${styles.mainBox} mainBox`}>
+					<div className={`${styles.stickyYear} stickyYear`}>
+						<img
+							src={img_20.src}
+							alt="yearNumber20"
+							className={`${styles.year20} year20`}
+						/>
+					</div>
+					<div className={`${styles.contentBox} contentBox`}>
+						<div className={`${styles.box1} box1`}>
+							<img src={img_24.src} className={`${styles.number} number`} />
+							<div className={styles.content}>
+								<h1 className="text_reg font_secondary f_w_b">February</h1>
+								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
+								<img src={img1.src} />
+							</div>
+						</div>
+						<div className={`${styles.box1} box1`}>
+							<img src={img_24.src} className={`${styles.number} number`} />
+							<div className={styles.content}>
+								<h1 className="text_reg font_secondary f_w_b">February</h1>
+								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
+								<img src={img1.src} />
+							</div>
+						</div>
+						<div className={`${styles.box1} box1`}>
+							<img src={img_24.src} className={`${styles.number} number`} />
+							<div className={styles.content}>
+								<h1 className="text_reg font_secondary f_w_b">February</h1>
+								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
+								<img src={img1.src} />
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
