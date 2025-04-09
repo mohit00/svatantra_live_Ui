@@ -93,8 +93,6 @@ export default function EventsUdaanPage({ data }) {
 					) : (
 						""
 					)}
-
-					{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
 				</div>
 				{data?.result && data?.result_title ? (
 					<AvantGarde resultTitle={data?.result_title} resultData={data?.result} />
@@ -112,6 +110,7 @@ export default function EventsUdaanPage({ data }) {
 				) : (
 					""
 				)}
+				{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
 			</main>
 			{/* Page Content ends here */}
 

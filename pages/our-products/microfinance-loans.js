@@ -97,7 +97,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				icon: repayment.src,
 				title: "Repayment/Collection",
 				description:
-					"Offer timely guidance and collection of the monthly loan installments.",
+					"Offer timely guidance and collection of the monthly loan instalments.",
 			},
 		],
 	};
@@ -321,8 +321,8 @@ export default function MicrofinanceLoans({ blogsData }) {
 				),
 			},
 		],
-		brochureText: "Everything you need to know about our financial services",
-		brochureUrl: "https://www.google.com/",
+		// brochureText: "Everything you need to know about our financial services",
+		// brochureUrl: "https://www.google.com/",
 	};
 	return (
 		<div>

@@ -51,15 +51,15 @@ export default function AboutPage({ awardsData }) {
 	const svatantraPath = [
 		{
 			title: "Growth and expansion",
-			desc: "To become a publicly listed company in the next two years.",
+			desc: "To become a publicly listed company. ",
 		},
 		{
 			title: "Transformative solutions",
-			desc: "Offer more tailormade accessible credit solutions.",
+			desc: "Offer more tailor-made accessible credit solutions.",
 		},
 		{
 			title: "Harnessing technology",
-			desc: "We will continue leveraging the power of digital technology.",
+			desc: "Continue to leverage the power of digital technology.",
 		},
 		{
 			title: "Foster synergies",
@@ -68,7 +68,7 @@ export default function AboutPage({ awardsData }) {
 		{
 			title: "Undisputed leader",
 			desc:
-				"In asset management, customer satisfaction and operational excellence.",
+				"In asset management, customer satisfaction and operational excellence.	",
 		},
 	];
 	return (
@@ -85,7 +85,7 @@ export default function AboutPage({ awardsData }) {
 				<InnerBanner
 					desktopImage={DesktopBanner.src}
 					mobileImage={DesktopBanner.src}
-					bannerTitle="Enabling you leave your mark on tomorrow"
+					bannerTitle="Enabling you to leave your mark on tomorrow"
 					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of lowest interest rates in the country"
 				/>
 				<section className={`${styles.Committed} ptb_80`}>

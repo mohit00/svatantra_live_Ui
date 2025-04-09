@@ -30,9 +30,8 @@ export default function Journey() {
 						<p className="text_sm f_w_m pt_20">
 							At Svatantra we believe work is more than just a job to do. We love what
 							we do, are passionate about it and make a meaningful impact on those
-							around us. Together we tackle complexities, brainstorm new ideas, and
-							drive innovations that celebrate the entrepreneurial spirit and
-							strengthen our economy.
+							around us. Svatantra Microfin has played a significant role in both
+							transforming and advancing the NBFC-MFI sector and attracting top talent.
 						</p>
 						<div className={`${styles.BtnBx} pt_20`}>
 							<Button
