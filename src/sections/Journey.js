@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import StrapiImage from "@/utils/StrapiImage";
 import styles from "@/styles/sections/Journey.module.scss";
 
-/** Homenews Section */
+/** Homenews Sectiosn */
 export default function JourneyComponent({ journeyData }) {
 	const journeyBoxRef = useRef(null);
 	const titleRef = useRef(null);
