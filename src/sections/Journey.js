@@ -28,16 +28,16 @@ export default function JourneyComponent({ journeyData }) {
 	const [offsetTop, setOffsetTop] = useState(0);
 
 	useEffect(() => {
-		if (titleRef.current) {
+		if (titleRef?.current) {
 			const topPosition =
-				titleRef.current.getBoundingClientRect().top + window.scrollY;
+				titleRef?.current.getBoundingClientRect().top + window.scrollY;
 			setOffsetTop(topPosition);
 		}
 	}, []);
 	useEffect(() => {
 		const handleScroll = () => {
-			if (journeyBoxRef.current) {
-				const rect = journeyBoxRef.current.getBoundingClientRect();
+			if (journeyBoxRef?.current) {
+				const rect = journeyBoxRef?.current.getBoundingClientRect();
 				const isVisible = rect.top <= window.innerHeight * 0.57;
 
 				setIsInView(isVisible);
@@ -95,7 +95,7 @@ export default function JourneyComponent({ journeyData }) {
 
 										<div className={`${styles.info_wrapper}`}>
 											{item?.year_content &&
-												item?.year_content.map((jitem, ind) => {
+												item?.year_content?.map((jitem, ind) => {
 													return (
 														<div className={`${styles.info}`} key={ind}>
 															{console.log(jitem, " jitem")}
@@ -104,10 +104,10 @@ export default function JourneyComponent({ journeyData }) {
 																{jitem?.content.map((titem, index) => {
 																	return (
 																		<div className="m_b_15" key={index}>
-																			{titem.title && (
+																			{titem?.title && (
 																				<h6 className="text_reg f_w_m opacity_80">{titem.title}</h6>
 																			)}
-																			{titem.desc && (
+																			{titem?.desc && (
 																				<p className="text_sm f_w_m opacity_80">{titem.desc}</p>
 																			)}
 
