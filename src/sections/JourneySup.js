@@ -1,5 +1,5 @@
 // MODULES //
-
+import { useEffect } from "react";
 // COMPONENTS //
 
 // SECTIONS //
@@ -17,32 +17,31 @@ import img_24 from "../../public/img/year/13.svg";
 import img_23 from "../../public/img/year/12.svg";
 import img1 from "../../public/img/year/img1.jpg";
 import img2 from "../../public/img/year/img2.jpg";
-import { useEffect } from "react";
 
 // DATA //
 
 /** JourneySup Section */
 export default function JourneySup({ gsap, ScrollTrigger }) {
 	/** */
-	function scrollAnimation() {
-		const tl = gsap.timeline();
+	const scrollAnimation = () => {
 		const winH = window.innerHeight;
+		const tl = gsap.timeline();
+
 		ScrollTrigger.create({
 			trigger: ".mainBox",
 			start: "top top",
 			end: `+=${winH}`,
 			markers: true,
 			pin: true,
-			animation: tl,
 			scrub: true,
+			animation: tl,
 		});
-
-		tl.to(".box1", { top: "-100%" });
-	}
+	};
 
 	useEffect(() => {
 		scrollAnimation();
 	}, []);
+
 	return (
 		<section className={styles.JourneySup}>
 			<div className="container">
@@ -65,7 +64,7 @@ export default function JourneySup({ gsap, ScrollTrigger }) {
 					<div className={`${styles.contentBox} contentBox`}>
 						<div className={`${styles.box1} box1`}>
 							<img src={img_24.src} className={`${styles.number} number`} />
-							<div className={styles.content}>
+							<div className={`${styles.content} content`}>
 								<h1 className="text_reg font_secondary f_w_b">February</h1>
 								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
 								<img src={img1.src} />
@@ -73,7 +72,7 @@ export default function JourneySup({ gsap, ScrollTrigger }) {
 						</div>
 						<div className={`${styles.box1} box1`}>
 							<img src={img_24.src} className={`${styles.number} number`} />
-							<div className={styles.content}>
+							<div className={`${styles.content} content`}>
 								<h1 className="text_reg font_secondary f_w_b">February</h1>
 								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
 								<img src={img1.src} />
@@ -81,7 +80,7 @@ export default function JourneySup({ gsap, ScrollTrigger }) {
 						</div>
 						<div className={`${styles.box1} box1`}>
 							<img src={img_24.src} className={`${styles.number} number`} />
-							<div className={styles.content}>
+							<div className={`${styles.content} content`}>
 								<h1 className="text_reg font_secondary f_w_b">February</h1>
 								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
 								<img src={img1.src} />

@@ -110,7 +110,9 @@ export default function EventsUdaanPage({ data }) {
 				) : (
 					""
 				)}
-				{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
+				<div className="container">
+					{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
+				</div>
 			</main>
 			{/* Page Content ends here */}
 
