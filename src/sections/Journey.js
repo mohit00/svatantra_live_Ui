@@ -30,14 +30,14 @@ export default function JourneyComponent({ journeyData }) {
 	useEffect(() => {
 		if (titleRef?.current) {
 			const topPosition =
-				titleRef?.current.getBoundingClientRect().top + window.scrollY;
+				titleRef?.current?.getBoundingClientRect().top + window.scrollY;
 			setOffsetTop(topPosition);
 		}
 	}, []);
 	useEffect(() => {
 		const handleScroll = () => {
 			if (journeyBoxRef?.current) {
-				const rect = journeyBoxRef?.current.getBoundingClientRect();
+				const rect = journeyBoxRef?.current?.getBoundingClientRect();
 				const isVisible = rect.top <= window.innerHeight * 0.57;
 
 				setIsInView(isVisible);
@@ -61,8 +61,8 @@ export default function JourneyComponent({ journeyData }) {
 				<div className={`${styles.Journey_box_wrapper}`}>
 					<div ref={titleRef}>
 						{journeyData?.data &&
-							journeyData?.data.map((item, index) => {
-								const isLast = index === journeyData?.data.length - 1;
+							journeyData?.data?.map((item, index) => {
+								const isLast = index === journeyData?.data?.length - 1;
 
 								return (
 									<div
@@ -101,7 +101,7 @@ export default function JourneyComponent({ journeyData }) {
 															{console.log(jitem, " jitem")}
 															<h4 className="text_reg f_w_b">{jitem.month}</h4>
 															<div>
-																{jitem?.content.map((titem, index) => {
+																{jitem?.content?.map((titem, index) => {
 																	return (
 																		<div className="m_b_15" key={index}>
 																			{titem?.title && (
