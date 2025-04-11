@@ -67,15 +67,20 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 				<div>
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
-							<h2 className="section_title">
-								Committed to fueling your journey <br className="hidden_sm" /> towards
-								self-powered growth
+							<h2 className="section_title pb_10">
+								{/* Committed to fueling your journey <br className="hidden_sm" /> towards
+								self-powered growth */}
+								A Culture of Excellence Through <br className="hidden_sm" />
+								Training and Development
 							</h2>
-							<h4 className="text_lg pt_20 pb_40 opacity_80">
-								At Svatantra, we are driven by a singular vision: to create a
-								self-powered system of growth. We believe in the transformative power of
-								grassroots entrepreneurship and are committed to championing the
-								individuals who fuel India’s economic rise.
+							<h4 className="text_sm opacity_8 pb_10">
+								At Svatantra, we believe that a people-first culture is the cornerstone
+								of success. This commitment begins with investing in our employees,
+								ensuring they are well-trained, highly skilled, and fully aligned to
+								delivering excellence at every touchpoint. Our comprehensive training
+								programs are designed to empower teams with diverse skills and
+								perspectives, enabling them to excel and contribute meaningfully to our
+								shared goals.
 							</h4>
 							<div className={`${styles.committed_section_wrapper}`}>
 								<div className={`${styles.committed_section} f_r_aj_between f_w`}>
@@ -83,12 +88,18 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl1.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
+										<h2 className="section_title pb_10">
+											{/* A Culture of Excellence Through <br className="hidden_sm" />
+											Training and Development */}
+											Comprehensive onboarding and <br className="hidden_sm" />
+											building strong foundations
+										</h2>
 										<p className="text_sm opacity_8">
-											Our purpose is to cultivate a new generation of entrepreneurs who
-											will shape India’s journey into a global economic superpower. Taking
-											every step forward, we strive to turn aspirations into
-											accomplishments, creating ripples of progress far beyond our own
-											world.
+											New employees embark on a 30-day intensive training program,
+											combining practical field experience with focused classroom learning.
+											This immersive approach enables every employee with a strong
+											foundation and essential skills in their respective fields,
+											establishing them up for success from day one itself.
 										</p>
 									</div>
 								</div>
@@ -97,13 +108,37 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl2.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
-										<p className="text_sm opacity_8">
-											Our purpose is to cultivate a new generation of entrepreneurs who
-											will shape India’s journey into a global economic superpower. Taking
-											every step forward, we strive to turn aspirations into
-											accomplishments, creating ripples of progress far beyond our own
-											world.
+										<h2 className="section_title pb_10">
+											Continuous learning with e-Gurukool <br className="hidden_sm" /> to
+											stay ahead of the curve
+											{/* Comprehensive onboarding and <br className="hidden_sm" />
+											building strong foundations */}
+										</h2>
+										<p className="text_sm opacity_8 pb_10">
+											Our commitment to employee development extends beyond the initial
+											onboarding phase. Through our innovative e-Gurukool platform,
+											employees have access to ongoing refresher courses and resources.
+											This continuous learning approach ensures our team stays up-to-date
+											with industry best practices, emerging trends, and evolving company
+											strategies, fostering a culture of innovation. Furthermore, combining
+											intensive initial training with digital learning, empowers our
+											employees to -
 										</p>
+										<ul>
+											<li className="text_sm opacity_8">
+												Develop a deep understanding of our company values and culture.
+											</li>
+											<li className="text_sm opacity_8">
+												Master the necessary skills and knowledge to excel in their roles.
+											</li>
+											<li className="text_sm opacity_8">
+												Adapt to changing industry landscapes and contribute to our ongoing
+												success.
+											</li>
+											<li className="text_sm opacity_8">
+												Deliver exceptional service and experiences to our clients.
+											</li>
+										</ul>
 									</div>
 								</div>
 							</div>
