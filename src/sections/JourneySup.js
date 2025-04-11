@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 // MODULES //
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // COMPONENTS //
 import StrapiImage from "@/utils/StrapiImage";
 // SECTIONS //
@@ -23,7 +23,7 @@ import img2 from "../../public/img/year/img2.jpg";
 
 /** JourneySup Section */
 export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
-	console.log(journeyData, "dddddddddddddd");
+	const [isMobile, setIsMobile] = useState(false);
 	/** */
 	const scrollAnimation = () => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -48,8 +48,8 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 				trigger: box,
 				start: "top top",
 				end: "bottom center",
-				pin: numberImg,
-				pinSpacing: false,
+				pin: window.innerWidth < 767 ? false : numberImg,
+				pinSpacing: true,
 				markers: true,
 				onEnter: () => showNumber(index),
 				onLeaveBack: () => showNumber(index - 1),
@@ -79,7 +79,25 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 	};
 
 	useEffect(() => {
-		scrollAnimation();
+		if (!isMobile) {
+			const mainBoxEl = document.querySelector(".mainBox");
+			if (mainBoxEl) {
+				scrollAnimation();
+			}
+		}
+	}, [isMobile]);
+
+	useEffect(() => {
+		/** */
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 1024);
+		};
+
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
 	return (
@@ -93,42 +111,48 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 					A story of bold steps, innovation, and lasting impact from a single <br />
 					branch to India&apos;s second-largest MFI.
 				</p>
-				<div className={`${styles.mainBox} mainBox`}>
-					<div className={`${styles.stickyYear} stickyYear`}>
-						<h1 className={`${styles.year20} year20`}>20</h1>
-					</div>
+				{!isMobile ? (
+					<div className={`${styles.mainBox} mainBox`}>
+						<div className={`${styles.stickyYear} stickyYear`}>
+							<h1 className={`${styles.year20} year20`}>20</h1>
+						</div>
 
-					<div className={`${styles.contentBox} contentBox`}>
-						{journeyData.data.map((item, index) => {
-							return (
-								<div className={`${styles.box1} box1`}>
-									<h1 className={`${styles.number} number`}>
-										{item.year.toString().slice(-2)}
-									</h1>
-									<div className="column">
-										{item.year_content.map((i, index) => {
-											return (
-												<div className={`${styles.content} content`}>
-													<h1 className="text_reg f_w_b">{i.month}</h1>
-													{i.content.map((j, index) => {
-														return (
-															<div className="content2">
-																<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
-																{j.image && (
-																	<img src={StrapiImage(j?.image)?.url} className="pt_20" />
-																)}
-															</div>
-														);
-													})}
-												</div>
-											);
-										})}
+						<div className={`${styles.contentBox} contentBox`}>
+							{journeyData.data.map((item, index) => {
+								return (
+									<div className={`${styles.box1} box1`}>
+										<h1 className={`${styles.number} number`}>
+											{item.year.toString().slice(-2)}
+										</h1>
+										<div className="column">
+											{item.year_content.map((i, index) => {
+												return (
+													<div className={`${styles.content} content`}>
+														<h1 className="text_reg f_w_b">{i.month}</h1>
+														{i.content.map((j, index) => {
+															return (
+																<div className="content2">
+																	<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
+																	{j.image && (
+																		<img src={StrapiImage(j?.image)?.url} className="pt_20" />
+																	)}
+																</div>
+															);
+														})}
+													</div>
+												);
+											})}
+										</div>
 									</div>
-								</div>
-							);
-						})}
+								);
+							})}
+						</div>
 					</div>
-				</div>
+				) : (
+					<div className="ipadJourneyDiv">
+						<div className="mainBox"></div>
+					</div>
+				)}
 			</div>
 		</section>
 	);
