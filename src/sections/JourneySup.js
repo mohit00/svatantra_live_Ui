@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-key */
 // MODULES //
 import { useEffect } from "react";
 // COMPONENTS //
-
+import StrapiImage from "@/utils/StrapiImage";
 // SECTIONS //
 
 // PLUGINS //
@@ -21,21 +22,60 @@ import img2 from "../../public/img/year/img2.jpg";
 // DATA //
 
 /** JourneySup Section */
-export default function JourneySup({ gsap, ScrollTrigger }) {
+export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
+	console.log(journeyData, "dddddddddddddd");
 	/** */
 	const scrollAnimation = () => {
+		gsap.registerPlugin(ScrollTrigger);
 		const winH = window.innerHeight;
-		const tl = gsap.timeline();
 
+		const boxes = document.querySelectorAll(".box1");
+
+		// Pin the stickyYear element throughout the entire scroll duration
 		ScrollTrigger.create({
 			trigger: ".mainBox",
 			start: "top top",
-			end: `+=${winH}`,
+			end: () => "+=" + document.querySelector(".mainBox").offsetHeight,
+			pin: ".stickyYear",
+			pinSpacing: false,
 			markers: true,
-			pin: true,
-			scrub: true,
-			animation: tl,
 		});
+
+		boxes.forEach((box, index) => {
+			const numberImg = box.querySelector(".number");
+
+			ScrollTrigger.create({
+				trigger: box,
+				start: "top top",
+				end: "bottom center",
+				pin: numberImg,
+				pinSpacing: false,
+				markers: true,
+				onEnter: () => showNumber(index),
+				onLeaveBack: () => showNumber(index - 1),
+			});
+
+			gsap.fromTo(
+				numberImg,
+				{ autoAlpha: 0 },
+				{
+					autoAlpha: 1,
+					scrollTrigger: {
+						trigger: box,
+						start: "top center",
+						end: `+=${winH}`,
+						scrub: true,
+					},
+				}
+			);
+		});
+		/** */
+		function showNumber(index) {
+			const allNumbers = document.querySelectorAll(".number");
+			allNumbers.forEach((num, i) => {
+				num.style.opacity = i === index ? 0 : 1;
+			});
+		}
 	};
 
 	useEffect(() => {
@@ -55,37 +95,38 @@ export default function JourneySup({ gsap, ScrollTrigger }) {
 				</p>
 				<div className={`${styles.mainBox} mainBox`}>
 					<div className={`${styles.stickyYear} stickyYear`}>
-						<img
-							src={img_20.src}
-							alt="yearNumber20"
-							className={`${styles.year20} year20`}
-						/>
+						<h1 className={`${styles.year20} year20`}>20</h1>
 					</div>
+
 					<div className={`${styles.contentBox} contentBox`}>
-						<div className={`${styles.box1} box1`}>
-							<img src={img_24.src} className={`${styles.number} number`} />
-							<div className={`${styles.content} content`}>
-								<h1 className="text_reg font_secondary f_w_b">February</h1>
-								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
-								<img src={img1.src} />
-							</div>
-						</div>
-						<div className={`${styles.box1} box1`}>
-							<img src={img_24.src} className={`${styles.number} number`} />
-							<div className={`${styles.content} content`}>
-								<h1 className="text_reg font_secondary f_w_b">February</h1>
-								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
-								<img src={img1.src} />
-							</div>
-						</div>
-						<div className={`${styles.box1} box1`}>
-							<img src={img_24.src} className={`${styles.number} number`} />
-							<div className={`${styles.content} content`}>
-								<h1 className="text_reg font_secondary f_w_b">February</h1>
-								<p className="">Svatantra Microfin founded by Ananya Birla.</p>
-								<img src={img1.src} />
-							</div>
-						</div>
+						{journeyData.data.map((item, index) => {
+							return (
+								<div className={`${styles.box1} box1`}>
+									<h1 className={`${styles.number} number`}>
+										{item.year.toString().slice(-2)}
+									</h1>
+									<div className="column">
+										{item.year_content.map((i, index) => {
+											return (
+												<div className={`${styles.content} content`}>
+													<h1 className="text_reg f_w_b">{i.month}</h1>
+													{i.content.map((j, index) => {
+														return (
+															<div className="content2">
+																<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
+																{j.image && (
+																	<img src={StrapiImage(j?.image)?.url} className="pt_20" />
+																)}
+															</div>
+														);
+													})}
+												</div>
+											);
+										})}
+									</div>
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>
