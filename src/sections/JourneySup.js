@@ -80,10 +80,19 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 	useEffect(() => {
 		if (!isMobile) {
-			const mainBoxEl = document.querySelector(".mainBox");
-			if (mainBoxEl) {
-				scrollAnimation();
-			}
+			// Timeout ensures DOM is painted
+			const timeout = setTimeout(() => {
+				const mainBoxEl = document.querySelector(".mainBox");
+				if (mainBoxEl) {
+					scrollAnimation();
+				}
+			}, 0);
+
+			return () => {
+				clearTimeout(timeout);
+				// Clean up all ScrollTriggers when component unmounts or switches to mobile
+				ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+			};
 		}
 	}, [isMobile]);
 
@@ -149,8 +158,21 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 						</div>
 					</div>
 				) : (
-					<div className="ipadJourneyDiv">
-						<div className="mainBox"></div>
+					<div className={styles.ipadJourneyDiv}>
+						<div className="container">
+							<div className={styles.mainBoxIpad}>
+								<div>
+									<h1 className={`${styles.number} number`}>2024</h1>
+								</div>
+
+								<div>
+									<h1 className="text_reg f_w_b">February</h1>
+									<p className="text_sm f_w_m opacity_80 pb_20">
+										Svatantra Microfin founded by Ananya Birla.
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				)}
 			</div>

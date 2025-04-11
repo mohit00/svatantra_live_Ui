@@ -61,7 +61,18 @@
 	}
 
 	.ipadJourneyDiv {
-		.mainBox {
+		.mainBoxIpad {
+			padding: 40px 20px;
+			background-color: #b8cfe2;
+			border-radius: 20px;
+
+			.number {
+				position: relative;
+				top: -50px;
+				font-size: 130px;
+				font-family: var(--font_primary);
+				color: #0065b6;
+			}
 		}
 	}
 }
