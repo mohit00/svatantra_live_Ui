@@ -52,7 +52,7 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 			ScrollTrigger.create({
 				trigger: box,
-				start: "top top",
+				start: "top 13%",
 				end: "bottom center",
 				pin: window.innerWidth < 767 ? false : numberImg,
 				pinSpacing: false,

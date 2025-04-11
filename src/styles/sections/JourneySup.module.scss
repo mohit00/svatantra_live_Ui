@@ -16,15 +16,12 @@
 		.contentBox {
 			.box1 {
 				position: relative;
-				padding: 100px 0px;
+				padding: 0px 0px 100px 150px;
 				display: flex;
 				// align-items: start;
 				gap: 100px;
 				height: auto;
-				border-bottom: 1px solid black;
-				&:last-child {
-					border-bottom: none;
-				}
+
 				.stickyNumberWrapper {
 					position: relative;
 					top: 80px;
@@ -32,14 +29,15 @@
 
 				.number {
 					position: relative;
-					left: 0;
-					top: -50px;
+					left: 10px;
+					top: -40px;
 					font-size: 130px;
 					font-family: var(--font_primary);
 					color: #0065b6;
 				}
 				.content {
 					position: relative;
+					// padding-left: 250px;
 					img {
 						border-radius: 20px;
 					}
@@ -54,7 +52,7 @@
 	}
 
 	.year20 {
-		position: relative;
+		position: absolute;
 		top: -40px;
 		font-size: 130px;
 		font-family: var(--font_primary);
