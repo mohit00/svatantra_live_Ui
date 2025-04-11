@@ -23,6 +23,9 @@ import img2 from "../../public/img/year/img2.jpg";
 
 /** JourneySup Section */
 export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
+	console.log(journeyData, "dddddddddddd");
+	const [activeYear, setActiveYear] = useState("");
+
 	const [isMobile, setIsMobile] = useState(false);
 	/** */
 	const scrollAnimation = () => {
@@ -35,10 +38,13 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 		ScrollTrigger.create({
 			trigger: ".mainBox",
 			start: "top top",
-			end: () => "+=" + document.querySelector(".mainBox").offsetHeight,
+			end: () =>
+				window.innerWidth > 1024
+					? "+=" + document.querySelector(".mainBox").offsetHeight
+					: winH,
 			pin: ".stickyYear",
 			pinSpacing: false,
-			markers: true,
+			// markers: true,
 		});
 
 		boxes.forEach((box, index) => {
@@ -49,15 +55,17 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 				start: "top top",
 				end: "bottom center",
 				pin: window.innerWidth < 767 ? false : numberImg,
-				pinSpacing: true,
-				markers: true,
+				pinSpacing: false,
+				anticipatePin: 1,
+				// pinType: "transform",
+				// markers: true,
 				onEnter: () => showNumber(index),
 				onLeaveBack: () => showNumber(index - 1),
 			});
 
 			gsap.fromTo(
 				numberImg,
-				{ autoAlpha: 0 },
+				{ autoAlpha: 1 },
 				{
 					autoAlpha: 1,
 					scrollTrigger: {
@@ -108,6 +116,43 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
+
+	const year = journeyData.data.map((item) => item.year);
+
+	// const contentData = journeyData.data.flatMap(
+	// 	(yearItem) => yearItem.year_content
+	// );
+
+	const contentData = journeyData.data.flatMap((yearItem) =>
+		yearItem.year_content.map((monthItem) => ({
+			...monthItem,
+			year: yearItem.year,
+		}))
+	);
+
+	useEffect(() => {
+		if (isMobile) {
+			const sections = document.querySelectorAll("[data-year]");
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							setActiveYear(entry.target.getAttribute("data-year"));
+						}
+					});
+				},
+				{ threshold: 0.5 }
+			);
+
+			sections.forEach((section) => observer.observe(section));
+
+			return () => {
+				sections.forEach((section) => observer.unobserve(section));
+			};
+		}
+	}, [isMobile]);
+
+	console.log(contentData, "contentData");
 
 	return (
 		<section className={styles.JourneySup}>
@@ -161,16 +206,33 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 					<div className={styles.ipadJourneyDiv}>
 						<div className="container">
 							<div className={styles.mainBoxIpad}>
-								<div>
-									<h1 className={`${styles.number} number`}>2024</h1>
+								<div className={styles.stickyYearMobile}>
+									<h1 className={`${styles.number} number text_center`}>{activeYear}</h1>
 								</div>
+								{contentData.map((item, index) => (
+									<div
+										key={`${item.year}-${item.month}-${index}`}
+										className={styles.box}
+										data-year={item.year}
+									>
+										<div className={styles.contentIpad}>
+											<h1 className="text_reg f_w_b pb_10">{item.month}</h1>
 
-								<div>
-									<h1 className="text_reg f_w_b">February</h1>
-									<p className="text_sm f_w_m opacity_80 pb_20">
-										Svatantra Microfin founded by Ananya Birla.
-									</p>
-								</div>
+											{item.content.map((j, subIndex) => (
+												<div key={subIndex}>
+													<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
+													{j.image && (
+														<img
+															src={StrapiImage(j.image)?.url}
+															alt="journey-img"
+															className="pb_20"
+														/>
+													)}
+												</div>
+											))}
+										</div>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
