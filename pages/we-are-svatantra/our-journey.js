@@ -23,7 +23,7 @@ import JourneyComponent from "@/sections/Journey";
 gsap.registerPlugin(ScrollTrigger);
 import { getOurJourney } from "@/services/whoWeAreService";
 import JourneySup from "@/sections/JourneySup";
-// import OurJ2 from "@/sections/OurJ2";
+
 /** getOurLeaderships */
 export const getStaticProps = async (context) => {
 	const journeyData = await getOurJourney();
@@ -43,9 +43,12 @@ export default function OurJourneyPage({ journeyData }) {
 			{/* Page Content starts here */}
 			<main className={styles.OurJourneyPage}>
 				<Breadcrum link5="we-are-svatantra/our-journey" linkTitle="Our Journey" />
-				{/* <JourneyComponent journeyData={journeyData} /> */}
-				<JourneySup gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				{/* <OurJ2 journeyData={journeyData} /> */}
+				<JourneyComponent journeyData={journeyData} />
+				{/* <JourneySup
+					gsap={gsap}
+					ScrollTrigger={ScrollTrigger}
+					journeyData={journeyData}
+				/> */}
 			</main>
 			{/* Page Content ends here */}
 

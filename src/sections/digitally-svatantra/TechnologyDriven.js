@@ -29,12 +29,21 @@ export default function TechnologyDriven() {
 					</h2>
 				</div>
 				<div className={`${styles.para}`}>
-					<p className="text_md color_light_black font_secondary opacity_8 pb_20 l_h_6">
+					<p className="text_sm opacity_8 pb_10">
 						At Svatantra, we believe in harnessing the power of technology to create a
 						seamless, innovative, and personalised experience for both our customers
-						and employees. Our commitment to the technology-drive approach isn’t just
+						and employees. Our commitment to the technology–driven approach isn’t just
 						about staying ahead – it is also about creating a future where both
 						customers and employees thrive.
+					</p>
+					<p className="text_sm opacity_8">
+						We have strategically integrated technology into our operations to
+						streamline processes and enhance our bottom line. However, we also
+						recognise the importance of maintaining a personal touch with our
+						customer. That is why our approach always centres on a carefully balanced
+						strategy, such as, leveraging digital innovation while retaining the
+						essential human element. This commitment ensures that technology serves as
+						an enabler of growth, rather than a barrier to access and understanding.
 					</p>
 					<h5 className="text_sm  color_light_black font_secondary opacity_8 f_w_s_b pt_20">
 						Discover our digital solutions, tailor-made to enhance customer and
@@ -77,13 +86,20 @@ export default function TechnologyDriven() {
 							<img src={saathi.src} className="img-responsive" alt="saathi" />
 						</div>
 						<div className={`${styles.committed_info}`}>
-							<h3 className="text_xxl color_primary pb_20">About Saathi</h3>
+							<h3 className="text_xxl color_primary pb_20">Unique Lending Process</h3>
+							<p className="text_sm opacity_8 pb_10">
+								The company leverages technology to enhance its lending processes to
+								serve its customers. One of the company’s key innovations is the
+								implementation of a unique, digitally enabled income assessment process.
+								This advanced system allows for more accurate and efficient evaluation
+								of potential borrowers’ financial capabilities.
+							</p>
 							<p className="text_sm opacity_8">
-								SAATHI was launched in 2017 as a cashless lending solution to streamline
-								operations and ensure customers made transactions exclusively through
-								formal banking channels. The app enables our team to access real-time
-								data on remote customers, reduce turnaround times and perform numerous
-								tasks, including identifying expansion areas.
+								This also includes risk, HR, finance, and learning, which are integrated
+								into the company’s end-to-end IT platform, ensuring efficiency and
+								transparency. We are continuously investing in digitisation and making
+								upgrades to our existing systems to protect customer data and our
+								proprietary assets.
 							</p>
 						</div>
 					</div>
