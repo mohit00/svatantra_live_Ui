@@ -85,8 +85,8 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		observer: true,
 		observeParents: true,
 		navigation: {
-			prevEl: "#customPrev",
-			nextEl: "#customNext",
+			prevEl: ".arrowSection #customPrev",
+			nextEl: ".arrowSection #customNext",
 		},
 		breakpoints: {
 			767: {
@@ -118,8 +118,8 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		observer: true,
 		observeParents: true,
 		navigation: {
-			prevEl: "#customPrev",
-			nextEl: "#customNext",
+			prevEl: ".arrowSection #customPrev",
+			nextEl: ".arrowSection #customNext",
 		},
 		breakpoints: {
 			767: {
@@ -305,7 +305,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 							<div
 								className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
 							></div>
-							<div className={`${styles.arrowSection} f_w_a_j_center`}>
+							<div className={`${styles.arrowSection} arrowSection f_w_a_j_center`}>
 								<button className={`${styles.customPrev}`} id="customPrev">
 									<img src={prevImg.src} alt="" />
 								</button>
