@@ -67,11 +67,10 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 				<div>
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
-							<h2 className="section_title pb_10">
+							<h2 className="text_lg font_primary f_w_m pb_10">
 								{/* Committed to fueling your journey <br className="hidden_sm" /> towards
 								self-powered growth */}
-								A Culture of Excellence Through <br className="hidden_sm" />
-								Training and Development
+								A Culture of Excellence Through Training and Development
 							</h2>
 							<h4 className="text_sm opacity_8 pb_10">
 								At Svatantra, we believe that a people-first culture is the cornerstone
@@ -88,7 +87,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl1.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
-										<h2 className="section_title pb_10">
+										<h2 className="text_lg font_primary f_w_m pb_10">
 											{/* A Culture of Excellence Through <br className="hidden_sm" />
 											Training and Development */}
 											Comprehensive onboarding and <br className="hidden_sm" />
@@ -108,9 +107,8 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl2.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
-										<h2 className="section_title pb_10">
-											Continuous learning with e-Gurukool <br className="hidden_sm" /> to
-											stay ahead of the curve
+										<h2 className="text_lg font_primary f_w_m pb_10">
+											Continuous learning with e-Gurukool to stay ahead of the curve
 											{/* Comprehensive onboarding and <br className="hidden_sm" />
 											building strong foundations */}
 										</h2>
