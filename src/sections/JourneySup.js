@@ -178,14 +178,14 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 										<h1 className={`${styles.number} number`}>
 											{item.year.toString().slice(-2)}
 										</h1>
-										<div className="column">
+										<div className={styles.column}>
 											{item.year_content.map((i, index) => {
 												return (
 													<div className={`${styles.content} content`}>
 														<h1 className="text_reg f_w_b">{i.month}</h1>
 														{i.content.map((j, index) => {
 															return (
-																<div className="content2">
+																<div className={styles.content2}>
 																	<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
 																	{j.image && (
 																		<img src={StrapiImage(j?.image)?.url} className="pt_20" />
