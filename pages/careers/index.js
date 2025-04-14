@@ -67,12 +67,10 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 				<div>
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
-							<h2 className="text_lg font_primary f_w_m pb_10">
-								{/* Committed to fueling your journey <br className="hidden_sm" /> towards
-								self-powered growth */}
+							<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
 								A Culture of Excellence Through Training and Development
 							</h2>
-							<h4 className="text_sm opacity_8 pb_10">
+							<h4 className="text_sm opacity_8 pb_10 pb_30">
 								At Svatantra, we believe that a people-first culture is the cornerstone
 								of success. This commitment begins with investing in our employees,
 								ensuring they are well-trained, highly skilled, and fully aligned to
@@ -87,9 +85,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl1.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
-										<h2 className="text_lg font_primary f_w_m pb_10">
-											{/* A Culture of Excellence Through <br className="hidden_sm" />
-											Training and Development */}
+										<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
 											Comprehensive onboarding and <br className="hidden_sm" />
 											building strong foundations
 										</h2>
@@ -107,10 +103,8 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl2.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
-										<h2 className="text_lg font_primary f_w_m pb_10">
+										<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
 											Continuous learning with e-Gurukool to stay ahead of the curve
-											{/* Comprehensive onboarding and <br className="hidden_sm" />
-											building strong foundations */}
 										</h2>
 										<p className="text_sm opacity_8 pb_10">
 											Our commitment to employee development extends beyond the initial
