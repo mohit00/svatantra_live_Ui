@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 // MODULES //
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // COMPONENTS //
 import StrapiImage from "@/utils/StrapiImage";
 // SECTIONS //
@@ -25,7 +25,8 @@ import img2 from "../../public/img/year/img2.jpg";
 export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 	console.log(journeyData, "dddddddddddd");
 	const [activeYear, setActiveYear] = useState("");
-
+	const [hideSticky, setHideSticky] = useState(false);
+	const mainBoxRef = useRef(null);
 	const [isMobile, setIsMobile] = useState(false);
 	/** */
 	const scrollAnimation = () => {
@@ -129,18 +130,20 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
-	const year = journeyData.data.map((item) => item.year);
-
-	// const contentData = journeyData.data.flatMap(
-	// 	(yearItem) => yearItem.year_content
+	const contentData = journeyData.data
+		.sort((a, b) => b.year - a.year) // Sort by year descending
+		.flatMap((yearItem) =>
+			yearItem.year_content.map((monthItem) => ({
+				...monthItem,
+				year: yearItem.year,
+			}))
+		);
+	// const contentData = journeyData.data.flatMap((yearItem) =>
+	// 	yearItem.year_content.map((monthItem) => ({
+	// 		...monthItem,
+	// 		year: yearItem.year,
+	// 	}))
 	// );
-
-	const contentData = journeyData.data.flatMap((yearItem) =>
-		yearItem.year_content.map((monthItem) => ({
-			...monthItem,
-			year: yearItem.year,
-		}))
-	);
 
 	useEffect(() => {
 		if (isMobile) {
@@ -160,6 +163,49 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 			return () => {
 				sections.forEach((section) => observer.unobserve(section));
+			};
+		}
+	}, [isMobile]);
+
+	useEffect(() => {
+		if (isMobile) {
+			const sections = document.querySelectorAll("[data-year]");
+			let hideTimeout = null;
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const year = entry.target.getAttribute("data-year");
+							setActiveYear(year);
+
+							// Clear any existing timer
+							if (hideTimeout) {
+								clearTimeout(hideTimeout);
+								hideTimeout = null;
+							}
+
+							if (year === "2012") {
+								// Show it first, then hide after 2.5 seconds
+								setHideSticky(false);
+
+								hideTimeout = setTimeout(() => {
+									setHideSticky(true);
+								}, 500);
+							} else {
+								setHideSticky(false); // For all other years, show as normal
+							}
+						}
+					});
+				},
+				{ threshold: 0.5 }
+			);
+
+			sections.forEach((section) => observer.observe(section));
+
+			return () => {
+				sections.forEach((section) => observer.unobserve(section));
+				if (hideTimeout) clearTimeout(hideTimeout);
 			};
 		}
 	}, [isMobile]);
@@ -223,10 +269,15 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 				) : (
 					<div className={styles.ipadJourneyDiv}>
 						<div className="container">
-							<div className={styles.mainBoxIpad}>
-								<div className={styles.stickyYearMobile}>
+							<div className={styles.mainBoxIpad} ref={mainBoxRef}>
+								<div
+									className={`${styles.stickyYearMobile} ${
+										hideSticky ? styles.opacityZero : ""
+									}`}
+								>
 									<h1 className={`${styles.number} number text_center`}>{activeYear}</h1>
 								</div>
+
 								{contentData.map((item, index) => (
 									<div
 										key={`${item.year}-${item.month}-${index}`}
