@@ -34,13 +34,14 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 		const winH = window.innerHeight;
 		const boxes = document.querySelectorAll(".box1");
 		const mainHeader = document.querySelector(".main_header");
-		const mainHeaderHeight = mainHeader.offsetHeight + 12 + 5;
+		const mainHeaderHeight = mainHeader.offsetHeight + 12 + 15;
+		const mainHeaderHeight2 = mainHeader.offsetHeight - 65;
 		console.log(mainHeaderHeight, " mainHeaderHeight");
 
 		// Pin the stickyYear element throughout the scroll
 		ScrollTrigger.create({
 			trigger: ".mainBox",
-			start: "top top",
+			start: `top ${mainHeaderHeight2}`,
 			end: () =>
 				window.innerWidth > 1024
 					? "+=" + document.querySelector(".mainBox").offsetHeight
@@ -250,7 +251,7 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 																		{j.image && (
 																			<img
 																				src={StrapiImage(j?.image)?.url}
-																				className="pt_20"
+																				// className="pt_20"
 																				alt={j.title}
 																			/>
 																		)}
