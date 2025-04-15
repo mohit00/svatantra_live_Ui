@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 // MODULES //
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // COMPONENTS //
 import StrapiImage from "@/utils/StrapiImage";
 // SECTIONS //
@@ -25,16 +25,19 @@ import img2 from "../../public/img/year/img2.jpg";
 export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 	console.log(journeyData, "dddddddddddd");
 	const [activeYear, setActiveYear] = useState("");
-
+	const [hideSticky, setHideSticky] = useState(false);
+	const mainBoxRef = useRef(null);
 	const [isMobile, setIsMobile] = useState(false);
 	/** */
 	const scrollAnimation = () => {
 		gsap.registerPlugin(ScrollTrigger);
 		const winH = window.innerHeight;
-
 		const boxes = document.querySelectorAll(".box1");
+		const mainHeader = document.querySelector(".main_header");
+		const mainHeaderHeight = mainHeader.offsetHeight + 12 + 5;
+		console.log(mainHeaderHeight, " mainHeaderHeight");
 
-		// Pin the stickyYear element throughout the entire scroll duration
+		// Pin the stickyYear element throughout the scroll
 		ScrollTrigger.create({
 			trigger: ".mainBox",
 			start: "top top",
@@ -47,36 +50,46 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 			// markers: true,
 		});
 
-		boxes.forEach((box, index) => {
-			const numberImg = box.querySelector(".number");
+		/** */
+		const createScrollTriggers = (startOffset) => {
+			boxes.forEach((box, index) => {
+				const numberImg = box.querySelector(".number");
 
-			ScrollTrigger.create({
-				trigger: box,
-				start: "top 13%",
-				end: "bottom center",
-				pin: window.innerWidth < 767 ? false : numberImg,
-				pinSpacing: false,
-				anticipatePin: 1,
-				// pinType: "transform",
-				// markers: true,
-				onEnter: () => showNumber(index),
-				onLeaveBack: () => showNumber(index - 1),
+				ScrollTrigger.create({
+					trigger: box,
+					// start: `top ${startOffset}`,
+					start: `top ${mainHeaderHeight}px`,
+					end: "bottom center",
+					// pin: true,
+					pin: window.innerWidth < 767 ? false : numberImg,
+					pinSpacing: false,
+					anticipatePin: 1,
+					onEnter: () => showNumber(index),
+					onLeaveBack: () => showNumber(index - 1),
+				});
+
+				gsap.fromTo(
+					numberImg,
+					{ autoAlpha: 1 },
+					{
+						autoAlpha: 1,
+						scrollTrigger: {
+							trigger: box,
+							start: "top center",
+							end: `+=${winH}`,
+							scrub: true,
+						},
+					}
+				);
 			});
+		};
 
-			gsap.fromTo(
-				numberImg,
-				{ autoAlpha: 1 },
-				{
-					autoAlpha: 1,
-					scrollTrigger: {
-						trigger: box,
-						start: "top center",
-						end: `+=${winH}`,
-						scrub: true,
-					},
-				}
-			);
+		ScrollTrigger.matchMedia({
+			all: function () {
+				createScrollTriggers(`${mainHeaderHeight}px`);
+			},
 		});
+
 		/** */
 		function showNumber(index) {
 			const allNumbers = document.querySelectorAll(".number");
@@ -117,18 +130,20 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
-	const year = journeyData.data.map((item) => item.year);
-
-	// const contentData = journeyData.data.flatMap(
-	// 	(yearItem) => yearItem.year_content
+	const contentData = journeyData.data
+		.sort((a, b) => b.year - a.year) // Sort by year descending
+		.flatMap((yearItem) =>
+			yearItem.year_content.map((monthItem) => ({
+				...monthItem,
+				year: yearItem.year,
+			}))
+		);
+	// const contentData = journeyData.data.flatMap((yearItem) =>
+	// 	yearItem.year_content.map((monthItem) => ({
+	// 		...monthItem,
+	// 		year: yearItem.year,
+	// 	}))
 	// );
-
-	const contentData = journeyData.data.flatMap((yearItem) =>
-		yearItem.year_content.map((monthItem) => ({
-			...monthItem,
-			year: yearItem.year,
-		}))
-	);
 
 	useEffect(() => {
 		if (isMobile) {
@@ -148,6 +163,49 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 			return () => {
 				sections.forEach((section) => observer.unobserve(section));
+			};
+		}
+	}, [isMobile]);
+
+	useEffect(() => {
+		if (isMobile) {
+			const sections = document.querySelectorAll("[data-year]");
+			let hideTimeout = null;
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const year = entry.target.getAttribute("data-year");
+							setActiveYear(year);
+
+							// Clear any existing timer
+							if (hideTimeout) {
+								clearTimeout(hideTimeout);
+								hideTimeout = null;
+							}
+
+							if (year === "2012") {
+								// Show it first, then hide after 2.5 seconds
+								setHideSticky(false);
+
+								hideTimeout = setTimeout(() => {
+									setHideSticky(true);
+								}, 500);
+							} else {
+								setHideSticky(false); // For all other years, show as normal
+							}
+						}
+					});
+				},
+				{ threshold: 0.5 }
+			);
+
+			sections.forEach((section) => observer.observe(section));
+
+			return () => {
+				sections.forEach((section) => observer.unobserve(section));
+				if (hideTimeout) clearTimeout(hideTimeout);
 			};
 		}
 	}, [isMobile]);
@@ -172,43 +230,54 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 						</div>
 
 						<div className={`${styles.contentBox} contentBox`}>
-							{journeyData.data.map((item, index) => {
-								return (
-									<div className={`${styles.box1} box1`}>
-										<h1 className={`${styles.number} number`}>
-											{item.year.toString().slice(-2)}
-										</h1>
-										<div className={styles.column}>
-											{item.year_content.map((i, index) => {
-												return (
-													<div className={`${styles.content} content`}>
-														<h1 className="text_reg f_w_b">{i.month}</h1>
-														{i.content.map((j, index) => {
-															return (
-																<div className={styles.content2}>
-																	<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
-																	{j.image && (
-																		<img src={StrapiImage(j?.image)?.url} className="pt_20" />
-																	)}
-																</div>
-															);
-														})}
-													</div>
-												);
-											})}
+							{[...journeyData.data]
+								.sort((a, b) => b.year - a.year) // changed to descending
+								.map((item, index) => {
+									return (
+										<div key={index} className={`${styles.box1} box1`}>
+											<h1 className={`${styles.number} number`}>
+												{item.year.toString().slice(-2)}
+											</h1>
+											<div className={styles.column}>
+												{item.year_content.map((i, idx) => {
+													return (
+														<div key={idx} className={`${styles.content} content`}>
+															<h1 className="text_reg f_w_b">{i.month}</h1>
+															{i.content.map((j, jIndex) => {
+																return (
+																	<div key={jIndex} className={styles.content2}>
+																		<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
+																		{j.image && (
+																			<img
+																				src={StrapiImage(j?.image)?.url}
+																				className="pt_20"
+																				alt={j.title}
+																			/>
+																		)}
+																	</div>
+																);
+															})}
+														</div>
+													);
+												})}
+											</div>
 										</div>
-									</div>
-								);
-							})}
+									);
+								})}
 						</div>
 					</div>
 				) : (
 					<div className={styles.ipadJourneyDiv}>
 						<div className="container">
-							<div className={styles.mainBoxIpad}>
-								<div className={styles.stickyYearMobile}>
+							<div className={styles.mainBoxIpad} ref={mainBoxRef}>
+								<div
+									className={`${styles.stickyYearMobile} ${
+										hideSticky ? styles.opacityZero : ""
+									}`}
+								>
 									<h1 className={`${styles.number} number text_center`}>{activeYear}</h1>
 								</div>
+
 								{contentData.map((item, index) => (
 									<div
 										key={`${item.year}-${item.month}-${index}`}
