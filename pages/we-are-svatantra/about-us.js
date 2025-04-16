@@ -23,8 +23,8 @@ import Breadcrum from "@/components/Breadcrumb";
 import StrapiImage from "@/utils/StrapiImage";
 
 // IMAGES //
-import Girl1 from "../../public/img/about/girl.jpg";
-import Girl2 from "../../public/img/about/girl2.jpg";
+import Girl1 from "../../public/img/newAbout1.jpg";
+import Girl2 from "../../public/img/newAbout2.jpg";
 import Icon1 from "../../public/img/about/icon_1.png";
 import Icon2 from "../../public/img/about/icon_2.png";
 import Icon3 from "../../public/img/about/icon_3.png";
@@ -86,7 +86,7 @@ export default function AboutPage({ awardsData }) {
 					desktopImage={DesktopBanner.src}
 					mobileImage={DesktopBanner.src}
 					bannerTitle="Enabling you to leave your mark on tomorrow"
-					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of lowest interest rates in the country"
+					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of the lowest interest rates in the country"
 				/>
 				<section className={`${styles.Committed} ptb_80`}>
 					<div className="container">

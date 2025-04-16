@@ -170,7 +170,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 								isHref
 								buttonType="secondary"
 								condition={"white"}
-								link={activeTab === "media" ? "/media/media-mention" : "/media/awards"}
+								link={activeTab === "media" ? "/media/media-reports" : "/media/awards"}
 								title={"View More"}
 							/>
 						</div>
