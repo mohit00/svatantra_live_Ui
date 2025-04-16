@@ -213,6 +213,12 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 	console.log(contentData, "contentData");
 
+	const lastIndexes = contentData.reduce((acc, item, index) => {
+		const { year } = item;
+		acc[year] = index; // each time it overwrites — so we get the last one
+		return acc;
+	}, {});
+
 	return (
 		<section className={styles.JourneySup}>
 			<div className="container">
@@ -279,30 +285,34 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 									<h1 className={`${styles.number} number text_center`}>{activeYear}</h1>
 								</div>
 
-								{contentData.map((item, index) => (
-									<div
-										key={`${item.year}-${item.month}-${index}`}
-										className={styles.box}
-										data-year={item.year}
-									>
-										<div className={styles.contentIpad}>
-											<h1 className="text_reg f_w_b pb_10">{item.month}</h1>
+								{contentData.map((item, index) => {
+									const isLastOfYear = lastIndexes[item.year] === index;
 
-											{item.content.map((j, subIndex) => (
-												<div key={subIndex}>
-													<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
-													{j.image && (
-														<img
-															src={StrapiImage(j.image)?.url}
-															alt="journey-img"
-															className="pb_20"
-														/>
-													)}
-												</div>
-											))}
+									return (
+										<div
+											key={`${item.year}-${item.month}-${index}`}
+											className={`${styles.box} ${isLastOfYear ? styles.btmBrd : ""}`}
+											data-year={item.year}
+										>
+											<div className={styles.contentIpad}>
+												<h1 className="text_reg f_w_b pb_10">{item.month}</h1>
+
+												{item.content.map((j, subIndex) => (
+													<div key={subIndex}>
+														<p className="text_sm f_w_m opacity_80 pb_20">{j.title}</p>
+														{j.image && (
+															<img
+																src={StrapiImage(j.image)?.url}
+																alt="journey-img"
+																className="pb_20"
+															/>
+														)}
+													</div>
+												))}
+											</div>
 										</div>
-									</div>
-								))}
+									);
+								})}
 							</div>
 						</div>
 					</div>
