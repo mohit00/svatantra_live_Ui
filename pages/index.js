@@ -2,6 +2,7 @@
 
 // COMPONENTS //
 import Footer from "@/components/Footer";
+import Footer2 from "@/components/Footer2";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Homecontact from "@/sections/Homecontact";
@@ -68,6 +69,7 @@ export default function HomePage({
 
 			{/* <Intro /> */}
 			{/* Header */}
+
 			<Header />
 			{/* <Header2 /> */}
 
@@ -90,7 +92,8 @@ export default function HomePage({
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			{/* <Footer /> */}
+			<Footer2 />
 		</div>
 	);
 }
