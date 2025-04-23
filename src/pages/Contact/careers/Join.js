@@ -13,7 +13,7 @@ import Button from "@/components/Buttons/Button";
 import styles from "@/styles/sections/pages/careers/Join.module.scss";
 
 // IMAGES //
-import JoinImg from "../../../../public/img/careers/join_img.jpg";
+import JoinImg from "../../../../public/img/careers/join_img2.jpg";
 
 // DATA //
 
