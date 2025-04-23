@@ -216,7 +216,6 @@ export default function Header() {
 											onMouseEnter={() => !isMobile && setOpenMenuIndex(index)}
 											onMouseLeave={() => !isMobile && setOpenMenuIndex(null)}
 										>
-											{console.log(item, "openMenuIdex")}
 											<p
 												className={`${styles.link_title} text_xs`}
 												onClick={(e) => {
@@ -268,9 +267,13 @@ export default function Header() {
 																				activeMenu === `${index}-${pageIndex}` ? styles.active : ""
 																			}
 																		>
-																			<Link href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
-																				{page.pageName}
-																			</Link>
+																			{page?.pageUrl != null ? (
+																				<Link href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
+																					{page.pageName}
+																				</Link>
+																			) : (
+																				page.pageName
+																			)}
 																		</span>
 																		{page.subPages.length > 0 && <img src={arrow.src} />}
 																	</div>
