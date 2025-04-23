@@ -22,8 +22,8 @@ import styles from "@/styles/pages/careers.module.scss";
 // UTILS //
 
 // IMAGES //
-import Girl1 from "../../public/img/about/girl.jpg";
-import Girl2 from "../../public/img/about/girl2.jpg";
+import Girl1 from "../../public/img/careers/cr1.jpg";
+import Girl2 from "../../public/img/careers/cr2.jpg";
 import newBanner from "../../public/img/careers/newBanner.jpg";
 // SERVICES //
 import {
