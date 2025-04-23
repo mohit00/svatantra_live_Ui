@@ -36,22 +36,20 @@ export default function OurJourneyPage({ journeyData }) {
 		<div>
 			{/* Metatags */}
 			<MetaTags Title={"Our Journey"} Desc={""} OgImg={""} Url={"/contact"} />
-
 			{/* Header */}
 			<Header />
-
+			``
 			{/* Page Content starts here */}
 			<main className={styles.OurJourneyPage}>
 				<Breadcrum link5="we-are-svatantra/our-journey" linkTitle="Our Journey" />
-				<JourneyComponent journeyData={journeyData} />
-				{/* <JourneySup
+				{/* <JourneyComponent journeyData={journeyData} /> */}
+				<JourneySup
 					gsap={gsap}
 					ScrollTrigger={ScrollTrigger}
 					journeyData={journeyData}
-				/> */}
+				/>
 			</main>
 			{/* Page Content ends here */}
-
 			{/* Footer */}
 			<Footer />
 		</div>
