@@ -23,11 +23,12 @@ import img2 from "../../public/img/year/img2.jpg";
 
 /** JourneySup Section */
 export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
-	console.log(journeyData, "dddddddddddd");
 	const [activeYear, setActiveYear] = useState("");
 	const [hideSticky, setHideSticky] = useState(false);
 	const mainBoxRef = useRef(null);
 	const [isMobile, setIsMobile] = useState(false);
+	const [isVisible, setIsVisible] = useState(false);
+
 	/** */
 	const scrollAnimation = () => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +37,6 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 		const mainHeader = document.querySelector(".main_header");
 		const mainHeaderHeight = mainHeader.offsetHeight + 12 + 15;
 		const mainHeaderHeight2 = mainHeader.offsetHeight - 65;
-		console.log(mainHeaderHeight, " mainHeaderHeight");
 
 		// Pin the stickyYear element throughout the scroll
 		ScrollTrigger.create({
@@ -65,8 +65,15 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 					pin: window.innerWidth < 767 ? false : numberImg,
 					pinSpacing: false,
 					anticipatePin: 1,
-					onEnter: () => showNumber(index),
-					onLeaveBack: () => showNumber(index - 1),
+					onEnter: () => {
+						showNumber(index);
+					},
+					onLeaveBack: () => {
+						showNumber(index - 1);
+					},
+					onUpdate: function (self) {
+						const progress = self.progress * 100;
+					},
 				});
 
 				gsap.fromTo(
@@ -166,6 +173,32 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 				sections.forEach((section) => observer.unobserve(section));
 			};
 		}
+		const mainBox = document.querySelector(".mainBox");
+		const stickyYear = document.querySelector(".stickyYear");
+		const mainBoxHeight = mainBox.offsetHeight;
+
+		/** */
+		const handleScroll = () => {
+			const windowTop = window.scrollY;
+			if (windowTop > mainBoxHeight) {
+				stickyYear.style.opacity = 0;
+				console.log("yes");
+			} else {
+				stickyYear.style.opacity = 1;
+			}
+			// if (footer && triggerDiv) {
+			// 	const footerTop = footer.getBoundingClientRect().top;
+			// 	const windowHeight = window.innerHeight;
+			// 	if (footerTop <= windowHeight) {
+			// 		setIsVisible(true);
+			// 	} else {
+			// 		setIsVisible(false);
+			// 	}
+			// }
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		handleScroll(); // check on load
 	}, [isMobile]);
 
 	useEffect(() => {
@@ -210,8 +243,6 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 			};
 		}
 	}, [isMobile]);
-
-	console.log(contentData, "contentData");
 
 	const lastIndexes = contentData.reduce((acc, item, index) => {
 		const { year } = item;
