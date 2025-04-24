@@ -110,11 +110,10 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 											Our commitment to employee development extends beyond the initial
 											onboarding phase. Through our innovative e-Gurukool platform,
 											employees have access to ongoing refresher courses and resources.
-											This continuous learning approach ensures our team stays up-to-date
-											with industry best practices, emerging trends, and evolving company
-											strategies, fostering a culture of innovation. Furthermore, combining
-											intensive initial training with digital learning, empowers our
-											employees to -
+											ensures our team stays up-to-date with industry best practices,
+											emerging trends, and evolving company strategies, fostering a culture
+											of innovation. Furthermore, combining intensive training with digital
+											learning, empowers our employees to -
 										</p>
 										<ul>
 											<li className="text_sm opacity_8">
@@ -133,6 +132,12 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										</ul>
 									</div>
 								</div>
+								<p className="text_sm opacity_8 ">
+									By investing in our people, we invest in our future. We believe that
+									well-trained, empowered employees are the key to achieving our
+									ambitious goals and delivering exceptional results. (the above two
+									lines are striked out as they are repetitive)
+								</p>
 							</div>
 						</div>
 					</section>
