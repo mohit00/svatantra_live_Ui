@@ -39,6 +39,13 @@ export default function JoinComponent() {
 								isHref={true}
 								link={"/careers/job-opening"}
 							/>
+							<Button
+								buttonType="five"
+								condition={"white"}
+								title={"Disclaimer"}
+								isHref={true}
+								link={"/careers-disclaimer"}
+							/>
 						</div>
 					</div>
 					<div className={`${styles.join_img}`}>

@@ -24,7 +24,8 @@ import styles from "@/styles/pages/MsmeLoans.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../../public/img/our-products/microfinance/banner_desktop.jpg";
+import banner_desktop from "../../public/img/finalBanners/MSME.jpg";
+import mobile_banner from "../../public/img/mobileBanners/MSME_mobile.jpg";
 import pdf_icon from "../../public/img/pdf_icon.svg";
 
 import identification from "../../public/img/our-products/microfinance/identification.svg";
@@ -166,7 +167,7 @@ export default function MsmeLoans({ blogsData }) {
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_banner.src}
 					bannerTitle="Individual Loans"
 				/>
 				<LoanAmount
