@@ -19,7 +19,8 @@ import Breadcrum from "@/components/Breadcrumb";
 // UTILS //
 
 // IMAGES //
-
+import DesktopBanner from "../public/img/finalBanners/contact.jpg";
+import MobileBanner from "../public/img/mobileBanners/contact 360x640.jpg";
 // DATA //
 
 /** Contact Page */
@@ -35,7 +36,11 @@ export default function ContactPage() {
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
 				<Breadcrum link5="/contact" linkTitle={"Contact Us"} />
-				<InnerBanner bannerTitle="Get In touch" />
+				<InnerBanner
+					desktopImage={DesktopBanner.src}
+					mobileImage={MobileBanner.src}
+					bannerTitle="Get In touch"
+				/>
 				<ContactSection />
 				<MapSection />
 			</main>

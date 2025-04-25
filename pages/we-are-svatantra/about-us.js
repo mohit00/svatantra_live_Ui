@@ -33,7 +33,8 @@ import Icon5 from "../../public/img/about/icon_5.png";
 import arrow_btn from "../../public/whiteArrow.svg";
 import arrow from "../../public/arrow.svg";
 import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
-import DesktopBanner from "../../public/img/about/desktop_banner.jpg";
+import DesktopBanner from "../../public/img/finalBanners/about-us-banner_final.jpg";
+import MobileBanner from "../../public/img/mobileBanners/about mobile 360x640.jpg";
 import dummyLogo from "../../public/nationalLogo.png";
 // DATA //
 import { getAwards } from "@/services/awardsService";
@@ -84,7 +85,7 @@ export default function AboutPage({ awardsData }) {
 				<Breadcrum linkTitle="About Us" link5={"we-are-svatantra/about-us"} />
 				<InnerBanner
 					desktopImage={DesktopBanner.src}
-					mobileImage={DesktopBanner.src}
+					mobileImage={MobileBanner.src}
 					bannerTitle="Enabling you to leave your mark on tomorrow"
 					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of the lowest interest rates in the country"
 				/>

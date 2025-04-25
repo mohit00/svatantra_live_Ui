@@ -24,7 +24,8 @@ import styles from "@/styles/pages/careers.module.scss";
 // IMAGES //
 import Girl1 from "../../public/img/careers/cr1.jpg";
 import Girl2 from "../../public/img/careers/cr2.jpg";
-import newBanner from "../../public/img/careers/newBanner.jpg";
+import desktopBanner from "../../public/img/finalBanners/Life_at_sva.jpg";
+import mobileBanner from "../../public/img/mobileBanners/life_at_sva.jpg";
 // SERVICES //
 import {
 	getEmployeeTestimonials,
@@ -58,8 +59,8 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 				<Breadcrum link5="careers" linkTitle={"Careers"} />
 				<InnerBanner
 					bannerTitle="Elevate your career and create a purpose-driven future"
-					desktopImage={newBanner.src}
-					mobileImage={newBanner.src}
+					desktopImage={desktopBanner.src}
+					mobileImage={mobileBanner.src}
 				/>
 				<Journey />
 				<WhyComponent />

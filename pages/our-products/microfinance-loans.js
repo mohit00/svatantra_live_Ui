@@ -25,8 +25,8 @@ import styles from "@/styles/pages/MicrofinanceLoans.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../../public/img/our-products/microfinance/banner_desktop.jpg";
-
+import banner_desktop from "../../public/img/finalBanners/Microfinance_product.jpg";
+import mobile_banner from "../../public/img/mobileBanners/microfinance_mobile.jpg";
 import identification from "../../public/img/our-products/microfinance/identification.svg";
 import training from "../../public/img/our-products/microfinance/training.svg";
 import disbursement from "../../public/img/our-products/microfinance/disbursement.svg";
@@ -346,7 +346,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_banner.src}
 					bannerTitle="Microfinance loans"
 				/>
 				<LoanAmount
