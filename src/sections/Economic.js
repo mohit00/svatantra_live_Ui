@@ -32,11 +32,11 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4, suffix: "M+", decimals: 2 },
-		{ end: 21170, suffix: " CR", decimals: 0 },
-		{ end: 13885, suffix: "CR", decimals: 0 },
-		{ end: 22135, suffix: "+", decimals: 0 },
-		{ end: 2024, suffix: "", decimals: 0 },
+		{ end: 4.05, suffix: "M+", decimals: 2 },
+		{ end: 12623, suffix: " CR", decimals: 0 },
+		{ end: 14902, suffix: "CR", decimals: 0 },
+		{ end: 23289, suffix: "+", decimals: 0 },
+		{ end: 2034, suffix: "", decimals: 0 },
 		{ end: 19, suffix: "", decimals: 0 },
 	];
 
