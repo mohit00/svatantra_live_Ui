@@ -124,7 +124,7 @@ export default function Economic() {
 										})}
 										<span>{countersData[1].suffix}</span>
 									</h4>
-									<h5 className="text_xs">Loans disbursed</h5>
+									<h5 className="text_xs">Loan disbursed FY 24-25</h5>
 								</div>
 								<img
 									src={counterImg.src}
@@ -144,7 +144,7 @@ export default function Economic() {
 										})}{" "}
 										<span>{countersData[2].suffix}</span>
 									</h4>
-									<h5 className="text_xs">AUM</h5>
+									<h5 className="text_xs">GLP</h5>
 								</div>
 								<img
 									src={counterImg.src}
