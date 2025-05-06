@@ -13,7 +13,7 @@ import JoinComponent from "@/pages/Contact/careers/Join";
 import Journey from "@/pages/Contact/careers/Journey";
 import TalentComponent from "@/pages/Contact/careers/Talent";
 import WhyComponent from "@/pages/Contact/careers/Why";
-
+import Footer2 from "@/components/Footer2";
 // PLUGINS //
 
 // STYLES //
@@ -23,9 +23,9 @@ import styles from "@/styles/pages/careers.module.scss";
 
 // IMAGES //
 import Girl1 from "../../public/img/careers/cr1.jpg";
-import Girl2 from "../../public/img/careers/cr2.jpg";
-import desktopBanner from "../../public/img/finalBanners/Life_at_sva.jpg";
-import mobileBanner from "../../public/img/mobileBanners/life_at_sva.jpg";
+import Girl2 from "../../public/img/newImg/careerNew.jpg";
+import desktopBanner from "../../public/img/newImg/careerBannerNew.jpg";
+import mobileBanner from "../../public/img/newImg/careerMobile.jpg";
 // SERVICES //
 import {
 	getEmployeeTestimonials,
@@ -133,11 +133,10 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										</ul>
 									</div>
 								</div>
-								<p className="text_sm opacity_8 ">
+								<p className="text_sm opacity_8 f_w_b">
 									By investing in our people, we invest in our future. We believe that
 									well-trained, empowered employees are the key to achieving our
-									ambitious goals and delivering exceptional results. (the above two
-									lines are striked out as they are repetitive)
+									ambitious goals and delivering exceptional results.
 								</p>
 							</div>
 						</div>
@@ -149,7 +148,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

@@ -4,7 +4,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 import InnerBanner from "@/components/InnerBanner";
 import ContactSection from "@/pages/Contact/contact/ContactSection";
@@ -47,7 +47,7 @@ export default function ContactPage() {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

@@ -8,7 +8,7 @@ import MetaTags from "@/components/MetaTags";
 import Popup from "@/components/Popup";
 import Breadcrumb from "@/components/Breadcrumb";
 import Button from "@/components/Buttons/Button";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 
 // PLUGINS //
@@ -391,7 +391,7 @@ export default function LeadershipPage({ leadershipsData }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

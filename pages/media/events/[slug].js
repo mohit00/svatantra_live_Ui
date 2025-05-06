@@ -94,11 +94,11 @@ export default function EventsUdaanPage({ data }) {
 						""
 					)}
 				</div>
-				{data?.result && data?.result_title ? (
+				{/* {data?.result && data?.result_title ? (
 					<AvantGarde resultTitle={data?.result_title} resultData={data?.result} />
 				) : (
 					""
-				)}
+				)} */}
 				{data?.table != null || data?.desc2 != null || data?.problems != null ? (
 					<div className="container">
 						<Eventinsti

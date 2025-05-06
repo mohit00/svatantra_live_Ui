@@ -9,6 +9,7 @@ import MetaTags from "@/components/MetaTags";
 import Button from "../../src/components/Buttons/Button";
 import { useForm } from "react-hook-form";
 import Breadcrum from "@/components/Breadcrumb";
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 
 // PLUGINS //
@@ -656,7 +657,7 @@ export default function CareerContactFormPage() {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

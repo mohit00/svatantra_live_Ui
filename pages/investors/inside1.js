@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Breadcrum from "@/components/Breadcrumb";
 import AccordianCommon from "@/components/AccordianCommon";
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 
 // PLUGINS //
@@ -229,7 +230,7 @@ export default function Inside1Page() {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

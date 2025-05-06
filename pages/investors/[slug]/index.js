@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Breadcrum from "@/components/Breadcrumb";
 import Button from "@/components/Buttons/Button";
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 
 // PLUGINS //
@@ -85,7 +86,7 @@ export default function SlugPage({ data }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import Breadcrum from "@/components/Breadcrumb";
 import InnerBanner from "@/components/InnerBanner";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 import TechnologyDriven from "@/sections/digitally-svatantra/TechnologyDriven";
 import StoriesOfSuccess from "@/sections/digitally-svatantra/StoriesOfSuccess";
@@ -62,7 +62,7 @@ export default function DigitallySvatantra({ successStoriesData }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }
