@@ -49,6 +49,7 @@ import finance from "../../public/img/finance.png";
 
 /** Homenews Section */
 export default function Homenews({ mediaMentionData, getAwardsData }) {
+	console.log(mediaMentionData, "ddddddddd");
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 	const [activeTab, setActiveTab] = useState("media");
@@ -196,6 +197,10 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 																	alt="box1"
 																	className={`${styles.mainImg}`}
 																/>
+
+																<div className={styles.logoBox}>
+																	<img src={StrapiImage(item.logo).url} />
+																</div>
 															</div>
 
 															<div className={`${styles.categoryBox}`}>
@@ -342,7 +347,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 				{selectedBlog && (
 					<div className={styles.popupContent}>
 						<img
-							src={StrapiImage(selectedBlog.thumbnail).url}
+							src={StrapiImage(selectedBlog.image).url}
 							alt="blog-image"
 							className="width_100"
 						/>
