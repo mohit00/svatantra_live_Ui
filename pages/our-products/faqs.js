@@ -19,8 +19,8 @@ import styles from "@/styles/pages/Faqs.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../../public/img/finalBanners/FAQs.jpg";
-import mobile_banner from "../../public/img/mobileBanners/faqs.jpg";
+import banner_desktop from "../../public/img/newImg/faqNew.jpg";
+import mobile_banner from "../../public/img/newImg/faqMobile.jpg";
 
 // SERVICES //
 import { getFaqs } from "@/services/connectWithUsService";

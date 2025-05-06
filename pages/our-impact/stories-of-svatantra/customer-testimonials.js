@@ -40,9 +40,9 @@ import { getCustomerTestimonials } from "@/services/impactService";
 /** Data Fetching  */
 
 // IMAGES //
-import banner_desktop from "../../../public/img/finalBanners/Customer_testimonial.jpg";
+import banner_desktop from "../../../public/img/newImg/csNew.jpg";
 // import banner_desktop from "../../../public/img/finalBanners/CSR.jpg";
-import mobile_banner from "../../../public/img/mobileBanners/Customer_testimonial.jpg";
+import mobile_banner from "../../../public/img/newImg/csMobileNew.jpg";
 import story_one from "../../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 import arrow_btn_popup from "../../../public/img/arrow_btn_popup.svg";

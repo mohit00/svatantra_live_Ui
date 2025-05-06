@@ -25,8 +25,8 @@ import styles from "@/styles/pages/MicrofinanceLoans.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../../public/img/finalBanners/Microfinance_product.jpg";
-import mobile_banner from "../../public/img/mobileBanners/microfinance_mobile.jpg";
+import banner_desktop from "../../public/img/newImg/microNew.jpg";
+import mobile_banner from "../../public/img/newImg/micreMobile.jpg";
 import identification from "../../public/img/our-products/microfinance/identification.svg";
 import training from "../../public/img/our-products/microfinance/training.svg";
 import disbursement from "../../public/img/our-products/microfinance/disbursement.svg";

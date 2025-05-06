@@ -12,9 +12,9 @@
 import styles from "@/styles/sections/digitally-svatantra/TechnologyDriven.module.scss";
 
 // IMAGES //
-import cashless from "../../../public/img/digitally-svatantra/cashless.jpg";
+import cashless from "../../../public/img/newImg/dsNew.jpg";
 import saksham from "../../../public/img/digitally-svatantra/saksham.jpg";
-import saathi from "../../../public/img/digitally-svatantra/saathi.jpg";
+import saathi from "../../../public/img/newImg/ds3New.jpg";
 
 // DATA //
 

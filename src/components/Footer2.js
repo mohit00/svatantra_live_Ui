@@ -238,15 +238,17 @@ export default function Footer() {
 			<div className="container">
 				<div className={`${styles.copyright}`}>
 					<p className="text_xs f_w_r color_white opacity_70">
-						Copyright ©2025, Svatantra. All rights reserve.
+						Copyright ©2025, Svatantra. All rights reserved.
 					</p>
 
 					{/* <hr className={`${styles.lastLine}`} /> */}
 
-					{/* <div className={`${styles.box2}`}>
-						<p className="text_xs f_w_r color_white opacity_70">Privacy Policy</p>
-						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
-					</div> */}
+					<div className={`${styles.box2}`}>
+						<a href="/disclaimer" target="_blank">
+							<p className="text_xs f_w_r color_white opacity_70">Disclaimer</p>
+						</a>
+						{/* <p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p> */}
+					</div>
 
 					{/* <a href="https://www.ting.in/" target="_blank">
 						<img src={ting.src} alt="tinglogo" />

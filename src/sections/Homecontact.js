@@ -87,9 +87,7 @@ export default function Homecontact({ formTitle }) {
 					<div className={`${styles.left}`} data-scroll>
 						<h1 className="text_xxxl pb_20 color_primary">Connect with us</h1>
 						<p className="text_sm pb_20 opacity_80">
-							Have questions or need support? We&lsquo;re here to guide and assist you
-							in building a brighter future. Reach out to us and take the first step
-							toward financial resilience and self-reliance.
+							Have questions or need support? We‘re here to guide and assist you.
 						</p>
 						<h3 className="text_md">
 							Toll free number: <br />
@@ -99,7 +97,7 @@ export default function Homecontact({ formTitle }) {
 					<div className={`${styles.right}`} data-scroll>
 						<ContactPageForm
 							formText={
-								"Fill in the details, and our team of experts will contact you to help bring your entrepreneurial vision to life."
+								"Fill in the details, and our team of experts will contact you. "
 							}
 						/>
 						{/* {formTitle ? (

@@ -4,7 +4,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 import InnerBanner from "@/components/InnerBanner";
 
@@ -142,7 +142,7 @@ export default function AboutPage({ awardsData }) {
 							We believe in a future driven by self-reliance and opportunity. Through
 							transparency, innovation, and entrepreneurial spirit, we aim to foster an
 							ecosystem for financial independence in rural and semi-urban India.{" "}
-							<br className="hidden_sm" /> The principles that drive Svatantra&#39;s
+							<br className="hidden_sm" /> The core values that drive Svatantra&#39;s
 							progress:
 						</h4>
 						<div className={`${styles.turning_section} f_w_j`}>
@@ -496,7 +496,7 @@ export default function AboutPage({ awardsData }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

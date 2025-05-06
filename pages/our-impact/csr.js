@@ -226,19 +226,12 @@ export default function csr() {
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
 							<h2 className="text_xxxl color_primary pb_20">
-								Driving positive change in communities through outreach activities
+								Driving positive change in communities through outreach activities:{" "}
 							</h2>
 							<p className="text_sm color_light_black opacity_8">
 								Svatantra has always been at the forefront of building communities and
 								creating a lasting impact through various initiatives that support the
-								financial and overall wellbeing of the people. Our commitment was
-								evident during the global pandemic which affected several lives and
-								livelihoods. During those unprecedented times, Svatantra undertook
-								several measures to ensure our employees and customers received all the
-								support needed for themselves and their families. From financial and
-								medical support to maintaining timely connections, we ensured our
-								employees and customers, especially rural women, remained in their best
-								of health.
+								financial and overall wellbeing of the people.
 							</p>
 						</div>
 						{drivingOne.map((row, rowIndex) => (
