@@ -29,13 +29,13 @@ import styles from "@/styles/pages/csr.module.scss";
 /** Data Fetching  */
 
 // IMAGES //
-import banner_desktop from "../../public/img/finalBanners/CSR.jpg";
-import mobile_banner from "../../public/img/mobileBanners/CSR 360x640.jpg";
-import img_one from "../../public/img/our-impact/csr/img_one.jpg";
-import img_two from "../../public/img/our-impact/csr/img_two.jpg";
-import img_three from "../../public/img/our-impact/csr/img_three.jpg";
-import img_four from "../../public/img/our-impact/csr/img_four.jpg";
-import img_five from "../../public/img/our-impact/csr/img_five.jpg";
+import banner_desktop from "../../public/img/newImg/csrNew.jpg";
+import mobile_banner from "../../public/img/newImg/csrMobile.jpg";
+import img_one from "../../public/img/newImg/csrImg1.jpg";
+import img_two from "../../public/img/newImg/csrImg2.jpg";
+import img_three from "../../public/img/newImg/csrImg3.jpg";
+import img_four from "../../public/img/newImg/csrImg4.jpg";
+import img_five from "../../public/img/newImg/csrImg5.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
 
 /** csr Page */
