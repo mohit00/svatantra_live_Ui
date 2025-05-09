@@ -126,7 +126,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 												Adapt to changing industry landscapes and contribute to our ongoing
 												success.
 											</li>
-											<li className="text_sm opacity_8">
+											<li className="text_sm opacity_8 st">
 												Deliver exceptional service and experiences to our clients.
 											</li>
 										</ul> */}
