@@ -110,13 +110,12 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<p className="text_sm opacity_8 pb_10">
 											Our commitment to employee development extends beyond the initial
 											onboarding phase. Through our innovative e-Gurukool platform,
-											employees have access to ongoing refresher courses and resources.
-											ensures our team stays up-to-date with industry best practices,
+											employees have access to ongoing refresher courses and resources
+											which ensures our team stays up-to-date with industry best practices,
 											emerging trends, and evolving company strategies, fostering a culture
-											of innovation. Furthermore, combining intensive training with digital
-											learning, empowers our employees to -
+											of innovation.
 										</p>
-										<ul>
+										{/* <ul>
 											<li className="text_sm opacity_8">
 												Develop a deep understanding of our company values and culture.
 											</li>
@@ -127,10 +126,10 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 												Adapt to changing industry landscapes and contribute to our ongoing
 												success.
 											</li>
-											<li className="text_sm opacity_8">
+											<li className="text_sm opacity_8 st">
 												Deliver exceptional service and experiences to our clients.
 											</li>
-										</ul>
+										</ul> */}
 									</div>
 								</div>
 								<p className="text_sm opacity_8 f_w_b">
