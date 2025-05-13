@@ -173,14 +173,15 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 				sections.forEach((section) => observer.unobserve(section));
 			};
 		}
-		const mainBox = document.querySelector(".mainBox");
+		const mainBox = document.querySelector(".mainContainer");
 		const stickyYear = document.querySelector(".stickyYear");
 		const mainBoxHeight = mainBox.offsetHeight;
+		console.log(mainBoxHeight, " mainBoxHeights");
 
 		/** */
 		const handleScroll = () => {
 			const windowTop = window.scrollY;
-			if (windowTop > mainBoxHeight) {
+			if (windowTop > mainBoxHeight - 250) {
 				stickyYear.style.opacity = 0;
 				console.log("yes");
 			} else {
@@ -252,7 +253,7 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 
 	return (
 		<section className={styles.JourneySup}>
-			<div className="container">
+			<div className="container mainContainer">
 				<h1 className="text_xxxl color_primary pb_30">
 					Building a legacy of growth and <br />
 					change
