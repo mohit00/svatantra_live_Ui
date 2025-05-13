@@ -175,11 +175,11 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 		}
 		const mainBox = document.querySelector(".mainContainer");
 		const stickyYear = document.querySelector(".stickyYear");
-		const mainBoxHeight = mainBox.offsetHeight;
-		console.log(mainBoxHeight, " mainBoxHeights");
 
 		/** */
 		const handleScroll = () => {
+			const mainBoxHeight = mainBox.offsetHeight;
+			console.log(mainBoxHeight, " mainBoxHeights");
 			const windowTop = window.scrollY;
 			if (windowTop > mainBoxHeight - 250) {
 				stickyYear.style.opacity = 0;
@@ -197,9 +197,10 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 			// 	}
 			// }
 		};
-
-		window.addEventListener("scroll", handleScroll);
-		handleScroll(); // check on load
+		setTimeout(() => {
+			window.addEventListener("scroll", handleScroll);
+			handleScroll(); // check on load
+		}, 500);
 	}, [isMobile]);
 
 	useEffect(() => {
