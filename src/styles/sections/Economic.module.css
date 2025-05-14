@@ -1,0 +1,86 @@
+@media (max-width: 991px) {
+  .economic .economic_wrapper .economic_info {
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+  }
+}
+.economic .economic_wrapper .economic_info .desc h6 {
+  opacity: 0.8;
+}
+.economic .economic_wrapper .economic_info .title h5 span {
+  color: #d60029;
+}
+.economic .economic_wrapper .counter {
+  padding: 15px;
+  border-radius: 12px;
+  grid-gap: 15px;
+  background-color: #efe4dc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 767px) {
+  .economic .economic_wrapper .counter {
+    grid-template-columns: 1fr 1fr;
+    padding: 0px;
+    background-color: unset;
+  }
+}
+.economic .economic_wrapper .counter .box {
+  width: 100%;
+  min-height: 140px;
+  border-radius: 12px;
+  padding: 0 20px;
+  background: rgb(82, 134, 195);
+  background: linear-gradient(120deg, rgb(82, 134, 195) 0%, rgb(40, 89, 169) 43%);
+  position: relative;
+}
+@media (max-width: 767px) {
+  .economic .economic_wrapper .counter .box {
+    padding: 0 10px;
+  }
+}
+.economic .economic_wrapper .counter .box .count {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .economic .economic_wrapper .counter .box .count {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
+.economic .economic_wrapper .counter .box .count .counterInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
+@media (max-width: 991px) {
+  .economic .economic_wrapper .counter .box .count .counterInfo span {
+    font-size: 28px;
+  }
+}
+.economic .economic_wrapper .counter .box .count h4 {
+  color: var(--color_white);
+}
+@media (max-width: 991px) {
+  .economic .economic_wrapper .counter .box .count h4 {
+    font-size: 28px;
+  }
+}
+.economic .economic_wrapper .counter .box .count h4 span {
+  color: var(--color_primary_tint);
+}
+.economic .economic_wrapper .counter .box .count h5 {
+  color: var(--color_white);
+}
+.economic .economic_wrapper .counter .box .count .counterImg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.economic .economic_wrapper .counter .box .count .mobile {
+  position: absolute;
+  bottom: 0;
+}/*# sourceMappingURL=Economic.module.css.map */

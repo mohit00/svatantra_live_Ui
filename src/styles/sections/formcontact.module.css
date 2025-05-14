@@ -1,0 +1,65 @@
+.form_section {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.form_section form {
+  padding-top: 20px;
+}
+@media (max-width: 767px) {
+  .form_section {
+    width: 100%;
+    padding: 20px;
+  }
+}
+.form_section .form_field {
+  position: relative;
+}
+.form_section .inputField {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+  padding: 16px 0px;
+  border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+}
+.form_section .inputField::-moz-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+  font-weight: 200;
+  opacity: 1;
+}
+.form_section .inputField::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+  font-weight: 200;
+  opacity: 1;
+}
+.form_section textarea {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+  padding: 16px 0px;
+  border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+}
+.form_section textarea::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+  font-weight: 200;
+  opacity: 1;
+}
+.form_section input::-webkit-outer-spin-button,
+.form_section input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form_section input[type=number] {
+  -moz-appearance: textfield;
+}/*# sourceMappingURL=formcontact.module.css.map */

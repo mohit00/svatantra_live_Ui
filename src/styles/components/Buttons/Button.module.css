@@ -1,0 +1,154 @@
+.btn_primary {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color_secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.btn_primary:hover {
+  transform: rotate(-45deg);
+  transition: 0.3s ease-in-out;
+}
+
+.btn_secondary {
+  display: inline-block;
+  background-color: transparent;
+}
+.btn_secondary .btn_outer_span {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2859a9;
+  padding: 0 25px;
+  border-radius: 50px;
+}
+.btn_secondary .btn_outer_span .btn_inner_circle {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.btn_secondary .btn_outer_span .btn_inner_circle:hover {
+  transition: 0.3s ease-in-out;
+}
+.btn_secondary .btn_outer_span .btn_inner_text {
+  background-color: transparent;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  margin: 0px 2px;
+  font-family: var(--font_secondary);
+}
+.btn_secondary .btn_outer_span .btn_inner_right {
+  opacity: 0;
+  transform: translateX(-15px);
+  position: relative;
+  width: 0px;
+}
+.btn_secondary .btn_outer_span:hover {
+  background-color: white;
+  border: 1px solid #2859a9;
+}
+.btn_secondary .btn_outer_span:hover svg path {
+  fill: var(--color_secondary);
+}
+.btn_secondary .btn_outer_span:hover .btn_inner_text {
+  padding: 12px 0;
+  color: var(--color_secondary);
+}
+.btn_secondary .btn_outer_span:hover .btn_inner_left {
+  opacity: 0;
+  transform: translateX(15px);
+  width: 0;
+}
+.btn_secondary .btn_outer_span:hover .btn_inner_right {
+  opacity: 1;
+  transform: translateX(0px);
+  width: 20px;
+}
+.btn_secondary.white .btn_outer_span button {
+  border: 0;
+  cursor: pointer;
+}
+.btn_secondary.white .btn_outer_span .btn_inner_text {
+  background-image: unset;
+  background-color: transparent;
+  padding: 12px 0;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  margin: 0px 2px;
+}
+
+.btn_five {
+  display: inline-block;
+  border-bottom: 1px solid #1e1e1e;
+}
+.btn_five .btn_outer_span {
+  display: inline-flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.btn_five .btn_outer_span .btn_inner_circle {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.btn_five .btn_outer_span .btn_inner_circle:hover {
+  transition: 0.3s ease-in-out;
+}
+.btn_five .btn_outer_span .btn_inner_text {
+  cursor: pointer;
+  line-height: 1 !important;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  transform: translateX(-20px);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+.btn_five .btn_outer_span .btn_inner_right {
+  opacity: 0;
+  transform: translateX(-15px);
+  position: relative;
+  width: 20px;
+}
+.btn_five .btn_outer_span:hover .btn_inner_text {
+  transform: translateX(15px);
+  transition: all 0.2s ease;
+}
+.btn_five .btn_outer_span:hover .btn_inner_left {
+  opacity: 0;
+  transform: translateX(15px);
+}
+.btn_five .btn_outer_span:hover .btn_inner_right {
+  opacity: 1;
+  transform: translateX(0px);
+  width: 20px;
+}
+.btn_five.white {
+  border-bottom: 1px solid #fff;
+}
+.btn_five.white .btn_inner_circle img {
+  filter: invert(1);
+}
+.btn_five.white .btn_inner_text {
+  color: #fff !important;
+}
+
+button.btn_primary,
+button.btn_secondary,
+button.btn_five {
+  border: none;
+}/*# sourceMappingURL=Button.module.css.map */

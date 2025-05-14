@@ -1,0 +1,104 @@
+.accordian .question .icon.active .line_color:nth-child(2), .accordian .question .icon .line_color:nth-child(2), .accordian .question .icon.active .line:nth-child(2), .accordian .question .icon .line:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordian .question {
+  display: flex;
+}
+
+.accordian {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 0 30px;
+  margin: 0 0 15px;
+}
+@media only screen and (max-width: 991px) {
+  .accordian {
+    padding: 20px 0 !important;
+    margin: 0 !important;
+  }
+}
+.accordian:first-of-type {
+  padding: 25px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.accordian .question {
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordian .question .text {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.accordian .question .text .Number {
+  font-size: 9px;
+  line-height: 10px;
+}
+.accordian .question .icon {
+  background-color: transparent;
+  width: 33px;
+  height: 33px;
+  background-color: #2859a9;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border-radius: 2px;
+}
+.accordian .question .icon .line {
+  background-color: var(--color_white);
+  height: 2px;
+  width: 40%;
+  transition: all 0.3s ease-in-out;
+}
+.accordian .question .icon .line:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.accordian .question .icon.active .line {
+  background-color: var(--color_white);
+  height: 2px;
+  width: 40%;
+}
+.accordian .question .icon .line_color {
+  background-color: var(--color_primary);
+  height: 2px;
+  width: 40%;
+  transition: all 0.3s ease-in-out;
+}
+.accordian .question .icon .line_color:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.accordian .question .icon.active .line_color {
+  background-color: var(--color_primary);
+  height: 2px;
+  width: 40%;
+}
+.accordian .ArrowIcon {
+  width: 20px;
+  transform: rotate(0deg);
+  transition: all 0.5s ease;
+}
+.accordian .ArrowIcon.active {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
+}
+.accordian .answer {
+  padding: 0px 25px 0;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 0.4s ease-in-out;
+}
+@media only screen and (max-width: 991px) {
+  .accordian .answer {
+    max-width: 100%;
+  }
+}
+.accordian .answer.active {
+  max-height: 200vh;
+  padding: 20px 25px 0;
+}/*# sourceMappingURL=Accordian.module.css.map */

@@ -1,0 +1,16 @@
+.blog_item {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+}
+.blog_item .desc {
+  display: -webkit-box;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}/*# sourceMappingURL=DummyComponent.module.css.map */

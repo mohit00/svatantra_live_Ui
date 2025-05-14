@@ -54,6 +54,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const [selectedBlog, setSelectedBlog] = useState(null);
 	const [activeTab, setActiveTab] = useState("media");
 	const [lenghtCount, setLenghtCount] = useState(4);
+	const [windowWidth, setWindowWidth] = useState();
 
 	/** */
 	const openPopup = (blog) => {
@@ -75,7 +76,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const mediaSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Default spacing between slides
-		slidesPerView: 3, // Default: Show 3 slides fully
+		slidesPerView: 1, // Default: Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -91,15 +92,11 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile screens: 1 slide visible
+				slidesPerView: 2, // Mobile screens: 1 slide visible
 				spaceBetween: 10, // Reduced spacing for smaller screens
 			},
-			991: {
-				slidesPerView: 3, // Medium screens: 2 slides visible
-				spaceBetween: 20, // Adjust spacing for tablets
-			},
 			1024: {
-				slidesPerView: 3, // Large screens: 3 slides visible
+				slidesPerView: 1, // Large screens: 3 slides visible
 				spaceBetween: 20, // Increased spacing for larger screens
 			},
 		},
@@ -108,7 +105,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const awardSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Adjust spacing between slides
-		slidesPerView: 3, // Show 3 slides fully
+		slidesPerView: 1, // Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -124,11 +121,8 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile screens
+				slidesPerView: 2, // Mobile screens
 				spaceBetween: 10, // Adjust spacing for mobile if needed
-			},
-			991: {
-				slidesPerView: 3, // iPad Air portrait mode (820px width)
 			},
 			1024: {
 				slidesPerView: 3, // Tablet and desktop view
@@ -140,13 +134,16 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		if (window.innerWidth < 767) {
 			setLenghtCount(3);
 		}
+		setWindowWidth(window.innerWidth);
 	}, []);
-
+	const filteredData = mediaMentionData?.data?.filter(
+		(item) => item?.showHomePage
+	);
 	return (
 		<section className={`${styles.Homenews} ptb_80`}>
 			<div className="container">
 				<div className={`${styles.mainBox}`}>
-					<h1 className="text_xxxl color_primary pb_10">Media Reports</h1>
+					<h1 className="text_xxxl color_primary pb_20">Media Reports</h1>
 					<div className={`${styles.category} pb_30`}>
 						<div className={`${styles.switchBox}`}>
 							<div
@@ -180,9 +177,9 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 					<div>
 						{activeTab == "media" ? (
 							<>
-								{mediaMentionData.data.length >= lenghtCount ? (
+								{windowWidth < 992 ? (
 									<Swiper {...mediaSettings}>
-										{mediaMentionData.data?.map((item, ind) => {
+										{filteredData?.map((item, ind) => {
 											const date = Moment(item.date).format("MMM DD, YYYY");
 											return (
 												<SwiperSlide key={ind}>
@@ -218,7 +215,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 									</Swiper>
 								) : (
 									<div className={styles.gridBx}>
-										{mediaMentionData.data?.map((item, ind) => {
+										{filteredData?.map((item, ind) => {
 											const date = Moment(item.date).format("MMM DD, YYYY");
 											return (
 												<div
@@ -306,7 +303,11 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 							</>
 						)}
 
-						<div className={`${styles.items}`}>
+						<div
+							className={`${styles.items} ${
+								activeTab == "media" ? styles.progressbx : ""
+							}`}
+						>
 							<div
 								className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
 							></div>

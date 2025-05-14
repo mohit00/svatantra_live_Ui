@@ -1,0 +1,31 @@
+.styleguide .color_palette {
+  display: flex;
+}
+
+.styleguide {
+  background-color: #ddd;
+  padding: 30px;
+  min-height: 100vh;
+}
+.styleguide section {
+  padding: 50px;
+  border: 1px solid #eee;
+  background-color: white;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.styleguide .color_palette {
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.styleguide .color_palette .cp_item {
+  padding: 15px;
+  margin: 10px;
+  color: white;
+}
+.styleguide .color_palette .btn_box {
+  margin-right: 20px;
+  display: flex;
+  gap: 10px;
+}/*# sourceMappingURL=Styleguide.module.css.map */

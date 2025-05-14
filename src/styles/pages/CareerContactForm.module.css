@@ -1,0 +1,185 @@
+@charset "UTF-8";
+.CareerContactFormPage {
+  /* Hide default checkbox */
+  /* Custom checkbox */
+  /* Checked state with tick */
+  /* Hover effect */
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.CareerContactFormPage .inputBox {
+  position: relative;
+  width: 100%;
+}
+.CareerContactFormPage .inputBox .field {
+  width: 100%;
+}
+.CareerContactFormPage .inputBox .error {
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  color: red;
+}
+.CareerContactFormPage .form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+  row-gap: 40px;
+}
+@media (max-width: 767px) {
+  .CareerContactFormPage .form {
+    grid-template-columns: 1fr;
+  }
+}
+.CareerContactFormPage .form input {
+  background-color: transparent;
+  border: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+}
+.CareerContactFormPage .form input::-moz-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+}
+.CareerContactFormPage .form input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+}
+.CareerContactFormPage .form input:focus {
+  outline: none;
+}
+.CareerContactFormPage .form select {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+}
+.CareerContactFormPage .form .file {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+}
+.CareerContactFormPage .form .inputFileData {
+  display: flex;
+}
+.CareerContactFormPage .consentCheckbox {
+  padding-top: 60px;
+  position: relative;
+}
+.CareerContactFormPage .consentCheckbox .error {
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  bottom: -35px;
+  left: 0;
+  color: red;
+}
+.CareerContactFormPage .consentCheckbox .mainDiv {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.CareerContactFormPage .consentCheckbox .mainDiv .box {
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+}
+.CareerContactFormPage .fileInput {
+  display: none;
+}
+.CareerContactFormPage .customFileInput {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(30, 49, 87);
+  width: 100%;
+  border: 0;
+  font-family: var(--font_secondary);
+  font-weight: 400;
+  color: #1e3157;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url(../../../public/img/upload.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  padding-left: 5px;
+}
+.CareerContactFormPage .checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.CareerContactFormPage .hiddenCheckbox {
+  display: none;
+}
+.CareerContactFormPage .customCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(30, 41, 59, 0.2);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.CareerContactFormPage .hiddenCheckbox:checked + .customCheckbox {
+  background-color: var(--color_primary);
+}
+.CareerContactFormPage .hiddenCheckbox:checked + .customCheckbox::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+}
+.CareerContactFormPage .customCheckbox:hover {
+  border-color: #0056b3;
+}
+.CareerContactFormPage .data {
+  width: 100%;
+  border-bottom: 1px solid rgba(30, 49, 87, 0.3);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.CareerContactFormPage .data p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font_secondary);
+  color: rgb(30, 49, 87);
+}
+.CareerContactFormPage .data .hiddenFileInput {
+  display: none;
+}
+.CareerContactFormPage .data .upload {
+  position: absolute;
+  top: 25%;
+  right: 2%;
+}
+.CareerContactFormPage input::-webkit-outer-spin-button,
+.CareerContactFormPage input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.CareerContactFormPage input[type=number] {
+  -moz-appearance: textfield;
+}/*# sourceMappingURL=CareerContactForm.module.css.map */

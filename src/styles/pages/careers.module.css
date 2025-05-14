@@ -1,0 +1,62 @@
+.CareersPage {
+  overflow: hidden;
+}
+.CareersPage .Committed h4 {
+  width: 82%;
+}
+@media (max-width: 992px) {
+  .CareersPage .Committed h4 {
+    width: 100%;
+  }
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section {
+  padding-bottom: 20px;
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section:last-child {
+  padding-bottom: 0;
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section .committed_img {
+  width: 55%;
+  padding-right: 40px;
+}
+@media (max-width: 767px) {
+  .CareersPage .Committed .committed_section_wrapper .committed_section .committed_img {
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section .committed_img img {
+  width: 100%;
+  border-radius: 12px;
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section .committed_info {
+  width: 45%;
+  padding-left: 20px;
+}
+@media (max-width: 767px) {
+  .CareersPage .Committed .committed_section_wrapper .committed_section .committed_info {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section:nth-child(even) .committed_img {
+  order: 1;
+  padding-right: 0;
+  padding-left: 40px;
+}
+@media (max-width: 767px) {
+  .CareersPage .Committed .committed_section_wrapper .committed_section:nth-child(even) .committed_img {
+    order: 0;
+    padding-left: 0;
+  }
+}
+.CareersPage .Committed .committed_section_wrapper .committed_section:nth-child(even) .committed_info {
+  padding-left: 0;
+  padding-right: 20px;
+}
+@media (max-width: 767px) {
+  .CareersPage .Committed .committed_section_wrapper .committed_section:nth-child(even) .committed_info {
+    padding-right: 0;
+  }
+}/*# sourceMappingURL=careers.module.css.map */
