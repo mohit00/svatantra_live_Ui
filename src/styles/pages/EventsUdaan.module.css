@@ -1,0 +1,147 @@
+.EventsUdaanPage .contentBox {
+  padding: 20px 0px 40px 0px;
+}
+.EventsUdaanPage .contentBox .titleBox {
+  display: flex;
+  gap: 80px;
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .contentBox .titleBox {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.EventsUdaanPage .contentBox .titleBox img {
+  border-radius: 12px;
+}
+.EventsUdaanPage .para {
+  padding-right: 200px;
+}
+@media (max-width: 991px) {
+  .EventsUdaanPage .para {
+    padding-right: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .para {
+    padding-right: 0px;
+  }
+}
+.EventsUdaanPage .results {
+  background-image: url(../../../public/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.EventsUdaanPage .results .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .results .box {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+}
+.EventsUdaanPage .results .box .box1 .row1 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(0, 114, 205);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.EventsUdaanPage .results .box .box1 .row2 {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.EventsUdaanPage .Institutes {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .Institutes {
+    padding-bottom: 50px;
+  }
+}
+.EventsUdaanPage .Institutes table {
+  width: 100%;
+  padding-bottom: 40px;
+}
+.EventsUdaanPage .Institutes table td {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.EventsUdaanPage .Institutes table td tr {
+  padding: 20px 0 20px 40px;
+  border-right: 1px solid white;
+  opacity: 80%;
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .Institutes table td tr {
+    padding: 20px 0 20px 5px;
+  }
+}
+.EventsUdaanPage .Institutes table td:nth-child(odd) {
+  background-color: rgb(239, 228, 220);
+}
+.EventsUdaanPage .Institutes table td:nth-child(even) {
+  background-color: white;
+}
+.EventsUdaanPage .points {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.EventsUdaanPage .points img {
+  margin-top: 8px;
+}
+.EventsUdaanPage .statements table {
+  width: 100%;
+  border: 12px;
+}
+.EventsUdaanPage .statements table .title {
+  background-color: rgb(0, 114, 205);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.EventsUdaanPage .statements table td {
+  display: flex;
+  background-color: white;
+}
+.EventsUdaanPage .statements table td tr:nth-child(1) {
+  width: 15%;
+}
+.EventsUdaanPage .statements table td tr:nth-child(2) {
+  width: 70%;
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .statements table td tr:nth-child(2) {
+    width: 58%;
+  }
+}
+.EventsUdaanPage .statements table td tr:nth-child(3) {
+  width: 15%;
+}
+.EventsUdaanPage .statements table .number {
+  padding-left: 40px;
+}
+@media (max-width: 767px) {
+  .EventsUdaanPage .statements table .number {
+    padding-left: 20px;
+  }
+}
+.EventsUdaanPage .statements .download {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.EventsUdaanPage .statements .download p {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}/*# sourceMappingURL=EventsUdaan.module.css.map */

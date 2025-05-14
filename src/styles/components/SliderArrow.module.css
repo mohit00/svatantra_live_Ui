@@ -1,0 +1,44 @@
+.arrowWrap {
+  display: flex;
+}
+
+.arrowWrap {
+  align-items: center;
+}
+
+.arrowWrap {
+  margin-left: 50px;
+  margin-top: 50px;
+  justify-content: flex-end;
+}
+@media (max-width: 991px) {
+  .arrowWrap {
+    margin-top: 30px;
+  }
+}
+.arrowWrap .arrow_next, .arrowWrap .arrow_prev {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin: 0 12px;
+}
+@media (max-width: 991px) {
+  .arrowWrap .arrow_next, .arrowWrap .arrow_prev {
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    margin: 0 5px;
+  }
+}
+.arrowWrap .arrow_next .arrow_img, .arrowWrap .arrow_prev .arrow_img {
+  filter: brightness(100);
+}
+.arrowWrap .arrow_prev {
+  transform: rotate(180deg);
+  background-color: var(--color_light_green);
+}
+.arrowWrap .arrow_next {
+  background-color: var(--color_primary);
+}/*# sourceMappingURL=SliderArrow.module.css.map */

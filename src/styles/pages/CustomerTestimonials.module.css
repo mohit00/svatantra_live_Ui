@@ -1,0 +1,84 @@
+.StoriesOfSvatantra_page {
+  position: relative;
+}
+.StoriesOfSvatantra_page .StoriesOfSvatantra_main {
+  padding: 100px 0px;
+}
+.StoriesOfSvatantra_page .StoriesOfSvatantra_main .box_wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+@media (max-width: 767px) {
+  .StoriesOfSvatantra_page .StoriesOfSvatantra_main .box_wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.StoriesOfSvatantra_page .StoriesOfSvatantra_main .box_wrap .box_item {
+  background-color: var(--color_white);
+  border-radius: 8px;
+  padding: 10px 10px 20px;
+}
+.StoriesOfSvatantra_page .StoriesOfSvatantra_main .box_wrap .box_item .content p {
+  width: 88%;
+}
+.StoriesOfSvatantra_page .StoriesOfSvatantra_main .box_wrap .box_item .content a {
+  width: 32px;
+}
+.StoriesOfSvatantra_page .StoriesOfSvatantra_main .box_wrap .box_item .playBtn {
+  cursor: pointer;
+  border: 1px solid rgba(30, 41, 59, 0.2);
+  border-radius: 50%;
+}
+.StoriesOfSvatantra_page :global(.popup_content) {
+  background-color: #2859a9;
+  padding: 80px 80px;
+}
+@media (max-width: 1199px) {
+  .StoriesOfSvatantra_page :global(.popup_content) {
+    padding: 50px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .StoriesOfSvatantra_page :global(.popup_content) {
+    padding: 50px 20px 30px;
+    width: 95%;
+  }
+}
+.StoriesOfSvatantra_page .PopupItem {
+  height: 350px;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+@media (max-width: 1199px) {
+  .StoriesOfSvatantra_page .PopupItem {
+    height: auto;
+  }
+}
+.StoriesOfSvatantra_page .PopupItem::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+.StoriesOfSvatantra_page .arrowSection {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  z-index: 1;
+}
+.StoriesOfSvatantra_page .arrowSection .customPrev,
+.StoriesOfSvatantra_page .arrowSection .customNext {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+.StoriesOfSvatantra_page .arrowSection .customPrev {
+  rotate: 180deg;
+}
+.StoriesOfSvatantra_page .frame {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.StoriesOfSvatantra_page .frame img {
+  width: 100%;
+}/*# sourceMappingURL=CustomerTestimonials.module.css.map */

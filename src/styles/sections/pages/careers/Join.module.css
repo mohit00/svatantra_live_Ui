@@ -1,0 +1,33 @@
+.join {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../../../../../public/img/careers/join_bg.jpg);
+}
+.join .join_section .join_info {
+  width: 60%;
+  padding-right: 100px;
+}
+@media (max-width: 992px) {
+  .join .join_section .join_info {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.join .join_section .join_img {
+  width: 40%;
+}
+@media (max-width: 992px) {
+  .join .join_section .join_img {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+.join .join_section .join_img img {
+  border-radius: 12px;
+}
+.join .BtnBx {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}/*# sourceMappingURL=Join.module.css.map */

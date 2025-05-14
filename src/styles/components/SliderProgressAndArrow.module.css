@@ -1,0 +1,49 @@
+.slider_progress_and_arrow_wrap .progress_bar_wrap {
+  position: relative;
+  min-height: 1px;
+}
+
+.slider_progress_and_arrow_wrap .progress_bar_wrap .progress_indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider_progress_and_arrow_wrap .arrowWrap, .slider_progress_and_arrow_wrap {
+  display: flex;
+}
+
+.slider_progress_and_arrow_wrap .arrowWrap, .slider_progress_and_arrow_wrap {
+  align-items: center;
+}
+
+.slider_progress_and_arrow_wrap {
+  min-height: 20px;
+  justify-content: space-between;
+}
+.slider_progress_and_arrow_wrap .progress_bar_wrap {
+  background-color: rgb(213, 213, 213);
+  height: 5px;
+  flex: 1;
+  border-radius: 10px;
+}
+.slider_progress_and_arrow_wrap .progress_bar_wrap .progress_indicator {
+  width: 90%;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+}
+.slider_progress_and_arrow_wrap .arrowWrap {
+  margin-left: 50px;
+}
+.slider_progress_and_arrow_wrap .arrowWrap .arrow_next, .slider_progress_and_arrow_wrap .arrowWrap .arrow_prev {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+.slider_progress_and_arrow_wrap .arrowWrap .arrow_prev {
+  transform: rotate(180deg);
+}/*# sourceMappingURL=SliderProgressAndArrow.module.css.map */

@@ -1,0 +1,81 @@
+.LoanAmount .right_box .box {
+  justify-content: space-between;
+  padding: 0 40px;
+  min-height: 80px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box .title {
+    width: 45%;
+  }
+}
+.LoanAmount .right_box .box .title h5 {
+  color: #014C26;
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box .desc {
+    width: 50%;
+  }
+}
+.LoanAmount .right_box .box.box_1 {
+  background-color: var(--color_white);
+}
+.LoanAmount .right_box .box.box_2 {
+  width: 90%;
+  margin-top: -15px;
+  background-color: var(--color_primary_tint);
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box.box_2 {
+    width: 95%;
+  }
+}
+.LoanAmount .right_box .box.box_2 .title h5 {
+  color: #014c26;
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box.box_2 .title {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box.box_2 .desc {
+    width: 45%;
+  }
+}
+.LoanAmount .right_box .box.box_2 .desc h6 {
+  color: #014c26;
+}
+.LoanAmount .right_box .box.box_3 {
+  width: 80%;
+  margin-top: -15px;
+  padding-bottom: 0;
+  background-color: var(--color_primary);
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box.box_3 {
+    width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box.box_3 .title {
+    width: 50%;
+  }
+}
+.LoanAmount .right_box .box.box_3 .title h5 {
+  color: #80cd66;
+}
+@media (max-width: 767px) {
+  .LoanAmount .right_box .box.box_3 .desc {
+    width: 45%;
+  }
+}
+.LoanAmount .right_box .box.box_3 .desc h6 {
+  color: #80cd66;
+}/*# sourceMappingURL=LoanAmount.module.css.map */

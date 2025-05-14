@@ -1,0 +1,254 @@
+.LeadershipPage .Sec1 {
+  padding-bottom: 80px;
+}
+.LeadershipPage .Sec1 .AnanyaIntro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-radius: 10px;
+  padding: 50px;
+  background-image: url(../../../public/img/leadership/Sec1_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1199px) {
+  .LeadershipPage .Sec1 .AnanyaIntro {
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 992px) {
+  .LeadershipPage .Sec1 .AnanyaIntro {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .LeadershipPage .Sec1 .AnanyaIntro {
+    padding: 30px;
+    gap: 100px;
+  }
+}
+.LeadershipPage .Sec1 .AnanyaIntro .Left {
+  width: 50%;
+}
+@media screen and (max-width: 992px) {
+  .LeadershipPage .Sec1 .AnanyaIntro .Left {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .LeadershipPage .Sec1 .AnanyaIntro .Left .DetailsHead {
+    padding-bottom: 20px;
+  }
+}
+.LeadershipPage .Sec1 .AnanyaIntro .Right {
+  width: 44%;
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  .LeadershipPage .Sec1 .AnanyaIntro .Right {
+    width: 100%;
+  }
+}
+.LeadershipPage .Sec1 .AnanyaIntro .Right .AnanyaImg {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 992px) {
+  .LeadershipPage .Sec1 .AnanyaIntro .Right .AnanyaImg {
+    bottom: -50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .LeadershipPage .Sec1 .AnanyaIntro .Right .AnanyaImg {
+    bottom: -30px;
+  }
+}
+.LeadershipPage .Sec1 .AnanyaIntro .Right img {
+  margin-left: auto;
+}
+@media screen and (max-width: 992px) {
+  .LeadershipPage .Sec1 .AnanyaIntro .Right img {
+    margin-left: unset;
+    margin: auto;
+  }
+}
+.LeadershipPage .ChangeMakers .GridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 50px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  z-index: 1;
+  position: relative;
+}
+@media only screen and (max-width: 1199px) {
+  .LeadershipPage .ChangeMakers .GridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .LeadershipPage .ChangeMakers .GridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .LeadershipPage .ChangeMakers .GridContainer {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+}
+.LeadershipPage .ChangeMakers .GridContainer .GridItem .ImgBx {
+  position: relative;
+}
+.LeadershipPage .ChangeMakers .GridContainer .GridItem .ImgBx .box_btn {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+@media only screen and (max-width: 1200px) {
+  .LeadershipPage .ChangeMakers .GridContainer .GridItem .ImgBx .box_btn {
+    padding-top: 5px;
+  }
+}
+.LeadershipPage .ChangeMakers .GridContainer .GridItem .ImgBx .box_btn .btn_primary {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color_white);
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.LeadershipPage .ChangeMakers .GridContainer .GridItem .ImgBx .box_btn .btn_primary img {
+  width: 15px;
+}
+.LeadershipPage .ChangeMakers .GridContainer .GridItem .DetailsBx {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 767px) {
+  .LeadershipPage .ChangeMakers .GridContainer .GridItem .DetailsBx .Details {
+    min-height: unset;
+  }
+}
+.LeadershipPage .ChangeMakers .GridContainer .GridItem .DetailsBx .Details .Name {
+  line-height: 1.2;
+  padding-bottom: 5px;
+}
+.LeadershipPage .paraWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+  padding: 0;
+}
+.LeadershipPage .show {
+  max-height: 250px;
+}
+@media screen and (max-width: 767px) {
+  .LeadershipPage .show {
+    max-height: 270px;
+  }
+}
+.LeadershipPage .PopupItem {
+  overflow: auto;
+  color: var(--color_light_black);
+  display: flex !important;
+  gap: 50px;
+}
+@media only screen and (max-width: 1200px) {
+  .LeadershipPage .PopupItem {
+    padding: 0 10px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .LeadershipPage .PopupItem {
+    flex-direction: column;
+    margin-left: -1px;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .LeadershipPage .PopupItem {
+    padding: 0 5px;
+  }
+}
+.LeadershipPage .PopupItem::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+  background: var(--color_white);
+}
+.LeadershipPage .PopupItem .ImgBx {
+  width: 40%;
+  position: sticky;
+  top: 0;
+  flex: 1;
+}
+@media only screen and (max-width: 992px) {
+  .LeadershipPage .PopupItem .ImgBx {
+    flex: unset;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .LeadershipPage .PopupItem .ImgBx {
+    width: 100%;
+  }
+}
+.LeadershipPage .PopupItem .ImgBx img {
+  width: 100%;
+}
+.LeadershipPage .PopupItem .ImgBx .LinksBx .Link .MainLink {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.LeadershipPage .PopupItem .ImgBx .LinksBx .Link .MainLink .EmailId {
+  border-bottom: 1px solid #1e1e1e;
+}
+.LeadershipPage .PopupItem .ImgBx .LinksBx .Link .MainLink img {
+  width: 30px;
+}
+@media (max-width: 767px) {
+  .LeadershipPage .PopupItem .ImgBx .Details .Name {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .LeadershipPage .PopupItem .ImgBx .Details .Designation {
+    font-size: 18px;
+  }
+}
+.LeadershipPage .PopupItem .DetailsBx {
+  width: 55%;
+  background-color: #f6efea;
+  padding: 30px 45px;
+}
+@media only screen and (max-width: 992px) {
+  .LeadershipPage .PopupItem .DetailsBx {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .LeadershipPage .PopupItem .DetailsBx {
+    overflow: hidden;
+    padding: 30px 30px;
+  }
+}
+.LeadershipPage .PopupItem .DetailsBx .box_btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 5px;
+}/*# sourceMappingURL=Leadership.module.css.map */

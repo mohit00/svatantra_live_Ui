@@ -1,0 +1,72 @@
+.InvestorIndexPage .StoriesOfSvatantra_main .box_wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+@media (max-width: 767px) {
+  .InvestorIndexPage .StoriesOfSvatantra_main .box_wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.InvestorIndexPage .StoriesOfSvatantra_main .box_wrap .box_item {
+  background-color: var(--color_white);
+  border-radius: 8px;
+  padding: 10px 10px 20px;
+}
+.InvestorIndexPage .StoriesOfSvatantra_main .box_wrap .box_item .content p {
+  width: 88%;
+}
+.InvestorIndexPage .StoriesOfSvatantra_main .box_wrap .box_item .content a {
+  width: 32px;
+}
+.InvestorIndexPage :global(.popup_content) {
+  background-color: #2859a9;
+  padding: 80px 80px;
+}
+@media (max-width: 1199px) {
+  .InvestorIndexPage :global(.popup_content) {
+    padding: 50px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .InvestorIndexPage :global(.popup_content) {
+    padding: 50px 20px 30px;
+    width: 95%;
+  }
+}
+.InvestorIndexPage .PopupItem {
+  height: 350px;
+  overflow: auto;
+}
+@media (max-width: 1199px) {
+  .InvestorIndexPage .PopupItem {
+    height: auto;
+  }
+}
+.InvestorIndexPage .PopupItem::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+.InvestorIndexPage .arrowSection {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  z-index: 1;
+}
+.InvestorIndexPage .arrowSection .customPrev,
+.InvestorIndexPage .arrowSection .customNext {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+.InvestorIndexPage .arrowSection .customPrev {
+  rotate: 180deg;
+}
+.InvestorIndexPage .frame {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.InvestorIndexPage .frame img {
+  width: 100%;
+}/*# sourceMappingURL=InvestorIndex.module.css.map */

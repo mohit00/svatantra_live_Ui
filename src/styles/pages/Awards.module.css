@@ -1,0 +1,106 @@
+.AwardsPage {
+  position: relative;
+}
+.AwardsPage .events_main .box_wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+@media (max-width: 1024px) {
+  .AwardsPage .events_main .box_wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .AwardsPage .events_main .box_wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.AwardsPage .events_main .box_wrap .box_item {
+  margin-bottom: 20px;
+}
+.AwardsPage .events_main .box_wrap .box_item .imgBox {
+  background-color: var(--color_white);
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 225px;
+}
+@media (max-width: 991px) {
+  .AwardsPage .events_main .box_wrap .box_item .imgBox {
+    height: 150px;
+    padding: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .AwardsPage .events_main .box_wrap .box_item .imgBox {
+    height: 170px;
+    padding: 0px;
+  }
+}
+.AwardsPage .events_main .box_wrap .box_item .imgBox img {
+  height: 100%;
+}
+.AwardsPage .btn_secondary {
+  display: inline-block;
+  cursor: pointer;
+}
+.AwardsPage .btn_secondary .btn_outer_span {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2859a9;
+  padding: 12px 25px;
+  border-radius: 50px;
+}
+.AwardsPage .btn_secondary .btn_outer_span .btn_inner_circle {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.AwardsPage .btn_secondary .btn_outer_span .btn_inner_circle:hover {
+  transition: 0.3s ease-in-out;
+}
+.AwardsPage .btn_secondary .btn_outer_span .btn_inner_text {
+  background-color: transparent;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  margin: 0px 2px;
+  font-family: var(--font_secondary);
+}
+.AwardsPage .btn_secondary .btn_outer_span .btn_inner_right {
+  opacity: 0;
+  transform: translateX(-15px);
+  position: relative;
+  width: 0px;
+}
+.AwardsPage .btn_secondary .btn_outer_span:hover .btn_inner_left {
+  opacity: 0;
+  transform: translateX(15px);
+  width: 0;
+}
+.AwardsPage .btn_secondary .btn_outer_span:hover .btn_inner_right {
+  opacity: 1;
+  transform: translateX(0px);
+  width: 20px;
+}
+.AwardsPage .btn_secondary.white .btn_outer_span button {
+  border: 0;
+  cursor: pointer;
+}
+.AwardsPage .btn_secondary.white .btn_outer_span .btn_inner_text {
+  background-image: unset;
+  background-color: transparent;
+  padding: 12px 0;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  margin: 0px 2px;
+}/*# sourceMappingURL=Awards.module.css.map */

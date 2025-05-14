@@ -1,0 +1,102 @@
+.JourneySup .mainBox {
+  border-radius: 20px;
+  display: flex;
+  padding: 90px 70px;
+  overflow: hidden;
+  align-items: start;
+  flex-direction: column;
+  align-items: stretch;
+  background-image: url(../../../public/img/journey/Journey_bg.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  margin-bottom: 80px;
+}
+.JourneySup .mainBox .contentBox .box1 {
+  position: relative;
+  padding: 0px 0px 100px 150px;
+  display: flex;
+  gap: 50px;
+}
+.JourneySup .mainBox .contentBox .box1 .stickyNumberWrapper {
+  position: relative;
+  top: 80px;
+}
+.JourneySup .mainBox .contentBox .box1 .number {
+  position: relative;
+  left: 10px;
+  top: -40px;
+  font-size: 130px;
+  font-family: var(--font_primary);
+  color: #0065b6;
+}
+.JourneySup .mainBox .contentBox .box1 .content img {
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.JourneySup .column {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  left: 0%;
+  width: 50%;
+  padding-left: 100px;
+  position: relative;
+  top: 0;
+}
+.JourneySup .year20 {
+  position: absolute;
+  top: -40px;
+  font-size: 130px;
+  font-family: var(--font_primary);
+  color: black;
+  left: -20px;
+}
+.JourneySup .content2 {
+  display: flex;
+  flex-direction: column;
+}
+.JourneySup .ipadJourneyDiv .mainBoxIpad {
+  border-radius: 20px;
+}
+.JourneySup .ipadJourneyDiv .mainBoxIpad .contentIpad {
+  padding: 20px 20px;
+}
+.JourneySup .ipadJourneyDiv .mainBoxIpad .contentIpad img {
+  width: 100%;
+}
+.JourneySup .ipadJourneyDiv .stickyYearMobile {
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+  width: 100%;
+  border-radius: 20px;
+  background: #b8cfe2;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 767px) {
+  .JourneySup .ipadJourneyDiv .stickyYearMobile {
+    top: 115px;
+  }
+}
+.JourneySup .ipadJourneyDiv .number {
+  font-size: 130px;
+  font-family: var(--font_primary);
+  color: #0065b6;
+}
+@media (max-width: 767px) {
+  .JourneySup .ipadJourneyDiv .number {
+    font-size: 50px;
+  }
+}
+.JourneySup .ipadJourneyDiv .opacityZero {
+  opacity: 0;
+}
+.JourneySup .ipadJourneyDiv .box.btmBrd {
+  border-bottom: 1px solid #000;
+}/*# sourceMappingURL=JourneySup.module.css.map */
