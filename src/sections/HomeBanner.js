@@ -156,7 +156,7 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 					</div>
 					<div className={styles.info_wrapper}>
 						<div className={styles.info}>
-							<h1 className="section_title">
+							<h1 className="section_title testing">
 								Building the <span>Entrepreneurs</span> <br className="hidden-xs" />{" "}
 								that build India’s economy
 							</h1>
