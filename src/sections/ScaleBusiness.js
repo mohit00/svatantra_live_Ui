@@ -97,6 +97,21 @@ export default function ScaleBusiness() {
 
 		return () => stopAutoplay();
 	}, []);
+	useEffect(() => {
+		const interval = setInterval(() => {
+			const pulseElements = document.querySelectorAll(".pulse");
+
+			pulseElements.forEach((el) => {
+				el.classList.add("pulseActive0");
+
+				setTimeout(() => {
+					el.classList.remove("pulseActive0");
+				}, 500); // remove after 0.3s
+			});
+		}, 1000); // repeat every 0.6s
+
+		return () => clearInterval(interval);
+	}, []);
 	return (
 		<section className={styles.ScaleBusiness} name="OurFinance">
 			<div className="container">
