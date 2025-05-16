@@ -194,9 +194,9 @@
 			// flex-direction: column;
 			align-items: center;
 			margin-top: 30px;
-			.progressbx {
+			&.progressbx {
 				display: none;
-				@media (max-width: 767px) {
+				@media (max-width: 992px) {
 					display: block;
 				}
 			}
