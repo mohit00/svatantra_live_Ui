@@ -357,7 +357,7 @@ export default function AboutPage({ awardsData }) {
 						<p className="text_sm opacity_80">
 							Many industry accolades have recognized our commitment to innovation and
 							empowerment, <br className="hidden_sm" /> reinforcing our mission to
-							empower grassroots entrepreneurs.
+							power grassroots entrepreneurs.
 						</p>
 						<div className={`${styles.talent_section}`}>
 							<div className="pt_40">
