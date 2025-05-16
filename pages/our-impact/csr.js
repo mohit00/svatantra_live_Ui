@@ -72,7 +72,7 @@ export default function csr() {
 				"An initiative that takes necessary measures for reducing inequalities faced by socially and economically backward groups.",
 		},
 		{
-			title: "Empowering Tribal Children:",
+			title: "Educating Tribal Children:",
 			desc:
 				"Bringing classrooms closer to tribal communities, creating pathways to brighter tomorrows.",
 		},

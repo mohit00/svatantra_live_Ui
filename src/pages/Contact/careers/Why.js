@@ -27,7 +27,7 @@ export default function WhyComponent() {
 		{
 			title: "People-driven:",
 			desc:
-				"We are a people-driven organisation where every individual is valued, supported and empowered to advance their careers and achieve their goals. ",
+				"We are a people-driven organisation where every individual is valued, supported and well-equipped to advance their careers and achieve their goals. ",
 		},
 		{
 			title: "Growth opportunities:",

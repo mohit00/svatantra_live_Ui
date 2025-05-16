@@ -73,7 +73,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				icon: training.src,
 				title: "Training",
 				description:
-					"Conduct workshops on financial literacy to help prospective customers develop money management skills.",
+					"Conduct workshops on financial literacy to ensure prospective customers develop money management skills.",
 			},
 			{
 				icon: disbursement.src,

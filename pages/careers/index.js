@@ -76,7 +76,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 								of success. This commitment begins with investing in our employees,
 								ensuring they are well-trained, highly skilled, and fully aligned to
 								delivering excellence at every touchpoint. Our comprehensive training
-								programs are designed to empower teams with diverse skills and
+								programs are designed to equip teams with diverse skills and
 								perspectives, enabling them to excel and contribute meaningfully to our
 								shared goals.
 							</h4>
@@ -134,7 +134,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 								</div>
 								<p className="text_sm opacity_8 f_w_b">
 									By investing in our people, we invest in our future. We believe that
-									well-trained, empowered employees are the key to achieving our
+									well-trained, purpose-driven employees are the key to achieving our
 									ambitious goals and delivering exceptional results.
 								</p>
 							</div>
