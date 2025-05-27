@@ -19,7 +19,8 @@ import styles from "@/styles/pages/Faqs.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../../public/img/faq/banner_desktop.jpg";
+import banner_desktop from "../../public/img/newImg/faqNew.jpg";
+import mobile_banner from "../../public/img/newImg/faqMobile.jpg";
 
 // SERVICES //
 import { getFaqs } from "@/services/connectWithUsService";
@@ -69,7 +70,7 @@ export default function Faqs({ faqData }) {
 				<Breadcrum link5="/our-products/faqs" linkTitle={"Faqs"} />
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_banner.src}
 					bannerTitle="FAQs"
 				/>
 				<section className={`${styles.faqs_main} ptb_80`}>

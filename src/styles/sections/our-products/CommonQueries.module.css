@@ -1,0 +1,60 @@
+.CommonQueries .common_queries_flex .title_wrap {
+  width: 25%;
+}
+.CommonQueries .common_queries_flex .title_wrap h2 {
+  position: sticky;
+  top: 100px;
+}
+@media (max-width: 991px) {
+  .CommonQueries .common_queries_flex .title_wrap {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+.CommonQueries .common_queries_flex .common_queries_faq {
+  width: 70%;
+}
+@media (max-width: 991px) {
+  .CommonQueries .common_queries_flex .common_queries_faq {
+    width: 100%;
+  }
+}
+.CommonQueries .brochureBg {
+  align-items: center;
+  border-radius: 10px;
+  padding: 40px 100px;
+  margin-top: 80px;
+  background-image: url(../../../../public/img/our-products/microfinance/bg_one.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1199px) {
+  .CommonQueries .brochureBg {
+    padding: 40px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .CommonQueries .brochureBg {
+    padding: 30px 20px;
+  }
+}
+.CommonQueries .brochureBg .brochureTxt {
+  width: 55%;
+}
+@media (max-width: 767px) {
+  .CommonQueries .brochureBg .brochureTxt {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.CommonQueries .brochureBg .brochureBtn {
+  width: 40%;
+  text-align: right;
+}
+@media (max-width: 767px) {
+  .CommonQueries .brochureBg .brochureBtn {
+    width: 100%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=CommonQueries.module.css.map */

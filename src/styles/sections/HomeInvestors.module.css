@@ -1,0 +1,132 @@
+.HomeInvestors .title_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .HomeInvestors .title_wrap {
+    gap: 10px;
+    align-items: end;
+  }
+}
+.HomeInvestors .box_wrap .box_item {
+  background-color: var(--color_white);
+  border-radius: 8px;
+  padding: 10px 10px 20px;
+}
+.HomeInvestors .box_wrap .box_item .content {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+@media (max-width: 992px) {
+  .HomeInvestors .box_wrap .box_item .content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.HomeInvestors .box_wrap .box_item .content p {
+  width: 88%;
+}
+@media (max-width: 992px) {
+  .HomeInvestors .box_wrap .box_item .content p {
+    height: 65px;
+  }
+}
+@media (max-width: 767px) {
+  .HomeInvestors .box_wrap .box_item .content p {
+    height: unset;
+  }
+}
+.HomeInvestors .box_wrap .box_item .content a {
+  width: 32px;
+}
+.HomeInvestors :global(.swiper-pagination1) {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin-top: 50px;
+}
+@media (max-width: 767px) {
+  .HomeInvestors :global(.swiper-pagination1) {
+    width: 68vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .HomeInvestors :global(.swiper-pagination1) {
+    width: 85%;
+  }
+}
+.HomeInvestors :global(.swiper-pagination1) span {
+  background-color: var(--color_black);
+}
+.HomeInvestors :global(.swiper) {
+  height: 100%;
+}
+.HomeInvestors :global(.swiper-slide) {
+  height: auto !important;
+}
+.HomeInvestors :global(.swiper-content) {
+  height: 100% !important;
+}
+.HomeInvestors :global(#customPrev) {
+  width: 37px;
+  height: 37px;
+  border: 2px solid rgba(221, 221, 221, 0.8666666667);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(360deg) !important;
+  position: relative;
+  left: -25px;
+}
+.HomeInvestors :global(#customNext) {
+  width: 37px;
+  height: 37px;
+  border: 2px solid rgba(221, 221, 221, 0.8666666667);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(360deg) !important;
+  position: relative;
+  left: -15px;
+}
+.HomeInvestors :global(.swiper-pagination-progressbar) {
+  top: unset;
+  width: 85%;
+  height: 2px;
+  left: 13px;
+}
+@media (max-width: 991px) {
+  .HomeInvestors :global(.swiper-pagination-progressbar) {
+    width: 82%;
+  }
+}
+@media (max-width: 767px) {
+  .HomeInvestors :global(.swiper-pagination-progressbar) {
+    width: 65%;
+    left: 12px;
+  }
+}
+.HomeInvestors .arrowSection {
+  position: absolute;
+  right: 0px;
+  bottom: -15px;
+}
+@media (max-width: 767px) {
+  .HomeInvestors .arrowSection {
+    right: 15px;
+  }
+}
+.HomeInvestors .arrowSection .customPrev,
+.HomeInvestors .arrowSection .customNext {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .HomeInvestors .arrowSection .customPrev,
+  .HomeInvestors .arrowSection .customNext {
+    width: 40px;
+  }
+}/*# sourceMappingURL=HomeInvestors.module.css.map */

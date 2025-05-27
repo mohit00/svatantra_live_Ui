@@ -93,14 +93,12 @@ export default function EventsUdaanPage({ data }) {
 					) : (
 						""
 					)}
-
-					{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
 				</div>
-				{data?.result && data?.result_title ? (
+				{/* {data?.result && data?.result_title ? (
 					<AvantGarde resultTitle={data?.result_title} resultData={data?.result} />
 				) : (
 					""
-				)}
+				)} */}
 				{data?.table != null || data?.desc2 != null || data?.problems != null ? (
 					<div className="container">
 						<Eventinsti
@@ -112,6 +110,9 @@ export default function EventsUdaanPage({ data }) {
 				) : (
 					""
 				)}
+				<div className="container">
+					{data?.gallery_img && <Udaangallery imageData={data?.gallery_img} />}
+				</div>
 			</main>
 			{/* Page Content ends here */}
 

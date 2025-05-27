@@ -15,10 +15,12 @@
 	ul {
 		padding-left: 14px;
 		li {
-			font-size: 20px;
-			line-height: 1.4;
-			font-weight: 400;
-			color: #201c1c;
+			font-size: 18px;
+			line-height: 1.6;
+			font-weight: 500;
+			color: #1e1e1e;
+			margin-bottom: 15px;
+			opacity: 0.8;
 			&::marker {
 				font-size: 25px;
 				color: var(--color_secondary_tint);

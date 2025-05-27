@@ -13,7 +13,7 @@ import Button from "@/components/Buttons/Button";
 import styles from "@/styles/sections/pages/careers/Join.module.scss";
 
 // IMAGES //
-import JoinImg from "../../../../public/img/careers/join_img.jpg";
+import JoinImg from "../../../../public/img/careers/join_img2.jpg";
 
 // DATA //
 
@@ -38,6 +38,13 @@ export default function JoinComponent() {
 								title={"Join Us"}
 								isHref={true}
 								link={"/careers/job-opening"}
+							/>
+							<Button
+								buttonType="five"
+								condition={"white"}
+								title={"Disclaimer"}
+								isHref={true}
+								link={"/careers-disclaimer"}
 							/>
 						</div>
 					</div>

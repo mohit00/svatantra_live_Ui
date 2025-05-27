@@ -1,0 +1,54 @@
+.contentFromCms p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #1e1e1e;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+.contentFromCms strong {
+  font-weight: 600;
+}
+.contentFromCms ul {
+  padding-left: 14px;
+}
+.contentFromCms ul li {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #1e1e1e;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+.contentFromCms ul li::marker {
+  font-size: 25px;
+  color: var(--color_secondary_tint);
+  line-height: 1;
+}
+.contentFromCms h1,
+.contentFromCms h2,
+.contentFromCms h3,
+.contentFromCms h4,
+.contentFromCms h5,
+.contentFromCms h6 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+@media (max-width: 1699px) {
+  .contentFromCms h1,
+  .contentFromCms h2,
+  .contentFromCms h3,
+  .contentFromCms h4,
+  .contentFromCms h5,
+  .contentFromCms h6 {
+    font-size: 20px;
+  }
+}
+.contentFromCms h5 {
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.8;
+  font-weight: 800;
+  color: #1e1e1e;
+}/*# sourceMappingURL=ContentFromCms.module.css.map */

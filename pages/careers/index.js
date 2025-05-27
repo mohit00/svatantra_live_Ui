@@ -13,7 +13,7 @@ import JoinComponent from "@/pages/Contact/careers/Join";
 import Journey from "@/pages/Contact/careers/Journey";
 import TalentComponent from "@/pages/Contact/careers/Talent";
 import WhyComponent from "@/pages/Contact/careers/Why";
-
+import Footer2 from "@/components/Footer2";
 // PLUGINS //
 
 // STYLES //
@@ -22,9 +22,10 @@ import styles from "@/styles/pages/careers.module.scss";
 // UTILS //
 
 // IMAGES //
-import Girl1 from "../../public/img/about/girl.jpg";
-import Girl2 from "../../public/img/about/girl2.jpg";
-import newBanner from "../../public/img/careers/newBanner.jpg";
+import Girl1 from "../../public/img/careers/cr1.jpg";
+import Girl2 from "../../public/img/newImg/careerNew.jpg";
+import desktopBanner from "../../public/img/newImg/careerBannerNew.jpg";
+import mobileBanner from "../../public/img/newImg/careerMobile.jpg";
 // SERVICES //
 import {
 	getEmployeeTestimonials,
@@ -58,8 +59,8 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 				<Breadcrum link5="careers" linkTitle={"Careers"} />
 				<InnerBanner
 					bannerTitle="Elevate your career and create a purpose-driven future"
-					desktopImage={newBanner.src}
-					mobileImage={newBanner.src}
+					desktopImage={desktopBanner.src}
+					mobileImage={mobileBanner.src}
 				/>
 				<Journey />
 				<WhyComponent />
@@ -67,15 +68,17 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 				<div>
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
-							<h2 className="section_title">
-								Committed to fueling your journey <br className="hidden_sm" /> towards
-								self-powered growth
+							<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
+								A Culture of Excellence Through Training and Development
 							</h2>
-							<h4 className="text_lg pt_20 pb_40 opacity_80">
-								At Svatantra, we are driven by a singular vision: to create a
-								self-powered system of growth. We believe in the transformative power of
-								grassroots entrepreneurship and are committed to championing the
-								individuals who fuel India’s economic rise.
+							<h4 className="text_sm opacity_8 pb_10 pb_30">
+								At Svatantra, we believe that a people-first culture is the cornerstone
+								of success. This commitment begins with investing in our employees,
+								ensuring they are well-trained, highly skilled, and fully aligned to
+								delivering excellence at every touchpoint. Our comprehensive training
+								programs are designed to equip teams with diverse skills and
+								perspectives, enabling them to excel and contribute meaningfully to our
+								shared goals.
 							</h4>
 							<div className={`${styles.committed_section_wrapper}`}>
 								<div className={`${styles.committed_section} f_r_aj_between f_w`}>
@@ -83,12 +86,16 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl1.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
+										<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
+											Comprehensive onboarding and <br className="hidden_sm" />
+											building strong foundations
+										</h2>
 										<p className="text_sm opacity_8">
-											Our purpose is to cultivate a new generation of entrepreneurs who
-											will shape India’s journey into a global economic superpower. Taking
-											every step forward, we strive to turn aspirations into
-											accomplishments, creating ripples of progress far beyond our own
-											world.
+											New employees embark on a 30-day intensive training program,
+											combining practical field experience with focused classroom learning.
+											This immersive approach enables every employee with a strong
+											foundation and essential skills in their respective fields,
+											establishing them up for success from day one itself.
 										</p>
 									</div>
 								</div>
@@ -97,26 +104,50 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 										<img src={Girl2.src} className="img-responsive" alt="Girl1" />
 									</div>
 									<div className={`${styles.committed_info}`}>
-										<p className="text_sm opacity_8">
-											Our purpose is to cultivate a new generation of entrepreneurs who
-											will shape India’s journey into a global economic superpower. Taking
-											every step forward, we strive to turn aspirations into
-											accomplishments, creating ripples of progress far beyond our own
-											world.
+										<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
+											Continuous learning with e-Gurukool to stay ahead of the curve
+										</h2>
+										<p className="text_sm opacity_8 pb_10">
+											Our commitment to employee development extends beyond the initial
+											onboarding phase. Through our innovative e-Gurukool platform,
+											employees have access to ongoing refresher courses and resources
+											which ensures our team stays up-to-date with industry best practices,
+											emerging trends, and evolving company strategies, fostering a culture
+											of innovation.
 										</p>
+										{/* <ul>
+											<li className="text_sm opacity_8">
+												Develop a deep understanding of our company values and culture.
+											</li>
+											<li className="text_sm opacity_8">
+												Master the necessary skills and knowledge to excel in their roles.
+											</li>
+											<li className="text_sm opacity_8">
+												Adapt to changing industry landscapes and contribute to our ongoing
+												success.
+											</li>
+											<li className="text_sm opacity_8 st">
+												Deliver exceptional service and experiences to our clients.
+											</li>
+										</ul> */}
 									</div>
 								</div>
+								<p className="text_sm opacity_8 f_w_b">
+									By investing in our people, we invest in our future. We believe that
+									well-trained, purpose-driven employees are the key to achieving our
+									ambitious goals and delivering exceptional results.
+								</p>
 							</div>
 						</div>
 					</section>
 				</div>
-				<TalentComponent data={talents} pdfTalent={pdfTalent} />
+				{/* <TalentComponent data={talents} pdfTalent={pdfTalent} /> */}
 				<JoinComponent />
 			</main>
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

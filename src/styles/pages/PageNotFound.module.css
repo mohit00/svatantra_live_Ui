@@ -1,0 +1,12 @@
+.PageNotFound {
+  height: 100vh;
+  padding: 0 15px;
+  display: grid;
+  place-items: center;
+}
+.PageNotFound .PageContent {
+  position: relative;
+}
+.PageNotFound img {
+  margin: 0 auto;
+}/*# sourceMappingURL=PageNotFound.module.css.map */

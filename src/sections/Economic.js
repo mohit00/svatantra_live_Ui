@@ -32,11 +32,11 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4, suffix: "M+", decimals: 2 },
-		{ end: 21170, suffix: " CR", decimals: 0 },
-		{ end: 13885, suffix: "CR", decimals: 0 },
-		{ end: 22135, suffix: "+", decimals: 0 },
-		{ end: 2024, suffix: "", decimals: 0 },
+		{ end: 4.05, suffix: "M+", decimals: 2 },
+		{ end: 12623, suffix: " CR", decimals: 0 },
+		{ end: 14902, suffix: "CR", decimals: 0 },
+		{ end: 23289, suffix: "+", decimals: 0 },
+		{ end: 2034, suffix: "", decimals: 0 },
 		{ end: 19, suffix: "", decimals: 0 },
 	];
 
@@ -124,7 +124,7 @@ export default function Economic() {
 										})}
 										<span>{countersData[1].suffix}</span>
 									</h4>
-									<h5 className="text_xs">Loans disbursed</h5>
+									<h5 className="text_xs">Loan disbursed FY 24-25</h5>
 								</div>
 								<img
 									src={counterImg.src}
@@ -144,7 +144,7 @@ export default function Economic() {
 										})}{" "}
 										<span>{countersData[2].suffix}</span>
 									</h4>
-									<h5 className="text_xs">AUM</h5>
+									<h5 className="text_xs">GLP</h5>
 								</div>
 								<img
 									src={counterImg.src}
@@ -216,11 +216,12 @@ export default function Economic() {
 					<div className={`${styles.economic_info} f_r_aj_between pt_30`}>
 						<div className={styles.desc}>
 							<h6 className="text_sm">
-								*Combined numbers of Svatantra Microfin Pvt. Ltd. & Chaitanya India
+								*Combined Numbers Of Svatantra Microfin Pvt. Ltd. & Chaitanya India (A
+								wholly-owned subsidiary of Svatantra)
 							</h6>
 						</div>
 						<div className={styles.title}>
-							<h5 className="text_reg opacity_80">
+							<h5 className="text_sm opacity_80">
 								<span>*CRISIL</span> A - (Stable Rating)
 							</h5>
 						</div>

@@ -1,0 +1,87 @@
+.DigitallySvatantra {
+  overflow: hidden;
+}
+.DigitallySvatantra .DigitalFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(var(--container_left_space) + var(--container_width) - 15px);
+  margin-left: auto;
+}
+@media screen and (max-width: 992px) {
+  .DigitallySvatantra .DigitalFlex {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.DigitallySvatantra .DigitalFlex .ContentBx {
+  width: 45%;
+  transform: translateX(-150%);
+}
+@media screen and (max-width: 1199px) {
+  .DigitallySvatantra .DigitalFlex .ContentBx {
+    width: 50%;
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .DigitallySvatantra .DigitalFlex .ContentBx {
+    width: 100%;
+  }
+}
+.DigitallySvatantra .DigitalFlex .ContentBx .BtnBx {
+  padding-top: 30px;
+}
+.DigitallySvatantra .DigitalFlex .ImgBx {
+  width: 50%;
+  position: relative;
+}
+@media screen and (max-width: 1199px) {
+  .DigitallySvatantra .DigitalFlex .ImgBx {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .DigitallySvatantra .DigitalFlex .ImgBx {
+    width: 100%;
+  }
+}
+.DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx {
+  position: relative;
+  padding-top: 60px;
+  width: 100%;
+  margin-left: auto;
+}
+.DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx .HandImg {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(10%, -15%);
+  z-index: 3;
+}
+@media screen and (max-width: 1199px) {
+  .DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx .HandImg {
+    width: 80%;
+    right: 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx .HandImg {
+    width: 80%;
+    margin-left: auto;
+  }
+}
+.DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx .DesignImg {
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 992px) {
+  .DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx .DesignImg {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .DigitallySvatantra .DigitalFlex .ImgBx .ImgInsideBx .DesignImg {
+    width: 85%;
+  }
+}/*# sourceMappingURL=DigitallySvatantra.module.css.map */

@@ -1,0 +1,97 @@
+.StoriesSuccess .StoriesFlex {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 992px) {
+  .StoriesSuccess .StoriesFlex {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.StoriesSuccess .StoriesFlex .StoriesBx {
+  width: 68%;
+}
+@media screen and (max-width: 1199px) {
+  .StoriesSuccess .StoriesFlex .StoriesBx {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .StoriesSuccess .StoriesFlex .StoriesBx {
+    width: 100%;
+  }
+}
+.StoriesSuccess .StoriesFlex .StoriesBx .StoriesSlider {
+  padding: 60px 50px;
+  border-radius: 10px;
+  background-color: #2859a9;
+  background-image: url(../../../public/img/home/SliderBgImg.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 767px) {
+  .StoriesSuccess .StoriesFlex .StoriesBx .StoriesSlider {
+    padding: 25px;
+    background-size: 60%;
+    background-position: bottom right;
+  }
+}
+.StoriesSuccess .StoriesFlex .StoriesBx .StoriesSlider .SliderItem .quote {
+  min-height: 190px;
+  padding: 20px 0 50px;
+}
+@media screen and (max-width: 767px) {
+  .StoriesSuccess .StoriesFlex .StoriesBx .StoriesSlider .SliderItem .quote {
+    padding: 17px 0 14px;
+  }
+}
+.StoriesSuccess .StoriesFlex .StoriesBx .StoriesSlider .SliderItem .Name {
+  font-size: 20px;
+  line-height: 1.2;
+}
+.StoriesSuccess .StoriesFlex .StoriesBx .arrowSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.StoriesSuccess .StoriesFlex .StoriesBx .arrowSection button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+.StoriesSuccess .StoriesFlex .FollowBx {
+  width: 28%;
+}
+@media screen and (max-width: 1199px) {
+  .StoriesSuccess .StoriesFlex .FollowBx {
+    width: 37%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .StoriesSuccess .StoriesFlex .FollowBx {
+    width: 100%;
+  }
+}
+.StoriesSuccess .StoriesFlex .FollowBx .SwiperSlide {
+  padding-bottom: 40px;
+}
+.StoriesSuccess .StoriesFlex .FollowBx .SwiperSlide .SliderItem {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.StoriesSuccess .StoriesFlex .FollowBx .SwiperSlide .SliderItem .SliderImgBx img {
+  width: 100%;
+  border-radius: 8px;
+}
+.StoriesSuccess .StoriesFlex .FollowBx .SwiperSlide .SliderItem .SliderContent .SliderTopFlex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 15px;
+}
+.StoriesSuccess .StoriesFlex .FollowBx .SwiperSlide .SliderItem .SliderContent .desc {
+  font-size: 14px;
+  font-weight: 500;
+}/*# sourceMappingURL=StoriesSuccess.module.css.map */

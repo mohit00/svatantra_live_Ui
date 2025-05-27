@@ -1,3 +1,138 @@
 @import "../helpers/helpers.scss";
-			
-.JourneySup{}
+
+.JourneySup {
+	.mainBox {
+		border-radius: 20px;
+		// background-color: #b8cfe2;
+		display: flex;
+		padding: 90px 70px;
+		overflow: hidden;
+		align-items: start;
+		// gap: 40px;
+		flex-direction: column;
+		align-items: stretch;
+		background-image: url(../../../public/img/journey/Journey_bg.jpg);
+		background-size: cover;
+		background-repeat: repeat;
+		background-position: center;
+		margin-bottom: 80px;
+		// .stickyYear {
+		// 	padding: 100px 0px;
+		// }
+		.contentBox {
+			// position: relative;
+			.box1 {
+				position: relative;
+				padding: 0px 0px 100px 150px;
+				display: flex;
+				// align-items: start;
+				gap: 50px;
+				// height: auto;
+
+				.stickyNumberWrapper {
+					position: relative;
+					top: 80px;
+				}
+
+				.number {
+					position: relative;
+					left: 10px;
+					top: -40px;
+					font-size: 130px;
+					font-family: var(--font_primary);
+					color: #0065b6;
+				}
+				.content {
+					// height: auto;
+					img {
+						border-radius: 20px;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+		// position: absolute;
+		// width: 100%;
+		// padding-left: 230px;position: absolute;
+		display: flex;
+		flex-direction: column;
+		left: 0%;
+		width: 50%;
+		padding-left: 100px;
+		position: relative;
+		top: 0;
+	}
+
+	.year20 {
+		position: absolute;
+		top: -40px;
+		font-size: 130px;
+		font-family: var(--font_primary);
+		color: black;
+		left: -20px;
+	}
+
+	.content2 {
+		display: flex;
+		flex-direction: column;
+		// height: auto;s
+	}
+
+	.ipadJourneyDiv {
+		.mainBoxIpad {
+			border-radius: 20px;
+
+			.contentIpad {
+				padding: 20px 20px;
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		.stickyYearMobile {
+			position: sticky;
+			top: 60px;
+			// background-color: #b8cfe2;
+			z-index: 10;
+			width: 100%;
+			border-radius: 20px;
+			background: #b8cfe2;
+			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+			backdrop-filter: blur(4px);
+			-webkit-backdrop-filter: blur(4px);
+			border-radius: 10px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			@media (max-width: 767px) {
+				top: 115px;
+			}
+		}
+
+		.number {
+			font-size: 130px;
+			font-family: var(--font_primary);
+			color: #0065b6;
+
+			@media (max-width: 767px) {
+				font-size: 50px;
+			}
+		}
+
+		.opacityZero {
+			opacity: 0;
+			// transition: opacity 0.3s ease;
+		}
+
+		.box {
+			// padding: 30px 0px;
+			&.btmBrd {
+				border-bottom: 1px solid #000;
+			}
+		}
+	}
+}

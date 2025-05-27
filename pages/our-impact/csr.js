@@ -29,36 +29,42 @@ import styles from "@/styles/pages/csr.module.scss";
 /** Data Fetching  */
 
 // IMAGES //
-import banner_desktop from "../../public/img/faq/banner_desktop.jpg";
-import img_one from "../../public/img/our-impact/csr/img_one.jpg";
-import img_two from "../../public/img/our-impact/csr/img_two.jpg";
-import img_three from "../../public/img/our-impact/csr/img_three.jpg";
-import img_four from "../../public/img/our-impact/csr/img_four.jpg";
-import img_five from "../../public/img/our-impact/csr/img_five.jpg";
+import banner_desktop from "../../public/img/newImg/csrNew.jpg";
+import mobile_banner from "../../public/img/newImg/csrMobile.jpg";
+import img_one from "../../public/img/newImg/csrImg1.jpg";
+import img_two from "../../public/img/newImg/csrImg2.jpg";
+import img_three from "../../public/img/newImg/csrImg3.jpg";
+import img_four from "../../public/img/newImg/csrImg4.jpg";
+import img_five from "../../public/img/newImg/csrImg5.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
 
 /** csr Page */
 export default function csr() {
 	const svatantraPath = [
 		{
-			title: "Mental Health Toolkit:",
+			title: "Projects UNLEARN and Jazba:",
 			desc:
-				"Offering vital tools to support emotional well-being and create understanding spaces.",
+				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
 		},
 		{
-			title: "School Initiative for Mental Health Advocacy (SIMHA):",
+			title: "Quality education for all:",
 			desc:
-				"An initiative that promotes mental wellbeing among the young in the education system across India.",
+				"Joined hands with Smile Foundation to ensure all children have access to quality education, impacting lives of over 4,400 students.",
 		},
 		{
-			title: "Tree Plantation Drives:",
+			title: "Tech for mental health:",
 			desc:
-				"Planting seeds of sustainability today for a greener, healthier planet tomorrow.",
+				"Offering vital tools and technologies to improve access to mental health and ensure overall well-being.",
 		},
 		{
-			title: "Animal care and adoption:",
+			title: "School Initiative for Mental Health Advocacy:",
 			desc:
-				"Providing support and welfare to animals, ensuring they are well cared for and thrive in a safe environment.",
+				" An initiative with SIMHA that promotes mental wellbeing among the young in the education system across India.",
+		},
+		{
+			title: "Counselling with empathy:",
+			desc:
+				"Collaborated with Mpower for quality mental health services, transforming lives of 200+ individuals on a monthly basis.",
 		},
 		{
 			title: "Fulfil a wish:",
@@ -66,19 +72,29 @@ export default function csr() {
 				"An initiative that takes necessary measures for reducing inequalities faced by socially and economically backward groups.",
 		},
 		{
-			title: "Projects UNLEARN and Jazba:",
-			desc:
-				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
-		},
-		{
-			title: "Education for Tribal Children:",
+			title: "Educating Tribal Children:",
 			desc:
 				"Bringing classrooms closer to tribal communities, creating pathways to brighter tomorrows.",
 		},
 		{
-			title: "Education for Sex Worker’s Children:",
+			title: "Tree Plantation Drives:",
+			desc:
+				"Planting seeds of sustainability today for a greener, healthier planet tomorrow.",
+		},
+		{
+			title: "Opportunities for Sex Worker’s Children:",
 			desc:
 				"Enabling the marginalised to integrate into society and open doors of opportunities through education.",
+		},
+		{
+			title: "Animal welfare:",
+			desc:
+				"Partnered with ‘World For All’ NGO to ensure holistic care for stray animals, providing 9600+ meals and medical care for 480 animals.",
+		},
+		{
+			title: "Project blank slate:",
+			desc:
+				"An initiative of the Ananya Birla Foundation that explores the root causes of mental health, with research identifying and addressing these concerns.",
 		},
 	];
 
@@ -116,7 +132,7 @@ export default function csr() {
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_banner.src}
 					bannerTitle="We pledge to power sustainable entrepreneurs"
 					bannerDesc="Accessible financial solutions that push individuals to break barriers and drive innovation"
 				/>
@@ -131,8 +147,8 @@ export default function csr() {
 								As a responsible corporate citizen and trusted partner to our clients,
 								Svatantra launched several CSR initiatives aimed at enhancing quality of
 								life and overall wellbeing. These programs not only reflect our
-								commitment to sustainable growth but also pave the way for a healthier,
-								greener and a more harmonious environment for all.
+								commitment to sustainable growth but also pave the way for an inclusive,
+								equitable and a more harmonious environment for all.
 							</p>
 						</div>
 						<div className={`${styles.SliderMain}`}>
@@ -210,19 +226,12 @@ export default function csr() {
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
 							<h2 className="text_xxxl color_primary pb_20">
-								Driving positive change in communities through outreach activities
+								Driving positive change in communities through outreach activities:{" "}
 							</h2>
 							<p className="text_sm color_light_black opacity_8">
 								Svatantra has always been at the forefront of building communities and
 								creating a lasting impact through various initiatives that support the
-								financial and overall wellbeing of the people. Our commitment was
-								evident during the global pandemic which affected several lives and
-								livelihoods. During those unprecedented times, Svatantra undertook
-								several measures to ensure our employees and customers received all the
-								support needed for themselves and their families. From financial and
-								medical support to maintaining timely connections, we ensured our
-								employees and customers, especially rural women, remained in their best
-								of health.
+								financial and overall wellbeing of the people.
 							</p>
 						</div>
 						{drivingOne.map((row, rowIndex) => (

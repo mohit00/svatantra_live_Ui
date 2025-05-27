@@ -1,0 +1,62 @@
+.accordion {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.accordion .accordionItem {
+  padding: 0;
+  border-top: 1px solid rgba(30, 30, 30, 0.2);
+}
+.accordion .accordionItem:last-child {
+  border-bottom: 1px solid rgba(30, 30, 30, 0.2);
+}
+.accordion .accordionItem .accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+@media (max-width: 767px) {
+  .accordion .accordionItem .accordionHeader {
+    padding: 25px 0px;
+    gap: 20px;
+  }
+}
+.accordion .accordionItem .accordionHeader .AccImg {
+  transition: all 0.5s;
+}
+.accordion .accordionItem .accordionHeader :global(.headerF) {
+  width: 95%;
+}
+@media (max-width: 767px) {
+  .accordion .accordionItem .accordionHeader :global(.headerF) {
+    width: 95%;
+  }
+}
+.accordion .accordionItem .accordionHeader span {
+  font-size: 18px;
+  font-weight: bold;
+  width: 30px;
+}
+@media (max-width: 767px) {
+  .accordion .accordionItem .accordionHeader span {
+    width: 30px;
+  }
+}
+.accordion .accordionItem .accordionContent {
+  padding: 0 0px;
+}
+@media (max-width: 767px) {
+  .accordion .accordionItem .accordionContent {
+    padding: 0px 0px;
+  }
+}
+.accordion .accordionItem .accordionContent .activeInner {
+  padding: 20px 0 20px;
+}
+@media (max-width: 767px) {
+  .accordion .accordionItem .accordionContent .activeInner {
+    padding: 0px 0px 20px;
+  }
+}/*# sourceMappingURL=AccordianCommon.module.css.map */

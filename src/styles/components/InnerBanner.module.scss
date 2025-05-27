@@ -10,16 +10,16 @@
 			object-fit: cover;
 		}
 	}
-	.banner_info{
+	.banner_info {
 		width: 80%;
 		@media (max-width: 992px) {
 			width: 100%;
 		}
-		p{
+		p {
 			width: 80%;
 			@media (max-width: 992px) {
-                width: 100%;
-            }
+				width: 100%;
+			}
 		}
 	}
 	.banner_content {

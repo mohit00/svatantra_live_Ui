@@ -4,7 +4,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 import InnerBanner from "@/components/InnerBanner";
 
@@ -23,8 +23,8 @@ import Breadcrum from "@/components/Breadcrumb";
 import StrapiImage from "@/utils/StrapiImage";
 
 // IMAGES //
-import Girl1 from "../../public/img/about/girl.jpg";
-import Girl2 from "../../public/img/about/girl2.jpg";
+import Girl1 from "../../public/img/newAbout1.jpg";
+import Girl2 from "../../public/img/newAbout2.jpg";
 import Icon1 from "../../public/img/about/icon_1.png";
 import Icon2 from "../../public/img/about/icon_2.png";
 import Icon3 from "../../public/img/about/icon_3.png";
@@ -33,7 +33,8 @@ import Icon5 from "../../public/img/about/icon_5.png";
 import arrow_btn from "../../public/whiteArrow.svg";
 import arrow from "../../public/arrow.svg";
 import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
-import DesktopBanner from "../../public/img/about/desktop_banner.jpg";
+import DesktopBanner from "../../public/img/finalBanners/about-us-banner_final.jpg";
+import MobileBanner from "../../public/img/mobileBanners/about mobile 360x640.jpg";
 import dummyLogo from "../../public/nationalLogo.png";
 // DATA //
 import { getAwards } from "@/services/awardsService";
@@ -51,15 +52,15 @@ export default function AboutPage({ awardsData }) {
 	const svatantraPath = [
 		{
 			title: "Growth and expansion",
-			desc: "To become a publicly listed company in the next two years.",
+			desc: "To become a publicly listed company. ",
 		},
 		{
 			title: "Transformative solutions",
-			desc: "Offer more tailormade accessible credit solutions.",
+			desc: "Offer more tailor-made accessible credit solutions.",
 		},
 		{
 			title: "Harnessing technology",
-			desc: "We will continue leveraging the power of digital technology.",
+			desc: "Continue to leverage the power of digital technology.",
 		},
 		{
 			title: "Foster synergies",
@@ -68,7 +69,7 @@ export default function AboutPage({ awardsData }) {
 		{
 			title: "Undisputed leader",
 			desc:
-				"In asset management, customer satisfaction and operational excellence.",
+				"In asset management, customer satisfaction and operational excellence.	",
 		},
 	];
 	return (
@@ -84,9 +85,9 @@ export default function AboutPage({ awardsData }) {
 				<Breadcrum linkTitle="About Us" link5={"we-are-svatantra/about-us"} />
 				<InnerBanner
 					desktopImage={DesktopBanner.src}
-					mobileImage={DesktopBanner.src}
-					bannerTitle="Enabling you leave your mark on tomorrow"
-					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of lowest interest rates in the country"
+					mobileImage={MobileBanner.src}
+					bannerTitle="Enabling you to leave your mark on tomorrow"
+					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of the lowest interest rates in the country"
 				/>
 				<section className={`${styles.Committed} ptb_80`}>
 					<div className="container">
@@ -141,7 +142,7 @@ export default function AboutPage({ awardsData }) {
 							We believe in a future driven by self-reliance and opportunity. Through
 							transparency, innovation, and entrepreneurial spirit, we aim to foster an
 							ecosystem for financial independence in rural and semi-urban India.{" "}
-							<br className="hidden_sm" /> The principles that drive Svatantra&#39;s
+							<br className="hidden_sm" /> The core values that drive Svatantra&#39;s
 							progress:
 						</h4>
 						<div className={`${styles.turning_section} f_w_j`}>
@@ -356,7 +357,7 @@ export default function AboutPage({ awardsData }) {
 						<p className="text_sm opacity_80">
 							Many industry accolades have recognized our commitment to innovation and
 							empowerment, <br className="hidden_sm" /> reinforcing our mission to
-							empower grassroots entrepreneurs.
+							power grassroots entrepreneurs.
 						</p>
 						<div className={`${styles.talent_section}`}>
 							<div className="pt_40">
@@ -495,7 +496,7 @@ export default function AboutPage({ awardsData }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

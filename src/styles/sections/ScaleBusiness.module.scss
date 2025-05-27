@@ -48,12 +48,24 @@
 					width: 100%;
 				}
 			}
+			:global(.pulse) {
+				opacity: 0.3;
+				transition: all 0.7s;
+				fill: #d4ffb3;
+			}
+			:global(.pulseActive0) {
+				opacity: 0;
+				fill: none;
+			}
 			:global(.location) {
 				opacity: 0;
 				transition: 0.3s;
 				pointer-events: none;
 				&:global(.visible) {
 					opacity: 1;
+					:global(.dotpulse) {
+						transform: scale(0);
+					}
 				}
 			}
 		}

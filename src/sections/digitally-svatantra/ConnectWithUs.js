@@ -15,6 +15,7 @@ import styles from "@/styles/sections/digitally-svatantra/ConnectWithUs.module.s
 
 // IMAGES //
 import ConnectImg from "../../../public/img/digitally-svatantra/ConnectImage.jpg";
+import ContactPageForm from "../ContactPageForm";
 
 // DATA //
 
@@ -41,7 +42,12 @@ export default function ConnectWithUs() {
 						</div>
 					</div>
 					<div className={`${styles.right}`}>
-						<img className="width_100" src={ConnectImg.src} alt="Connect Image" />
+						{/* <img className="width_100" src={ConnectImg.src} alt="Connect Image" /> */}
+						<ContactPageForm
+							formText={
+								"Fill in the details, and our team of experts will contact you. "
+							}
+						/>
 					</div>
 				</div>
 			</div>

@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AccordianCommon from "@/components/AccordianCommon";
 import Breadcrum from "@/components/Breadcrumb";
+import Footer2 from "@/components/Footer2";
 
 // SECTIONS //
 
@@ -343,7 +344,7 @@ export default function Investors({ data }) {
 			{/* Page Content Ends */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

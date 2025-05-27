@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
 import AccordionSection from "@/pages/Contact/careers/AccordionSection";
 import { getJobDetails } from "@/services/CareersService";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 
 // PLUGINS //
@@ -45,7 +45,7 @@ export default function JobOpening({ jobDetailsData }) {
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

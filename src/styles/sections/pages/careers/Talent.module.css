@@ -1,0 +1,123 @@
+.talent .popupContent, .talent .talent_section .item .itemContent .item_img .playIcn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.talent .talent_section .switchBox_wrapper {
+  background-color: #f6f6f6;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #eaeaea;
+  padding: 4px 4px;
+}
+@media (max-width: 767px) {
+  .talent .talent_section .switchBox_wrapper {
+    display: block;
+  }
+}
+.talent .talent_section .switchBox_wrapper .switchBox {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .talent .talent_section .switchBox_wrapper .switchBox {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+.talent .talent_section .switchBox_wrapper .switchBox .tabNav {
+  text-align: center;
+  padding: 8px 40px 8px 40px;
+  border-radius: 100px;
+}
+@media (max-width: 767px) {
+  .talent .talent_section .switchBox_wrapper .switchBox .tabNav {
+    padding: 8px 20px 8px 20px;
+  }
+}
+.talent .talent_section .switchBox_wrapper .switchBox .tabNav p {
+  opacity: 0.4;
+}
+.talent .talent_section .switchBox_wrapper .switchBox .active {
+  background-color: #00783c;
+  color: white;
+}
+.talent .talent_section .switchBox_wrapper .switchBox .active p {
+  opacity: 1;
+}
+.talent .talent_section .item .itemContent .item_img {
+  position: relative;
+}
+.talent .talent_section .item .itemContent .item_img .plusIcn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.talent .talent_section .btn_section {
+  margin-top: 40px;
+  grid-gap: 75px;
+}
+.talent .talent_section :global(.swiper-pagination2) {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  width: 90%;
+}
+@media (max-width: 767px) {
+  .talent .talent_section :global(.swiper-pagination2) {
+    width: 70vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .talent .talent_section :global(.swiper-pagination2) {
+    width: 85%;
+  }
+}
+.talent .talent_section :global(.swiper-pagination2) span {
+  background-color: var(--color_black);
+}
+.talent .talent_section :global(.swiper) {
+  height: 100%;
+}
+.talent .talent_section :global(.swiper-slide) {
+  height: auto !important;
+}
+.talent .talent_section :global(.swiper-content) {
+  height: 100% !important;
+}
+.talent .talent_section .arrowSection {
+  position: absolute;
+  right: 0px;
+  bottom: -15px;
+}
+@media (max-width: 992px) {
+  .talent .talent_section .arrowSection {
+    right: 15px;
+  }
+}
+.talent .talent_section .arrowSection .customPrev,
+.talent .talent_section .arrowSection .customNext {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+.talent .talent_section .arrowSection .customPrev {
+  rotate: 180deg;
+}
+.talent .btn_section {
+  grid-gap: 50px;
+  margin-top: 40px;
+}
+@media (max-width: 767px) {
+  .talent .btn_section {
+    grid-gap: 20px;
+  }
+}
+.talent .popupContent {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 70%;
+}/*# sourceMappingURL=Talent.module.css.map */

@@ -1,0 +1,83 @@
+.PressReleasePage .PressReleaseListingMain .Head {
+  padding-bottom: 50px;
+}
+.PressReleasePage .PressReleaseListingMain .GridBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 50px;
+}
+@media screen and (max-width: 1199px) {
+  .PressReleasePage .PressReleaseListingMain .GridBox {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .PressReleasePage .PressReleaseListingMain .GridBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .MainBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 25px;
+}
+@media (max-width: 767px) {
+  .PressReleasePage .PressReleaseListingMain .GridBox .MainBox {
+    padding: 20px;
+  }
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 {
+    width: 100%;
+  }
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 .imgBox {
+  position: relative;
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 .imgBox .mainImg {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 .imgBox .mainImg {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 .imgBox .mainImg {
+    width: 100%;
+  }
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .MainBox .box1 .imgBox .logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .categoryBox {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .categoryBox .news {
+  display: flex;
+  align-items: center;
+  padding: 8px 18px 8px 18px;
+  border-radius: 100px;
+  background-color: var(--color_secondary);
+}
+.PressReleasePage .PressReleaseListingMain .GridBox .categoryBox .news p {
+  font-size: 14px;
+  line-height: 1;
+  color: white;
+}/*# sourceMappingURL=PressRelease.module.css.map */

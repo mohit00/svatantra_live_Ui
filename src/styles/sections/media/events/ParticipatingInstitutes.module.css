@@ -1,0 +1,30 @@
+.ParticipatingInstitutes .table_wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  background: #efe4dc;
+}
+.ParticipatingInstitutes .table_wrap table td {
+  color: var(--color_light_black);
+  font-family: var(--font_secondary);
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.8;
+  border-right: 1px solid #fff;
+  padding: 20px 25px;
+}
+@media (max-width: 767px) {
+  .ParticipatingInstitutes .table_wrap table td {
+    font-size: 16px;
+    padding: 15px 15px;
+  }
+}
+.ParticipatingInstitutes .table_wrap table td:last-child {
+  border-right: none;
+}
+.ParticipatingInstitutes .table_wrap table tr:last-child {
+  border-bottom: none;
+}
+.ParticipatingInstitutes .table_wrap table tr:nth-child(even) {
+  background-color: #fff;
+}/*# sourceMappingURL=ParticipatingInstitutes.module.css.map */

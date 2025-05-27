@@ -1,0 +1,33 @@
+:root {
+  --font_primary: "Arpona";
+  --font_secondary: "AvenirMed", sans-serif;
+  --color_primary: #00783c;
+  --color_primary_tint: #6eb457;
+  --color_primary_light: #1f7542;
+  --color_pastel_green: #76cd67;
+  --color_secondary: #034ea2;
+  --color_secondary_tint: #0065b6;
+  --color_seashell: #f6efea;
+  --color_light_gray: #dddddd;
+  --color_black: #000000;
+  --color_white: #ffffff;
+  --color_light_black: #1e1e1e;
+  --container_width: 100%;
+  --container_left_space: calc((100% - var(--container_width)) / 2);
+  --transition: ease all 300ms;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  :root {
+    --container_width: 750px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  :root {
+    --container_width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --container_width: 1170px;
+  }
+}/*# sourceMappingURL=variables.css.map */

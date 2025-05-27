@@ -25,8 +25,8 @@ import styles from "@/styles/pages/MicrofinanceLoans.module.scss";
 // UTILS //
 
 // IMAGES //
-import banner_desktop from "../../public/img/our-products/microfinance/banner_desktop.jpg";
-
+import banner_desktop from "../../public/img/newImg/microNew.jpg";
+import mobile_banner from "../../public/img/newImg/micreMobile.jpg";
 import identification from "../../public/img/our-products/microfinance/identification.svg";
 import training from "../../public/img/our-products/microfinance/training.svg";
 import disbursement from "../../public/img/our-products/microfinance/disbursement.svg";
@@ -73,7 +73,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				icon: training.src,
 				title: "Training",
 				description:
-					"Conduct workshops on financial literacy to help prospective customers develop money management skills.",
+					"Conduct workshops on financial literacy to ensure prospective customers develop money management skills.",
 			},
 			{
 				icon: disbursement.src,
@@ -97,7 +97,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				icon: repayment.src,
 				title: "Repayment/Collection",
 				description:
-					"Offer timely guidance and collection of the monthly loan installments.",
+					"Offer timely guidance and collection of the monthly loan instalments.",
 			},
 		],
 	};
@@ -321,8 +321,8 @@ export default function MicrofinanceLoans({ blogsData }) {
 				),
 			},
 		],
-		brochureText: "Everything you need to know about our financial services",
-		brochureUrl: "https://www.google.com/",
+		// brochureText: "Everything you need to know about our financial services",
+		// brochureUrl: "https://www.google.com/",
 	};
 	return (
 		<div>
@@ -346,7 +346,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_banner.src}
 					bannerTitle="Microfinance loans"
 				/>
 				<LoanAmount

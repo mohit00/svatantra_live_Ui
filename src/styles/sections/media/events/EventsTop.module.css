@@ -1,0 +1,30 @@
+.contentBox {
+  padding: 20px 100px 40px 0px;
+}
+@media (max-width: 1024px) {
+  .contentBox {
+    padding: 20px 150px 40px 0px;
+  }
+}
+.contentBox .titleBox {
+  display: flex;
+  gap: 80px;
+}
+@media (max-width: 767px) {
+  .contentBox .titleBox {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.contentBox .titleBox img {
+  border-radius: 12px;
+}
+
+.para {
+  width: 85%;
+}
+@media (max-width: 1199px) {
+  .para {
+    width: 100%;
+  }
+}/*# sourceMappingURL=EventsTop.module.css.map */

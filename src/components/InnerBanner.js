@@ -31,7 +31,7 @@ function InnerBanner({ desktopImage, bannerTitle, bannerDesc, mobileImage }) {
 				<picture>
 					<source
 						srcSet={desktopImage ? desktopImage : DefaultBanner.src}
-						media="(min-width:767px)"
+						media="(min-width:768px)"
 					/>
 					<img
 						src={mobileImage ? mobileImage : DefaultBannerMob.src}

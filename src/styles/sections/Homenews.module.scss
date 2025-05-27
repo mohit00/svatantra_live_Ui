@@ -119,6 +119,9 @@
 			@media (max-width: 991px) {
 				flex-direction: column;
 			}
+			@media (max-width: 767px) {
+				display: block;
+			}
 
 			.box1 {
 				// width: 100%;
@@ -143,7 +146,7 @@
 						}
 					}
 
-					.logo {
+					.logoBox {
 						position: absolute;
 						bottom: 20px;
 						right: 20px;
@@ -191,6 +194,12 @@
 			// flex-direction: column;
 			align-items: center;
 			margin-top: 30px;
+			&.progressbx {
+				display: none;
+				@media (max-width: 992px) {
+					display: block;
+				}
+			}
 		}
 
 		.awardBox {
@@ -263,7 +272,6 @@
 				}
 
 				p {
-					// text-align: justify;
 					@media (max-width: 991px) {
 						font-size: 14px;
 					}
@@ -271,6 +279,9 @@
 
 				.headTitle {
 					height: 150px;
+					@media (max-width: 992px) {
+						height: 90px;
+					}
 				}
 			}
 		}
@@ -299,7 +310,8 @@
 			padding: 10px 0px;
 		}
 
-		:global(#customNext) {
+		:global(#customNext),
+		:global(#customNext1) {
 			padding: 10px;
 			border-radius: 50%;
 			border: none;
@@ -317,7 +329,8 @@
 			}
 		}
 
-		:global(#customPrev) {
+		:global(#customPrev),
+		:global(#customPrev1) {
 			padding: 10px;
 			border-radius: 50%;
 			border: none;
@@ -350,6 +363,9 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 50px 30px;
+		@media (max-width: 767px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 		.mainImg {
 			margin: 0 auto;
 		}

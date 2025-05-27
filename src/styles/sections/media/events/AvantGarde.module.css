@@ -1,0 +1,26 @@
+.AvantGarde {
+  background: radial-gradient(194.31% 263.83% at 103.82% -2.53%, #fff 0%, #7fca66 37.63%, #0072cd 63.19%, #f6efea 100%);
+}
+.AvantGarde .avant_garde_flex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+@media (max-width: 767px) {
+  .AvantGarde .avant_garde_flex {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.AvantGarde .avant_garde_flex .itemContent {
+  background-color: var(--color_white);
+  border-radius: 12px;
+}
+.AvantGarde .avant_garde_flex .itemContent .title {
+  padding: 15px;
+  background-color: #0072cd;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.AvantGarde .avant_garde_flex .itemContent .info {
+  padding: 25px 15px;
+}/*# sourceMappingURL=AvantGarde.module.css.map */

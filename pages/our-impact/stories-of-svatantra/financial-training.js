@@ -34,7 +34,8 @@ import { getFinancialTraining } from "@/services/impactService";
 import StrapiImage from "@/utils/StrapiImage";
 
 // IMAGES //
-import banner_desktop from "../../../public/img/faq/banner_desktop.jpg";
+import banner_desktop from "../../../public/img/finalBanners/Financial_training.jpg";
+import mobile_desktop from "../../../public/img/mobileBanners/financial_mobile.jpg";
 import story_one from "../../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 import youtube from "../../../public/img/youtube.svg";
@@ -100,7 +101,7 @@ export default function FinancialTraining({ financialTrainingData }) {
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_desktop.src}
 					bannerTitle="From hopeful dreams to thriving realities"
 					bannerDesc="Enabling aspiring entrepreneurs to build lasting success stories across the nation"
 				/>

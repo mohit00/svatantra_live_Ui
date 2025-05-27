@@ -40,7 +40,9 @@ import { getCustomerTestimonials } from "@/services/impactService";
 /** Data Fetching  */
 
 // IMAGES //
-import banner_desktop from "../../../public/img/faq/banner_desktop.jpg";
+import banner_desktop from "../../../public/img/newImg/csNew.jpg";
+// import banner_desktop from "../../../public/img/finalBanners/CSR.jpg";
+import mobile_banner from "../../../public/img/newImg/csMobileNew.jpg";
 import story_one from "../../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../../public/img/arrow_btn.svg";
 import arrow_btn_popup from "../../../public/img/arrow_btn_popup.svg";
@@ -139,7 +141,7 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
-					mobileImage={banner_desktop.src}
+					mobileImage={mobile_banner.src}
 					bannerTitle="From hopeful dreams to thriving realities"
 					bannerDesc="Enabling aspiring entrepreneurs to build lasting success stories across the nation"
 				/>

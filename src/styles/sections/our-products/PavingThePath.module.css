@@ -1,0 +1,65 @@
+.PavingThePath .title_wrap {
+  width: 85%;
+}
+@media (max-width: 1199px) {
+  .PavingThePath .title_wrap {
+    width: 100%;
+  }
+}
+.PavingThePath .keyfeatureFlex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+@media (max-width: 1199px) {
+  .PavingThePath .keyfeatureFlex {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .PavingThePath .keyfeatureFlex {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .PavingThePath .keyfeatureFlex {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.PavingThePath .keyfeatureFlex .item {
+  background-color: var(--color_white);
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+.PavingThePath .keyfeatureFlex .item .circleBox {
+  display: flex;
+}
+.PavingThePath .keyfeatureFlex .item .circleBox p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #DFDFDF;
+  position: relative;
+}
+.PavingThePath .keyfeatureFlex .item .circleBox .firstBox {
+  background-color: var(--color_white);
+  z-index: 1;
+}
+.PavingThePath .keyfeatureFlex .item .circleBox .secondBox {
+  border: none;
+  background-color: #80CD66;
+  color: white;
+  margin-left: -8px;
+  z-index: 0;
+}
+.PavingThePath .keyfeatureFlex .item .itemContent h4 {
+  width: 75%;
+}
+@media (max-width: 1199px) {
+  .PavingThePath .keyfeatureFlex .item .itemContent h4 {
+    width: 100%;
+  }
+}/*# sourceMappingURL=PavingThePath.module.css.map */

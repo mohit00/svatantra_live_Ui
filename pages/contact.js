@@ -4,7 +4,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MetaTags from "@/components/MetaTags";
-
+import Footer2 from "@/components/Footer2";
 // SECTIONS //
 import InnerBanner from "@/components/InnerBanner";
 import ContactSection from "@/pages/Contact/contact/ContactSection";
@@ -19,7 +19,8 @@ import Breadcrum from "@/components/Breadcrumb";
 // UTILS //
 
 // IMAGES //
-
+import DesktopBanner from "../public/img/finalBanners/contact.jpg";
+import MobileBanner from "../public/img/mobileBanners/contact 360x640.jpg";
 // DATA //
 
 /** Contact Page */
@@ -35,14 +36,18 @@ export default function ContactPage() {
 			{/* Page Content starts here */}
 			<main className={styles.ContactPage}>
 				<Breadcrum link5="/contact" linkTitle={"Contact Us"} />
-				<InnerBanner bannerTitle="Get In touch" />
+				<InnerBanner
+					desktopImage={DesktopBanner.src}
+					mobileImage={MobileBanner.src}
+					bannerTitle="Get In touch"
+				/>
 				<ContactSection />
 				<MapSection />
 			</main>
 			{/* Page Content ends here */}
 
 			{/* Footer */}
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 }

@@ -49,7 +49,7 @@ export default function LoanFactSheet() {
 							<td>Nil</td>
 						</tr>
 						<tr>
-							<td>MSME loans</td>
+							<td>Individual Loans</td>
 							<td>₹ 1 lakh to ₹ 3 lakh</td>
 							<td>24 to 36 Months</td>
 							<td>Monthly</td>

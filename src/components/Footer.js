@@ -332,9 +332,9 @@ export default function Footer() {
 						<p className="text_xs f_w_r color_white opacity_70">Terms & Conditions</p>
 					</div>
 
-					<a href="https://www.ting.in/" target="_blank">
+					{/* <a href="https://www.ting.in/" target="_blank">
 						<img src={ting.src} alt="tinglogo" />
-					</a>
+					</a> */}
 				</div>
 			</div>
 		</footer>

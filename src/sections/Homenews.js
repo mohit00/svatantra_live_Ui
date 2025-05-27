@@ -49,10 +49,12 @@ import finance from "../../public/img/finance.png";
 
 /** Homenews Section */
 export default function Homenews({ mediaMentionData, getAwardsData }) {
+	console.log(mediaMentionData, "ddddddddd");
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 	const [activeTab, setActiveTab] = useState("media");
 	const [lenghtCount, setLenghtCount] = useState(4);
+	const [windowWidth, setWindowWidth] = useState();
 
 	/** */
 	const openPopup = (blog) => {
@@ -74,7 +76,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const mediaSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Default spacing between slides
-		slidesPerView: 3, // Default: Show 3 slides fully
+		slidesPerView: 1, // Default: Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -85,20 +87,16 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		observer: true,
 		observeParents: true,
 		navigation: {
-			prevEl: "#customPrev",
-			nextEl: "#customNext",
+			prevEl: ".arrowSection #customPrev",
+			nextEl: ".arrowSection #customNext",
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile screens: 1 slide visible
+				slidesPerView: 2, // Mobile screens: 1 slide visible
 				spaceBetween: 10, // Reduced spacing for smaller screens
 			},
-			991: {
-				slidesPerView: 3, // Medium screens: 2 slides visible
-				spaceBetween: 20, // Adjust spacing for tablets
-			},
 			1024: {
-				slidesPerView: 3, // Large screens: 3 slides visible
+				slidesPerView: 1, // Large screens: 3 slides visible
 				spaceBetween: 20, // Increased spacing for larger screens
 			},
 		},
@@ -107,7 +105,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const awardSettings = {
 		modules: [Navigation, Pagination, Scrollbar, A11y, Autoplay],
 		spaceBetween: 20, // Adjust spacing between slides
-		slidesPerView: 3, // Show 3 slides fully
+		slidesPerView: 1, // Show 3 slides fully
 		autoWidth: false,
 		loop: true,
 		pagination: {
@@ -118,16 +116,13 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		observer: true,
 		observeParents: true,
 		navigation: {
-			prevEl: "#customPrev",
-			nextEl: "#customNext",
+			prevEl: ".arrowSection #customPrev",
+			nextEl: ".arrowSection #customNext",
 		},
 		breakpoints: {
 			767: {
-				slidesPerView: 1, // Mobile screens
+				slidesPerView: 2, // Mobile screens
 				spaceBetween: 10, // Adjust spacing for mobile if needed
-			},
-			991: {
-				slidesPerView: 3, // iPad Air portrait mode (820px width)
 			},
 			1024: {
 				slidesPerView: 3, // Tablet and desktop view
@@ -139,13 +134,16 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		if (window.innerWidth < 767) {
 			setLenghtCount(3);
 		}
+		setWindowWidth(window.innerWidth);
 	}, []);
-
+	const filteredData = mediaMentionData?.data?.filter(
+		(item) => item?.showHomePage
+	);
 	return (
 		<section className={`${styles.Homenews} ptb_80`}>
 			<div className="container">
 				<div className={`${styles.mainBox}`}>
-					<h1 className="text_xxxl color_primary pb_10">In the news</h1>
+					<h1 className="text_xxxl color_primary pb_20">Media Reports</h1>
 					<div className={`${styles.category} pb_30`}>
 						<div className={`${styles.switchBox}`}>
 							<div
@@ -170,7 +168,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 								isHref
 								buttonType="secondary"
 								condition={"white"}
-								link={activeTab === "media" ? "/media/media-mention" : "/media/awards"}
+								link={activeTab === "media" ? "/media/media-reports" : "/media/awards"}
 								title={"View More"}
 							/>
 						</div>
@@ -179,9 +177,9 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 					<div>
 						{activeTab == "media" ? (
 							<>
-								{mediaMentionData.data.length >= lenghtCount ? (
+								{windowWidth < 992 ? (
 									<Swiper {...mediaSettings}>
-										{mediaMentionData.data?.map((item, ind) => {
+										{filteredData?.map((item, ind) => {
 											const date = Moment(item.date).format("MMM DD, YYYY");
 											return (
 												<SwiperSlide key={ind}>
@@ -196,6 +194,10 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 																	alt="box1"
 																	className={`${styles.mainImg}`}
 																/>
+
+																<div className={styles.logoBox}>
+																	<img src={StrapiImage(item.logo).url} />
+																</div>
 															</div>
 
 															<div className={`${styles.categoryBox}`}>
@@ -213,7 +215,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 									</Swiper>
 								) : (
 									<div className={styles.gridBx}>
-										{mediaMentionData.data?.map((item, ind) => {
+										{filteredData?.map((item, ind) => {
 											const date = Moment(item.date).format("MMM DD, YYYY");
 											return (
 												<div
@@ -301,11 +303,15 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 							</>
 						)}
 
-						<div className={`${styles.items}`}>
+						<div
+							className={`${styles.items} ${
+								activeTab == "media" ? styles.progressbx : ""
+							}`}
+						>
 							<div
 								className={`${styles.progressBar} m_t_30 swiper-pagination-news`}
 							></div>
-							<div className={`${styles.arrowSection} f_w_a_j_center`}>
+							<div className={`${styles.arrowSection} arrowSection f_w_a_j_center`}>
 								<button className={`${styles.customPrev}`} id="customPrev">
 									<img src={prevImg.src} alt="" />
 								</button>
@@ -342,7 +348,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 				{selectedBlog && (
 					<div className={styles.popupContent}>
 						<img
-							src={StrapiImage(selectedBlog.thumbnail).url}
+							src={StrapiImage(selectedBlog.image).url}
 							alt="blog-image"
 							className="width_100"
 						/>

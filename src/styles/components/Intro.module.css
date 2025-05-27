@@ -1,0 +1,9 @@
+.Intro {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 1000;
+  position: absolute;
+  background-color: var(--color_white);
+}/*# sourceMappingURL=Intro.module.css.map */

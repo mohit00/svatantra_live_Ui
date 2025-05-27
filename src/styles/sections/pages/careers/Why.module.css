@@ -1,0 +1,57 @@
+.SliderMain {
+  position: relative;
+}
+.SliderMain .item {
+  border-radius: 10px;
+  background-color: var(--color_white);
+}
+.SliderMain .item .itemContent .title {
+  padding: 15px;
+  background-color: #0072CD;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.SliderMain .item .itemContent .info {
+  padding: 25px 15px;
+}
+.SliderMain :global(.swiper-pagination) {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  width: 90%;
+}
+@media (max-width: 767px) {
+  .SliderMain :global(.swiper-pagination) {
+    width: 70vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .SliderMain :global(.swiper-pagination) {
+    width: 85%;
+  }
+}
+.SliderMain :global(.swiper-pagination) span {
+  background-color: var(--color_black);
+}
+.SliderMain :global(.swiper) {
+  height: 100%;
+}
+.SliderMain :global(.swiper-slide) {
+  height: auto !important;
+}
+.SliderMain :global(.swiper-content) {
+  height: 100% !important;
+}
+.SliderMain .arrowSection {
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+}
+.SliderMain .arrowSection .customPrev,
+.SliderMain .arrowSection .customNext {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+.SliderMain .arrowSection .customPrev {
+  rotate: 180deg;
+}/*# sourceMappingURL=Why.module.css.map */
