@@ -268,9 +268,9 @@ export default function Header() {
 																			}
 																		>
 																			{page?.pageUrl != null ? (
-																				<Link href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
+																				<a href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>
 																					{page.pageName}
-																				</Link>
+																				</a>
 																			) : (
 																				page.pageName
 																			)}
@@ -293,9 +293,9 @@ export default function Header() {
 																						key={subPage.id}
 																						className={`${styles.subMenuItem} text_xs`}
 																					>
-																						<Link href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
+																						<a href={`/${subPage?.pageUrl?.replace(/^\/+/, "")}`}>
 																							{subPage.pageName}
-																						</Link>
+																						</a>
 																					</li>
 																				))}
 																			</ul>

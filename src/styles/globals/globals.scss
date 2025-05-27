@@ -74,6 +74,9 @@ section {
 .text_uppercase {
 	text-transform: uppercase;
 }
+.text_capitalize {
+	text-transform: capitalize;
+}
 
 .text_italic {
 	font-style: italic;
@@ -134,6 +137,7 @@ section {
 .section_title {
 	@extend .text_xxxl;
 	color: var(--color_primary);
+	// text-transform: capitalize;
 	span {
 		color: var(--color_secondary_tint);
 	}

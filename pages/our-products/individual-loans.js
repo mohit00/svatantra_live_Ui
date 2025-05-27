@@ -103,7 +103,7 @@ export default function MsmeLoans({ blogsData }) {
 		],
 	};
 	const commonQueriesData = {
-		title: "Common Queries",
+		title: "Common queries",
 		faqItems: [
 			{
 				title: "What is microfinance?",
@@ -115,7 +115,7 @@ export default function MsmeLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "What is a Microfinance Institution (MFI)?",
+				title: "What is a microfinance institution (MFI)?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
 						A Microfinance Institution (MFI) is an organization that provides
@@ -124,7 +124,7 @@ export default function MsmeLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "What is a Microfinance Institution (MFI)?",
+				title: "What is a microfinance institution (MFI)?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
 						A Microfinance Institution (MFI) is an organization that provides
@@ -133,7 +133,7 @@ export default function MsmeLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "What is a Microfinance Institution (MFI)?",
+				title: "What is a microfinance institution (MFI)?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
 						A Microfinance Institution (MFI) is an organization that provides
@@ -168,7 +168,7 @@ export default function MsmeLoans({ blogsData }) {
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={mobile_banner.src}
-					bannerTitle="Individual Loans"
+					bannerTitle="Individual loans"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}
