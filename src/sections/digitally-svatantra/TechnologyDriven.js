@@ -56,7 +56,7 @@ export default function TechnologyDriven() {
 							<img src={cashless.src} className="img-responsive" alt="Cashless" />
 						</div>
 						<div className={`${styles.committed_info}`}>
-							<h3 className="text_xxl color_primary pb_20">Cashless Disbursements</h3>
+							<h3 className="text_xxl color_primary pb_20">Cashless disbursements</h3>
 							<p className="text_sm opacity_8">
 								Svatantra was among the first NBFC-MFIs to provide 100% cashless
 								disbursements right from its inception in 2012. By eliminating cash
@@ -71,7 +71,7 @@ export default function TechnologyDriven() {
 							<img src={saksham.src} className="img-responsive" alt="saksham" />
 						</div>
 						<div className={`${styles.committed_info}`}>
-							<h3 className="text_xxl color_primary pb_20">Saksham App</h3>
+							<h3 className="text_xxl color_primary pb_20">Saksham app</h3>
 							<p className="text_sm opacity_8">
 								With the launch of SAKSHAM, a customer-centric app, in November 2020, we
 								made lending more accessible, easier, and efficient for our customers
@@ -86,7 +86,7 @@ export default function TechnologyDriven() {
 							<img src={saathi.src} className="img-responsive" alt="saathi" />
 						</div>
 						<div className={`${styles.committed_info}`}>
-							<h3 className="text_xxl color_primary pb_20">Unique Lending Process</h3>
+							<h3 className="text_xxl color_primary pb_20">Unique lending process</h3>
 							<p className="text_sm opacity_8 pb_10">
 								The company leverages technology to enhance its lending processes to
 								serve its customers. One of the company’s key innovations is the

@@ -42,7 +42,7 @@ import arrow_btn from "../../public/img/arrow_btn.svg";
 export default function csr() {
 	const svatantraPath = [
 		{
-			title: "Projects UNLEARN and Jazba:",
+			title: "Projects unlearn and jazba:",
 			desc:
 				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
 		},
@@ -57,7 +57,7 @@ export default function csr() {
 				"Offering vital tools and technologies to improve access to mental health and ensure overall well-being.",
 		},
 		{
-			title: "School Initiative for Mental Health Advocacy:",
+			title: "School initiative for mental health advocacy:",
 			desc:
 				" An initiative with SIMHA that promotes mental wellbeing among the young in the education system across India.",
 		},
@@ -72,17 +72,17 @@ export default function csr() {
 				"An initiative that takes necessary measures for reducing inequalities faced by socially and economically backward groups.",
 		},
 		{
-			title: "Educating Tribal Children:",
+			title: "Educating tribal children:",
 			desc:
 				"Bringing classrooms closer to tribal communities, creating pathways to brighter tomorrows.",
 		},
 		{
-			title: "Tree Plantation Drives:",
+			title: "Tree plantation drives:",
 			desc:
 				"Planting seeds of sustainability today for a greener, healthier planet tomorrow.",
 		},
 		{
-			title: "Opportunities for Sex Worker’s Children:",
+			title: "Opportunities for sex worker’s children:",
 			desc:
 				"Enabling the marginalised to integrate into society and open doors of opportunities through education.",
 		},

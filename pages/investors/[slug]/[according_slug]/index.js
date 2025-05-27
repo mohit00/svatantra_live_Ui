@@ -164,7 +164,7 @@ export default function Investors({ data }) {
 												<td>{item.title}</td>
 												<td>
 													<a
-														href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.media.url}`}
+														href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item?.media?.url}`}
 														target="_blank"
 														rel="noreferrer"
 													>

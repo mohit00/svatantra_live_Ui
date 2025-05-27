@@ -148,7 +148,7 @@ export default function CustomerTestimonials({ customertTestimonialData }) {
 				<section className={`${styles.StoriesOfSvatantra_main}`}>
 					<div className="container">
 						<div className={`${styles.title_wrap}`}>
-							<h2 className="text_xxxl color_primary">Customer Testimonial </h2>
+							<h2 className="text_xxxl color_primary">Customer testimonial </h2>
 						</div>
 
 						<div className={`${styles.content_main_wrap} pt_40`}>

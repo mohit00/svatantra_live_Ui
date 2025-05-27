@@ -143,7 +143,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 		<section className={`${styles.Homenews} ptb_80`}>
 			<div className="container">
 				<div className={`${styles.mainBox}`}>
-					<h1 className="text_xxxl color_primary pb_20">Media Reports</h1>
+					<h1 className="text_xxxl color_primary pb_20">Media reports</h1>
 					<div className={`${styles.category} pb_30`}>
 						<div className={`${styles.switchBox}`}>
 							<div

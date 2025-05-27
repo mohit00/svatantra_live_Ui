@@ -102,7 +102,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 		],
 	};
 	const commonQueriesData = {
-		title: "Common Queries",
+		title: "Common queries",
 		faqItems: [
 			{
 				title: "What is microfinance?",
@@ -117,7 +117,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "What is a Microfinance Institution (MFI)?",
+				title: "What is a microfinance institution (MFI)?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
 						A Microfinance Institution (MFI) is an organisation that provides
@@ -260,7 +260,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "What Customer Protection measures exist for clients?",
+				title: "What customer protection measures exist for clients?",
 				children: (
 					<>
 						<p className="text_xs font_secondary color_light_black opacity_8 pb_10">
@@ -288,7 +288,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "Can you share more details on the Mediclaim?",
+				title: "Can you share more details on the mediclaim?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
 						The company offers affordable and comprehensive Mediclaim to its customer

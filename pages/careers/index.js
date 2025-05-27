@@ -69,7 +69,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
 							<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
-								A Culture of Excellence Through Training and Development
+								A culture of excellence through training and development
 							</h2>
 							<h4 className="text_sm opacity_8 pb_10 pb_30">
 								At Svatantra, we believe that a people-first culture is the cornerstone
