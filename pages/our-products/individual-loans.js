@@ -25,7 +25,7 @@ import styles from "@/styles/pages/MsmeLoans.module.scss";
 
 // IMAGES //
 import banner_desktop from "../../public/img/newImg/ilNew.jpg";
-import mobile_banner from "../../public/img/newImg/ilMobile.jpg";
+import mobile_banner from "../../public/img/newImg/newMsmeImg.jpg";
 import pdf_icon from "../../public/img/pdf_icon.svg";
 
 import identification from "../../public/img/our-products/microfinance/identification.svg";
