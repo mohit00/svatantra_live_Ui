@@ -220,8 +220,8 @@ export default function Economic() {
 							</h5>
 						</div>
 						<div className={styles.desc}>
-							<h6 className="text_sm">
-								*Combined Numbers Of Svatantra Microfin Pvt. Ltd. & Chaitanya India (A
+							<h6 className="text_xxs">
+								*Combined numbers of Svatantra Microfin Pvt. Ltd. & Chaitanya India (A
 								wholly-owned subsidiary of Svatantra)
 							</h6>
 						</div>
