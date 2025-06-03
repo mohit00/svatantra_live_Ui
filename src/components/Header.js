@@ -19,7 +19,7 @@ import { getHeadersData } from "../services/header";
 import HeaderLogo from "../../public/img/home/header_logo.svg";
 import arrow from "../../public/img/caret.svg.svg";
 import newArrow from "../../public/whiteArrow.svg";
-// Dynamically import react-scroll without SSR
+// dynamically import react-scroll without SSR
 const ScrollSection = dynamic(
 	() => import("react-scroll").then((mod) => mod.Link),
 	{
