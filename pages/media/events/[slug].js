@@ -30,7 +30,7 @@ import { getEvents, getEventsBySlug } from "@/services/eventsService";
 export async function getStaticPaths() {
 	const { data: insights } = await getEvents();
 
-	const paths = insights.map((post) => ({
+	const paths = insights?.map((post) => ({
 		params: { slug: post?.slug || "test" },
 	}));
 

@@ -40,10 +40,10 @@ export default function Eventinsti({
 							{tableData?.map((item, ind) => {
 								return (
 									<td key={ind}>
-										<tr className="text_sm">{item.col1}</tr>
-										<tr className="text_sm">{item.col2}</tr>
-										<tr className="text_sm">{item.col3}</tr>
-										<tr className="text_sm">{item.col4}</tr>
+										<tr className="text_sm">{item?.col1}</tr>
+										<tr className="text_sm">{item?.col2}</tr>
+										<tr className="text_sm">{item?.col3}</tr>
+										<tr className="text_sm">{item?.col4}</tr>
 									</td>
 								);
 							})}
@@ -98,7 +98,7 @@ export default function Eventinsti({
 									<tr className="text_sm color_white">Details</tr>
 									<tr className="text_sm color_white">Enclosures</tr>
 								</td>
-								{problemStatementData.map((item, ind) => {
+								{problemStatementData?.map((item, ind) => {
 									return (
 										<td key={ind}>
 											<tr className={`${styles.number} pt_20 pb_20 opacity_8`}>
