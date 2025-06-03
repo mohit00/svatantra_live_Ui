@@ -14,7 +14,7 @@ const nextConfig = {
 					{
 						key: "Content-Security-Policy",
 						value: `
-							default-src 'self';
+							default-src 'self' http://10.21.1.74:1337;
 							media-src 'self' https://svatantracms.tinglabs.in;
 							script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms/ https://googleads.g.doubleclick.net/ https://connect.facebook.net/ https://www.googletagmanager.com/ https://www.youtube.com https://s.ytimg.com https://maps.googleapis.com https://maps.gstatic.com;
 							style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com https://maps.gstatic.com;
