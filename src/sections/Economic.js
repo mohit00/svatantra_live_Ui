@@ -215,13 +215,13 @@ export default function Economic() {
 
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
-							<h5 className="text_sm opacity_80">
+							<h5 className="text_xxs opacity_80">
 								<span>*CRISIL</span> A - (Stable Rating)
 							</h5>
 						</div>
 						<div className={styles.desc}>
-							<h6 className="text_sm">
-								*Combined Numbers Of Svatantra Microfin Pvt. Ltd. & Chaitanya India (A
+							<h6 className="text_xxs">
+								*Combined numbers of Svatantra Microfin Pvt. Ltd. & Chaitanya India (A
 								wholly-owned subsidiary of Svatantra)
 							</h6>
 						</div>

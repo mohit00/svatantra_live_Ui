@@ -34,7 +34,7 @@ import arrow_btn from "../../public/whiteArrow.svg";
 import arrow from "../../public/arrow.svg";
 import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
 import DesktopBanner from "../../public/img/finalBanners/about-us-banner_final.jpg";
-import MobileBanner from "../../public/img/mobileBanners/about mobile 360x640.jpg";
+import MobileBanner from "../../public/img/newImg/aboutMobileBanner.jpg";
 import dummyLogo from "../../public/nationalLogo.png";
 // DATA //
 import { getAwards } from "@/services/awardsService";
