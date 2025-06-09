@@ -37,7 +37,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 	return (
 		<Head>
 			<title>
-				Svatantra Microfin - Empowering Rural India with Microfinance Solutions
+				Svatantra Microfin - Powering Rural India with Microfinance Solutions
 			</title>
 			<meta
 				name="description"
@@ -49,7 +49,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta
 				property="og:title"
 				content={
-					"Svatantra Microfin - Empowering Rural India with Microfinance Solutions"
+					"Svatantra Microfin - Powering Rural India with Microfinance Solutions"
 				}
 			/>
 			<meta
