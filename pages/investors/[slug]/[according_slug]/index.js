@@ -207,21 +207,23 @@ export default function Investors({ data }) {
 													{item.row.map((item) => (
 														<tr key={item.id}>
 															{/* <td>{item.id}</td> */}
-															<td>{item.title}</td>
-															<td>
-																<a
-																	href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item.media.url}`}
-																	target="_blank"
-																	rel="noreferrer"
-																>
-																	<img
-																		src={download_icon.src}
-																		className={styles.download_icon}
-																		alt="Download icon"
-																	/>
-																	<span>Download</span>
-																</a>
-															</td>
+															{item?.title && <td>{item?.title}</td>}
+															{item?.media?.url && (
+																<td>
+																	<a
+																		href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item?.media?.url}`}
+																		target="_blank"
+																		rel="noreferrer"
+																	>
+																		<img
+																			src={download_icon.src}
+																			className={styles.download_icon}
+																			alt="Download icon"
+																		/>
+																		<span>Download</span>
+																	</a>
+																</td>
+															)}
 														</tr>
 													))}
 												</tbody>
