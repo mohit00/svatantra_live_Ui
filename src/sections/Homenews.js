@@ -266,9 +266,9 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 																	className={`${styles.awardLogo}`}
 																/>
 															</div>
-															<div className={`${styles.dateBox}`}>
+															{/* <div className={`${styles.dateBox}`}>
 																<p className="">{date}</p>
-															</div>
+															</div> */}
 															<p className={`${styles.headTitle} text_reg`}>{item.title}</p>
 														</div>
 													</div>
@@ -290,9 +290,9 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 																className={`${styles.awardLogo}`}
 															/>
 														</div>
-														<div className={`${styles.dateBox}`}>
+														{/* <div className={`${styles.dateBox}`}>
 															<p className="">{date}</p>
-														</div>
+														</div> */}
 														<p className={`${styles.headTitle} text_reg`}>{item.title}</p>
 													</div>
 												</div>
