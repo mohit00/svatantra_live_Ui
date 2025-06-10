@@ -112,6 +112,14 @@ export default function LeadershipPage({ leadershipsData }) {
 							if (!item.desc) return null;
 							const paragraphs = item.desc.split(/<br\s*\/?>/i);
 
+							const splitParagraphs = paragraphs[0]
+								.split(/<\/p>\s*<p>/gi)
+								.map((para, idx, arr) => {
+									if (idx === 0) return para + "</p>";
+									else if (idx === arr.length - 1) return "<p>" + para;
+									return "<p>" + para + "</p>";
+								});
+
 							return (
 								<>
 									{item.isFounder && (
@@ -130,15 +138,23 @@ export default function LeadershipPage({ leadershipsData }) {
 													{parse(item.desc)}
 												</div> */}
 												<div className="text_sm color_light_black f_w_m opacity_80 pb_20">
-													{parse(paragraphs[0])}
+													{parse(splitParagraphs[0])}
 												</div>
 												<div
 													className={`${styles.paraWrapper} ${isVisible ? styles.show : ""}`}
 												>
-													{isVisible && paragraphs[2] && (
-														<p className="text_sm color_light_black f_w_m opacity_80">
-															{parse(paragraphs.slice(2).join("<br>"))}
-														</p>
+													{/* Show additional content when isVisible is true */}
+													{isVisible && (
+														<div className={`${styles.paraWrapper} ${styles.show}`}>
+															{splitParagraphs.slice(1).map((para, idx) => (
+																<p
+																	key={idx}
+																	className="text_sm color_light_black f_w_m opacity_80"
+																>
+																	{parse(para)}
+																</p>
+															))}
+														</div>
 													)}
 												</div>
 												{/* <p className="text_sm color_light_black f_w_m opacity_80 pb_20">
