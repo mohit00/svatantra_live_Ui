@@ -124,11 +124,16 @@ export default function MsmeLoans({ blogsData }) {
 				),
 			},
 			{
-				title: "What is a microfinance institution (MFI)?",
+				title: "How is Svatantra different from other MFIs?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
-						A Microfinance Institution (MFI) is an organization that provides
-						financial services to low-income individuals.
+						Svatantra is one of the fastest growing MFIs in India. It is the first
+						institution to receive the NBFC-MFI license which was introduced by the
+						RBI in 2012. It is also the only institution that makes 100% cashless
+						disbursements. Svatantra offers one of the lowest interest rates in the
+						industry. Unlike other MFIs, innovation forms the core of business
+						processes and is used as a tool to drive, optimize as well as expand
+						business.
 					</p>
 				),
 			},
@@ -225,7 +230,7 @@ export default function MsmeLoans({ blogsData }) {
 								<tr>
 									<td rowSpan="2">Insurance</td>
 									<td colSpan="6">
-										Svantra offers Credit Linked Insurance, a life insurance tailored to
+										Svatantra offers Credit Linked Insurance, a life insurance tailored to
 										provide financial support to our women customers and their spouses. It
 										ensures the family remains economically independent, especially in
 										case of death of the insured person.
@@ -269,12 +274,13 @@ export default function MsmeLoans({ blogsData }) {
 					</div>
 				</section>
 				<SixSteps title={sixStepsData.title} steps={sixStepsData.steps} />
-				<CommonQueries
+				<div className="pt_60"></div>
+				{/* <CommonQueries
 					title={commonQueriesData.title}
 					faqItems={commonQueriesData.faqItems}
 					brochureText={commonQueriesData.brochureText}
 					brochureUrl={commonQueriesData.brochureUrl}
-				/>
+				/> */}
 				<BlogsInsights data={blogsData} />
 				<Homecontact
 					formTitle="Fill in the details, and our team of experts will contact you to help

@@ -57,7 +57,7 @@ export default function WhyComponent() {
 		{
 			title: "Amazing perks:",
 			desc:
-				"We always recognise and reward the hard work of our employees through attractive incentives, value awards, appreciation cards and much more.The company offers comprehensive healthcare coverage, menstrual leave for women, fitness programmes, and nutrition education.",
+				"We always recognise and reward the hard work of our employees through attractive incentives, value awards, appreciation cards and much more. The company offers comprehensive healthcare coverage, menstrual leave for women, fitness programmes, and nutrition education.",
 		},
 	];
 	return (

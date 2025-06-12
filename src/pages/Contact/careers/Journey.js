@@ -28,7 +28,7 @@ export default function Journey() {
 							Embark on a journey that transforms and inspires lives
 						</div>
 						<p className="text_sm f_w_m pt_20">
-							At Svatantra we believe work is more than just a job to do. We love what
+							At Svatantra, we believe work is more than just a job to do. We love what
 							we do, are passionate about it and make a meaningful impact on those
 							around us. Svatantra Microfin has played a significant role in both
 							transforming and advancing the NBFC-MFI sector and attracting top talent.

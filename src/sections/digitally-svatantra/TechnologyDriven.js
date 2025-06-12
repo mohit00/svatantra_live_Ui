@@ -40,7 +40,7 @@ export default function TechnologyDriven() {
 						We have strategically integrated technology into our operations to
 						streamline processes and enhance our bottom line. However, we also
 						recognise the importance of maintaining a personal touch with our
-						customer. That is why our approach always centres on a carefully balanced
+						customers. That is why our approach always centres on a carefully balanced
 						strategy, such as, leveraging digital innovation while retaining the
 						essential human element. This commitment ensures that technology serves as
 						an enabler of growth, rather than a barrier to access and understanding.
