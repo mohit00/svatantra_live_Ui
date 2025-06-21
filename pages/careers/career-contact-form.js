@@ -73,29 +73,17 @@ export default function CareerContactFormPage() {
 	/** Uploads CV and returns the file ID */
 	async function sendMedia(file) {
 		const formData = new FormData();
-		formData.append("files", file);
+		formData.append("file", file); // 🔑 Field name must match
 
-		const requestOptions = {
+		const res = await fetch("/api/strapiUpload", {
 			method: "POST",
-			headers: {
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
-			},
-			body: formData,
-		};
+			body: formData, // ✅ Don't set headers manually
+		});
 
-		try {
-			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/upload`,
-				requestOptions
-			);
-			if (!res.ok) throw new Error("File upload failed");
-
-			const result = await res.json();
-			return result[0].id; // ✅ Return file ID for form submission
-		} catch (error) {
-			console.error("File Upload Error:", error);
-			return null;
-		}
+		if (!res.ok) throw new Error("Upload failed");
+		const result = await res.json();
+		console.log(result, "result");
+		return result[0]?.id;
 	}
 
 	/** Handles form submission */
