@@ -108,18 +108,12 @@ export default function Header() {
 	useEffect(() => {
 		const fetchData = async () => {
 			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/headers?populate[0]=pageName&populate[1]=pageName.subPages&sort[0]=order`,
-				{
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
-					},
-				}
+				"/api/headers" // Adjust the path to your API route
 			);
 
 			const response = await res.json();
-			setNewHeaderData(response);
+
+			setNewHeaderData(response.data);
 		};
 
 		fetchData();
