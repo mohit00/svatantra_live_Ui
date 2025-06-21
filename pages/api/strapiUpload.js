@@ -52,7 +52,7 @@ export default async function handler(req, res) {
 			{
 				headers: {
 					...formData.getHeaders(),
-					Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+					Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
 				},
 			}
 		);

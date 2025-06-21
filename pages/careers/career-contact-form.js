@@ -108,30 +108,20 @@ export default function CareerContactFormPage() {
 		const requestBody = {
 			data: {
 				...data,
-
 				cv: fileId, // Attach uploaded file ID
 			},
 		};
 
 		const Headers = {
 			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
-			},
 			body: JSON.stringify(requestBody),
 		};
 
 		try {
-			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/jobs-leads`,
-				Headers
-			);
+			const res = await fetch("/api/jobsleads", Headers);
 			if (!res.ok) throw new Error("Form submission failed");
-
 			const result = await res.json();
 			console.log("Success:", result);
-
 			reset();
 			setIsSubmited(true);
 			router.push("/thank-you");

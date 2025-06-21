@@ -37,23 +37,14 @@ export default function ContactPageForm({ formText }) {
 	const onSubmit = async (data, e) => {
 		const Headers = {
 			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
-			},
 			body: JSON.stringify({
 				data: data,
 			}),
 		};
-		const { firstName, surname, email, tel, message } = data;
 
 		/** */
 		async function sendData() {
-			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/contact-us-leads`,
-				Headers
-			);
-
+			const res = await fetch("/api/contactleads", Headers);
 			if (!res.ok) {
 				return;
 			}
@@ -65,12 +56,9 @@ export default function ContactPageForm({ formText }) {
 			setTimeout(() => {
 				setIsSubmited(false);
 			}, 2000);
-			// emailData();
 		}
 
 		sendData();
-
-		// Write form submission codes here
 	};
 
 	return (
