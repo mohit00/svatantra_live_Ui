@@ -10,6 +10,6 @@ export const ServerHeaders = {
 export const ClientHeaders = {
 	headers: {
 		"Content-Type": "application/json",
-		Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
+		Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
 	},
 };
