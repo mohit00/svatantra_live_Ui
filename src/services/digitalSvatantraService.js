@@ -1,4 +1,4 @@
-import { ServerHeaders, ClientHeaders } from "@/utils/RequestHeaders";
+import { ServerHeaders } from "@/utils/RequestHeaders";
 
 /** Fetch Awards Data */
 export const getDigitalSvatantra = async () => {
