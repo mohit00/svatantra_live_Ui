@@ -211,7 +211,7 @@ export default function Header() {
 											onMouseLeave={() => !isMobile && setOpenMenuIndex(null)}
 										>
 											<p
-												className={`${styles.link_title} text_xs`}
+												className={`${styles.link_title} text_xs f_j`}
 												onClick={(e) => {
 													if (isMobile) {
 														e.stopPropagation();
@@ -223,7 +223,10 @@ export default function Header() {
 												{item.pageName.length == 1 ? (
 													<a href={`${item?.url}`}>{item.title}</a>
 												) : (
-													item.title
+													<>
+														{item.title}
+														<img src={arrow.src} className={`${styles.arrow}`} />
+													</>
 												)}
 											</p>
 

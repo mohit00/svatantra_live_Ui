@@ -144,6 +144,13 @@
 					list-style-type: none;
 					cursor: pointer;
 					padding: 0 20px;
+					.arrow {
+						display: none;
+						transform: rotate(90deg);
+						@media (max-width: 1200px) {
+							display: block;
+						}
+					}
 					&::after {
 						content: "";
 						position: absolute;
@@ -480,6 +487,7 @@
 	@media (max-width: 991px) {
 		position: unset;
 		gap: 15px;
+		height: unset;
 	}
 
 	li {
