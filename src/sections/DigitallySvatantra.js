@@ -62,7 +62,7 @@ export default function DigitallySvatantra({ gsap, ScrollTrigger }) {
 						At Svatantra, we harness the power of technology to make our services far
 						more accessible and impactful, ensuring entrepreneurial freedom with
 						growth and prosperity. We were the first in the sector to implement 100%
-						cashless disbursement and roll out a customer facing app, bringing success
+						cashless disbursement and roll-out a customer facing app, bringing success
 						to your fingertips.
 					</p>
 					<div className={`${styles.BtnBx}`}>

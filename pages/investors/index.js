@@ -57,8 +57,7 @@ export default function InvestorIndexPage({ data }) {
 					<h1 className="text_xxxl color_primary pb_10">Investors</h1>
 
 					<p className="text_md ">
-						Invest in innovation,growth, and lasting impact.Join us in shaping the
-						future
+						Invest in innovation, growth, and lasting impact.
 					</p>
 
 					<div className={`${styles.StoriesOfSvatantra_main} pb_80`}>

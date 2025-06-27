@@ -62,7 +62,7 @@ export default function LoanFactSheet() {
 						<tr>
 							<td rowSpan="2">Insurance</td>
 							<td colSpan="6">
-								Svantra offers Credit Linked Insurance, a life insurance tailored to
+								Svatantra offers Credit Linked Insurance, a life insurance tailored to
 								provide financial support to our women customers and their spouses. It
 								ensures the family remains economically independent, especially in case
 								of death of the insured person.
