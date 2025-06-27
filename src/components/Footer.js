@@ -187,7 +187,7 @@ export default function Footer() {
 
 						<div className={styles.letterBox}>
 							<h1 className="text_reg_20 f_w_s_b color_white pb_10 font_primary">
-								Signup for our newsletter
+								Sign-up for our newsletter
 							</h1>
 							<form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
 								<div className={`${styles.emailBox}`}>
