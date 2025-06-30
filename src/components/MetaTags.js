@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // MODULES //
 
 // COMPONENTS //
@@ -37,7 +38,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 	return (
 		<Head>
 			<title>
-				Svatantra Microfin - Powering Rural India with Microfinance Solutions
+				Svatantra Microfin - Building the Entrepreneurs that build India's economy
 			</title>
 			<meta
 				name="description"
@@ -49,7 +50,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta
 				property="og:title"
 				content={
-					"Svatantra Microfin - Powering Rural India with Microfinance Solutions"
+					"Svatantra Microfin - Building the Entrepreneurs that build India's economy"
 				}
 			/>
 			<meta

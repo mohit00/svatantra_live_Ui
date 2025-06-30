@@ -55,7 +55,7 @@ export default function BlogsPage({ blogsData }) {
 		{ label: "Svatantra Microfin" },
 	];
 	const options2 = [
-		{ label: "all" },
+		{ label: "All" },
 		...yearNew.map((year) => ({ label: String(year) })),
 	];
 
@@ -82,6 +82,10 @@ export default function BlogsPage({ blogsData }) {
 			(selectedOptions.select2 === "All" ||
 				item.date.includes(selectedOptions.select2))
 	);
+
+	const sortedData = [...filteredData].sort((a, b) => {
+		return new Date(b.date) - new Date(a.date);
+	});
 
 	// console.log(filteredData, " filteredData");
 
@@ -210,7 +214,7 @@ export default function BlogsPage({ blogsData }) {
 						</div>
 						<div className={`${styles.GridBox}`}>
 							{filteredData.length > 0 ? (
-								filteredData.map((item, ind) => (
+								sortedData.map((item, ind) => (
 									<div className={`${styles.slider}`} key={ind}>
 										<a href={`blogs/${item.slug}`}>
 											<div className={`${styles.box1}`}>

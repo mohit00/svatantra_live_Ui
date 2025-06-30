@@ -15,11 +15,13 @@
 					display: flex;
 					align-items: center;
 					gap: 10px;
+
 					@media screen and (max-width: 767px) {
 						width: 100%;
 						justify-content: space-between;
 					}
 					.selectBx {
+						width: 300px;
 						.select1 {
 							// width: 190px;
 							border-radius: 24px;

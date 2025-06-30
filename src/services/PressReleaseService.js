@@ -3,7 +3,7 @@ import { ServerHeaders } from "@/utils/RequestHeaders";
 /** Fetch press release Data */
 export const pressRelease = async () => {
 	const req = await fetch(
-		`${process.env.STRAPI_DO_BASE_URL}/api/presses?populate=*`,
+		`${process.env.STRAPI_DO_BASE_URL}/api/presses?populate=*&sort=date:asc`,
 		ServerHeaders
 	);
 	const res = await req.json();

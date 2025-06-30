@@ -10,7 +10,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 // SECTIONS //
 
 // PLUGINS //
-
+import Moment from "moment";
 // UTILS //
 
 // STYLES //
@@ -30,8 +30,6 @@ export const getStaticProps = async (context) => {
 
 /** PressRelease Page */
 export default function PressReleasePage({ pressReleaseData }) {
-	console.log(pressReleaseData, " pressReleaseData");
-
 	const BlogList = [
 		{
 			date: "Mumbai, 4 March, 2024",
@@ -70,6 +68,9 @@ export default function PressReleasePage({ pressReleaseData }) {
 			link: "/blogs-inside",
 		},
 	];
+	const sortedData = [...pressReleaseData.data].sort((a, b) => {
+		return new Date(b.date) - new Date(a.date);
+	});
 	return (
 		<div>
 			{/* Metatags */}
@@ -102,7 +103,8 @@ export default function PressReleasePage({ pressReleaseData }) {
 							</p>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{pressReleaseData.data.map((item, ind) => {
+							{sortedData.map((item, ind) => {
+								const date = Moment(item.date).format("MMM DD, YYYY");
 								return (
 									<div className={`${styles.MainBox}`} key={ind}>
 										<div className={`${styles.box1}`}>
@@ -111,7 +113,7 @@ export default function PressReleasePage({ pressReleaseData }) {
 											</div>
 											<div className={`${styles.categoryBox}`}>
 												<div className={`${styles.news}`}>
-													<p>{item.date}</p>
+													<p>{date}</p>
 												</div>
 												<div className={`${styles.arrow}`}>
 													<a href={`press-release/${item.slug}`} rel="noopener noreferrer">
