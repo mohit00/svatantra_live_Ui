@@ -33,14 +33,11 @@ export const getStaticProps = async (context) => {
 
 /** Media Mention Page */
 export default function MediaMentionPage({ mediaMentionsData }) {
-	console.log(mediaMentionsData, "dddddddddddddd");
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 
 	/** */
 	const openPopup = (blog) => {
-		console.log(blog, " blog");
-
 		setSelectedBlog(blog);
 		setIsOpen(true);
 	};
@@ -103,6 +100,10 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 			link: "/blogs-inside",
 		},
 	];
+	const sortedData = [...mediaMentionsData.data].sort((a, b) => {
+		return new Date(b.date) - new Date(a.date);
+	});
+
 	return (
 		<div>
 			{/* Metatags */}
@@ -136,7 +137,7 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 							</p>
 						</div>
 						<div className={`${styles.GridBox}`}>
-							{mediaMentionsData.data.map((item, ind) => {
+							{sortedData.map((item, ind) => {
 								// const formattedDate = new Date(item.date).toISOString().split("T")[0];
 								const date = Moment(item.date).format("MMM DD, YYYY");
 								return (
