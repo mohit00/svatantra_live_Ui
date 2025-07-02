@@ -35,7 +35,9 @@ export const getStaticProps = async (context) => {
 };
 /** Leadership Page */
 export default function LeadershipPage({ leadershipsData }) {
-	console.log(leadershipsData.data, "leadershipsData");
+	const sortedLeadershipData = leadershipsData?.data.sort(
+		(a, b) => parseInt(a.orders) - parseInt(b.orders)
+	);
 
 	const [isVisible, setIsVisible] = useState(false);
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -108,7 +110,7 @@ export default function LeadershipPage({ leadershipsData }) {
 							Our team leads by example at the forefront of change, <br />
 							building a future where financial freedom is accessible to all.
 						</p>
-						{leadershipsData.data.map((item, index) => {
+						{sortedLeadershipData?.map((item, index) => {
 							if (!item.desc) return null;
 							const paragraphs = item.desc.split(/<br\s*\/?>/i);
 
@@ -124,7 +126,6 @@ export default function LeadershipPage({ leadershipsData }) {
 								<>
 									{item.isFounder && (
 										<div className={`${styles.AnanyaIntro}`} key={index}>
-											{console.log(item, " item.isFounder")}
 											<div className={`${styles.Left}`}>
 												<div className={`${styles.DetailsHead} pb_40`}>
 													<p className="text_md font_primary pb_10">{item.name}</p>
@@ -199,8 +200,7 @@ export default function LeadershipPage({ leadershipsData }) {
 													alt="Design Image"
 												/>
 												<img
-													// src={Ananya.src}
-													src={StrapiImage(item.profileImg).url}
+													src={Ananya.src}
 													className={styles.AnanyaImg}
 													alt="Design Image"
 												/>
@@ -296,7 +296,7 @@ export default function LeadershipPage({ leadershipsData }) {
 									</div>
 								</div>
 							))} */}
-							{leadershipsData.data.map((item, index) => {
+							{sortedLeadershipData?.map((item, index) => {
 								return (
 									<>
 										{!item.isFounder && (
@@ -343,7 +343,7 @@ export default function LeadershipPage({ leadershipsData }) {
 						<div>
 							{openPop1 && (
 								<div className={`${styles.className}`}>
-									{leadershipsData.data.map((item, ind) => {
+									{sortedLeadershipData?.map((item, ind) => {
 										return (
 											<>
 												{slideNo == ind && (
