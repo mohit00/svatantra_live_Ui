@@ -124,6 +124,7 @@ export default function LeadershipPage({ leadershipsData }) {
 								<>
 									{item.isFounder && (
 										<div className={`${styles.AnanyaIntro}`} key={index}>
+											{console.log(item, " item.isFounder")}
 											<div className={`${styles.Left}`}>
 												<div className={`${styles.DetailsHead} pb_40`}>
 													<p className="text_md font_primary pb_10">{item.name}</p>
@@ -198,7 +199,8 @@ export default function LeadershipPage({ leadershipsData }) {
 													alt="Design Image"
 												/>
 												<img
-													src={Ananya.src}
+													// src={Ananya.src}
+													src={StrapiImage(item.profileImg).url}
 													className={styles.AnanyaImg}
 													alt="Design Image"
 												/>
