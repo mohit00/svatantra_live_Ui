@@ -200,7 +200,8 @@ export default function LeadershipPage({ leadershipsData }) {
 													alt="Design Image"
 												/>
 												<img
-													src={Ananya.src}
+													// src={Ananya.src}
+													src={StrapiImage(item.profileImg).url}
 													className={styles.AnanyaImg}
 													alt="Design Image"
 												/>
