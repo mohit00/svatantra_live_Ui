@@ -44,7 +44,7 @@ export default function LoanFactSheet() {
 							<td>₹ 5,369 to ₹ 1 lakh</td>
 							<td>12 to 30 Months</td>
 							<td>Monthly</td>
-							<td>19.75% to 24.25%*</td>
+							<td>22.30% to 24.00%*</td>
 							<td>0.75% to 1.50% (+GST)</td>
 							<td>Nil</td>
 						</tr>
