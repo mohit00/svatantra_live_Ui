@@ -65,7 +65,12 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 					{ x: "0", delay: 1.5 },
 					"2nd"
 				)
-				.to(`.${styles.intro_loader}`, 1, { x: "-22%", delay: 1 }, "2nd")
+				.to(
+					`.${styles.intro_loader}`,
+					1,
+					{ x: winW > 767 ? "-22%" : "unset", delay: 1 },
+					"2nd"
+				)
 				.fromTo(
 					`.main_header`,
 					{ y: "-120%" },
@@ -74,7 +79,7 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 				)
 				.to(
 					`.${styles.intro_loader_mobile}`,
-					{ y: window.innerHeight < 767 ? "0" : "-18vh", delay: 1 },
+					{ y: winW < 767 ? "0" : "-18vh", delay: 1 },
 					"2nd"
 				)
 				.to(
