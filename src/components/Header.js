@@ -176,7 +176,7 @@ export default function Header() {
 									</svg>
 
 									<a href="tel:180 026 79911" target="_blank" rel="noreferrer">
-										<p className="text_xs color_white">Toll-free Number 180 026 79911 </p>
+										<p className="text_xs color_white">Toll-free Number 1800 267 9911 </p>
 									</a>
 								</div>
 								<a href="https://smartodr.in/login" target="_blank" rel="noreferrer">
