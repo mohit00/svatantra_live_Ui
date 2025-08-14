@@ -32,11 +32,11 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4.05, suffix: "M+", decimals: 2 },
-		{ end: 12623, suffix: " CR", decimals: 0 },
-		{ end: 14902, suffix: "CR", decimals: 0 },
-		{ end: 23289, suffix: "+", decimals: 0 },
-		{ end: 2034, suffix: "", decimals: 0 },
+		{ end: 3.96, suffix: "M+", decimals: 2 },
+		{ end: 15480, suffix: " CR", decimals: 0 },
+		{ end: 14745, suffix: "CR", decimals: 0 },
+		{ end: 23316, suffix: "+", decimals: 0 },
+		{ end: 2024, suffix: "", decimals: 0 },
 		{ end: 19, suffix: "", decimals: 0 },
 	];
 
@@ -124,7 +124,7 @@ export default function Economic() {
 										})}
 										<span>{countersData[1].suffix}</span>
 									</h4>
-									<h5 className="text_xs">Loan disbursed FY 24-25</h5>
+									<h5 className="text_xs">Loan disbursed FY 25-26</h5>
 								</div>
 								<img
 									src={counterImg.src}
