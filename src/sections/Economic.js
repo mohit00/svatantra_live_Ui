@@ -21,7 +21,7 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 
 /** DummyComponent Component */
 export default function Economic({ numberData }) {
-	console.log(numberData.data.stats, "numberData");
+	// console.log(numberData.data.stats, "numberData");
 
 	const [values, setValues] = useState([0, 0, 0, 0, 0, 0]);
 	const refs = [
@@ -93,16 +93,16 @@ export default function Economic({ numberData }) {
 						We are in the business of activating economic engines of growth
 					</h2>
 					<div className={`${styles.counter} `}>
-						{numberData.data.stats.length > 0 &&
-							numberData.data.stats.map((item, ind) => (
+						{numberData?.data?.stats?.length > 0 &&
+							numberData?.data?.stats?.map((item, ind) => (
 								<div className={`${styles.box} f_r_a_center`} key={ind} data-scroll>
 									<div className={`${styles.count}`}>
 										<div className={`${styles.counterInfo}`} ref={refs[ind]}>
 											<h4 className="text_xxl">
-												{item.numbers}
-												<span>&nbsp;{item.value}</span>
+												{item?.numbers}
+												<span>&nbsp;{item?.value}</span>
 											</h4>
-											<h5 className="text_xs">{item.description}</h5>
+											<h5 className="text_xs">{item?.description}</h5>
 										</div>
 
 										<img

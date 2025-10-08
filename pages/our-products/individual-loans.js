@@ -294,7 +294,7 @@ export default function MsmeLoans({ blogsData }) {
 								</tr> */}
 							</table>
 							<p className={`${styles.averageRate} text_sm pt_20 f_w_l opacity_80`}>
-								*Average rate of interest for the 1st Quarter FY25-26: 23.27%
+								*Average rate of interest for the 1<sup>st</sup> Quarter FY25-26: 23.27%
 							</p>
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
