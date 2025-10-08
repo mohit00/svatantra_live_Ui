@@ -76,13 +76,13 @@ export default function StoriesSuccess({ successStoriesData }) {
 									nextEl: "#customNext",
 								}}
 							>
-								{successStoriesData.data?.map((item, ind) => {
+								{successStoriesData?.data?.map((item, ind) => {
 									return (
 										<SwiperSlide key={ind}>
 											<div className={`${styles.SliderItem} color_white`}>
 												<img src={Qutoes.src} alt="Quote Image" />
 												<p className={`${styles.quote} text_sm text_500`}>{item.desc}</p>
-												<p className={`${styles.Name}`}>- {item.name}</p>
+												<p className={`${styles.Name}`}>- {item?.name}</p>
 											</div>
 										</SwiperSlide>
 									);
