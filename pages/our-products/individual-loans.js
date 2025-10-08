@@ -47,7 +47,7 @@ export default function MsmeLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 1 lakh to ₹ 3 lakh",
 		tenure: "24 to 36 Months",
-		interestRate: "23%",
+		interestRate: "22.80% to 24.00%",
 	};
 	const pavingThePathData = {
 		title: "Scale small businesses to robust MSMEs",

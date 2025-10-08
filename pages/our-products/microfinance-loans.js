@@ -44,10 +44,11 @@ export const getStaticProps = async (context) => {
 /** MicrofinanceLoans Page */
 export default function MicrofinanceLoans({ blogsData }) {
 	const loanAmountData = {
-		loanAmount: "₹ 5,369 to ₹ 1 lakh",
+		loanAmount: "₹ 5,000 to ₹ 1 lakh",
 		tenure: "12 to 30 Months",
-		interestRate: "22.30% to 24.00%",
+		interestRate: "22.80% to 24.00%*",
 	};
+
 	const pavingThePathData = {
 		title: "Paving the path to prosperity for women entrepreneurs",
 		description:
