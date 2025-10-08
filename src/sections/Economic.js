@@ -20,7 +20,9 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 // DATA //
 
 /** DummyComponent Component */
-export default function Economic() {
+export default function Economic({ numberData }) {
+	console.log(numberData.data.stats, "numberData");
+
 	const [values, setValues] = useState([0, 0, 0, 0, 0, 0]);
 	const refs = [
 		useRef(null),
@@ -90,13 +92,34 @@ export default function Economic() {
 					<h2 className="section_title pb_40">
 						We are in the business of activating economic engines of growth
 					</h2>
-
 					<div className={`${styles.counter} `}>
+						{numberData.data.stats.length > 0 &&
+							numberData.data.stats.map((item, ind) => (
+								<div className={`${styles.box} f_r_a_center`} key={ind} data-scroll>
+									<div className={`${styles.count}`}>
+										<div className={`${styles.counterInfo}`} ref={refs[ind]}>
+											<h4 className="text_xxl">
+												{item.numbers}
+												<span>&nbsp;{item.value}</span>
+											</h4>
+											<h5 className="text_xs">{item.description}</h5>
+										</div>
+
+										<img
+											src={counterImg.src}
+											className={`${styles.counterImg} hidden_xs`}
+										/>
+										<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
+									</div>
+								</div>
+							))}
+					</div>
+
+					{/* <div className={`${styles.counter} `}>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								<div className={`${styles.counterInfo}`} ref={refs[0]}>
 									<h4 className="text_xxl">
-										{/* 4.18 <span>M+</span> */}
 										{values[0].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[0].decimals,
 											maximumFractionDigits: countersData[0].decimals,
@@ -117,7 +140,6 @@ export default function Economic() {
 							<div className={`${styles.count}`}>
 								<div className={`${styles.counterInfo}`} ref={refs[1]}>
 									<h4 className="text_xxl">
-										{/* 48,636 <span>CR</span> */}
 										{values[1].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[1].decimals,
 											maximumFractionDigits: countersData[1].decimals,
@@ -137,7 +159,6 @@ export default function Economic() {
 							<div className={`${styles.count}`}>
 								<div className={`${styles.counterInfo}`} ref={refs[2]}>
 									<h4 className="text_xxl">
-										{/* 14,149 <span>CR</span> */}
 										{values[2].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[2].decimals,
 											maximumFractionDigits: countersData[2].decimals,
@@ -157,7 +178,6 @@ export default function Economic() {
 							<div className={`${styles.count}`}>
 								<div className={`${styles.counterInfo}`} ref={refs[3]}>
 									<h4 className="text_xxl">
-										{/* 21,500 <span>+</span> */}
 										{values[3].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[3].decimals,
 											maximumFractionDigits: countersData[3].decimals,
@@ -211,7 +231,7 @@ export default function Economic() {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-					</div>
+					</div> */}
 
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
