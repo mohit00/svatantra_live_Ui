@@ -49,7 +49,6 @@ import finance from "../../public/img/finance.png";
 
 /** Homenews Section */
 export default function Homenews({ mediaMentionData, getAwardsData }) {
-	console.log(mediaMentionData, "ddddddddd");
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedBlog, setSelectedBlog] = useState(null);
 	const [activeTab, setActiveTab] = useState("media");
@@ -180,7 +179,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 								{windowWidth < 992 ? (
 									<Swiper {...mediaSettings}>
 										{filteredData?.map((item, ind) => {
-											const date = Moment(item.date).format("MMM DD, YYYY");
+											const date = Moment(item?.date).format("MMM DD, YYYY");
 											return (
 												<SwiperSlide key={ind}>
 													<div
@@ -196,7 +195,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 																/>
 
 																<div className={styles.logoBox}>
-																	<img src={StrapiImage(item.logo).url} />
+																	<img src={StrapiImage(item?.logo)?.url} />
 																</div>
 															</div>
 
@@ -206,7 +205,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 																</div>
 															</div>
 
-															<p className="text_reg f_w_m pt_10">{item.title}</p>
+															<p className="text_reg f_w_m pt_10">{item?.title}</p>
 														</div>
 													</div>
 												</SwiperSlide>
@@ -216,7 +215,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 								) : (
 									<div className={styles.gridBx}>
 										{filteredData?.map((item, ind) => {
-											const date = Moment(item.date).format("MMM DD, YYYY");
+											const date = Moment(item?.date).format("MMM DD, YYYY");
 											return (
 												<div
 													className={`${styles.slider}`}
@@ -226,7 +225,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 													<div className={`${styles.box1}`}>
 														<div className={`${styles.imgBox}`}>
 															<img
-																src={StrapiImage(item.thumbnail).url}
+																src={StrapiImage(item?.thumbnail)?.url}
 																alt="box1"
 																className={`${styles.mainImg}`}
 															/>
@@ -241,7 +240,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 															</div>
 														</div>
 
-														<p className="text_reg f_w_m pt_10">{item.title}</p>
+														<p className="text_reg f_w_m pt_10">{item?.title}</p>
 													</div>
 												</div>
 											);
@@ -251,10 +250,10 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 							</>
 						) : (
 							<>
-								{getAwardsData?.data.length >= lenghtCount ? (
+								{getAwardsData?.data?.length >= lenghtCount ? (
 									<Swiper {...awardSettings}>
-										{getAwardsData.data?.map((item, ind) => {
-											const date = Moment(item.date).format("MMM DD, YYYY");
+										{getAwardsData?.data?.map((item, ind) => {
+											const date = Moment(item?.date).format("MMM DD, YYYY");
 											return (
 												<SwiperSlide key={ind}>
 													<div className={`${styles.awardBox}`}>
@@ -269,7 +268,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 															{/* <div className={`${styles.dateBox}`}>
 																<p className="">{date}</p>
 															</div> */}
-															<p className={`${styles.headTitle} text_reg`}>{item.title}</p>
+															<p className={`${styles.headTitle} text_reg`}>{item?.title}</p>
 														</div>
 													</div>
 												</SwiperSlide>
@@ -278,14 +277,14 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 									</Swiper>
 								) : (
 									<div className={styles.gridBx}>
-										{getAwardsData.data?.map((item, ind) => {
+										{getAwardsData?.data?.map((item, ind) => {
 											const date = Moment(item.date).format("MMM DD, YYYY");
 											return (
 												<div className={`${styles.awardBox}`} key={ind}>
 													<div className={`${styles.box1}`}>
 														<div className={`${styles.logoBox}`}>
 															<img
-																src={StrapiImage(item.logo).url}
+																src={StrapiImage(item?.logo)?.url}
 																alt="awardLogo"
 																className={`${styles.awardLogo}`}
 															/>
@@ -293,7 +292,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 														{/* <div className={`${styles.dateBox}`}>
 															<p className="">{date}</p>
 														</div> */}
-														<p className={`${styles.headTitle} text_reg`}>{item.title}</p>
+														<p className={`${styles.headTitle} text_reg`}>{item?.title}</p>
 													</div>
 												</div>
 											);
@@ -348,7 +347,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 				{selectedBlog && (
 					<div className={styles.popupContent}>
 						<img
-							src={StrapiImage(selectedBlog.image).url}
+							src={StrapiImage(selectedBlog?.image)?.url}
 							alt="blog-image"
 							className="width_100"
 						/>
