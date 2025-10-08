@@ -84,8 +84,63 @@ export default function LoanFactSheet() {
 							</td>
 						</tr> */}
 					</table>
+					<table>
+						<thead>
+							<tr>
+								<th>Products</th>
+								<th>Loan amount</th>
+								<th>Tenure</th>
+								<th>Repayment option</th>
+								<th>Rate of interest (p.a)</th>
+								<th>Loan processing fee</th>
+								<th>Prepayment charges</th>
+							</tr>
+						</thead>
+						<tr>
+							<td>Microfinance loans</td>
+							<td>₹ 5,000 to ₹ 1 lakh</td>
+							<td>12 to 30 Months</td>
+							<td>Monthly</td>
+							<td>22.80% to 24.00%*</td>
+							<td>1.50% (+GST)</td>
+							<td>Nil</td>
+						</tr>
+						<tr>
+							<td>Individual Loans</td>
+							<td>₹ 1 lakh to ₹ 3 lakh</td>
+							<td>24 to 36 Months</td>
+							<td>Monthly</td>
+							<td>22.80% to 24.00%</td>
+							<td>1.50% (+GST)</td>
+							<td>Nil</td>
+						</tr>
+						<tr>
+							<td rowSpan="2">Insurance</td>
+							<td colSpan="6">
+								Svatantra offers Credit Linked Insurance, a life insurance tailored to
+								provide financial support to our women customers and their spouses. It
+								ensures the family remains economically independent, especially in case
+								of death of the insured person.
+							</td>
+						</tr>
+						{/* <tr className={`${styles.bgWhite} ${styles.bgBorder}`}>
+							<td colSpan="6">
+								₹ 1 lakh to ₹ 3 lakhCredit Linked Insurance is a life insurance offered
+								by Svatantra to women customers and her spouse to provide relief to her
+								family in case of death of the insured person.
+							</td>
+						</tr> */}
+						{/* <tr className={`${styles.bgWhite} `}>
+							<td colSpan="7" className={`${styles.bgBorder}`}>
+								ROI is a function of risk profile of the customers and will be reviewed
+								periodically. All the products above Rs.25000 have tenure ranging from
+								24 to 30 months. Apart from credit life insurance all other insurance
+								products are optional (consent based) Penal charges - Nil
+							</td>
+						</tr> */}
+					</table>
 					<p className="text_sm pt_20 f_w_l opacity_80">
-						*Average rate of interest for Q4 FY24: 23.21%
+						*Average rate of interest for the 1st Quarter FY25-26: 23.27%
 					</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
