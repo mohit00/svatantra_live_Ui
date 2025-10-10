@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 			};
 
 			const apiRes = await fetch(
-				`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/contact-us-leads`,
+				`${process.env.STRAPI_DO_BASE_URL}/api/contact-us-leads`,
 				Headers
 			);
 			const result = await apiRes.json();
