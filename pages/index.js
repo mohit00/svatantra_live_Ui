@@ -87,7 +87,8 @@ export default function HomePage({
 			<main className={`${styles.HomePage} `}>
 				<HomeBanner gsap={gsap} ScrollTrigger={ScrollTrigger} />
 				<Svatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />
-				{homeData && <Economic numberData={homeData} />}
+				 <Economic />
+				{/* {homeData && <Economic numberData={homeData} />} */}
 
 				<ScaleBusiness />
 				<DigitallySvatantra gsap={gsap} ScrollTrigger={ScrollTrigger} />

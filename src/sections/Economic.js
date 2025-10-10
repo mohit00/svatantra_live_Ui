@@ -21,7 +21,7 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 
 /** DummyComponent Component */
 export default function Economic({ numberData }) {
-	console.log(numberData.data.stats, "numberData");
+	// console.log(numberData.data.stats, "numberData");
 
 	const [values, setValues] = useState([0, 0, 0, 0, 0, 0]);
 	const refs = [
@@ -92,17 +92,17 @@ export default function Economic({ numberData }) {
 					<h2 className="section_title pb_40">
 						We are in the business of activating economic engines of growth
 					</h2>
-					<div className={`${styles.counter} `}>
-						{numberData.data.stats.length > 0 &&
-							numberData.data.stats.map((item, ind) => (
+					{/* <div className={`${styles.counter} `}>
+						{numberData?.data?.stats?.length > 0 &&
+							numberData?.data?.stats?.map((item, ind) => (
 								<div className={`${styles.box} f_r_a_center`} key={ind} data-scroll>
 									<div className={`${styles.count}`}>
 										<div className={`${styles.counterInfo}`} ref={refs[ind]}>
 											<h4 className="text_xxl">
-												{item.numbers}
-												<span>&nbsp;{item.value}</span>
+												{item?.numbers}
+												<span>&nbsp;{item?.value}</span>
 											</h4>
-											<h5 className="text_xs">{item.description}</h5>
+											<h5 className="text_xs">{item?.description}</h5>
 										</div>
 
 										<img
@@ -113,9 +113,9 @@ export default function Economic({ numberData }) {
 									</div>
 								</div>
 							))}
-					</div>
+					</div> */}
 
-					{/* <div className={`${styles.counter} `}>
+					<div className={`${styles.counter} `}>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								<div className={`${styles.counterInfo}`} ref={refs[0]}>
@@ -231,7 +231,7 @@ export default function Economic({ numberData }) {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-					</div> */}
+					</div>
 
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
