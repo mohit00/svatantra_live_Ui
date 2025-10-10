@@ -20,7 +20,7 @@ import mobileImg from "../../public/img/home/counter_mobile_line.png";
 // DATA //
 
 /** DummyComponent Component */
-export default function Economic({ numberData }) {
+export default function Economic() {
 	// console.log(numberData.data.stats, "numberData");
 
 	const [values, setValues] = useState([0, 0, 0, 0, 0, 0]);
