@@ -92,7 +92,7 @@ export default function Economic({ numberData }) {
 					<h2 className="section_title pb_40">
 						We are in the business of activating economic engines of growth
 					</h2>
-					<div className={`${styles.counter} `}>
+					{/* <div className={`${styles.counter} `}>
 						{numberData?.data?.stats?.length > 0 &&
 							numberData?.data?.stats?.map((item, ind) => (
 								<div className={`${styles.box} f_r_a_center`} key={ind} data-scroll>
@@ -113,9 +113,9 @@ export default function Economic({ numberData }) {
 									</div>
 								</div>
 							))}
-					</div>
+					</div> */}
 
-					{/* <div className={`${styles.counter} `}>
+					<div className={`${styles.counter} `}>
 						<div className={`${styles.box} f_r_a_center`} data-scroll>
 							<div className={`${styles.count}`}>
 								<div className={`${styles.counterInfo}`} ref={refs[0]}>
@@ -231,7 +231,7 @@ export default function Economic({ numberData }) {
 								<img src={mobileImg.src} className={`${styles.mobile} hidden_lg`} />
 							</div>
 						</div>
-					</div> */}
+					</div>
 
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
