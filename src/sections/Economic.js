@@ -42,6 +42,8 @@ export default function Economic() {
 		{ end: 19, suffix: "", decimals: 0 },
 	];
 
+	// changes
+
 	useEffect(() => {
 		const observers = refs.map((ref, index) => {
 			const observer = new IntersectionObserver(
