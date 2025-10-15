@@ -47,7 +47,7 @@ export default async function handler(req, res) {
 		);
 
 		const strapiRes = await axios.post(
-			`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}/api/upload`,
+			`${process.env.STRAPI_DO_BASE_URL}/api/upload`,
 			formData,
 			{
 				headers: {
