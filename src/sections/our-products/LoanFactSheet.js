@@ -88,7 +88,7 @@ export default function LoanFactSheet() {
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a
-						href="/img/interest-rate-disclosure-mar-25.pdf"
+						href="/img/Interest_Rate_Disclosure_Sep_25.pdf"
 						target={"_blank"}
 						rel="noreferrer"
 					>
