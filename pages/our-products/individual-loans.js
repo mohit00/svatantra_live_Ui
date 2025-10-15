@@ -298,7 +298,7 @@ export default function MsmeLoans({ blogsData }) {
 							</p>
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
-							<a href="">
+							<a href="/img/Interest_Rate_Disclosure_Sep_25.pdf">
 								<span>
 									<img src={pdf_icon.src} alt="icon" />
 								</span>
