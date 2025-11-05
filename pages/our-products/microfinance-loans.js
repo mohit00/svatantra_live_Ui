@@ -46,13 +46,13 @@ export default function MicrofinanceLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 5,000 to ₹ 1 lakh",
 		tenure: "12 to 30 Months",
-		interestRate: "22.80% to 24.00%*",
+		interestRate: "22.30% to 24.00%*",
 	};
 
 	const pavingThePathData = {
 		title: "Paving the path to prosperity for women entrepreneurs",
 		description:
-			"Svatantra’s microfinance loans have been instrumental in promoting entrepreneurship, especially among the semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
+			"Svatantra's microfinance loans have been instrumental in promoting entrepreneurship, especially among the semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
 		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
 			"We provide one of the lowest interest rates in India.",
