@@ -299,7 +299,7 @@ export default function MsmeLoans({ blogsData }) {
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
 							<a
-								href="https://www.svatantramicrofin.com/our-products/customer-protection/disclosure-of-interest-rates.pdf"
+								href="https://www.svatantramicrofin.com/our-products/customer-protection/disclosure-of-interest-rates"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

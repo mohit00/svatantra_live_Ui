@@ -44,7 +44,7 @@ export default function LoanFactSheet() {
 							<td>₹ 5,000 to ₹ 1 lakh</td>
 							<td>12 to 30 Months</td>
 							<td>Monthly</td>
-							<td>22.80% to 24.00%*</td>
+							<td>22.30% to 24.00%*</td>
 							<td>1.50% (+GST)</td>
 							<td>Nil</td>
 						</tr>
@@ -53,7 +53,7 @@ export default function LoanFactSheet() {
 							<td>₹ 1 lakh to ₹ 3 lakh</td>
 							<td>24 to 36 Months</td>
 							<td>Monthly</td>
-							<td>22.80% to 24.00%</td>
+							<td>22.75% to 24.00%</td>
 							<td>1.50% (+GST)</td>
 							<td>Nil</td>
 						</tr>
@@ -82,13 +82,11 @@ export default function LoanFactSheet() {
 							</td>
 						</tr> */}
 					</table>
-					<p className="text_sm pt_20 f_w_l opacity_80">
-						*Average rate of interest for the 1<sup>st</sup> Quarter FY25-26: 23.27%
-					</p>
+					<p className="text_sm pt_20 f_w_l opacity_80">Penal charges - Nil</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a
-						href="/img/Interest_Rate_Disclosure_Sep_25.pdf"
+						href="https://www.svatantramicrofin.com/our-products/customer-protection/disclosure-of-interest-rates"
 						target={"_blank"}
 						rel="noreferrer"
 					>

@@ -41,4 +41,28 @@
 			}
 		}
 	}
+	.btnBox {
+		display: flex;
+		@media (max-width: 991px) {
+			flex-wrap: wrap;
+		}
+		a {
+			display: inline-flex;
+			align-items: center;
+			background-color: #2859a9;
+			padding: 10px 25px;
+			border-radius: 50px;
+			color: #fff;
+			font-size: 16px;
+			font-weight: 400;
+			font-family: var(--font_secondary);
+			margin-right: 20px;
+			@media (max-width: 991px) {
+				margin-bottom: 15px;
+			}
+			span {
+				margin-right: 10px;
+			}
+		}
+	}
 }
