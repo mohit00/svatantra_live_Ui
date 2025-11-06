@@ -43,6 +43,7 @@
 	}
 	.btnBox {
 		display: flex;
+		border-top: solid 1px #dcd6d2;
 		@media (max-width: 991px) {
 			flex-wrap: wrap;
 		}
