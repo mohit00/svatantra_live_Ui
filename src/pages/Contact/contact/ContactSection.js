@@ -13,7 +13,7 @@ import ContactPageForm from "@/sections/ContactPageForm";
 import styles from "@/styles/sections/pages/Contact/ContactSection.module.scss";
 
 // IMAGES //
-
+import pdf_icon from "../../../../public/img/pdf_icon.svg";
 // DATA //
 
 /** DummyComponent Component */
@@ -28,7 +28,7 @@ export default function ContactSection() {
 					<div className={`${styles.contact_info}`}>
 						<h4 className="text_reg f_w_s_b pb_10 font_primary">Email</h4>
 
-						<h5 className="text_xs f_w_b">Complaint / Query: </h5>
+						<h5 className="text_xs f_w_b">Customer Complaint / Query: </h5>
 						<p className="text_xs pb_10">
 							<a href="mailto:customercare@svatantra.adityabirla.com">
 								customercare@svatantra.adityabirla.com
@@ -71,6 +71,18 @@ export default function ContactSection() {
 							<p className="text_xs">
 								<a href="tel: 18002679911">Toll Free No: 18002679911</a>
 							</p>
+							<div className={`${styles.btnBox} pt_10`}>
+								<a
+									href="https://www.svatantramicrofin.com/uploads/Details_of_Customer_Grievance_Redressal_21e162e741.pdf"
+									target={"_blank"}
+									rel="noreferrer"
+								>
+									<span>
+										<img src={pdf_icon.src} alt="icon" />
+									</span>
+									Customer Complaint / Query:
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
