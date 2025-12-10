@@ -148,6 +148,24 @@ export default function AboutPage({ awardsData }) {
 						<div className={`${styles.turning_section} f_w_j`}>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
+									<img src={Icon2.src} className="img-responsive" alt="Icon1" />
+								</div>
+								<h5 className="text_md font_primary">Integrity</h5>
+								<p className="text_xs opacity_80">
+									Upholding honesty and strong ethical values in all our practices.
+								</p>
+							</div>
+							<div className={`${styles.turning_box}`}>
+								<div className={`${styles.img_box}`}>
+									<img src={Icon2.src} className="img-responsive" alt="Icon1" />
+								</div>
+								<h5 className="text_md font_primary">Discipline</h5>
+								<p className="text_xs opacity_80">
+									A commitment to consistency, accountability, and excellence in every action and decision.
+								</p>
+							</div>
+							<div className={`${styles.turning_box}`}>
+								<div className={`${styles.img_box}`}>
 									<img src={Icon1.src} className="img-responsive" alt="Icon1" />
 								</div>
 								<h5 className="text_md font_primary">Transparency</h5>
@@ -158,41 +176,11 @@ export default function AboutPage({ awardsData }) {
 							</div>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon2.src} className="img-responsive" alt="Icon1" />
-								</div>
-								<h5 className="text_md font_primary">Integrity</h5>
-								<p className="text_xs opacity_80">
-									Upholding honesty and strong ethical values in all our practices.
-								</p>
-							</div>
-							<div className={`${styles.turning_box}`}>
-								<div className={`${styles.img_box}`}>
 									<img src={Icon3.src} className="img-responsive" alt="Icon1" />
 								</div>
-								<h5 className="text_md font_primary">Passion</h5>
+								<h5 className="text_md font_primary">Meritocracy</h5>
 								<p className="text_xs opacity_80">
-									Driven by a deep commitment to making a lasting impact on the lives we
-									touch.
-								</p>
-							</div>
-							<div className={`${styles.turning_box}`}>
-								<div className={`${styles.img_box}`}>
-									<img src={Icon4.src} className="img-responsive" alt="Icon1" />
-								</div>
-								<h5 className="text_md font_primary">Teamwork</h5>
-								<p className="text_xs opacity_80">
-									Collaborating effectively with a shared goal of transforming lives and
-									communities.
-								</p>
-							</div>
-							<div className={`${styles.turning_box}`}>
-								<div className={`${styles.img_box}`}>
-									<img src={Icon5.src} className="img-responsive" alt="Icon1" />
-								</div>
-								<h5 className="text_md font_primary">Innovation</h5>
-								<p className="text_xs opacity_80">
-									Pioneering solutions that drive progress and reshape the financial
-									landscape.
+									We are fair and objective in recognizing individual ability and achievement.
 								</p>
 							</div>
 							<div className={`${styles.turning_box}`}>
@@ -204,6 +192,26 @@ export default function AboutPage({ awardsData }) {
 									Placing the needs of our customers at the heart of everything we do.
 								</p>
 							</div>
+							<div className={`${styles.turning_box}`}>
+								<div className={`${styles.img_box}`}>
+									<img src={Icon4.src} className="img-responsive" alt="Icon1" />
+								</div>
+								<h5 className="text_md font_primary">Learning and Innovation</h5>
+								<p className="text_xs opacity_80">
+									Continuously seek new knowledge and solutions that drive progress and reshape the financial landscape. 
+								</p>
+							</div>
+							{/* <div className={`${styles.turning_box}`}>
+								<div className={`${styles.img_box}`}>
+									<img src={Icon5.src} className="img-responsive" alt="Icon1" />
+								</div>
+								<h5 className="text_md font_primary">Innovation</h5>
+								<p className="text_xs opacity_80">
+									Pioneering solutions that drive progress and reshape the financial
+									landscape.
+								</p>
+							</div> */}
+
 						</div>
 					</div>
 				</section>
