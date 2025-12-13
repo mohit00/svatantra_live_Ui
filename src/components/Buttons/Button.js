@@ -24,15 +24,15 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 	switch (buttonType) {
 		case "primary":
 			return (
-				<>
-					{isHref ? (
-						<Link href={link}>
-							<a className={styles.btn_primary}>
-								<span className={styles.span_inner}>
-									<img src={btnArrow.src} className={`${styles.btn_arrow}`} />
-								</span>
-							</a>
-						</Link>
+                <>
+                    {isHref ? (
+						<Link href={link} className={styles.btn_primary}>
+
+                            <span className={styles.span_inner}>
+                                <img src={btnArrow.src} className={`${styles.btn_arrow}`} />
+                            </span>
+
+                        </Link>
 					) : (
 						<button className={styles.btn_primary}>
 							<span className={styles.span_inner}>
@@ -40,13 +40,14 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 							</span>
 						</button>
 					)}
-				</>
-			);
+                </>
+            );
 		case "secondary":
 			return (
-				// <Link >
-				<div>
-					{isHref ? (
+                // <Link >
+                // </Link>
+                <div>
+                    {isHref ? (
 						<a
 							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
 							href={link}
@@ -84,34 +85,36 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 							</span>
 						</button>
 					)}
-				</div>
-				// </Link>
-			);
+                </div>
+            );
 
 		case "ternary":
 			return (
-				<Link href={link}>
-					<a className={`${styles.btn_third} ${condition ? styles.white : ""}`}>
-						<span className={styles.btn_outer_span}>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
-								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
-							</span>
-							<span className={`${styles.btn_inner_text} text_xxs f_w_s_b`}>
-								{title}
-							</span>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
-								<img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
-							</span>
-						</span>
-					</a>
-				</Link>
-			);
+                <Link
+                    href={link}
+                    className={`${styles.btn_third} ${condition ? styles.white : ""}`}>
+
+                    <span className={styles.btn_outer_span}>
+                        <span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+                            <img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+                        </span>
+                        <span className={`${styles.btn_inner_text} text_xxs f_w_s_b`}>
+                            {title}
+                        </span>
+                        <span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+                            <img src={btnArrow.src} className={`${styles.btn_arrow1}`} alt="" />
+                        </span>
+                    </span>
+
+                </Link>
+            );
 
 		case "four":
 			return (
-				// <Link >
-				<div>
-					<a
+                // <Link >
+                // </Link>
+                <div>
+                    <a
 						className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
 						href={link}
 					>
@@ -152,14 +155,14 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 							</span>
 						</span>
 					</a>
-				</div>
-				// </Link>
-			);
+                </div>
+            );
 		case "five":
 			return (
-				// <Link >
-				<div>
-					<a
+                // <Link >
+                // </Link>
+                <div>
+                    <a
 						className={`${styles.btn_five} ${condition ? styles.white : ""}`}
 						href={link}
 					>
@@ -183,9 +186,8 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 							</span>
 						</span>
 					</a>
-				</div>
-				// </Link>
-			);
+                </div>
+            );
 	}
 };
 export default Button;
