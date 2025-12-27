@@ -71,13 +71,9 @@ export default function TechnologyDriven() {
 							<img src={saksham.src} className="img-responsive" alt="saksham" />
 						</div>
 						<div className={`${styles.committed_info}`}>
-							<h3 className="text_xxl color_primary pb_20">Saksham app</h3>
+							<h3 className="text_xxl color_primary pb_20">Customer-Centric App</h3>
 							<p className="text_sm opacity_8">
-								With the launch of SAKSHAM, a customer-centric app, in November 2020, we
-								made lending more accessible, easier, and efficient for our customers
-								and employees. The app enables users to access essential services,
-								including managing loans, online grievance redressal, payment platforms,
-								and a chatbot for medical insurance and HR onboarding.
+								Customer-Centric made lending more accessible, easier, and efficient for our customers and employees. The app enables users to access essential services, including managing loans, online grievance redressal, payment platforms, and a chatbot insurance.
 							</p>
 						</div>
 					</div>
