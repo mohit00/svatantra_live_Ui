@@ -34,7 +34,7 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4, suffix: "M+", decimals: 2 },
+		{ end: 4, suffix: "M+", decimals: 0 },
 		{ end: 19600, suffix: " CR", decimals: 0 },
 		{ end: 15700, suffix: "CR", decimals: 0 },
 		{ end: 24000, suffix: "+", decimals: 0 },
@@ -238,7 +238,7 @@ export default function Economic() {
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
 							<h5 className="text_sm opacity_80 f_w_b">
-								<span>*CRISIL</span> A - (Stable Rating)
+								<span>*CARE </span> AA (Stable) Rating
 							</h5>
 						</div>
 						<div className={styles.desc}>

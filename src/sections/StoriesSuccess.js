@@ -133,9 +133,7 @@ export default function StoriesSuccess({ successStoriesData }) {
 													<p className="text_sm text_700">Svatantra</p>
 												</div>
 												<p className={styles.desc}>
-													She breaks gender stereotypes for breakfast. We’re talking about
-													Bindhu Jeevan, one of Svatantra’s customers who made sure her
-													family had a support system even during the pandemic.
+													From vision to values, every move at Svatantra is powered by one thing, a belief in India’s Entrepreneurs!
 												</p>
 											</div>
 										</div>
@@ -153,9 +151,7 @@ export default function StoriesSuccess({ successStoriesData }) {
 													<p className="text_sm text_700">Svatantra</p>
 												</div>
 												<p className={styles.desc}>
-													She breaks gender stereotypes for breakfast. We’re talking about
-													Bindhu Jeevan, one of Svatantra’s customers who made sure her
-													family had a support system even during the pandemic.
+													Here’s what real growth looks like — one dream, one business, one community at a time.
 												</p>
 											</div>
 										</div>
@@ -173,9 +169,7 @@ export default function StoriesSuccess({ successStoriesData }) {
 													<p className="text_sm text_700">Svatantra</p>
 												</div>
 												<p className={styles.desc}>
-													She breaks gender stereotypes for breakfast. We’re talking about
-													Bindhu Jeevan, one of Svatantra’s customers who made sure her
-													family had a support system even during the pandemic.
+													From a single start to a stronger future, progress grows when she does.Svatantra stands with every step she takes.
 												</p>
 											</div>
 										</div>
