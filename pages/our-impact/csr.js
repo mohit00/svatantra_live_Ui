@@ -19,6 +19,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
+
+
 // STYLES //
 import styles from "@/styles/pages/csr.module.scss";
 
@@ -37,7 +39,7 @@ import img_three from "../../public/img/newImg/csrImg3.jpg";
 import img_four from "../../public/img/newImg/csrImg4.jpg";
 import img_five from "../../public/img/newImg/csrImg5.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
-
+import pdf_icon from "../../public/img/pdf_icon.svg";
 /** csr Page */
 export default function csr() {
 	const svatantraPath = [
@@ -209,16 +211,31 @@ export default function csr() {
 								</button>
 							</div>
 						</div>
-						<div className={`${styles.BtnBx} pt_60`}>
-							<Button
+						<div className={`${styles.btnBox} pt_60`}>
+							{/* <Button
 								buttonType="secondary"
 								condition={"white"}
 								link={
-									"https://investors.svatantramicrofin.com/pdf/Corporate-Social-Responsibility-Policy.pdf"
+									"/img/Corporate-Social-Responsibility-Policy.pdf"
 								}
+								target={"_blank"}
 								title={"Download our CSR policy"}
 								isHref={true}
-							/>
+							/> */}
+
+							<a
+								href="/img/Corporate-Social-Responsibility-Policy.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								className={styles.csr_download}
+							>
+								<span>
+									<img src={pdf_icon.src} alt="icon" />
+								</span>
+								Download our CSR policy
+							</a>
+
+
 						</div>
 					</div>
 				</section>
