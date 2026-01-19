@@ -238,7 +238,7 @@ export default function Economic() {
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
 							<h5 className="text_sm opacity_80 f_w_b">
-								<span>*CARE </span> AA (Stable) Rating
+								<span>*CARE </span> AA (Stable Outlook) Rating
 							</h5>
 						</div>
 						<div className={styles.desc}>
