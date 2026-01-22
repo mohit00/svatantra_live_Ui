@@ -25,11 +25,12 @@ import StrapiImage from "@/utils/StrapiImage";
 // IMAGES //
 import Girl1 from "../../public/img/newAbout1.jpg";
 import Girl2 from "../../public/img/newAbout2.jpg";
-import Icon1 from "../../public/img/about/icon_1.png";
-import Icon2 from "../../public/img/about/icon_2.png";
-import Icon3 from "../../public/img/about/icon_3.png";
-import Icon4 from "../../public/img/about/icon_4.png";
-import Icon5 from "../../public/img/about/icon_5.png";
+import Icon1 from "../../public/img/about/integrity.png";
+import Icon2 from "../../public/img/about/discipline.png";
+import Icon3 from "../../public/img/about/transparency.png";
+import Icon4 from "../../public/img/about/meritocracy.png";
+import Icon5 from "../../public/img/about/costomer-centricity.png";
+import Icon6 from "../../public/img/about/learning-and-innovation.png";
 import arrow_btn from "../../public/whiteArrow.svg";
 import arrow from "../../public/arrow.svg";
 import RecognisedImg1 from "../../public/img/about/recognisedImg1.jpg";
@@ -148,7 +149,7 @@ export default function AboutPage({ awardsData }) {
 						<div className={`${styles.turning_section} f_w_j`}>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon2.src} className="img-responsive" alt="Icon1" />
+									<img src={Icon1.src} className="img-responsive" alt="Integrity" />
 								</div>
 								<h5 className="text_md font_primary">Integrity</h5>
 								<p className="text_xs opacity_80">
@@ -157,7 +158,7 @@ export default function AboutPage({ awardsData }) {
 							</div>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon2.src} className="img-responsive" alt="Icon1" />
+									<img src={Icon2.src} className="img-responsive" alt="Discipline" />
 								</div>
 								<h5 className="text_md font_primary">Discipline</h5>
 								<p className="text_xs opacity_80">
@@ -166,7 +167,7 @@ export default function AboutPage({ awardsData }) {
 							</div>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon1.src} className="img-responsive" alt="Icon1" />
+									<img src={Icon3.src} className="img-responsive" alt="Transparency" />
 								</div>
 								<h5 className="text_md font_primary">Transparency</h5>
 								<p className="text_xs opacity_80">
@@ -176,7 +177,7 @@ export default function AboutPage({ awardsData }) {
 							</div>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon3.src} className="img-responsive" alt="Icon1" />
+									<img src={Icon4.src} className="img-responsive" alt="Meritocracy" />
 								</div>
 								<h5 className="text_md font_primary">Meritocracy</h5>
 								<p className="text_xs opacity_80">
@@ -185,7 +186,7 @@ export default function AboutPage({ awardsData }) {
 							</div>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon1.src} className="img-responsive" alt="Icon1" />
+									<img src={Icon5.src} className="img-responsive" alt="Customer Centricity" />
 								</div>
 								<h5 className="text_md font_primary">Customer Centricity</h5>
 								<p className="text_xs opacity_80">
@@ -194,7 +195,7 @@ export default function AboutPage({ awardsData }) {
 							</div>
 							<div className={`${styles.turning_box}`}>
 								<div className={`${styles.img_box}`}>
-									<img src={Icon4.src} className="img-responsive" alt="Icon1" />
+									<img src={Icon6.src} className="img-responsive" alt="Learning and Innovation" />
 								</div>
 								<h5 className="text_md font_primary">Learning and Innovation</h5>
 								<p className="text_xs opacity_80">
