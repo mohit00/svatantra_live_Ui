@@ -45,8 +45,8 @@ export const getStaticProps = async (context) => {
 /** MsmeLoans Page */
 export default function MsmeLoans({ blogsData }) {
 	const loanAmountData = {
-		loanAmount: "₹ 1 lakh to ₹ 3 lakh",
-		tenure: "24 to 36 Months",
+		loanAmount: "₹ 1 lakh to ₹ 4 lakh",
+		tenure: "18 to 48 Months",
 		interestRate: "22.75% to 24.00%",
 	};
 	const pavingThePathData = {
