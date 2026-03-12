@@ -39,13 +39,23 @@ export default function MapSection() {
 							Registered Office Address
 						</h4>
 						<h5 className="text_xs f_w_m">
-							Svatantra Microfin Pvt. Ltd., 20th Floor, Sunshine Towers, Senapati Bapat
+							Svatantra Microfin Pvt. Ltd., 20th Floor, Sunshine Tower, Senapati Bapat
 							Marg, Elphinstone Road (W), Mumbai - 400 013, Maharashtra, India
 						</h5>
+
+						<h5 className="pt_10 pb_10">CIN: U74120MH2012PTC227069 </h5>
 
 						<button className={styles.direction}>
 							Get Directions <img src={arrow.src} />
 						</button>
+
+						<h4 className="text_reg f_w_s_b pb_10 font_primary">
+							Corporate Office Address
+						</h4>
+						<h5 className="text_xs f_w_m">
+							Brigade Software Park, ‘B’ Block, 8th Floor, Banashankari Stage II, Banashankari, Bangalore – 560070, Karnataka, India
+						</h5>
+
 					</div>
 				</div>
 			</div>
