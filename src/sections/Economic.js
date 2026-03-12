@@ -34,12 +34,12 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4, suffix: "M+", decimals: 0 },
-		{ end: 19600, suffix: " CR", decimals: 0 },
-		{ end: 15700, suffix: "CR", decimals: 0 },
-		{ end: 24000, suffix: "+", decimals: 0 },
-		{ end: 2064, suffix: "", decimals: 0 },
-		{ end: 19, suffix: "", decimals: 0 },
+		{ end: 4.07, suffix: "M+", decimals: 2 },
+		{ end: 12160, suffix: " CR", decimals: 0 },
+		{ end: 17519, suffix: "CR", decimals: 0 },
+		{ end: 24456, suffix: "+", decimals: 0 },
+		{ end: 2106, suffix: "", decimals: 0 },
+		{ end: 20, suffix: "", decimals: 0 },
 	];
 
 	// changes
@@ -145,10 +145,12 @@ export default function Economic() {
 										{values[1].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[1].decimals,
 											maximumFractionDigits: countersData[1].decimals,
+											style: "currency",
+											currency: "INR",
 										})}
 										<span>{countersData[1].suffix}</span>
 									</h4>
-									<h5 className="text_xs">Loan disbursed FY 25-26</h5>
+									<h5 className="text_xs">Loan disbursed (Dec-25)</h5>
 								</div>
 								<img
 									src={counterImg.src}
@@ -164,10 +166,12 @@ export default function Economic() {
 										{values[2].toLocaleString(undefined, {
 											minimumFractionDigits: countersData[2].decimals,
 											maximumFractionDigits: countersData[2].decimals,
+											style: "currency",
+											currency: "INR",
 										})}{" "}
 										<span>{countersData[2].suffix}</span>
 									</h4>
-									<h5 className="text_xs">GLP</h5>
+									<h5 className="text_xs">GLP (Dec-25)</h5>
 								</div>
 								<img
 									src={counterImg.src}
