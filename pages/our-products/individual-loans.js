@@ -260,8 +260,8 @@ export default function MsmeLoans({ blogsData }) {
 								</tr>
 								<tr>
 									<td>Individual Loans</td>
-									<td>₹ 1 lakh to ₹ 3 lakh</td>
-									<td>24 to 36 Months</td>
+									<td>₹ 1 lakh to ₹ 4 lakh</td>
+									<td>18 to 48 Months</td>
 									<td>Monthly</td>
 									<td>22.75% to 24.00%</td>
 									<td>1.50% (+GST)</td>
