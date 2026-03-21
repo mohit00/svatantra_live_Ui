@@ -283,11 +283,11 @@ export default function Footer() {
 								</p>
 								<p className="text_sm color_white">
 									<a
-										href="https://www.chaitanyaindia.in/"
+										href="/amalgamated-company"
 										target="_blank"
 										rel="noreferrer"
 									>
-										Chaitanya India
+										Amalgamated Company
 									</a>
 								</p>
 								<p className="text_sm color_white">
