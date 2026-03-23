@@ -1,0 +1,85 @@
+[
+  {
+    "category": "Bank Facilities",
+    "items": [
+      {
+        "agency": "India Ratings and Research",
+        "rating": "IND A/Rating Watch with Developing Implications"
+      },
+      {
+        "agency": "CRISIL Ratings",
+        "rating": "CRISIL AA-"
+      },
+      {
+        "agency": "CARE Ratings Limited",
+        "rating": "CARE AA- Stable"
+      }
+    ]
+  },
+  {
+    "category": "Long-term Debt Instruments",
+    "items": [
+      {
+        "agency": "India Ratings and Research",
+        "rating": "IND A/Rating Watch with Developing Implications"
+      },
+      {
+        "agency": "CRISIL Ratings",
+        "rating": "CRISIL AA-"
+      },
+      {
+        "agency": "CARE Ratings Limited",
+        "rating": "CARE A (CE) Stable"
+      }
+    ]
+  },
+  {
+    "category": "Subordinated Debt",
+    "items": [
+      {
+        "agency": "India Ratings & Research",
+        "rating": "IND A/Rating Watch with Developing Implications"
+      }
+    ]
+  },
+  {
+    "category": "Market Linked Debenture",
+    "items": [
+      {
+        "agency": "India Ratings and Research",
+        "rating": "IND PP-MLDAemr/Rating Watch with Developing Implications"
+      }
+    ]
+  },
+  {
+    "category": "Commercial Paper Programme",
+    "items": [
+      {
+        "agency": "India Ratings and Research",
+        "rating": "IND A1/Rating Watch with Developing Implication"
+      },
+      {
+        "agency": "CARE Ratings Limited",
+        "rating": "CARE A1+"
+      }
+    ]
+  },
+  {
+    "category": "Comprehensive Microfinance Grading (Institutional Gradings & Code of Conduct Assessment)",
+    "items": [
+      {
+        "agency": "The SME Rating Agency (SMERA)",
+        "rating": "M1C1"
+      }
+    ]
+  },
+  {
+    "category": "Gold Level Client Protection Certification (according to the new Client Protection Certification Framework promoted by SPTF and CERISE",
+    "items": [
+      {
+        "agency": "M-CRIL inclusive microeconomics",
+        "rating": "Gold"
+      }
+    ]
+  }
+]

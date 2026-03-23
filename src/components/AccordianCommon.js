@@ -30,8 +30,23 @@ export default function AccordianCommon({
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [heights, setHeights] = useState([]);
 	const contentRefs = useRef([]);
+	// useEffect(() => {
+	// 	/** handleAccordionClick function */
+	// 	const calculateHeights = () => {
+	// 		const calculatedHeights = contentRefs.current.map(
+	// 			(el) => el?.scrollHeight || 0
+	// 		);
+	// 		setHeights(calculatedHeights);
+	// 	};
+
+	// 	calculateHeights();
+	// 	window.addEventListener("resize", calculateHeights); // Recalculate heights on window resize
+
+	// 	return () => {
+	// 		window.removeEventListener("resize", calculateHeights);
+	// 	};
+	// }, [activeIndex]);
 	useEffect(() => {
-		/** handleAccordionClick function */
 		const calculateHeights = () => {
 			const calculatedHeights = contentRefs.current.map(
 				(el) => el?.scrollHeight || 0
@@ -40,12 +55,21 @@ export default function AccordianCommon({
 		};
 
 		calculateHeights();
-		window.addEventListener("resize", calculateHeights); // Recalculate heights on window resize
+
+		window.addEventListener("resize", calculateHeights);
+
+		// 🔥 IMPORTANT: observe DOM changes
+		const observer = new MutationObserver(calculateHeights);
+
+		contentRefs.current.forEach((el) => {
+			if (el) observer.observe(el, { childList: true, subtree: true });
+		});
 
 		return () => {
 			window.removeEventListener("resize", calculateHeights);
+			observer.disconnect();
 		};
-	}, [activeIndex]);
+	}, [activeIndex, items]);
 	/** handleAccordionClick function */
 	const handleAccordionClick = (index) => {
 		setActiveIndex(activeIndex === index ? null : index);
@@ -53,6 +77,17 @@ export default function AccordianCommon({
 	/** toggleAccordion */
 	const toggleAccordion = (index) => {
 		setActiveIndex(activeIndex === index ? null : index);
+		const toggleAccordion = (index) => {
+			setActiveIndex(activeIndex === index ? null : index);
+
+			// 🔥 force recalculation after toggle
+			setTimeout(() => {
+				const calculatedHeights = contentRefs.current.map(
+					(el) => el?.scrollHeight || 0
+				);
+				setHeights(calculatedHeights);
+			}, 50);
+		};
 	};
 
 	return (
@@ -62,9 +97,8 @@ export default function AccordianCommon({
 					{/* {console.log(items, "   itemsitemsitemsitemsitems")} */}
 					{/* Accordion Header */}
 					<div
-						className={`${styles.accordionHeader} ${BgStyles.activeBgTitle_1}  ${
-							activeIndex === index ? BgStyles.activeBgTitle : ""
-						}`}
+						className={`${styles.accordionHeader} ${BgStyles.activeBgTitle_1}  ${activeIndex === index ? BgStyles.activeBgTitle : ""
+							}`}
 						// onClick={() => handleAccordionClick(index)}
 						onClick={() => toggleAccordion(index)}
 					>
@@ -84,20 +118,21 @@ export default function AccordianCommon({
 
 					{/* Accordion Content */}
 					<div
-						className={`${styles.accordionContent} ${
-							activeIndex === index ? styles.active : ""
-						} ${activeIndex === index ? BgStyles.activeBgContent : ""}`}
+						className={`${styles.accordionContent} ${activeIndex === index ? styles.active : ""
+							} ${activeIndex === index ? BgStyles.activeBgContent : ""}`}
 						ref={(el) => (contentRefs.current[index] = el)}
 						style={{
-							height: activeIndex === index ? `${heights[index]}px` : "0px",
+							height:
+								activeIndex === index
+									? `${contentRefs.current[index]?.scrollHeight || heights[index]}px`
+									: "0px",
 							overflow: "hidden",
 							transition: "height 0.3s ease",
 						}}
 					>
 						<div
-							className={`${
-								activeIndex === index ? styles.activeInner : ""
-							} activeSpace`}
+							className={`${activeIndex === index ? styles.activeInner : ""
+								} activeSpace`}
 						>
 							{item.children}
 						</div>
