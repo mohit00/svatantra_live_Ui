@@ -8,7 +8,7 @@ import Breadcrum from "@/components/Breadcrumb";
 import Footer2 from "@/components/Footer2";
 import AccordianCommon from "@/components/AccordianCommon";
 import AnnualReports from "@/data/annual-reports.json";
-import Financials from "@/data/Financials.json";
+import Financials from "@/data/financials.json";
 import RatingGradingTable from "@/components/RatingGradingTable";
 import AnnualReturn from "@/data/annual-return.json";
 import Notices from "@/data/notices.json";
