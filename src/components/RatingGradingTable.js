@@ -16,6 +16,7 @@ const RatingTable = () => {
               <th>Rating Instrument</th>
               <th>Rating Agency</th>
               <th>Rating and Grading</th>
+              <th>Details</th>
             </tr>
           </thead>
 
@@ -30,6 +31,15 @@ const RatingTable = () => {
                   )}
                   <td>{item.agency}</td>
                   <td>{item.rating}</td>
+                  <td>
+                    {item.link || row.link ? (
+                      <a href={item.link || row.link} target="_blank" rel="noreferrer">
+                        View details
+                      </a>
+                    ) : (
+                      <span>Not available</span>
+                    )}
+                  </td>
                 </tr>
               ))
             )}

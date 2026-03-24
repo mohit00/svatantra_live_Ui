@@ -1,0 +1,646 @@
+%PDF-1.4
+%‚„œ”
+2 0 obj
+<</Length 585/Filter/FlateDecode>>stream
+xúçì]o⁄0ÜÔ˝+Œ’‘]4¯#N‚ﬁU7`0"m∑Òò;í–êµ‚ﬂœ	˘jÖ"HvNﬁÁºÔë˝Ç∆‚‚Cî ˜ÑÒjFhç^Í?ÖØ∫®W∏^=#Ïpx´ﬂ	°óÒüCä\¡˚ÌmÍî◊Ù¥›¯"®kZÍ∑•Û∫≠¨/∂:√}üVêÙ‹πŸZUåæïO≠Œ•f›T.∑ÍøÈæÁ˛k¥¥´¢ßv\õ£¥Ô`UÙ‘ÆΩ%É;Ã`UÙ‘Æπ%f∞*zj€¡∑d Évƒ·º`x™ö]r*FÁ ∞9¶;Aè{èøv∂;Ÿ; ‡pü}¥õŒ»∫∫ƒ∞˛†˙J∏Ã J—hF@O#˙çÓ∆õÊ—ÙsÙ\]Ó°ÇjÖæÊµ
+∑R‡∫^Ï–›ó…∑Â˜üÛp˙.¬eT!0Ï>`v´Èuî‡d˚7Àﬂˆ2Ÿ…Tf%,sGx’ÃÃ†áÀ:äπöYF¡Sé=Ï1¬ÿe
+cÆÉmòi\J¯ëJ%ú∞¿sÑ-a#ÇGï¿ﬁÉ~Å’¬:V◊7∞6€B`í'“>N#¿>N£Lp™geıÃL˘√¨TÂ	ñqz≈¥ë`7mîM˛ƒ™å≥SOY¢bò©&ÖLT	´◊ÊebDL√ò‰ÈaØ‚l+!:ÆÑ2RÏ°å≤ßÏUÀº8Bm#VYy¥∆¿¶Ò¨ˇ≈E)¡J*7£…aƒÿseè∞®oÖÕΩòÊ∞∏vÃR´c≥~çÃ!ºü©Ω v∆(E*
+endstream
+endobj
+4 0 obj
+<</Type/Page/MediaBox[0 0 595 842]/Resources<</Font<</F1 1 0 R>>>>/Contents 2 0 R/Parent 3 0 R>>
+endobj
+1 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>
+endobj
+3 0 obj
+<</Type/Pages/Count 1/Kids[4 0 R]>>
+endobj
+5 0 obj
+<</Type/Catalog/Pages 3 0 R>>
+endobj
+6 0 obj
+<</Producer(iTextSharpí 5.5.8 ©2000-2015 iText Group NV \(AGPL-version\))/CreationDate(D:20251013180632+05'30')/ModDate(D:20251013180632+05'30')>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000779 00000 n 
+0000000015 00000 n 
+0000000867 00000 n 
+0000000667 00000 n 
+0000000918 00000 n 
+0000000963 00000 n 
+trailer
+<</Size 7/Root 5 0 R/Info 6 0 R/ID [<e28303e9cecde2a33a94c73fe97590ca><e28303e9cecde2a33a94c73fe97590ca>]>>
+%iText-5.5.8
+startxref
+1125
+%%EOF
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title><link href="css/bootstrap.css" rel="stylesheet" /><link href="css/style.css" rel="stylesheet" /><link href="css/font-awesome.min.css" rel="stylesheet" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap-multiselect1.min.js"></script>
+    <link href="css/bootstrap-multiselect1.css" rel="stylesheet" />
+    <link href="css/multiselect1.css" rel="stylesheet" />
+    <script src="js/multiselect1.js"></script>
+
+
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .panel-title {
+            font-size: 13px !important;
+        }
+    </style>
+
+    <script lang="javascript" type="text/javascript">
+
+
+        function progressbar(flag) {
+            if (flag = 1) {
+
+                $('#dvLoader').css('display', 'block');
+            }
+            else {
+                $('#dvLoader').css('display', 'none');
+            }
+        }
+
+        function Clrlable(Source, args) {
+            $('#StatusLabel').text("");
+            $('#StatusLabel').css("color", "black");
+            args.IsValid = true; // Valid file type
+        }
+
+        function ValidateFileUpload1() {
+
+            var fuData = document.getElementById('FileUploadControl');            
+            var FileUploadPath = fuData.value;
+            
+            
+            var isScripCodeSelected = IsScripCodeSelected();
+            if (isScripCodeSelected == false)
+                return false;
+
+            if (FileUploadPath == '') {
+                // There is no file selected 
+                $('#StatusLabel').text("Please select valid .xml file.");
+                $('#StatusLabel').css("color", "Red");
+                return false;
+            }
+            else {
+                var Extension = FileUploadPath.substring(FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+
+                if (Extension == "xml") {
+                    return true; // Valid file type
+                }
+                else {
+
+                    fuData.value = "";
+                    $('#StatusLabel').text("Please select valid .xml file.");
+                    $('#StatusLabel').css("color", "Red");
+                    return false; // Not valid file type
+                }
+            }
+        }
+
+        function OpenP() {
+            $('#btnmsg').click();
+        }
+        function ExistFile() {
+            $('#btnexistfile').click();
+        }
+        function OpenAck() {
+            $('#btnvalidate').click();
+        }
+        function Success(msg) {
+            alert(msg);
+        }
+        function CloseAck() {
+            $('#btnclose').click();
+        }
+        function disablebtn() {
+            $('#btnResubContinue').attr('disabled', 'disabled');
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="./frmDICValidate.aspx?id=10723&amp;code=952334" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/XBRL/WebResource.axd?d=OdzisGuvqkWfN_dOENKXiPF8v68QUs5knVD4O4jB4G1geP4-pEfC3kKvJ809el2Ee3r67igvcbiqzwjC7HMtCq3J5dM1&amp;t=638873413485663832" type="text/javascript"></script>
+
+
+<script src="/XBRL/WebResource.axd?d=xfhzCdpwV0J927Bk7vl0HVZE-ydU4XHvi1rk3YDYqdUECMdVSJW1k8fn1zfxI3kiu9QFCR4kX3_bSJyvljgWsGkvj781&amp;t=638873413485663832" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="00490EA7" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="B4xhBI7ySMTnA7A1HtWLEozfSczXmxpJuxokYIpN8T4BKy/uYiqoVbJVYRQqj4qFjRRy7zoLOseCXpsNwuVshg9k4KNrtUHgMQLNkrPtYXJrk21QGCCszWUf7FHwr9R+KFCJtSh8GL6E16VvvuOJ6X26NvKhuLupsNyuYmWEm71NrKB9/fFtypQYGfeWFskVaKjHDaaA64H1XZ503moeA1VLJUMIapt7LfkvNTsxYWUMKmhtsRK7s1tAz4fIIgesdFIwDpYqBnMAOidir9RzcmV7lZNHASqmg03D60LoZEZapd1UvAUPLWslpOY8R3+6oYp6rQ4esiDHOCRt2kkeZU+NOQtIht7KuDa4rHQrBbn66Hdx" />
+</div>
+        <header>
+            <div class="main_width">
+                <div class="menu">
+                    <ul>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">XBRL<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="Downloads.aspx?id=10723&code=952334" id="ctl00_aDownload">Excel Utility </a></li>
+                            </ul>
+                        </li>
+                        
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">E-Filing<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="frmThreeFiveValidate.aspx?id=10723&code=952334" id="ctl00_a1tfv">Shareholding Pattern</a></li>
+                                <li><a>Integrated Financial Result</a>
+                                    <ul>
+                                        <li><a href="frmIFFinResultsIndas.aspx?id=10723&code=952334" id="ctl00_a1ifindas">Integrated Finance IND AS</a></li>
+                                        <li><a href="frmIFLIValidate.aspx?id=10723&code=952334" id="ctl00_a1ifli">Integrated Finance Life Insurance</a></li>
+                                        <li><a href="frmIFBankingValidate.aspx?id=10723&code=952334" id="ctl00_a1IFBanking">Integrated Finance Banking</a></li>
+                                        <li><a href="frmIFOtherthanBankValidate.aspx?id=10723&code=952334" id="ctl00_a1IFOtherthanBanking">Integrated Finance Other than Bank</a></li>
+                                        <li><a href="frmIFNBFCValidate.aspx?id=10723&code=952334" id="ctl00_a1ifnbfc">Integrated Finance NBFC</a></li>
+                                        <li><a href="frmIFGIValidate.aspx?id=10723&code=952334" id="ctl00_a1ifgi">Integrated Finance General Insurance</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a href="frmIFRITSValidate.aspx?id=10723&code=952334" id="ctl00_a1IFRITS">Financial Result REITs InvITs</a></li>
+                                <li><a href="frmICGIGValidate.aspx?id=10723&code=952334" id="ctl00_a1icgig">Integrated Governance</a></li>
+
+                                <li><a href="frmVotingValidate.aspx?id=10723&code=952334" id="ctl00_a1vt">Voting Results</a></li>
+                                
+                                <li><a href="frmPITValidate.aspx?id=10723&code=952334" id="ctl00_a1pit">Prohibition of Insider Trading</a></li>
+
+                                
+                                
+                                
+                                
+                                <li><a href="frmAnnualReportValidate.aspx?id=10723&code=952334" id="ctl00_a1arrxbeport">Annual Report</a></li>
+                                
+                                <li><a href="frmASCRValidate.aspx?id=10723&code=952334" id="ctl00_a1ASCR">Annual Secretarial Compliance Report</a></li>
+                                
+                                <li><a href="frmDICValidate.aspx?id=10723&code=952334" id="ctl00_a1DIC">Investor Complaints - Debt</a></li>
+                                
+                                
+                                
+                                
+                                <li><a>Central Depository Database</a>
+                                    <ul>
+                                        <li><a href="frmCRValidate.aspx?id=10723&code=952334" id="ctl00_a1CR">Credit Rating for Centralized Database</a></li>
+                                        <li><a href="frmDHIValidate.aspx?id=10723&code=952334" id="ctl00_a1DHI">Default History Information for Centralized Database</a></li>
+                                        <li><a href="frmIPSValidate.aspx?id=10723&code=952334" id="ctl00_a1IPS">Interest Payment Status for Centralized Database</a></li>
+                                        <li><a href="frmRPSValidate.aspx?id=10723&code=952334" id="ctl00_a1RPS">Redemption Payment Status for Centralized Database</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a>Further issue ISD</a>
+                                    <ul>
+                                        <li><a>Listing Stage</a>
+                                            <ul>
+                                                <li><a href="frmADRLSValidate.aspx?id=10723&code=952334" id="ctl00_a1adrls">ADR GDR</a></li>
+                                                <li><a href="frmFCCBListingStageValidate.aspx?id=10723&code=952334" id="ctl00_a1FCCBLS">FCCB</a></li>
+                                                <li><a href="frmPILSValidate.aspx?id=10723&code=952334" id="ctl00_a1PILS">Preferential Issue</a></li>
+                                                <li><a href="frmQIPLSValidate.aspx?id=10723&code=952334" id="ctl00_a1qipls">QIP</a></li>
+                                                <li><a href="frmRILSValidate.aspx?id=10723&code=952334" id="ctl00_a1RILS">Right Issue</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a>IP Stage</a>
+                                            <ul>
+                                                <li><a href="frmADRIPSValidate.aspx?id=10723&code=952334" id="ctl00_a1adrips">ADR GDR</a></li>
+                                                <li><a href="frmFCCBIPStageValidate.aspx?id=10723&code=952334" id="ctl00_a1FCCBIP">FCCB</a></li>
+                                                <li><a href="frmPIIPValidate.aspx?id=10723&code=952334" id="ctl00_a1PIIPS">Preferential Issue</a></li>
+                                                <li><a href="frmQIPIPSValidate.aspx?id=10723&code=952334" id="ctl00_a1qipips">QIP</a></li>
+                                                <li><a href="frmRIIPSValidate.aspx?id=10723&code=952334" id="ctl00_a1RIIPS">Right Issue</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a>Issue Summary Document</a>
+                                    <ul>
+                                        <li><a>Buyback</a>
+                                            <ul>
+                                                <li><a href="frmBTRValidate.aspx?id=10723&code=952334" id="ctl00_a1BTR">Buyback Tender Route</a></li>
+                                                <li><a href="frmBOMValidate.aspx?id=10723&code=952334" id="ctl00_a1BOM">Buyback Open Market</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Delisting</a>
+                                            <ul>
+                                                <li><a href="frmVDpreValidate.aspx?id=10723&code=952334" id="ctl00_a1VDPre">Voluntary Delisting Pre Tendering Phase</a></li>
+                                                <li><a href="frmVDpostValidate.aspx?id=10723&code=952334" id="ctl00_a1VDPost">Voluntary Delisting Post Tendering Phase</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Takeover</a>
+                                            <ul>
+                                                <li><a href="frmTakeoverPreValidate.aspx?id=10723&code=952334" id="ctl00_a1TOPre">Takeover Open Offer Pre Tendering Phase</a></li>
+                                                <li><a href="frmTakeoverPostValidate.aspx?id=10723&code=952334" id="ctl00_a1TOPost">Takeover Open Offer Post Tendering Phase</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmBMValidate.aspx?id=10723&code=952334" id="ctl00_a1BM">Announcements Pertaining To Outcome Of Board Meeting</a></li>
+                                <li><a href="frmReg30Validate.aspx?id=10723&code=952334" id="ctl00_a1Reg30">Regulation30 - Restructuring</a></li>
+                                <li><a>Change In Management</a>
+                                    <ul>
+                                        <li><a href="frmCIMGValidate.aspx?id=10723&code=952334" id="ctl00_a1G">General</a></li>
+                                        <li><a href="frmRIDValidate.aspx?id=10723&code=952334" id="ctl00_a1RID">Resignation and Independent Director</a></li>
+                                        <li><a href="frmRSAValidate.aspx?id=10723&code=952334" id="ctl00_a1RSA">Resignation and Statutory Auditor</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmPIAValidate.aspx?id=10723&code=952334" id="ctl00_a1pia">IPO</a></li>
+
+
+                                <li><a href="frmBRSRValidate.aspx?id=10723&code=952334" id="ctl00_a1BRSR">Business Responsibility & Sustainability Report</a></li>
+                                <li><a href="frmPIBMValidate.aspx?id=10723&code=952334" id="ctl00_a1PIBM">Prior Intimation of Board Meeting</a></li>
+                                <li><a>Intimation</a>
+                                    <ul>
+                                        <li><a href="frmIntimationOTSValidate.aspx?id=10723&code=952334" id="ctl00_a1IntimationOTS">Intimation on OTS and ICA</a></li>
+                                        <li><a href="frmIAValidate.aspx?id=10723&code=952334" id="ctl00_a1IntimationAgr">Intimation on Agreements</a></li>
+                                        <li><a href="frmIOFValidate.aspx?id=10723&code=952334" id="ctl00_a1IntimationFrd">Intimation on Fraud</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmNoticeValidate.aspx?id=10723&code=952334" id="ctl00_a1NOS">Notice of Shareholders Meeting</a></li>
+                                <li><a href="frmCDRValidate.aspx?id=10723&code=952334" id="ctl00_a1CDR">Corporate Debt Restructuring</a></li>
+
+                                <li><a href="frmACRValidate.aspx?id=10723&code=952334" id="ctl00_a1ACR">Alteration Of Capital And Fund Raising</a></li>
+                                <li><a href="frmAbridgedValidate.aspx?id=10723&code=952334" id="ctl00_a1ABRIDGED">Abridged Prospectus</a></li>
+                                
+
+                                
+                                <li><a href="frmPITMFOneValidate.aspx?id=10723&code=952334" id="ctl00_a1PITMFOne">Prohibition of Insider Trading (Mutual Fund) Reg 5D(1)(i)</a></li>
+                                <li><a href="frmPITMFFourValidate.aspx?id=10723&code=952334" id="ctl00_a1PITMFFour">Prohibition of Insider Trading (Mutual Fund) Reg 5D(1)(iv)</a></li>
+                                <li><a href="frmUPSIDeclarationValidate.aspx?id=10723&code=952334" id="ctl00_a1UPSI">UPSI Declaration</a></li>
+
+
+                                <li><a href="frmLSCIValidate.aspx?id=10723&code=952334" id="ctl00_a1LSCIValidate">Loss of Share Certificate_Issue of
+                                    <br />
+                                    Duplicate Share Certificate or Letter of Confirmation</a></li>
+                                <li><a href="frmCTWValidate.aspx?id=10723&code=952334" id="ctl00_a1CTW">Closure of Trading Window</a></li>
+                                <li><a href="frmCIRPValidate.aspx?id=10723&code=952334" id="ctl00_a1CIRP">Corporate Insolvency Resolution Process</a></li>
+                                <li><a href="frmTPValidate.aspx?id=10723&code=952334" id="ctl00_a1TP">Trading Plan</a></li>
+                                <li><a href="frmABRCValidate.aspx?id=10723&code=952334" id="ctl00_a1ABRC">Awarding, bagging, receiving of orders or contracts</a></li>
+                                <li><a href="frmCGValidate.aspx?id=10723&code=952334" id="ctl00_a1cg">Corporate Governance - Debt</a></li>
+
+                                
+                            </ul>
+                        </li>
+                        <li><a href="help_desk.aspx?id=10723&code=952334" id="ctl00_aHelp">Helpdesk</a></li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Reports<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="frmuserreport.aspx?id=10723&code=952334" id="ctl00_a1Report">Shareholding Pattern</a></li>
+                                <li><a>Integrated Financial Result</a>
+                                    <ul>
+                                        <li><a href="frmIFIndAsReport.aspx?id=10723&code=952334" id="ctl00_a1ifindasReport">Integrated Finance IND AS</a></li>
+                                        <li><a href="frmIFGIReport.aspx?id=10723&code=952334" id="ctl00_a1ifgiReport">Integrated Finance General Insurance</a></li>
+                                        <li><a href="frmIFLIReport.aspx?id=10723&code=952334" id="ctl00_a1ifliReport">Integrated Finance Life Insurance</a></li>
+                                        <li><a href="frmIFBankingReport.aspx?id=10723&code=952334" id="ctl00_a1IFBankingReport">Integrated Finance Banking</a></li>
+                                        <li><a href="frmIFOtherthanReport.aspx?id=10723&code=952334" id="ctl00_a1IFOtherthanReport">Integrated Finance Other Than Bank</a></li>
+                                        <li><a href="frmIFNBFCReport.aspx?id=10723&code=952334" id="ctl00_a1ifnbfcReport">Integrated Finance NBFC</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a href="frmIFRITSReport.aspx?id=10723&code=952334" id="ctl00_a1IFRITSReport">Financial Result REITs InvITs Report</a></li>
+                                <li><a href="frmICGIGReport.aspx?id=10723&code=952334" id="ctl00_a1ICGCGReport">Integrated Governance</a></li>
+                                <li><a href="frmVTReport.aspx?id=10723&code=952334" id="ctl00_a1VReport">Voting Results</a></li>
+                                
+                                <li><a href="frmPITReport.aspx?id=10723&code=952334" id="ctl00_a1PITReport">Prohibition of Insider Trading</a></li>
+                                <li><a href="frmARReport.aspx?id=10723&code=952334" id="ctl00_a1arreport">Annual Report</a></li>
+                                <li><a href="frmASCRReport.aspx?id=10723&code=952334" id="ctl00_a1ASCRReport">Annual Secretarial Compliance Report</a></li>
+                                <li><a>Central Depository Database </a>
+                                    <ul>
+                                        <li><a href="frmCRReport.aspx?id=10723&code=952334" id="ctl00_a1CRReport">Credit Rating for Centralized Database</a></li>
+                                        <li><a href="frmDHIReport.aspx?id=10723&code=952334" id="ctl00_a1DHIReport">Default History Information for Centralized Database</a></li>
+                                        <li><a href="frmIPSReport.aspx?id=10723&code=952334" id="ctl00_a1IPSReport">Interest Payment Status for Centralized Database</a></li>
+                                        <li><a href="frmRPSReport.aspx?id=10723&code=952334" id="ctl00_a1RPSReport">Redemption Payment Status for Centralized Database</a></li>
+                                    </ul>
+                                </li>
+
+                                
+
+                                <li style="display: none!important"><a id="ctl00_a1REITReport">REIT UHP Report</a></li>
+                                
+                                <li><a href="frmDICReport.aspx?id=10723&code=952334" id="ctl00_a1DICReport">Investor Complaints - Debt Report</a></li>
+                                
+                                
+                                
+                                <li><a>Further issue ISD</a>
+                                    <ul>
+                                        <li><a>Listing Stage</a>
+                                            <ul>
+                                                <li><a href="frmADRLSReport.aspx?id=10723&code=952334" id="ctl00_a1ADRLSReport">ADR GDR Report</a></li>
+                                                <li><a href="frmFCCBListingStageReport.aspx?id=10723&code=952334" id="ctl00_a1FCCBLSReport">FCCB Report</a></li>
+                                                <li><a href="frmPILSReport.aspx?id=10723&code=952334" id="ctl00_a1PILSReport">Preferential Issue Report</a></li>
+                                                <li><a href="frmQIPLSReport.aspx?id=10723&code=952334" id="ctl00_a1QIPLSReport">QIP Report</a></li>
+                                                <li><a href="frmRILSReport.aspx?id=10723&code=952334" id="ctl00_a1RILSReport">Right Issue Report</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>IP Stage</a>
+                                            <ul>
+                                                <li><a href="frmADRIPSReport.aspx?id=10723&code=952334" id="ctl00_a1ADRIPSReport">ADR GDR Report</a></li>
+                                                <li><a href="frmFCCBIPStageReport.aspx?id=10723&code=952334" id="ctl00_a1FCCBIPReport">FCCB Report</a></li>
+                                                <li><a href="frmPIIPReport.aspx?id=10723&code=952334" id="ctl00_a1PIIPSReport">Preferential Issue Report</a></li>
+                                                <li><a href="frmQIPIPSReport.aspx?id=10723&code=952334" id="ctl00_a1QIPIPSReport">QIP Report</a></li>
+                                                <li><a href="frmRIIPSReport.aspx?id=10723&code=952334" id="ctl00_a1RIIPSReport">Right Issue Report</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a>Issue Summary Document</a>
+                                    <ul>
+                                        <li><a>Buyback</a>
+                                            <ul>
+                                                <li><a href="frmBTRReport.aspx?id=10723&code=952334" id="ctl00_a1BTRReport">Buyback Tender Route</a></li>
+                                                <li><a href="frmBOMReport.aspx?id=10723&code=952334" id="ctl00_a1BOMReport">Buyback Open Market</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Delisting</a>
+                                            <ul>
+                                                <li><a href="frmVDpreReport.aspx?id=10723&code=952334" id="ctl00_a1VDPreReport">Voluntary Delisting Pre Tendering Phase</a></li>
+                                                <li><a href="frmVDpostReport.aspx?id=10723&code=952334" id="ctl00_a1VDPostReport">Voluntary Delisting Post Tendering Phase</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Takeover</a>
+                                            <ul>
+                                                <li><a href="frmTakeoverPreReport.aspx?id=10723&code=952334" id="ctl00_a1TOPreReport">Takeover Open Offer Pre Tendering Phase</a></li>
+                                                <li><a href="frmTakeoverPostReport.aspx?id=10723&code=952334" id="ctl00_a1TOPostReport">Takeover Open Offer Post Tendering Phase</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmBMReport.aspx?id=10723&code=952334" id="ctl00_a1BMReport">Announcements Pertaining To Outcome Of Board Meeting</a></li>
+                                <li><a href="frmReg30Report.aspx?id=10723&code=952334" id="ctl00_a1Reg30Report">Regulation30 - Restructuring</a></li>
+                                <li><a>Change In Management </a>
+                                    <ul>
+                                        <li><a href="frmCIMGReport.aspx?id=10723&code=952334" id="ctl00_a1GReport">General</a></li>
+                                        <li><a href="frmRIDReport.aspx?id=10723&code=952334" id="ctl00_a1RIDReport">Resignation and Independent Director</a></li>
+                                        <li><a href="frmRSAReport.aspx?id=10723&code=952334" id="ctl00_a1RSAReport">Resignation and Statutory Auditor</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmPIAReport.aspx?id=10723&code=952334" id="ctl00_a1PIAReport">IPO Report</a></li>
+                                <li><a href="frmBRSRReport.aspx?id=10723&code=952334" id="ctl00_a1BRSRReport">Business Responsibility & Sustainability Report</a></li>
+                                <li><a href="frmPIBMReport.aspx?id=10723&code=952334" id="ctl00_a1PIBMReport">Prior Intimation of Board Meeting</a></li>
+                                <li><a>Intimation</a>
+                                    <ul>
+                                        <li><a href="frmIntimationOTSReport.aspx?id=10723&code=952334" id="ctl00_a1IntimationOTSReport">Intimation on OTS and ICA</a></li>
+                                        <li><a href="frmIAReport.aspx?id=10723&code=952334" id="ctl00_a1IntimationAgrReport">Intimation on Agreements</a></li>
+                                        <li><a href="frmIOFReport.aspx?id=10723&code=952334" id="ctl00_a1IntimationFrdReport">Intimation on Fraud</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmNOSReport.aspx?id=10723&code=952334" id="ctl00_a1GNOSReport">Notice of Shareholders Meeting Report</a></li>
+                                <li><a href="frmCDRReport.aspx?id=10723&code=952334" id="ctl00_a1CDRReport">Corporate Debt Restructuring Report</a></li>
+                                <li><a href="frmACRReport.aspx?id=10723&code=952334" id="ctl00_a1ACRReport">Alteration Of Capital And Fund Raising</a></li>
+                                <li><a href="frmAbridgedReport.aspx?id=10723&code=952334" id="ctl00_a1ABRIDGEDReport">Abridged Prospectus</a></li>
+                                <li><a href="frmPITMFOneReport.aspx?id=10723&code=952334" id="ctl00_a1PITMFOneReport">Prohibition of Insider Trading (Mutual Fund) Reg 5D(1)(i)</a></li>
+                                <li><a href="frmPITMFFourReport.aspx?id=10723&code=952334" id="ctl00_a1PITMFFourReport">Prohibition of Insider Trading (Mutual Fund) Reg 5D(1)(iv)</a></li>
+                                <li><a href="frmUPSIReport.aspx?id=10723&code=952334" id="ctl00_a1UPSIReport">UPSI Declaration</a></li>
+                                <li><a href="frmLSCIReport.aspx?id=10723&code=952334" id="ctl00_a1LSCIReport">Loss of Share Certificate_Issue of
+                                    <br />
+                                    Duplicate  Share Certificate or Letter of Confirmation</a></li>
+                                <li><a href="frmCTWReport.aspx?id=10723&code=952334" id="ctl00_a1CTWReport">Closure of Trading Window</a></li>
+                                <li><a href="frmCIRPReport.aspx?id=10723&code=952334" id="ctl00_a1CIRPReport">Corporate Insolvency Resolution Process</a></li>
+                                <li><a href="frmTPReport.aspx?id=10723&code=952334" id="ctl00_a1TPReport">Trading Plan</a></li>
+
+                                <li><a href="frmCGReport.aspx?id=10723&code=952334" id="ctl00_a1cgreport">Corporate Governance - Debt</a></li>
+                                <li><a>Financial Results</a>
+                                    <ul>
+                                        <li><a href="frmFourOneReport.aspx?id=10723&code=952334" id="ctl00_a1FReport">Financial Results</a></li>
+                                        <li><a href="frmNBFCReport.aspx?id=10723&code=952334" id="ctl00_a1fNReport">Financial Results NBFC</a></li>
+                                        <li><a href="frmGIReport.aspx?id=10723&code=952334" id="ctl00_a1gireport">General Insurance</a></li>
+                                        <li><a href="FrmLIReport.aspx?id=10723&code=952334" id="ctl00_a1lireport">Life Insurance</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="frmIAQReport.aspx?id=10723&code=952334" id="ctl00_a1iaqreport">Impact of Audit Qualifications</a></li>
+                                <li><a href="frmSODReport.aspx?id=10723&code=952334" id="ctl00_a1sodreport">Statement of Deviation</a></li>
+                                <li><a href="frmRPTReport.aspx?id=10723&code=952334" id="ctl00_a1RPTReport">Related Party Transaction Report</a></li>
+                                <li><a href="frmABRCReport.aspx?id=10723&code=952334" id="ctl00_a1abrcReport">Awarding, bagging, receiving of orders or contracts</a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+    <section class="validate">
+        <div id="dvLoader" style="display: none; position: absolute; left: 50%; top: 50%; z-index: 9999;">
+            
+            <img src="images/loader.gif" />
+        </div>
+        <div class="validate_form">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4 form_inner">
+                <h3><strong>Investor Complaints</strong></h3>
+
+                <div class="form_group">
+                    <select size="4" name="ctl00$ContentPlaceHolder1$ddlscriptcode" multiple="multiple" id="ddlscriptcode" class="form-control">
+	<option selected="selected" value="974079">(974079)  Chaitanya India Fin Credit Private Limited  INE140R08056</option>
+	<option selected="selected" value="974613">(974613)  Chaitanya India Fin Credit Private Limited  INE140R08072</option>
+	<option selected="selected" value="975118">(975118)  Chaitanya India Fin Credit Private Limited  INE140R08080</option>
+	<option selected="selected" value="975150">(975150)  Chaitanya India Fin Credit Private Limited  INE140R07181</option>
+	<option selected="selected" value="975159">(975159)  Chaitanya India Fin Credit Private Limited  INE140R08098</option>
+	<option selected="selected" value="975194">(975194)  Chaitanya India Fin Credit Private Limited  INE140R08106</option>
+
+</select>
+                </div>
+                <div class="form_group">
+                    <label class="uplod_label">Upload XML Document:</label>
+                    <input type="file" name="ctl00$ContentPlaceHolder1$FileUploadControl" id="FileUploadControl" class="form-control" />
+                    <span id="ctl00_ContentPlaceHolder1_CustomValidator1" style="visibility:hidden;"></span>
+                </div>
+
+
+                <input type="button" name="ctl00$ContentPlaceHolder1$Button1" value="Validate" onclick="if(ValidateFileUpload1()){progressbar(1);this.disabled = true;}else{return false;};WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$Button1&quot;, &quot;&quot;, true, &quot;G1&quot;, &quot;&quot;, false, true))" id="ctl00_ContentPlaceHolder1_Button1" class="btn btn-primary" />
+                
+                <p></p>
+                <span id="StatusLabel">Upload status: File validated successfully!</span>
+
+            </div>
+
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div style="margin-left: 20px;">
+            
+        </div>
+        <div class="slide-out-div" style="padding-left: 10px; display: none">
+            
+        </div>
+        <div style="margin-left: 20px;">
+            <span id="ctl00_ContentPlaceHolder1_lblmsg" style="display: none">XBRL Data imported successfully!!</span>
+        </div>
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="max-height: 500px; overflow-y: scroll;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Please check below list of Errors</h4>
+                        <p>
+                            Click on
+                                <img src="images/i.gif">
+                            to see Technical Error
+                        </p>
+                    </div>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="dvexistfile" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width: 30%; margin-top: 200px">
+                <div class="modal-content">
+                    <div class="modal-header" style="display: none">
+                        <button type="button" id="Button2" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <article class="avgrund-contents" style="position: relative; padding: 20px; max-width: 400px; height: 80%; margin: auto;">
+                        <h3>Re-Submission</h3>
+                        <p>
+                            You have already submitted file for this date. Do you really want to re-submit this file?
+                        </p>
+                        <p>
+                            Enter Re-Submision Reason<span style="color: red;">* </span>:
+                            <textarea name="ctl00$ContentPlaceHolder1$txtReSubmisionReason" rows="2" cols="20" id="ctl00_ContentPlaceHolder1_txtReSubmisionReason" style="height:76px;width:100%;">
+</textarea>
+                            <br />
+                            <span id="ctl00_ContentPlaceHolder1_RequiredFieldValidator3" style="color:#990000;display:none;">Reason Must Be Required</span>
+                        </p>
+                        <br />
+                        <input type="button" name="ctl00$ContentPlaceHolder1$btnResubContinue" value="Continue" onclick="progressbar(1);this.disabled = true;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnResubContinue&quot;, &quot;&quot;, true, &quot;R1&quot;, &quot;&quot;, false, true))" id="btnResubContinue" style="border: 0px; margin: 5px 0px; border-radius: 1px; cursor: pointer; color: #fff; background: #7aa76d; font-size: 15px;" />
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$btnResubCancel" value="Cancel" id="ctl00_ContentPlaceHolder1_btnResubCancel" style="border: 0px; margin: 5px 0px; border-radius: 1px; cursor: pointer; color: #fff; background: #7aa76d; font-size: 15px; float: right" />
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="dvGenrateAck" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width: 30%; margin-top: 200px">
+                <div class="modal-content">
+                    <div class="modal-header" style="display: none">
+                        <button type="button" id="btnclose" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <article class="avgrund-contents" style="position: relative; padding: 20px; max-width: 400px; height: 80%; margin: auto;">
+                        <h3>File Submitted Successfully!!!!!!!</h3>
+                        <p>
+                            Acknowledgment Receipt Generated..Please Download from here.. 
+                        </p>
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$btndwnldAck" value="Download Acknowledgment" onclick="CloseAck();" id="ctl00_ContentPlaceHolder1_btndwnldAck" style="border: 0px; margin: 5px 0px; border-radius: 1px; cursor: pointer; color: #fff; background: #7aa76d; font-size: 15px;" />
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnprog" id="hdnprog" />
+
+        <button id="btnmsg" type="button" class="btn btn-primary" style="display: none;" data-toggle="modal" data-target=".bs-example-modal-lg"></button>
+        <button id="btnvalidate" type="button" class="btn btn-primary" style="display: none;" data-toggle="modal" data-target="#dvGenrateAck"></button>
+        <button id="btnexistfile" type="button" class="btn btn-primary" style="display: none;" data-toggle="modal" data-target="#dvexistfile"></button>
+
+    </section>
+
+
+
+
+
+        <footer>
+            <div class="powered_by">
+                <p>
+                    <span style="padding-left: 5px">Powered By:</span> <a href="http://www.microvistatech.com" target="_blank">
+                        <img src="images/microvista.png"></a>
+                </p>
+            </div>
+        </footer>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_ContentPlaceHolder1_CustomValidator1"), document.getElementById("ctl00_ContentPlaceHolder1_RequiredFieldValidator3"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_ContentPlaceHolder1_CustomValidator1 = document.all ? document.all["ctl00_ContentPlaceHolder1_CustomValidator1"] : document.getElementById("ctl00_ContentPlaceHolder1_CustomValidator1");
+ctl00_ContentPlaceHolder1_CustomValidator1.controltovalidate = "FileUploadControl";
+ctl00_ContentPlaceHolder1_CustomValidator1.validationGroup = "G1";
+ctl00_ContentPlaceHolder1_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_ContentPlaceHolder1_CustomValidator1.clientvalidationfunction = "Clrlable";
+var ctl00_ContentPlaceHolder1_RequiredFieldValidator3 = document.all ? document.all["ctl00_ContentPlaceHolder1_RequiredFieldValidator3"] : document.getElementById("ctl00_ContentPlaceHolder1_RequiredFieldValidator3");
+ctl00_ContentPlaceHolder1_RequiredFieldValidator3.controltovalidate = "ctl00_ContentPlaceHolder1_txtReSubmisionReason";
+ctl00_ContentPlaceHolder1_RequiredFieldValidator3.errormessage = "Reason Must Be Required";
+ctl00_ContentPlaceHolder1_RequiredFieldValidator3.display = "Dynamic";
+ctl00_ContentPlaceHolder1_RequiredFieldValidator3.validationGroup = "R1";
+ctl00_ContentPlaceHolder1_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_ContentPlaceHolder1_RequiredFieldValidator3.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+</body>
+</html>
+

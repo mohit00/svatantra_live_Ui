@@ -1,0 +1,10 @@
+{
+  "title": "Our Board",
+  "members": [
+    { "name": "Ms. Ananya Birla", "role": "Chairperson" },
+    { "name": "Mr. Anand Rao", "role": "Managing Director" },
+    { "name": "Mr. Vineet Chattree", "role": "Director" },
+    { "name": "Mr. Natarajan Girija Shankar", "role": "Independent Director" },
+    { "name": "Ms. Meena Jagtiani", "role": "Independent Director" }
+  ]
+}

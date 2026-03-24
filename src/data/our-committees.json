@@ -1,0 +1,76 @@
+{
+  "title": "Our Committees",
+  "description": "Chaitanya has formulated the committees based on the expertise possessed by the members which help in the smooth functioning of the organization.",
+  "committees": [
+    {
+      "committee": "Audit Committee",
+      "members": [
+        { "name": "Mr. Natarajan Girija Shankar", "role": "Chairman" },
+        { "name": "Ms. Meena Jagtiani", "role": "Member" },
+        { "name": "Ms. Ananya Birla", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "Finance Committee",
+      "members": [
+        { "name": "Mr. Anand Rao", "role": "Chairman" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "CSR Committee",
+      "members": [
+        { "name": "Ms. Meena Jagtiani", "role": "Chairperson" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" },
+        { "name": "Mr. Anand Rao", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "Risk Management Committee",
+      "members": [
+        { "name": "Mr. Natarajan Girija Shankar", "role": "Chairman" },
+        { "name": "Mr. Anand Rao", "role": "Member" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "Asset Liablity Committee",
+      "members": [
+        { "name": "Mr. Anand Rao", "role": "Chairman" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" },
+        { "name": "Mr. Rakesh Yadav", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "Nomination & Remuneration Committee",
+      "members": [
+        { "name": "Ms. Meena Jagtiani", "role": "Chairperson" },
+        { "name": "Mr. Natarajan Girija Shankar", "role": "Member" },
+        { "name": "Ms. Ananya Birla", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "IT Strategy Committee",
+      "members": [
+        { "name": "Mr. Natarajan Girija Shankar", "role": "Chairman" },
+        { "name": "Mr. Anand Rao", "role": "Member" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "Stakeholders Relationship Committee",
+      "members": [
+        { "name": "Ms. Ananya Birla", "role": "Non-Executive Director and Chairperson" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" },
+        { "name": "Mr. Anand Rao", "role": "Member" }
+      ]
+    },
+    {
+      "committee": "Customer Protection Committee",
+      "members": [
+        { "name": "Mr. Anand Rao", "role": "Member" },
+        { "name": "Mr. Vineet Chattree", "role": "Member" }
+      ]
+    }
+  ]
+}

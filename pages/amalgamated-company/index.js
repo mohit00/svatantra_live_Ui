@@ -74,8 +74,6 @@ export default function AmalgamatedCompanyPage() {
 									{/* Governance */}
 									<Link
 										href="/amalgamated-company/governance"
-										onClick={(e) => e.preventDefault()}
-										style={{ pointerEvents: "none", cursor: "default" }}
 										className={styles.box_item}
 									>
 										<img
@@ -94,8 +92,6 @@ export default function AmalgamatedCompanyPage() {
 									{/* Our Impact */}
 									<Link
 										href="/amalgamated-company/our-impact"
-										onClick={(e) => e.preventDefault()}
-										style={{ pointerEvents: "none", cursor: "default" }}
 										className={styles.box_item}
 									>
 										<img

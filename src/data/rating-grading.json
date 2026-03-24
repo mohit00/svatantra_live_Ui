@@ -1,10 +1,12 @@
 [
   {
     "category": "Bank Facilities",
+    "link": "/amalgamated-company/investor-relations/rating-grading/bank-facilities.pdf",
     "items": [
       {
         "agency": "India Ratings and Research",
-        "rating": "IND A/Rating Watch with Developing Implications"
+        "rating": "IND A/Rating Watch with Developing Implications",
+        "link": "/amalgamated-company/investor-relations/rating-grading/india-ratings-report.pdf"
       },
       {
         "agency": "CRISIL Ratings",
