@@ -14,6 +14,7 @@ import styles from "@/styles/pages/InvestorIndex.module.scss";
 import investor_thumb from "../../public/img/amalgamated-company/investors.jpg";
 import governance_thumb from "../../public/img/amalgamated-company/governace.jpg";
 import impact_thumb from "../../public/img/amalgamated-company/impact.jpg";
+import amalgamation_thumb from "../../public/img/amalgamated-company/amalgamation.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
 
 export default function AmalgamatedCompanyPage() {
@@ -104,6 +105,24 @@ export default function AmalgamatedCompanyPage() {
 												Our Impact
 											</p>
 											<img src={arrow_btn.src} alt="arrow icon" />
+										</div>
+									</Link>
+
+									{/* Our amalgamation */}
+									<Link
+										href="/amalgamated-company/proposed-scheme-of-amalgamation"
+										className={styles.box_item}
+									>
+										<img
+											src={amalgamation_thumb.src}
+											className="b_r_10"
+											alt="Our Impact"
+										/>
+										<div className={`${styles.content} pt_20 f_r_aj_between`}>
+											<p className="text_md color_light_black font_secondary opacity_8">
+												Proposed Scheme of Amalgamation
+											</p>
+											<img src={arrow_btn.src} alt="Proposed Scheme of Amalgamation" />
 										</div>
 									</Link>
 
