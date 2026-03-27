@@ -120,7 +120,7 @@ export default function AmalgamatedCompanyPage() {
 										/>
 										<div className={`${styles.content} pt_20 f_r_aj_between`}>
 											<p className="text_md color_light_black font_secondary opacity_8">
-												Proposed Scheme of Amalgamation
+												Scheme of Amalgamation
 											</p>
 											<img src={arrow_btn.src} alt="Proposed Scheme of Amalgamation" />
 										</div>
