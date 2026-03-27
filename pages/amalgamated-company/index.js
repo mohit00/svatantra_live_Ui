@@ -110,7 +110,7 @@ export default function AmalgamatedCompanyPage() {
 
 									{/* Our amalgamation */}
 									<Link
-										href="/amalgamated-company/proposed-scheme-of-amalgamation"
+										href="/amalgamated-company/scheme-of-amalgamation"
 										className={styles.box_item}
 									>
 										<img

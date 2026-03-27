@@ -15,10 +15,10 @@ import download_icon from "../../public/img/download_icon.svg";
 import Amalgamation from "@/data/proposed-scheme-of-amalgamation.json";
 
 
-export default function proposedSchemeOfAmalgamation() {
+export default function schemeOfAmalgamation() {
     const accordionData = [
         {
-            title: "Proposed Scheme of Amalgamation",
+            title: "Scheme of Amalgamation",
             files: Amalgamation,
         }
     ];
@@ -26,8 +26,8 @@ export default function proposedSchemeOfAmalgamation() {
     return (
         <div>
             <MetaTags
-                Title={"Proposed Scheme Of Amalgamation | Amalgamated Company"}
-                Url={"/amalgamated-company/proposedschemeofamalgamation"}
+                Title={"Scheme Of Amalgamation | Amalgamated Company"}
+                Url={"/amalgamated-company/schemeofamalgamation"}
             />
 
             <Header />
@@ -36,13 +36,13 @@ export default function proposedSchemeOfAmalgamation() {
                 <Breadcrum
                     link5="/amalgamated-company"
                     linkTitle="Amalgamated Company"
-                    linknest1="/amalgamated-company/proposedschemeofamalgamation"
-                    linknestTitle1="Proposed Scheme of Amalgamation"
+                    linknest1="/amalgamated-company/schemeofamalgamation"
+                    linknestTitle1="Scheme of Amalgamation"
                 />
 
                 <section className={`${styles.investors_main} pb_80`}>
                     <div className="container">
-                        <h1 className="text_xxxl color_primary">Proposed Scheme of Amalgamation</h1>
+                        <h1 className="text_xxxl color_primary">Scheme of Amalgamation</h1>
 
                         <div className={`${styles.accordian_main} pt_40`}>
                             <AccordianCommon
