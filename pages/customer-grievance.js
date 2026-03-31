@@ -15,10 +15,6 @@ const accordionData = [
     text: "",
     files: [
       {
-        name: "Lodging of Customer Complaint",
-        url: "/customer_grievance/lodging_of_Customer_complaints_disclosures_on_websites_of_the_regulated_entities.pdf",
-      },
-      {
         name: "CGRM Flowchart document",
         url: "/customer_grievance/CRGM_flowchart_website.pdf",
       },
@@ -39,8 +35,6 @@ export default function CustomerGrievance() {
 
       <main className={styles.investors_page}>
         <Breadcrumb
-          linknest1="/contact"
-          linknestTitle1="Contact"
           linknest2="/customer-grievance"
           linknestTitle2="Customer Grievance"
         />
