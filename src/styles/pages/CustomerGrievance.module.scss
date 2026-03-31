@@ -1,0 +1,49 @@
+.grievance_page {
+  .table_wrap {
+    margin-top: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: #0072cd;
+      color: #fff;
+
+      th {
+        text-align: left;
+        padding: 16px 20px;
+        font-weight: 600;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #ddd;
+      }
+
+      td {
+        padding: 16px 20px;
+      }
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0072cd;
+
+      span {
+        border-bottom: 1px solid #0072cd;
+      }
+    }
+  }
+}
+
+.download_icon {
+  width: 16px;
+}

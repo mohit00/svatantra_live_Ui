@@ -71,7 +71,7 @@ export default function ContactSection() {
 							<p className="text_xs pb_30">
 								<a href="tel: 18002679911">Toll Free No: 18002679911</a>
 							</p>
-							<div className={`${styles.btnBox} pt_30`}>
+							{/* <div className={`${styles.btnBox} pt_30`}>
 								<a
 									href="https://www.svatantramicrofin.com/uploads/Details_of_Customer_Grievance_Redressal_21e162e741.pdf"
 									target={"_blank"}
@@ -81,6 +81,18 @@ export default function ContactSection() {
 										<img src={pdf_icon.src} alt="icon" />
 									</span>
 									Details of Customer Grievance Redressal
+								</a>
+							</div> */}
+							<div className={`${styles.btnBox} pt_30`}>
+								<a
+									href="/customer-grievance"
+									target={"_blank"}
+									rel="noreferrer"
+								>
+									<span>
+										<img src={pdf_icon.src} alt="icon" />
+									</span>
+									Customer Grievance →
 								</a>
 							</div>
 						</div>

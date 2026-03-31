@@ -322,7 +322,7 @@ export default function Footer() {
 			<div className="container">
 				<div className={`${styles.copyright}`}>
 					<p className="text_xs f_w_r color_white opacity_70">
-						Copyright ©2025, Svatantra. All rights reserve.
+						Copyright ©{new Date().getFullYear()}, Svatantra. All rights reserved.
 					</p>
 
 					{/* <hr className={`${styles.lastLine}`} /> */}
