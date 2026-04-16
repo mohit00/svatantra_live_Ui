@@ -66,7 +66,7 @@ export default function TechnologyDriven() {
 							</p>
 						</div>
 					</div>
-					<div className={`${styles.committed_section} f_r_aj_between f_w`}>
+					{/* <div className={`${styles.committed_section} f_r_aj_between f_w`}>
 						<div className={`${styles.committed_img}`}>
 							<img src={saksham.src} className="img-responsive" alt="saksham" />
 						</div>
@@ -76,7 +76,7 @@ export default function TechnologyDriven() {
 								Customer-Centric made lending more accessible, easier, and efficient for our customers and employees. The app enables users to access essential services, including managing loans, online grievance redressal, payment platforms, and a chatbot insurance.
 							</p>
 						</div>
-					</div>
+					</div> */}
 					<div className={`${styles.committed_section} f_r_aj_between f_w`}>
 						<div className={`${styles.committed_img}`}>
 							<img src={saathi.src} className="img-responsive" alt="saathi" />
