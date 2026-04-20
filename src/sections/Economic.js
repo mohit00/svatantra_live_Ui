@@ -245,12 +245,12 @@ export default function Economic() {
 								<span>*CARE </span> AA (Stable Outlook) Rating
 							</h5>
 						</div>
-						<div className={styles.desc}>
+						{/* <div className={styles.desc}>
 							<h6 className="text_xxs">
 								*Combined numbers of Svatantra Microfin Pvt. Ltd. & Chaitanya India (A
 								wholly-owned subsidiary of Svatantra)
 							</h6>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
