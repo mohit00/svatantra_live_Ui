@@ -43,7 +43,7 @@ export default function MapSection() {
 							Marg, Elphinstone Road (W), Mumbai - 400 013, Maharashtra, India
 						</h5>
 
-						<h5 className="pt_10 pb_10">CIN: U74120MH2012PTC227069 </h5>
+						<h5 className="pt_10 pb_10">CIN: U74120MH2012PLC227069</h5>
 
 						<button className={styles.direction}>
 							Get Directions <img src={arrow.src} />
