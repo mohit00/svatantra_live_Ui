@@ -183,7 +183,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 				title: "What is the rate of interest charged on the loan?",
 				children: (
 					<p className="text_xs font_secondary color_light_black opacity_8">
-						Svatantra Microfin Pvt. Ltd. offers one of the lowest interest rates in
+						Svatantra Microfin Ltd. offers one of the lowest interest rates in
 						the country. Details on our interest rates{" "}
 						<a className="f_w_b" href="/our-products/microfinance-loans">
 							https://svatantramicrofin.com/our-products/microfinance-loans

@@ -160,7 +160,7 @@ export default function LeadershipPage({ leadershipsData }) {
 													)}
 												</div>
 												{/* <p className="text_sm color_light_black f_w_m opacity_80 pb_20">
-													At 17, Ananya Birla founded Svatantra Microfin Pvt. Ltd., setting a
+													At 17, Ananya Birla founded Svatantra Microfin Ltd., setting a
 													new benchmark in microfinance with a vision for technology-led
 													financial inclusion. Steering the company to become one of India’s
 													fastest-growing MFIs, she introduced transformative practices like
@@ -223,7 +223,7 @@ export default function LeadershipPage({ leadershipsData }) {
 									</p>
 								</div>
 								<p className="text_sm color_light_black f_w_m opacity_80 pb_20">
-									At 17, Ananya Birla founded Svatantra Microfin Pvt. Ltd., setting a new
+									At 17, Ananya Birla founded Svatantra Microfin Ltd., setting a new
 									benchmark in microfinance with a vision for technology-led financial
 									inclusion. Steering the company to become one of India’s
 									fastest-growing MFIs, she introduced transformative practices like 100%
