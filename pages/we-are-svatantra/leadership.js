@@ -61,28 +61,28 @@ export default function LeadershipPage({ leadershipsData }) {
 		{
 			image: Leader1.src,
 			name: "Vineet Chattree",
-			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			designation: "Managing Director, Svatantra Microfin Ltd.",
 			desc:
 				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
 		},
 		{
 			image: Leader1.src,
 			name: "Vineet Chattree",
-			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			designation: "Managing Director, Svatantra Microfin Ltd.",
 			desc:
 				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
 		},
 		{
 			image: Leader1.src,
 			name: "Vineet Chattree",
-			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			designation: "Managing Director, Svatantra Microfin Ltd.",
 			desc:
 				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
 		},
 		{
 			image: Leader1.src,
 			name: "Vineet Chattree",
-			designation: "Managing Director, Svatantra Microfin Pvt. Ltd",
+			designation: "Managing Director, Svatantra Microfin Ltd.",
 			desc:
 				"Vineet brings over 25 years of diverse experience across operations and management consulting in India, the USA, and the Middle East. His strategic acumen and passion for empowering underserved communities have been instrumental in shaping the growth of Svatantra Microfin and Svatantra Micro Housing into industry leaders. With a philosophy rooted in aligning people, products, and processes with customer needs, Vineet envisions impactful and sustainable growth. An eternal learner, he is a chemical engineer, holds a post-graduate degree in Business Administration, and is currently pursuing Business Laws while serving as Vice-Chairperson of MFIN.",
 		},
