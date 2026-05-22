@@ -39,6 +39,7 @@
 		width: 100%;
 		border-radius: 100px;
 		margin-top: -12px;
+
 		.header_inside {
 			height: 70px;
 			padding-right: 12px;
@@ -51,32 +52,38 @@
 			justify-content: center;
 			gap: 20px;
 			background: rgb(251, 248, 246);
-			background: linear-gradient(
-				90deg,
-				rgba(251, 248, 246, 1) 0%,
-				rgba(200, 236, 240, 1) 100%
-			);
+			background: linear-gradient(90deg,
+					rgba(251, 248, 246, 1) 0%,
+					rgba(200, 236, 240, 1) 100%);
 			box-shadow: 0px 7px 42.1px 0px rgba(0, 0, 0, 0.06);
 			transition: all 0.3s;
+
 			@media (max-width: 1300px) {
 				padding: 10px 15px;
 				// margin: 0 15px;
-				justify-content: unset;
-				gap: 25px;
+				justify-content: space-between;
+				gap: 12px;
+				overflow: visible;
+				position: relative;
+
 			}
+
 			@media (max-width: 1200px) {
 				flex-wrap: wrap;
 				align-items: flex-start;
 				overflow: hidden;
 				display: block;
 			}
+
 			@media (max-width: 992px) {
 				margin: 0 0;
 			}
+
 			.image_wrap {
 				@extend %f_r_a_center;
 				cursor: pointer;
 			}
+
 			.links_wrap {
 				@extend %d_flex;
 				align-self: stretch;
@@ -86,6 +93,7 @@
 				.menuItemNew {
 					position: relative;
 					padding-left: 0px;
+
 					.hiddenItem {
 						padding: 20px 60px 20px 20px;
 						position: absolute;
@@ -98,6 +106,7 @@
 						gap: 15px;
 						background-color: rgba(246, 239, 234, 1);
 						border-radius: 10px;
+
 						@media (max-width: 767px) {
 							z-index: 10;
 							top: 36px;
@@ -105,6 +114,7 @@
 							padding-bottom: 35px;
 						}
 					}
+
 					li:hover {
 						// color: rgba(3, 78, 162, 1);
 						// font-weight: 600;
@@ -144,13 +154,16 @@
 					list-style-type: none;
 					cursor: pointer;
 					padding: 0 20px;
+
 					.arrow {
 						display: none;
 						transform: rotate(90deg);
+
 						@media (max-width: 1200px) {
 							display: block;
 						}
 					}
+
 					&::after {
 						content: "";
 						position: absolute;
@@ -159,6 +172,7 @@
 						width: 100%;
 						height: 1.5px;
 					}
+
 					&:hover {
 						&::after {
 							background-color: rgba(3, 78, 162, 1);
@@ -179,12 +193,15 @@
 						flex-direction: column;
 						align-items: stretch;
 					}
+
 					@media (min-width: 768px) and (max-width: 992px) {
 						padding: 15px 15px;
 					}
+
 					@media (min-width: 993px) and (max-width: 1200px) {
 						padding: 15px 75px;
 					}
+
 					&:last-child {
 						margin-right: 0;
 						padding-right: 0;
@@ -212,15 +229,18 @@
 						top: 100%;
 						transform: translateY(-10px);
 						visibility: hidden;
+
 						@media (max-width: 1200px) {
 							padding-top: 15px;
 							position: relative;
 							display: none;
 							top: 0;
 						}
+
 						.dropdown_links {
 							padding: 8px 15px;
 							transition: ease all 300ms;
+
 							&:hover {
 								background-color: rgba(0, 0, 0, 0.1);
 							}
@@ -233,6 +253,7 @@
 								margin-right: 15px;
 							}
 						}
+
 						.arrow_img {
 							@extend %f_r_aj_center;
 							width: 12px;
@@ -244,36 +265,41 @@
 							}
 						}
 					}
+
 					// This class is added when link is clicked
 					&.dropdown_opened {
 						.dropdown_wrap {
 							transform: translateY(2px);
 							opacity: 1;
 							visibility: visible;
+
 							@include sm-down {
 								display: block;
 							}
 						}
+
 						.arrow_img {
 							transform: rotate(-90deg);
 						}
 					}
+
 					&.rightShift {
 						.newBox {
-							.menuItem {
-							}
+							.menuItem {}
+
 							.subMenu {
 								left: -98%;
 								padding-left: 20px;
 								border-bottom-left-radius: 15px;
 								border-top-left-radius: 15px;
-								.subMenuItem {
-								}
+
+								.subMenuItem {}
 							}
 						}
 					}
 				}
 			}
+
 			// The hamburger icon is visible only if it is mobile
 			.hamburger_icon {
 				display: none;
@@ -283,6 +309,7 @@
 				@extend %f_d_column;
 				justify-content: space-between;
 				cursor: pointer;
+
 				.hamburger_line {
 					transform-origin: left;
 					display: inline-block;
@@ -291,6 +318,7 @@
 					background-color: black;
 					transition: ease all 300ms;
 				}
+
 				@media (max-width: 1200px) {
 					display: flex;
 				}
@@ -325,15 +353,18 @@
 		display: flex;
 		align-items: center;
 		cursor: pointer;
+
 		@media (max-width: 992px) and (min-width: 767px) {
 			padding: 0 15px;
 		}
+
 		.btn_secondaryContact {
 			padding: 15px 20px;
 			background-color: var(--color_secondary);
 			border-radius: 50px;
 			color: white;
 			font-size: 16px;
+
 			&::after {
 				content: "";
 				background-image: url("../../../public/whiteArrow.svg");
@@ -342,6 +373,7 @@
 		}
 	}
 }
+
 .header_logo {
 	@media (max-width: 1200px) {
 		display: flex;
@@ -351,20 +383,24 @@
 		align-items: center;
 	}
 }
+
 .sidebar_opened {
 	.hamburger_icon {
 		.hamburger_line {
 			&:first-child {
 				transform: rotate(45deg);
 			}
+
 			&:nth-child(2) {
 				opacity: 0;
 			}
+
 			&:last-child {
 				transform: rotate(-45deg);
 			}
 		}
 	}
+
 	// .links_wrap {
 	// 	transform: translateY(-5%) !important;
 	// }
@@ -396,6 +432,7 @@
 		list-style: none;
 		padding-left: 0px;
 		padding: 20px 0;
+
 		li {
 			display: flex;
 			align-items: start;
@@ -437,8 +474,7 @@
 	}
 }
 
-.menuTitle {
-}
+.menuTitle {}
 
 .newBox {
 	display: flex;
@@ -458,6 +494,7 @@
 		font-size: 18px;
 		padding: 0.75rem 0;
 		border-bottom: 1px solid #2859a9;
+
 		img {
 			transform: rotate(90deg);
 		}
@@ -484,6 +521,7 @@
 	border-bottom-right-radius: 15px;
 	border-bottom-left-radius: 15px;
 	border-top-right-radius: 15px;
+
 	@media (max-width: 991px) {
 		position: unset;
 		gap: 15px;
@@ -493,6 +531,7 @@
 	li {
 		// margin-top: 20px;
 		padding: 20px 0;
+
 		@media (max-width: 991px) {
 			// margin-top: 10px;
 			padding-left: 20px;
