@@ -89,13 +89,13 @@
 
 @media (max-width: 1300px) {
   .main_header .header_section .header_inside {
-    /* padding: 10px 15px;
+    padding: 10px 15px;
     justify-content: unset;
-    gap: 25px; */
-    justify-content: space-between;
+    gap: 25px;
+    /* justify-content: space-between;
     gap: 12px;
     overflow: visible;
-    position: relative;
+    position: relative; */
   }
 }
 
