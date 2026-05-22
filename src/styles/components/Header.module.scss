@@ -61,8 +61,10 @@
 			@media (max-width: 1300px) {
 				padding: 10px 15px;
 				// margin: 0 15px;
-				justify-content: unset;
-				gap: 25px;
+				justify-content: space-between;
+				gap: 12px;
+				overflow: visible;
+				position: relative;
 
 			}
 
