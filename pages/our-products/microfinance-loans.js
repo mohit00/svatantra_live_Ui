@@ -46,7 +46,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 5,000 to ₹ 1 lakh",
 		tenure: "12 to 30 Months",
-		interestRate: "22.75% to 24.00%*",
+		interestRate: "22.75% to 24.00%",
 	};
 
 	const pavingThePathData = {
