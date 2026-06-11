@@ -44,7 +44,7 @@ export default function LoanFactSheet() {
 							<td>₹ 5,000 to ₹ 1 lakh</td>
 							<td>12 to 30 Months</td>
 							<td>Monthly</td>
-							<td>22.30% to 24.00%*</td>
+							<td>22.75% to 24.00%*</td>
 							<td>1.50% (+GST)</td>
 							<td>Nil</td>
 						</tr>
@@ -53,7 +53,7 @@ export default function LoanFactSheet() {
 							<td>₹ 1 lakh to ₹ 4 lakh</td>
 							<td>18 to 48 Months</td>
 							<td>Monthly</td>
-							<td>22.75% to 24.00%</td>
+							<td>23.75% to 24.00%</td>
 							<td>1.50% (+GST)</td>
 							<td>Nil</td>
 						</tr>
@@ -103,7 +103,7 @@ export default function LoanFactSheet() {
 						<span>
 							<img src={pdf_icon.src} alt="icon" />
 						</span>
-						Customer Awareness on Overdue, SMA/ NPA
+						Customer Awareness on Overdue, SMA - NPA
 					</a>
 				</div>
 			</div>

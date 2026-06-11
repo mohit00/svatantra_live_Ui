@@ -95,6 +95,21 @@ export default function ContactSection() {
 									Customer Grievance →
 								</a>
 							</div>
+
+							<div className={`${styles.btnBox} pt_30`}>
+								
+
+								<a
+									  href="/customer_grievance/nodal-officer.pdf"
+									target={"_blank"}
+									rel="noreferrer"
+								>
+									<span>
+										<img src={pdf_icon.src} alt="icon" />
+									</span>
+									Nodal Officer Contact Details →
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>

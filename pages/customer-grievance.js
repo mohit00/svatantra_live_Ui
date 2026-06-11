@@ -11,7 +11,7 @@ import styles from "@/styles/pages/Investor.module.scss";
 // DATA //
 const accordionData = [
   {
-    title: "Customer Grievance",
+    title: "Details of Customer Grievance redressal",
     text: "",
     files: [
       {
@@ -27,7 +27,7 @@ export default function CustomerGrievance() {
   return (
     <div>
       <MetaTags
-        Title={"Customer Grievance | Customer Grievance"}
+        Title={"Customer Grievance | Details of Customer Grievance redressal"}
         Url={"/customer-grievance"}
       />
 
@@ -36,13 +36,13 @@ export default function CustomerGrievance() {
       <main className={styles.investors_page}>
         <Breadcrumb
           linknest2="/customer-grievance"
-          linknestTitle2="Customer Grievance"
+          linknestTitle2="Details of Customer Grievance redressal"
         />
 
         <section className={`${styles.investors_main} pb_80`}>
           <div className="container">
             <h1 className="text_xxxl color_primary">
-              Customer Grievance
+              Details of Customer Grievance redressal
             </h1>
 
             <div className={`${styles.accordian_main} pt_40`}>
