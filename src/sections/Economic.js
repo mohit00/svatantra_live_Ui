@@ -34,11 +34,11 @@ export default function Economic() {
 	];
 
 	const countersData = [
-		{ end: 4.07, suffix: "M+", decimals: 2 },
-		{ end: 12160, suffix: " CR", decimals: 0 },
-		{ end: 17519, suffix: "CR", decimals: 0 },
-		{ end: 24456, suffix: "+", decimals: 0 },
-		{ end: 2106, suffix: "", decimals: 0 },
+		{ end: 4.27, suffix: "M+", decimals: 2 },
+		{ end: 19388, suffix: " CR", decimals: 0 },
+		{ end: 21093, suffix: "CR", decimals: 0 },
+		{ end: 24594, suffix: "+", decimals: 0 },
+		{ end: 2123, suffix: "", decimals: 0 },
 		{ end: 20, suffix: "", decimals: 0 },
 	];
 
@@ -150,7 +150,7 @@ export default function Economic() {
 										})}
 										<span>{countersData[1].suffix}</span>
 									</h4>
-									<h5 className="text_xs">Loan disbursed (Dec-25)</h5>
+									<h5 className="text_xs">Loan disbursed (FY26)</h5>
 								</div>
 								<img
 									src={counterImg.src}
@@ -171,7 +171,7 @@ export default function Economic() {
 										})}{" "}
 										<span>{countersData[2].suffix}</span>
 									</h4>
-									<h5 className="text_xs">GLP (Dec-25)</h5>
+									<h5 className="text_xs">GLP (FY26)</h5>
 								</div>
 								<img
 									src={counterImg.src}
