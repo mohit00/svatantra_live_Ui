@@ -128,7 +128,7 @@ export default function Economic() {
 										})}{" "}
 										<span>{countersData[0].suffix}</span>
 									</h4>
-									<h5 className="text_xs">Active customer</h5>
+									<h5 className="text_xs">Active customers</h5>
 								</div>
 
 								<img
