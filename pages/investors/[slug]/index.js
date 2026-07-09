@@ -70,13 +70,14 @@ export default function SlugPage({ data }) {
 											{item.title}
 										</h2>
 									</div>
-									<a
-										href={`/investors/${createSlug(data[0]?.slug)}/${createSlug(
+									<Button
+										buttonType="four"
+										condition={"white"}
+										title={"Read More"}
+										link={`/investors/${createSlug(data[0]?.slug)}/${createSlug(
 											item.slug
 										)}`}
-									>
-										<Button buttonType="four" condition={"white"} title={"Read More"} />
-									</a>
+									/>
 								</div>
 							);
 						})}

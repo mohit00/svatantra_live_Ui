@@ -24,6 +24,7 @@ import styles from "@/styles/pages/InvestorIndex.module.scss";
 // IMAGES //
 import story_one from "../../public/img/our-impact/stories/story_one.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
+import ipo from "../../public/img/ipo.png";
 
 // DATA //
 /** Data Fetching getInvestors  */
@@ -39,6 +40,30 @@ export async function getServerSideProps() {
 export default function InvestorIndexPage({ data }) {
 	console.log(data, "data");
 
+
+	// const sortedData = [...data].sort((a, b) => a.id - b.id);
+	// const sortedData = [...data].sort(
+	// 	(a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+	// );
+	// console.log(
+	// sortedData	
+	// );
+	const originalData = [...data].sort(
+		(a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+	);
+
+	const ipoCard = {
+		id: "ipo",
+		title: "Initial Public Offerings",
+		slug: "initial-public-offerings",
+		isIPO: true,
+	};
+
+	const sortedData = [
+		originalData[0], // first existing card
+		ipoCard,         // IPO as second card
+		...originalData.slice(1),
+	];
 	return (
 		<div>
 			{/* Metatags */}
@@ -64,12 +89,12 @@ export default function InvestorIndexPage({ data }) {
 						<div className="container">
 							<div className={`${styles.content_main_wrap} pt_40`}>
 								<div className={`${styles.box_wrap}`}>
-									{data?.map((item, ind) => {
+									{sortedData?.map((item, ind) => {
 										return (
 											<div className={`${styles.box_item}`} key={ind}>
-												<a href={`/investors/${item.slug}`}>
+												<a href={`/investor-relations/${item.slug}`}>
 													<img
-														src={StrapiImage(item.thumbnail).url}
+														src={item.isIPO ? ipo.src : StrapiImage(item.thumbnail).url}
 														className="b_r_10"
 														alt="story img"
 													/>

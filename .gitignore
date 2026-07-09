@@ -26,7 +26,16 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
+
+# uploaded media (large, served from CMS)
+/public/uploads/
+
+# local scratch
+/npm
+*.backup
+/deploy.sh
 
 # vercel
 .vercel

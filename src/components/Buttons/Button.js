@@ -44,10 +44,8 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
             );
 		case "secondary":
 			return (
-                // <Link >
-                // </Link>
-                <div>
-                    {isHref ? (
+				<div>
+					{link && isHref ? (
 						<a
 							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
 							href={link}
@@ -69,6 +67,7 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 					) : (
 						<button
 							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
+							disabled={!link}
 						>
 							<span className={styles.btn_outer_span}>
 								<span
@@ -85,8 +84,8 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 							</span>
 						</button>
 					)}
-                </div>
-            );
+				</div>
+			);
 
 		case "ternary":
 			return (
@@ -111,83 +110,148 @@ const Button = ({ buttonType, link, title, condition, isButton, isHref }) => {
 
 		case "four":
 			return (
-                // <Link >
-                // </Link>
-                <div>
-                    <a
-						className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
-						href={link}
-					>
-						<span className={styles.btn_outer_span}>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
-								<svg
-									width="14"
-									height="12"
-									viewBox="0 0 14 12"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
+				<div>
+					{link ? (
+						<a
+							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
+							href={link}
+						>
+							<span className={styles.btn_outer_span}>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+									<svg
+										width="14"
+										height="12"
+										viewBox="0 0 14 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
+											fill="white"
+										/>
+									</svg>
+								</span>
+								<span
+									className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
 								>
-									<path
-										d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
-										fill="white"
-									/>
-								</svg>
+									{title}
+								</span>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+									<svg
+										width="14"
+										height="12"
+										viewBox="0 0 14 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
+											fill="white"
+										/>
+									</svg>
+								</span>
 							</span>
-							<button
-								type="submit"
-								className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
-							>
-								{title}
-							</button>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
-								<svg
-									width="14"
-									height="12"
-									viewBox="0 0 14 12"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
+						</a>
+					) : (
+						<button
+							className={`${styles.btn_secondary} ${condition ? styles.white : ""}`}
+							disabled
+						>
+							<span className={styles.btn_outer_span}>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+									<svg
+										width="14"
+										height="12"
+										viewBox="0 0 14 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
+											fill="white"
+										/>
+									</svg>
+								</span>
+								<span
+									className={`${styles.btn_inner_text} text_xs color_white f_w_m`}
 								>
-									<path
-										d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
-										fill="white"
-									/>
-								</svg>
+									{title}
+								</span>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+									<svg
+										width="14"
+										height="12"
+										viewBox="0 0 14 12"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M13.808 6.6079L8.81601 11.5999L7.90402 10.7999L12.112 6.6079H0.192017V5.3919H12.112L7.90402 1.1999L8.81601 0.399902L13.808 5.3919V6.6079Z"
+											fill="white"
+										/>
+									</svg>
+								</span>
 							</span>
-						</span>
-					</a>
-                </div>
-            );
+						</button>
+					)}
+				</div>
+			);
 		case "five":
 			return (
-                // <Link >
-                // </Link>
-                <div>
-                    <a
-						className={`${styles.btn_five} ${condition ? styles.white : ""}`}
-						href={link}
-					>
-						<span className={styles.btn_outer_span}>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
-								<img
-									src={btnArrowBlack.src}
-									className={`${styles.btn_arrow1}`}
-									alt=""
-								/>
+				<div>
+					{link ? (
+						<a
+							className={`${styles.btn_five} ${condition ? styles.white : ""}`}
+							href={link}
+						>
+							<span className={styles.btn_outer_span}>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+									<img
+										src={btnArrowBlack.src}
+										className={`${styles.btn_arrow1}`}
+										alt=""
+									/>
+								</span>
+								<span className={`${styles.btn_inner_text} text_xs color_light_black`}>
+									{title}
+								</span>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+									<img
+										src={btnArrowBlack.src}
+										className={`${styles.btn_arrow1}`}
+										alt=""
+									/>
+								</span>
 							</span>
-							<button className={`${styles.btn_inner_text} text_xs color_light_black`}>
-								{title}
-							</button>
-							<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
-								<img
-									src={btnArrowBlack.src}
-									className={`${styles.btn_arrow1}`}
-									alt=""
-								/>
+						</a>
+					) : (
+						<button
+							className={`${styles.btn_five} ${condition ? styles.white : ""}`}
+							disabled
+						>
+							<span className={styles.btn_outer_span}>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_right}`}>
+									<img
+										src={btnArrowBlack.src}
+										className={`${styles.btn_arrow1}`}
+										alt=""
+									/>
+								</span>
+								<span className={`${styles.btn_inner_text} text_xs color_light_black`}>
+									{title}
+								</span>
+								<span className={`${styles.btn_inner_circle} ${styles.btn_inner_left}`}>
+									<img
+										src={btnArrowBlack.src}
+										className={`${styles.btn_arrow1}`}
+										alt=""
+									/>
+								</span>
 							</span>
-						</span>
-					</a>
-                </div>
-            );
+						</button>
+					)}
+				</div>
+			);
 	}
 };
 export default Button;
