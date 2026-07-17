@@ -114,7 +114,7 @@ export default function HomeInvestors({ investorData }) {
 													{item.title}
 												</p>
 												<div>
-													<a href={`/investor-relations/${item.slug}`}>
+													<a href={`/investors/${item.slug}`}>
 														<img src={arrow_btn.src} alt="arrow icon" />
 													</a>
 												</div>

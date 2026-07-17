@@ -142,64 +142,19 @@ export default function Header() {
 	const toggleMenu = (index) => {
 		setOpenMenus((prev) => {
 			const updatedMenus = [...prev];
-			updatedMenus[index] = !updatedMenus[index];
+			updatedMenus[index] = !updatedMenus[index]; // Toggle only the clicked index
 			return updatedMenus;
 		});
 
 		setOpenMenuIndex((prev) => (prev === index ? null : index));
 	};
 
-	const enrichInvestorsMenu = (items) => {
-		return items.map((item) => {
-			if (item.title === "Investors") {
-				const hardcodedIPO = {
-					id: "hardcoded-ipo",
-					pageName: "Initial Public Offerings",
-					pageUrl: "investor-relations/initial-public-offerings",
-					subPages: [],
-				};
-
-				const updatedPages = item.pageName.map((page) => {
-					// Report & Statement
-					if (
-						page.pageName?.toLowerCase().includes("report")
-					) {
-						return {
-							...page,
-							pageName: "Reports & Statements",
-							pageUrl: "investor-relations/reports-and-statements",
-						};
-					}
-
-					return {
-						...page,
-						pageUrl: `investor-relations/${page.pageUrl
-							?.replace(/^\/+/, "")
-							?.replace(/^investors\/?/, "")}`,
-					};
-				});
-
-				return {
-					...item,
-					pageName: [
-						updatedPages[0], // Reports & Statements
-						hardcodedIPO, // IPO after Reports & Statements
-						...updatedPages.slice(1),
-					],
-				};
-			}
-
-			return item;
-		});
-	};
-
-	const enrichedHeaderData = newHeaderData?.data ? enrichInvestorsMenu(newHeaderData.data) : [];
-
 	return (
 		<>
 			<div
-				className={`${styles.main_header} main_header ${openSidebar ? styles.sidebar_opened : ""
-					}`}
+				className={`${styles.main_header} main_header ${
+					openSidebar ? styles.sidebar_opened : ""
+				}`}
 				ref={sidebarRef}
 			>
 				<div className={`${styles.header_section} header_container`}>
@@ -248,7 +203,7 @@ export default function Header() {
 						<div className={`${styles.links_wrap} ${styles.mobile}`}>
 							{isClient && (
 								<>
-									{enrichedHeaderData?.map((item, index) => (
+									{newHeaderData?.data?.map((item, index) => (
 										<div
 											key={index}
 											className={`${styles.links} commonCls`}
@@ -264,18 +219,13 @@ export default function Header() {
 													}
 												}}
 											>
+												{/* <a href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>{item.title}</a> */}
 												{item.pageName.length == 1 ? (
 													<a href={`${item?.url}`}>{item.title}</a>
 												) : (
 													<>
-														{item.title === "Investors" ? (
-															<a href="/investors">{item.title}</a>
-														) : (
-															<>
-																{item.title}
-																<img src={arrow.src} className={`${styles.arrow}`} />
-															</>
-														)}
+														{item.title}
+														<img src={arrow.src} className={`${styles.arrow}`} />
 													</>
 												)}
 											</p>
@@ -322,12 +272,11 @@ export default function Header() {
 																				page.pageName
 																			)}
 																		</span>
-																		{page.subPages.length > 0 && item.title !== "Investors" && <img src={arrow.src} />}
+																		{page.subPages.length > 0 && <img src={arrow.src} />}
 																	</div>
 
 																	{activeMenu === `${index}-${pageIndex}` &&
-																		page.subPages.length > 0 &&
-																		item.title !== "Investors" && (
+																		page.subPages.length > 0 && (
 																			<ul
 																				className={styles.subMenu}
 																				onMouseEnter={() =>

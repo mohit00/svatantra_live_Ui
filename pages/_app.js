@@ -1,8 +1,6 @@
 // MODULES //
 import { useEffect } from "react";
-import { useRouter } from "next/router";
 import Script from "next/script";
-
 // COMPONENTS //
 
 // SECTIONS //
@@ -21,57 +19,9 @@ import "@/styles/globals/globals.scss";
 
 /** App Page */
 export default function MyApp({ Component, pageProps }) {
-	const router = useRouter();
-
 	useEffect(() => {
 		SmoothScrolling();
 	}, []);
-
-	useEffect(() => {
-		const handleInvestorCategoryRedirect = (event) => {
-			if (
-				event.defaultPrevented ||
-				event.button !== 0 ||
-				event.metaKey ||
-				event.ctrlKey ||
-				event.shiftKey ||
-				event.altKey
-			) {
-				return;
-			}
-
-			const anchor = event.target?.closest?.("a[href]");
-
-			if (!anchor) {
-				return;
-			}
-
-			if (anchor.target && anchor.target !== "_self") {
-				return;
-			}
-
-			const href = anchor.getAttribute("href");
-
-			if (!href || !href.startsWith("/investors/")) {
-				return;
-			}
-
-			const match = href.match(/^\/investors\/([^/]+)\/?$/);
-
-			if (!match) {
-				return;
-			}
-
-			event.preventDefault();
-			router.push(`/investor-relations/${match[1]}`);
-		};
-
-		document.addEventListener("click", handleInvestorCategoryRedirect);
-
-		return () => {
-			document.removeEventListener("click", handleInvestorCategoryRedirect);
-		};
-	}, [router]);
 
 	return (
 		<>
