@@ -152,9 +152,8 @@ export default function Header() {
 	return (
 		<>
 			<div
-				className={`${styles.main_header} main_header ${
-					openSidebar ? styles.sidebar_opened : ""
-				}`}
+				className={`${styles.main_header} main_header ${openSidebar ? styles.sidebar_opened : ""
+					}`}
 				ref={sidebarRef}
 			>
 				<div className={`${styles.header_section} header_container`}>
@@ -224,7 +223,14 @@ export default function Header() {
 													<a href={`${item?.url}`}>{item.title}</a>
 												) : (
 													<>
-														{item.title}
+														{item.title === "Investors" ? (
+															<Link href="/investors">
+																{item.title}
+															</Link>
+														) : (
+															<span>{item.title}</span>
+														)}
+
 														<img src={arrow.src} className={`${styles.arrow}`} />
 													</>
 												)}
