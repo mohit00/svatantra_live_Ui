@@ -37,18 +37,18 @@ export default function WhyComponent() {
 		{
 			title: "Work-life balance:",
 			desc:
-				"We are a firm believer in maintaining a healthy work-life balance, offering flexibility that enhances not only your professional growth but also your personal well-being.",
+				"The Company 'undertakes initiatives relating to workplace inclusion, employee safety and employee well-being, including periodic engagement initiatives for female employees focused on workplace culture, safety and well-being'",
 		},
 		{
 			title: "Supportive team:",
 			desc:
-				"We foster a culture of collaboration, innovation and inclusivity where every idea is valued and every member thrives and achieves their ambitions.",
+				"The Company 'provides one-on-one employee support programmes and counselling assistance through an Employee Assistance Program to enable employees to seek guidance on personal and workplace-related concerns'",
 		},
-		{
-			title: "Parental support:",
-			desc:
-				"We offer both maternity and paternity leaves with flexible working arrangements for working mothers, ensuring they have the support needed to excel professionally and personally.",
-		},
+		// {
+		// 	title: "Parental support:",
+		// 	desc:
+		// 		"We offer both maternity and paternity leaves with flexible working arrangements for working mothers, ensuring they have the support needed to excel professionally and personally.",
+		// },
 		{
 			title: "Employee wellbeing:",
 			desc:

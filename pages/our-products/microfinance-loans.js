@@ -44,18 +44,18 @@ export const getStaticProps = async (context) => {
 /** MicrofinanceLoans Page */
 export default function MicrofinanceLoans({ blogsData }) {
 	const loanAmountData = {
-		loanAmount: "₹ 5,000 to ₹ 1 lakh",
-		tenure: "12 to 30 Months",
-		interestRate: "22.75% to 24.00%",
+		loanAmount: "₹ 5,000 to ₹ 1.5 lakh",
+		tenure: "12 to 24 Months",
+		interestRate: "23.00% to 24.00%",
 	};
 
 	const pavingThePathData = {
-		title: "Paving the path to prosperity for women entrepreneurs",
+		title: "Paving the path empowerment for women entrepreneurs",
 		description:
-			"Svatantra's microfinance loans have been instrumental in promoting entrepreneurship, especially among the semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
+			"Svatantra's microfinance loans promote entrepreneurship, especially among the semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
 		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
-			"We provide one of the lowest interest rates in India.",
+			"We offer competitive interest rates.",
 			" Services that enable rural and semi-urban women entrepreneurs to become agents of change within their communities.",
 			"Customised solutions for entrepreneurs to achieve business goals and drive economic growth.",
 			"A financial ecosystem that ensures every individual experiences a self-reliant future.",

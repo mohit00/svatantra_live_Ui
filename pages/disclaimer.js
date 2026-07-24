@@ -36,7 +36,7 @@ export default function DisclaimerPage() {
 
 					<h1 className="section_title pb_40 text_center">Disclaimer</h1>
 					<p className="f_w_r  pb_20">
-						This is the official site of Svatantra Microfin Private Limited
+						This is the official site of Svatantra Microfin Limited
 						(Svatantra) and provides general information about Svatantra. All the
 						text, graphics, trademarks and all other content displayed on this site
 						are owned by Svatantra. The information and content is based on the laws

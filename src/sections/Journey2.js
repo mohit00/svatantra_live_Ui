@@ -81,7 +81,7 @@ export default function JourneyComponent({ journeyData, gsap, ScrollTrigger }) {
 					<h2 className="section_title">Building a legacy of growth and change</h2>
 					<p className="text_md pt_10 pb_40">
 						A story of bold steps, innovation, and lasting impact from a single branch
-						to India&lsquo;s second-largest MFI.
+						to India&lsquo;s second-largest MFI as of March 31, 2026.
 					</p>
 				</div>
 				<div className={`${styles.Journey_box_wrapper}`}>

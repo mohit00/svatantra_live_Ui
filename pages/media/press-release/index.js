@@ -98,7 +98,7 @@ export default function PressReleasePage({ pressReleaseData }) {
 						<div className={`${styles.Head}`}>
 							<h2 className="section_title pb_10">Documenting the path to change</h2>
 							<p className="text_md color_light_black opacity_80">
-								Read the latest updates on how we are creating ripples across
+								Read the latest updates on how we are impacting
 								industries.
 							</p>
 						</div>

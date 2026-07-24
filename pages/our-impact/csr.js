@@ -141,10 +141,10 @@ export default function csr() {
 				<section className={`${styles.csr_main} ptb_80`}>
 					<div className="container">
 						<div className={`${styles.title_wrap} pb_60`}>
-							<h1 className="text_xxxl color_primary pb_20">
+							{/* <h1 className="text_xxxl color_primary pb_20">
 								The Svatantra path to a <br className="hidden_xs" />
 								harmonious future for all
-							</h1>
+							</h1> */}
 							<p className="text_sm color_light_black opacity_8">
 								As a responsible corporate citizen and trusted partner to our clients,
 								Svatantra launched several CSR initiatives aimed at enhancing quality of

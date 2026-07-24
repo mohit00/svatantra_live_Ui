@@ -261,7 +261,7 @@ export default function JourneySup({ gsap, ScrollTrigger, journeyData }) {
 				</h1>
 				<p className="text_reg_20 opacity_8 pb_50">
 					A story of bold steps, innovation, and lasting impact from a single <br />
-					branch to India&apos;s second-largest MFI.
+					branch to India&apos;s second-largest MFI as of March 31, 2026.
 				</p>
 				{!isMobile ? (
 					<div className={`${styles.mainBox} mainBox`}>

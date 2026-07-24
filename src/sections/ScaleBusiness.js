@@ -34,7 +34,7 @@ export default function ScaleBusiness() {
 			PageLink: "/our-products/microfinance-loans",
 			AccNo: "01",
 			description:
-				"Enabling rural women to start and expand their business at one of the lowest interest rates.",
+				"Enabling rural women to start and expand their business.",
 		},
 		{
 			maintitle: "Individual loans",

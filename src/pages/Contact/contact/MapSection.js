@@ -39,8 +39,10 @@ export default function MapSection() {
 							Registered Office Address
 						</h4>
 						<h5 className="text_xs f_w_m">
-							Svatantra Microfin Ltd., 20th Floor, Sunshine Tower, Senapati Bapat
-							Marg, Elphinstone Road (W), Mumbai - 400 013, Maharashtra, India
+							Sunshine Tower, Level 20<br className="hidden_xs" />
+							Senapati Bapat Marg, Elphinstone Road<br className="hidden_xs" />
+							Mumbai – 400 013<br className="hidden_xs" />
+							Maharashtra, India
 						</h5>
 
 						<h5 className="pt_10 pb_10">CIN: U74120MH2012PLC227069</h5>
@@ -53,7 +55,11 @@ export default function MapSection() {
 							Corporate Office Address
 						</h4>
 						<h5 className="text_xs f_w_m">
-							Brigade Software Park, ‘B’ Block, 8th Floor, Banashankari Stage II, Banashankari, Bangalore – 560070, Karnataka, India
+							8th Floor, Block B <br className="hidden_xs" />
+							Brigade Software Park <br className="hidden_xs" />
+							27th Cross, Banashankari, 2nd Stage <br className="hidden_xs" />
+							Bengaluru – 560 070 <br className="hidden_xs" />
+							Karnataka, India <br className="hidden_xs" />
 						</h5>
 
 					</div>

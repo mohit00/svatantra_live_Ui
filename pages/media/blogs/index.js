@@ -110,7 +110,7 @@ export default function BlogsPage({ blogsData }) {
 						<div className={`${styles.Head}`}>
 							<h2 className="section_title pb_10">Stories of spearheading change</h2>
 							<p className="text_md color_light_black opacity_80">
-								Insights into the future of rural entrepreneurship in India
+								Insights into rural entrepreneurship in India
 							</p>
 							<div className={`${styles.FiltersBox}`}>
 								<div className={`${styles.Filter}`}>

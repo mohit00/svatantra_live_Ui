@@ -8,6 +8,8 @@ import MetaTags from "@/components/MetaTags";
 import Breadcrum from "@/components/Breadcrumb";
 import Button from "@/components/Buttons/Button";
 import Footer2 from "@/components/Footer2";
+import ipo from "../../public/img/ipo.png";
+import amalgamatedCompany from "../../public/img/amalgamated-company.png";
 // SECTIONS //
 
 // PLUGINS //
@@ -37,7 +39,35 @@ export async function getServerSideProps() {
 
 /** Investor Index Page */
 export default function InvestorIndexPage({ data }) {
-	console.log(data, "data");
+	// console.log(data, "data");
+	const originalData = [...data].sort(
+		(a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+	);
+
+	const SHOW_IPO_CARD = false;
+	const SHOW_AMALGAMATED_CARD = true;
+	const ipoCard = {
+		id: "ipo",
+		title: "Initial Public Offerings",
+		slug: "initial-public-offerings",
+		isIPO: true,
+	};
+
+	const amalgamatedCard = {
+		id: "amalgamated-company",
+		title: "Amalgamated Company",
+		link: "/amalgamated-company",
+		isAmalgamated: true,
+	};
+
+	let investorCards = [...originalData];
+
+	if (SHOW_IPO_CARD) {
+		investorCards.splice(1, 0, ipoCard);
+	}
+	if (SHOW_AMALGAMATED_CARD) {
+		investorCards = [...investorCards, amalgamatedCard];
+	}
 
 	return (
 		<div>
@@ -64,16 +94,22 @@ export default function InvestorIndexPage({ data }) {
 						<div className="container">
 							<div className={`${styles.content_main_wrap} pt_40`}>
 								<div className={`${styles.box_wrap}`}>
-									{data?.map((item, ind) => {
+									{investorCards?.map((item, ind) => {
 										return (
 											<div className={`${styles.box_item}`} key={ind}>
-												<a href={`/investors/${item.slug}`}>
-												<div className={styles.imageWrapper}>
-													<img
-														src={StrapiImage(item.thumbnail).url}
-														className={`${styles.cardImage} b_r_10`}
-														alt="story img"
-													/>
+												<a href={item.link || `/investors/${item.slug}`}>
+													<div className={styles.imageWrapper}>
+														<img
+															src={
+																item.isIPO
+																	? ipo.src
+																	: item.isAmalgamated
+																		? amalgamatedCompany.src
+																		: StrapiImage(item.thumbnail).url
+															}
+															className={`${styles.cardImage} b_r_10`}
+															alt={item.title}
+														/>
 													</div>
 													<div className={`${styles.content} pt_20 f_r_aj_between`}>
 														<p className="text_md color_light_black font_secondary opacity_8">

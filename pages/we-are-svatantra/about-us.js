@@ -88,19 +88,18 @@ export default function AboutPage({ awardsData }) {
 					desktopImage={DesktopBanner.src}
 					mobileImage={MobileBanner.src}
 					bannerTitle="Enabling you to leave your mark on tomorrow"
-					bannerDesc="We deliver accessible microcredits to women entrepreneurs at one of the lowest interest rates in the country"
+					bannerDesc="We deliver accessible microfinance loans to women entrepreneurs"
 				/>
 				<section className={`${styles.Committed} ptb_80`}>
 					<div className="container">
 						<h2 className="section_title">
-							Committed to fueling your journey <br className="hidden_sm" /> towards
-							self-powered growth
+							We strive towards fueling your <br className="hidden_sm" /> journey towards self-powered growth
+
 						</h2>
 						<h4 className="text_reg pt_20 pb_40  ">
 							At Svatantra, we are driven by a singular vision: to create a
 							self-powered system of growth. We believe in the transformative power of
-							grassroots entrepreneurship and are committed to championing the
-							individuals who fuel India’s economic rise.
+							grassroots entrepreneurship and are committed to providing credit solutions to financially underserved borrowers.
 						</h4>
 						<div className={`${styles.committed_section_wrapper}`}>
 							<div className={`${styles.committed_section} f_r_aj_between f_w`}>
@@ -110,8 +109,7 @@ export default function AboutPage({ awardsData }) {
 								<div className={`${styles.committed_info}`}>
 									<p className="text_sm opacity_8">
 										We provide rural and semi-urban communities with access to diverse
-										microfinance solutions using the latest technology. From offering one
-										of the lowest interest rates in the industry to pioneering 100%
+										microfinance solutions using the technology enabled systems. From pioneering 100%
 										cashless disbursements, our approach is built on innovation,
 										transparency, and empowerment.
 									</p>
@@ -123,8 +121,7 @@ export default function AboutPage({ awardsData }) {
 								</div>
 								<div className={`${styles.committed_info}`}>
 									<p className="text_sm opacity_8">
-										Our purpose is to cultivate a new generation of entrepreneurs who will
-										shape India’s journey into a global economic superpower. Taking every
+										Our purpose is to cultivate a new generation of entrepreneurs.Taking every
 										step forward, we strive to turn aspirations into accomplishments,
 										creating ripples of progress far beyond our own world.
 									</p>
@@ -199,7 +196,7 @@ export default function AboutPage({ awardsData }) {
 								</div>
 								<h5 className="text_md font_primary">Learning and Innovation</h5>
 								<p className="text_xs opacity_80">
-									Continuously seek new knowledge and solutions that drive progress and reshape the financial landscape. 
+									Continuously seek new knowledge and solutions that drive progress and reshape the financial landscape.
 								</p>
 							</div>
 							{/* <div className={`${styles.turning_box}`}>
@@ -220,8 +217,7 @@ export default function AboutPage({ awardsData }) {
 					<div className={`${styles.SliderMain} ptb_80`}>
 						<div className="container">
 							<h2 className="section_title color_white pb_40">
-								Accelerating the path to <br className="hidden_sm" /> prosperity and
-								growth
+								Enhance operational efficiency  <br className="hidden_sm" /> and control standards
 							</h2>
 						</div>
 						<div className={styles.sliderBox}>

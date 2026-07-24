@@ -45,17 +45,17 @@ export const getStaticProps = async (context) => {
 /** MsmeLoans Page */
 export default function MsmeLoans({ blogsData }) {
 	const loanAmountData = {
-		loanAmount: "₹ 1 lakh to ₹ 4 lakh",
-		tenure: "18 to 48 Months",
-		interestRate: "23.75% to 24.00%",
+		loanAmount: "₹ 1 lakh to ₹ 2.5 lakh",
+		tenure: "18 to 36 Months",
+		interestRate: "23.00% to 24.00%",
 	};
 	const pavingThePathData = {
 		title: "Scale small businesses to robust MSMEs",
 		description:
-			"We tailor our Individual Loans to build entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to micro-credit at one of the lowest interest rates in the Country, we provide timely support to address the evolving business needs. From starting a venture or expanding a rural based business, our Individual Loans can help maximise success and achievements throughout an individual's entrepreneurial journey.",
+			"We tailor our Individual Loans to assist entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to microfinance loans, we provide timely support to address the evolving business needs. From starting a venture or expanding a rural based business, our Individual Loans can help an individual's entrepreneurial journey.",
 		subTitle: "Key features powering our entrepreneurs and our economy",
 		features: [
-			"We provide one of the lowest interest rates in India.",
+			"We offer competitive interest rates.",
 			"Services that enable rural and semi-urban women to become agents of change within their communities.",
 			"Customised solutions for entrepreneurs to achieve business goals and drive economic growth.",
 			"A financial ecosystem that ensures every individual experiences a self-reliant future.",
@@ -251,27 +251,27 @@ export default function MsmeLoans({ blogsData }) {
 								</thead>
 								<tr>
 									<td>Microfinance loans</td>
-									<td>₹ 5,000 to ₹ 1 lakh</td>
-									<td>12 to 30 Months</td>
+									<td>₹ 5,000 to ₹ 1.5 lakh</td>
+									<td>12 to 24 Months</td>
 									<td>Monthly</td>
-									<td>22.75% to 24.00%*</td>
+									<td>23.00% to 24.00%*</td>
 									<td>1.50% (+GST)</td>
 									<td>Nil</td>
 								</tr>
 								<tr>
 									<td>Individual Loans</td>
-									<td>₹ 1 lakh to ₹ 4 lakh</td>
-									<td>18 to 48 Months</td>
+									<td>₹ 1 lakh to ₹ 2.5 lakh</td>
+									<td>18 to 36 Months</td>
 									<td>Monthly</td>
-									<td>23.75% to 24.00%</td>
+									<td>23.00% to 24.00%</td>
 									<td>1.50% (+GST)</td>
 									<td>Nil</td>
 								</tr>
 								<tr>
 									<td rowSpan="2">Insurance</td>
 									<td colSpan="6">
-										Svatantra offers Credit Linked Insurance, a life insurance tailored to
-										provide financial support to our women customers and their spouses. It
+										Svatantra offers Credit Life Insurance, a life insurance tailored to
+										provide financial support to our women customers and their nominees. It
 										ensures the family remains economically independent, especially in
 										case of death of the insured person.
 									</td>

@@ -50,16 +50,10 @@ export default function LoanAmount({ loanAmount, tenure, interestRate }) {
 						</div>
 					</div>
 				</div>
-				<p className="text_sm pt_20 f_w_l opacity_80 pt_10">
+				<p className="text_xs pt_20 f_w_l opacity_80 pt_10">
 					<strong>Approach for gradation of Risk:</strong>
 					<br />
-					The decision to give a loan is assessed on a case to case basis, based on
-					multiple parameters such as borrower profile and repayment capacity,
-					borrower’s other financial commitments, past repayment track record if any,
-					tenure of the loan, occupation and stability of income, geography
-					(location) of the borrower, end-use of the loan, etc. Such information is
-					collected based on borrower inputs and field inspection by the company
-					officials.
+					The decision to give loan is assessed by performance of a risk assessment at the individual and group level, evaluating borrowers occupation profiles, stated loan purpose, potential cross-lending exposure, house ownership status and migration risk. Such information is collected based on borrower inputs and field inspection by the Company officials.
 				</p>
 			</div>
 		</section>

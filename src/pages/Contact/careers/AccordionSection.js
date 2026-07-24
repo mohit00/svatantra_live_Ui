@@ -40,7 +40,7 @@ export default function AccordionSection({ data }) {
 
 	const [activeIndex, setActiveIndex] = useState(null);
 	const uniqueStates = [...new Set(data.data.map((job) => job.state))];
-	const [selectedState, setSelectedState] = useState("");
+	const [selectedState, setSelectedState] = useState("Maharashtra");
 
 	const [selectedOptions, setSelectedOptions] = useState({
 		select1: "Maharashtra",
@@ -113,7 +113,7 @@ export default function AccordionSection({ data }) {
 			<div className="container">
 				<h2 className="section_title">
 					Take the next big step in your career
-					<br className="hidden_sm" /> by becoming a part of Svatantra
+					<br className="hidden_sm" /> by becoming a part of Svatantra Microfin Limited
 				</h2>
 				<p className="text_md opacity_80 pt_20 pb_40">
 					Explore our current openings and find the perfect role that aligns with

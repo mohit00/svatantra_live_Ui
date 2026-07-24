@@ -34,8 +34,10 @@ export default function AmalgamatedCompanyPage() {
 
 			{/* Breadcrumb */}
 			<Breadcrum
-				link5="/amalgamated-company"
-				linkTitle={"Amalgamated Company"}
+				link5="investors"
+				linkTitle="Investors"
+				linknest1="/amalgamated-company"
+				linknestTitle1={"Amalgamated Company"}
 			/>
 
 			{/* Main Content */}

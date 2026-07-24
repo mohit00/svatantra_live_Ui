@@ -50,13 +50,13 @@ export default function CareersDisclaimerPage() {
 
 					<ul>
 						<li className="pb_20">
-							Svatantra Microfin Private Limited do not demand or accept any amount or
+							Svatantra Microfin Limited do not demand or accept any amount or
 							security deposit from job applicants during the selection process or
 							while inviting applicants for an interview .
 						</li>
 						<li className="pb_20">
 							Anyone making an employment offer in return for money or other type of
-							gain is not authorized by Svatantra Microfin Private Limited and is not
+							gain is not authorized by Svatantra Microfin Limited and is not
 							offering an approved job.
 						</li>
 						<li className="pb_20">
@@ -66,13 +66,13 @@ export default function CareersDisclaimerPage() {
 							check & verify the email ID.
 						</li>
 						<li className="pb_20">
-							Please check the official website of Svatantra Microfin Private Limited
+							Please check the official website of Svatantra Microfin Limited
 							(www.svatantramicrofin.com) to get the contact details and enquire with
 							the company to confirm if the offers or promotions are genuine; do not
 							respond to any fraudulent communication.
 						</li>
 						<li className="pb_50">
-							Please be informed that we, Svatantra Microfin Private Limited, shall not
+							Please be informed that we, Svatantra Microfin Limited, shall not
 							in any way, be responsible or liable for any loss that may be occasioned
 							to any member of the public on account of their dealings with such
 							fraudulent persons.
@@ -81,7 +81,7 @@ export default function CareersDisclaimerPage() {
 					<p className="f_w_b text_center pb_20">
 						Should you come across any such fraudulent incident or have any
 						information regarding solicitation for recruitment or employment with
-						Svatantra Microfin Private Limited, please assist us in taking appropriate
+						Svatantra Microfin Limited, please assist us in taking appropriate
 						action to curb such mala fide activities.
 					</p>
 					<p className="f_w_b text_center pb_80">

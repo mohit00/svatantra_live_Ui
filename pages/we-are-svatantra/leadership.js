@@ -106,10 +106,10 @@ export default function LeadershipPage({ leadershipsData }) {
 						<h2 className="section_title pb_20">
 							Guiding Svatantra with a<br /> commitment to financial freedom
 						</h2>
-						<p className="text_md color_light_black opacity_80 pb_60">
+						{/* <p className="text_md color_light_black opacity_80 pb_60">
 							Our team leads by example at the forefront of change, <br />
 							building a future where financial freedom is accessible to all.
-						</p>
+						</p> */}
 						{sortedLeadershipData?.map((item, index) => {
 							if (!item.desc) return null;
 							const paragraphs = item.desc.split(/<br\s*\/?>/i);

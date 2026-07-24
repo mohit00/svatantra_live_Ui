@@ -58,7 +58,7 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 			<main className={styles.CareersPage}>
 				<Breadcrum link5="careers" linkTitle={"Careers"} />
 				<InnerBanner
-					bannerTitle="Elevate your career and create a purpose-driven future"
+					bannerTitle="Careers"
 					desktopImage={desktopBanner.src}
 					mobileImage={mobileBanner.src}
 				/>
@@ -69,16 +69,11 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 					<section className={`${styles.Committed} ptb_80`}>
 						<div className="container">
 							<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
-								A culture of excellence through training and development
+								Talent Acquisition and Recruitment
 							</h2>
 							<h4 className="text_sm opacity_8 pb_10 pb_30">
-								At Svatantra, we believe that a people-first culture is the cornerstone
-								of success. This commitment begins with investing in our employees,
-								ensuring they are well-trained, highly skilled, and fully aligned to
-								delivering excellence at every touchpoint. Our comprehensive training
-								programs are designed to equip teams with diverse skills and
-								perspectives, enabling them to excel and contribute meaningfully to our
-								shared goals.
+								We follow structured recruitment processes for key operational roles, including a two-round interview process. For field officer positions, we primarily recruit fresh graduates and early-career talent.
+								As part of our employee verification framework, we undertake background verification processes for field employees, including house visits, criminal background verification and credit bureau checks. These processes are intended to support operational integrity and governance standards across our branch network.
 							</h4>
 							<div className={`${styles.committed_section_wrapper}`}>
 								<div className={`${styles.committed_section} f_r_aj_between f_w`}>
@@ -87,15 +82,13 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 									</div>
 									<div className={`${styles.committed_info}`}>
 										<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
-											Comprehensive onboarding and <br className="hidden_sm" />
-											building strong foundations
+											Learning and Development 
 										</h2>
 										<p className="text_sm opacity_8">
-											New employees embark on a 30-day intensive training program,
-											combining practical field experience with focused classroom learning.
-											This immersive approach enables every employee with a strong
-											foundation and essential skills in their respective fields,
-											establishing them up for success from day one itself.
+											Newly recruited field officers undergo an approximately 5-day induction programme comprising classroom-based training and on-the-job training under the supervision of experienced employees and branch managers.
+											<br className="hidden_sm" />
+											In addition to induction programmes, we conduct periodic refresher training, leadership development initiatives and functional capability enhancement programmes across employee categories. These programmes are intended to support employee productivity, operational processes, borrower servicing standards and compliance with internal policies and regulatory requirements.
+
 										</p>
 									</div>
 								</div>
@@ -105,15 +98,12 @@ export default function CareersPage({ employee, talents, pdfTalent }) {
 									</div>
 									<div className={`${styles.committed_info}`}>
 										<h2 className="text_lg font_primary f_w_m pb_10 color_primary">
-											Continuous learning with e-Gurukool to stay ahead of the curve
+											Internal Talent Development and Career Progression
 										</h2>
 										<p className="text_sm opacity_8 pb_10">
-											Our commitment to employee development extends beyond the initial
-											onboarding phase. Through our innovative e-Gurukool platform,
-											employees have access to ongoing refresher courses and resources
-											which ensures our team stays up-to-date with industry best practices,
-											emerging trends, and evolving company strategies, fostering a culture
-											of innovation.
+											Through a well-structured development programme, we ensure employees have access to ongoing refresher courses and resources which ensures our team stays up-to-date with industry best practices, emerging trends, and evolving company strategies.
+
+
 										</p>
 										{/* <ul>
 											<li className="text_sm opacity_8">

@@ -130,7 +130,7 @@ export default function MediaMentionPage({ mediaMentionsData }) {
 					<section className={`${styles.MediaListingMain} pb_80`}>
 						<div className={`${styles.Head} pb_50`}>
 							<h2 className="section_title pb_10">
-								A reflection of our growing impact
+								Media Sportlight
 							</h2>
 							<p className="text_md color_light_black opacity_80">
 								Turning the spotlight on real stories of change, captured by the media.

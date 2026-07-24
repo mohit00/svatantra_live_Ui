@@ -32,9 +32,7 @@ export default function TechnologyDriven() {
 					<p className="text_sm opacity_8 pb_10">
 						At Svatantra, we believe in harnessing the power of technology to create a
 						seamless, innovative, and personalised experience for both our customers
-						and employees. Our commitment to the technology–driven approach isn’t just
-						about staying ahead – it is also about creating a future where both
-						customers and employees thrive.
+						and employees. 
 					</p>
 					<p className="text_sm opacity_8">
 						We have strategically integrated technology into our operations to
@@ -46,7 +44,7 @@ export default function TechnologyDriven() {
 						an enabler of growth, rather than a barrier to access and understanding.
 					</p>
 					<h5 className="text_sm  color_light_black font_secondary opacity_8 f_w_s_b pt_20">
-						Discover our digital solutions, tailor-made to enhance customer and
+						Discover our digital solutions, made to enhance customer and
 						employee experience and generate operational efficacy:
 					</h5>
 				</div>
@@ -58,8 +56,7 @@ export default function TechnologyDriven() {
 						<div className={`${styles.committed_info}`}>
 							<h3 className="text_xxl color_primary pb_20">Cashless disbursements</h3>
 							<p className="text_sm opacity_8">
-								Svatantra was among the first NBFC-MFIs to provide 100% cashless
-								disbursements right from its inception in 2012. By eliminating cash
+								Since commencement of operations in 2013, all disbursals by our Company have been cashless. By eliminating cash
 								transactions and through our technological intervention, we have made
 								credit access more secure, efficient and convenient for all our
 								customers.
@@ -82,17 +79,14 @@ export default function TechnologyDriven() {
 							<img src={saathi.src} className="img-responsive" alt="saathi" />
 						</div>
 						<div className={`${styles.committed_info}`}>
-							<h3 className="text_xxl color_primary pb_20">Unique lending process</h3>
+							<h3 className="text_xxl color_primary pb_20">Distinct lending process</h3>
 							<p className="text_sm opacity_8 pb_10">
 								The company leverages technology to enhance its lending processes to
-								serve its customers. One of the company’s key innovations is the
-								implementation of a unique, digitally enabled income assessment process.
-								This advanced system allows for more accurate and efficient evaluation
-								of potential borrowers’ financial capabilities.
+								serve its customers.
 							</p>
 							<p className="text_sm opacity_8">
-								This also includes risk, HR, finance, and learning, which are integrated
-								into the company’s end-to-end IT platform, ensuring efficiency and
+								This also includes AI, cloud native infrastructure and cybersecurity controls, which are integrated
+								into the Company’s end-to-end IT platform, ensuring efficiency and
 								transparency. We are continuously investing in digitisation and making
 								upgrades to our existing systems to protect customer data and our
 								proprietary assets.
