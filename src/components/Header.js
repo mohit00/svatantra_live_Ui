@@ -217,26 +217,24 @@ export default function Header() {
 														toggleMenu(index);
 													}
 												}}
-
 											>
 												{/* <a href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>{item.title}</a> */}
 												{item.pageName.length == 1 ? (
 													<a href={`${item?.url}`}>{item.title}</a>
 												) : (
 													<>
-														{item.title === "Investors" ? (
-															isMobile ? (
-																<span>{item.title}</span>
-															) : (
-																<Link href="/investors">
-																	{item.title}
-																</Link>
-															)
+														{item.title === "Investors" && !isMobile ? (
+															<a
+																href="/investors"
+																onClick={(e) => e.stopPropagation()}
+															>
+																{item.title}
+															</a>
 														) : (
-															<span>{item.title}</span>
+															item.title
 														)}
 
-														<img src={arrow.src} className={`${styles.arrow}`} />
+														<img src={arrow.src} className={styles.arrow} />
 													</>
 												)}
 											</p>
