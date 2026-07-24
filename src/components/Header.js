@@ -217,6 +217,7 @@ export default function Header() {
 														toggleMenu(index);
 													}
 												}}
+
 											>
 												{/* <a href={`/${page?.pageUrl?.replace(/^\/+/, "")}`}>{item.title}</a> */}
 												{item.pageName.length == 1 ? (
@@ -224,9 +225,13 @@ export default function Header() {
 												) : (
 													<>
 														{item.title === "Investors" ? (
-															<Link href="/investors">
-																{item.title}
-															</Link>
+															isMobile ? (
+																<span>{item.title}</span>
+															) : (
+																<Link href="/investors">
+																	{item.title}
+																</Link>
+															)
 														) : (
 															<span>{item.title}</span>
 														)}
