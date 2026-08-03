@@ -45,7 +45,7 @@ export default function LoanFactSheet() {
 							<td>12 to 30 Months</td>
 							<td>Monthly</td>
 							<td>22.75% to 24.00%*</td>
-							<td>1.50% (+GST)</td>
+							<td>1.50%</td>
 							<td>Nil</td>
 						</tr>
 						<tr>
@@ -54,7 +54,7 @@ export default function LoanFactSheet() {
 							<td>18 to 48 Months</td>
 							<td>Monthly</td>
 							<td>23.75% to 24.00%</td>
-							<td>1.50% (+GST)</td>
+							<td>2.00%</td>
 							<td>Nil</td>
 						</tr>
 						<tr>
