@@ -154,10 +154,10 @@ export default function MsmeLoans({ blogsData }) {
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Individual Loans"}
-				Desc={""}
+				Title={"Individual Business Loans for Entrepreneurs"}
+				Desc={"Individual business loans for growing entrepreneurs in India — see the interest rate, eligibility and documents required, then apply online with Svatantra."}
 				OgImg={""}
-				Url={"/individual-loans"}
+				Url={"https://www.svatantramicrofin.com/our-products/individual-loans"}
 			/>
 
 			{/* Header */}

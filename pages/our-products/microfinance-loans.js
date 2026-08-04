@@ -329,10 +329,10 @@ export default function MicrofinanceLoans({ blogsData }) {
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Microfinance Loans"}
-				Desc={""}
+				Title={"Microfinance Loan for Women Entrepreneurs"}
+				Desc={"Collateral-free microfinance loans for women entrepreneurs in India. Low interest rates, simple eligibility — check details and apply online."}
 				OgImg={""}
-				Url={"/microfinance-loans"}
+				Url={"https://www.svatantramicrofin.com/our-products/microfinance-loans"}
 			/>
 
 			{/* Header */}
