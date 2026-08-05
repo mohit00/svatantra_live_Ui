@@ -174,10 +174,10 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 								Building the <span>Entrepreneurs</span> <br className="hidden-xs" />{" "}
 								that build India’s economy
 							</h1>
-							<p className="text_md pt_20 opacity_80">
+							{/* <p className="text_md pt_20 opacity_80">
 								We turn aspirations into breakthroughs, powering the journey of every
 								Indian toward economic independence, prosperity, and success.
-							</p>
+							</p> */}
 						</div>
 					</div>
 					{/* <p className={`${styles.scroll} text_xs hidden`}>Scroll To Discover</p> */}

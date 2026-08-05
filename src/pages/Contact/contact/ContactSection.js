@@ -34,6 +34,12 @@ export default function ContactSection() {
 								customercare@svatantra.adityabirla.com
 							</a>
 						</p>
+						<h5 className="text_xs f_w_b">Investor Grievance/ Query: </h5>
+						<p className="text_xs pb_10">
+							<a href="mailto:cs@svatantramicrofin.com">
+								cs@svatantramicrofin.com
+							</a>
+						</p>
 
 						<h5 className="text_xs f_w_b">Careers:</h5>
 						<p className="text_xs pb_10">

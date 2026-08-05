@@ -45,15 +45,15 @@ export const getStaticProps = async (context) => {
 export default function MicrofinanceLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 5,000 to ₹ 1.5 lakh",
-		tenure: "12 to 24 Months",
-		interestRate: "23.00% to 24.00%",
+		tenure: "12 to 26 Months",
+		interestRate: "up to 25.00%",
 	};
 
 	const pavingThePathData = {
 		title: "Paving the path empowerment for women entrepreneurs",
 		description:
 			"Svatantra's microfinance loans promote entrepreneurship, especially among the semi-urban and rural women, making them economically independent. Our microfinance loans create a supportive financial environment for individuals to easily start and grow their businesses, bringing economic stability to their lives and those around them.",
-		subTitle: "Key features powering our entrepreneurs and our economy",
+		subTitle: "Key features of the microfinance loan :",
 		features: [
 			"We offer competitive interest rates.",
 			" Services that enable rural and semi-urban women entrepreneurs to become agents of change within their communities.",

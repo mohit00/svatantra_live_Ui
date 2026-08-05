@@ -105,6 +105,12 @@ export default function AwardsPage({ AwardsList }) {
 	// 	},
 	// ];
 
+	// Sort awards by year (latest first) on the frontend only
+	const sortedAwards = [...(AwardsList?.data || [])].sort(
+		(a, b) =>
+			(parseInt(b?.year, 10) || 0) - (parseInt(a?.year, 10) || 0)
+	);
+
 	const initialLimit = 6;
 	const [visibleAwards, setVisibleAwards] = useState(initialLimit);
 	const [isAllDisplayed, setIsAllDisplayed] = useState(
@@ -148,7 +154,7 @@ export default function AwardsPage({ AwardsList }) {
 
 						<div className={`${styles.content_main_wrap} pt_50`}>
 							<div className={`${styles.box_wrap}`}>
-								{AwardsList.data.slice(0, visibleAwards).map((item, ind) => (
+								{sortedAwards.slice(0, visibleAwards).map((item, ind) => (
 									<div className={`${styles.box_item}`} key={ind}>
 										<div className={`${styles.imgBox}`}>
 											{/* <img

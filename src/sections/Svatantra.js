@@ -122,7 +122,9 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 					"first"
 				)
 				.to(`.${styles.box_2}`, { x: 0, duration: 0.8 }, "second")
-				.to(`.${styles.box_3}`, { x: 0, duration: 0.8 }, "third");
+				.to(`.${styles.box_3}`, { x: 0, duration: 0.8 }, "third")
+				.to(`.${styles.box_4}`, { x: 0, duration: 0.8 }, "fourth")
+				.to(`.${styles.box_5}`, { x: 0, duration: 0.8 }, "fifth");
 		}
 
 		// Cleanup on
@@ -138,11 +140,11 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 					<div className={styles.left_box}>
 						<h2 className="section_title">We are Svatantra</h2>
 						<p className={`${styles.para_width} text_reg pt_10 opacity_80`}>
-							Svatantra is for the millions of foundational entrepreneurs who are the
-							backbone of India&lsquo;s growth story. 
+							Enabling financial inclusion by providing responsible access to credit for individuals and small entrepreneurs, strengthening livelihoods, and supporting economic participation across communities. 
 							{/* These visionary individuals, with
 							grit and determination, fuel the engines of progress, propelling our
 							nation towards a brighter future. */}
+
 						</p>
 						<div className={`${styles.BtnBx} pt_20 `}>
 							<Button
@@ -152,7 +154,10 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 								link={"/we-are-svatantra/about-us"}
 								title={"Grow More"}
 							/>
+
+
 						</div>
+
 					</div>
 				</div>
 
@@ -171,10 +176,21 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 								<h5>Second</h5>
 							</div>
 							<div className={styles.desc}>
-								<h6>largest MFI in the country</h6>
+								<h6>largest MFI in the country<br className="hidden_sm" />
+									<small className="text_xs pt_10">(As of March 31, 2026) </small>
+								</h6>
 							</div>
 						</div>
+
 						<div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
+							<div className={styles.title}>
+								<h5>Fastest </h5>
+							</div>
+							<div className={styles.desc}>
+								<h6>growing NBFC - MFI <br className="hidden_sm" /> <small className="text_xs">(FY 2024-2026)</small></h6>
+							</div>
+						</div>
+						<div className={`${styles.box} ${styles.box_4} f_r_a_center`}>
 							<div className={styles.title}>
 								<h5>Largest PE</h5>
 							</div>
@@ -182,7 +198,16 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 								<h6>investment in the sector</h6>
 							</div>
 						</div>
+						<div className={`${styles.box} ${styles.box_5} f_r_a_center`}>
+							<div className={styles.title}>
+								<h5>Highest</h5>
+							</div>
+							<div className={styles.desc}>
+								<h6>rated standalone NBFC-MFI </h6>
+							</div>
+						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>

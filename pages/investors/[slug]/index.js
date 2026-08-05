@@ -33,6 +33,11 @@ export async function getServerSideProps({ params }) {
 	};
 }
 
+/** Sections hidden from the UI only — the data stays untouched in Strapi */
+const hiddenSlugRows = {
+	"circulars-and-announcements": ["debenture-trustee-noting-certificate"],
+};
+
 /** Inside1 Page */
 export default function SlugPage({ data }) {
 	/** createSlug */
@@ -42,6 +47,15 @@ export default function SlugPage({ data }) {
 			.replace(/\s+/g, "-")
 			.replace(/[^a-zA-Z0-9-]/g, "")
 			.replace(/-+$/, "");
+
+	/** normaliseSlug - same comparison the investors service uses */
+	const normaliseSlug = (text = "") =>
+		text.trim().toLowerCase().replace(/\s+/g, "-");
+
+	const hiddenRows = hiddenSlugRows[normaliseSlug(data[0]?.slug)] || [];
+	const visibleSlugRows = data[0]?.slugRow?.filter(
+		(item) => !hiddenRows.includes(normaliseSlug(item?.slug))
+	);
 
 	return (
 		<div>
@@ -62,7 +76,7 @@ export default function SlugPage({ data }) {
 					<h1 className="text_xxxl color_primary pb_40">{data[0]?.title}</h1>
 
 					<div className={`${styles.main_title_btn}  pb_80`}>
-						{data[0]?.slugRow?.map((item, ind) => {
+						{visibleSlugRows?.map((item, ind) => {
 							return (
 								<div className={`${styles.title_btn} f_w_j`} key={ind}>
 									<div className={`${styles.title}`}>

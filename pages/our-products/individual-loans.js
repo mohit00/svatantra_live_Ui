@@ -47,13 +47,13 @@ export default function MsmeLoans({ blogsData }) {
 	const loanAmountData = {
 		loanAmount: "₹ 1 lakh to ₹ 2.5 lakh",
 		tenure: "18 to 36 Months",
-		interestRate: "23.00% to 24.00%",
+		interestRate: "up to 25.00 %",
 	};
 	const pavingThePathData = {
 		title: "Scale small businesses to robust MSMEs",
 		description:
-			"We tailor our Individual Loans to assist entrepreneurs who fuel the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With easy access to microfinance loans, we provide timely support to address the evolving business needs. From starting a venture or expanding a rural based business, our Individual Loans can help an individual's entrepreneurial journey.",
-		subTitle: "Key features powering our entrepreneurs and our economy",
+			"We tailor our Individual Loans to assist entrepreneurs who contribute to the Indian economy, enabling aspiring individuals, especially rural women to invest in their economic growth. With access to microfinance loans, we provide timely support to address the evolving business needs. From starting a venture or expanding a rural based business, our Individual Loans can help an individual's entrepreneurial journey.",
+		subTitle: "Key features of the individual loan : ",
 		features: [
 			"We offer competitive interest rates.",
 			"Services that enable rural and semi-urban women to become agents of change within their communities.",
@@ -263,8 +263,8 @@ export default function MsmeLoans({ blogsData }) {
 									<td>₹ 1 lakh to ₹ 2.5 lakh</td>
 									<td>18 to 36 Months</td>
 									<td>Monthly</td>
-									<td>23.75% to 24.00%</td>
-									<td>2.00%</td>
+									<td>up to 25%</td>
+									<td>₹3,000 (plus applicable GST)</td>
 									<td>Nil</td>
 								</tr>
 								<tr>

@@ -296,7 +296,7 @@ export default function Footer() {
 										target="_blank"
 										rel="noreferrer"
 									>
-										Svatantra Micro Housing
+										Svatantra Housing Finance
 									</a>
 								</p>
 								<p className="text_sm color_white">

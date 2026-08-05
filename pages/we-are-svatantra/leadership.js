@@ -45,6 +45,56 @@ export default function LeadershipPage({ leadershipsData }) {
 
 	const [openPop1, setOpenPop1] = useState(false);
 
+	/* Hero only: the collapsed biography height is derived from the image
+	   column, which is the one element whose height the text cannot affect. */
+	const heroImgRef = useRef(null);
+	const heroBioRef = useRef(null);
+	const [bioMaxHeight, setBioMaxHeight] = useState(null);
+	const [bioOverflows, setBioOverflows] = useState(false);
+
+	useEffect(() => {
+		/** measureHeroBio - fill the height the image column makes available */
+		const measureHeroBio = () => {
+			const imgCol = heroImgRef.current;
+			const bio = heroBioRef.current;
+			if (!imgCol || !bio) return;
+
+			const lineHeight =
+				parseFloat(window.getComputedStyle(bio).lineHeight) || 25;
+
+			// Everything already occupying the left column (heading, button)
+			let used = 0;
+			Array.from(bio.parentElement.children).forEach((child) => {
+				if (child !== bio) used += child.offsetHeight;
+			});
+
+			let collapsed;
+			if (window.innerWidth <= 992) {
+				// Stacked: no column beside the text, so keep the previous first-paragraph
+				// height and leave the responsive layout exactly as it was
+				const firstPara = bio.querySelector("p");
+				collapsed = firstPara ? firstPara.offsetHeight : lineHeight * 6;
+			} else {
+				// Row layout: fill the height the image column leaves free,
+				// rounded down to whole lines so the last one is never sliced
+				const available = imgCol.offsetHeight - used;
+				collapsed = Math.max(3, Math.floor(available / lineHeight)) * lineHeight;
+			}
+
+			setBioMaxHeight(collapsed);
+			setBioOverflows(bio.scrollHeight > collapsed + 1);
+		};
+
+		measureHeroBio();
+		const observer = new ResizeObserver(measureHeroBio);
+		if (heroImgRef.current) observer.observe(heroImgRef.current);
+		window.addEventListener("resize", measureHeroBio);
+		return () => {
+			observer.disconnect();
+			window.removeEventListener("resize", measureHeroBio);
+		};
+	}, [leadershipsData]);
+
 	/** handleSlideClick Function */
 	const handleSlideClick = (e, index) => {
 		e.preventDefault();
@@ -103,7 +153,7 @@ export default function LeadershipPage({ leadershipsData }) {
 				/>
 				<div className="container">
 					<div className={`${styles.Sec1}`}>
-						<h2 className="section_title pb_20">
+						<h2 className="section_title pb_80">
 							Guiding Svatantra with a<br /> commitment to financial freedom
 						</h2>
 						{/* <p className="text_md color_light_black opacity_80 pb_60">
@@ -112,15 +162,6 @@ export default function LeadershipPage({ leadershipsData }) {
 						</p> */}
 						{sortedLeadershipData?.map((item, index) => {
 							if (!item.desc) return null;
-							const paragraphs = item.desc.split(/<br\s*\/?>/i);
-
-							const splitParagraphs = paragraphs[0]
-								.split(/<\/p>\s*<p>/gi)
-								.map((para, idx, arr) => {
-									if (idx === 0) return para + "</p>";
-									else if (idx === arr.length - 1) return "<p>" + para;
-									return "<p>" + para + "</p>";
-								});
 
 							return (
 								<>
@@ -139,25 +180,15 @@ export default function LeadershipPage({ leadershipsData }) {
 												{/* <div className="text_sm color_light_black f_w_m opacity_80 pb_20">
 													{parse(item.desc)}
 												</div> */}
-												<div className="text_sm color_light_black f_w_m opacity_80 pb_20">
-													{parse(splitParagraphs[0])}
-												</div>
+												{/* Whole biography in one box; collapsed height is measured, not fixed */}
 												<div
-													className={`${styles.paraWrapper} ${isVisible ? styles.show : ""}`}
+													ref={heroBioRef}
+													className={`${styles.paraWrapper} text_sm color_light_black f_w_m opacity_80`}
+													style={{
+														maxHeight: isVisible ? "none" : bioMaxHeight ?? undefined,
+													}}
 												>
-													{/* Show additional content when isVisible is true */}
-													{isVisible && (
-														<div className={`${styles.paraWrapper} ${styles.show}`}>
-															{splitParagraphs.slice(1).map((para, idx) => (
-																<p
-																	key={idx}
-																	className="text_sm color_light_black f_w_m opacity_80"
-																>
-																	{parse(para)}
-																</p>
-															))}
-														</div>
-													)}
+													{parse(item.desc)}
 												</div>
 												{/* <p className="text_sm color_light_black f_w_m opacity_80 pb_20">
 													At 17, Ananya Birla founded Svatantra Microfin Ltd., setting a
@@ -183,17 +214,19 @@ export default function LeadershipPage({ leadershipsData }) {
 														inspires bold ideas and fosters tangible progress.
 													</p>
 												</div> */}
-												<div
-													className={`${styles.Btn} pt_20`}
-													onClick={() => setIsVisible(!isVisible)}
-												>
-													<Button
-														buttonType="five"
-														title={isVisible ? "Read Less" : "Read More"}
-													/>
-												</div>
+												{bioOverflows && (
+													<div
+														className={`${styles.Btn} pt_20`}
+														onClick={() => setIsVisible(!isVisible)}
+													>
+														<Button
+															buttonType="five"
+															title={isVisible ? "Read Less" : "Read More"}
+														/>
+													</div>
+												)}
 											</div>
-											<div className={`${styles.Right}`}>
+											<div className={`${styles.Right}`} ref={heroImgRef}>
 												<img
 													src={design.src}
 													className="img-responsive"
@@ -263,7 +296,7 @@ export default function LeadershipPage({ leadershipsData }) {
 						</div> */}
 					</div>
 					<div className={`${styles.ChangeMakers}`}>
-						<h2 className="section_title pb_40">Our changemakers</h2>
+						<h2 className="section_title pb_40">Management Team</h2>
 						<div className={`${styles.GridContainer}`}>
 							{/* {data.map((item, index) => (
 								<div className={`${styles.GridItem} b_r_16`} key={index}>

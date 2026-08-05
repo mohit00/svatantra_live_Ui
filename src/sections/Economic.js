@@ -242,7 +242,8 @@ export default function Economic() {
 					<div className={`${styles.economic_info} pt_30`}>
 						<div className={styles.title}>
 							<h5 className="text_sm opacity_80 f_w_b">
-								<span>CRISIL and CareEdge</span> AA (Stable Outlook) Rating
+								<span>CRISIL and CareEdge AA (Stable Outlook) Rating </span>
+								<br/> <div className="text_xs "> As of July 3, 2026 and December 4, 2025 respectively </div> 
 							</h5>
 						</div>
 						{/* <div className={styles.desc}>

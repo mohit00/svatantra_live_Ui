@@ -25,7 +25,7 @@ import Employees from "../../../../public/img/careers/employees1.jpg";
 
 /** DummyComponent Component */
 export default function EmployeesComponent({ data }) {
-	console.log(data, "ddddddddddddddd");
+	//console.log(data, "ddddddddddddddd");
 	return (
 		<div className={`${styles.Employees} pt_40 pb_80`}>
 			<div className="container">
@@ -92,7 +92,9 @@ export default function EmployeesComponent({ data }) {
 									<div className={`${styles.item_info}`}>
 										<h4 className="text_md font_primary pb_10">{item.name}</h4>
 										<h6 className="text_xs opacity_80 pb_20">{item.designation}</h6>
-										<p className="text_sm opacity_80">{parse(item.desc)}</p>
+										<div className={`${styles.description} text_sm opacity_80`}>
+											{parse(item.desc)}
+										</div>
 									</div>
 								</div>
 							</SwiperSlide>

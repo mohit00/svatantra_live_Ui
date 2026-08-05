@@ -57,6 +57,11 @@
 				opacity: 0;
 				fill: none;
 			}
+			:global(.branchCount) {
+				font-family: var(--font_secondary);
+				font-size: 10px;
+				font-weight: 400;
+			}
 			:global(.location) {
 				opacity: 0;
 				transition: 0.3s;

@@ -53,7 +53,7 @@ export default function AboutPage({ awardsData }) {
 	const svatantraPath = [
 		{
 			title: "Growth and expansion",
-			desc: "To become a publicly listed company. ",
+			desc: "Strengthen leadership in microfinance through geographic expansion.",
 		},
 		{
 			title: "Transformative solutions",

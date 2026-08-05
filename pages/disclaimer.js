@@ -74,9 +74,7 @@ export default function DisclaimerPage() {
 					<p className="f_w_r  pb_20">
 						The contents of this site are subject to change without notice and
 						Svatantra reserves the right to terminate access to this web site at any
-						time and without notice. Entire contents of the site including all
-						trademarks, logos, service marks and trade names are proprietary to
-						Svatantra. Commercial or any other use of any of the contents of this
+						time and without notice.Commercial or any other use of any of the contents of this
 						site, including but not limiting to the reproduction, modification,
 						distribution, transmission, republication, display or performance, of the
 						same, is strictly prohibited. No reproduction of any part of the site may

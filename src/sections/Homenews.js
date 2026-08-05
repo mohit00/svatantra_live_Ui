@@ -138,6 +138,17 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 	const filteredData = mediaMentionData?.data?.filter(
 		(item) => item?.showHomePage
 	);
+
+	/** Latest news first — sorted copy, original filteredData is not mutated */
+	const sortedData = [...(filteredData || [])].sort((a, b) => {
+		const dateA = new Date(a?.date).getTime();
+		const dateB = new Date(b?.date).getTime();
+		if (isNaN(dateA) && isNaN(dateB)) return 0;
+		if (isNaN(dateA)) return 1;
+		if (isNaN(dateB)) return -1;
+		return dateB - dateA;
+	});
+
 	return (
 		<section className={`${styles.Homenews} ptb_80`}>
 			<div className="container">
@@ -178,7 +189,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 							<>
 								{windowWidth < 992 ? (
 									<Swiper {...mediaSettings}>
-										{filteredData?.map((item, ind) => {
+										{sortedData?.map((item, ind) => {
 											const date = Moment(item?.date).format("MMM DD, YYYY");
 											return (
 												<SwiperSlide key={ind}>
@@ -214,7 +225,7 @@ export default function Homenews({ mediaMentionData, getAwardsData }) {
 									</Swiper>
 								) : (
 									<div className={styles.gridBx}>
-										{filteredData?.map((item, ind) => {
+										{sortedData?.map((item, ind) => {
 											const date = Moment(item?.date).format("MMM DD, YYYY");
 											return (
 												<div

@@ -38,66 +38,88 @@ import img_two from "../../public/img/newImg/csrImg2.jpg";
 import img_three from "../../public/img/newImg/csrImg3.jpg";
 import img_four from "../../public/img/newImg/csrImg4.jpg";
 import img_five from "../../public/img/newImg/csrImg5.jpg";
+import img_six from "../../public/img/newImg/csrImg6.jpeg";
+import img_seven from "../../public/img/newImg/csrImg7.jpeg";
+import img_eight from "../../public/img/newImg/csrImg8.jpg";
+import img_nine from "../../public/img/newImg/csrImg9.jpeg";
+import img_ten from "../../public/img/newImg/csrImg10.jpg";
 import arrow_btn from "../../public/img/arrow_btn.svg";
 import pdf_icon from "../../public/img/pdf_icon.svg";
 /** csr Page */
 export default function csr() {
 	const svatantraPath = [
+
 		{
-			title: "Projects unlearn and jazba:",
+			title: "NEEMAR — Empowering Girl Children:",
 			desc:
-				"Equipping individuals with vocational skills while challenging barriers to gender equality.",
+				"Through NEEMAR, implemented with the Ananya Birla Foundation, we provide residential facilities and empowerment opportunities to girl children, supporting their safety, agency and long-term development.",
 		},
 		{
-			title: "Quality education for all:",
+			title: "Community Mental Health Programme:",
 			desc:
-				"Joined hands with Smile Foundation to ensure all children have access to quality education, impacting lives of over 4,400 students.",
+				"We integrate clinical and psychosocial support systems within borrower communities to promote treatment-seeking behaviour, ensuring individuals living with mental illness receive appropriate care and support.",
 		},
 		{
-			title: "Tech for mental health:",
+			title: "Environmental Afforestation Initiative:",
 			desc:
-				"Offering vital tools and technologies to improve access to mental health and ensure overall well-being.",
+				"In collaboration with Grow-Trees, we have undertaken an afforestation initiative as part of our continuing commitment to environmental sustainability and protection.",
 		},
-		{
-			title: "School initiative for mental health advocacy:",
-			desc:
-				" An initiative with SIMHA that promotes mental wellbeing among the young in the education system across India.",
-		},
-		{
-			title: "Counselling with empathy:",
-			desc:
-				"Collaborated with Mpower for quality mental health services, transforming lives of 200+ individuals on a monthly basis.",
-		},
-		{
-			title: "Fulfil a wish:",
-			desc:
-				"An initiative that takes necessary measures for reducing inequalities faced by socially and economically backward groups.",
-		},
-		{
-			title: "Educating tribal children:",
-			desc:
-				"Bringing classrooms closer to tribal communities, creating pathways to brighter tomorrows.",
-		},
-		{
-			title: "Tree plantation drives:",
-			desc:
-				"Planting seeds of sustainability today for a greener, healthier planet tomorrow.",
-		},
-		{
-			title: "Opportunities for sex worker’s children:",
-			desc:
-				"Enabling the marginalised to integrate into society and open doors of opportunities through education.",
-		},
-		{
-			title: "Animal welfare:",
-			desc:
-				"Partnered with ‘World For All’ NGO to ensure holistic care for stray animals, providing 9600+ meals and medical care for 480 animals.",
-		},
-		{
-			title: "Project blank slate:",
-			desc:
-				"An initiative of the Ananya Birla Foundation that explores the root causes of mental health, with research identifying and addressing these concerns.",
-		},
+
+		// {
+		// 	title: "Projects unlearn and jazba:",
+		// 	desc:
+		// 		"Equipping individuals with vocational skills while challenging barriers to gender equality.",
+		// },
+		// {
+		// 	title: "Quality education for all:",
+		// 	desc:
+		// 		"Joined hands with Smile Foundation to ensure all children have access to quality education, impacting lives of over 4,400 students.",
+		// },
+		// {
+		// 	title: "Tech for mental health:",
+		// 	desc:
+		// 		"Offering vital tools and technologies to improve access to mental health and ensure overall well-being.",
+		// },
+		// {
+		// 	title: "School initiative for mental health advocacy:",
+		// 	desc:
+		// 		" An initiative with SIMHA that promotes mental wellbeing among the young in the education system across India.",
+		// },
+		// {
+		// 	title: "Counselling with empathy:",
+		// 	desc:
+		// 		"Collaborated with Mpower for quality mental health services, transforming lives of 200+ individuals on a monthly basis.",
+		// },
+		// {
+		// 	title: "Fulfil a wish:",
+		// 	desc:
+		// 		"An initiative that takes necessary measures for reducing inequalities faced by socially and economically backward groups.",
+		// },
+		// {
+		// 	title: "Educating tribal children:",
+		// 	desc:
+		// 		"Bringing classrooms closer to tribal communities, creating pathways to brighter tomorrows.",
+		// },
+		// {
+		// 	title: "Tree plantation drives:",
+		// 	desc:
+		// 		"Planting seeds of sustainability today for a greener, healthier planet tomorrow.",
+		// },
+		// {
+		// 	title: "Opportunities for sex worker’s children:",
+		// 	desc:
+		// 		"Enabling the marginalised to integrate into society and open doors of opportunities through education.",
+		// },
+		// {
+		// 	title: "Animal welfare:",
+		// 	desc:
+		// 		"Partnered with ‘World For All’ NGO to ensure holistic care for stray animals, providing 9600+ meals and medical care for 480 animals.",
+		// },
+		// {
+		// 	title: "Project blank slate:",
+		// 	desc:
+		// 		"An initiative of the Ananya Birla Foundation that explores the root causes of mental health, with research identifying and addressing these concerns.",
+		// },
 	];
 
 	const drivingOne = [
@@ -107,6 +129,13 @@ export default function csr() {
 			{ thumbnail: img_three.src },
 			{ thumbnail: img_four.src },
 			{ thumbnail: img_five.src },
+		],
+		[
+			{ thumbnail: img_six.src },
+			{ thumbnail: img_seven.src },
+			{ thumbnail: img_eight.src },
+			{ thumbnail: img_nine.src },
+			{ thumbnail: img_ten.src },
 		],
 	];
 	console.log(drivingOne);
