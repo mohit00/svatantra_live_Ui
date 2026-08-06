@@ -1,5 +1,10 @@
 @import "../helpers/helpers.scss";
 
+// Stat card stack (.right_box): each card is one step narrower than the one
+// above it, so every right-hand gap grows by exactly the same amount and the
+// staircase reads as one progression. Widen the cards by lowering this value.
+$card_step: 7%;
+
 .svatantra_section {
 	max-width: 1300px;
 	width: 100%;
@@ -114,10 +119,24 @@
 					min-height: 80px;
 					border-radius: 6px;
 					padding-bottom: 10px;
+					// Parked off-screen until GSAP tweens x to 0. The extra 1% clears the
+					// wrapper's overflow:hidden edge - at exactly -100% a fractional card
+					// width leaves its right edge mid-pixel, which the browser antialiases
+					// into a hairline down the left side of the stack.
+					transform: translateX(-101%);
 					.title {
 						width: 160px;
+						// The title is a flex item, so by default it gives up width once a
+						// card's content no longer fits - which happens on the narrower
+						// cards and pulls their text toward the left edge. Holding the
+						// column fixed makes the same 160px rule produce the same title and
+						// desc alignment in every card.
+						flex-shrink: 0;
 						@media (max-width: 767px) {
 							width: 34%;
+							// Below 767px the title/desc percentages intentionally exceed
+							// 100% and rely on shrinking to fit.
+							flex-shrink: 1;
 						}
 						h5 {
 							font-size: 26px;
@@ -161,11 +180,9 @@
 					}
 					&.box_1 {
 						background-color: var(--color_white);
-						transform: translateX(-100%);
 					}
 					&.box_2 {
-						width: 90%;
-						transform: translateX(-100%);
+						width: 100% - $card_step;
 						margin-top: -15px;
 						background-color: var(--color_primary_tint);
 						.title {
@@ -184,8 +201,7 @@
 						}
 					}
 					&.box_3 {
-						width: 80%;
-						transform: translateX(-100%);
+						width: 100% - $card_step * 2;
 						margin-top: -15px;
 						background-color: var(--color_primary);
 						.title {
@@ -203,8 +219,7 @@
 						}
 					}
 					&.box_4 {
-						width: 70%;
-						transform: translateX(-100%);
+						width: 100% - $card_step * 3;
 						margin-top: -15px;
 						padding-bottom: 0;
 						background-color: #014c26;
@@ -223,8 +238,7 @@
 						}
 					}
 					&.box_5 {
-						width: 60%;
-						transform: translateX(-100%);
+						width: 100% - $card_step * 4;
 						margin-top: -15px;
 						padding-bottom: 0;
 						background-color: #012f18;

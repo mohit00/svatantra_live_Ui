@@ -13,6 +13,10 @@ import Breadcrum from "@/components/Breadcrumb";
 import Footer2 from "@/components/Footer2";
 
 // SECTIONS //
+import InvestorRelationsAccordion from "@/sections/amalgamated-company/InvestorRelationsAccordion";
+import GovernanceAccordion from "@/sections/amalgamated-company/GovernanceAccordion";
+import OurImpactAccordion from "@/sections/amalgamated-company/OurImpactAccordion";
+import SchemeOfAmalgamationAccordion from "@/sections/amalgamated-company/SchemeOfAmalgamationAccordion";
 
 // PLUGINS //
 
@@ -36,6 +40,23 @@ export async function getServerSideProps({ params }) {
 
 // IMAGES //
 import download_icon from "../../../../public/img/download_icon.svg";
+
+/**
+ * The one route that also lists the Chaitanya (amalgamated company) archive
+ * underneath its Strapi accordions. The archive itself stays static - these are
+ * the same components /amalgamated-company renders, no content is duplicated.
+ */
+const AMALGAMATED_ARCHIVE_ROUTE = {
+	category: "circulars-and-announcements",
+	section: "scheme-of-amalgamation",
+};
+
+const AMALGAMATED_ARCHIVE_SECTIONS = [
+	{ title: "Investor Relations", Component: InvestorRelationsAccordion },
+	{ title: "Governance", Component: GovernanceAccordion },
+	{ title: "Our Impact", Component: OurImpactAccordion },
+	{ title: "Proposed Scheme of Amalgamation", Component: SchemeOfAmalgamationAccordion },
+];
 
 /** Investors Page */
 export default function Investors({ data }) {
@@ -93,6 +114,15 @@ export default function Investors({ data }) {
 		// console.log("Filtered Data:", result);
 		setFilteredData(result); // ✅ Store result in state
 	}, [data, currentSlug]);
+
+	/** normaliseSlug - same comparison the investors service uses */
+	const normaliseSlug = (text = "") =>
+		text.trim().toLowerCase().replace(/\s+/g, "-");
+
+	/** Only this one URL gets the amalgamated company archive appended */
+	const showAmalgamatedArchive =
+		normaliseSlug(data[0]?.slug) === AMALGAMATED_ARCHIVE_ROUTE.category &&
+		normaliseSlug(currentSlug) === AMALGAMATED_ARCHIVE_ROUTE.section;
 
 	const tableList = [
 		{
@@ -233,6 +263,24 @@ export default function Investors({ data }) {
 								}))}
 							/>
 						</div>
+
+						{/* Chaitanya archive - static content composed in, not migrated.
+							Rendered without a spacing wrapper so it continues straight on
+							from the accordion above it. */}
+						{showAmalgamatedArchive && (
+							<AccordianCommon
+								defaultIndex={null}
+								hideFirstDivider
+								fontStyle={"text_lg"}
+								fontWeight={"f_w_m"}
+								fontFamily={"font_primary"}
+								fontColor={"color_light_black"}
+								items={AMALGAMATED_ARCHIVE_SECTIONS.map(({ title, Component }) => ({
+									title: title,
+									children: <Component />,
+								}))}
+							/>
+						)}
 
 						{/* <div className={`${styles.accordian_main} pt_60`}>
 							<AccordianCommon

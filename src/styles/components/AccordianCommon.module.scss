@@ -4,6 +4,13 @@
 	border-radius: 8px;
 	overflow: hidden;
 
+	// Opt-in for a group appended directly below another accordion: the group
+	// above already closes with a bottom border, so the first item's top border
+	// would draw a second line. Every other accordion keeps its own borders.
+	&.no_first_divider > .accordionItem:first-child {
+		border-top: 0;
+	}
+
 	.accordionItem {
 		// border-bottom: 1px solid #ddd;
 		//margin-bottom: 15px;

@@ -154,7 +154,7 @@ export default function Footer() {
 										Smart ODR
 									</a>
 								</p>
-								{/* <p className="text_sm color_white">
+								<p className="text_sm color_white">
 									<a
 										href="/amalgamated-company"
 										target="_blank"
@@ -162,7 +162,7 @@ export default function Footer() {
 									>
 										Amalgamated Company
 									</a>
-								</p> */}
+								</p> 
 								<p className="text_sm color_white">
 									<a
 										href="https://www.svatantramhfc.com/"
