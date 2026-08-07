@@ -66,12 +66,12 @@ export default function HomePage({
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Svatantra Microfinance"}
+				Title={"Microfinance Loans for Women in India"}
 				Desc={
-					" We are India’s second largest microfinance institution, offering diverse financial solutions for rural and semi-urban women at one of the lowest interest rates in the industry."
+					" Svatantra Microfin is an RBI-registered NBFC-MFI offering collateral-free microfinance loans to rural women at one of India's lowest interest rates."
 				}
 				OgImg={""}
-				Url={"/"}
+				Url={"https://www.svatantramicrofin.com/"}
 			/>
 
 			{/* <Intro /> */}

@@ -38,11 +38,15 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 	return (
 		<Head>
 			<title>
-				Svatantra Microfin - Building the Entrepreneurs that build India's economy
+				{title
+					? `${title} | Svatantra Microfin`
+					: "Svatantra Microfin - Building the Entrepreneurs that build India's economy"}
 			</title>
 			<meta
 				name="description"
-				content=" Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."
+				content={desc
+					? `${desc}`
+					: "Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."}
 			/>
 			<meta name="theme-color" content="#000" />
 
@@ -50,13 +54,17 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta
 				property="og:title"
 				content={
-					"Svatantra Microfin - Building the Entrepreneurs that build India's economy"
+					title
+						? `${title} | Svatantra Microfin`
+						: "Svatantra Microfin - Building the Entrepreneurs that build India's economy"
 				}
 			/>
 			<meta
 				property="og:description"
 				content={
-					"Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."
+					desc
+						? `${desc}`
+						: "Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."
 				}
 			/>
 			<meta property="og:url" content={url} />
@@ -65,8 +73,12 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta property="og:type" content="website" />
 
 			{/* twitter card  */}
-			<meta name="twitter:title" content={title} />
-			<meta name="twitter:description" content={desc} />
+			<meta name="twitter:title" content={title
+				? `${title} | Svatantra Microfin`
+				: "Svatantra Microfin - Building the Entrepreneurs that build India's economy"} />
+			<meta name="twitter:description" content={desc
+				? `${desc}`
+				: "Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."} />
 			<meta name="twitter:image" content={ogImg} />
 			<meta name="twitter:card" content="summary_large_image" />
 

@@ -1,6 +1,7 @@
 // MODULES //
 import { useEffect } from "react";
 import Script from "next/script";
+import OrganizationSchema from "@/components/Seo/OrganizationSchema";
 // COMPONENTS //
 
 // SECTIONS //
@@ -55,7 +56,7 @@ export default function MyApp({ Component, pageProps }) {
 			</noscript>
 			{/* End Google Tag Manager (noscript) */}
 
-
+			<OrganizationSchema />
 			<Component {...pageProps} />
 		</>
 	);

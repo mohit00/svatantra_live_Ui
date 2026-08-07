@@ -38,10 +38,10 @@ export default function DigitallySvatantra({ successStoriesData }) {
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Digitally Svatantra"}
-				Desc={""}
+				Title={"Digital Microfinance & Cashless Disbursement"}
+				Desc={"Discover digital microfinance in India with Svatantra — 100% cashless loan disbursement and easy app-based EMI payments. See how paperless borrowing works."}
 				OgImg={""}
-				Url={"/digitally-svatantra"}
+				Url={"https://www.svatantramicrofin.com/digitally-svatantra"}
 			/>
 
 			{/* Header */}
