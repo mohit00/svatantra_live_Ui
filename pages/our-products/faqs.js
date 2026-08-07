@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import InnerBanner from "@/components/InnerBanner";
 import MetaTags from "@/components/MetaTags";
 import ContentFromCms from "@/components/ContentFromCms";
+import FAQSchema from "@/components/Seo/FAQSchema";
 
 // SECTIONS //
 
@@ -61,6 +62,7 @@ export default function Faqs({ faqData }) {
 				OgImg={""}
 				Url={"/connect-with-us/faqs"}
 			/>
+			<FAQSchema faqs={faqData?.data} />
 
 			{/* Header */}
 			<Header />

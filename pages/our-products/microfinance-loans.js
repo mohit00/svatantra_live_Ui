@@ -36,6 +36,7 @@ import repayment from "../../public/img/our-products/microfinance/repayment.svg"
 
 // DATA //
 import { getAllBlogs } from "@/services/BlogService";
+import FAQSchema from "@/components/Seo/FAQSchema";
 /** */
 export const getStaticProps = async (context) => {
 	const blogsData = await getAllBlogs();
@@ -325,6 +326,7 @@ export default function MicrofinanceLoans({ blogsData }) {
 		// brochureText: "Everything you need to know about our financial services",
 		// brochureUrl: "https://www.google.com/",
 	};
+	
 	return (
 		<div>
 			{/* Metatags */}
@@ -334,6 +336,8 @@ export default function MicrofinanceLoans({ blogsData }) {
 				OgImg={""}
 				Url={"https://www.svatantramicrofin.com/our-products/microfinance-loans"}
 			/>
+			<FAQSchema faqs={commonQueriesData.faqItems} />
+	
 
 			{/* Header */}
 			<Header />
