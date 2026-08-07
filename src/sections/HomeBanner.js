@@ -172,7 +172,7 @@ export default function HomeBanner({ gsap, ScrollTrigger }) {
 						<div className={styles.info}>
 							<h1 className="section_title testing">
 								Building the <span>Entrepreneurs</span> <br className="hidden-xs" />{" "}
-								that build India’s economy
+								who power India’s economy
 							</h1>
 							{/* <p className="text_md pt_20 opacity_80">
 								We turn aspirations into breakthroughs, powering the journey of every

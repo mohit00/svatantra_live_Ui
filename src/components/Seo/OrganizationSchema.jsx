@@ -18,7 +18,7 @@ export default function OrganizationSchema() {
     "image": "https://www.svatantramicrofin.com/_next/static/media/og-image.32805c8f.jpg",
     "description":
       "Svatantra Microfin is an RBI-registered NBFC-MFI providing collateral-free microfinance loans to rural and semi-urban women entrepreneurs across India. It was the first institution to receive an NBFC-MFI licence from the Reserve Bank of India.",
-    "slogan": "Building the entrepreneurs that build India's economy",
+    "slogan": "Building the Entrepreneurs who power India’s economy",
     "foundingDate": "2012",
     "founder": {
       "@type": "Person",

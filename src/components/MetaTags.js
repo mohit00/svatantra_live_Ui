@@ -40,7 +40,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<title>
 				{title
 					? `${title} | Svatantra Microfin`
-					: "Svatantra Microfin - Building the Entrepreneurs that build India's economy"}
+					: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy"}
 			</title>
 			<meta
 				name="description"
@@ -56,7 +56,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 				content={
 					title
 						? `${title} | Svatantra Microfin`
-						: "Svatantra Microfin - Building the Entrepreneurs that build India's economy"
+						: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy"
 				}
 			/>
 			<meta
@@ -75,7 +75,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			{/* twitter card  */}
 			<meta name="twitter:title" content={title
 				? `${title} | Svatantra Microfin`
-				: "Svatantra Microfin - Building the Entrepreneurs that build India's economy"} />
+				: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy"} />
 			<meta name="twitter:description" content={desc
 				? `${desc}`
 				: "Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."} />
