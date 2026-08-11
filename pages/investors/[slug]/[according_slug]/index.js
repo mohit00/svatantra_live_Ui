@@ -150,7 +150,7 @@ export default function Investors({ data }) {
 		<div>
 			{/* Metatags */}
 			<MetaTags
-				Title={"Investors"}
+				Title={filteredData[0]?.title}
 				Desc={""}
 				Keywords={""}
 				OgImg={""}

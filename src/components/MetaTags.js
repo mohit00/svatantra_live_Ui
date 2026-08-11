@@ -22,7 +22,6 @@ import Favicon from "public/img/favicon.png";
 export default function MetaTags({ Title, Desc, OgImg, Url }) {
 	// Metas for all page
 	const defaultMetas = {
-		title: "Title",
 		desc: "Description",
 		url: "http://localhost:3000",
 		ogImg: `${OgImage.src}`,
@@ -30,18 +29,19 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 
 	// Check if page has its own metadetails
 	// If not then use the default
-	const title = Title ? Title : defaultMetas.title;
+	// Built here rather than in the tags below: the old `Title ? Title : "Title"`
+	// was always truthy, so the brand fallback in those ternaries never ran and a
+	// page passing no Title rendered the literal "Title | Svatantra Microfin".
+	const title = Title
+		? `${Title} | Svatantra Microfin`
+		: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy";
 	const desc = Desc ? Desc : defaultMetas.desc;
 	const ogImg = OgImg ? OgImg : defaultMetas.ogImg;
 	const url = Url ? Url : defaultMetas.url;
 
 	return (
 		<Head>
-			<title>
-				{title
-					? `${title} | Svatantra Microfin`
-					: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy"}
-			</title>
+			<title>{title}</title>
 			<meta
 				name="description"
 				content={desc
@@ -51,14 +51,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta name="theme-color" content="#000" />
 
 			{/* OG Tags  */}
-			<meta
-				property="og:title"
-				content={
-					title
-						? `${title} | Svatantra Microfin`
-						: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy"
-				}
-			/>
+			<meta property="og:title" content={title} />
 			<meta
 				property="og:description"
 				content={
@@ -73,9 +66,7 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta property="og:type" content="website" />
 
 			{/* twitter card  */}
-			<meta name="twitter:title" content={title
-				? `${title} | Svatantra Microfin`
-				: "Svatantra Microfin - Building the Entrepreneurs who power India’s economy"} />
+			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={desc
 				? `${desc}`
 				: "Svatantra Microfin offers affordable and accessible microfinance services to rural women, promoting financial independence and entrepreneurship."} />

@@ -8,7 +8,6 @@ import MetaTags from "@/components/MetaTags";
 import Breadcrum from "@/components/Breadcrumb";
 import Button from "@/components/Buttons/Button";
 import Footer2 from "@/components/Footer2";
-import ipo from "../../public/img/ipo.png";
 import amalgamatedCompany from "../../public/img/amalgamated-company.png";
 // SECTIONS //
 
@@ -44,14 +43,7 @@ export default function InvestorIndexPage({ data }) {
 		(a, b) => new Date(a.createdAt) - new Date(b.createdAt)
 	);
 
-	const SHOW_IPO_CARD = false;
 	const SHOW_AMALGAMATED_CARD = true;
-	const ipoCard = {
-		id: "ipo",
-		title: "Initial Public Offerings",
-		slug: "initial-public-offerings",
-		isIPO: true,
-	};
 
 	const amalgamatedCard = {
 		id: "amalgamated-company",
@@ -62,9 +54,17 @@ export default function InvestorIndexPage({ data }) {
 
 	let investorCards = [...originalData];
 
-	if (SHOW_IPO_CARD) {
-		investorCards.splice(1, 0, ipoCard);
+	// The IPO category was created last in Strapi, so the createdAt sort above
+	// puts it at the end. Move it to the second slot without disturbing the
+	// relative order of the other categories.
+	const ipoIndex = investorCards.findIndex(
+		(item) => item.slug === "initial-public-offerings"
+	);
+	if (ipoIndex > -1) {
+		const [ipoEntry] = investorCards.splice(ipoIndex, 1);
+		investorCards.splice(1, 0, ipoEntry);
 	}
+
 	if (SHOW_AMALGAMATED_CARD) {
 		investorCards = [...investorCards, amalgamatedCard];
 	}
@@ -101,11 +101,9 @@ export default function InvestorIndexPage({ data }) {
 													<div className={styles.imageWrapper}>
 														<img
 															src={
-																item.isIPO
-																	? ipo.src
-																	: item.isAmalgamated
-																		? amalgamatedCompany.src
-																		: StrapiImage(item.thumbnail).url
+																item.isAmalgamated
+																	? amalgamatedCompany.src
+																	: StrapiImage(item.thumbnail).url
 															}
 															className={`${styles.cardImage} b_r_10`}
 															alt={item.title}
