@@ -46,7 +46,7 @@ const hiddenSlugRows = {
  * section count, because credit-and-grading also has a single section and keeps
  * its existing "Read More" navigation.
  */
-const inlineSlugRowCategories = ["initial-public-offerings"];
+const inlineSlugRowCategories = ["initial-public-offering"];
 
 /** Inside1 Page */
 export default function SlugPage({ data }) {

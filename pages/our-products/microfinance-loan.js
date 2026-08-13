@@ -346,13 +346,13 @@ export default function MicrofinanceLoans({ blogsData }) {
 			<main className={styles.MicrofinanceLoansPage}>
 				<Breadcrum
 					linkTitle="Our Products"
-					linkTitle2="Microfinance Loans"
-					link10="/our-products/microfinance-loans"
+					linkTitle2="Microfinance Loan"
+					link10="/our-products/microfinance-loan"
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={mobile_banner.src}
-					bannerTitle="Microfinance loans"
+					bannerTitle="Microfinance Loan"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}

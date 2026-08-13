@@ -167,13 +167,13 @@ export default function MsmeLoans({ blogsData }) {
 			<main className={styles.MsmeLoansPage}>
 				<Breadcrum
 					linkTitle="Our Products"
-					linkTitle2="Individual Loans"
-					link10="/our-products/individual-loans"
+					linkTitle2="Individual Loan"
+					link10="/our-products/individual-loan"
 				/>
 				<InnerBanner
 					desktopImage={banner_desktop.src}
 					mobileImage={mobile_banner.src}
-					bannerTitle="Individual loans"
+					bannerTitle="Individual Loan"
 				/>
 				<LoanAmount
 					loanAmount={loanAmountData.loanAmount}
@@ -250,16 +250,16 @@ export default function MsmeLoans({ blogsData }) {
 									</tr>
 								</thead>
 								<tr>
-									<td>Microfinance loans</td>
+									<td>Microfinance loan</td>
 									<td>₹ 5,000 to ₹ 1.5 lakh</td>
-									<td>12 to 24 Months</td>
+									<td>12 to 26 Months</td>
 									<td>Monthly</td>
-									<td>22.75% to 24.00%*</td>
+									<td>up to 25%</td>
 									<td>1.50%</td>
 									<td>Nil</td>
 								</tr>
 								<tr>
-									<td>Individual Loans</td>
+									<td>Individual Loan</td>
 									<td>₹ 1 lakh to ₹ 2.5 lakh</td>
 									<td>18 to 36 Months</td>
 									<td>Monthly</td>
