@@ -132,6 +132,13 @@ $card_step: 7%;
 						// column fixed makes the same 160px rule produce the same title and
 						// desc alignment in every card.
 						flex-shrink: 0;
+						// The row is at its narrowest just before the wrapper goes full
+						// width at 992px, and a 160px column starves the descriptions
+						// there - box_4's most of all. The titles are 20px type at this
+						// size, so the column can tighten without any of them wrapping.
+						@media (min-width: 993px) and (max-width: 1024px) {
+							width: 120px;
+						}
 						@media (max-width: 767px) {
 							width: 34%;
 							// Below 767px the title/desc percentages intentionally exceed
@@ -221,8 +228,21 @@ $card_step: 7%;
 					&.box_4 {
 						width: 100% - $card_step * 3;
 						margin-top: -15px;
-						padding-bottom: 0;
+						// Was 0, which glued the description to the card's bottom edge as
+						// soon as it ran past the 80px min-height - and box_5 sits 15px
+						// into that edge. Same 10px the cards above it use.
+						padding-bottom: 10px;
 						background-color: #014c26;
+						// This card carries the longest description in the stack, and a
+						// full step is too much of a cut once the row drops below 1200px:
+						// the text breaks into three ragged lines. Stopping 1% inside
+						// box_3 keeps the staircase descending while giving the
+						// description the width it needs for a clean two-line break.
+						// Above 992px only - below that the wrapper is full width and the
+						// step value already leaves plenty of room.
+						@media (min-width: 993px) and (max-width: 1200px) {
+							width: 100% - $card_step * 2 - 1%;
+						}
 						.title {
 							@media (max-width: 767px) {
 								width: 50%;
@@ -238,16 +258,21 @@ $card_step: 7%;
 						}
 					}
 					&.box_5 {
-						width: 100% - $card_step * 4;
+						// The footnote is no longer a card, so it is sized to its own text
+						// rather than to the staircase: a percentage width would break the
+						// note onto two lines on the narrower rows. max-width keeps it
+						// inside the wrapper on small screens.
+						width: fit-content;
+						max-width: 100%;
 						margin-top: -15px;
 						padding-bottom: 0;
-						background-color: #012f18;
+						background-color: transparent;
 						.title {
-							@media (max-width: 767px) {
-								width: 50%;
-							}
+							// Not the fixed 160px column - the note has to stay on one line.
+							width: auto;
 							h5 {
-								color: #80cd66;
+								color: var(--color_black);
+								white-space: nowrap;
 							}
 						}
 						.desc {

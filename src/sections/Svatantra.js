@@ -140,7 +140,7 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 					<div className={styles.left_box}>
 						<h2 className="section_title">We are Svatantra</h2>
 						<p className={`${styles.para_width} text_reg pt_10 opacity_80`}>
-							Enabling financial inclusion by providing responsible access to credit for individuals and small entrepreneurs, strengthening livelihoods, and supporting economic participation across communities. 
+							Enabling financial inclusion by providing responsible access to credit for individuals and small entrepreneurs, strengthening livelihoods, and supporting economic participation across communities.
 							{/* These visionary individuals, with
 							grit and determination, fuel the engines of progress, propelling our
 							nation towards a brighter future. */}
@@ -176,34 +176,45 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 								<h5>Second</h5>
 							</div>
 							<div className={styles.desc}>
-								<h6>largest MFI in the country<br className="hidden_sm" />
+								<h6>largest MFI India by AUM
+									<br className="hidden_sm" />
 									<small className="text_xs pt_10">(As of March 31, 2026) </small>
 								</h6>
 							</div>
 						</div>
 
-						<div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
+						{/* <div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
 							<div className={styles.title}>
 								<h5>Fastest </h5>
 							</div>
 							<div className={styles.desc}>
 								<h6>growing NBFC - MFI <br className="hidden_sm" /> <small className="text_xs">(FY 2024-2026)</small></h6>
 							</div>
-						</div>
-						<div className={`${styles.box} ${styles.box_4} f_r_a_center`}>
+						</div> */}
+						<div className={`${styles.box} ${styles.box_3} f_r_a_center`}>
 							<div className={styles.title}>
 								<h5>Largest PE</h5>
 							</div>
 							<div className={styles.desc}>
-								<h6>investment in the sector</h6>
+								<h6>investment in the sector
+									<br className="hidden_sm" />
+									<small className="text_xs">(As of March 31, 2026)</small></h6>
 							</div>
 						</div>
-						<div className={`${styles.box} ${styles.box_5} f_r_a_center`}>
+						<div className={`${styles.box} ${styles.box_4} f_r_a_center`}>
 							<div className={styles.title}>
 								<h5>Highest</h5>
 							</div>
 							<div className={styles.desc}>
-								<h6>rated standalone NBFC-MFI </h6>
+								<h6>among the top-rated NBFC-MFIs
+									<br className="hidden_sm" />
+									<small className="text_xs">(As of March 31, 2026)</small>
+								</h6>
+							</div>
+						</div>
+						<div className={`${styles.box} ${styles.box_5} f_r_a_center`}>
+							<div className={styles.title}>
+								<h5><small className="text_xs">*As per CRISIL Report</small></h5>
 							</div>
 						</div>
 					</div>

@@ -366,14 +366,15 @@ export default function MicrofinanceLoans({ blogsData }) {
 					features={pavingThePathData.features}
 				/>
 				<LoanFactSheet />
-				<SixSteps title={sixStepsData.title} steps={sixStepsData.steps} />
-				<CommonQueries
+				<SixSteps  title={sixStepsData.title} steps={sixStepsData.steps} />
+				{/* <CommonQueries
 					title={commonQueriesData.title}
 					faqItems={commonQueriesData.faqItems}
 					brochureText={commonQueriesData.brochureText}
 					brochureUrl={commonQueriesData.brochureUrl}
-				/>
-				<BlogsInsights data={blogsData} />
+				/> */}
+				<div className="pt_80"></div>
+				<BlogsInsights   data={blogsData} />
 				<Homecontact
 					formTitle="Fill in the details, and our team of experts will contact you to help
 								bring your entrepreneurial vision to life."
