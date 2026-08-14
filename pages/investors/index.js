@@ -97,7 +97,14 @@ export default function InvestorIndexPage({ data }) {
 									{investorCards?.map((item, ind) => {
 										return (
 											<div className={`${styles.box_item}`} key={ind}>
-												<a href={item.link || `/investors/${item.slug}`}>
+												<a
+													href={
+														item.link ||
+														(item.slug === "initial-public-offerings"
+															? "/investor-relations/initial-public-offerings"
+															: `/investors/${item.slug}`)
+													}
+												>
 													<div className={styles.imageWrapper}>
 														<img
 															src={

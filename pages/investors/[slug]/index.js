@@ -49,7 +49,7 @@ const hiddenSlugRows = {
 const inlineSlugRowCategories = ["initial-public-offerings"];
 
 /** Inside1 Page */
-export default function SlugPage({ data }) {
+export default function SlugPage({ data, breadcrumbContext = "investors" }) {
 	/** createSlug */
 	const createSlug = (text) =>
 		text
@@ -65,9 +65,31 @@ export default function SlugPage({ data }) {
 	const hiddenRows = hiddenSlugRows[normaliseSlug(data[0]?.slug)] || [];
 	const isInitialPublicOfferings =
 		normaliseSlug(data[0]?.slug) === "initial-public-offerings";
-	const breadcrumbProps = isInitialPublicOfferings
-		? { linknest2: true, linknestTitle2: data[0]?.title }
-		: { linknest1: `investors/${data[0]?.title}`, linknestTitle1: data[0]?.title };
+	let breadcrumbProps = {
+		link5: "investors",
+		linkTitle: "Investors",
+	};
+
+	if (breadcrumbContext === "investor-relations") {
+		breadcrumbProps = {
+			link5: "investor-relations",
+			linkTitle: "Investor Relations",
+			linknest2: true,
+			linknestTitle2: data[0]?.title,
+		};
+	} else if (isInitialPublicOfferings) {
+		breadcrumbProps = {
+			...breadcrumbProps,
+			linknest2: true,
+			linknestTitle2: data[0]?.title,
+		};
+	} else {
+		breadcrumbProps = {
+			...breadcrumbProps,
+			linknest1: `investors/${data[0]?.title}`,
+			linknestTitle1: data[0]?.title,
+		};
+	}
 	const visibleSlugRows = data[0]?.slugRow?.filter(
 		(item) => !hiddenRows.includes(normaliseSlug(item?.slug))
 	);
@@ -102,11 +124,7 @@ export default function SlugPage({ data }) {
 
 			{/* Header */}
 			<Header />
-			<Breadcrum
-				link5="investors"
-				linkTitle={"Investors"}
-				{...breadcrumbProps}
-			/>
+			<Breadcrum {...breadcrumbProps} />
 			{/* Page Content starts here */}
 			<main className={styles.investors_page}>
 				<div className="container">
