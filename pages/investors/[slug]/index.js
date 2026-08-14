@@ -46,7 +46,7 @@ const hiddenSlugRows = {
  * section count, because credit-and-grading also has a single section and keeps
  * its existing "Read More" navigation.
  */
-const inlineSlugRowCategories = ["initial-public-offering"];
+const inlineSlugRowCategories = ["initial-public-offerings"];
 
 /** Inside1 Page */
 export default function SlugPage({ data }) {
@@ -63,6 +63,11 @@ export default function SlugPage({ data }) {
 		text.trim().toLowerCase().replace(/\s+/g, "-");
 
 	const hiddenRows = hiddenSlugRows[normaliseSlug(data[0]?.slug)] || [];
+	const isInitialPublicOfferings =
+		normaliseSlug(data[0]?.slug) === "initial-public-offerings";
+	const breadcrumbProps = isInitialPublicOfferings
+		? { linknest2: true, linknestTitle2: data[0]?.title }
+		: { linknest1: `investors/${data[0]?.title}`, linknestTitle1: data[0]?.title };
 	const visibleSlugRows = data[0]?.slugRow?.filter(
 		(item) => !hiddenRows.includes(normaliseSlug(item?.slug))
 	);
@@ -100,8 +105,7 @@ export default function SlugPage({ data }) {
 			<Breadcrum
 				link5="investors"
 				linkTitle={"Investors"}
-				linknest1={`investors/${data[0]?.title}`}
-				linknestTitle1={data[0]?.title}
+				{...breadcrumbProps}
 			/>
 			{/* Page Content starts here */}
 			<main className={styles.investors_page}>
