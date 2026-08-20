@@ -99,4 +99,16 @@
   border-left: 2px solid #eee;
 }
 
+/**
+ * Play icon for the audio-visual enclosure rows - a plain solid triangle in
+ * the same blue as the enclosure link text, sized to sit level with the 18x20
+ * download icon next to it. The download icon itself is untouched.
+ */
+.play_icon {
+  width: 18px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 

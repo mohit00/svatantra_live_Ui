@@ -1,4 +1,5 @@
 // MODULES //
+import { useState } from "react";
 
 // COMPONENTS //
 import Footer from "@/components/Footer";
@@ -8,6 +9,7 @@ import Breadcrum from "@/components/Breadcrumb";
 import Button from "@/components/Buttons/Button";
 import Footer2 from "@/components/Footer2";
 import AccordianCommon from "@/components/AccordianCommon";
+import IpoDisclaimerPopup from "@/components/IpoDisclaimerPopup";
 // SECTIONS //
 
 // PLUGINS //
@@ -22,6 +24,7 @@ import styles from "@/styles/pages/Investor.module.scss";
 
 // IMAGES //
 import download_icon from "../../../public/img/download_icon.svg";
+import play_icon from "../../../public/img/icons/play_icon.svg";
 
 // DATA //
 /** Data Fetching */
@@ -47,6 +50,33 @@ const hiddenSlugRows = {
  * its existing "Read More" navigation.
  */
 const inlineSlugRowCategories = ["initial-public-offerings"];
+
+/**
+ * The IPO documents that may only be opened after the user accepts the
+ * disclaimer. Matched on the normalised row title rather than on the Strapi row
+ * id or the media filename: both of those change whenever the document is
+ * re-uploaded, which would silently drop the gate on a legal restriction.
+ *
+ * Compared with normaliseSlug, so casing and stray whitespace in Strapi do not
+ * matter. Exact matches only - a differently named document (for example an
+ * addendum) is deliberately not covered and needs to be added here explicitly.
+ */
+const disclaimerGatedDocuments = [
+	"drhp",
+	"draft-abridged-prospectus",
+	"audio-visual-drhp-english",
+	"audio-visual-drhp-hindi",
+];
+
+/**
+ * Rows that are videos rather than documents: these show the play icon and
+ * "Play" instead of the download icon and "Download". Matched on the title for
+ * the same reason as above - the media is expected to be re-uploaded.
+ */
+const audioVisualDocuments = [
+	"audio-visual-drhp-english",
+	"audio-visual-drhp-hindi",
+];
 
 /** Inside1 Page */
 export default function SlugPage({ data, breadcrumbContext = "investors" }) {
@@ -101,21 +131,84 @@ export default function SlugPage({ data, breadcrumbContext = "investors" }) {
 		? visibleSlugRows?.[0]
 		: null;
 
+	/** The document waiting on a disclaimer decision, or null */
+	const [pendingDocument, setPendingDocument] = useState(null);
+
+	/** Absolute URL of an enclosure — same string the anchors have always used */
+	const mediaUrl = (item) =>
+		`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item?.media?.url}`;
+
+	/**
+	 * Only the IPO category's DRHP and Draft Abridged Prospectus are gated.
+	 * Checking the category as well as the title keeps a same-named row in any
+	 * other investor category on its existing behaviour.
+	 */
+	const requiresDisclaimer = (item) =>
+		isInitialPublicOfferings &&
+		disclaimerGatedDocuments.includes(normaliseSlug(item?.title));
+
+	/** I Confirm — open the document the user originally asked for */
+	const handleDisclaimerConfirm = () => {
+		// Opened synchronously from the click so the browser keeps treating it
+		// as a user gesture and the popup blocker stays out of the way.
+		if (pendingDocument?.url) {
+			window.open(pendingDocument.url, "_blank", "noopener,noreferrer");
+		}
+		setPendingDocument(null);
+	};
+
+	/** X, backdrop, Escape and the post-decline Close — never opens anything */
+	const handleDisclaimerClose = () => setPendingDocument(null);
+
+	/** Videos get the play icon and "Play"; everything else is unchanged */
+	const isAudioVisual = (item) =>
+		audioVisualDocuments.includes(normaliseSlug(item?.title));
+
+	/** Icon + label inside the enclosure link, shared by both branches below */
+	const enclosureLabel = (item) =>
+		isAudioVisual(item) ? (
+			<>
+				<img src={play_icon.src} className={styles.play_icon} alt="Play icon" />
+				<span>Play</span>
+			</>
+		) : (
+			<>
+				<img
+					src={download_icon.src}
+					className={styles.download_icon}
+					alt="Download icon"
+				/>
+				<span>Download</span>
+			</>
+		);
+
 	/** Enclosure cell — shared by the section table and its category tables */
-	const downloadCell = (item) => (
-		<a
-			href={`${process.env.NEXT_PUBLIC_STRAPI_DO_BASE_URL}${item?.media?.url}`}
-			target="_blank"
-			rel="noreferrer"
-		>
-			<img
-				src={download_icon.src}
-				className={styles.download_icon}
-				alt="Download icon"
-			/>
-			<span>Download</span>
-		</a>
-	);
+	const downloadCell = (item) => {
+		// Gated rows keep the real href so the link still looks and behaves like
+		// every other row (styling, hover, open-in-new-tab affordance); the
+		// click is intercepted and only completed after the disclaimer.
+		if (requiresDisclaimer(item)) {
+			return (
+				<a
+					href={mediaUrl(item)}
+					target="_blank"
+					rel="noreferrer"
+					onClick={(event) => {
+						event.preventDefault();
+						setPendingDocument({ title: item?.title, url: mediaUrl(item) });
+					}}
+				>
+					{enclosureLabel(item)}
+				</a>
+			);
+		}
+
+		return (
+			<a href={mediaUrl(item)} target="_blank" rel="noreferrer">
+				{enclosureLabel(item)}
+			</a>
+		);
+	};
 
 	return (
 		<div>
@@ -215,6 +308,16 @@ export default function SlugPage({ data, breadcrumbContext = "investors" }) {
 
 			{/* Footer */}
 			<Footer2 />
+
+			{/* Mounted once for the whole page, not per row: the IPO tables sit
+				inside AccordianCommon, which measures panel scrollHeight, and a
+				popup per row would interfere with that measurement. */}
+			<IpoDisclaimerPopup
+				isOpen={Boolean(pendingDocument)}
+				document={pendingDocument}
+				onConfirm={handleDisclaimerConfirm}
+				onClose={handleDisclaimerClose}
+			/>
 		</div>
 	);
 }

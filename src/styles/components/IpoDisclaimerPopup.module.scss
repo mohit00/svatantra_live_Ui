@@ -1,0 +1,142 @@
+@import "../helpers/helpers.scss";
+
+/**
+ * Scoped to the IPO disclaimer only. The shared Popup.module.scss is left
+ * untouched because Leadership and Customer Testimonials render through the
+ * same component, and its .popup_content has no max-height - a long legal
+ * disclaimer would otherwise run off the viewport.
+ *
+ * This block IS the single scroll area: heading, the full disclaimer and the
+ * two buttons all scroll together. The buttons are in normal flow at the end
+ * on purpose - there is deliberately no fixed footer, so the reader only
+ * reaches them after scrolling through the whole text.
+ *
+ * Typography is defined here rather than with the global text_* helpers: those
+ * are display sizes (.text_md is 24px/weight 500) and read as stretched, widely
+ * spaced text at the length of a legal document. This sets normal body copy.
+ */
+.disclaimer {
+	// No max-width: the disclaimer uses the full width available inside the
+	// popup. The padding below is only to keep the text off the popup edges
+	// and clear of the scrollbar; scrollbar-gutter keeps both sides even where
+	// it is supported. The popup's own width is unchanged.
+	width: 100%;
+	max-height: 78vh;
+	overflow-y: auto;
+	padding: 4px 12px 0;
+	scrollbar-gutter: stable both-edges;
+
+	// Normal document typography - no stretching, no artificial spacing.
+	font-family: var(--font_secondary);
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.65;
+	color: var(--color_light_black);
+	text-align: left;
+	word-spacing: normal;
+	letter-spacing: normal;
+	hyphens: none;
+
+	@media only screen and (max-width: 767px) {
+		max-height: 72vh;
+		padding: 4px 6px 0;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+
+	// Centred heading. The padding keeps the centred text from running under
+	// the Popup close button in the top-right corner.
+	.title {
+		font-size: 24px;
+		line-height: 1.25;
+		font-weight: 600;
+		text-align: center;
+		padding: 0 40px;
+		margin-bottom: 20px;
+
+		@media only screen and (max-width: 767px) {
+			font-size: 20px;
+			padding: 0 34px;
+			margin-bottom: 16px;
+		}
+	}
+
+	// Bold runs carried over from the source .docx.
+	.strong {
+		font-weight: 700;
+		color: inherit;
+	}
+
+	// Inherit the block's body typography; only paragraph rhythm set here.
+	.para {
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		color: inherit;
+		text-align: left;
+		margin: 0 0 14px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	// Sits at the natural end of the disclaimer and scrolls with it - not a
+	// fixed footer, so the buttons are only reached after the whole text.
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 14px;
+		margin-top: 28px;
+		padding-top: 20px;
+		padding-bottom: 6px;
+		border-top: 1px solid var(--color_light_gray);
+
+		@media only screen and (max-width: 767px) {
+			flex-direction: column;
+			gap: 10px;
+			margin-top: 24px;
+		}
+	}
+
+	.btn {
+		cursor: pointer;
+		border-radius: 30px;
+		padding: 11px 28px;
+		font-family: var(--font_secondary);
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1.2;
+		white-space: nowrap;
+		transition: var(--transition);
+
+		@media only screen and (max-width: 767px) {
+			width: 100%;
+			padding: 12px 20px;
+		}
+	}
+
+	.btn_primary {
+		background-color: var(--color_primary);
+		border: 1px solid var(--color_primary);
+		color: var(--color_white);
+
+		&:hover {
+			background-color: var(--color_primary_light);
+			border-color: var(--color_primary_light);
+		}
+	}
+
+	.btn_secondary {
+		background-color: transparent;
+		border: 1px solid var(--color_primary);
+		color: var(--color_primary);
+
+		&:hover {
+			background-color: var(--color_primary);
+			color: var(--color_white);
+		}
+	}
+}

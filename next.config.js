@@ -9,6 +9,38 @@ const nextConfig = {
 		ignoreDuringBuilds: true,
 	},
 
+	async redirects() {
+		return [
+			/**
+			 * The IPO content has a single canonical URL:
+			 * /investor-relations/initial-public-offerings
+			 *
+			 * These two legacy paths rendered the same Strapi category. The
+			 * section-level one was a second implementation
+			 * (pages/investors/[slug]/[according_slug]/index.js) that also
+			 * bypassed the DRHP / Draft Abridged Prospectus disclaimer, so it
+			 * is collapsed here at the routing layer rather than gated twice.
+			 *
+			 * Scoped to the initial-public-offerings slug on purpose: the same
+			 * [according_slug] route still serves 22 URLs for the other six
+			 * investor categories, and none of them are affected.
+			 *
+			 * :section* also covers any future section added under the IPO
+			 * category in Strapi, so a new one cannot reopen the bypass.
+			 */
+			{
+				source: "/investors/initial-public-offerings/:section*",
+				destination: "/investor-relations/initial-public-offerings",
+				permanent: true,
+			},
+			{
+				source: "/investors/initial-public-offerings",
+				destination: "/investor-relations/initial-public-offerings",
+				permanent: true,
+			},
+		];
+	},
+
 	async headers() {
 		return [
 			{
