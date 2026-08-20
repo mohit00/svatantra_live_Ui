@@ -203,10 +203,10 @@ export default function Svatantra({ gsap, ScrollTrigger }) {
 						</div>
 						<div className={`${styles.box} ${styles.box_4} f_r_a_center`}>
 							<div className={styles.title}>
-								<h5>Highest</h5>
+								<h5>Highest </h5>
 							</div>
 							<div className={styles.desc}>
-								<h6>among the top-rated NBFC-MFIs
+								<h6>rated among the <br className="hidden_sm" />top NBFC-MFIs
 									<br className="hidden_sm" />
 									<small className="text_xs">(As of March 31, 2026)</small>
 								</h6>
