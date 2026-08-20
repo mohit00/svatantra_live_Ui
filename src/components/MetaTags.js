@@ -73,8 +73,11 @@ export default function MetaTags({ Title, Desc, OgImg, Url }) {
 			<meta name="twitter:image" content={ogImg} />
 			<meta name="twitter:card" content="summary_large_image" />
 
-			{/* canonical tag */}
-			<link rel="canonical" href={url} />
+			{/* The canonical tag is rendered once for the whole site in
+				pages/_app.js, from the page's own resolved URL. It is not
+				emitted here: the `Url` prop is passed inconsistently across
+				pages (relative on some, absolute on others, and simply wrong on
+				a few), and having two sources would risk duplicate tags. */}
 
 			{/* Favicon */}
 			<link rel="icon" href={`${Favicon.src}`} />
