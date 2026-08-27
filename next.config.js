@@ -38,6 +38,59 @@ const nextConfig = {
 				destination: "/investor-relations/initial-public-offerings",
 				permanent: true,
 			},
+
+			/**
+			 * Legacy / mistyped paths that were returning 404s.
+			 *
+			 * The first four are singular-plural and hyphenation slips against
+			 * pages that do exist under a slightly different slug, so each one
+			 * points at its real page. The last two have no equivalent page on
+			 * the site any more and fall back to the homepage.
+			 *
+			 * Every source is an exact path with no :param, so none of them can
+			 * shadow a working route. /investor-relations in particular has no
+			 * index page (only pages/investor-relations/[slug].js), and matching
+			 * it exactly leaves all seven category URLs under it untouched --
+			 * including /investor-relations/initial-public-offerings, which the
+			 * two redirects above target.
+			 *
+			 * statusCode: 301 rather than permanent: true, which Next emits as
+			 * a 308. Both are permanent and Google treats them alike, but the
+			 * 404s these replace were reported against a 301 expectation, so
+			 * the literal status is pinned here. Same redirects() mechanism
+			 * either way -- `statusCode` and `permanent` are mutually
+			 * exclusive on a single rule, so these do not set both.
+			 */
+			{
+				source: "/our-products/individual-loans",
+				destination: "/our-products/individual-loan",
+				statusCode: 301,
+			},
+			{
+				source: "/our-products/microfinance-loans",
+				destination: "/our-products/microfinance-loan",
+				statusCode: 301,
+			},
+			{
+				source: "/connect-with-us/contact",
+				destination: "/contact",
+				statusCode: 301,
+			},
+			{
+				source: "/amalgamated-company/schemeofamalgamation",
+				destination: "/amalgamated-company",
+				statusCode: 301,
+			},
+			{
+				source: "/media/media-mention",
+				destination: "/",
+				statusCode: 301,
+			},
+			{
+				source: "/investor-relations",
+				destination: "/",
+				statusCode: 301,
+			},
 		];
 	},
 
