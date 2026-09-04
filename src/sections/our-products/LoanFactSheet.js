@@ -41,20 +41,20 @@ export default function LoanFactSheet() {
 						</thead>
 						<tr>
 							<td>Microfinance loan</td>
-							<td>₹ 5,000 to ₹ 1.5 lakh</td>
-							<td>12 to 26 Months</td>
-							<td>Monthly</td>
-							<td>up to 25%</td>
+							<td>₹ 20,000 to ₹ 1.5 lakh</td>
+							<td>12 to 24 Months</td>
+							<td>Monthly/Fortnightly</td>
+							<td>23.30% to 24.00%</td>
 							<td>1.50%</td>
 							<td>Nil</td>
 						</tr>
 						<tr>
 							<td>Individual Loan</td>
-							<td>₹ 1 lakh to ₹ 2.5 lakh</td>
+							<td>₹ 1 lakh to ₹ 4 lakh</td>
 							<td>18 to 36 Months</td>
-							<td>Monthly</td>
-							<td>up to 25%</td>
-							<td>₹3,000 (plus applicable GST)</td>
+							<td>Monthly/Fortnightly</td>
+							<td>23.30% to 24.00%</td>
+							<td>1.50% or INR 3000</td>
 							<td>Nil</td>
 						</tr>
 						<tr>
@@ -83,6 +83,7 @@ export default function LoanFactSheet() {
 						</tr> */}
 					</table>
 					<p className="text_sm pt_20 f_w_l opacity_80">Penal charges - Nil</p>
+					<p className="text_sm pt_20 f_w_l opacity_80">with effect from June 01,2026</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a
