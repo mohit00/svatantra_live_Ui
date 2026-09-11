@@ -1,4 +1,5 @@
 // MODULES //
+import { useRouter } from "next/router";
 
 // COMPONENTS //
 
@@ -7,6 +8,7 @@
 // PLUGINS //
 
 // UTILS //
+
 
 // STYLES //
 import styles from "@/styles/sections/our-products/LoanFactSheet.module.scss";
@@ -18,6 +20,7 @@ import pdf_icon from "../../../public/img/pdf_icon.svg";
 
 /** LoanFactSheet Component */
 export default function LoanFactSheet() {
+	const router = useRouter();
 	return (
 		<section className={`${styles.LoanFactSheet} pb_80`}>
 			<div className="container">
@@ -48,7 +51,11 @@ export default function LoanFactSheet() {
 							<td>1.50%</td>
 							<td>Nil</td>
 						</tr>
-						<tr>
+						<tr
+							className={styles.clickableRow}
+							onClick={() => router.push("/our-products/individual-loan")}
+							style={{ cursor: "pointer" }}
+						>
 							<td>Individual Loan</td>
 							<td>₹ 1 lakh to ₹ 4 lakh</td>
 							<td>18 to 36 Months</td>
@@ -83,7 +90,7 @@ export default function LoanFactSheet() {
 						</tr> */}
 					</table>
 					<p className="text_sm pt_20 f_w_l opacity_80">Penal charges - Nil</p>
-					<p className="text_sm pt_20 f_w_l opacity_80">with effect from June 01,2026</p>
+					<p className="text_sm f_w_l opacity_80">with effect from June 01,2026</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a

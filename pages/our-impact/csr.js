@@ -253,7 +253,7 @@ export default function csr() {
 							/> */}
 
 							<a
-								href="/img/corporate-social-responsibility-policy-new.pdf"
+								href="/img/corporate-social-responsibility-policy.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 								className={styles.csr_download}

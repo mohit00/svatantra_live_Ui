@@ -1,4 +1,5 @@
 // MODULES //
+import { useRouter } from "next/router";
 
 // COMPONENTS //
 import Breadcrum from "@/components/Breadcrumb";
@@ -44,6 +45,7 @@ export const getStaticProps = async (context) => {
 };
 /** MsmeLoans Page */
 export default function MsmeLoans({ blogsData }) {
+	const router = useRouter();
 	const loanAmountData = {
 		loanAmount: "₹ 1 lakh to ₹ 4 lakh",
 		tenure: "18 to 36 Months",
@@ -249,7 +251,11 @@ export default function MsmeLoans({ blogsData }) {
 										<th>Prepayment charges</th>
 									</tr>
 								</thead>
-								<tr>
+								<tr
+									className={styles.clickableRow}
+									onClick={() => router.push("/our-products/microfinance-loan")}
+									style={{ cursor: "pointer" }}
+								>
 									<td>Microfinance loan</td>
 									<td>₹ 20,000 to ₹ 1.5 lakh</td>
 									<td>12 to 24 Months</td>
@@ -296,7 +302,7 @@ export default function MsmeLoans({ blogsData }) {
 							<p className={`${styles.averageRate} text_sm pt_20 f_w_l opacity_80`}>
 								Penal charges - Nil
 							</p>
-							<p className={`${styles.averageRate} text_sm pt_20 f_w_l opacity_80`}>
+							<p className={`${styles.averageRate} text_sm  f_w_l opacity_80`}>
 								with effect from June 01,2026
 							</p>
 						</div>
