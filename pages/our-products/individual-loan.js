@@ -48,7 +48,7 @@ export default function MsmeLoans({ blogsData }) {
 	const router = useRouter();
 	const loanAmountData = {
 		loanAmount: "₹ 1 lakh to ₹ 4 lakh",
-		tenure: "18 to 36 Months",
+		tenure: "18 to 48 Months",
 		interestRate: "up to 24.00 %",
 	};
 	const pavingThePathData = {
@@ -258,7 +258,7 @@ export default function MsmeLoans({ blogsData }) {
 								>
 									<td>Microfinance loan</td>
 									<td>₹ 20,000 to ₹ 1.5 lakh</td>
-									<td>12 to 24 Months</td>
+									<td>12 to 36 Months</td>
 									<td>Monthly/Fortnightly</td>
 									<td>23.30% to 24.00%</td>
 									<td>1.50%</td>
@@ -267,8 +267,8 @@ export default function MsmeLoans({ blogsData }) {
 								<tr>
 									<td>Individual Loan</td>
 									<td>₹ 1 lakh to ₹ 4 lakh</td>
-									<td>18 to 36 Months</td>
-									<td>Monthly/Fortnightly</td>
+									<td>18 to 48 Months</td>
+									<td>Monthly</td>
 									<td>23.30% to 24.00%</td>
 									<td>1.50% or INR 3000</td>
 									<td>Nil</td>
