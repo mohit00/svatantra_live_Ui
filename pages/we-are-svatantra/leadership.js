@@ -9,6 +9,7 @@ import Popup from "@/components/Popup";
 import Breadcrumb from "@/components/Breadcrumb";
 import Button from "@/components/Buttons/Button";
 import Footer2 from "@/components/Footer2";
+import AccordianCommon from "@/components/AccordianCommon";
 // SECTIONS //
 
 // PLUGINS //
@@ -35,8 +36,27 @@ export const getStaticProps = async (context) => {
 };
 /** Leadership Page */
 export default function LeadershipPage({ leadershipsData }) {
-	const sortedLeadershipData = leadershipsData?.data.sort(
-		(a, b) => parseInt(a.orders) - parseInt(b.orders)
+	/* A missing/non-numeric orders value (e.g. the founder record) must not
+	   produce NaN: any NaN comparator result breaks Array.sort's ordering
+	   guarantee for the whole array, not just the pair involved. Sentinel
+	   such values to the end instead. */
+	const sortedLeadershipData = leadershipsData?.data.sort((a, b) => {
+		const orderA = parseInt(a.orders);
+		const orderB = parseInt(b.orders);
+		return (isNaN(orderA) ? Infinity : orderA) - (isNaN(orderB) ? Infinity : orderB);
+	});
+
+	/* Pairs every item with its index in sortedLeadershipData so the Board/
+	   Management grids can reuse the existing Popup, which matches slides by
+	   index into the full (unfiltered) sortedLeadershipData array. */
+	const indexedLeadershipData =
+		sortedLeadershipData?.map((item, idx) => ({ item, idx })) || [];
+
+	const boardMembers = indexedLeadershipData.filter(
+		({ item }) => !item.isFounder && item.isBoardMember === true
+	);
+	const managementTeam = indexedLeadershipData.filter(
+		({ item }) => !item.isFounder && item.isManagementTeam === true
 	);
 
 	const [isVisible, setIsVisible] = useState(false);
@@ -107,6 +127,67 @@ export default function LeadershipPage({ leadershipsData }) {
 	const handleClosePopup = () => {
 		setIsPopupOpen(false);
 	};
+
+	/** renderLeadershipCard - identical GridItem markup used by both the
+	 * Board and Management grids; idx is the item's index in the full
+	 * sortedLeadershipData array so the existing Popup keeps matching by index. */
+	const renderLeadershipCard = ({ item, idx }) => (
+		<div className={`${styles.GridItem} b_r_16`} key={idx}>
+			<div className={styles.ImgBx}>
+				<img
+					src={StrapiImage(item.profileImg).url}
+					className="img-responsive b_r_10 width_100"
+					alt="Leaders Image"
+				/>
+				<div
+					className={`${styles.box_btn} bx1`}
+					onClick={(e) => handleSlideClick(e, idx)}
+					data-slide={idx}
+				>
+					<div className={`${styles.btn_primary}`}>
+						<img src={PlusIcon.src} className="img-responsive" />
+					</div>
+				</div>
+			</div>
+			<div className={styles.DetailsBx}>
+				<div className={styles.Details}>
+					<p className={`${styles.Name} font_primary text_md f_w_r`}>
+						{item.name}
+					</p>
+					<p
+						className={`${styles.Designation} color_light_black text_xs opacity_80`}
+					>
+						{item.designation}
+					</p>
+				</div>
+			</div>
+		</div>
+	);
+
+	/* Skip a category entirely if it has no members, rather than rendering
+	   an empty accordion panel. */
+	const accordionItems = [];
+	if (boardMembers.length > 0) {
+		accordionItems.push({
+			title: "Board of Directors",
+			children: (
+				<div className={`${styles.GridContainer}`}>
+					{boardMembers.map(renderLeadershipCard)}
+				</div>
+			),
+		});
+	}
+	if (managementTeam.length > 0) {
+		accordionItems.push({
+			title: "Management Team",
+			children: (
+				<div className={`${styles.GridContainer}`}>
+					{managementTeam.map(renderLeadershipCard)}
+				</div>
+			),
+		});
+	}
+
 	const data = [
 		{
 			image: Leader1.src,
@@ -296,80 +377,14 @@ export default function LeadershipPage({ leadershipsData }) {
 						</div> */}
 					</div>
 					<div className={`${styles.ChangeMakers}`}>
-						<h2 className="section_title pb_40">Management Team</h2>
-						<div className={`${styles.GridContainer}`}>
-							{/* {data.map((item, index) => (
-								<div className={`${styles.GridItem} b_r_16`} key={index}>
-									<div className={styles.ImgBx}>
-										<img
-											src={item.image}
-											className="img-responsive b_r_10 width_100"
-											alt="Leaders Image"
-										/>
-										<div
-											className={`${styles.box_btn} bx1`}
-											onClick={(e) => handleSlideClick(e, index)}
-											data-slide={index}
-										>
-											<div className={`${styles.btn_primary}`}>
-												<img src={PlusIcon.src} className="img-responsive" />
-											</div>
-										</div>
-									</div>
-									<div className={styles.DetailsBx}>
-										<div className={styles.Details}>
-											<p className={`${styles.Name} font_primary text_md f_w_m`}>
-												{item.name}
-											</p>
-											<p
-												className={`${styles.Designation} color_light_black text_xs opacity_80`}
-											>
-												{item.designation}
-											</p>
-										</div>
-									</div>
-								</div>
-							))} */}
-							{sortedLeadershipData?.map((item, index) => {
-								return (
-									<>
-										{!item.isFounder && (
-											<div className={`${styles.GridItem} b_r_16`} key={index}>
-												<div className={styles.ImgBx}>
-													<img
-														src={StrapiImage(item.profileImg).url}
-														className="img-responsive b_r_10 width_100"
-														alt="Leaders Image"
-													/>
-													<div
-														className={`${styles.box_btn} bx1`}
-														onClick={(e) => handleSlideClick(e, index)}
-														data-slide={index}
-													>
-														<div className={`${styles.btn_primary}`}>
-															<img src={PlusIcon.src} className="img-responsive" />
-														</div>
-													</div>
-												</div>
-												<div className={styles.DetailsBx}>
-													<div className={styles.Details}>
-														<p className={`${styles.Name} font_primary text_md f_w_r`}>
-															{item.name}
-															{/* item.name */}
-														</p>
-														<p
-															className={`${styles.Designation} color_light_black text_xs opacity_80`}
-														>
-															{item.designation}
-														</p>
-													</div>
-												</div>
-											</div>
-										)}
-									</>
-								);
-							})}
-						</div>
+						<AccordianCommon
+							items={accordionItems}
+							fontStyle="text_lg"
+							fontWeight="f_w_m"
+							fontFamily="font_primary"
+							fontColor="color_light_black"
+							defaultIndex={null}
+						/>
 					</div>
 				</div>
 				{isPopupOpen && (
