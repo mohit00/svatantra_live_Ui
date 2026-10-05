@@ -535,19 +535,16 @@ export default function CareerContactFormPage() {
 									name="cv"
 									id="cv"
 									// placeholder="Upload resume *"
-									accept=".pdf,.doc,.docx"
+									accept=".pdf"
 									{...register("cv", {
 										required: "Please upload your resume",
 										validate: {
 											acceptedFormats: (files) =>
 												(files &&
 													files[0] &&
-													[
-														"application/pdf",
-														"application/msword",
-														"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-													].includes(files[0].type)) ||
-												"Only .pdf, .doc, and .docx files are accepted",
+													files[0].type === "application/pdf" &&
+													files[0].name.toLowerCase().endsWith(".pdf")) ||
+												"Only PDF files are allowed",
 											maxSize: (files) =>
 												(files && files[0] && files[0].size <= 10485760) ||
 												"File size should be less than 10MB",
