@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
+const isDev = process.env.NODE_ENV !== "production";
+
 const nextConfig = {
 	reactStrictMode: false,
+
+	// VAPT #8: stop sending the "X-Powered-By: Next.js" response header.
+	poweredByHeader: false,
+
 	images: {
 		domains: ["img.youtube.com"],
 		unoptimized: true,
@@ -100,11 +106,29 @@ const nextConfig = {
 				source: "/(.*)", // applies to all routes
 				headers: [
 					{
+						// Notes on the directives that remain (VAPT #5):
+						// - script-src 'unsafe-inline': required by the inline GTM
+						//   loader in pages/_app.js (next/script, dangerouslySetInnerHTML)
+						//   and by inline scripts GTM-managed tags may inject. Removing it
+						//   needs a per-request nonce (middleware + dynamic rendering) or
+						//   a hash of the GTM snippet.
+						// - script-src 'unsafe-eval': only needed by `next dev` (React
+						//   Refresh), so it is added in development only. Production
+						//   builds do not use eval. If a GTM container uses Custom
+						//   JavaScript variables/templates this must be re-verified.
+						// - style-src 'unsafe-inline': required for React style={{}}
+						//   attributes and inline styles set at runtime by GSAP, Swiper,
+						//   Lenis and lightGallery; nonces/hashes cannot cover style
+						//   attributes.
+						// - The Strapi origin is intentionally not in default-src: the
+						//   browser only loads Strapi media from the public CMS host
+						//   (already in img-src/media-src), while server-side fetches via
+						//   STRAPI_DO_BASE_URL are never subject to CSP.
 						key: "Content-Security-Policy",
 						value: `
-							default-src 'self' http://10.21.1.74:1337;
+							default-src 'self';
 							media-src 'self' https://svatantracms.tinglabs.in;
-							script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms/ https://googleads.g.doubleclick.net/ https://connect.facebook.net/ https://www.googletagmanager.com/ https://www.youtube.com https://s.ytimg.com https://maps.googleapis.com https://maps.gstatic.com;
+							script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ""} https://www.clarity.ms/ https://googleads.g.doubleclick.net/ https://connect.facebook.net/ https://www.googletagmanager.com/ https://www.youtube.com https://s.ytimg.com https://maps.googleapis.com https://maps.gstatic.com;
 							style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com https://maps.gstatic.com;
 							img-src 'self' data: https://www.google.co.in/ https://www.googletagmanager.com/ https://svatantracms.tinglabs.in https://img.youtube.com https://i.ytimg.com https://maps.googleapis.com https://maps.gstatic.com https://*.google.com https://*.ggpht.com https://www.svatantramicrofin.com http://svatantramicrofin.com;
 							font-src 'self' data: https://fonts.gstatic.com https://maps.gstatic.com;
