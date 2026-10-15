@@ -151,6 +151,10 @@ const nextConfig = {
 						value: "nosniff",
 					},
 					{
+						key: "X-Permitted-Cross-Domain-Policies",
+						value: "none",
+					},
+					{
 						key: "Referrer-Policy",
 						value: "strict-origin-when-cross-origin",
 					},
