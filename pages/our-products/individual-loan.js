@@ -269,7 +269,7 @@ export default function MsmeLoans({ blogsData }) {
 									<td>₹ 1 lakh to ₹ 4 lakh</td>
 									<td>18 to 48 Months</td>
 									<td>Monthly</td>
-									<td>21.10% to 24.00%</td>
+									<td>22.10% to 24.00%</td>
 									<td>2.00%</td>
 									<td>Nil</td>
 								</tr>
