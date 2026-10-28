@@ -90,7 +90,7 @@ export default function LoanFactSheet() {
 						</tr> */}
 					</table>
 					<p className="text_sm pt_20 f_w_l opacity_80">Penal charges - Nil</p>
-					<p className="text_sm f_w_l opacity_80"># This interest rate is for Q2 FY27</p>
+					<p className="text_sm f_w_l opacity_80">This interest rate is for Q2 FY27</p>
 				</div>
 				<div className={`${styles.btnBox} pt_30`}>
 					<a

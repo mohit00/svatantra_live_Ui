@@ -303,7 +303,7 @@ export default function MsmeLoans({ blogsData }) {
 								Penal charges - Nil
 							</p>
 							<p className={`${styles.averageRate} text_sm  f_w_l opacity_80`}>
-								# This interest rate is for Q2 FY27
+								This interest rate is for Q2 FY27
 							</p>
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
