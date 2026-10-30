@@ -260,7 +260,7 @@ export default function MsmeLoans({ blogsData }) {
 									<td>₹ 20,000 to ₹ 1.5 lakh</td>
 									<td>12 to 36 Months</td>
 									<td>Monthly/Fortnightly</td>
-									<td>23.30% to 24.00%</td>
+									<td>21.10% to 24.00%</td>
 									<td>1.50%</td>
 									<td>Nil</td>
 								</tr>
@@ -269,8 +269,8 @@ export default function MsmeLoans({ blogsData }) {
 									<td>₹ 1 lakh to ₹ 4 lakh</td>
 									<td>18 to 48 Months</td>
 									<td>Monthly</td>
-									<td>23.30% to 24.00%</td>
-									<td>1.50% or INR 3000</td>
+									<td>22.10% to 24.00%</td>
+									<td>2.00%</td>
 									<td>Nil</td>
 								</tr>
 								<tr>
@@ -303,7 +303,7 @@ export default function MsmeLoans({ blogsData }) {
 								Penal charges - Nil
 							</p>
 							<p className={`${styles.averageRate} text_sm  f_w_l opacity_80`}>
-								with effect from June 01,2026
+								This interest rate is for Q2 FY27
 							</p>
 						</div>
 						<div className={`${styles.btnBox} pt_30`}>
