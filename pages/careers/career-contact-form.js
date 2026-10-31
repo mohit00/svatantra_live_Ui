@@ -618,7 +618,7 @@ export default function CareerContactFormPage() {
 										Remove
 									</button>
 								)}
-								{errors.cv && <label className={styles.error}>{errors.cv.message}</label>}
+								{errors.cv && <label className={styles.cvError}>{errors.cv.message}</label>}
 							</div>
 						</div>
 
