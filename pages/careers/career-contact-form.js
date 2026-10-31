@@ -35,6 +35,8 @@ async function hasPdfSignature(file) {
 	}
 }
 
+const CV_ERROR = "Only PDF files up to 10 MB are allowed. Please upload a valid PDF file.";
+
 export default function CareerContactFormPage() {
 	const router = useRouter();
 	// const { slug } = router.query;
@@ -47,6 +49,7 @@ export default function CareerContactFormPage() {
 		handleSubmit,
 		reset,
 		setValue,
+		clearErrors,
 		formState: { errors },
 	} = useForm({ mode: "onChange" });
 	const [loading, setLoading] = useState(false);
@@ -152,13 +155,24 @@ export default function CareerContactFormPage() {
 
 	/** Handles file input change */
 	const handleFileChange = (event) => {
-		const file = event.target.files[0];
+		const input = event.target;
+		const file = input.files[0];
+		// The selection is kept in form state, so the native input is emptied right away:
+		// this lets the same file be picked again and never leaves a stale file behind.
+		input.value = "";
 		if (file) {
 			setFileName(file.name);
 			setValue("cv", [file], { shouldValidate: true });
-		} else {
-			setFileName("");
 		}
+	};
+
+	/** Removes the selected CV (valid or not) without touching the other form fields */
+	const handleRemoveFile = (event) => {
+		event.stopPropagation();
+		if (fileInputRef.current) fileInputRef.current.value = "";
+		setFileName("");
+		setValue("cv", [], { shouldValidate: false });
+		clearErrors("cv");
 	};
 
 	/** Triggers file input */
@@ -559,13 +573,13 @@ export default function CareerContactFormPage() {
 													files[0] &&
 													files[0].type === "application/pdf" &&
 													files[0].name.toLowerCase().endsWith(".pdf")) ||
-												"Only PDF files are allowed",
+												CV_ERROR,
 											pdfContent: async (files) =>
 												(files && files[0] && (await hasPdfSignature(files[0]))) ||
-												"Only PDF files are allowed",
+												CV_ERROR,
 											maxSize: (files) =>
 												(files && files[0] && files[0].size <= 10485760) ||
-												"File size should be less than 10MB",
+												CV_ERROR,
 										},
 									})}
 									ref={fileInputRef}
@@ -587,6 +601,24 @@ export default function CareerContactFormPage() {
 										"Upload resume*"
 									)}
 								</div>
+								{fileName && !isSubmited && (
+									<button
+										type="button"
+										onClick={handleRemoveFile}
+										aria-label="Remove selected file"
+										style={{
+											background: "none",
+											border: 0,
+											color: "red",
+											cursor: "pointer",
+											fontSize: 12,
+											padding: "4px 5px",
+										}}
+									>
+										Remove
+									</button>
+								)}
+								{errors.cv && <label className={styles.error}>{errors.cv.message}</label>}
 							</div>
 						</div>
 
