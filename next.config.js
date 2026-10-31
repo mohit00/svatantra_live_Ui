@@ -91,6 +91,26 @@ const nextConfig = {
 				destination: "/",
 				statusCode: 301,
 			},
+			/**
+			 * Temporarily disable Career pages.
+			 * All three URLs redirect to the homepage using HTTP 307.
+			 * These rules can be removed when the Career section is re-enabled.
+			 */
+			{
+				source: "/careers",
+				destination: "/",
+				statusCode: 307,
+			},
+			{
+				source: "/careers/job-opening",
+				destination: "/",
+				statusCode: 307,
+			},
+			{
+				source: "/careers/career-contact-form",
+				destination: "/",
+				statusCode: 307,
+			},
 		];
 	},
 
