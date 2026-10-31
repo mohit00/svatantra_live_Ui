@@ -25,6 +25,16 @@ import { headers } from "next.config";
 // DATA //
 
 /** Career Contact Form Page */
+/** hasPdfSignature - true when the file starts with the %PDF- magic bytes */
+async function hasPdfSignature(file) {
+	try {
+		const head = new Uint8Array(await file.slice(0, 5).arrayBuffer());
+		return String.fromCharCode(...head) === "%PDF-";
+	} catch {
+		return false;
+	}
+}
+
 export default function CareerContactFormPage() {
 	const router = useRouter();
 	// const { slug } = router.query;
@@ -96,7 +106,12 @@ export default function CareerContactFormPage() {
 		setLoading(true);
 
 		// ✅ Upload file and get file ID
-		const fileId = await sendMedia(data.cv[0]);
+		let fileId;
+		try {
+			fileId = await sendMedia(data.cv[0]);
+		} catch (error) {
+			console.error("Upload error:", error);
+		}
 
 		if (!fileId) {
 			alert("File upload failed. Please try again.");
@@ -544,6 +559,9 @@ export default function CareerContactFormPage() {
 													files[0] &&
 													files[0].type === "application/pdf" &&
 													files[0].name.toLowerCase().endsWith(".pdf")) ||
+												"Only PDF files are allowed",
+											pdfContent: async (files) =>
+												(files && files[0] && (await hasPdfSignature(files[0]))) ||
 												"Only PDF files are allowed",
 											maxSize: (files) =>
 												(files && files[0] && files[0].size <= 10485760) ||
