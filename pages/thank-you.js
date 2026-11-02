@@ -1,7 +1,6 @@
 // MODULES //
 
 // COMPONENTS //
-import Link from "next/link";
 import MetaTags from "@/components/MetaTags";
 import Button from "@/components/Buttons/Button";
 
@@ -41,16 +40,14 @@ export default function NotFoundPage() {
 					<p className={`${styles.desp} text_center color_primary text_center`}>
 						We will be in touch with you shortly.
 					</p>
-					<Link href={"/"}>
-						<div className={styles.home_btn}>
-							<Button
-								buttonType="four"
-								condition={"white"}
-								title={"Go to Homepage"}
-								link={"/careers/career-contact-form"}
-							/>
-						</div>
-					</Link>
+					<div className={styles.home_btn}>
+						<Button
+							buttonType="four"
+							condition={"white"}
+							title={"Go to Homepage"}
+							link={"/"}
+						/>
+					</div>
 				</div>
 			</main>
 			{/* Page Content ends here */}
