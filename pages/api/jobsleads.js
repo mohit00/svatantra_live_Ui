@@ -1,11 +1,20 @@
 import { ServerHeaders } from "@/utils/RequestHeaders";
+import { rateLimit, validateJobLead } from "@/utils/apiSecurity";
 
 /** handler */
 export default async function handler(req, res) {
 	if (req.method === "POST") {
+		// Rate limit before doing any work
+		if (!rateLimit(req, res, "jobsleads")) return;
+
+		// Strict server-side validation; only known, cleaned fields are forwarded
+		const validation = validateJobLead(req.body);
+		if (validation.error) {
+			return res.status(400).json({ error: validation.error });
+		}
+
 		try {
-			// Get data from request body
-			const userData = JSON.parse(req.body);
+			const userData = { data: validation.data };
 
 			const Headers = {
 				method: "POST",
